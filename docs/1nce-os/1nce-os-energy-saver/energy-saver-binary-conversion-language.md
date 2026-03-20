@@ -25,7 +25,7 @@ More details on the general conversion language available at [https://docs.allth
 }
 ```
 
-In this example, we declare a data conversion used with a home alarm system device. When the device senses motion it sends one byte to [UDP endpoint](doc:data-broker-udp). This simple template converts that one byte sent by the device into a JSON object with a boolean field called `motion`. 
+In this example, we declare a data conversion used with a home alarm system device. When the device senses motion it sends one byte to [UDP endpoint](/unresolved/doc:data-broker-udp). This simple template converts that one byte sent by the device into a JSON object with a boolean field called `motion`. 
 
 When the device with enabled binary translation, sends `0x01` the byte gets translated into `true` resulting in the following object:
 

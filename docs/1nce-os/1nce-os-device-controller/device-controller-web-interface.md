@@ -45,19 +45,25 @@ For CoAP and LwM2M messages wizard will wait for the response and display the re
 <img src="/img/1nce-os/1nce-os-device-controller/device-controller-web-interface/2826e7e9939e484a906017f570efa367bd903ffdd06d589beb9c25b93ea52af8-LwM2M_Success_Response.png" alt="LwM2M Response Details" width="80%" />
 </div>
 
-> :warning: Please note that **Response wizard is not present for UDP messages due to UDP specifics**.
+:::warning
+Please note that **Response wizard is not present for UDP messages due to UDP specifics**.
+:::
+
 
 #### Send when device is active
 
-Request mode `SEND_WHEN_ACTIVE` will schedule the message and send the data to device when it will become active. Scheduled messages will be sent out on `Cross-protocol trigger` or `LwM2M registration and update events` as decribed in the [device controller features](doc:device-controller-features-limitations).
+Request mode `SEND_WHEN_ACTIVE` will schedule the message and send the data to device when it will become active. Scheduled messages will be sent out on `Cross-protocol trigger` or `LwM2M registration and update events` as decribed in the [device controller features](/1nce-os/1nce-os-device-controller/device-controller-features-limitations).
 
-In this request mode it is possible to configure `Send Attempts` for CoAP and LwM2M protocols. For failed messages [retry mechanism](doc:device-controller-api#retry-mechanism) will be applied if required.
+In this request mode it is possible to configure `Send Attempts` for CoAP and LwM2M protocols. For failed messages [retry mechanism](/1nce-os/1nce-os-device-controller/device-controller-api#retry-mechanism) will be applied if required.
 
 <div style={{textAlign: 'center'}}>
 <img src="/img/1nce-os/1nce-os-device-controller/device-controller-web-interface/f950b70-Send_Attempts.png" alt="Send attempts configuration" width="80%" />
 </div>
 
-> :warning: Please note that **Send attempts are NOT supported for the UDP protocol**.
+:::warning
+Please note that **Send attempts are NOT supported for the UDP protocol**.
+:::
+
 
 ## Requests
 

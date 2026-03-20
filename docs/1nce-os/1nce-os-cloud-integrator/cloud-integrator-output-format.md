@@ -11,7 +11,7 @@ For AWS Integrations the messages will be forwarded to a dedicated AWS IoT Core 
 | GEOFENCE | `geofence` |
 | LOCATION | `location` |
 | LIFECYCLE | `lifecycle` |
-| TELEMETRY_DATA | LWM2M & UDP protocol: `{{iccid}}/messages` CoAP protocol with provided [query parameter _t_](doc:device-integrator-coap): `{{iccid}}/{\{query\_parameter\_t}}` CoAP protocol without provided [query parameter _t_](doc:device-integrator-coap): `{{iccid}}` |
+| TELEMETRY_DATA | LWM2M & UDP protocol: `{{iccid}}/messages` CoAP protocol with provided [query parameter _t_](/1nce-os/1nce-os-device-integrator/device-integrator-coap): `{{iccid}}/{\{query\_parameter\_t}}` CoAP protocol without provided [query parameter _t_](/1nce-os/1nce-os-device-integrator/device-integrator-coap): `{{iccid}}` |
 | TEST_MESSAGE | `integration-status` |
 
 ***

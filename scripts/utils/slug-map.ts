@@ -26,6 +26,15 @@ export function buildSlugMap(docsDir: string): Map<string, string> {
     // Register under filename slug
     slugMap.set(filenameSlug, docId);
 
+    // For index.md files, also register the parent directory name as a slug.
+    // ReadMe uses (doc:parent-dir-name) to link to index pages.
+    if (filenameSlug === 'index') {
+      const dirName = path.basename(path.dirname(file));
+      if (dirName && dirName !== '.') {
+        slugMap.set(dirName, docId);
+      }
+    }
+
     // Also register under frontmatter slug if present (as an override)
     if (data.slug && typeof data.slug === 'string') {
       slugMap.set(data.slug, docId);

@@ -98,7 +98,10 @@ If all attempts fail, then the action request will be permanently marked with th
 The `sendAttempts` parameter is optional and, if unspecified, defaults to 1.<br/>\
 The maximum number of allowed retries is 5.
 
-> :warning: Please note that this functionality is **NOT supported by the UDP protocol**.
+:::warning
+Please note that this functionality is **NOT supported by the UDP protocol**.
+:::
+
 
 ### Request Body Properties
 

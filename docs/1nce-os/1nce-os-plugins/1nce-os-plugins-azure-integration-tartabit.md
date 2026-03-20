@@ -24,7 +24,10 @@ To start using the 1NCE OS Plugin with Tartabit IoT Bridge you first need to cre
 
 To finish the configuration in 1NCE OS you can choose one of the two options described below.
 
-> :warning: Please note that by installing this plugin, you are aware that **Data from any device is shared with Tartabit, regardless of whether it is configured on Tartabit or not**.
+:::warning
+Please note that by installing this plugin, you are aware that **Data from any device is shared with Tartabit, regardless of whether it is configured on Tartabit or not**.
+:::
+
 
 # Tartabit Plugin Installation via Frontend
 
@@ -70,7 +73,7 @@ There is possibility that data forwarding from the 1NCEOS to the Tartabit system
 ![Plugin Disabled Admin Log](/img/1nce-os/1nce-os-plugins/1nce-os-plugins-azure-integration-tartabit/ebc861c3f93b3d89e11ff12f2d065b48fb64c09fa2ff469918850b4df6c86dc6-7198c16f848b179a6f822e883917d9ca2e4712a66e52131b329a89a550482c02-plugin_admin_log.png)
 </div>
 
-You can use similar approach to the [Cloud Integrations failure monitoring](doc:cloud-integrator-failure-event#cloud-integrations-failure-monitoring) , only for Plugins Cloud Integrator `Error` event will be following:
+You can use similar approach to the [Cloud Integrations failure monitoring](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-failure-event#cloud-integrations-failure-monitoring) , only for Plugins Cloud Integrator `Error` event will be following:
 
 ```json
 {

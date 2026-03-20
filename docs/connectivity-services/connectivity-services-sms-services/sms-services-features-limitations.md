@@ -34,7 +34,7 @@ Any device with a 1NCE SIM can send MO-SMS messages. The provided destination mo
 
 ## Monitoring SMS Events
 
-When an MT-SMS is sent an Event Record is generated. These records can be viewed in the 1NCE Portal or processed through the [Data Streamer Service](doc:platform-services-data-streamer) interface. Monitoring the Event Records can help to verify correct device behavior and identify possible connectivity issues.
+When an MT-SMS is sent an Event Record is generated. These records can be viewed in the 1NCE Portal or processed through the [Data Streamer Service](/platform-services/platform-services-data-streamer/index) interface. Monitoring the Event Records can help to verify correct device behavior and identify possible connectivity issues.
 
 ***
 

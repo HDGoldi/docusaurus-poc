@@ -137,7 +137,7 @@ The 1NCE Data Streaming Service allows customers to subscribe to real-time event
 
 The Data Streams configuration shows a list of all currently configured streams including the name, API type, stream type, URL, status indicator and controls for each stream. Each stream can be controlled individually. Besides basic stop, start and delete, a stream integration can be restarted. A restart needs to be performed if the stream enters a error state and needs to be recovered. 
 
-To create a new data stream integration click on the New Data Stream button. Further details on how to setup a stream integration can be found in the [Data Streamer Setup Guides](doc:streamer-setup) section of the Developer Hub.
+To create a new data stream integration click on the New Data Stream button. Further details on how to setup a stream integration can be found in the [Data Streamer Setup Guides](/unresolved/doc:streamer-setup) section of the Developer Hub.
 
 <div style={{ textAlign: "center" }}>
   <img
@@ -155,7 +155,7 @@ To create a new data stream integration click on the New Data Stream button. Fur
 
 # SMS Forwarding Configuration
 
-The SMS Forwarding configuration allows for receiving Mobile Originated (MO) SMS with a custom HTTP endpoint integration. For the configuration, the customer needs to insert the URL of the server, which shall receive the SMS. Further necessary details on configuration of SMS forwarding can be found in the [SMS Forwarding Service](doc:sms-services-sms-forwarding-service) section of the Developer Hub.
+The SMS Forwarding configuration allows for receiving Mobile Originated (MO) SMS with a custom HTTP endpoint integration. For the configuration, the customer needs to insert the URL of the server, which shall receive the SMS. Further necessary details on configuration of SMS forwarding can be found in the [SMS Forwarding Service](/unresolved/doc:sms-services-sms-forwarding-service) section of the Developer Hub.
 
 <div style={{ textAlign: "center" }}>
   <img
@@ -207,4 +207,4 @@ When the Manual Mode is selected the VPN configuration shown is dependent on the
 </div>
 
 
-The OpenVPN client needs to be installed on the customer server to which the SIMs should access via the VPN client IP. For the OpenVPN connection to the 1NCE network a configuration file and credentials file is needed. These files can be downloaded in this section of the 1NCE Customer Portal. There are two different versions for Windows and for Linux/MacOS available. For more details about the VPN Service, its setup and operation users can proceed to the [VPN Service](doc:network-services-vpn-service) section of the Developer Hub.
+The OpenVPN client needs to be installed on the customer server to which the SIMs should access via the VPN client IP. For the OpenVPN connection to the 1NCE network a configuration file and credentials file is needed. These files can be downloaded in this section of the 1NCE Customer Portal. There are two different versions for Windows and for Linux/MacOS available. For more details about the VPN Service, its setup and operation users can proceed to the [VPN Service](/network-services/network-services-vpn-service/index) section of the Developer Hub.

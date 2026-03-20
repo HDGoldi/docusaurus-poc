@@ -26,7 +26,10 @@ To start using the 1NCE OS Plugin with Datacake you first need to Add a Device o
 
 To finish the configuration in 1NCE OS you can choose one of the two options described below. After configuration is done for 1NCE OS and data flow is enabled devices should be automatically available on datacake to be configured.
 
-> :warning: Please note that by installing this plugin, you are aware that **Data from any device is shared with Datacake, regardless of whether it is configured on Datacake or not**.
+:::warning
+Please note that by installing this plugin, you are aware that **Data from any device is shared with Datacake, regardless of whether it is configured on Datacake or not**.
+:::
+
 
 # Datacake Plugin Installation via Frontend
 
@@ -70,7 +73,7 @@ In that case you will see following `Error` Admin Log:
 ![Plugin Disabled Admin Log](/img/1nce-os/1nce-os-plugins/1nce-os-plugins-data-visualization-datacake/7bd12ee9f260d947df314633b82efd787f5b51857fd9343acfbc59d47af48305-7198c16f848b179a6f822e883917d9ca2e4712a66e52131b329a89a550482c02-plugin_admin_log_1.png)
 </div>
 
-You can use similar approach to the [Cloud Integrations failure monitoring](doc:cloud-integrator-failure-event#cloud-integrations-failure-monitoring) , only for Plugins Cloud Integrator `Error` event will be following:
+You can use similar approach to the [Cloud Integrations failure monitoring](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-failure-event#cloud-integrations-failure-monitoring) , only for Plugins Cloud Integrator `Error` event will be following:
 
 ```json
 {

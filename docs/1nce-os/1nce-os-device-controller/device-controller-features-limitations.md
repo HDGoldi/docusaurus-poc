@@ -4,13 +4,13 @@ title: Features & Limitations
 # Features
 
 * Sending messages to IoT devices using UDP, CoAP and LwM2M.
-* Message for single device and [bulk devices](doc:device-controller-api#bulk-request) are supported.
+* Message for single device and [bulk devices](/1nce-os/1nce-os-device-controller/device-controller-api#bulk-request) are supported.
 * Schedule message to be send when we receive a message from the device or on LwM2M registration and update events (requestMode `SEND_WHEN_ACTIVE`)
 * Cross-protocol trigger: sending a message from the device with any protocol to the 1NCE OS endpoint will trigger sending scheduled messages for all protocols to the device
 * Possibility to cancel a scheduled request
 * Possibility to cancel all scheduled requests for a device
 * See the response from the device for CoAP and LwM2M
-* Possibility to configure [retries](doc:device-controller-api#retry-mechanism) for scheduled CoAP or LwM2M messages.
+* Possibility to configure [retries](/1nce-os/1nce-os-device-controller/device-controller-api#retry-mechanism) for scheduled CoAP or LwM2M messages.
 * Track the status of action requests. Available values:
   * `SCHEDULED`: the request was created with requestMode `SEND_WHEN_ACTIVE`. The request hasn't been sent to device and is still pending for a trigger to occur.
   * `IN_PROGRESS`: the request was created with requestMode `SEND_NOW`, or was scheduled and a trigger occurred
@@ -26,7 +26,10 @@ title: Features & Limitations
 
 # Limitations
 
-> :warning: For CoAP Actions the device should send ACK to Device Controller IP from which the message was received **instead of sending ACK to[CoAP Server](doc:device-integrator-coap)**
+:::warning
+For CoAP Actions the device should send ACK to Device Controller IP from which the message was received **instead of sending ACK to[CoAP Server](/1nce-os/1nce-os-device-integrator/device-integrator-coap)**
+:::
+
 
 * A maximum of 10 Messages can be scheduled per device
 * Maximum 100 devices are allowed to be selected for each request
@@ -38,4 +41,4 @@ title: Features & Limitations
 * The maximum number of send attempts for SEND_WHEN_ACTIVE requests is 5.
 * For CoAP Actions only, the response body (if available) will be visible as either a plain string or a Base64 encoded value, depending on the Content-Format of the response. If no Content-Format is provided, then Base64 is the default one.
 * According to [RFC7252 section 4.8](https://www.rfc-editor.org/rfc/rfc7252.html#section-4.8), the end timeout for a CoAP message with default retransmission (maximum 4 retransmits) and exponential backoff can range from approximately 62 to 93 seconds.
-* To successfully reach device from 1NCE OS, ensure that the account is configured with the appropriate allowed Breakout network settings, which currently include Europe (Frankfurt) and US East (N. Virginia). For more details, see [Internet Breakout](doc:network-services-internet-breakout)
+* To successfully reach device from 1NCE OS, ensure that the account is configured with the appropriate allowed Breakout network settings, which currently include Europe (Frankfurt) and US East (N. Virginia). For more details, see [Internet Breakout](/network-services/network-services-internet-breakout)

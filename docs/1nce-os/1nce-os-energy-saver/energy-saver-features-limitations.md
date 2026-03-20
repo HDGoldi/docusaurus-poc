@@ -52,7 +52,7 @@ This will result in a nicely formatted JSON-message that is also human-readable:
 }
 ```
 
-Desired template can be edited and tested using [Template Tester](doc:energy-saver-template-tester)
+Desired template can be edited and tested using [Template Tester](/1nce-os/1nce-os-energy-saver/energy-saver-template-tester)
 
 ## Limitations
 

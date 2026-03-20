@@ -19,7 +19,7 @@ description: How is the device locator working
 # Cell Tower Location
 
 The Device Locator provides an approximate position of IoT devices by analyzing data from network events when creating a new PDP Context/Session used for data transmission.  
-This feature has to be activated in the portal. To view latest particular device cellTower location resolution attempts [Activity endpoint](doc:device-locator-api#get-device-activity) can be used.
+This feature has to be activated in the portal. To view latest particular device cellTower location resolution attempts [Activity endpoint](/1nce-os/1nce-os-device-locator/device-locator-api#get-device-activity) can be used.
 
 <div style={{textAlign: 'center'}}>
 <img src="/img/1nce-os/1nce-os-device-locator/4a6bdef3eda26571384ca493002ca95034a3540c4b388e35c19e7d9185c12b70-enabling-cell-tower-location.png" alt="Enabling the Cell Tower location feature" width="70%" />
@@ -80,7 +80,7 @@ I acknowledge that activating the location feature involves processing nearby Ce
 
 # Via Energy Saver
 
-If the Energy Saver with `custom_type` in the JSON-Template is used, the location from the device can be obtained over the Energy Saver output. Visit [Energy Saver](doc:energy-saver-device-locator-integration) for more details.
+If the Energy Saver with `custom_type` in the JSON-Template is used, the location from the device can be obtained over the Energy Saver output. Visit [Energy Saver](/1nce-os/1nce-os-energy-saver/energy-saver-device-locator-integration) for more details.
 
 ```json
 {
@@ -111,14 +111,14 @@ If the Energy Saver with `custom_type` in the JSON-Template is used, the locatio
 
 # Via LwM2M
 
-If LwM2M is used, the following Resource Addresses can be used to provide the device location: `/6/0/0` (latitude, Float), `/6/0/1` (longitude, Float) and `/6/0/5` (timestamp, Time). Visit our [LwM2M Service Documentation](doc:lwm2m-device-locator-integration) for more details on integrating LwM2M with the device locator.
+If LwM2M is used, the following Resource Addresses can be used to provide the device location: `/6/0/0` (latitude, Float), `/6/0/1` (longitude, Float) and `/6/0/5` (timestamp, Time). Visit our [LwM2M Service Documentation](/1nce-os/1nce-os-lwm2m/lwm2m-device-locator-integration) for more details on integrating LwM2M with the device locator.
 
 # Geofencing
 
-The Geofencing Service allows setting virtual boundaries for devices. If a device is crossing a geofence (entering or exiting, configurable), a [geofence event](doc:cloud-integrator-output-format#geofence) will be generated and sent to the customer's Cloud Integrator Webhook integration or the AWS Integration.
+The Geofencing Service allows setting virtual boundaries for devices. If a device is crossing a geofence (entering or exiting, configurable), a [geofence event](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format#geofence) will be generated and sent to the customer's Cloud Integrator Webhook integration or the AWS Integration.
 
-To start using Geofencing you need to purchase "Whereabouts - Geofencing" [credits](doc:1nce-os-device-locator#geofence-credits) first. You can use following [Get customer settings](https://help.1nce.com/dev-hub/reference/get_v1-settings-1nceos) API endpoint to check if credits are already assigned to you.
-Once the credits are available, you can create your first geofence using the [Create Geofence](https://help.1nce.com/dev-hub/reference/post_v1-locate-geofences) API endpoint. For additional info about Geofence creation use following [page](doc:evice-locator-geofencing-guide).
+To start using Geofencing you need to purchase "Whereabouts - Geofencing" [credits](/1nce-os/1nce-os-device-locator/index#geofence-credits) first. You can use following [Get customer settings](https://help.1nce.com/dev-hub/reference/get_v1-settings-1nceos) API endpoint to check if credits are already assigned to you.
+Once the credits are available, you can create your first geofence using the [Create Geofence](https://help.1nce.com/dev-hub/reference/post_v1-locate-geofences) API endpoint. For additional info about Geofence creation use following [page](/unresolved/doc:evice-locator-geofencing-guide).
 
 Main use cases for geofencing are:
 
@@ -135,6 +135,6 @@ Additional credits can be purchased via the Orders tab in the 1NCE Portal by sel
 
 If all credits are depleted or expired then the Geofencing feature is automatically turned off, which means the following:
 
-* you will no longer receive exit or enter [geofence events](doc:1nce-os-cloud-integrator#geofence-events) via your Cloud Integration if the device breaches any existing geofence.
+* you will no longer receive exit or enter [geofence events](/1nce-os/1nce-os-cloud-integrator/index#geofence-events) via your Cloud Integration if the device breaches any existing geofence.
 * you will not be able to create any new Geofences, only update or delete existing ones.
 * existing Geofences and associated latest device enter or exit events will continue to exist in passive mode until extra credits are purchased.

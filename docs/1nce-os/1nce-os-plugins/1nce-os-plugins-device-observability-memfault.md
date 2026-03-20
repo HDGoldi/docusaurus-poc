@@ -19,9 +19,12 @@ Memfault provides observability purpose-built for devices. Compatible with const
 
 To install Plugin in 1NCE OS you can choose one of the two options described below. After configuration is done you can use the [Demo script for zephyr](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/plugin_system/nce_debug_memfault_demo) from 1NCE OS to showcase Memfault Plugin features and understand the capabilities of 1NCE OS SDK.
 
-> :warning: Please note that during Memfault plugin installation your Organization's email address will be used for the new Memfault account. You will need access to this email to receive confirmation email from Memfault after Sign up.
->
-> :warning: Please note that by installing this plugin, you are aware that **data is shared with Memfault**.
+:::warning
+Please note that during Memfault plugin installation your Organization's email address will be used for the new Memfault account. You will need access to this email to receive confirmation email from Memfault after Sign up.
+
+:warning: Please note that by installing this plugin, you are aware that **data is shared with Memfault**.
+:::
+
 
 # Memfault  Plugin Installation via Frontend
 
@@ -35,7 +38,10 @@ The Plugin can be installed in [1NCE OS](https://portal.1nce.com/portal/customer
 
 There is no need to provide any extra information, so you can immediatelly proceed with the installation by pressing the "Install" button on the "Plugin Details page."
 
-> :warning: Please note that after pressing install button system automatically creates Memfault account with your 1NCE Organization's email address, which cannot be changed afterwards.
+:::warning
+Please note that after pressing install button system automatically creates Memfault account with your 1NCE Organization's email address, which cannot be changed afterwards.
+:::
+
 
 <div style={{textAlign: 'center'}}>
 <img src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/b2d56b738d8f84c0dd3fe459a56681e0856a8b250da5fb8636159ec5466e6bb3-plugin-details.jpg" alt="Memfault plugin details" width="90%" />
@@ -87,7 +93,10 @@ curl --location --request POST 'https://api.1nce.com/management-api/v1/partners/
 
 To get details or uninstall your Memfault integration via API, you can use the same endpoints you would use for a generic Plugin described in the [API Explorer](ref:api-welcome).
 
-> :warning: Memfault portal Url to finalize registration can be retrieved only in the response of the Get Plugin Details endpoint. 
+:::warning
+Memfault portal Url to finalize registration can be retrieved only in the response of the Get Plugin Details endpoint.
+:::
+
 
 # Utilizing Memfault plugin
 
@@ -106,7 +115,7 @@ To utilize proxy functionality please use one of the following endpoints for CoA
 * `coap://coap.proxy.os.1nce.com:5683`
 * `coaps://coaps.proxy.os.1nce.com:5684`.
 
-  *If CoAPs is required to be used please refer to[DTLS encryption for CoAP](doc:device-integrator-coap#dtls-encryption-for-coap).*
+  *If CoAPs is required to be used please refer to[DTLS encryption for CoAP](/1nce-os/1nce-os-device-integrator/device-integrator-coap#dtls-encryption-for-coap).*
 
 ### Coap to HTTPS Proxy functionality
 
@@ -123,7 +132,7 @@ After Memfault plugin installation is done you can utilize [Demo script for zeph
 
 # Features and Limitations
 
-General [Plugins features and limitations](doc:1nce-os-plugins-features-limitations) applies to Memfault.\
+General [Plugins features and limitations](/1nce-os/1nce-os-plugins/1nce-os-plugins-features-limitations) applies to Memfault.\
 There are still some individual Features and Limitations applied to the Memfault plugin:
 
 ## Features

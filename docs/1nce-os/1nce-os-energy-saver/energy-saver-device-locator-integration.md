@@ -1,13 +1,13 @@
 ---
 title: Device Locator Integration
 ---
-It is possible for the device to send binary messages, use the Energy Saver to decode these messages, and send valid GPS data to the [device locator](doc:1nce-os-device-locator) service.\
+It is possible for the device to send binary messages, use the Energy Saver to decode these messages, and send valid GPS data to the [device locator](/1nce-os/1nce-os-device-locator/index) service.\
 To accomplish this integration, it is required to create an Energy Saver template and include the `custom_type` in the JSON template with the names `location_lat` and `location_long` to mark the latitude and longitude values respectively.\
 GPS data can be:
 
-* Visualized in the 1NCE OS portal [device inspector](doc:device-inspector-features-limitations) & [device locator](doc:1nce-os-device-locator) tabs.
-* Used via [API](doc:device-locator-api).
-* Forwarded to [cloud integrator](doc:1nce-os-cloud-integrator).
+* Visualized in the 1NCE OS portal [device inspector](/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations) & [device locator](/1nce-os/1nce-os-device-locator/index) tabs.
+* Used via [API](/1nce-os/1nce-os-device-locator/device-locator-api).
+* Forwarded to [cloud integrator](/1nce-os/1nce-os-cloud-integrator/index).
 
 ### Template example
 

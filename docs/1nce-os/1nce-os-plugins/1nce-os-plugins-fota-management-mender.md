@@ -24,7 +24,10 @@ To start using the 1NCE OS Plugin with Mender you first need to create a hosted 
 
 To finish the configuration in 1NCE OS you can choose one of the two options described below. After configuration is done you can use the [Demo script for zephyr](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/plugin_system/nce_fota_mender_demo) from 1NCE OS to showcase Mender Plugin features and understand the capabilities of 1NCE OS SDK & FOTA client.
 
-> :warning: Please note that by installing this plugin, you are aware that **data is shared with Mender**.
+:::warning
+Please note that by installing this plugin, you are aware that **data is shared with Mender**.
+:::
+
 
 # Mender  Plugin Installation via Frontend
 
@@ -85,7 +88,7 @@ The Mender server stores and controls the deployment of software updates over th
 
 * `coap://coap.proxy.os.1nce.com:5683/mender`
 * `coaps://coaps.proxy.os.1nce.com:5684/mender`.\
-  *If CoAPs is required to be used please refer to[DTLS encryption for CoAP](doc:device-integrator-coap#dtls-encryption-for-coap).*
+  *If CoAPs is required to be used please refer to[DTLS encryption for CoAP](/1nce-os/1nce-os-device-integrator/device-integrator-coap#dtls-encryption-for-coap).*
 
 ### Coap to HTTPS Proxy functionality
 
@@ -125,7 +128,7 @@ To use the 1NCE OS Plugin for Release and deployment management in Mender, pleas
 
 # Features and Limitations
 
-General [Plugins features and limitations](doc:1nce-os-plugins-features-limitations) applies to Mender. There are still some individual Limitations applied for Mender:
+General [Plugins features and limitations](/1nce-os/1nce-os-plugins/1nce-os-plugins-features-limitations) applies to Mender. There are still some individual Limitations applied for Mender:
 
 ## Limitations
 
