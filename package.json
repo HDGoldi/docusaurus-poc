@@ -21,7 +21,9 @@
     "convert:htmlblocks": "tsx scripts/06-convert-htmlblocks.ts",
     "convert:tables": "tsx scripts/07-convert-tables.ts",
     "convert:links": "tsx scripts/08-convert-links.ts",
-    "convert:admonitions": "tsx scripts/09-convert-admonitions.ts"
+    "convert:admonitions": "tsx scripts/09-convert-admonitions.ts",
+    "convert:sidebars": "tsx scripts/10-generate-sidebars.ts",
+    "convert:pipeline": "tsx scripts/run-pipeline.ts"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",
