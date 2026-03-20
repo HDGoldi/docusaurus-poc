@@ -18,7 +18,7 @@ Continuously roll out new firmware to ensure compliance with security regulation
 
 To start using the 1NCE OS Plugin with Mender you first need to create a hosted Mender account and get an Organization token on the Mender side. Starting from the main page of Mender, choose *My organization* under the dropdown on your profile. **Keep the Organization token because it is necessary for creating the plugin in the 1NCE OS system**.
 
-<Image alt="Organization Token in Mender" align="center" width="90% " src="https://files.readme.io/8da6b4c-Mender_Organization_Token.png">
+<Image alt="Organization Token in Mender" align="center" width="90% " src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-fota-management-mender/8da6b4c-Mender_Organization_Token.png">
   Organization Token in Mender
 </Image>
 
@@ -32,13 +32,13 @@ To finish the configuration in 1NCE OS you can choose one of the two options des
 
 Plugin can be installed in [1NCE OS](https://portal.1nce.com/portal/customer/1nceos) portal "Plugins" tab by choosing "Mender".
 
-<Image alt="Mender Plugin" align="center" width="35% " src="https://files.readme.io/8a87199-mender_plugin.png">
+<Image alt="Mender Plugin" align="center" width="35% " src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-fota-management-mender/8a87199-mender_plugin.png">
   Mender Plugin
 </Image>
 
 To install a Mender Plugin you should provide the Organization Token from Mender.
 
-<Image alt="Mender plugin installation" align="center" width="90%" src="https://files.readme.io/f177ed7-mender_plugin_configuration.png">
+<Image alt="Mender plugin installation" align="center" width="90%" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-fota-management-mender/f177ed7-mender_plugin_configuration.png">
   Mender plugin installation
 </Image>
 
@@ -111,11 +111,11 @@ CoAP to HTTPS proxy's main functionality is to "translate" the CoAP requests to 
 
 By proxying the POST request to [Mender auth endpoint](https://docs.mender.io/api/#device-api-device-authentication) device would show up in mender as "Pending". The device needs to be accepted by selecting "Accept device".
 
-<Image alt="Pending Device in Mender" align="center" width="90%" src="https://files.readme.io/fb46ee6-Mender_Device_Pending.png">
+<Image alt="Pending Device in Mender" align="center" width="90%" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-fota-management-mender/fb46ee6-Mender_Device_Pending.png">
   Pending Device in Mender
 </Image>
 
-<Image alt="Accepting Device in Mender" align="center" width="90%" src="https://files.readme.io/57a326d-Mender_device_acceptance2.png">
+<Image alt="Accepting Device in Mender" align="center" width="90%" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-fota-management-mender/57a326d-Mender_device_acceptance2.png">
   Accepting Device in Mender
 </Image>
 
@@ -141,7 +141,7 @@ General [Plugins features and limitations](doc:1nce-os-plugins-features-limitati
 
 If the configuration is completed devices should be accepted and available on the Mender devices list. 
 
-<Image alt="Device fleet in Datacake" align="center" width="85%" border={true} src="https://files.readme.io/49eae21-mender_device.png">
+<Image alt="Device fleet in Datacake" align="center" width="85%" border={true} src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-fota-management-mender/49eae21-mender_device.png">
   Device fleet in Datacake
 </Image>
 
@@ -149,12 +149,12 @@ If the configuration is completed devices should be accepted and available on th
 
 In the case of an active deployment, it should be possible to track deployment statuses such as 'downloading,' 'installing,' 'success,' and other relevant [statuses](https://docs.mender.io/api/#management-api-deployments-list-all-devices-in-deployment-responses).
 
-<Image alt="Deployment with status 'installing'" align="center" border={true} src="https://files.readme.io/5e9f96b-6-Installing.png">
+<Image alt="Deployment with status 'installing'" align="center" border={true} src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-fota-management-mender/5e9f96b-6-Installing.png">
   Deployment with status 'installing'
 </Image>
 
 In device deployment history it should be available to see all deployments.
 
-<Image alt="Device deployment history" align="center" border={true} src="https://files.readme.io/c06adcd-8-Deployment_log.png">
+<Image alt="Device deployment history" align="center" border={true} src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-fota-management-mender/c06adcd-8-Deployment_log.png">
   Device deployment history
 </Image>

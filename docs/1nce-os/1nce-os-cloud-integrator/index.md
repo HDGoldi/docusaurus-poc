@@ -1,7 +1,7 @@
 ---
 title: Cloud Integrator
 ---
-<Image align="center" alt="Cloud Integrator as part of the IoT Integrator" border={false} caption="Cloud Integrator as part of the IoT Integrator" src="https://files.readme.io/d496e66-IoT_Integrator.png" width="80%" />
+<Image align="center" alt="Cloud Integrator as part of the IoT Integrator" border={false} caption="Cloud Integrator as part of the IoT Integrator" src="/img/1nce-os/1nce-os-cloud-integrator/d496e66-IoT_Integrator.png" width="80%" />
 
 The Cloud Integrator allows to create, manage and use 1NCE webhooks and direct AWS integrations. This provides the possibility for a customer to forward data from 1NCE services to customer-defined HTTPS endpoints or an AWS account with real-time information. Forwarded data depends on the selected event type.
 

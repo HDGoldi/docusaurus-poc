@@ -12,7 +12,7 @@ This section covers the usage of the 1NCE Portal and the SMS Console to send MT-
 2. Select the **SIM** to which the MT-SMS messages should be issued from the list of all SIM cards.
 3. Navigate to the **SMS Tab** at the bottom of the SIM details page to access the SMS Console.
 
-<Image title="SMS_Console_01.png" alt={935} align="center" width="80%" border={true} src="https://files.readme.io/c31f7b3-SMS_Console_01.png">
+<Image title="SMS_Console_01.png" alt={935} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-sms/examples-mt-sms/c31f7b3-SMS_Console_01.png">
   1NCE SMS Console for a specific SIM Card.
 </Image>
 
@@ -20,7 +20,7 @@ This section covers the usage of the 1NCE Portal and the SMS Console to send MT-
 5. Add a **7-Bit GSM Alphabet Text Payload** which should have a maximum length of **160 Characters**. Using the SMS Console only text messages with Data Coding Scheme (DCS) 0 and no Concatenated SMS are possible. Please refer to the <a href="https://help.1nce.com/dev-hub/docs/examples-mt-sms#sending-mt-sms">1NCE SMS API examples</a> for more advanced features.
 6. Click the **Send** button to issue the MT-SMS towards the 1NCE SIM device.
 
-<Image title="SMS_Console_02.png" alt={961} align="center" width="80%" border={true} src="https://files.readme.io/e08b43b-SMS_Console_02.png">
+<Image title="SMS_Console_02.png" alt={961} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-sms/examples-mt-sms/e08b43b-SMS_Console_02.png">
   Monitoring the delivery state of an MT-SMS using the SMS Console.
 </Image>
 

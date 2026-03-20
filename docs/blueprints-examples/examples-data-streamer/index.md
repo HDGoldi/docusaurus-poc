@@ -8,12 +8,12 @@ The 1NCE Data Streamer offers multiple integration possibilities. For each of th
 <div class="button-flex-container">
 	<div class="button-flex-item">
     <a href="examples-data-streamer-http">
-      	<img src="https://files.readme.io/d47972b-rest_api.svg"></img> 
+      	<img src="/img/blueprints-examples/examples-data-streamer/d47972b-rest_api.svg"></img> 
     </a>
 	</div>
 <div class="button-flex-item">
   <a href="examples-data-streamer-kinesis">
-		<img src="https://files.readme.io/c2c9384-aws_kinesis.svg"> </img>
+		<img src="/img/blueprints-examples/examples-data-streamer/c2c9384-aws_kinesis.svg"> </img>
   </a>
 	</div>
 </div>

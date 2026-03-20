@@ -2,7 +2,7 @@
 title: Services Overview
 description: A general overview of the services from 1NCE OS
 ---
-<Image align="center" width="80% " src="https://files.readme.io/8620eea-1NCE-OS-Grafiken-202211221024_2.png" />
+<Image align="center" width="80% " src="/img/1nce-os/1nce-os-services-overview/8620eea-1NCE-OS-Grafiken-202211221024_2.png" />
 
 # 1NCE OS Overview
 

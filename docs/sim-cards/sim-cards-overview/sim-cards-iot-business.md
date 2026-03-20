@@ -9,7 +9,7 @@ This section will cover the basics about the physical IoT SIM Card Business form
   align="center"
   alt="Overview of the 1NCE 3in1 IoT SIM Card Business, which includes the 2FF, 3FF and 4FF form factors."
   caption="Overview of the 1NCE 3in1 IoT SIM Card Business, which includes the 2FF, 3FF and 4FF form factors."
-  src="https://files.readme.io/613cd18-cliu9g5y5003i0rqmejpnayyt-sim-card.max.png"
+  src="/img/sim-cards/sim-cards-overview/sim-cards-iot-business/613cd18-cliu9g5y5003i0rqmejpnayyt-sim-card.max.png"
   sizing="25%"
 />
 
@@ -32,7 +32,7 @@ Over the years, with the hardware miniaturization and especially IoT use cases f
   align="center"
   alt="1NCE_4FF_SIM_Dimensions.png"
   caption="1NCE IoT SIM Card Business 4FF reference dimensions and pin assignment as of ETSI TS 102 221."
-  src="https://files.readme.io/20aeb83-1NCE_4FF_SIM_Dimensions.png"
+  src="/img/sim-cards/sim-cards-overview/sim-cards-iot-business/20aeb83-1NCE_4FF_SIM_Dimensions.png"
 />
 
 
@@ -119,7 +119,7 @@ As 4FF is the smallest form factor that minimizes the plastic-backed SIM Card to
   align="center"
   alt="1NCE_FlexSIM.png"
   caption="1NCE 3in1 IoT SIM Card Business inside the half-size breakout card used for easier shipping and packaging."
-src="https://files.readme.io/a2dce8795d72eda003b894480f74b2ca4184cc2a229c63e32e0fc2a1dbf7baab-SIMCBusiness.png"
+src="/img/sim-cards/sim-cards-overview/sim-cards-iot-business/a2dce8795d72eda003b894480f74b2ca4184cc2a229c63e32e0fc2a1dbf7baab-SIMCBusiness.png"
   sizing="50"
 />
 

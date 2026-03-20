@@ -5,7 +5,7 @@ To see the Data Historian in the [1NCE OS](https://portal.1nce.com/portal/custom
 
 The device History is presented like this chart:
 
-<Image title="aefd53d-QlETndgH.png" alt={1249} width="80%" src="https://files.readme.io/fd17328-device_history_1_day.png">
+<Image title="aefd53d-QlETndgH.png" alt={1249} width="80%" src="/img/1nce-os/1nce-os-device-inspector/device-inspector-historian-web-interface/fd17328-device_history_1_day.png">
   Device History screen for the last day.
 </Image>
 
@@ -16,6 +16,6 @@ By default, the portal tries to convert Base64 messages to JSON format. If the r
 
 As mentioned, we can see the messages statistics of the last 7 days as well when we change the period selector above the chart:
 
-<Image title="fa17240-cU0kR63Z.png" alt={1245} width="80%" src="https://files.readme.io/7fd4fb5-device_history_7_days.png">
+<Image title="fa17240-cU0kR63Z.png" alt={1245} width="80%" src="/img/1nce-os/1nce-os-device-inspector/device-inspector-historian-web-interface/7fd4fb5-device_history_7_days.png">
   Device History screen for last 7 days.
 </Image>

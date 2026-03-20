@@ -16,17 +16,17 @@ For a detailed guide on how to install the VPN Client click on one of the follow
 <div class="button-flex-container">
 	<div class="button-flex-item">
     <a href="examples-vpn-windows">
-      	<img src="https://files.readme.io/13f2388-windows.svg"></img> 
+      	<img src="/img/blueprints-examples/examples-vpn/13f2388-windows.svg"></img> 
     </a>
 	</div>
 <div class="button-flex-item">
   <a href="examples-vpn-linux">
-		<img src="https://files.readme.io/193df98-linux.svg"> </img>
+		<img src="/img/blueprints-examples/examples-vpn/193df98-linux.svg"> </img>
   </a>
 	</div>
 <div class="button-flex-item">
   <a href="examples-vpn-macos">
-		<img src="https://files.readme.io/1916674-macos.svg"> </img>
+		<img src="/img/blueprints-examples/examples-vpn/1916674-macos.svg"> </img>
   </a>
 	</div>
 </div>

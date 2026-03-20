@@ -41,4 +41,4 @@ Besides, the initial OAuth requests, every other 1NCE API call requires authoriz
 
 To give the API Explorer a try and to complete the code samples, insert the Access Bearer Token obtained from the [Create Access Token](ref:postaccesstokenpost) API call in the _OAuth2 Auth Bearer_ field. Afterwards, any API requests in the API Explorer as well as the code samples can be used to try the functionality.
 
-![1139](https://files.readme.io/31edaa2-api_explorer_bearer_auth.png "api_explorer_bearer_auth.png")
+![1139](/img/reference/api-introduction/api-authorization/31edaa2-api_explorer_bearer_auth.png "api_explorer_bearer_auth.png")

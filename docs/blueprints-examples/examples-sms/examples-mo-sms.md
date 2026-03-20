@@ -12,7 +12,7 @@ This section covers how to use the SMS Console inside the 1NCE Portal to view th
 2. Select the **SIM** for which the MO-SMS should be viewed from the list of all SIM cards.
 3. Navigate to the **SMS Tab** at the bottom of the SIM details page to access the SMS Console.
 
-<Image title="SMS_Console_MO.png" alt={1234} align="center" width="80%" border={true} src="https://files.readme.io/a9af544-SMS_Console_MO.png">
+<Image title="SMS_Console_MO.png" alt={1234} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-sms/examples-mo-sms/a9af544-SMS_Console_MO.png">
   List view of the SMS Console showing MT- and MO-SMS messages.
 </Image>
 

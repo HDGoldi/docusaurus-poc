@@ -16,10 +16,10 @@ GPS data can be:
 * Forwarded to [Cloud integrator](doc:1nce-os-cloud-integrator).
 * Used via [API](doc:device-locator-api).
 
-<Image alt="Location data from LwM2M Device in Historian" align="center" width="70%" src="https://files.readme.io/c8307f0fcd4da88dcccd304278e2c819a1e88e1267c05c917c64004e98b52fdf-Screenshot_2024-09-12_173915.png">
+<Image alt="Location data from LwM2M Device in Historian" align="center" width="70%" src="/img/1nce-os/1nce-os-lwm2m/lwm2m-device-locator-integration/c8307f0fcd4da88dcccd304278e2c819a1e88e1267c05c917c64004e98b52fdf-Screenshot_2024-09-12_173915.png">
   Location data from LwM2M Device in Historian
 </Image>
 
-<Image alt="GPS Location in Device Locator from LwM2M data" align="center" width="70%" src="https://files.readme.io/50d95f4d622cef3a90aa3e2b9b827ddaf68ba05f67d468a12e444064b814a3a1-Screenshot_2024-09-12_173822.png">
+<Image alt="GPS Location in Device Locator from LwM2M data" align="center" width="70%" src="/img/1nce-os/1nce-os-lwm2m/lwm2m-device-locator-integration/50d95f4d622cef3a90aa3e2b9b827ddaf68ba05f67d468a12e444064b814a3a1-Screenshot_2024-09-12_173822.png">
   GPS Location in Device Locator from LwM2M data
 </Image>

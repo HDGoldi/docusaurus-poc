@@ -204,13 +204,13 @@ This initial version's main target is to allow customers to connect their Things
 
 ## Primary Case
 
-<Image alt="Troubleshooting from the coap endpoint" width="80% " src="https://files.readme.io/fd91e61-troubleshootingcoap.png">
+<Image alt="Troubleshooting from the coap endpoint" width="80% " src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-freertos/fd91e61-troubleshootingcoap.png">
   Troubleshooting from the coap endpoint
 </Image>
 
 ## Fallback
 
-<Image alt="Troubleshooting from Portal" width="80% " src="https://files.readme.io/ddf7711-troubleshootingcoap2.png">
+<Image alt="Troubleshooting from Portal" width="80% " src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-freertos/ddf7711-troubleshootingcoap2.png">
   Troubleshooting from Portal
 </Image>
 

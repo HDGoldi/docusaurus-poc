@@ -16,7 +16,7 @@ The network settings contain the basic information to get the SIM Cards connecte
 
 <div style={{ textAlign: "center" }}>
   <img
-    src="https://files.readme.io/5f971fc-network-settings.jpg"
+    src="/img/1nce-portal/portal-configuration/5f971fc-network-settings.jpg"
     alt="Network Settings in the Configuration tab."
     style={{ maxWidth: "100%" }}
   />
@@ -47,7 +47,7 @@ For more information on the 1NCE Internet Breakout Service, please visit the [In
 
 <div style={{ textAlign: "center" }}>
   <img
-    src="https://files.readme.io/1cca9e3-220920_Breakout_Settings.PNG"
+    src="/img/1nce-portal/portal-configuration/1cca9e3-220920_Breakout_Settings.PNG"
     alt="Configuration of Breakout settings for Automatic or Manual mode."
     style={{ maxWidth: "100%" }}
   />
@@ -83,7 +83,7 @@ For **MO-SMS** no notification will be shown in the 1NCE Portal or Data Stream. 
 
 <div style={{ textAlign: "center" }}>
   <img
-    src="https://files.readme.io/8ee837c-1NCE_Limits.png"
+    src="/img/1nce-portal/portal-configuration/8ee837c-1NCE_Limits.png"
     alt="Monthly Limits configuration for Data and MO-/MT-SMS."
     style={{ maxWidth: "100%" }}
   />
@@ -101,7 +101,7 @@ A global IMEI Lock can be set for all SIM Cards of the organization. The IMEI lo
 
 <div style={{ textAlign: "center" }}>
   <img
-    src="https://files.readme.io/426b669-1NCE_IMEI_Lock.png"
+    src="/img/1nce-portal/portal-configuration/426b669-1NCE_IMEI_Lock.png"
     alt="Global IMEI SIM lock settings."
     style={{ width: "80%", maxWidth: "100%" }}
   />
@@ -119,7 +119,7 @@ Automatic Top-Ups can be configured globally for all SIMs of an organization. Th
 
 <div style={{ textAlign: "center" }}>
   <img
-    src="https://files.readme.io/4bcd521-1NCE_Auto_Top-Up.PNG"
+    src="/img/1nce-portal/portal-configuration/4bcd521-1NCE_Auto_Top-Up.PNG"
     alt="Auto Top-Up configuration for enabling global SIM top up."
     style={{ width: "80%", maxWidth: "100%" }}
   />
@@ -141,7 +141,7 @@ To create a new data stream integration click on the New Data Stream button. Fur
 
 <div style={{ textAlign: "center" }}>
   <img
-    src="https://files.readme.io/dc28289-1NCE_Data_Streamer.PNG"
+    src="/img/1nce-portal/portal-configuration/dc28289-1NCE_Data_Streamer.PNG"
     alt="Overview of the current Data Streamer integrations."
     style={{ width: "80%", maxWidth: "100%" }}
   />
@@ -159,7 +159,7 @@ The SMS Forwarding configuration allows for receiving Mobile Originated (MO) SMS
 
 <div style={{ textAlign: "center" }}>
   <img
-    src="https://files.readme.io/3c9f0a2-1NCE_SMS_Forwarder.PNG"
+    src="/img/1nce-portal/portal-configuration/3c9f0a2-1NCE_SMS_Forwarder.PNG"
     alt="Configuration of the SMS Forwarding Service."
     style={{ maxWidth: "100%" }}
   />
@@ -181,7 +181,7 @@ Dependent on the selected Internet Breakout option, OpenVPN might not be availab
 
 <div style={{ textAlign: "center" }}>
   <img
-    src="https://files.readme.io/c117bf2-vpn-auto.jpg"
+    src="/img/1nce-portal/portal-configuration/c117bf2-vpn-auto.jpg"
     alt="VPN not available in Automatic Mode, the Breakout Setting needs to be changed to a manual region."
     style={{ maxWidth: "100%" }}
   />
@@ -197,7 +197,7 @@ When the Manual Mode is selected the VPN configuration shown is dependent on the
 
 <div style={{ textAlign: "center" }}>
   <img
-    src="https://files.readme.io/f7e1dbe-vpn-eu.jpg"
+    src="/img/1nce-portal/portal-configuration/f7e1dbe-vpn-eu.jpg"
     alt="Specific configuration for Manual Mode (Europe) breakout."
     style={{ maxWidth: "100%" }}
   />

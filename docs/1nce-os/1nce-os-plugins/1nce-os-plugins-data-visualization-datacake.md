@@ -16,9 +16,9 @@ Adding a device is as simple as a click, unlocking a suite of features including
 
 To start using the 1NCE OS Plugin with Datacake you first need to Add a Device on the Datacake side. For that, please refer to [1NCE OS in Datacake](https://docs.datacake.de/integrations/1nce-os). Starting from the main page of Datacake, choose _+ Add Device_ under _Devices_ in the left menu, then _Connect 1NCE Devices_. **Keep the Workspace ID because it is necessary for creating the plugin in 1NCE OS system**.
 
-<Image align="center" alt="1NCE in Datacake" border={false} caption="1NCE in Datacake" src="https://files.readme.io/273a0a1-datacake.png" width="60% " />
+<Image align="center" alt="1NCE in Datacake" border={false} caption="1NCE in Datacake" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-data-visualization-datacake/273a0a1-datacake.png" width="60% " />
 
-<Image align="center" alt="Workspace ID in Datacake" border={false} caption="Workspace ID in Datacake" src="https://files.readme.io/668208b-Datacake_worskpace_id.png" width="60% " />
+<Image align="center" alt="Workspace ID in Datacake" border={false} caption="Workspace ID in Datacake" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-data-visualization-datacake/668208b-Datacake_worskpace_id.png" width="60% " />
 
 To finish the configuration in 1NCE OS you can choose one of the two options described below. After configuration is done for 1NCE OS and data flow is enabled devices should be automatically available on datacake to be configured.
 
@@ -30,11 +30,11 @@ To finish the configuration in 1NCE OS you can choose one of the two options des
 
 Plugin can be installed in [1NCE OS](https://portal.1nce.com/portal/customer/1nceos) portal "Plugins" tab by choosing "Datacake".
 
-<Image align="center" alt="Datacake Plugin" border={false} caption="Datacake Plugin" src="https://files.readme.io/63a764e-datacake_plugin.png" width="35% " />
+<Image align="center" alt="Datacake Plugin" border={false} caption="Datacake Plugin" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-data-visualization-datacake/63a764e-datacake_plugin.png" width="35% " />
 
 To install a Datacake Plugin you should provide the Workspace Id from Datacake.
 
-<Image align="center" alt="Datacake plugin installation" border={false} caption="Datacake plugin installation" src="https://files.readme.io/2376da8-datacake_plugin_configuration.png" width="70%" />
+<Image align="center" alt="Datacake plugin installation" border={false} caption="Datacake plugin installation" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-data-visualization-datacake/2376da8-datacake_plugin_configuration.png" width="70%" />
 
 # Datacake plugin installation via API
 
@@ -58,7 +58,7 @@ curl --location --request POST 'https://api.1nce.com/management-api/v1/partners/
 There is possibility that data forwarding from the 1NCEOS to the Datacake system can fail due to misconfiguration or temporary downtime.
 In that case you will see following `Error` Admin Log:
 
-<Image align="center" alt="Plugin Disabled Admin Log" border={false} src="https://files.readme.io/7bd12ee9f260d947df314633b82efd787f5b51857fd9343acfbc59d47af48305-7198c16f848b179a6f822e883917d9ca2e4712a66e52131b329a89a550482c02-plugin_admin_log_1.png" />
+<Image align="center" alt="Plugin Disabled Admin Log" border={false} src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-data-visualization-datacake/7bd12ee9f260d947df314633b82efd787f5b51857fd9343acfbc59d47af48305-7198c16f848b179a6f822e883917d9ca2e4712a66e52131b329a89a550482c02-plugin_admin_log_1.png" />
 
 You can use similar approach to the [Cloud Integrations failure monitoring](doc:cloud-integrator-failure-event#cloud-integrations-failure-monitoring) , only for Plugins Cloud Integrator `Error` event will be following:
 
@@ -86,6 +86,6 @@ To restart, get, or uninstall your Datacake integration via API, you can use the
 
 If the configuration is completed in Datacake dashboards for the device fleet can be created for data visualization.
 
-<Image align="center" alt="Device fleet in Datacake" border={false} caption="Device fleet in Datacake" src="https://files.readme.io/001d721-datacake_data_fleet.png" width="85%" />
+<Image align="center" alt="Device fleet in Datacake" border={false} caption="Device fleet in Datacake" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-data-visualization-datacake/001d721-datacake_data_fleet.png" width="85%" />
 
-<Image align="center" alt="Datacake dashaboard" border={false} caption="Datacake dashboard" src="https://files.readme.io/b442ade-Datacake_dashboards.png" width="70%" />
+<Image align="center" alt="Datacake dashaboard" border={false} caption="Datacake dashboard" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-data-visualization-datacake/b442ade-Datacake_dashboards.png" width="70%" />

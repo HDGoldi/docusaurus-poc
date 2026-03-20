@@ -11,7 +11,7 @@ The multi-IMSI SIM Card includes an applet that can manage the usage of up to th
 
 The below picture describes the overall concept of the SIM set and architecture. 
 
-<Image alt="Overall Multi-IMSI Applet architecture" align="center" border={true} src="https://files.readme.io/a8834f18e5d73b7ad2a89a7f2868c531c987a09db1740b98632c6754734d3a2c-overal_multi-imsi.png">
+<Image alt="Overall Multi-IMSI Applet architecture" align="center" border={true} src="/img/sim-cards/1nce-brazil-multi-imsi/1nce-brazil-feature-description/a8834f18e5d73b7ad2a89a7f2868c531c987a09db1740b98632c6754734d3a2c-overal_multi-imsi.png">
   Overall Multi-IMSI Applet architecture
 </Image>
 
@@ -28,7 +28,7 @@ It is expected that the applet switches between IMSI 1, IMSI 2, and IMSI 3 (if i
 
 The IMSI 2 can assume three possible IMSIS taken from the pool, considering that each IMSI should be used up to 60 days, as shown below.
 
-<Image alt="Update IMSI 2 cycling process" align="center" border={true} src="https://files.readme.io/11f72a098dfe0fa10383846819b081ca5e3fc6a06f83d2ca9f6420c9fee1a29a-Picture1.jpg">
+<Image alt="Update IMSI 2 cycling process" align="center" border={true} src="/img/sim-cards/1nce-brazil-multi-imsi/1nce-brazil-feature-description/11f72a098dfe0fa10383846819b081ca5e3fc6a06f83d2ca9f6420c9fee1a29a-Picture1.jpg">
   Update IMSI 2 cycling process
 </Image>
 
@@ -48,6 +48,6 @@ The electric profile to be used as the STANDARD profile will be the 1NCE Brazil 
 
 The Figure below describes the overall mechanisms to be considered for the applet implementation.
 
-<Image alt="Overall mechanisms for IMSI switching" align="center" border={true} src="https://files.readme.io/2a099bb7ce218b9dd150c1791a4dc65c8e2c023c5d2d594de02cab3bc369f8d5-Picture1.png">
+<Image alt="Overall mechanisms for IMSI switching" align="center" border={true} src="/img/sim-cards/1nce-brazil-multi-imsi/1nce-brazil-feature-description/2a099bb7ce218b9dd150c1791a4dc65c8e2c023c5d2d594de02cab3bc369f8d5-Picture1.png">
   Overall mechanisms for IMSI switching
 </Image>

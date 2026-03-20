@@ -2,7 +2,7 @@
 title: Device Authenticator
 description: SIM-As-An-Identity
 ---
-<Image width="80% " src="https://files.readme.io/a74fb33-1NCE-OS-Grafiken-202211221024_3.png" />
+<Image width="80% " src="/img/1nce-os/1nce-os-device-authenticator/a74fb33-1NCE-OS-Grafiken-202211221024_3.png" />
 
 ## Device Authenticator
 

@@ -21,7 +21,7 @@ Further fields that can be specified are:
 * Custom HTTP headers for webhooks.
 * Whether non-translated messages should be parsed to JSON, if possible.
 
-<Image alt="Configuration of a Webhook in the Frontend" align="center" src="https://files.readme.io/013c5f1fdb167bce2cb12845d8b1b15b44f072c7c005e1eb75e7289954fd0df8-webhook-creation.png">
+<Image alt="Configuration of a Webhook in the Frontend" align="center" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-webhook-configuration/013c5f1fdb167bce2cb12845d8b1b15b44f072c7c005e1eb75e7289954fd0df8-webhook-creation.png">
   Configuration of a Webhook in the 1NCE Portal
 </Image>
 

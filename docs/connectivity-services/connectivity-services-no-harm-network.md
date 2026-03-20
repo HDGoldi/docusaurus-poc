@@ -32,7 +32,7 @@ This IoT Solution Guideline summarizes the "No Harm to Network" requirements fro
 
 These guidelines are divided into three sections, reflecting how IoT Service Providers are required to implement "No Harm to Network" considerations and best-practice design in the different IoT Solution Layers (refer to Figure 1). 
 
-<Image title="iot_guidelines.jpg" alt={1110} align="center" width="80%" src="https://files.readme.io/956b1b9-iot_guidelines.jpg">
+<Image title="iot_guidelines.jpg" alt={1110} align="center" width="80%" src="/img/connectivity-services/connectivity-services-no-harm-network/956b1b9-iot_guidelines.jpg">
   IoT Service Provider Guidelines (IoT Server Application and Network Service Enablement Layer)
 </Image>
 

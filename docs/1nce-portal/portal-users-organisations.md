@@ -6,7 +6,7 @@ description: Managing Users and Suborganizations.
 
 The 1NCE Customer Portal offers the option to create multiple user accounts which allows for different user roles and access rights. In the "User" tab a root owner of the account can create and edit new user accounts. A general overview of all current users of the 1NCE organization is provided in a list view.
 
-<Image title="1NCE_User_List.PNG" alt={1255} align="center" width="80%" src="https://files.readme.io/50d19d6-1NCE_User_List.PNG">
+<Image title="1NCE_User_List.PNG" alt={1255} align="center" width="80%" src="/img/1nce-portal/portal-users-organisations/50d19d6-1NCE_User_List.PNG">
   List view of all current active user accounts of the organization.
 </Image>
 
@@ -508,7 +508,7 @@ See the following table for an exact overview of the roles and the permissions f
 A new user can be created using the "New User" button on the top right. The mandatory details depend on the type of the user that needs to be created. The e-mail address is used for the confirmation of the account as well as the login name for the 1NCE services. Customers have to make sure that the entered e-mail address is valid and can receive messages. After creating a new user an e-mail is sent to the new mail address requesting to set an initial new password for the 1NCE Customer Portal.\
 For the API role, the client\_id represents the username and the client\_secret the password. The client\_id has the account number with an underscore as prefix. The client\_secret needs to be set during the user creation as there is no e-mail address attached to this user role.
 
-<Image title="1NCE_Add_User.png" alt={1131} align="center" width="80%" src="https://files.readme.io/8a31386-1NCE_Add_User.png">
+<Image title="1NCE_Add_User.png" alt={1131} align="center" width="80%" src="/img/1nce-portal/portal-users-organisations/8a31386-1NCE_Add_User.png">
   New User popup for creating a new user and attaching a user role.
 </Image>
 
@@ -516,7 +516,7 @@ For the API role, the client\_id represents the username and the client\_secret 
 
 By clicking on a user shown in the list of current users, the details of this account can be changed or deleted. Changes can be applied by editing the boxes in the form and saving the new data. A user can be deleted by clicking on the "Delete" button in the Edit User popup.
 
-<Image title="1NCE_User_Edit.png" alt={1132} align="center" width="80%" src="https://files.readme.io/c710909-1NCE_User_Edit.png">
+<Image title="1NCE_User_Edit.png" alt={1132} align="center" width="80%" src="/img/1nce-portal/portal-users-organisations/c710909-1NCE_User_Edit.png">
   User Edit popup windows used for editing user details or deleting a user.
 </Image>
 
@@ -530,7 +530,7 @@ By clicking on a user shown in the list of current users, the details of this ac
 
 In the "Organisation" tab, a list of all sub-organizations of the main 1NCE user account are shown and can be managed. This feature enables a customer to create independent organizations, e.g., for their subsidiary or sub-contractor.
 
-<Image title="1NCE_Org_List.PNG" alt={1701} align="center" width="80%" src="https://files.readme.io/9456a0d-1NCE_Org_List.PNG">
+<Image title="1NCE_Org_List.PNG" alt={1701} align="center" width="80%" src="/img/1nce-portal/portal-users-organisations/9456a0d-1NCE_Org_List.PNG">
   The Organisation tab shows a list view of all sub-orgs of the current 1NCE user account.
 </Image>
 
@@ -538,7 +538,7 @@ In the "Organisation" tab, a list of all sub-organizations of the main 1NCE user
 
 Creating a new organization requires the role Owner or Admin to be logged in. To create a new organization, users have to click on the "New Organisation" button in the top right corner of the page. The creation process of a new organization is structured in a few simple steps. All the required data have to be entered in the shown forms.
 
-<Image title="1NCE_Org_Creation.png" alt={3362} align="center" src="https://files.readme.io/483feb5-1NCE_Org_Creation.png">
+<Image title="1NCE_Org_Creation.png" alt={3362} align="center" src="/img/1nce-portal/portal-users-organisations/483feb5-1NCE_Org_Creation.png">
   Multi-step process of creating a new sub-organization.
 </Image>
 
@@ -555,7 +555,7 @@ If there are any sub-organizations, the "Organization" tab also offers the possi
 * Do not put a semicolon at the end of each line
 * There is no need to use quotation marks at all (not mandatory)
 
-<Image title="230203_Organisations_SIM Transfer.PNG" alt={1111} align="center" width="80%" src="https://files.readme.io/b0d5ae3-230203_Organisations_SIM_Transfer.PNG">
+<Image title="230203_Organisations_SIM Transfer.PNG" alt={1111} align="center" width="80%" src="/img/1nce-portal/portal-users-organisations/b0d5ae3-230203_Organisations_SIM_Transfer.PNG">
   SIM transfer dialog for transferring SIMs to other sub-organizations.
 </Image>
 

@@ -4,7 +4,7 @@ description: The foundations about IoT SIM Cards.
 ---
 Many associate a tiny piece of plastic, which has an embedded chip, with the term SIM card. A chip that is inserted into a mobile phone or other modem to allow a specific device to connect to some sort of mobile network for internet and messaging connectivity. As usual, there is more than meets the eye when it comes to the details of a SIM. From a basic point of view, a Subscriber Identity Module (SIM) is an Integrated Circuit (IC) with a Card Operating System (COS) which stores security features used to authenticate the subscriber devices in a mobile network.
 
-<Image align="center" alt="854" border={false} caption="Overview of the different 1NCE IoT SIM form factors." title="Developer_Hub_SIM_Cards.png" src="https://files.readme.io/0b742fa-sim.png" width="50%" />
+<Image align="center" alt="854" border={false} caption="Overview of the different 1NCE IoT SIM form factors." title="Developer_Hub_SIM_Cards.png" src="/img/sim-cards/sim-cards-knowledge/0b742fa-sim.png" width="50%" />
 
 This data includes a unique serial number (ICCID), International Mobile Subscriber Identity (IMSI), security authentication, and ciphering information to authenticate the SIM as a valid subscriber to a mobile network. Further, temporary local network information, access service list, Personal Identification Number (PIN), and a Personal Unblocking Key (PUK) is stored on a SIM.  
 The following sections will cover the basics of some SIM parameters that show up as part of the 1NCE Services. It is important to understand their role in the 1NCE ecosystem, as these parameters are useful for general information, device identification, troubleshooting and security.

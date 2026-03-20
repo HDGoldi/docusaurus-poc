@@ -3,7 +3,7 @@ title: Info category
 ---
 Open the Admin Logs in [1NCE OS](https://portal.1nce.com/portal/customer/connectivitysuite) to see the latest logs from the devices. Use the filter to get Info Category logs.
 
-![](https://files.readme.io/02b5c43-image.png)
+![](/img/1nce-os/1nce-os-admin-logs/admin-logs-info-category/02b5c43-image.png)
 
 # Lifecycle
 

@@ -2,7 +2,7 @@
 title: 1NCE IoT Network Coverage
 description: Use 1NCE IoT SIMs Network Coverage all over the globe.
 ---
-<Image title="world_coverage_en_03-2022.png" alt={2021} align="center" width="80%" src="https://files.readme.io/48a9e97-world_coverage_en_03-2022.png">
+<Image title="world_coverage_en_03-2022.png" alt={2021} align="center" width="80%" src="/img/connectivity-services/connectivity-services-mobile-network-services/mobile-network-services-coverage/48a9e97-world_coverage_en_03-2022.png">
   Coverage Map of all Countries and Regions with 1NCE IoT Mobile Network coverage.
 </Image>
 

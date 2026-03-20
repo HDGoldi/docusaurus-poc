@@ -4,7 +4,7 @@ description: SIM Status Overview of the 1NCE Organization.
 ---
 After logging into to the 1NCE Customer Portal, an overview Dashboard is presented. The page shows the current SIM status, volume usage and a current order overview from the organization.
 
-<Image title="1NCE_Portal_Dashboard.png" alt={2532} width="80%" src="https://files.readme.io/38ec2f5-1NCE_Portal_Dashboard.png">
+<Image title="1NCE_Portal_Dashboard.png" alt={2532} width="80%" src="/img/1nce-portal/portal-dashboard/38ec2f5-1NCE_Portal_Dashboard.png">
   Overview of the 1NCE Customer Portal Dashboard.
 </Image>
 

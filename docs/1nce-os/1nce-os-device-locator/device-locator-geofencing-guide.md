@@ -9,7 +9,7 @@ Proceed to [geojson.io](https://geojson.io), there will be a world map where geo
 
 In this example we have created following polygon geofence:
 
-![](https://files.readme.io/8193513-image.png)
+![](/img/1nce-os/1nce-os-device-locator/device-locator-geofencing-guide/8193513-image.png)
 
 Coordinates of the points are visible in the right window, in our example those are:
 

@@ -9,7 +9,7 @@ This section will cover the basics about the physical IoT SIM Cards Industrial f
   align="center"
   alt="Overview of the 1NCE 3in1 IoT SIM Cards Industrial, which includes the 2FF, 3FF and 4FF form factors. "
   caption="Overview of the 1NCE 3in1 IoT SIM Cards Industrial, which includes the 2FF, 3FF and 4FF form factors. "
-  src="https://files.readme.io/e7a6860-SIM_industrial.png"
+  src="/img/sim-cards/sim-cards-overview/sim-cards-iot-industrial/e7a6860-SIM_industrial.png"
   sizing="30%"
 />
 
@@ -32,7 +32,7 @@ Over the years, with the hardware miniaturization and especially IoT use cases f
   align="center"
   alt="1NCE_4FF_SIM_Dimensions.png"
   caption="1NCE IoT SIM Cards Industrial 4FF reference dimensions and pin assignment as of ETSI TS 102 221."
-  src="https://files.readme.io/20aeb83-1NCE_4FF_SIM_Dimensions.png"
+  src="/img/sim-cards/sim-cards-overview/sim-cards-iot-industrial/20aeb83-1NCE_4FF_SIM_Dimensions.png"
 />
 
 
@@ -118,7 +118,7 @@ As 4FF is the smallest form factor that minimizes the plastic-backed SIM Card to
   align="center"
   alt="1NCE_FlexSIM.png"
   caption="1NCE 3in1 IoT SIM Cards inside the half-size breakout card used for easier shipping and packaging."
-src="https://files.readme.io/dd1d47b257ed4b77c15c798869af49d8c7b6912c34ff71810aa6754e0bbcaf19-SIMCIndustrial.png"
+src="/img/sim-cards/sim-cards-overview/sim-cards-iot-industrial/dd1d47b257ed4b77c15c798869af49d8c7b6912c34ff71810aa6754e0bbcaf19-SIMCIndustrial.png"
   sizing="50"
 />
 

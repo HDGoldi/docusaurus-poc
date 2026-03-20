@@ -8,27 +8,27 @@ In this chapter, the setup of the 1NCE Data Streamer Service for different cloud
 <div class="button-flex-container">
 	<div class="button-flex-item">
     <a href="#rest-api---integration">
-      	<img src="https://files.readme.io/d47972b-rest_api.svg"></img> 
+      	<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/d47972b-rest_api.svg"></img> 
     </a>
 	</div>
 <div class="button-flex-item">
   <a href="#keenio---integration">
-		<img src="https://files.readme.io/29d6339-keen_io.svg"> </img>
+		<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/29d6339-keen_io.svg"> </img>
   </a>
 	</div>
 <div class="button-flex-item">
   <a href="#datadog---integration">
-		<img src="https://files.readme.io/720424d-data_dog.svg"> </img>
+		<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/720424d-data_dog.svg"> </img>
   </a>
 	</div>
 <div class="button-flex-item">
   <a href="#s3---integration">
-		<img src="https://files.readme.io/7f8d984-aws_s3.svg"> </img>
+		<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/7f8d984-aws_s3.svg"> </img>
   </a>
 	</div>
 <div class="button-flex-item">
   <a href="#kinesis---integration">
-		<img src="https://files.readme.io/c2c9384-aws_kinesis.svg"> </img>
+		<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/c2c9384-aws_kinesis.svg"> </img>
   </a>
 	</div>
 </div>
@@ -129,7 +129,7 @@ The easiest setup for the stream integration into AWS S3 is by using the Cloud F
 **2.** In the popup select AWS S3 as *API Type* and select the desired *Stream Type*.\
 **3.** Click on *Create IAM Role* (see Figure below) to open the Cloud Formation Template in a separate window.
 
-<Image title="cmp_popup_ds.png" alt={1920} width="80%" src="https://files.readme.io/2c56973-cmp_popup_ds.png">
+<Image title="cmp_popup_ds.png" alt={1920} width="80%" src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/2c56973-cmp_popup_ds.png">
   Pop up in the CMP for creating a new Data Streamer integration.
 </Image>
 
@@ -137,13 +137,13 @@ The easiest setup for the stream integration into AWS S3 is by using the Cloud F
 **5.** Set the *IAM Creation* checkbox.\
 **6.** Execute the CFN Stack by clicking on *Create Stack*.
 
-<Image title="cfn_s3_template.png" alt={1178} width="80%" src="https://files.readme.io/0138a7e-cfn_s3_template.png">
+<Image title="cfn_s3_template.png" alt={1178} width="80%" src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/0138a7e-cfn_s3_template.png">
   Cloud Formation Template used to create the AWS IAM permissions and S3 bucket.
 </Image>
 
 **7.** Please wait until the Cloud Formation Process has ended and all resources have been created. Once the Cloud Formation Stack has successfully finished, please proceed with the following steps.
 
-<Image title="cfn_complete.png" alt={1236} width="80%" src="https://files.readme.io/a394239-cfn_complete.png">
+<Image title="cfn_complete.png" alt={1236} width="80%" src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/a394239-cfn_complete.png">
   Finished Cloud Formation stack execution.
 </Image>
 
@@ -151,7 +151,7 @@ The easiest setup for the stream integration into AWS S3 is by using the Cloud F
 **9.** Copy the shown parameters to the popup in the 1NCE CMP.\
 **10.** Click on *Save* in the popup. The Data Streamer integration will be setup. Please not that this might take a few minutes.
 
-<Image title="aws_s3_cfn_cmp.png" alt={1920} width="80%" src="https://files.readme.io/67ecf11-aws_s3_cfn_cmp.png">
+<Image title="aws_s3_cfn_cmp.png" alt={1920} width="80%" src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/67ecf11-aws_s3_cfn_cmp.png">
   Copy the values from the Options tab of the Cloud Formation Template to the CMP pop up.
 </Image>
 
@@ -169,7 +169,7 @@ To setup the 1NCE Data Streamer integration with AWS Kinesis, it is recommended 
 **2.** In the popup select AWS Kinesis as *API Type* and select the desired *Stream Type*.\
 **3.** Click on *Create IAM Role* to open the Cloud Formation Template in a separate window.
 
-<Image title="aws_kinesis_cmp.png" alt={1920} width="80%" src="https://files.readme.io/7ae09fb-aws_kinesis_cmp.png">
+<Image title="aws_kinesis_cmp.png" alt={1920} width="80%" src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/7ae09fb-aws_kinesis_cmp.png">
   Pop up in the CMP for creating a new Data Streamer integration.
 </Image>
 
@@ -177,13 +177,13 @@ To setup the 1NCE Data Streamer integration with AWS Kinesis, it is recommended 
 **5.** Set the *IAM Creation* checkbox.\
 **6.** Execute the CFN Stack by clicking on *Create Stack*.
 
-<Image title="aws_kinesis_cfn.png" alt={1178} width="80%" src="https://files.readme.io/d6f5e3a-aws_kinesis_cfn.png">
+<Image title="aws_kinesis_cfn.png" alt={1178} width="80%" src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/d6f5e3a-aws_kinesis_cfn.png">
   Cloud Formation Template used to create the AWS IAM permissions and Kinesis Data Stream.
 </Image>
 
 **7.** Please wait until the Cloud Formation Process has ended and all resources have been created. Once the Cloud Formation Stack has successfully finished, please proceed with the following steps.
 
-<Image title="aws_cfn_done.png" alt={1236} width="80%" src="https://files.readme.io/27f986f-aws_cfn_done.png">
+<Image title="aws_cfn_done.png" alt={1236} width="80%" src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/27f986f-aws_cfn_done.png">
   Finished Cloud Formation stack execution.
 </Image>
 
@@ -191,7 +191,7 @@ To setup the 1NCE Data Streamer integration with AWS Kinesis, it is recommended 
 **9.** Copy the shown parameters to the popup in the 1NCE CMP.\
 **10.** Click on *Save* in the popup. The Data Streamer integration will be setup. Please not that this might take a few minutes.
 
-<Image title="aws_kinesis_cfn_cmp.png" alt={1920} width="80%" src="https://files.readme.io/4f535ec-aws_kinesis_cfn_cmp.png">
+<Image title="aws_kinesis_cfn_cmp.png" alt={1920} width="80%" src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/4f535ec-aws_kinesis_cfn_cmp.png">
   Copy the values from the Options tab of the Cloud Formation Template to the CMP pop up.
 </Image>
 

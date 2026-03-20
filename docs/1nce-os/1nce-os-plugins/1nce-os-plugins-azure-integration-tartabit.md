@@ -32,11 +32,11 @@ To finish the configuration in 1NCE OS you can choose one of the two options des
 
 Plugin can be installed in [1NCE OS](https://portal.1nce.com/portal/customer/1nceos) portal "Plugins" tab by choosing "Tartabit".
 
-<Image align="center" alt="Tartabit Plugin" border={false} caption="Tartabit Plugin" src="https://files.readme.io/5820f3a-Plugins_new_icon.png" />
+<Image align="center" alt="Tartabit Plugin" border={false} caption="Tartabit Plugin" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-azure-integration-tartabit/5820f3a-Plugins_new_icon.png" />
 
 To install a Tartabit Plugin you should provide both Webhook Secret and the Server Domain from Tartabit.
 
-<Image align="center" alt="Tartabit plugin installation" border={false} caption="Tartabit plugin installation" src="https://files.readme.io/0ce22dc-Plugins_new_installation.png" width="70%" />
+<Image align="center" alt="Tartabit plugin installation" border={false} caption="Tartabit plugin installation" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-azure-integration-tartabit/0ce22dc-Plugins_new_installation.png" width="70%" />
 
 # Tartabit plugin installation via API
 
@@ -62,7 +62,7 @@ curl --location --request POST 'https://api.1nce.com/management-api/v1/partners/
 
 There is possibility that data forwarding from the 1NCEOS to the Tartabit system can fail due to misconfiguration or temporary downtime. In that case you will see following `Error` Admin Log:
 
-<Image align="center" alt="Plugin Disabled Admin Log" border={false} src="https://files.readme.io/ebc861c3f93b3d89e11ff12f2d065b48fb64c09fa2ff469918850b4df6c86dc6-7198c16f848b179a6f822e883917d9ca2e4712a66e52131b329a89a550482c02-plugin_admin_log.png" />
+<Image align="center" alt="Plugin Disabled Admin Log" border={false} src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-azure-integration-tartabit/ebc861c3f93b3d89e11ff12f2d065b48fb64c09fa2ff469918850b4df6c86dc6-7198c16f848b179a6f822e883917d9ca2e4712a66e52131b329a89a550482c02-plugin_admin_log.png" />
 
 You can use similar approach to the [Cloud Integrations failure monitoring](doc:cloud-integrator-failure-event#cloud-integrations-failure-monitoring) , only for Plugins Cloud Integrator `Error` event will be following:
 
@@ -94,10 +94,10 @@ To restart, get, or uninstall your Tartabit integration via API, you can use the
 
 If the configuration is successful, events should appear in the Tartabit services list history.
 
-<Image align="center" alt="Services List" border={true} caption="Services List" src="https://files.readme.io/3e79716-tartabit_services.png" width="85%" />
+<Image align="center" alt="Services List" border={true} caption="Services List" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-azure-integration-tartabit/3e79716-tartabit_services.png" width="85%" />
 
 ## Event viewer
 
 All event details can be found under Triggers/Event Viewer.
 
-<Image align="center" alt="Event viewer" border={true} caption="Event viewer" src="https://files.readme.io/68da402-tartabit_event_viewert.png" width="90%" />
+<Image align="center" alt="Event viewer" border={true} caption="Event viewer" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-azure-integration-tartabit/68da402-tartabit_event_viewert.png" width="90%" />
