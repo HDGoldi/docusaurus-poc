@@ -1,6 +1,7 @@
 ---
 title: Welcome
 description: Digging into the 1NCE Documentation Guide!
+slug: /
 ---
 
 import NavigationGrid from '@site/src/components/NavigationGrid';
