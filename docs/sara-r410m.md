@@ -6,14 +6,14 @@ Developers could understand and develop applications quickly and efficiently bas
 
 # Network Registration:
 
-<Recipe slug="sara-r410m-network-registration" title="SARA-R410M Network Registration" backgroundColor="#018FF4" link="https://help.1nce.com/v2.4.14/recipes/sara-r410m-network-registration" emoji="🦉" />
+- 🦉 [SARA-R410M Network Registration](/blueprints-examples/sara-r410m-network-registration)
 
 
 # SARA-R410M HTTP GET
 
-<Recipe slug="sara-r4-get-http" title="SARA-R4 GET HTTP" backgroundColor="#018FF4" link="https://help.1nce.com/v2.4.14/recipes/sara-r4-get-http" emoji="🦉" />
+- 🦉 [SARA-R4 GET HTTP](/blueprints-examples/sara-r4-get-http)
 
 
 # 1NCE OS UDP
 
-<Recipe slug="sara-r410m-1nce-os-udp" title="SARA-R410M 1NCE OS UDP" backgroundColor="#018FF4" link="https://help.1nce.com/v2.4.14/recipes/sara-r410m-1nce-os-udp" emoji="🦉" />
+- 🦉 [SARA-R410M 1NCE OS UDP](/blueprints-examples/sara-r410m-1nce-os-udp)

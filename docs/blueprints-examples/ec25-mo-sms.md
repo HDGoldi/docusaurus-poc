@@ -139,7 +139,7 @@ The modem is now in the text mode an will accept ASCII Numeric values for the SM
 
 <!-- curl@57-60 -->
 
-To finish, exit the text mode and send the SMS message, '1a' needs to be send encoded as HEX towards the modem. The modem will respond with '+CMGS: <message_length>' and an OK if successful.
+To finish, exit the text mode and send the SMS message, '1a' needs to be send encoded as HEX towards the modem. The modem will respond with '+CMGS: `<message_length>`' and an OK if successful.
 
 # Wrap Up
 

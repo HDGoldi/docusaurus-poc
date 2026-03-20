@@ -146,7 +146,7 @@ A SMS destined for a specifc device with a 1NCE SIM can be send using the Connec
 
 <!-- curl@53-55 -->
 
-After connecting to the network, wait until the issued MT-SMS is received by the device. By default this is indicated by '+CMTI: "SM",<number_unread>' returned from the SIM7000G.
+After connecting to the network, wait until the issued MT-SMS is received by the device. By default this is indicated by '+CMTI: "SM",`<number_unread>`' returned from the SIM7000G.
 
 # Read All MT-SMS
 
@@ -158,13 +158,13 @@ All SMS messages stored can be listed through 'AT+CMGL="ALL"'. The 'ALL' paramet
 
 <!-- curl@69-74 -->
 
-One specific MT-SMS can be read using 'AT+CMGR=<sms_id>,0', where the <sms_id> is the storage id of the message of interest.
+One specific MT-SMS can be read using 'AT+CMGR=`<sms_id>`,0', where the `<sms_id>` is the storage id of the message of interest.
 
 # Delete Specific MT-SMS
 
 <!-- curl@77-79 -->
 
-Stored SMS messages can be deleted using 'AT+CMGD=<sms_id>,0'
+Stored SMS messages can be deleted using 'AT+CMGD=`<sms_id>`,0'
 
 # Wrap Up
 

@@ -197,7 +197,7 @@ The parameters of the HTTP function can be checked with 'AT+HTTPPARA?'. These st
 
 <!-- curl@87-88 -->
 
-The POST request URL parameter can be set using 'AT+HTTPPARA="URL","<http_post_target>"'.
+The POST request URL parameter can be set using 'AT+HTTPPARA="URL","`<http_post_target>`"'.
 
 # Set HTTP POST Data
 

@@ -52,7 +52,7 @@ When ordering 1NCE IoT SIMs Chip Industrial, the QFN8 ICs are packaged in a stan
 
 **Tape & Reel packing**
 
-<img src="/img/sim-cards/sim-cards-overview/sim-chips-iot-industrial/9fb616e62a74da6e4531c348a40b45daff2e61201909b0af1c8fc4f0b1db682a-image.png" alt="*[https://www.infineon.com/dgdl/Infineon-Integration\_Guide\_SLx16\_SLx17-AdditionalTechnicalInformation-v01\_00-EN.pdf?fileId=5546d46273a5366f0173e8316de94622](https://www.infineon.com/dgdl/Infineon-Integration_Guide_SLx16_SLx17-AdditionalTechnicalInformation-v01_00-EN.pdf?fileId=5546d46273a5366f0173e8316de94622)*
+<img src="/img/sim-cards/sim-cards-overview/sim-chips-iot-industrial/9fb616e62a74da6e4531c348a40b45daff2e61201909b0af1c8fc4f0b1db682a-image.png" alt="Infineon Integration Guide SLx16 SLx17" />
 
 Each reel is vacuum packaged separately with a humidity indicator card, desiccant and a barcode label in a reel cardboard box. The barcode label shows the first and last IoT SIM Chip Industrial ICCID of the specific reel. IoT SIMs Chip Industrial are produced in sequence in ascending order where the smallest ICCID is produced first and is at the end of the tape in the middle of the reel. The user direction of unreeling is according to EIA-481 standard.
 
@@ -114,8 +114,9 @@ SIM Cards for mobile network applications follow strict standards for the physic
 				<tr>
 					<td>Read/Write Cycles</td>
 					<td className="tdc">min. 2.000.000 cycles</td>
-					<tr>
-						<td>Key Standard Compliances</td>
+				</tr>
+				<tr>
+					<td>Key Standard Compliances</td>
 						<td className="tdc"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1833" target="blank_">3GPP TR 31.919</a></td>
 					</tr>
 					<tr>

@@ -147,13 +147,13 @@ All SMS messages stored can be listed through 'AT+CMGL="ALL"'. The 'ALL' paramet
 
 <!-- curl@58-63 -->
 
-One specific MT-SMS can be read using 'AT+CMGR=<sms_id>,0', where the <sms_id> is the storage id of the message of interest.
+One specific MT-SMS can be read using 'AT+CMGR=`<sms_id>`,0', where the `<sms_id>` is the storage id of the message of interest.
 
 # Delete Specific MT-SMS
 
 <!-- curl@66-68 -->
 
-Stored SMS messages can be deleted using 'AT+CMGD=<sms_id>,0'
+Stored SMS messages can be deleted using 'AT+CMGD=`<sms_id>`,0'
 
 # Wrap Up
 

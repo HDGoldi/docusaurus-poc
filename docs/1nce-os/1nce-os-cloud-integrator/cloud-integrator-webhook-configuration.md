@@ -60,7 +60,7 @@ The following placeholders can be used in the `url` and `headers` fields:
 | `:imsi:`    | IMSI1 of the device      | `none`                         |
 | `:ip:`      | IP address of the device | `none`                         |
 
-<Table>
+<table>
   <thead>
     <tr>
       <th>
@@ -76,9 +76,9 @@ The following placeholders can be used in the `url` and `headers` fields:
   </thead>
 
   <tbody />
-</Table>
+</table>
 
-<Table>
+<table>
   <thead>
     <tr>
       <th>
@@ -92,7 +92,7 @@ The following placeholders can be used in the `url` and `headers` fields:
   </thead>
 
   <tbody />
-</Table>
+</table>
 
 #### Examples
 
@@ -282,7 +282,7 @@ To send test message to your webhook integration via API, you can use following 
 curl --location --request POST 'https://api.1nce.com/management-api/v1/integrate/clouds/webhooks/{integrationId}/test'
 ```
 
-<Table>
+<table>
   <thead>
     <tr>
       <th>
@@ -298,9 +298,9 @@ curl --location --request POST 'https://api.1nce.com/management-api/v1/integrate
   </thead>
 
   <tbody />
-</Table>
+</table>
 
-<Table>
+<table>
   <thead>
     <tr>
       <th>
@@ -314,7 +314,7 @@ curl --location --request POST 'https://api.1nce.com/management-api/v1/integrate
   </thead>
 
   <tbody />
-</Table>
+</table>
 
 ## Integration Restart
 
@@ -326,7 +326,7 @@ To restart the webhook:
 curl --location --request POST 'https://api.1nce.com/management-api/v1/integrate/clouds/webhooks/{integrationId}/restart'
 ```
 
-<Table>
+<table>
   <thead>
     <tr>
       <th>
@@ -342,9 +342,9 @@ curl --location --request POST 'https://api.1nce.com/management-api/v1/integrate
   </thead>
 
   <tbody />
-</Table>
+</table>
 
-<Table>
+<table>
   <thead>
     <tr>
       <th>
@@ -358,4 +358,4 @@ curl --location --request POST 'https://api.1nce.com/management-api/v1/integrate
   </thead>
 
   <tbody />
-</Table>
+</table>

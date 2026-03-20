@@ -41,7 +41,7 @@ The energy consumption of the IoT device can be calculated by:
 
 Where **E** is the energy consumption and **x** ist the Payload in Bytes. For every Byte less in communication you save an average of 0.013 mWh.
 
-<center><b>E<sub>reduced</sub> = E(x<sub>original</sub>) - E(x<sub>optimized</sub>)</b></center>
+`<center>`<b>E<sub>reduced</sub> = E(x<sub>original</sub>) - E(x<sub>optimized</sub>)</b>`</center>`
 
 <ul>
   <li>x<sub>optimized</sub> is the payload from the device that is using a translation template</li>

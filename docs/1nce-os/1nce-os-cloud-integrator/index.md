@@ -38,7 +38,7 @@ Whenever a device GPS location update has been sent using Energy Saver template 
 
 Test Message can be triggered by [Test AWS Integration](ref:post_v1-integrate-clouds-aws-integrationid-test) or [Test Webhook Integration](ref:post_v1-integrate-clouds-webhooks-integrationid-test) endpoints. Test Message will be sent also during integration restart process. Integration restart is being initiated from customer after integration has been set to "INTEGRATION_FAILED".
 
-<Table>
+<table>
   <thead>
     <tr>
       <th>
@@ -56,4 +56,4 @@ Test Message can be triggered by [Test AWS Integration](ref:post_v1-integrate-cl
   </thead>
 
   <tbody />
-</Table>
+</table>

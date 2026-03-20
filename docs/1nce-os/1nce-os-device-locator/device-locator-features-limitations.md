@@ -37,6 +37,6 @@ title: Features & Limitations
 
 ### Geofencing
 
-* Interactive drawing and visualization of geofencing is not available in our portal, <Anchor label="Geojson" target="_blank" href="https://geojson.io/">Geojson</Anchor> can be used to visualize geofences. Here is the [guide](/1nce-os/1nce-os-device-locator/device-locator-geofencing-guide) .
+* Interactive drawing and visualization of geofencing is not available in our portal, <a href="https://geojson.io/" target="_blank">Geojson</a> can be used to visualize geofences. Here is the [guide](/1nce-os/1nce-os-device-locator/device-locator-geofencing-guide) .
 * User can update only Geofence name, event types and event sources, coordinates and Geofence type cannot be changed to prevent possible confusion with the previous exit or enter events.
 * Geofence creation and enter/exit events require active [Geofence credits](/1nce-os/1nce-os-device-locator/index#geofence-credits).

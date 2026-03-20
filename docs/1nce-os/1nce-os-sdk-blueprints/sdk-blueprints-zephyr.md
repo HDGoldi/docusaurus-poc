@@ -140,12 +140,12 @@ To easily test the default setup on the **Thingy:91**, follow these steps using 
 * [📥 FOTA with Mender Firmware](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/plugin_system/nce_fota_mender_demo/thingy_binaries)
 * [🛠️ Debug with Memfault Firmware](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/plugin_system/nce_debug_memfault_demo/thingy_binaries)
 
-<Callout icon="💡" theme="default">
-  ### **Note:** For Memfault diagnostics and debugging, you should upload [zephyr.elf](https://github.com/1NCE-GmbH/blueprint-zephyr/blob/main/plugin_system/nce_debug_memfault_demo/thingy_binaries/zephyr.elf) file to the Memfault portal.
+:::tip
+For Memfault diagnostics and debugging, you should upload [zephyr.elf](https://github.com/1NCE-GmbH/blueprint-zephyr/blob/main/plugin_system/nce_debug_memfault_demo/thingy_binaries/zephyr.elf) file to the Memfault portal.
 
   Refer to the [Memfault documentation](https://docs.memfault.com) for instructions on setting up symbol files and debugging integration.\
   For a faster getting started experience, you can directly use the documentation under [`plugin_system/nce_debug_memfault_demo`](./plugin_system/nce_debug_memfault_demo).
-</Callout>
+:::
 
 📘 For more detailed device guidance, check the official [Thingy:91 Getting Started Guide](https://docs.nordicsemi.com/bundle/ncs-2.6.1/page/nrf/device_guides/working_with_nrf/nrf91/thingy91_gsg.html)
 
@@ -189,19 +189,17 @@ CONFIG_NCE_ENERGY_SAVER=y
 
 When enabled, the device will send compressed messages based on a translation template defined in 1NCE OS portal.
 
-<Callout icon="📖" theme="default">
-  ### **Learn more:** See the [1NCE Energy Saver documentation](https://help.1nce.com/dev-hub/docs/1nce-os-energy-saver) for details on how this feature works and how to configure templates.
-</Callout>
+:::tip
+### **Learn more:** See the [1NCE Energy Saver documentation](https://help.1nce.com/dev-hub/docs/1nce-os-energy-saver) for details on how this feature works and how to configure templates.
+:::
 
-<Callout icon="🕵️" theme="default">
-  ### **Tip:** You can view incoming messages in the [Device Inspector](https://help.1nce.com/dev-hub/docs/1nce-os-device-inspector) in the 1NCE OS portal.
-</Callout>
+:::info
+### **Tip:** You can view incoming messages in the [Device Inspector](https://help.1nce.com/dev-hub/docs/1nce-os-device-inspector) in the 1NCE OS portal.
+:::
 
-<Callout icon="💡" theme="default">
-  ### **Note:**
-
-  Add the template located in `./nce_udp_demo/template/template.json` to the 1NCE OS portal, and enable it for the **UDP protocol** to ensure correct decoding of the compressed payload.
-</Callout>
+:::tip
+Add the template located in `./nce_udp_demo/template/template.json` to the 1NCE OS portal, and enable it for the **UDP protocol** to ensure correct decoding of the compressed payload.
+:::
 
 ## ⚙️ Configuration Options
 
@@ -304,9 +302,9 @@ No build setup is required — just flash and go.
 
 👉 **Download:** [Thingy:91 Prebuilt HEX](https://github.com/1NCE-GmbH/blueprint-zephyr/blob/main/nce_udp_demo/thingy_binaries/zephyr.signed.hex)
 
-<Callout icon="⏳" theme="default">
-  ### **Note:** The firmware is configured with all LTE bands enabled, which may cause a delay of several minutes during the initial network connection while scanning for available bands. This is normal.
-</Callout>
+:::warning
+The firmware is configured with all LTE bands enabled, which may cause a delay of several minutes during the initial network connection while scanning for available bands. This is normal.
+:::
 
 ***
 
@@ -347,19 +345,17 @@ CONFIG_NCE_ENERGY_SAVER=y
 
 When enabled, the device will send compressed messages based on a translation template defined in 1NCE OS portal.
 
-<Callout icon="💡" theme="default">
-  ### **Note:**
+:::tip
+Add the template located in `./nce_coap_demo/template/template.json` to the 1NCE OS portal, and enable it for the **COAP protocol** to ensure correct decoding of the compressed payload.
+:::
 
-  Add the template located in `./nce_coap_demo/template/template.json` to the 1NCE OS portal, and enable it for the **COAP protocol** to ensure correct decoding of the compressed payload.
-</Callout>
+:::tip
+### **Learn more:** See the [1NCE Energy Saver documentation](https://help.1nce.com/dev-hub/docs/1nce-os-energy-saver) for details on how this feature works and how to configure templates.
+:::
 
-<Callout icon="📖" theme="default">
-  ### **Learn more:** See the [1NCE Energy Saver documentation](https://help.1nce.com/dev-hub/docs/1nce-os-energy-saver) for details on how this feature works and how to configure templates.
-</Callout>
-
-<Callout icon="🕵️" theme="default">
-  ### **Tip:** You can view incoming messages in the [Device Inspector](https://help.1nce.com/dev-hub/docs/1nce-os-device-inspector) in the 1NCE OS portal.
-</Callout>
+:::info
+### **Tip:** You can view incoming messages in the [Device Inspector](https://help.1nce.com/dev-hub/docs/1nce-os-device-inspector) in the 1NCE OS portal.
+:::
 
 If disabled, a plain-text message will be sent instead.
 
@@ -408,7 +404,7 @@ Depending on whether the Energy Saver feature is enabled:
 >
 > ```conf
 > CONFIG_COAP_EXTENDED_OPTIONS_LEN=y
-> CONFIG_COAP_EXTENDED_OPTIONS_LEN_VALUE=<your_desired_length>
+> CONFIG_COAP_EXTENDED_OPTIONS_LEN_VALUE=`<your_desired_length>`
 > ```
 
 ## 🧠 Device Controller
@@ -476,7 +472,7 @@ If `CONFIG_NCE_ENABLE_DEVICE_CONTROLLER` is enabled:
 >
 > ```conf
 > CONFIG_COAP_EXTENDED_OPTIONS_LEN=y
-> CONFIG_COAP_EXTENDED_OPTIONS_LEN_VALUE=<length>
+> CONFIG_COAP_EXTENDED_OPTIONS_LEN_VALUE=`<length>`
 > ```
 
 ## 📤 Zephyr Output Example
@@ -518,9 +514,9 @@ No build setup is required — just flash and go.
 
 👉 **Download:** [Thingy:91 Prebuilt HEX](https://github.com/1NCE-GmbH/blueprint-zephyr/blob/main/nce_coap_demo/thingy_binaries/zephyr.signed.hex)
 
-<Callout icon="⏳" theme="default">
-  ### **Note:** The firmware is configured with all LTE bands enabled, which may cause a delay of several minutes during the initial network connection while scanning for available bands. This is normal.
-</Callout>
+:::warning
+The firmware is configured with all LTE bands enabled, which may cause a delay of several minutes during the initial network connection while scanning for available bands. This is normal.
+:::
 
 ***
 
@@ -714,9 +710,9 @@ You must manually **accept the device** in the [Mender Dashboard](https://hosted
 * The device will **periodically check** for firmware updates
 * Its **inventory** (such as IMEI, artifact name, and device type) will be updated in the Mender dashboard
 
-<Callout icon="💡" theme="default">
-  ### You can view this info under the **Devices** section after the device is authorized.
-</Callout>
+:::tip
+### You can view this info under the **Devices** section after the device is authorized.
+:::
 
 <div style={{textAlign: 'center'}}>
 <img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/501c9f2fff0543aa4368fc487586f78edcfbe90794f302c30aa1d93e7b3891f9-image.png" alt="Device listed in Mender dashboard after acceptance." width="90%" />
@@ -745,9 +741,9 @@ CONFIG_ARTIFACT_NAME="release-v2"
 1. **Install** the [Mender Artifact Tool](https://docs.mender.io/downloads#mender-artifact)
 
 2. **Run** the following command to generate a new artifact:
-   <Callout icon="⚙️" theme="default">
-     ### Replace the placeholders with your actual values.
-   </Callout>
+   :::note
+### Replace the placeholders with your actual values.
+:::
 
 ```bash
 mender-artifact write module-image \
@@ -854,9 +850,9 @@ Available prebuilt files:
 
 👉 **Flash directly using:** [`release-v1.hex`](https://github.com/1NCE-GmbH/blueprint-zephyr/blob/main/plugin_system/nce_fota_mender_demo/thingy_binaries/release-v1.hex) or [`release-v2.hex`](https://github.com/1NCE-GmbH/blueprint-zephyr/blob/main/plugin_system/nce_fota_mender_demo/thingy_binaries/release-v2.hex)
 
-<Callout icon="⏳" theme="default">
-  ### **Note:** These builds enable all LTE bands, so the initial network registration may take several minutes while scanning.
-</Callout>
+:::warning
+These builds enable all LTE bands, so the initial network registration may take several minutes while scanning.
+:::
 
 ***
 

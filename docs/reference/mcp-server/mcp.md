@@ -1,6 +1,10 @@
 ---
 title: MCP
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 The 1NCE Developer Hub Model Context Protocol (MCP) server enables AI-powered code editors like Cursor and Windsurf, plus general-purpose tools like Claude Desktop, to interact directly with your 1NCE Developer Hub API and documentation.
 
 ## What is MCP?
@@ -17,7 +21,7 @@ Model Context Protocol (MCP) is an open standard that allows AI applications to 
 1NCE Developer Hub hosts a remote MCP server at `https://help.1nce.com/mcp`. Configure your AI development tools to connect to this server. If your APIs require authentication, you can pass in headers via query parameters or however headers are configured in your MCP client.
 
 <Tabs>
-  <Tab title="Cursor">
+  <TabItem value="cursor" label="Cursor">
     **Add to `~/.cursor/mcp.json`:**
 
     ```json
@@ -30,8 +34,8 @@ Model Context Protocol (MCP) is an open standard that allows AI applications to 
     }
     ```
 
-    </Tab>
-  <Tab title="Windsurf">
+    </TabItem>
+  <TabItem value="windsurf" label="Windsurf">
     **Add to `~/.codeium/windsurf/mcp_config.json`:**
 
     ```json
@@ -44,8 +48,8 @@ Model Context Protocol (MCP) is an open standard that allows AI applications to 
     }
     ```
 
-  </Tab>
-  <Tab title="Claude Desktop">
+  </TabItem>
+  <TabItem value="claude-desktop" label="Claude Desktop">
     **Add to `claude_desktop_config.json`:**
 
     ```json
@@ -58,7 +62,7 @@ Model Context Protocol (MCP) is an open standard that allows AI applications to 
     }
     ```
 
-  </Tab>
+  </TabItem>
 </Tabs>
 
 ## Testing Your MCP Setup

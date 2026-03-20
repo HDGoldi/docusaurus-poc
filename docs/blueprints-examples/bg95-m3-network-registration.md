@@ -156,9 +156,9 @@ The BG95 can be configured for manual, automatic or manual/automatic network reg
 
 <!-- powershell@46,47 -->
 
-+CSQ: <rssi>,<cber>
-<rssi> is the received signal strength indication, expressed in dBm. The higher the value, the stronger the signal.
-<cber> is the channel bit error rate, expressed as a percentage. The lower the value, the better the channel quality.
++CSQ: `<rssi>`,`<cber>`
+`<rssi>` is the received signal strength indication, expressed in dBm. The higher the value, the stronger the signal.
+`<cber>` is the channel bit error rate, expressed as a percentage. The lower the value, the better the channel quality.
 
 # Check the network registration status
 
@@ -184,4 +184,4 @@ Set the Access Point Name (APN) for the network connection.
 <!-- powershell@65-73 -->
 
 To connect to the 1NCEOS network and send a UDP message using AT commands
-for Send After receiving ">", input data (TEST), the maximum length of the data is 1460, the data beyond 1460 will be omitted. Then use <CTRL+Z> to send data. When receive SEND OK means the data has been sent
+for Send After receiving ">", input data (TEST), the maximum length of the data is 1460, the data beyond 1460 will be omitted. Then use `<CTRL+Z>` to send data. When receive SEND OK means the data has been sent

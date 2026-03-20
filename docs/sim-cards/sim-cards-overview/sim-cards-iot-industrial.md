@@ -43,60 +43,39 @@ As 4FF is the smallest form factor that minimizes the plastic-backed SIM Card to
 </thead>
 <tbody>
 <tr>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C1</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>VCC</strong><br />Supply Voltage</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>VCC</p>
-</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C1</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>VCC</strong><br />Supply Voltage</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>VCC</p></td>
 </tr>
 <tr>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C2</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>RST</strong><br />Reset Pin</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>RST</p>
-</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C2</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>RST</strong><br />Reset Pin</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>RST</p></td>
 </tr>
 <tr>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C3</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>CLK</strong><br />Clock Signal</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>CLK</p>
-</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C3</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>CLK</strong><br />Clock Signal</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>CLK</p></td>
 </tr>
 <tr>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C4 and C8</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>Optional</strong><br />USB interface according to ETSI TS 102 600</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>N/A</p>
-</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C4 and C8</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>Optional</strong><br />USB interface according to ETSI TS 102 600</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>N/A</p></td>
 </tr>
 <tr>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C5</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>GND</strong><br />Ground Connection</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>GND</p>
-</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C5</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>GND</strong><br />Ground Connection</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>GND</p></td>
 </tr>
 <tr>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C6</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>VPP</strong><br />Programming Voltage</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>N/A</p>
-</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C6</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>VPP</strong><br />Programming Voltage</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>N/A</p></td>
 </tr>
 <tr>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C7</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>I/O</strong><br />Input Output Data</p>
-</td>
-  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>I/O</p>
-</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C7</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>I/O</strong><br />Input Output Data</p></td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>I/O</p></td>
 </tr>
 </tbody>
 </table>

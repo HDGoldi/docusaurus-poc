@@ -36,8 +36,8 @@ After implementing a HTTP Post endpoint on a custom backend, the Data Streamer n
 4. **API Callback:** URL to the customer provided HTTPs endpoint accepting the HTTP POST requests.
 
 * The endpoint URL for the Data Streamer in the needs to be valid.
-* Public IP addresses ([\<\<https://"server-ip":"port"/"endpoint"/>>](https://"server-ip":"port"/"endpoint"/)) are not supported.
-* Custom ports for the endpoint can be configured via the URL ([\<\<https://"server-domain":"port"/"endpoint"/>>](https://"server-domain":"port"/"endpoint"/)). 
+* Public IP addresses ([\<\<`````https://"server-ip":"port"/"endpoint"/`````>>](`````https://"server-ip":"port"/"endpoint"/`````)) are not supported.
+* Custom ports for the endpoint can be configured via the URL ([\<\<`````https://"server-domain":"port"/"endpoint"/`````>>](`````https://"server-domain":"port"/"endpoint"/`````)). 
 * The endpoint server needs to have a valid SSL/TLS certificate. A self-signed certificate will not work in this application case. We recommend using Let's Encrypt certificates. 
 
 5. **Basic Auth Header:** Base64 encoded value supplied by each HTTP POST request in the Basic Authentication Header field. The supplied HTTP endpoint needs to support Basic Authentication.

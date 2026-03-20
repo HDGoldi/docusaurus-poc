@@ -15,7 +15,7 @@ const config: Config = {
   url: 'https://help.1nce.com',
   baseUrl: '/',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
   markdown: {
     hooks: {

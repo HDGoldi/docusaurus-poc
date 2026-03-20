@@ -9,18 +9,18 @@ The BG95-M3 Mini PCIe is a wireless communication module that supports multiple 
 
 Network registration is the process by which a cellular device connects to a cellular network and obtains the necessary credentials to access the network's services. This process involves several steps, including network selection, authentication, and registration.
 
-<Recipe slug="bg95-m3-network-registration" title="BG95-M3 Network Registration" backgroundColor="#018FF4" link="https://help.1nce.com/v2.4.14/recipes/bg95-m3-network-registration" emoji="🦉" />
+- 🦉 [BG95-M3 Network Registration](/blueprints-examples/bg95-m3-network-registration)
 
 # ICMP Ping
 
-<Recipe slug="bg95-m3-icmp-ping" title="BG95-M3 ICMP Ping" backgroundColor="#018FF4" link="https://help.1nce.com/v2.4.14/recipes/bg95-m3-icmp-ping" emoji="🦉" />
+- 🦉 [BG95-M3 ICMP Ping](/blueprints-examples/bg95-m3-icmp-ping)
 
 
 # TCP Client
 
-<Recipe slug="bg95bg77-tcp-client-connection" title="BG95&BG77 TCP Client Connection" backgroundColor="#018FF4" link="https://help.1nce.com/v2.4.14/recipes/bg95bg77-tcp-client-connection" emoji="🦉" />
+- 🦉 [BG95&BG77 TCP Client Connection](/blueprints-examples/bg95bg77-tcp-client-connection)
 
 
 # 1NCE OS UDP Protocol
 
-<Recipe slug="bg95-m3-1nce-os-udp" title="BG95-M3 1NCE OS UDP" backgroundColor="#018FF4" link="https://help.1nce.com/v2.4.14/recipes/bg95-m3-1nce-os-udp" emoji="🦉" />
+- 🦉 [BG95-M3 1NCE OS UDP](/blueprints-examples/bg95-m3-1nce-os-udp)

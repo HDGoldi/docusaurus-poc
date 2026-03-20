@@ -77,19 +77,19 @@ Use the AT+CCOAPURL command to setup a URL and establish a connection with the 1
 <!-- powershell@12-14 -->
 
 Assembling CoAP data packet with these parameters 
- code,<hex_value>
+ code,`<hex_value>`
 type,(("CON"),("NON"),("ACK"),("RST"))
-mid,<dec_value>
-token, ((0-ascii code),(1-hex code)),<value>
-content-format,<dec_value>
-accept,<dec_value>
-uri-path,((0-ascii code),(1-hex code)),<value>
-uri-query, ((0-ascii code),(1-hex code)),<value>
-etag, ((0-ascii code),(1-hex code)),<value>
-observe,<dec_value>
-max-age,<dec_value>
-size,<dec_value>
-payload, ((0-ascii code),(1-hex code)),<value>
+mid,`<dec_value>`
+token, ((0-ascii code),(1-hex code)),`<value>`
+content-format,`<dec_value>`
+accept,`<dec_value>`
+uri-path,((0-ascii code),(1-hex code)),`<value>`
+uri-query, ((0-ascii code),(1-hex code)),`<value>`
+etag, ((0-ascii code),(1-hex code)),`<value>`
+observe,`<dec_value>`
+max-age,`<dec_value>`
+size,`<dec_value>`
+payload, ((0-ascii code),(1-hex code)),`<value>`
 
 # Send Data
 

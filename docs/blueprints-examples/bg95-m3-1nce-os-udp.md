@@ -34,7 +34,7 @@ Use the AT+QIOPEN command to open a UDP socket and establish a connection with t
 
 <!-- powershell@8-10 -->
 
-for Send After receiving ">", input data (TEST), the maximum length of the data is 1460, the data beyond 1460 will be omitted. Then use <CTRL+Z> to send data. When receive SEND OK means the data has been sent
+for Send After receiving ">", input data (TEST), the maximum length of the data is 1460, the data beyond 1460 will be omitted. Then use `<CTRL+Z>` to send data. When receive SEND OK means the data has been sent
 
 # Close the Socket
 

@@ -122,7 +122,7 @@ After setting a registration process with 'AT+COPS=...', the modem will try to c
 
 <!-- curl@45-51 -->
 
-The format of the current operator listing returned by 'AT+COPS?' can be set with 'AT+COPS=3,<format>'. Valid formats are (0) long, (1) short, (2) numeric.
+The format of the current operator listing returned by 'AT+COPS?' can be set with 'AT+COPS=3,`<format>`'. Valid formats are (0) long, (1) short, (2) numeric.
 
 # Wrap Up
 
