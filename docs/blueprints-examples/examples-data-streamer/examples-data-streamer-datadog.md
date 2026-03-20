@@ -2,9 +2,9 @@
 title: DataDog Integration
 description: Integrating DataDog with the 1NCE Data Streamer.
 ---
-<HTMLBlock>{`
-<center><img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 <a href="https://www.datadoghq.com/" target="_blank">DataDog</a> is a cloud monitoring service that can be used to monitor the endpoint volume (Usage records) of the 1NCE SIM cards using custom dashboards and trigger events. The following metrics can be viewed in DataDog: endpoint.volume, endpoint.volume\_tx, endpoint.volume\_rx, and endpoint.cost.
 

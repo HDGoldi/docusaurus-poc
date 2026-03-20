@@ -2,9 +2,9 @@
 title: Data Streamer Service
 description: Live Event and Usage Feed for 1NCE SIMs.
 ---
-<HTMLBlock>{`
-<center><img alt="Schematic diagram of the Data Streamer Service structure." src="/img/platform-services/platform-services-data-streamer/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/platform-services/platform-services-data-streamer/001.png" alt="Schematic diagram of the Data Streamer Service structure." style={{maxWidth: '100%'}} />
+</div>
 
 Access to the SIM status, events, and usage data is a key factor when it comes to monitoring and debugging IoT-focused systems. This type of data could be queried from the 1NCE API, but this generates a lot of undesired overhead traffic and load. 
 

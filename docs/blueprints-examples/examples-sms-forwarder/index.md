@@ -2,9 +2,9 @@
 title: SMS Forwarder Service
 description: Examples for using and testing the SMS Forwarder.
 ---
-<HTMLBlock>{`
-<center><img src="/img/blueprints-examples/examples-sms-forwarder/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-sms-forwarder/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 With the SMS Forwarding Service, Mobile Originated SMS (MO-SMS) messages and Delivery Reports (DLR) for Mobile Terminated SMS (MT-SMS) are forwarded to a customer-specified HTTP REST endpoint as JSON objects. This example section will outline the general requirements for the HTTP endpoint and provide guides for the configuration and implementation.
 
@@ -36,14 +36,14 @@ The two sequence diagrams below show the MT-SMS DLR and the MO-SMS delivery usin
 
 The figure shows a successful and failed flow of an MO-SMS delivery using the SMS Forwarder. The MO-SMS is always provided via the 1NCE Portal and the 1NCE API. The status of a MO-SMS can be queried in the Portal and the API. The delivery failed error message is delivered via the Data Streamer and also shown in the 1NCE Portal.
 
-<HTMLBlock>{`
-<center><img src="/img/blueprints-examples/examples-sms-forwarder/002.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-sms-forwarder/002.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 ## MT-SMS DLR
 
 The figure below shows the flow of a Delivery Report for a MT-SMS. Once a mobile terminated SMS is issued via the API or 1NCE Portal, it will be delivered to the SIM device. Once received by the device, a delivery report (DLR) is issued from the 1NCE network using the SMS Forwarder webhook integration. The DLR indicates that the SMS was delivered to the targeted SIM device. If no webhook / HTTP endpoint is configured, the delivery of the DLR will fail resulting in an event shown in the data streamer and 1NCE Portal.
 
-<HTMLBlock>{`
-<center><img src="/img/blueprints-examples/examples-sms-forwarder/003.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-sms-forwarder/003.png" alt="" style={{maxWidth: '100%'}} />
+</div>

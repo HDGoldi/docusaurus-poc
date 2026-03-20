@@ -4,9 +4,9 @@ description: >-
   The 1NCE Lightweight M2M (LwM2M) Service offers a fast deployable
   client-server specification to provide machine-to-machine (M2M) services.
 ---
-<HTMLBlock>{`
-<center><img src="/img/1nce-os/1nce-os-lwm2m/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-lwm2m/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 Lightweight M2M (LwM2M) is a protocol standard specified by the Open Mobile Alliance (<a target="_blank" href="https://omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-lwm2m">OMA LwM2M</a>) with the goal to offer a fast client-server specification for Machine-to-Machine (M2M) and Internet of Things (IoT) communication and management services. LwM2M defines an application layer protocol between any arbitrary client (e.g., IoT device with 1NCE OS) and a LwM2M server (e.g., 1NCE OS LwM2M Integration).
 

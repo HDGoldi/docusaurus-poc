@@ -40,9 +40,9 @@ If the customer already has an eUICC-capable SIM card from another provider and 
 
 1NCE takes over not only the customer connectivity needs but also their eUICC SIMs into the 1NCE RSP platform.
 
-<HTMLBlock>{`
-<center><img src="/img/sim-cards/sim-euicc-knowledge/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/sim-cards/sim-euicc-knowledge/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 ## Active model
 
@@ -54,15 +54,15 @@ The active model can be used in the followings scenarios:
 
 1. The customer has an eUICC SIM from another provider and wants to use 1NCE profile for their device.
 
-<HTMLBlock>{`
-<center><img src="/img/sim-cards/sim-euicc-knowledge/002.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/sim-cards/sim-euicc-knowledge/002.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 2. The customer has an eUICC SIM from 1NCE and wants to use another profile from another provider for their device.
 
-<HTMLBlock>{`
-<center><img src="/img/sim-cards/sim-euicc-knowledge/003.png" style=\"cursor:pointer;max-width:100%;\" onclick=\"(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);\"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/sim-cards/sim-euicc-knowledge/003.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 # Device Requirements for eUICC-capable IoT SIMs
 

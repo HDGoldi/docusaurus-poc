@@ -14,494 +14,415 @@ The 1NCE Customer Portal offers the option to create multiple user accounts whic
 
 The following roles for additional user accounts are available:
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Role
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        Owner
-      </td>
-
-      <td>
-        Initial user of the organization that cannot be changed. Includes all functionalities and access to the entire organization. New users can have the Owner role assigned as well. The owner also has access to the Management API. Can administer users with Admin, User, API User, Read Only, and 3rd party access role. *To administer Owner, please submit a service request.*
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Admin
-      </td>
-
-      <td>
-        Includes all functionalities and access to the entire organization.  Can administer users with User, API User, Read Only, and 3rd party access role. This user role has no access the Management API.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        User
-      </td>
-
-      <td>
-        Can manage SIM Cards in the Portal, but has no access to orders and top-ups, and cannot trigger new orders or manage users. This user role has no access to the Mangement API.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        API User
-      </td>
-
-      <td>
-        User role only for accessing the 1NCE API. Uses client\_secret and client\_id as username and password for the API authentication. Has the account number as prefix in the client\_id.\
-        All endpoints are available for this role including new orders.  
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Read Only
-      </td>
-
-      <td>
-        User role designed to allow Read-only access to the Portal. This user role has no access to the Mangement API.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        3rd party access
-      </td>
-
-      <td>
-        User role designed for allowing 3rd Party Users limited access to the Portal. This user role has no access to the Mangement API.
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Role | Description |
+| --- | --- |
+| Owner | Initial user of the organization that cannot be changed. Includes all functionalities and access to the entire organization. New users can have the Owner role assigned as well. The owner also has access to the Management API. Can administer users with Admin, User, API User, Read Only, and 3rd party access role. *To administer Owner, please submit a service request.* |
+| Admin | Includes all functionalities and access to the entire organization. Can administer users with User, API User, Read Only, and 3rd party access role. This user role has no access the Management API. |
+| User | Can manage SIM Cards in the Portal, but has no access to orders and top-ups, and cannot trigger new orders or manage users. This user role has no access to the Mangement API. |
+| API User | User role only for accessing the 1NCE API. Uses client\_secret and client\_id as username and password for the API authentication. Has the account number as prefix in the client\_id. All endpoints are available for this role including new orders. |
+| Read Only | User role designed to allow Read-only access to the Portal. This user role has no access to the Mangement API. |
+| 3rd party access | User role designed for allowing 3rd Party Users limited access to the Portal. This user role has no access to the Mangement API. |
 
 ### User Roles Details
 
 See the following table for an exact overview of the roles and the permissions for each component of the 1NCE Portal.
 
-<HTMLBlock>{`
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-cly1{text-align:left;vertical-align:middle}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-</style>
-<table class="tg">
+<table className="tg">
 <thead>
   <tr>
-    <th class="tg-0lax" colspan="2">Portal Areas</th>
-    <th class="tg-0lax">Owner</th>
-    <th class="tg-0lax">Admin</th>
-    <th class="tg-0lax">User</th>
-    <th class="tg-0lax">Read Only</th>
-    <th class="tg-0lax">3rd Party Access</th>
-    <th class="tg-0lax">API User</th>
+    <th className="tg-0lax" colspan="2">Portal Areas</th>
+    <th className="tg-0lax">Owner</th>
+    <th className="tg-0lax">Admin</th>
+    <th className="tg-0lax">User</th>
+    <th className="tg-0lax">Read Only</th>
+    <th className="tg-0lax">3rd Party Access</th>
+    <th className="tg-0lax">API User</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-cly1" rowspan="3">Dashboard</td>
-    <td class="tg-0lax">See All</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax" rowspan="42"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-cly1" rowspan="3">Dashboard</td>
+    <td className="tg-0lax">See All</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax" rowspan="42"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Reorder Button</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Reorder Button</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Latest Order Widget</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Latest Order Widget</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-cly1" rowspan="8">My SIMs</td>
-    <td class="tg-0lax">See All</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-cly1" rowspan="8">My SIMs</td>
+    <td className="tg-0lax">See All</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">SIM State</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">SIM State</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">IMEI Lock</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">IMEI Lock</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Auto-Top-Up</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Auto-Top-Up</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Reset Connectivity</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">Reset Connectivity</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">SIM List Export</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">SIM List Export</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Reorder / Top-Up</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Reorder / Top-Up</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Send SMS</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">Send SMS</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-cly1" rowspan="9">Configuration</td>
-    <td class="tg-0lax">Network Settings</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-cly1" rowspan="9">Configuration</td>
+    <td className="tg-0lax">Network Settings</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Breakout Settings</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">Breakout Settings</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Monthly Limit</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">Monthly Limit</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">IMEI Lock</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">IMEI Lock</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Auto-Top-Up</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Auto-Top-Up</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Data Streams</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">Data Streams</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">SMS Forwarder</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">SMS Forwarder</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">OpenVPN</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">OpenVPN</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Management API</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">Management API</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">1NCE OS</td>
-    <td class="tg-0lax">Tab Available</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">1NCE OS</td>
+    <td className="tg-0lax">Tab Available</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-cly1" rowspan="6">Account</td>
-    <td class="tg-0lax">See All</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-cly1" rowspan="6">Account</td>
+    <td className="tg-0lax">See All</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Customer Data</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Customer Data</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">User Data</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">User Data</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Add New E-Mail</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Add New E-Mail</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Billing and Shipping Address</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Billing and Shipping Address</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Payment Details</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Payment Details</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-cly1" rowspan="4">Orders</td>
-    <td class="tg-0lax">See All</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-cly1" rowspan="4">Orders</td>
+    <td className="tg-0lax">See All</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Download Invoices</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Download Invoices</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Trigger New Order</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Trigger New Order</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Download Affected SIMs</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Download Affected SIMs</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-cly1" rowspan="5">Users</td>
-    <td class="tg-0lax">See All</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-cly1" rowspan="5">Users</td>
+    <td className="tg-0lax">See All</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">Administer Own User</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>Administer Own User</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">Administer Owner</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>Administer Owner</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">Administer Admin</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>Administer Admin</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">Administer User</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>Administer User</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">Administer API User</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>Administer API User</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">Administer Read Only</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>Administer Read Only</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">Administer 3rd party access</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>Administer 3rd party access</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-cly1" rowspan="3">Organisation</td>
-    <td class="tg-0lax">See All</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-cly1" rowspan="3">Organisation</td>
+    <td className="tg-0lax">See All</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Add Organisation</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">Add Organisation</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">SIM Transfer</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">SIM Transfer</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">Performance</td>
-    <td class="tg-0lax">See All</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">Performance</td>
+    <td className="tg-0lax">See All</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
   <tr>
-    <td class="tg-cly1" rowspan="2">Support</td>
-    <td class="tg-0lax">See All</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-cly1" rowspan="2">Support</td>
+    <td className="tg-0lax">See All</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">New Service Request</td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
+    <td className="tg-0lax">New Service Request</td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax">API Access</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">❌</span></td>
-    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">✅</span></td>
+    <td className="tg-0lax">API Access</td>
+    <td className="tg-0lax"></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>❌</span></td>
+    <td className="tg-0lax"><span style={{fontWeight: 400, fontStyle: 'normal'}}>✅</span></td>
   </tr>
 </tbody>
 </table>
-`}</HTMLBlock>
 
 ## User Creation
 

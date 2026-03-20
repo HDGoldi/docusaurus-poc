@@ -2,9 +2,9 @@
 title: Mobile Terminated SMS
 description: MT-SMS destined for a device with a 1NCE SIM.
 ---
-<HTMLBlock>{`
-<center><img alt="Schematic diagram of a MT-SMS message." src="/img/connectivity-services/connectivity-services-sms-services/sms-services-mt-sms/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/connectivity-services/connectivity-services-sms-services/sms-services-mt-sms/001.png" alt="Schematic diagram of a MT-SMS message." style={{maxWidth: '100%'}} />
+</div>
 
 The term Mobile Terminated SMS (MT-SMS) encompasses SMS messages destined for a specific device. As 1NCE connectivity focuses on IoT applications, sending SMS messages from device to device (P2P) is not possible. Therefore, sending messages from a phone or other device towards a terminal with a 1NCE SIM is not possible. The 1NCE SMS Service offers two methods of sending messages towards an device.
 
@@ -26,69 +26,11 @@ For larger batches or automated messages, the 1NCE API offers a HTTP REST interf
 
 The Data Coding Scheme (DCS) is a value which transports information about how the recipient device shall handle the the transferred data payload. In principle, the DCS specifies the character set of your payload. Based on the chosen DCS the message length varies. The maximum length of a SMS is 160 character using the default GSM character set. You can use another character set and the maximum number of characters which can be used might shrink. In the following table you can see some DCS values and its short descriptions. For a full reference please see <a target="_blank" href="https://en.wikipedia.org/wiki/Data_Coding_Scheme">Data Coding Scheme Wiki</a>.
 
-<Table align={["left","left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        DCS Value
-      </th>
-
-      <th>
-        Format
-      </th>
-
-      <th>
-        Payload for API
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        0
-      </td>
-
-      <td>
-        7-Bit Alphabet Text
-      </td>
-
-      <td>
-        Message Payload as String\
-        *TestSMS*
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        4
-      </td>
-
-      <td>
-        8-Bit Binary Data
-      </td>
-
-      <td>
-        Binary Payload as Hex Encoded String\
-        *54657374534d53*
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        8
-      </td>
-
-      <td>
-        UCS-2
-      </td>
-
-      <td>
-
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| DCS Value | Format | Payload for API |
+| --- | --- | --- |
+| 0 | 7-Bit Alphabet Text | Message Payload as String *TestSMS* |
+| 4 | 8-Bit Binary Data | Binary Payload as Hex Encoded String *54657374534d53* |
+| 8 | UCS-2 |  |
 
 ## Concatenated SMS Messages
 

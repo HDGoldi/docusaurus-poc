@@ -2,9 +2,9 @@
 title: Mobile Originated SMS
 description: MO-SMS originated from a device with a 1NCE SIM.
 ---
-<HTMLBlock>{`
-<center><img alt="Schematic sequence diagram of a MO-SMS message." src="/img/connectivity-services/connectivity-services-sms-services/sms-services-mo-sms/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/connectivity-services/connectivity-services-sms-services/sms-services-mo-sms/001.png" alt="Schematic sequence diagram of a MO-SMS message." style={{maxWidth: '100%'}} />
+</div>
 
 SMS messages originating from a device with a 1NCE SIM are referred to as Mobile Originated SMS (MO-SMS). Messages sent from an IoT devices with 1NCE SIM are only forwarded to application targets and not other devices. For accessing and receiving the messages, 1NCE offers multiple solutions for different needs. References to examples for all the listed methods are provided.
 

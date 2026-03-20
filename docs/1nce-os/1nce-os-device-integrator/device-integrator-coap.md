@@ -13,9 +13,9 @@ If a targeted device could not be found or is in a non-active status, the CoAP s
 
 While using UDP protocol for transport, the CoAP protocol offers reliable communication by using message confirmation mechanism. Each CoAP request has to be acknowledged by the server, so that the client would be sure that the message was processed:
 
-<HTMLBlock>{`
-<center><img alt="CoAP reliable messaging" src="/img/1nce-os/1nce-os-device-integrator/device-integrator-coap/001.png"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-device-integrator/device-integrator-coap/001.png" alt="CoAP reliable messaging" style={{maxWidth: '100%'}} />
+</div>
 
 There are few key moments that allow reliable communication:
 
@@ -216,68 +216,11 @@ Protocol: CoAP(s)
 
 ## Responses
 
-<Table align={["left","left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Code
-      </th>
-
-      <th>
-        Description
-      </th>
-
-      <th>
-        Schema
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        200
-      </td>
-
-      <td>
-        200 Response
-      </td>
-
-      <td>
-        Client identity, Pre-sharded key\
-        (text/csv),coapsEndpointUrl
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        401
-      </td>
-
-      <td>
-        401 Response
-      </td>
-
-      <td>
-        UnauthorizedResponse
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        500
-      </td>
-
-      <td>
-        500 Response
-      </td>
-
-      <td>
-        ServerSideErrorResponse
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Code | Description | Schema |
+| --- | --- | --- |
+| 200 | 200 Response | Client identity, Pre-sharded key (text/csv),coapsEndpointUrl |
+| 401 | 401 Response | UnauthorizedResponse |
+| 500 | 500 Response | ServerSideErrorResponse |
 
 ## DTLS Bootstrapping Information
 

@@ -2,9 +2,9 @@
 title: Features & Limitations
 description: Benefits of using the 1NCE VPN Service and its Limitations.
 ---
-<HTMLBlock>{`
-<center><img src="/img/network-services/network-services-vpn-service/vpn-service-features-limitations/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/network-services/network-services-vpn-service/vpn-service-features-limitations/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 This chapter provides a high-level, abstract overview of the features and limitations of the 1NCE VPN Service. It shows the extended possibilities and benefits of the VPN, compared to the regular Internet Breakout capabilities of the 1NCE SIM. In addition, the limitations of the service are pointed out.
 
@@ -58,9 +58,9 @@ For customers upgrading their existing OpenVPN version to 2.6 and above might ne
 
 The 1NCE VPN Service supports one active VPN client connection per (sub-) organization (see Figure below) at a time. If multiple clients try to connect at the same time, inconsistent data connections with random disconnects between the clients will occur. For establishing multiple connections to the 1NCE network, please refer to the IPSec Service or create additional suborganizations. Every (sub-) organization receives its own access data.
 
-<HTMLBlock>{`
-<center><img alt="Overview showing that multiple VPN connections are not possible." src="/img/network-services/network-services-vpn-service/vpn-service-features-limitations/002.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/network-services/network-services-vpn-service/vpn-service-features-limitations/002.png" alt="Overview showing that multiple VPN connections are not possible." style={{maxWidth: '100%'}} />
+</div>
 
 ## VPN Client IP Routes
 

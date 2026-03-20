@@ -2,9 +2,9 @@
 title: SMS Services
 description: An introduction of the 1NCE SMS Services.
 ---
-<HTMLBlock>{`
-<center><img alt="Schematic structure of the 1NCE SMS service." src="/img/connectivity-services/connectivity-services-sms-services/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/connectivity-services/connectivity-services-sms-services/001.png" alt="Schematic structure of the 1NCE SMS service." style={{maxWidth: '100%'}} />
+</div>
 
 In the world of IoT devices, the Short Message Service (SMS) has still an important role in basic communication with connected devices. The 1NCE SMS Service provides capabilities to send and receive messages with a 1NCE SIM. 
 

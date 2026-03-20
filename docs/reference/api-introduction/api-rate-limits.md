@@ -5,76 +5,13 @@ description: Know the Limits of the API.
 The 1NCE API can be used by any customer to query and configure settings of 1NCE SIMs, products and related services. To protect the API from misusage and overloading, certain rate limits for the endpoints are set. The rate limits are derived from analyzing the existing application case patterns of 1NCE customers. Therefore, the API rate limits should not interfere with common use cases for monitoring or controlling 1NCE services.  
 Listed below are the current rate limits for all endpoints available through the 1NCE Management API.
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th style={{ textAlign: "left" }}>
-        Endpoint
-      </th>
-
-      <th style={{ textAlign: "left" }}>
-        API Rate Limit
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td style={{ textAlign: "left" }}>
-        _Authorization:_
-        /oauth
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        600 requests per IP address per minutes
-      </td>
-    </tr>
-
-    <tr>
-      <td style={{ textAlign: "left" }}>
-        _SIM Management:_  
-        /sims
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        10 requests per second per Customer
-      </td>
-    </tr>
-
-    <tr>
-      <td style={{ textAlign: "left" }}>
-        _Order Management:_  
-        /orders
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        100 requests per IP address per 5 minutes
-      </td>
-    </tr>
-
-    <tr>
-      <td style={{ textAlign: "left" }}>
-        _Product Information:_  
-        /products
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        100 requests per IP address per 5 minutes
-      </td>
-    </tr>
-
-    <tr>
-      <td style={{ textAlign: "left" }}>
-        _Support Management:_  
-        /support
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        100 requests per IP address per 5 minutes
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Endpoint | API Rate Limit |
+| --- | --- |
+| _Authorization:_ /oauth | 600 requests per IP address per minutes |
+| _SIM Management:_ /sims | 10 requests per second per Customer |
+| _Order Management:_ /orders | 100 requests per IP address per 5 minutes |
+| _Product Information:_ /products | 100 requests per IP address per 5 minutes |
+| _Support Management:_ /support | 100 requests per IP address per 5 minutes |
 
 ***
 

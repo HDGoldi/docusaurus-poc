@@ -2,9 +2,9 @@
 title: Keen.io Integration
 description: Keen.io Integration of the 1NCE Data Streamer.
 ---
-<HTMLBlock>{`
-<center><img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-keen/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-keen/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 The <a href="https://keen.io/" target="_blank">Keen.io</a> platform is a managed event streaming platform used for streaming, analyzing, and embedding rich data. The 1NCE Data Streamer Service can easily be integrated with this service. The Keen.io integration supports both Event and Usage Records.\
 These chapters guides through the initial setup of the Keen.io project, 1NCE Portal Data Streamer configuration and a guide to testing the Keen.io integration.

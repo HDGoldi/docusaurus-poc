@@ -262,35 +262,33 @@ The ratezone in which the SIM generated the indicated usage.
 
 Identifies what kind of traffic was used and is shown in the Usage Record. This could either be Data or SMS.
 
-<HTMLBlock>{`
-<table style="width: 100%; border-collapse: collapse;">
+<table style={{width: '100%', borderCollapse: 'collapse'}}>
 <thead>
 <tr>
-  <th style="border: 1px solid #ddd; padding: 8px;">Property</th>
-  <th style="border: 1px solid #ddd; padding: 8px;">Data Type</th>
-  <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+  <th style={{border: '1px solid #ddd', padding: '8px'}}>Property</th>
+  <th style={{border: '1px solid #ddd', padding: '8px'}}>Data Type</th>
+  <th style={{border: '1px solid #ddd', padding: '8px'}}>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><code>id</code></p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><code>id</code></p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>INTEGER</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>INTEGER</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>Unique identifier of traffic type.<br>5 = Data<br>6 = SMS</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>Unique identifier of traffic type.<br />5 = Data<br />6 = SMS</p>
 </td>
 </tr>
 <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><code>name</code></p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><code>name</code></p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>STRING</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>STRING</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>Name of traffic type either &quot;Data&quot; or &quot;SMS&quot;.</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>Name of traffic type either &quot;Data&quot; or &quot;SMS&quot;.</p>
 </td>
 </tr>
 </tbody>
 </table>
-`}</HTMLBlock>
 
 
 ***
@@ -314,40 +312,38 @@ Details about the endpoint/device with the 1NCE SIM that generated the usage.
 
 Exact volume, either data in MegaBytes or number of SMS used by the SIM.
 
-<HTMLBlock>{`
-<table style="width: 100%; border-collapse: collapse;">
+<table style={{width: '100%', borderCollapse: 'collapse'}}>
 <thead>
 <tr>
-  <th style="border: 1px solid #ddd; padding: 8px;">Property</th>
-  <th style="border: 1px solid #ddd; padding: 8px;">Data Type</th>
-  <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+  <th style={{border: '1px solid #ddd', padding: '8px'}}>Property</th>
+  <th style={{border: '1px solid #ddd', padding: '8px'}}>Data Type</th>
+  <th style={{border: '1px solid #ddd', padding: '8px'}}>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><code>total</code></p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><code>total</code></p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>DECIMAL(14,6)</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>DECIMAL(14,6)</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>Total traffic consumed, sum of <code>tx</code> and <code>rx</code>.</p>
-</td>
-</tr>
-<tr>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><code>tx</code></p>
-</td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>DECIMAL(14,6)</p>
-</td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><em>Dependent on Traffic Type:</em><br>Upstream traffic (MB) send by the endpoint.<br>or<br>Number of sent MO-SMS</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>Total traffic consumed, sum of <code>tx</code> and <code>rx</code>.</p>
 </td>
 </tr>
 <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><code>rx</code></p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><code>tx</code></p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>DECIMAL(14,6)</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>DECIMAL(14,6)</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><em>Dependent on Traffic Type:</em><br>Downstream traffic (MB) received by the endpoint.<br>or<br>Number of sent MT-SMS</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><em>Dependent on Traffic Type:</em><br />Upstream traffic (MB) send by the endpoint.<br />or<br />Number of sent MO-SMS</p>
+</td>
+</tr>
+<tr>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><code>rx</code></p>
+</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>DECIMAL(14,6)</p>
+</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><em>Dependent on Traffic Type:</em><br />Downstream traffic (MB) received by the endpoint.<br />or<br />Number of sent MT-SMS</p>
 </td>
 </tr>
 </tbody>
 </table>
-`}</HTMLBlock>

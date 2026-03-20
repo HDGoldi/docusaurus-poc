@@ -2,9 +2,9 @@
 title: VPN Setup Linux
 description: Setup of 1NCE VPN using Linux.
 ---
-<HTMLBlock>{`
-<center><img src="/img/blueprints-examples/examples-vpn/examples-vpn-linux/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-vpn/examples-vpn-linux/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 Linux is very popular as a server operating system, thus it is used in many production systems for running applications. The 1NCE VPN service can be used with the OpenVPN client for Linux. This section covers the general installation and operation procedure of OpenVPN using the 1NCE VPN Service. Please note that due to the many flavors of the Linux operating system, the install procedure might be different for other Linux flavors. In the example, Ubuntu is used as operating system and the install process is carried out via Command Line Interface (CLI).
 

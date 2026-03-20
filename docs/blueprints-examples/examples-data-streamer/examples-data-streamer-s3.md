@@ -2,9 +2,9 @@
 title: AWS S3 Bucket
 description: Data Streamer AWS S3 Integration Guide.
 ---
-<HTMLBlock>{`
-<center><img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-s3/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-s3/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 The 1NCE Data Streamer Service can be integrated with AWS S3 which is an object-based storage solution. The Data Streamer can push CSV files into a S3 bucket allowing for easy, largescale data collection and further processing later on by related AWS Services. AWS S3 is integrated using AWS IAM Trust Relationships. The setup of the AWS integration can be done through the 1NCE Portal. 
 

@@ -18,9 +18,9 @@ title: Features & Limitations
   * `FAILED`: device responded with 4.xx or 5.xx response code via CoAP or LwM2M. Or an unexpected error occurred. Check the `resultData` of the request for more details. Only for CoAP, if the actual response data fails to be saved (e.g. malformed payload), then the Action request finishes with a `FAILED` state.
   * `CANCELLED`: a scheduled request was cancelled via the DELETE endpoints of our API
 
-<HTMLBlock>{`
-<center><img alt="Action request lifecycle" src="/img/1nce-os/1nce-os-device-controller/device-controller-features-limitations/001.png"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-device-controller/device-controller-features-limitations/001.png" alt="Action request lifecycle" style={{maxWidth: '100%'}} />
+</div>
 
 ***
 

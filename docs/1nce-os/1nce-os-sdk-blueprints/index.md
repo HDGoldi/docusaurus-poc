@@ -1,9 +1,9 @@
 ---
 title: 1NCE SDK & Blueprints
 ---
-<HTMLBlock>{`
-<center><img src="/img/1nce-os/1nce-os-sdk-blueprints/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 1NCE offers different Blueprints and SDKs to allow customers a seamless setup and use of all features as part of 1NCE OS.
 

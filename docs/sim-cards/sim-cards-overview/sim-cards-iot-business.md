@@ -33,75 +33,73 @@ Over the years, with the hardware miniaturization and especially IoT use cases f
 
 As 4FF is the smallest form factor that minimizes the plastic-backed SIM Card to the bare IC, we will use it as reference for the pinout. The pinout is the same for all IoT SIM Card Businesses as the SIM IC is identical. Shown above is the pinout reference and dimensions of the 4FF SIM according to <a href="https://www.etsi.org/deliver/etsi_ts/102200_102299/102221/15.00.00_60/ts_102221v150000p.pdf" target="blank_">ETSI TS 102 221</a>. While the 1NCE IoT SIM Card Business 4FF and IoT SIM Chip Industrial form factor are different, the pinout of the actual ICs are the same. The pinout table references the pinout of the dimensional reference figure for the 4FF SIM Card.
 
-<HTMLBlock>{`
-<table style="width: 100%; border-collapse: collapse;">
+<table style={{width: '100%', borderCollapse: 'collapse'}}>
 <thead>
 <tr>
-  <th style="border: 1px solid #ddd; padding: 8px;">Contact Pin</th>
-  <th style="border: 1px solid #ddd; padding: 8px;">Spec. Description</th>
-  <th style="border: 1px solid #ddd; padding: 8px;">1NCE IoT SIM Card Business Pinout</th>
+  <th style={{border: '1px solid #ddd', padding: '8px'}}>Contact Pin</th>
+  <th style={{border: '1px solid #ddd', padding: '8px'}}>Spec. Description</th>
+  <th style={{border: '1px solid #ddd', padding: '8px'}}>1NCE IoT SIM Card Business Pinout</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>C1</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C1</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><strong>VCC</strong><br>Supply Voltage</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>VCC</strong><br />Supply Voltage</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>VCC</p>
-</td>
-</tr>
-<tr>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>C2</p>
-</td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><strong>RST</strong><br>Reset Pin</p>
-</td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>RST</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>VCC</p>
 </td>
 </tr>
 <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>C3</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C2</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><strong>CLK</strong><br>Clock Signal</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>RST</strong><br />Reset Pin</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>CLK</p>
-</td>
-</tr>
-<tr>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>C4 and C8</p>
-</td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><strong>Optional</strong><br>USB interface according to ETSI TS 102 600</p>
-</td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>N/A</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>RST</p>
 </td>
 </tr>
 <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>C5</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C3</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><strong>GND</strong><br>Ground Connection</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>CLK</strong><br />Clock Signal</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>GND</p>
-</td>
-</tr>
-<tr>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>C6</p>
-</td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><strong>VPP</strong><br>Programming Voltage</p>
-</td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>N/A</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>CLK</p>
 </td>
 </tr>
 <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>C7</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C4 and C8</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p><strong>I/O</strong><br>Input Output Data</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>Optional</strong><br />USB interface according to ETSI TS 102 600</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>I/O</p>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>N/A</p>
+</td>
+</tr>
+<tr>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C5</p>
+</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>GND</strong><br />Ground Connection</p>
+</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>GND</p>
+</td>
+</tr>
+<tr>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C6</p>
+</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>VPP</strong><br />Programming Voltage</p>
+</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>N/A</p>
+</td>
+</tr>
+<tr>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>C7</p>
+</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p><strong>I/O</strong><br />Input Output Data</p>
+</td>
+  <td style={{border: '1px solid #ddd', padding: '8px'}}><p>I/O</p>
 </td>
 </tr>
 </tbody>
 </table>
-`}</HTMLBlock>
 
 
 ***
@@ -129,7 +127,6 @@ Each SIM Card can be uniquely identified by the ICCID. This SIM identification i
 
 SIM Cards for mobile network applications follow strict standards for the physical form factor as well as the technology and interfaces. 1NCE IoT SIM Card Business comply with these technical standard specifications. Besides the key standard compliances, SIM Cards are validated for specific environmental ranges in which they need to be operated in. The table below shows the most important 1NCE IoT SIM Card Business specifications that are relevant for the deployment of the 1NCE IoT SIM Card Business. Furthermore, references to the key standard compliances for the SIM interfaces are referenced.
 
-<HTMLBlock>{`
 <div style={{
   className: "rdmd-table"
 }}>
@@ -222,7 +219,6 @@ SIM Cards for mobile network applications follow strict standards for the physic
     </table>
   </div>
 </div>
-`}</HTMLBlock>
 
 
 ***

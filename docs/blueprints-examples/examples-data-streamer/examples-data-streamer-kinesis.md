@@ -2,9 +2,9 @@
 title: AWS Kinesis
 description: Integrating AWS Kinesis with the 1NCE Data Streamer.
 ---
-<HTMLBlock>{`
-<center><img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-kinesis/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-kinesis/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 The 1NCE Data Streamer Service can be integrated with AWS Kinesis which is ideal for collecting and processing large streamed data records in near real-time. AWS Kinesis are integrated using AWS IAM Trust Relationships. The setup of the AWS integration can be done through the 1NCE Portal. The following subchapters explain the Cloud Formation and 1NCE Portal setup as well as some testing procedures.
 

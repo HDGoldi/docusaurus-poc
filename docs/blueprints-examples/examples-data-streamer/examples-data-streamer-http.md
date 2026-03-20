@@ -2,9 +2,9 @@
 title: HTTP/Webhook
 description: Webhook/HTTP Integration of the 1NCE Data Streamer Service.
 ---
-<HTMLBlock>{`
-<center><img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-http/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-http/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 The HTTP/Webhook integration of the Data Streamer is ideal for custom server applications. This method offers the most flexible, custom integration of the Data Streamer Service into existing analytics, reporting, and monitoring pipelines. The Http callbacks supports both Event and Usage Records. 
 

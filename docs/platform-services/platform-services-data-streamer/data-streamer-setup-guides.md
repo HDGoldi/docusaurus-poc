@@ -4,35 +4,9 @@ description: Configuring the different Options for receiving the Data Stream.
 ---
 In this chapter, the setup of the 1NCE Data Streamer Service for different cloud integrations will be shown in detail. The 1NCE Data Streamer Service offers the following integrations:
 
-<HTMLBlock>{`
-<div class="button-flex-container">
-	<div class="button-flex-item">
-    <a href="#rest-api---integration">
-      	<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/d47972b-rest_api.svg"></img> 
-    </a>
-	</div>
-<div class="button-flex-item">
-  <a href="#keenio---integration">
-		<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/29d6339-keen_io.svg"> </img>
-  </a>
-	</div>
-<div class="button-flex-item">
-  <a href="#datadog---integration">
-		<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/720424d-data_dog.svg"> </img>
-  </a>
-	</div>
-<div class="button-flex-item">
-  <a href="#s3---integration">
-		<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/7f8d984-aws_s3.svg"> </img>
-  </a>
-	</div>
-<div class="button-flex-item">
-  <a href="#kinesis---integration">
-		<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/c2c9384-aws_kinesis.svg"> </img>
-  </a>
-	</div>
+<div style={{textAlign: 'center'}}>
+<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/d47972b-rest_api.svg" alt="" style={{maxWidth: '100%'}} />
 </div>
-`}</HTMLBlock>
 
 Click on one of the icons to get to the setup guide for the selected integration.
 

@@ -14,9 +14,9 @@ With the 1NCE SMS Forwarding Service, Mobile Originated (MO) SMS messages can be
 
 The figure below shows an example sequence (successful and failed) of the MO-SMS delivery using the SMS Forwarding Service.
 
-<HTMLBlock>{`
-<center><img alt="Schematic sequence diagram of a MO-SMS reception." src="/img/platform-services/platform-services-sms-forwarder/sms-forwarder-features-limitations/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/platform-services/platform-services-sms-forwarder/sms-forwarder-features-limitations/001.png" alt="Schematic sequence diagram of a MO-SMS reception." style={{maxWidth: '100%'}} />
+</div>
 
 ## MT-SMS Delivery Report
 
@@ -24,9 +24,9 @@ Outgoing, Mobile Terminated (MT) SMS which are send from the 1NCE Portal or API,
 
 The figure below shows an example sequence (successful and failed) of a Delivery Report for a MT-SMS being delivered through the SMS Forwarding Service. The initial MT-SMS was issued via the 1NCE Portal or the 1NCE API.
 
-<HTMLBlock>{`
-<center><img alt="Schematic sequence diagram of a MT-SMS DLR reception." src="/img/platform-services/platform-services-sms-forwarder/sms-forwarder-features-limitations/002.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/platform-services/platform-services-sms-forwarder/sms-forwarder-features-limitations/002.png" alt="Schematic sequence diagram of a MT-SMS DLR reception." style={{maxWidth: '100%'}} />
+</div>
 
 # HTTP Request Interface
 

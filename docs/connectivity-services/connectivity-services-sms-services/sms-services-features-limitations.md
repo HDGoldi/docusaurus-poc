@@ -54,9 +54,9 @@ The typical limitations of the MT-SMS size also apply to 1NCE SMS. A message can
 
 With 1NCE connectivity, it is not possible to send Peer-to-Peer (P2P) MT-SMS between devices. Therefore, it is not possible to send a message to a device with a 1NCE SIM using a mobile phone, neither with a third party nor another 1NCE SIM. For instance, it is possible to set the destination number on a mobile phone and send a message to this number but the Short Message Service Centre (SMSC) will not forward this MT-SMS to the destination number. The MT-SMS service is only intended to exchange messages with a server application controlled by the customer, Application-to-Peer (A2P).
 
-<HTMLBlock>{`
-<center><img alt="Schematic diagram showing that SMS to external sources are not supported." src="/img/connectivity-services/connectivity-services-sms-services/sms-services-features-limitations/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/connectivity-services/connectivity-services-sms-services/sms-services-features-limitations/001.png" alt="Schematic diagram showing that SMS to external sources are not supported." style={{maxWidth: '100%'}} />
+</div>
 
 ## SMS over NB-IoT
 

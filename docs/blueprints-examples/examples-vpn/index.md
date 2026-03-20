@@ -12,22 +12,6 @@ This section covers the setup of the 1NCE VPN client for Windows, Linux and Mac 
 
 For a detailed guide on how to install the VPN Client click on one of the following Operating Systems:
 
-<HTMLBlock>{`
-<div class="button-flex-container">
-	<div class="button-flex-item">
-    <a href="examples-vpn-windows">
-      	<img src="/img/blueprints-examples/examples-vpn/13f2388-windows.svg"></img> 
-    </a>
-	</div>
-<div class="button-flex-item">
-  <a href="examples-vpn-linux">
-		<img src="/img/blueprints-examples/examples-vpn/193df98-linux.svg"> </img>
-  </a>
-	</div>
-<div class="button-flex-item">
-  <a href="examples-vpn-macos">
-		<img src="/img/blueprints-examples/examples-vpn/1916674-macos.svg"> </img>
-  </a>
-	</div>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-vpn/13f2388-windows.svg" alt="" style={{maxWidth: '100%'}} />
 </div>
-`}</HTMLBlock>

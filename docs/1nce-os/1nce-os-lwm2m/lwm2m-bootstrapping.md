@@ -24,9 +24,9 @@ Using [leshan client](https://github.com/eclipse/leshan#test-leshan-demos-locall
 
 The following figure illustrates this process in detail.
 
-<HTMLBlock>{`
-<center><img src="/img/1nce-os/1nce-os-lwm2m/lwm2m-bootstrapping/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-lwm2m/lwm2m-bootstrapping/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 ### The shown steps are the following (plain connection):
 
@@ -36,255 +36,24 @@ The following figure illustrates this process in detail.
 
    > LwM2M Server
 
-   <Table align={["left","left","left","left"]}>
-     <thead>
-       <tr>
-         <th style={{ textAlign: "left" }}>
-           Resource
-         </th>
-
-         <th style={{ textAlign: "left" }}>
-           Description
-         </th>
-
-         <th style={{ textAlign: "left" }}>
-           Type
-         </th>
-
-         <th style={{ textAlign: "left" }}>
-           Value
-         </th>
-       </tr>
-     </thead>
-
-     <tbody>
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           0/0/0
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           LWM2M Server URI
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           String
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Example:\
-           `coap://1.2.3.4:5683`
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           0/0/1
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Bootstrap-Server
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Boolean
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           false
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           0/0/2
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Security Mode
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Integer
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           3 (NoSec)
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           0/0/10
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Server Id
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Integer
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           1111
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           1/0/0
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Short Server ID
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Integer
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           1111
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           1/0/1
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Lifetime (s)
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Integer
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           86400
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           1/0/2
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Default Minimum Period (s)
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Integer
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           1
-         </td>
-       </tr>
-     </tbody>
-   </Table>
+   | Resource | Description | Type | Value |
+| --- | --- | --- | --- |
+| 0/0/0 | LWM2M Server URI | String | Example: `coap://1.2.3.4:5683` |
+| 0/0/1 | Bootstrap-Server | Boolean | false |
+| 0/0/2 | Security Mode | Integer | 3 (NoSec) |
+| 0/0/10 | Server Id | Integer | 1111 |
+| 1/0/0 | Short Server ID | Integer | 1111 |
+| 1/0/1 | Lifetime (s) | Integer | 86400 |
+| 1/0/2 | Default Minimum Period (s) | Integer | 1 |
 
    > Bootstrap Server
 
-   <Table align={["left","left","left","left"]}>
-     <thead>
-       <tr>
-         <th>
-           Resource
-         </th>
-
-         <th>
-           Description
-         </th>
-
-         <th>
-           Type
-         </th>
-
-         <th>
-           Value
-         </th>
-       </tr>
-     </thead>
-
-     <tbody>
-       <tr>
-         <td>
-           0/1/0
-         </td>
-
-         <td>
-           Bootstrap Server URI
-         </td>
-
-         <td>
-           String
-         </td>
-
-         <td>
-           Example:\
-           `coap://lwm2m.os.1nce.com:5683`
-         </td>
-       </tr>
-
-       <tr>
-         <td>
-           0/1/1
-         </td>
-
-         <td>
-           Bootstrap-Server
-         </td>
-
-         <td>
-           Boolean
-         </td>
-
-         <td>
-           yes
-         </td>
-       </tr>
-
-       <tr>
-         <td>
-           0/1/2
-         </td>
-
-         <td>
-           Security Mode
-         </td>
-
-         <td>
-           Integer
-         </td>
-
-         <td>
-           3 (NoSec)
-         </td>
-       </tr>
-
-       <tr>
-         <td>
-           0/1/10
-         </td>
-
-         <td>
-           Server Id
-         </td>
-
-         <td>
-           Integer
-         </td>
-
-         <td>
-           2222
-         </td>
-       </tr>
-     </tbody>
-   </Table>
+   | Resource | Description | Type | Value |
+| --- | --- | --- | --- |
+| 0/1/0 | Bootstrap Server URI | String | Example: `coap://lwm2m.os.1nce.com:5683` |
+| 0/1/1 | Bootstrap-Server | Boolean | yes |
+| 0/1/2 | Security Mode | Integer | 3 (NoSec) |
+| 0/1/10 | Server Id | Integer | 2222 |
 
 3. The LwM2M client device uses this information to trigger the registration on the LwM2M server using CoAP.
 
@@ -296,326 +65,27 @@ The following figure illustrates this process in detail.
 
    > LwM2M DTLS Server
 
-   <Table align={["left","left","left","left"]}>
-     <thead>
-       <tr>
-         <th style={{ textAlign: "left" }}>
-           Resource
-         </th>
-
-         <th style={{ textAlign: "left" }}>
-           Description
-         </th>
-
-         <th style={{ textAlign: "left" }}>
-           Type
-         </th>
-
-         <th style={{ textAlign: "left" }}>
-           Value
-         </th>
-       </tr>
-     </thead>
-
-     <tbody>
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           0/0/0
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           LWM2M Server URI
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           String
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Example:\
-           `coaps://1.2.3.4:5684`
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           0/0/1
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Bootstrap-Server
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Boolean
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           false
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           0/0/2
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Security Mode
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Integer
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           0 (Pre-Shared Key)
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           0/0/3
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Identity
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Opaque
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           *Identity as binary data*
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           0/0/5
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Secret Key
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Opaque
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           *Private key for LwM2M Server as binary data*
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           0/0/10
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Server Id
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Integer
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           1111
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           1/0/0
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Short Server ID
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Integer
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           1111
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           1/0/1
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Lifetime (s)
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Integer
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           86400
-         </td>
-       </tr>
-
-       <tr>
-         <td style={{ textAlign: "left" }}>
-           1/0/2
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Default Minimum Period (s)
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           Integer
-         </td>
-
-         <td style={{ textAlign: "left" }}>
-           1
-         </td>
-       </tr>
-     </tbody>
-   </Table>
+   | Resource | Description | Type | Value |
+| --- | --- | --- | --- |
+| 0/0/0 | LWM2M Server URI | String | Example: `coaps://1.2.3.4:5684` |
+| 0/0/1 | Bootstrap-Server | Boolean | false |
+| 0/0/2 | Security Mode | Integer | 0 (Pre-Shared Key) |
+| 0/0/3 | Identity | Opaque | *Identity as binary data* |
+| 0/0/5 | Secret Key | Opaque | *Private key for LwM2M Server as binary data* |
+| 0/0/10 | Server Id | Integer | 1111 |
+| 1/0/0 | Short Server ID | Integer | 1111 |
+| 1/0/1 | Lifetime (s) | Integer | 86400 |
+| 1/0/2 | Default Minimum Period (s) | Integer | 1 |
 
    > Bootstrap DTLS Server
 
-   <Table align={["left","left","left","left"]}>
-     <thead>
-       <tr>
-         <th>
-           Resource
-         </th>
-
-         <th>
-           Description
-         </th>
-
-         <th>
-           Type
-         </th>
-
-         <th>
-           Value
-         </th>
-       </tr>
-     </thead>
-
-     <tbody>
-       <tr>
-         <td>
-           0/1/0
-         </td>
-
-         <td>
-           Bootstrap Server URI
-         </td>
-
-         <td>
-           String
-         </td>
-
-         <td>
-           Example:\
-           `coaps://lwm2m.os.1nce.com:5684`
-         </td>
-       </tr>
-
-       <tr>
-         <td>
-           0/1/1
-         </td>
-
-         <td>
-           Bootstrap-Server
-         </td>
-
-         <td>
-           Boolean
-         </td>
-
-         <td>
-           yes
-         </td>
-       </tr>
-
-       <tr>
-         <td>
-           0/1/2
-         </td>
-
-         <td>
-           Security Mode
-         </td>
-
-         <td>
-           Integer
-         </td>
-
-         <td>
-           0 (Pre-Shared Key)
-         </td>
-       </tr>
-
-       <tr>
-         <td>
-           0/1/3
-         </td>
-
-         <td>
-           Identity
-         </td>
-
-         <td>
-           Opaque
-         </td>
-
-         <td>
-           *Identity as binary data*
-         </td>
-       </tr>
-
-       <tr>
-         <td>
-           0/1/5
-         </td>
-
-         <td>
-           Secret Key
-         </td>
-
-         <td>
-           Opaque
-         </td>
-
-         <td>
-           *Private key for LwM2M Bootstrap Server as binary data*
-         </td>
-       </tr>
-
-       <tr>
-         <td>
-           0/1/10
-         </td>
-
-         <td>
-           Server Id
-         </td>
-
-         <td>
-           Integer
-         </td>
-
-         <td>
-           2222
-         </td>
-       </tr>
-     </tbody>
-   </Table>
+   | Resource | Description | Type | Value |
+| --- | --- | --- | --- |
+| 0/1/0 | Bootstrap Server URI | String | Example: `coaps://lwm2m.os.1nce.com:5684` |
+| 0/1/1 | Bootstrap-Server | Boolean | yes |
+| 0/1/2 | Security Mode | Integer | 0 (Pre-Shared Key) |
+| 0/1/3 | Identity | Opaque | *Identity as binary data* |
+| 0/1/5 | Secret Key | Opaque | *Private key for LwM2M Bootstrap Server as binary data* |
+| 0/1/10 | Server Id | Integer | 2222 |
 
 3. The LwM2M client device uses this information to trigger the registration on the LwM2M server using CoAPs. The DTLS Pre Shared Key (PSK) that is provided by the bootstrap server and used for the registration is regenerated on every bootstrap request.

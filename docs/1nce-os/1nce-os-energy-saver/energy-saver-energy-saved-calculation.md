@@ -41,16 +41,12 @@ The energy consumption of the IoT device can be calculated by:
 
 Where **E** is the energy consumption and **x** ist the Payload in Bytes. For every Byte less in communication you save an average of 0.013 mWh.
 
-<HTMLBlock>{`
 <center><b>E<sub>reduced</sub> = E(x<sub>original</sub>) - E(x<sub>optimized</sub>)</b></center>
-`}</HTMLBlock>
 
-<HTMLBlock>{`
 <ul>
   <li>x<sub>optimized</sub> is the payload from the device that is using a translation template</li>
   <li>x<sub>original</sub> is the value that will result after the optimized payload is translated (full JSON string)</li>
 </ul>
-`}</HTMLBlock>
 
 The average amount of saved energy is the difference between the energy consumption of the full JSON and the energy consumption of the optimized payload. Please be aware that the average amount of saved energy is an estimated value and not an actual measurement.
 
@@ -74,14 +70,12 @@ Output
 }
 ```
 
-<HTMLBlock>{`
 <ul>
   <li>Payload = 10 Bytes (x<sub>optimized</sub>)</li>
   <li>Output = 47 Bytes (x<sub>original</sub>)</li>
   <li>Amount of Saved Bytes = 37 Bytes</li>
   <li>Energy Saved (E<sub>reduced</sub>) = 0.481 mWh</li>
 </ul>
-`}</HTMLBlock>
 
 Compared to the energy of the original payload we save 0.51% of energy in this example.
 

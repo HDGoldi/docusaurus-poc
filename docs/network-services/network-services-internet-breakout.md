@@ -2,9 +2,9 @@
 title: Internet Breakout
 description: Default Internet accessibility with a 1NCE SIM.
 ---
-<HTMLBlock>{`
-<center><img src="/img/network-services/network-services-internet-breakout/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/network-services/network-services-internet-breakout/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 The default connectivity for a 1NCE SIM is achieved through the Internet Breakout Service. All devices with a 1NCE SIM can connect freely to services hosted in the public internet space. The Figure above illustrates the basic operation principle of the 1NCE Internet Breakout. Please note that the IPs listed in the Figure are just example placeholders. For the Internet Breakout IPs please refer to the list below for the full available IP pool. Depended on the configured breakout setting in the 1NCE Portal, the behavior of the Internet Breakout will different.
 
@@ -106,173 +106,13 @@ Each available Breakout Region has its unique set of IP Addresses. The specific 
 
 The currently used IPs to breakout any internet-targeted traffic are listed in the table below. Please note that these IP addresses might change overtime as new resources and features upgrades are introduced.
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Breakout Region
-      </th>
-
-      <th>
-        Public Internet Breakout IPs
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        Europe (Frankfurt)
-      </td>
-
-      <td>
-        18.197.48.88  
-        18.196.213.123
-
-        18.158.164.113  
-        18.159.233.211  
-        18.159.81.202  
-        18.184.88.141  
-        18.193.1.150  
-        18.193.152.39  
-        18.195.228.33  
-        18.195.39.164  
-        18.196.220.3  
-        18.198.73.229  
-        3.122.48.136  
-        3.124.161.167  
-        3.125.204.250  
-        3.127.225.197  
-        3.69.185.69  
-        3.70.63.102  
-        3.72.206.109  
-        3.72.220.2  
-        3.74.239.61  
-        3.76.234.36  
-        3.76.246.25  
-        3.76.71.73  
-        3.77.128.21  
-        3.78.103.144  
-        3.78.105.161  
-        3.78.11.129  
-        3.78.118.82  
-        3.78.22.61  
-        3.78.30.118  
-        3.78.54.227  
-        3.78.80.178  
-        52.58.166.184
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        US West (N. California)
-      </td>
-
-      <td>
-        13.52.88.115  
-        13.56.127.98  
-        184.72.14.243  
-        50.18.219.28  
-        54.151.43.39  
-        54.176.42.26  
-        54.177.224.205  
-        54.177.237.57  
-        54.183.119.255  
-        54.215.48.106  
-        54.215.50.114  
-        54.219.94.206  
-        54.241.17.235  
-        54.241.255.162  
-        54.241.50.173  
-        54.67.92.20
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        US East (N. Virginia)
-      </td>
-
-      <td>
-        23.23.138.167  
-        3.222.175.158  
-        3.222.216.109  
-        3.225.189.15  
-        3.227.104.16  
-        34.192.19.93  
-        34.194.27.192  
-        34.224.157.70  
-        34.225.144.128  
-        34.225.189.236  
-        34.236.129.19  
-        35.171.69.69  
-        35.172.74.1  
-        52.200.197.12  
-        52.204.165.12  
-        54.156.152.87  
-        23.22.227.77  
-        3.219.123.171  
-        3.93.91.86  
-        34.234.186.137  
-        44.210.17.192  
-        44.213.243.128  
-        52.45.143.123  
-        52.55.140.49
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Asia-Pacific (Tokyo)
-      </td>
-
-      <td>
-        3.112.185.7  
-        3.114.177.168  
-        18.178.179.20  
-        18.180.11.40  
-        18.181.5.226  
-        18.181.6.50  
-        35.74.89.95  
-        43.206.70.243  
-        52.196.96.15  
-        52.198.214.172  
-        52.199.139.92  
-        54.64.108.231  
-        54.64.136.175  
-        54.95.160.207  
-        54.168.158.172  
-        54.250.103.58
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        South America (São Paulo)
-      </td>
-
-      <td>
-        15.229.196.161  
-        18.228.115.195  
-        18.228.53.212  
-        18.229.25.47  
-        52.67.10.199  
-        54.232.172.76  
-        54.232.208.147  
-        54.233.120.112  
-        177.71.193.95  
-        18.228.164.80  
-        18.228.87.71  
-        18.230.109.14  
-        52.67.255.187  
-        54.232.201.155  
-        54.232.210.47  
-        54.94.135.62
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Breakout Region | Public Internet Breakout IPs |
+| --- | --- |
+| Europe (Frankfurt) | 18.197.48.88 18.196.213.123 18.158.164.113 18.159.233.211 18.159.81.202 18.184.88.141 18.193.1.150 18.193.152.39 18.195.228.33 18.195.39.164 18.196.220.3 18.198.73.229 3.122.48.136 3.124.161.167 3.125.204.250 3.127.225.197 3.69.185.69 3.70.63.102 3.72.206.109 3.72.220.2 3.74.239.61 3.76.234.36 3.76.246.25 3.76.71.73 3.77.128.21 3.78.103.144 3.78.105.161 3.78.11.129 3.78.118.82 3.78.22.61 3.78.30.118 3.78.54.227 3.78.80.178 52.58.166.184 |
+| US West (N. California) | 13.52.88.115 13.56.127.98 184.72.14.243 50.18.219.28 54.151.43.39 54.176.42.26 54.177.224.205 54.177.237.57 54.183.119.255 54.215.48.106 54.215.50.114 54.219.94.206 54.241.17.235 54.241.255.162 54.241.50.173 54.67.92.20 |
+| US East (N. Virginia) | 23.23.138.167 3.222.175.158 3.222.216.109 3.225.189.15 3.227.104.16 34.192.19.93 34.194.27.192 34.224.157.70 34.225.144.128 34.225.189.236 34.236.129.19 35.171.69.69 35.172.74.1 52.200.197.12 52.204.165.12 54.156.152.87 23.22.227.77 3.219.123.171 3.93.91.86 34.234.186.137 44.210.17.192 44.213.243.128 52.45.143.123 52.55.140.49 |
+| Asia-Pacific (Tokyo) | 3.112.185.7 3.114.177.168 18.178.179.20 18.180.11.40 18.181.5.226 18.181.6.50 35.74.89.95 43.206.70.243 52.196.96.15 52.198.214.172 52.199.139.92 54.64.108.231 54.64.136.175 54.95.160.207 54.168.158.172 54.250.103.58 |
+| South America (São Paulo) | 15.229.196.161 18.228.115.195 18.228.53.212 18.229.25.47 52.67.10.199 54.232.172.76 54.232.208.147 54.233.120.112 177.71.193.95 18.228.164.80 18.228.87.71 18.230.109.14 52.67.255.187 54.232.201.155 54.232.210.47 54.94.135.62 |
 
 ## Data Streamer and SMS Forwarder IPs
 
@@ -286,9 +126,9 @@ By design, the internet access for 1NCE SIMs is implemented with Network Address
 
 Using the 1NCE Internet Breakout, the **connection establishment** is **unidirectional** (e.g., SIM towards server/service), while **data transfer** over an already **established connection** is **bidirectional** (e.g., SIM towards server/service and server/service towards SIM). The flow of the 1NCE Internet Breakout is shown in the sequence diagram below. Bidirectional connection establishment can only be achieved using the 1NCE VPN Service.
 
-<HTMLBlock>{`
-<center><img alt="Sequence diagram of the 1NCE Internet Breakout." src="/img/network-services/network-services-internet-breakout/002.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/network-services/network-services-internet-breakout/002.png" alt="Sequence diagram of the 1NCE Internet Breakout." style={{maxWidth: '100%'}} />
+</div>
 
 ***
 

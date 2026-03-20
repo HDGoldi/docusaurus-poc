@@ -2,9 +2,9 @@
 title: SMS Forwarder Service
 description: Automating the Reception of the SMS Service.
 ---
-<HTMLBlock>{`
-<center><img alt="Schematic diagram of the structure of the SMS Forwarder Service." src="/img/platform-services/platform-services-sms-forwarder/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/platform-services/platform-services-sms-forwarder/001.png" alt="Schematic diagram of the structure of the SMS Forwarder Service." style={{maxWidth: '100%'}} />
+</div>
 
 As a counter part for Mobile Terminated (MT) SMS messages which are received by a mobile connected device, the 1NCE SMS Forwarding Services provides an interface for receiving Mobile Originated (MO) SMS messages. While MO-SMS can be viewed in the 1NCE Portal, it is cumbersome to use for large batches of SIM devices and can not be used for automation.
 

@@ -2,9 +2,9 @@
 title: VPN Service
 description: Bidirectional Connections between 1NCE SIM and Server Application.
 ---
-<HTMLBlock>{`
-<center><img src="/img/network-services/network-services-vpn-service/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/network-services/network-services-vpn-service/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 Each 1NCE SIM has a private IP and is connected via the Internet Breakout using Network Address Translation to the public internet. By default the connection establishment is unidirectional from the SIM device to a server/service in the internet. The 1NCE VPN Service enables 1NCE customers to connect and transmit data bidirectional with their SIM devices via a Virtual Private Network (VPN) connection.
 

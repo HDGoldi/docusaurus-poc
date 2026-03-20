@@ -212,96 +212,14 @@ This initial version's main target is to allow customers to connect their Things
 
 for more information on the troubleshooting
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Parameter
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        Radio Access Technology
-      </td>
-
-      <td>
-        * GSM  
-        * LTE  
-        * CATM1  
-        * NBIOT  
-        * Otherwise: NULL
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Public Land Mobile Network (PLMN) information
-      </td>
-
-      <td>
-        * Mobile Country Code  
-        * Mobile Network Code
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Registered Network (RN)
-      </td>
-
-      <td>
-        * Registered network operator cell Id.  
-        * Registered network operator Location Area Code.  
-        * Registered network operator Routing Area Code.  
-        * Registered network operator Tracking Area Code.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Reject CS ((Circuit Switched) registration status)
-      </td>
-
-      <td>
-        * : Table 2.  
-        * : 0: 3GPP specific Reject Cause. Manufacture specific.   : Circuit Switch Reject cause.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Reject PS ((Packet Switched) registration status)
-      </td>
-
-      <td>
-        * : Table 2.  
-        * : 0: 3GPP specific Reject Cause. Manufacture specific.  : Circuit Switch Reject cause.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Signal Information
-      </td>
-
-      <td>
-        * Received Signal Strength Indicator (RSSI) in dBm.  
-        * LTE Reference Signal Received Power (RSRP) in dBm  
-        * LTE Reference Signal Received Quality (RSRQ) in dB.  
-        * LTE Signal to Interference-Noise Ratio in dB.  
-        * Bit Error Rate (BER) in 0.01%.  
-        * A number between 0 to 5 (both inclusive) indicating signal strength.
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Parameter | Description |
+| --- | --- |
+| Radio Access Technology | * GSM * LTE * CATM1 * NBIOT * Otherwise: NULL |
+| Public Land Mobile Network (PLMN) information | * Mobile Country Code * Mobile Network Code |
+| Registered Network (RN) | * Registered network operator cell Id. * Registered network operator Location Area Code. * Registered network operator Routing Area Code. * Registered network operator Tracking Area Code. |
+| Reject CS ((Circuit Switched) registration status) | * : Table 2. * : 0: 3GPP specific Reject Cause. Manufacture specific. : Circuit Switch Reject cause. |
+| Reject PS ((Packet Switched) registration status) | * : Table 2. * : 0: 3GPP specific Reject Cause. Manufacture specific. : Circuit Switch Reject cause. |
+| Signal Information | * Received Signal Strength Indicator (RSSI) in dBm. * LTE Reference Signal Received Power (RSRP) in dBm * LTE Reference Signal Received Quality (RSRQ) in dB. * LTE Signal to Interference-Noise Ratio in dB. * Bit Error Rate (BER) in 0.01%. * A number between 0 to 5 (both inclusive) indicating signal strength. |
 
 <p>Table 1. Key Feature of Troubleshooting Message </p>
 

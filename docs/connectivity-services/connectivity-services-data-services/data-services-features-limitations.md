@@ -65,15 +65,15 @@ The infrastructure of the 1NCE Data Service network uses Network Address Transla
 
 The sequence diagram below shows the flow of a SIM device using the NAT Internet Breakout to establish a connection to a public internet server/service. The connection establishment always needs to come from the SIM device. After a connection session (e.g., TCP session) was opened by the SIM device, bidirectional communication is possible.
 
-<HTMLBlock>{`
-<center><img alt="Schematic sequence diagram of a data session establishment." src="/img/connectivity-services/connectivity-services-data-services/data-services-features-limitations/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/connectivity-services/connectivity-services-data-services/data-services-features-limitations/001.png" alt="Schematic sequence diagram of a data session establishment." style={{maxWidth: '100%'}} />
+</div>
 
 The second sequence diagram below shows the possible data service when using the 1NCE VPN Service. This free to use service allows to directly connect to the 1NCE Network to access/connect SIM devices from the customer server side. Please note that only traffic from the SIM device with the VPN client IP address as destination will be routed towards the connected VPN client. All other traffic from the SIM device will be routed through the Internet Breakout. For more details, please see the VPN Service chapter.
 
-<HTMLBlock>{`
-<center><img alt="Schematic sequence diagram of a data session establishment using the 1NCE VPN service." src="/img/connectivity-services/connectivity-services-data-services/data-services-features-limitations/002.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/connectivity-services/connectivity-services-data-services/data-services-features-limitations/002.png" alt="Schematic sequence diagram of a data session establishment using the 1NCE VPN service." style={{maxWidth: '100%'}} />
+</div>
 
 ## Data Protocols
 

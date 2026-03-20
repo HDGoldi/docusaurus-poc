@@ -2,9 +2,9 @@
 title: Mobile Network Services
 description: Connecting IoT devices through global Mobile Networks.
 ---
-<HTMLBlock>{`
-<center><img alt="Schematic overview of the 1NCE network structure." src="/img/connectivity-services/connectivity-services-mobile-network-services/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/connectivity-services/connectivity-services-mobile-network-services/001.png" alt="Schematic overview of the 1NCE network structure." style={{maxWidth: '100%'}} />
+</div>
 
 1NCE is not just another Internet of Things (IoT) Mobile Virtual Network Operator (MVNO). In a unique way, 1NCE enhances the capabilities of a full MVNO with the power and quality of Tier-1 mobile networks. Our network capabilities exceed those of traditional MVNOs because we have a direct interface to Radio Access Networks of Tier-1 operators which enable us to control and manage the IoT traffic directly and more eminently. Additionally, we utilize essential network assets of our Mobile Network Operator (MNO) roaming partners to guarantee long-term stability and security of our network services to customers.
 

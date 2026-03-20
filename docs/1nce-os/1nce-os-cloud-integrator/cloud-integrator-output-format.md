@@ -5,88 +5,14 @@ title: Output Format
 
 For AWS Integrations the messages will be forwarded to a dedicated AWS IoT Core MQTT topic for each event type.
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Event Type
-      </th>
-
-      <th>
-        AWS IoT Core MQTT Topic
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        ERROR
-      </td>
-
-      <td>
-        `error`
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        GEOFENCE
-      </td>
-
-      <td>
-        `geofence`
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        LOCATION
-      </td>
-
-      <td>
-        `location`
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        LIFECYCLE
-      </td>
-
-      <td>
-        `lifecycle`
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        TELEMETRY_DATA
-      </td>
-
-      <td>
-        LWM2M & UDP protocol:
-        `{{iccid}}/messages`
-
-        CoAP protocol with provided [query parameter _t_](doc:device-integrator-coap):  
-        `{{iccid}}/{\{query\_parameter\_t}}`
-
-        CoAP protocol without provided [query parameter _t_](doc:device-integrator-coap):  
-        `{{iccid}}`
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        TEST_MESSAGE
-      </td>
-
-      <td>
-        `integration-status`
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Event Type | AWS IoT Core MQTT Topic |
+| --- | --- |
+| ERROR | `error` |
+| GEOFENCE | `geofence` |
+| LOCATION | `location` |
+| LIFECYCLE | `lifecycle` |
+| TELEMETRY_DATA | LWM2M & UDP protocol: `{{iccid}}/messages` CoAP protocol with provided [query parameter _t_](doc:device-integrator-coap): `{{iccid}}/{\{query\_parameter\_t}}` CoAP protocol without provided [query parameter _t_](doc:device-integrator-coap): `{{iccid}}` |
+| TEST_MESSAGE | `integration-status` |
 
 ***
 

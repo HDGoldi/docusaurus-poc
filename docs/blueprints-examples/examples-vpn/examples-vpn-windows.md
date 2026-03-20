@@ -2,9 +2,9 @@
 title: VPN Setup Windows
 description: Setup 1NCE VPN with Windows Client.
 ---
-<HTMLBlock>{`
-<center><img src="/img/blueprints-examples/examples-vpn/examples-vpn-windows/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-vpn/examples-vpn-windows/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 The Windows platform is often used for testing on personal computers or in a Windows Server environment. This section covers the basic setup the 1NCE VPN Service on a Windows PC. Further the data routing needed for communicating between the VPN client and the 1NCE SIMs is shown. References to examples for testing and debugging the Windows VPN integrations are provided.
 

@@ -17,7 +17,9 @@
     "convert:frontmatter": "tsx scripts/02-convert-frontmatter.ts",
     "convert:base64": "tsx scripts/03-extract-base64.ts",
     "convert:download": "tsx scripts/04-download-images.ts",
-    "convert:images": "tsx scripts/05-convert-images.ts"
+    "convert:images": "tsx scripts/05-convert-images.ts",
+    "convert:htmlblocks": "tsx scripts/06-convert-htmlblocks.ts",
+    "convert:tables": "tsx scripts/07-convert-tables.ts"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",

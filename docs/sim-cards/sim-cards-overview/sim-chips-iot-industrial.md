@@ -24,130 +24,15 @@ The QFN8 IoT SIM Chip Industrial package is not mounted inside a socketed adapte
 
 Embedded-SIMs share the same basic pinout as IoT SIMs Card Business but in a different form factor shown in the figure above. The following table references the pin assignments and lists their respective functional pinout.
 
-<Table align={["left","left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Contact Pin
-      </th>
-
-      <th>
-        Spec. Description
-      </th>
-
-      <th>
-        1NCE IoT SIM Chip Industrial Pinout
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        C1
-      </td>
-
-      <td>
-        **VCC**\
-        Supply Voltage
-      </td>
-
-      <td>
-        VCC
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        C2
-      </td>
-
-      <td>
-        **RST**\
-        Reset Pin
-      </td>
-
-      <td>
-        RST
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        C3
-      </td>
-
-      <td>
-        **CLK**\
-        Clock Signal
-      </td>
-
-      <td>
-        CLK
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        C4 and C8
-      </td>
-
-      <td>
-        **Optional**\
-        USB interface according to ETSI TS 102 600
-      </td>
-
-      <td>
-        N/A
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        C5
-      </td>
-
-      <td>
-        **GND**\
-        Ground Connection
-      </td>
-
-      <td>
-        GND
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        C6
-      </td>
-
-      <td>
-        **VPP**\
-        Programming Voltage
-      </td>
-
-      <td>
-        N/A
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        C7
-      </td>
-
-      <td>
-        **I/O**\
-        Input Output Data
-      </td>
-
-      <td>
-        I/O
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Contact Pin | Spec. Description | 1NCE IoT SIM Chip Industrial Pinout |
+| --- | --- | --- |
+| C1 | **VCC** Supply Voltage | VCC |
+| C2 | **RST** Reset Pin | RST |
+| C3 | **CLK** Clock Signal | CLK |
+| C4 and C8 | **Optional** USB interface according to ETSI TS 102 600 | N/A |
+| C5 | **GND** Ground Connection | GND |
+| C6 | **VPP** Programming Voltage | N/A |
+| C7 | **I/O** Input Output Data | I/O |
 
 ***
 
@@ -191,10 +76,9 @@ For more information about eID, please, refer to the official [GSMA documentatio
 
 SIM Cards for mobile network applications follow strict standards for the physical form factor as well as the technology and interfaces. 1NCE IoT SIMs Chip Industrial comply with these technical standard specifications. Besides the key standard compliances, SIM Chips are validated for specific environmental ranges in which they need to be operated in.  The table below shows the most important 1NCE IoT SIM Chip Industrial specifications that are relevant for the deployment of the 1NCE IoT SIM Chip Industrial. Furthermore, references to the key standard compliances for the SIM interfaces are referenced.
 
-<HTMLBlock>{`
-<div class="rdmd-table">
-	<div class="rdmd-table-inner">
-	<style type="text/css">.tdc { text-align:center;}</style>
+<div className="rdmd-table">
+	<div className="rdmd-table-inner">
+	
 		<table>
 			<thead>
 				<tr>
@@ -205,60 +89,59 @@ SIM Cards for mobile network applications follow strict standards for the physic
 			<tbody>
 				<tr>
 					<td>Form Factor (FF)</td>
-					<td class="tdc">MFF2, QFN8 (IC Package)</td>
+					<td className="tdc">MFF2, QFN8 (IC Package)</td>
 				</tr>
 				<tr>
 					<td>Supported Radio Access Technologies (RAT)</td>
-					<td class="tdc">2G, 3G, 4G, CAT-M1, NB-IoT</td>
+					<td className="tdc">2G, 3G, 4G, CAT-M1, NB-IoT</td>
 				</tr>
 				<tr>
 					<td>Environmental Temperature</td>
-					<td class="tdc">-40°C to +105°C</td>
+					<td className="tdc">-40°C to +105°C</td>
 				</tr>
 				<tr>
 					<td>Operating Voltages</td>
-					<td class="tdc">Class A, B and C (1.62V – 5.5V)</td>
+					<td className="tdc">Class A, B and C (1.62V – 5.5V)</td>
 				</tr>
 				<tr>
 					<td>Data Retention Period</td>
-					<td class="tdc">min. 10 years</td>
+					<td className="tdc">min. 10 years</td>
 				</tr>
          <tr>
 					<td>Number of profiles</td>
-					<td class="tdc">max. 10 </td>
+					<td className="tdc">max. 10 </td>
 				</tr>
 				<tr>
 					<td>Read/Write Cycles</td>
-					<td class="tdc">min. 2.000.000 cycles</td>
+					<td className="tdc">min. 2.000.000 cycles</td>
 					<tr>
 						<td>Key Standard Compliances</td>
-						<td class="tdc"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1833" target="blank_">3GPP TR 31.919</a></td>
+						<td className="tdc"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1833" target="blank_">3GPP TR 31.919</a></td>
 					</tr>
 					<tr>
 						<td/>
-						<td class="tdc"><a href="https://www.etsi.org/deliver/etsi_ts/101200_101299/101220/13.01.00_60/ts_101220v130100p.pdf" target="blank_">ETSI TS 101 220</a></td>
+						<td className="tdc"><a href="https://www.etsi.org/deliver/etsi_ts/101200_101299/101220/13.01.00_60/ts_101220v130100p.pdf" target="blank_">ETSI TS 101 220</a></td>
 					</tr>
 					<tr>
 						<td/>
-						<td class="tdc"><a href="https://www.etsi.org/deliver/etsi_ts/102200_102299/102221/15.00.00_60/ts_102221v150000p.pdf" target="blank_">ETSI TS 102 221</a></td>
+						<td className="tdc"><a href="https://www.etsi.org/deliver/etsi_ts/102200_102299/102221/15.00.00_60/ts_102221v150000p.pdf" target="blank_">ETSI TS 102 221</a></td>
 					</tr>
 					<tr>
 						<td/>
-						<td class="tdc"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1802" target="blank_">3GPP TS 31.101</a></td>
+						<td className="tdc"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1802" target="blank_">3GPP TS 31.101</a></td>
 					</tr>
 					<tr>
 						<td/>
-						<td class="tdc"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1807" target="blank_">3GPP TS 31.111</a></td>
+						<td className="tdc"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1807" target="blank_">3GPP TS 31.111</a></td>
 					</tr>
 					<tr>
 						<td/>
-						<td class="tdc"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1831" target="blank_">3GPP TR 31.900</a></td>
+						<td className="tdc"><a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1831" target="blank_">3GPP TR 31.900</a></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
-`}</HTMLBlock>
 
 ***
 

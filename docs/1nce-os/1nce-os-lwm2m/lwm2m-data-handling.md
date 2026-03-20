@@ -4,9 +4,9 @@ description: >-
   The basics of Sending, Reporting and Viewing data using the 1NCE LwM2M
   Service.
 ---
-<HTMLBlock>{`
-<center><img src="/img/1nce-os/1nce-os-lwm2m/lwm2m-data-handling/001.png" style="cursor:pointer;max-width:100%;" onclick="(function(img){if(img.wnd!=null&&!img.wnd.closed){img.wnd.focus();}else{var r=function(evt){if(evt.data=='ready'&&evt.source==img.wnd){img.wnd.postMessage(decodeURIComponent(img.getAttribute('src')),'*');window.removeEventListener('message',r);}};window.addEventListener('message',r);img.wnd=window.open('https://viewer.diagrams.net/?client=1&page=0&edit=_blank');}})(this);"/></center>
-`}</HTMLBlock>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-lwm2m/lwm2m-data-handling/001.png" alt="" style={{maxWidth: '100%'}} />
+</div>
 
 In general, there are two options how data from a LwM2M client device can be transmitted towards the LwM2M Server. The send operation represents the push-orientated communication, whereas passive reporting reflects the pull-based data exchange. In the following section, both these data exchange methods are outlined. Further an outline to viewing and accessing the LwM2M data and further references are provided. 
 

@@ -36,133 +36,19 @@ Further, the shown columns can be (de-)activated to select only the ones of inte
 
 ## SIM Details
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Parameter
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        `ICCID`
-      </td>
-
-      <td>
-        Unique serial of the SIM card.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        `MSISDN`
-      </td>
-
-      <td>
-        Phone number of the SIM card. The SIM can not be used for voice services or to receive/send SMS to external parties. The chapters [SMS Services](https://help.1nce.com/dev-hub/docs/connectivity-services-sms-services) and [SMS Forwarding Service](https://help.1nce.com/dev-hub/docs/platform-services-sms-forwarder) provide more information.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        `IMEI(SV)`
-      </td>
-
-      <td>
-        Identifier of the device the SIM is inserted into. The IMEI displayed in the 1NCE Portal is retrieved from the network during PDP context activation, the format is as follows: IMEI + SV (software version), based on the standard specification 3GPP TS23.003.  
-        See the <a href="/dev-hub/docs/sim-cards-knowledge#international-mobile-equipment-identity-imei">IMEI Reference</a> for more information.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        `IMEI Lock`
-      </td>
-
-      <td>
-        Status of the IMEI lock for this specific SIM. If enabled the SIM is bound to the current device.  
-        See the <a href="/dev-hub/docs/sim-cards-knowledge#imei-lock">IMEI Lock Reference</a> for more information.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        `IP Address`
-      </td>
-
-      <td>
-        Static IP address of the specific SIM. Used for accessing the SIM via 1NCE VPN Services.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        `SIM Type`
-      </td>
-
-      <td>
-        Specific type of SIM card, FlexSIM or eSIM.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        `Tariff`
-      </td>
-
-      <td>
-        Details about the tariff of the specific SIM showing the data and SMS volume.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        `Label`
-      </td>
-
-      <td>
-        Self-set label text for the specific SIM card.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        `Auto-Top-Up`
-      </td>
-
-      <td>
-        Indicator if Auto-Top-Up is enabled for this SIM.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        `Data Usage`
-      </td>
-
-      <td>
-        Colored indicator of the remaining data quota. Green > 20% remaining, Yellow \< 20% available, Red = 0 % remaining.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        `SMS Usage`
-      </td>
-
-      <td>
-        Colored indicator of the remaining SMS quota. Green > 20% remaining, Yellow \< 20% available, Red = 0 % remaining.
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Parameter | Description |
+| --- | --- |
+| `ICCID` | Unique serial of the SIM card. |
+| `MSISDN` | Phone number of the SIM card. The SIM can not be used for voice services or to receive/send SMS to external parties. The chapters [SMS Services](https://help.1nce.com/dev-hub/docs/connectivity-services-sms-services) and [SMS Forwarding Service](https://help.1nce.com/dev-hub/docs/platform-services-sms-forwarder) provide more information. |
+| `IMEI(SV)` | Identifier of the device the SIM is inserted into. The IMEI displayed in the 1NCE Portal is retrieved from the network during PDP context activation, the format is as follows: IMEI + SV (software version), based on the standard specification 3GPP TS23.003. See the <a href="/dev-hub/docs/sim-cards-knowledge#international-mobile-equipment-identity-imei">IMEI Reference</a> for more information. |
+| `IMEI Lock` | Status of the IMEI lock for this specific SIM. If enabled the SIM is bound to the current device. See the <a href="/dev-hub/docs/sim-cards-knowledge#imei-lock">IMEI Lock Reference</a> for more information. |
+| `IP Address` | Static IP address of the specific SIM. Used for accessing the SIM via 1NCE VPN Services. |
+| `SIM Type` | Specific type of SIM card, FlexSIM or eSIM. |
+| `Tariff` | Details about the tariff of the specific SIM showing the data and SMS volume. |
+| `Label` | Self-set label text for the specific SIM card. |
+| `Auto-Top-Up` | Indicator if Auto-Top-Up is enabled for this SIM. |
+| `Data Usage` | Colored indicator of the remaining data quota. Green > 20% remaining, Yellow \< 20% available, Red = 0 % remaining. |
+| `SMS Usage` | Colored indicator of the remaining SMS quota. Green > 20% remaining, Yellow \< 20% available, Red = 0 % remaining. |
 
 ## SIM Export
 
