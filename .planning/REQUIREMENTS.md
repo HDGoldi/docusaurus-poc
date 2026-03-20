@@ -10,13 +10,13 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Content Conversion
 
 - [x] **CONV-01**: All 298 Markdown files converted to valid MDX that builds without errors
-- [ ] **CONV-02**: `<HTMLBlock>` components (42 files) converted to standard MDX-compatible markup
+- [x] **CONV-02**: `<HTMLBlock>` components (42 files) converted to standard MDX-compatible markup
 - [x] **CONV-03**: `<Image>` JSX tags converted to standard Markdown image syntax with local paths
 - [x] **CONV-04**: Remote images from `files.readme.io` downloaded to `/static/img/` directory
 - [x] **CONV-05**: Base64-encoded inline images (40 images in 31 files) extracted to static image files
-- [ ] **CONV-06**: `(doc:slug)` cross-reference links (112 occurrences) converted to Docusaurus internal links
-- [ ] **CONV-07**: Blockquote admonitions (`:warning:`, `:info:`, etc.) converted to Docusaurus `:::` admonitions
-- [ ] **CONV-08**: `<Table>` JSX components converted to standard Markdown tables
+- [x] **CONV-06**: `(doc:slug)` cross-reference links (112 occurrences) converted to Docusaurus internal links
+- [x] **CONV-07**: Blockquote admonitions (`:warning:`, `:info:`, etc.) converted to Docusaurus `:::` admonitions
+- [x] **CONV-08**: `<Table>` JSX components converted to standard Markdown tables
 - [x] **CONV-09**: ReadMe YAML frontmatter converted to Docusaurus-compatible frontmatter (title, description, slug)
 - [x] **CONV-10**: Conversion implemented as automated Node.js script (not manual per-file editing)
 
@@ -93,13 +93,13 @@ Deferred to future release. Tracked but not in current roadmap.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | CONV-01 | Phase 1 | Complete |
-| CONV-02 | Phase 1 | Pending |
+| CONV-02 | Phase 1 | Complete |
 | CONV-03 | Phase 1 | Complete |
 | CONV-04 | Phase 1 | Complete |
 | CONV-05 | Phase 1 | Complete |
-| CONV-06 | Phase 1 | Pending |
-| CONV-07 | Phase 1 | Pending |
-| CONV-08 | Phase 1 | Pending |
+| CONV-06 | Phase 1 | Complete |
+| CONV-07 | Phase 1 | Complete |
+| CONV-08 | Phase 1 | Complete |
 | CONV-09 | Phase 1 | Complete |
 | CONV-10 | Phase 1 | Complete |
 | NAV-01 | Phase 2 | Pending |
