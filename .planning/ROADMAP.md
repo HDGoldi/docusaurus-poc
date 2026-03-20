@@ -34,7 +34,7 @@ Plans:
 - [x] 01-01-PLAN.md -- Scaffold Docusaurus, copy/normalize export, convert frontmatter, create shared utilities
 - [x] 01-02-PLAN.md -- Image pipeline: extract base64, download remote images, convert Image JSX to Markdown
 - [x] 01-03-PLAN.md -- Content conversion: HTMLBlocks, tables, doc links, admonitions
-- [ ] 01-04-PLAN.md -- Pipeline orchestrator, sidebar generation, build validation, human verification
+- [x] 01-04-PLAN.md -- Pipeline orchestrator, sidebar generation, build validation, human verification
 
 ### Phase 2: Site Assembly
 **Goal**: The complete site experience -- navigation, interactive API docs, 1NCE branding, and analytics -- is functional in local dev
