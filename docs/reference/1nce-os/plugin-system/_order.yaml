@@ -1,0 +1,8 @@
+- post_v1-partners-datacake-plugins
+- post_v1-partners-mender-plugins
+- post_v1-partners-tartabit-plugins
+- post_v1-partners-memfault-plugins
+- delete_v1-partners-plugins-pluginid
+- get_v1-partners-plugins-pluginid
+- post_v1-partners-plugins-pluginid-restart
+- get_v1-partners-plugins

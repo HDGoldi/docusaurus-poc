@@ -1,0 +1,82 @@
+---
+title: SMS Events
+description: Events received by the SMS Forwarder.
+---
+The 1NCE SMS Forwarding Service provides different types HTTP messages for Mobile Originated (MO) and Mobile Terminated (MT) SMS. In the following sections, the message events for MO-SMS and MT-SMS are outlined and an example JSON message is shown as reference.
+
+# MO-SMS
+
+Normal Mobile Originated SMS messages issued from devices with a 1NCE SIM are forwarded to the specified HTTP endpoint as JSON objects in a fixed format. The JSON message body contains parameter field which specify the payload and additional configurations. Listed below is an overview of these values from the HTTP Post Body of a MO-SMS message.
+
+| Property              | Data Type   | Description                                                                                                                                          |
+| :-------------------- | :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                  | INTEGER     | Unique ID of the SMS message.                                                                                                                        |
+| `payload`             | STRING      | SMS message payload. The format (Alphabet Text, Binary Data, etc.) depends on the set Data Coding Scheme (DCS) value.                                |
+| `submit_date`         | STRING      | Timestamp of when the SMS message was send by the mobile device.                                                                                     |
+| `destination_address` | STRING      | Phone number specified by sending party as destination. This parameter is ignored by the 1NCE SMS Service.                                           |
+| `source_address`      | STRING      | MSISDN of the SIM card that send the SMS message. The MSISDN is the phone number of the SIM.                                                         |
+| `dcs`                 | INTEGER     | The Data Coding Scheme (DCS) is a value which transports information about how the recipient device shall handle the the transferred data payload.   |
+| `endpoint`            | JSON OBJECT | Details about the originating SIM. The Name lists the ICCID of the SIM.                                                                              |
+| `organisiation`       | JSON OBJECT | Contains the internal organisation ID, not to be confused with the 1NCE organisation ID.                                                             |
+| `multi_part_info`     | JSON OBJECT | Information about multi-part SMS messages. The parameters list the current part number and the total amount of messages in the concatenated message. |
+
+A JSON object with the listed parameters will be send with a HTTP Post request towards the specified customer endpoint for the SMS Forwarding Service. Below an example of such a JSON message is shown.
+
+```json SMS Receive JSON Format
+{
+	"id": 6202,
+	"payload": "message text",
+	"submit_date": "2018-08-17 16:31:51",
+	"dest_address": "12345",
+	"source_address": "<msisdn>",
+	"dcs": 0,
+	"endpoint": {
+		"id": 8765412,
+		"name": "<iccid>"
+	},
+	"organisation": {
+		"id": 4567
+	},
+	"multi_part_info": {
+		"partno": 1,
+		"total": 1,
+		"identifier": 6202
+	},
+	"pid": 0
+}
+```
+
+# MT-SMS
+
+For Mobile Terminated SMS where the message is send towards a SIM device, the SMS Forwarding Service is not forwarding the actual SMS message itself to the application server. Instead, only the Delivery Report (DLR) of the MT-SMS is sent via the Forwarding Service.\
+The DLR indicates the successful delivery of the MT-SMS using a 1NCE SIM card. When a MT-SMS is sent to a device via the 1NCE Portal or the 1NCE API, the SMS Forwarding Service provides a Delivery Report (DLR) in a JSON format. Below, the parameters of the HTTP Patch Body from the DLR message are explained.
+
+| Property       | Data Type   | Description                                                                                                                                      |
+| :------------- | :---------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`           | INTEGER     | Unique ID of the DLR message.                                                                                                                    |
+| `final_date`   | STRING      | Timestamp when the MT-SMS was finalized by the receiving SIM device.                                                                             |
+| `submit_date`  | STRING      | Timestamp when the MT-SMS was originally issued.                                                                                                 |
+| `organisation` | JSON OBJECT | Contains the internal organisation ID, not to be confused with the 1NCE organisation ID.                                                         |
+| `endpoint`     | JSON OBJECT | Details about the originating SIM. The Name lists the ICCID of the SIM.                                                                          |
+| `status`       | JSON OBJECT | Indication of the delivery status of the MT-SMS. The DLR response could be DELIVERED or FAILED when the MT-SMS was not successfully transmitted. |
+
+In contrast to the MO-SMS, the JSON object for the DLR of the MT-SMS will be send with a HTTP Patch request towards the specified customer endpoint. Below an example of such a JSON message is shown.
+
+```json Delivery Report JSON Format
+{
+	"id": 2819195,
+	"final_date": "2020-06-09 15:06:38",
+	"submit_date": "2020-06-09 15:06:34",
+	"organisation": {
+		"id": 4567
+	},
+	"endpoint": {
+		"name": "<iccid>",
+		"id": 8765432
+	},
+	"status": {
+		"id": 4,
+		"status": "DELIVERED"
+	}
+}
+```

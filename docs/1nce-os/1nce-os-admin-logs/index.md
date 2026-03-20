@@ -1,0 +1,4 @@
+---
+title: Admin Logs
+---
+As 1NCE OS is intended to ease the entry into IoT applications, the 1NCE Admin Logs provides an aggregator of events from devices and errors. From the Admin Logs, the events and errors can be viewed via the Web Interface or queried using the Management API for further processing.

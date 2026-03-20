@@ -1,0 +1,232 @@
+---
+title: SIM7000G HTTP POST
+---
+```curl AT Commands
+> AT
+OK
+
+
+> AT+CFUN?
++CFUN: 1
+
+
+> AT+CFUN=1
++CPIN: READY
+OK
+SMS Ready
+Call Ready
+
+
+> AT+CPIN?
++CPIN: READY
+OK
+
+
+> AT+COPS=0,0
+OK
+
+
+> AT+CEREG?
++CREG: 0,2
+OK
+  
+
+> AT+CEREG?
++CREG: 0,5
+OK  
+
+
+> AT+CGREG?
++CREG: 0,5
+OK 
+
+
+> AT+CGREG?
++CREG: 0,5
+OK 
+
+
+> AT+CPSI?
++CPSI: GSM,Online,262-01,0x972d,5559,79 EGSM 900,-83,0,24-24
+ 
+ 
+> AT+COPS?
++COPS: 0,0,"Telekom.de 1nce.net",3
+OK
+  
+  
+> AT+SAPBR=3,1,"APN","iot.1nce.net"
+OK
+
+
+> AT+SAPBR=1,1
+OK
+
+
+> AT+SAPBR=2,1
++SAPBR: 1,1,"x.x.x.x"
+OK
+
+
+> AT+HTTPINIT
+OK
+
+
+> AT+HTTPPARA?
++HTTPPARA:
+CID: 1
+URL: 
+UA: SIMCOM_MODULE
+PROIP: 0.0.0.0
+PROPORT: 0
+REDIR: 0
+BREAK: 0
+BREAKEND: 0
+TIMEOUT: 120
+CONTENT: 
+USERDATA: 
+OK
+
+
+> AT+HTTPPARA="URL","<http_post_target>"
+OK
+
+
+> AT+HTTPDATA=100,10000
+> <100_bytes_data>
+OK
+
+
+> AT+HTTPACTION=1
+OK
++HTTPACTION: 1,200,0
+
+
+> AT+HTTPTERM
+OK
+
+
+> AT+SAPBR=0,1
+OK
+```
+
+# Preperation
+
+
+
+For testing purposes, connect the SIM7000G (1529B05SIM7000G) to a computer. The commands used in this guide will be issued via the serial interface towards the modem. Please setup the specific hardware device that these AT Commands can be sent to the device serial interface.
+Further ensure that the 1NCE SIM is inserted correctly into the device.
+
+# Check Module Communication
+
+<!-- curl@1-2 -->
+
+Check that the module response to a basic 'AT' command. The device should return 'OK' as answer.
+
+# Check Functionality
+
+<!-- curl@5-6 -->
+
+Use 'AT+CFUN?' to check the functionality setting of the modem. '+CFUN: 1' should be returned, indicating that the modem is in the full operating mode.
+
+# Activate Functionality
+
+<!-- curl@9-13 -->
+
+If the prior command returns '+CFUN: 0', use 'AT+CFUN=1' to activate the full modem functionality.
+
+# Check SIM PIN
+
+<!-- curl@16-18 -->
+
+Use 'AT+CPIN?' to check if the SIM is ready to use. As the 1NCE SIM do not have a PIN set by default the modem should return '+CPIN: READY'.
+
+If an error is returned, please check the SIM is inserted correctly or try the SIM in a smartphone.
+
+# PLMN Selection
+
+<!-- curl@21-22 -->
+
+Use 'AT+COPS=0,0' to set the Public Land Mobile Network selection of the modem to automatic. This will ensure that the modem will pick the best operator based on the currently available selection at the given location.
+
+# Network Registration
+
+<!-- curl@25-42 -->
+
+With 'AT+CEREG?' or 'AT+CGREG?' the network registration status can be queried denpendent on the used RAT (LTE or GSM). '+C(E/G)REG: 0,2' indicates that the device is still searching for a network. Use this command to query the status repeatedly until '+C(E/G)REG: 0,5' indicates that the modem is connected to a network and is roaming. 
+1NCE SIMs are always roaming as they do not have a home country set for the IoT use case. 
+If the modem does not connect within a couple of minutes, please check the response code in the AT Command manual of the SIM7000G and possibly test the SIM in a smartphone to check the coverage.
+
+# Check Registered Network
+
+<!-- curl@45-51 -->
+
+With 'AT+CPSI?' the RAT and current status of the connection can be viewed. Futher, with 'AT+COPS?' it can be checked to which network the modem is currently attached. In the shown case the modem is attached to the Telekom Germany network.
+
+# Configure APN
+
+<!-- curl@54-55 -->
+
+Next, the APN needs to be set for the HTTP Data Session. Using the 'AT+SAPBR=3,1,"APN","iot.1nce.net"' command specifically for the SIM7000G HTTP mode the 1NCE APN can be set.
+
+# Activate PDP Data Session
+
+<!-- curl@58-59 -->
+
+The PDP data session needs to be activated by calling 'AT+SAPBR=1,1', which will activate PDP context with CID 1.
+
+# Check PDP Data Session
+
+<!-- curl@62-64 -->
+
+With 'AT+SAPBR=2,1' the status and IP of the PDP data session can be checked.
+
+# Initialize HTTP
+
+<!-- curl@67-68 -->
+
+The HTTP function of the SIM800L needs to be initialized using 'AT+HTTPINIT'. If HTTP was already initialized, this command will return an error that can be ignored.
+
+# Check HTTP Parameters
+
+<!-- curl@71-84 -->
+
+The parameters of the HTTP function can be checked with 'AT+HTTPPARA?'. These stored variables will be used whenever a function of the HTTP pool is executed.
+
+# Set HTTP URL
+
+<!-- curl@87-88 -->
+
+The POST request URL parameter can be set using 'AT+HTTPPARA="URL","<http_post_target>"'.
+
+# Set HTTP POST Data
+
+<!-- curl@91-93 -->
+
+The data to be posted via the HTTP POST request needs to be send to the modem in advance. Using 'AT+HTTPDATA=100,10000', enables the send mode. The SIM7000G waits for 100 bytes of data in the next 10000 ms. The POST data is saved for the request execution.
+
+# Execute HTTP POST
+
+<!-- curl@96-98 -->
+
+A HTTP POST request can be executed using 'AT+HTTPACTION=1'. The 1 indicates a POST request. The response '+HTTPACTION: 1,200,0' shows the HTTP response code and the amount of data received.
+
+# Terminate HTTP Service
+
+<!-- curl@101-102 -->
+
+Use 'AT+HTTPTERM' to terminate the HTTP service of the SIM7000G.
+
+# Deactivate PDP Data Session
+
+<!-- curl@105-106 -->
+
+The PDP data session can be closed with 'AT+SAPBR=0,1' if it is not needed anymore.
+
+# Wrap Up
+
+
+
+This guide showed the basic setup of a SIM7000G with a 1NCE SIM to make a HTTP GET request.
+
+For more details and documentation please refer to the AT Command manual of the SIM7000G.

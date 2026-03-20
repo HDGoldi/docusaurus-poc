@@ -1,0 +1,14 @@
+---
+title: Brazil Multi-IMSI
+description: SIM Card for 1NCE Brazil
+draft: true
+---
+The multi-IMSI SIM CARD designed for Brazil has a mechanism to address possible permanent roaming concern. This multi-IMSI strategy was developed for Brazil to comply with the local regulatory requirements.
+
+# Tested IoT Devices
+
+Based on the described requirements, 1NCE is managing a list of tested and verified IoT Devices. The following list is updated and maintained actively. The date of the homologation, details on the Firmware version, and any other relevant data points are included in the list. 
+
+Please refer to the list of tested devices and Modems that already meet 1NCE Brazil Multi-IMSI SIM requirements.
+
+[1NCE Brazil - Tested IoT Devices](https://1nce.notion.site/23984cab45dc47939a07e496f130d0ee?v=2ee0c3bd82414b17a22acd7c43babc35)

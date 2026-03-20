@@ -1,5 +1,5 @@
 {
-  "name": "docusaurus-temp",
+  "name": "1nce-developer-hub",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,9 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "convert:copy": "tsx scripts/01-copy-and-normalize.ts",
+    "convert:frontmatter": "tsx scripts/02-convert-frontmatter.ts"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",

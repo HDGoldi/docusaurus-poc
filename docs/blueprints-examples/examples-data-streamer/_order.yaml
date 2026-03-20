@@ -1,0 +1,5 @@
+- examples-data-streamer-http
+- examples-data-streamer-s3
+- examples-data-streamer-kinesis
+- examples-data-streamer-keen
+- examples-data-streamer-datadog

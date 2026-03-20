@@ -1,0 +1,131 @@
+---
+title: EC25 RAT Configuration
+---
+```curl AT Commands
+> AT
+OK
+
+
+> AT+CFUN?
++CFUN: 1
+
+
+> AT+CFUN=1
+OK
+
+
+> AT+CPIN?
++CPIN: READY
+OK
+
+
+> AT+QCFG="gprsattach"
++QCFG: "gprsattach",1
+OK
+
+> AT+QCFG="gprsattach",1
+OK
+
+
+> AT+QCFG="nwscanmode"
++QCFG: "nwscanmode",0
+OK
+
+> AT+QCFG="nwscanmode",0
+OK
+
+
+> AT+QCFG="nwscanseq"
++QCFG: "nwscanseq",0301020405
+OK
+
+> AT+QCFG="nwscanseq",00
+OK
+
+
+> AT+QCFG="roamservice"
++QCFG: "roamservice",255
+OK
+
+> AT+QCFG="roamservice",2
+OK
+
+
+> AT+CFUN=0
+OK
+
+
+> AT+CFUN=1
+OK
+```
+
+# Preperation
+
+
+
+For testing purposes, connect the EC25 (EC25EFAR06A08M4G) to a computer. The commands used in this guide will be issued via the serial interface towards the modem. Please setup the specific hardware device that these AT Commands can be sent to the device serial interface.
+Further ensure that the 1NCE SIM is inserted correctly into the device.
+
+# Check Module Communication
+
+<!-- curl@1-2 -->
+
+Check that the module response to a basic 'AT' command. The device should return 'OK' as answer.
+
+# Check Functionality
+
+<!-- curl@5-6 -->
+
+Use 'AT+CFUN?' to check the functionality setting of the modem. '+CFUN: 1' should be returned, indicating that the modem is in the full operating mode.
+
+# Activate Functionality
+
+<!-- curl@9-10 -->
+
+If the prior command returns '+CFUN: 0', use 'AT+CFUN=1' to activate the full modem functionality.
+
+# Check SIM PIN
+
+<!-- curl@13-15 -->
+
+Use 'AT+CPIN?' to check if the SIM is ready to use. As the 1NCE SIM do not have a PIN set by default the modem should return '+CPIN: READY'.
+
+If an error is returned, please check the SIM is inserted correctly or try the SIM in a smartphone.
+
+# GPRS Attach Behavior
+
+<!-- curl@18-23 -->
+
+Upon power on boot, the device can be configured to automatically connect to the mobile network. Using 'AT+QCFG="gprsattach"' the current setting can be queried. Setting the default behavior to 'AT+QCFG="gprsattach",1' will enable automatic network connect upon boot.
+
+# Network Scan Behavior
+
+<!-- curl@26-31 -->
+
+Using 'AT+QCFG="nwscanmode",0' the Radio Access Technology (RAT) which will be used to scan for networks to attach to can be set. We recommend to set this paramter to '0' to enable 'Auto' search for all RATs.
+
+# Network Scan Sequence
+
+<!-- curl@34-39 -->
+
+The search sequence for the different RATs can be defined with 'AT+QCFG="nwscanseq",00'. '00' indicates the 'Automatic' setting. Specific orders can be set by appending the RAT codes (e.g., 0401 - LTE - GSM).
+
+# Roam Service
+
+<!-- curl@42-47 -->
+
+For a 1NCE SIM the roam service needs to be enabled with 'AT+QCFG="roamservice",2'.
+
+# Restart Modem Functionality
+
+<!-- curl@50-55 -->
+
+For all settings to apply, please restart the modem functionality using 'AT+CFUN=0' and then 'AT+CFUN=1'.
+
+# Wrap Up
+
+
+
+This guide showed the basic setup of a Quectel EC25 with a 1NCE SIM.
+
+For more details and documentation please refer to the AT Command manual of the EC25.

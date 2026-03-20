@@ -1,0 +1,234 @@
+---
+title: SIM800L HTTP GET
+---
+```curl AT Commands
+> AT
+OK
+
+
+> AT+CFUN?
++CFUN: 1
+
+
+> AT+CFUN=1
++CPIN: READY
+OK
+SMS Ready
+Call Ready
+
+
+> AT+CPIN?
++CPIN: READY
+OK
+
+
+> AT+COPS=0,0
+OK
+
+
+> AT+CREG?
++CREG: 0,2
+OK
+  
+
+> AT+CREG?
++CREG: 0,5
+OK  
+ 
+ 
+> AT+COPS?
++COPS: 0,0,"D1"
+OK
+  
+  
+> AT+SAPBR=3,1,"APN","iot.1nce.net"
+OK
+
+
+> AT+SAPBR=1,1
+OK
+
+
+> AT+SAPBR=2,1
++SAPBR: 1,1,"x.x.x.x"
+OK
+
+
+> AT+HTTPINIT
+OK
+
+
+> AT+HTTPPARA?
++HTTPPARA:
+CID: 1
+URL: 
+UA: SIMCOM_MODULE
+PROIP: 0.0.0.0
+PROPORT: 0
+REDIR: 0
+BREAK: 0
+BREAKEND: 0
+TIMEOUT: 120
+CONTENT: 
+USERDATA: 
+OK
+
+
+> AT+HTTPPARA="URL","www.google.de"
+OK
+
+
+> AT+HTTPACTION=0
+OK
++HTTPACTION: 0,200,12796
+
+
+> AT+HTTPHEAD
++HTTPHEAD: 628
+http/1.1 200 ok
+date: tue, 22 jun 2021 ...
+OK
+
+
+> AT+HTTPREAD
++HTTPREAD: 12796
+<!doctype html><html itemscope="" ... 
+OK
+
+
+> AT+HTTPTERM
+OK
+
+
+> AT+SAPBR=0,1
+OK
+```
+
+# Preperation
+
+
+
+For testing purposes, connect the SIM800L (1418B05SIM800L24) to a computer. The commands used in this guide will be issued via the serial interface towards the modem. Please setup the specific hardware device that these AT Commands can be sent to the device serial interface.
+Further ensure that the 1NCE SIM is inserted correctly into the device.
+
+# Check Module Communication
+
+<!-- curl@1-2 -->
+
+Check that the module response to a basic 'AT' command. The device should return 'OK' as answer.
+
+# Check Functionality
+
+<!-- curl@5-6 -->
+
+Use 'AT+CFUN?' to check the functionality setting of the modem. '+CFUN: 1' should be returned, indicating that the modem is in the full operating mode.
+
+# Activate Functionality
+
+<!-- curl@9-13 -->
+
+If the prior command returns '+CFUN: 0', use 'AT+CFUN=1' to activate the full modem functionality.
+
+# Check SIM PIN
+
+<!-- curl@16-18 -->
+
+Use 'AT+CPIN?' to check if the SIM is ready to use. As the 1NCE SIM do not have a PIN set by default the modem should return '+CPIN: READY'.
+
+If an error is returned, please check the SIM is inserted correctly or try the SIM in a smartphone.
+
+# PLMN Selection
+
+<!-- curl@21-22 -->
+
+Use 'AT+COPS=0,0' to set the Public Land Mobile Network selection of the modem to automatic. This will ensure that the modem will pick the best operator based on the currently available selection at the given location.
+
+# Network Registration
+
+<!-- curl@25-32 -->
+
+With 'AT+CREG?' the network registration status can be queried. '+CREG: 0,2' indicates that the device is still searching for a network. Use this command to query the status repeatedly until '+CREG: 0,5' indicates that the modem is connected to a network and is roaming. 
+1NCE SIMs are always roaming as they do not have a home country set for the IoT use case. 
+If the modem does not connect within a couple of minutes, please check the response code in the AT Command manual of the SIM800L and possibly test the SIM in a smartphone to check the coverage.
+
+# Check Registered Network
+
+<!-- curl@35-37 -->
+
+With 'AT+COPS?' it can be checked to which network the modem is currently attached. In the shown case the modem is attached to the Telekom Germany network.
+It is always recommended to check the network registration before running further commands to ensure the modem is connected.
+
+# Configure APN
+
+<!-- curl@40-41 -->
+
+Next, the APN needs to be set for the HTTP Data Session. Using the 'AT+SAPBR=3,1,"APN","iot.1nce.net"' command specifically for the SIM800L HTTP mode the 1NCE APN can be set.
+
+# Activate PDP Data Session
+
+<!-- curl@44-45 -->
+
+The PDP data session needs to be activated by calling 'AT+SAPBR=1,1', which will activate PDP context with CID 1.
+
+# Check PDP Data Session
+
+<!-- curl@48-50 -->
+
+With 'AT+SAPBR=2,1' the status and IP of the PDP data session can be checked.
+
+# Initialize HTTP
+
+<!-- curl@53-54 -->
+
+The HTTP function of the SIM800L needs to be initialized using 'AT+HTTPINIT'. If HTTP was already initialized, this command will return an error that can be ignored.
+
+# Check HTTP Parameters
+
+<!-- curl@57-70 -->
+
+The parameters of the HTTP function can be checked with 'AT+HTTPPARA?'. These stored variables will be used whenever a function of the HTTP pool is executed.
+
+# Set HTTP URL
+
+<!-- curl@73-74 -->
+
+The request URL parameter can be set using 'AT+HTTPPARA="URL","www.google.de"'. In the shown case we will use Google as a target for the HTTP GET request.
+
+# Execute HTTP GET
+
+<!-- curl@77-79 -->
+
+A HTTP GET request can be executed using 'AT+HTTPACTION=0'. The 0 indicates a GET request, but can be changed to other HTTP request types.
+The response '+HTTPACTION: 0,200,12796' shows the HTTP response code and the amount of data received.
+
+# Get HTTP Head
+
+<!-- curl@82-86 -->
+
+The head of the HTTP response can be queried with 'AT+HTTPHEAD'. This will return the HTTP head of the response (shorted here).
+
+# Get HTTP Body
+
+<!-- curl@89-92 -->
+
+The body of the response can be queried using 'AT+HTTPREAD'. This will return the full body of the response (shorted here).
+
+# Terminate HTTP Service
+
+<!-- curl@95-96 -->
+
+Use 'AT+HTTPTERM' to terminate the HTTP service of the SIM800L.
+
+# Deactivate PDP Data Session
+
+<!-- curl@99-100 -->
+
+The PDP data session can be closed with 'AT+SAPBR=0,1' if it is not needed anymore.
+
+# Wrap Up
+
+
+
+This guide showed the basic setup of a SIM800L with a 1NCE SIM to get a HTTP GET request working. Other HTTP POST, PUT, etc. requests are fairly similar but can include a few more parameters.
+
+For more details and documentation please refer to the AT Command manual of the SIM800L.

@@ -1,0 +1,256 @@
+---
+title: SIM7000G FTP GET
+---
+```curl AT Commands
+> AT
+OK
+
+
+> AT+CFUN?
++CFUN: 1
+
+
+> AT+CFUN=1
++CPIN: READY
+OK
+SMS Ready
+Call Ready
+
+
+> AT+CPIN?
++CPIN: READY
+OK
+
+
+> AT+COPS=0,0
+OK
+
+
+> AT+CEREG?
++CREG: 0,2
+OK
+  
+
+> AT+CEREG?
++CREG: 0,5
+OK  
+
+
+> AT+CGREG?
++CREG: 0,5
+OK 
+
+
+> AT+CGREG?
++CREG: 0,5
+OK 
+
+
+> AT+CPSI?
++CPSI: GSM,Online,262-01,0x972d,5559,79 EGSM 900,-83,0,24-24
+ 
+ 
+> AT+COPS?
++COPS: 0,0,"Telekom.de 1nce.net",3
+OK
+  
+  
+> AT+SAPBR=3,1,"APN","iot.1nce.net"
+OK
+
+
+> AT+SAPBR=1,1
+OK
+
+
+> AT+SAPBR=2,1
++SAPBR: 1,1,"x.x.x.x"
+OK
+
+
+> AT+FTPCID=1
+OK
+
+
+> AT+FTPSERV="x.x.x.x"
+OK
+
+
+> AT+FTPUN="<username>"
+OK
+
+
+> AT+FTPPW="<password>"
+OK
+
+
+> AT+FTPGETNAME="<filename>"
+OK
+
+
+> AT+FTPGETPATH="/"
+OK
+
+
+> AT+FTPGET=1
+OK
++FTPGET: 1,1
+
+
+> AT+FTPGET=2,1024
++FTPGET: 2,50
+01234567890123456789012345678901234
+567890123456789
+OK
+
+
+> AT+FTPGET=2,1024
++FTPGET: 2,0
+OK
++FTPGET: 1,1
+
+
+> AT+FTPGET=2,1024
++FTPGET: 2,1024
+01234567890123456789012345678901234
+5678901234567890…..1234
+OK
++FTPGET:1,0
+
+
+> AT+SAPBR=0,1
+OK
+```
+
+# Preperation
+
+
+
+For testing purposes, connect the SIM7000G (1529B05SIM7000G) to a computer. The commands used in this guide will be issued via the serial interface towards the modem. Please setup the specific hardware device that these AT Commands can be sent to the device serial interface.
+Further ensure that the 1NCE SIM is inserted correctly into the device.
+
+# Check Module Communication
+
+<!-- curl@1-2 -->
+
+Check that the module response to a basic 'AT' command. The device should return 'OK' as answer.
+
+# Check Functionality
+
+<!-- curl@5-6 -->
+
+Use 'AT+CFUN?' to check the functionality setting of the modem. '+CFUN: 1' should be returned, indicating that the modem is in the full operating mode.
+
+# Activate Functionality
+
+<!-- curl@9-13 -->
+
+If the prior command returns '+CFUN: 0', use 'AT+CFUN=1' to activate the full modem functionality.
+
+# Check SIM PIN
+
+<!-- curl@16-18 -->
+
+Use 'AT+CPIN?' to check if the SIM is ready to use. As the 1NCE SIM do not have a PIN set by default the modem should return '+CPIN: READY'.
+
+If an error is returned, please check the SIM is inserted correctly or try the SIM in a smartphone.
+
+# PLMN Selection
+
+<!-- curl@21-22 -->
+
+Use 'AT+COPS=0,0' to set the Public Land Mobile Network selection of the modem to automatic. This will ensure that the modem will pick the best operator based on the currently available selection at the given location.
+
+# Network Registration
+
+<!-- curl@25-42 -->
+
+With 'AT+CEREG?' or 'AT+CGREG?' the network registration status can be queried denpendent on the used RAT (LTE or GSM). '+C(E/G)REG: 0,2' indicates that the device is still searching for a network. Use this command to query the status repeatedly until '+C(E/G)REG: 0,5' indicates that the modem is connected to a network and is roaming. 
+1NCE SIMs are always roaming as they do not have a home country set for the IoT use case. 
+If the modem does not connect within a couple of minutes, please check the response code in the AT Command manual of the SIM7000G and possibly test the SIM in a smartphone to check the coverage.
+
+# Check Registered Network
+
+<!-- curl@45-51 -->
+
+With 'AT+CPSI?' the RAT and current status of the connection can be viewed. Futher, with 'AT+COPS?' it can be checked to which network the modem is currently attached. In the shown case the modem is attached to the Telekom Germany network.
+
+# Configure APN
+
+<!-- curl@54-55 -->
+
+Next, the APN needs to be set for the HTTP Data Session. Using the 'AT+SAPBR=3,1,"APN","iot.1nce.net"' command specifically for the SIM7000G HTTP mode the 1NCE APN can be set.
+
+# Activate PDP Data Session
+
+<!-- curl@58-59 -->
+
+The PDP data session needs to be activated by calling 'AT+SAPBR=1,1', which will activate PDP context with CID 1.
+
+# Check PDP Data Session
+
+<!-- curl@62-64 -->
+
+With 'AT+SAPBR=2,1' the status and IP of the PDP data session can be checked.
+
+# Set FTP Session Profile
+
+<!-- curl@67-68 -->
+
+Setup the FTP session by setting the PDP session id to the used index. In the example, profile '1' is used.
+
+# Set FTP Server IP
+
+<!-- curl@71-72 -->
+
+Set the IP address of the FTP server to which the modem should connect to.
+
+# Set FTP Server Username
+
+<!-- curl@75-76 -->
+
+Specify the username used to login into the FTP server.
+
+# Set FTP Server Password
+
+<!-- curl@79-80 -->
+
+Set the password needed to access the FTP server.
+
+# Set FTP Filename
+
+<!-- curl@83-84 -->
+
+List the filename of the file which should be downloaded from the FTP server.
+
+# Set FTP Server Path
+
+<!-- curl@87-88 -->
+
+Configure the path on the FTP where to find the file which should be downloaded.
+
+# Start FTP Download
+
+<!-- curl@91-93 -->
+
+Use 'AT+FTPGET=1' to start the download process. '+FTPGET: 1,1' indicates that the downloaded data is available.
+
+# Read Downloaded File
+
+<!-- curl@96-114 -->
+
+With 'AT+FTPGET=2,1024' parts of the downloaded file can be read in sections. '+FTPGET: 2,50' indicates the length of available data.
+
+# Deactivate PDP Data Session
+
+<!-- curl@117-118 -->
+
+The PDP data session can be closed with 'AT+SAPBR=0,1' if it is not needed anymore.
+
+# Wrap Up
+
+
+
+This guide showed the basic setup of a SIM7000G with a 1NCE SIM to make a HTTP GET request.
+
+For more details and documentation please refer to the AT Command manual of the SIM7000G.
