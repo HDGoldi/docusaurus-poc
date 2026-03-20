@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 01-01-PLAN.md
-last_updated: "2026-03-20T21:39:40.820Z"
+stopped_at: Completed 01-02-PLAN.md
+last_updated: "2026-03-20T21:47:18.426Z"
 progress:
   total_phases: 3
   completed_phases: 0
   total_plans: 4
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -24,7 +24,7 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 ## Current Position
 
 Phase: 01 (content-conversion) — EXECUTING
-Plan: 2 of 4
+Plan: 3 of 4
 
 ## Performance Metrics
 
@@ -47,6 +47,7 @@ Plan: 2 of 4
 
 *Updated after each plan completion*
 | Phase 01-01 Pscaffold-content-foundation | 6min | 2 tasks | 387 files |
+| Phase 01 P02 | 5min | 2 tasks | 334 files |
 
 ## Accumulated Context
 
@@ -58,6 +59,7 @@ Recent decisions affecting current work:
 - [Roadmap]: Coarse granularity -- 3 phases combining related work into delivery boundaries
 - [Roadmap]: Content conversion is the critical path; all other work depends on a passing build
 - [Phase 01-01]: Docusaurus 3.9.2 with Rspack, docs at root, no blog, custom_pages markdown included
+- [Phase 01-02]: Images with width use HTML <img> tags; center-aligned wrapped in JSX div; HTML entities decoded
 
 ### Pending Todos
 
@@ -70,6 +72,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-20T21:39:40.818Z
-Stopped at: Completed 01-01-PLAN.md
+Last session: 2026-03-20T21:47:18.423Z
+Stopped at: Completed 01-02-PLAN.md
 Resume file: None

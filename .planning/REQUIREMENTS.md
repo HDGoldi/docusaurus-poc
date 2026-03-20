@@ -11,9 +11,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **CONV-01**: All 298 Markdown files converted to valid MDX that builds without errors
 - [ ] **CONV-02**: `<HTMLBlock>` components (42 files) converted to standard MDX-compatible markup
-- [ ] **CONV-03**: `<Image>` JSX tags converted to standard Markdown image syntax with local paths
-- [ ] **CONV-04**: Remote images from `files.readme.io` downloaded to `/static/img/` directory
-- [ ] **CONV-05**: Base64-encoded inline images (40 images in 31 files) extracted to static image files
+- [x] **CONV-03**: `<Image>` JSX tags converted to standard Markdown image syntax with local paths
+- [x] **CONV-04**: Remote images from `files.readme.io` downloaded to `/static/img/` directory
+- [x] **CONV-05**: Base64-encoded inline images (40 images in 31 files) extracted to static image files
 - [ ] **CONV-06**: `(doc:slug)` cross-reference links (112 occurrences) converted to Docusaurus internal links
 - [ ] **CONV-07**: Blockquote admonitions (`:warning:`, `:info:`, etc.) converted to Docusaurus `:::` admonitions
 - [ ] **CONV-08**: `<Table>` JSX components converted to standard Markdown tables
@@ -94,9 +94,9 @@ Deferred to future release. Tracked but not in current roadmap.
 |-------------|-------|--------|
 | CONV-01 | Phase 1 | Complete |
 | CONV-02 | Phase 1 | Pending |
-| CONV-03 | Phase 1 | Pending |
-| CONV-04 | Phase 1 | Pending |
-| CONV-05 | Phase 1 | Pending |
+| CONV-03 | Phase 1 | Complete |
+| CONV-04 | Phase 1 | Complete |
+| CONV-05 | Phase 1 | Complete |
 | CONV-06 | Phase 1 | Pending |
 | CONV-07 | Phase 1 | Pending |
 | CONV-08 | Phase 1 | Pending |
