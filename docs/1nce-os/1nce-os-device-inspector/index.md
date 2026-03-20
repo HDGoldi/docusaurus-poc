@@ -1,7 +1,7 @@
 ---
 title: Device Inspector
 ---
-<Image width="80% " src="/img/1nce-os/1nce-os-device-inspector/219bcf0-1NCE-OS-Grafiken-202211221024_5.png" />
+<img src="/img/1nce-os/1nce-os-device-inspector/219bcf0-1NCE-OS-Grafiken-202211221024_5.png" alt="" width="80%" />
 
 The 1NCE Device Inspector as part of the 1NCE OS allows customers to seamlessly manage of all SIM devices existing in the 1NCE Portal Organization. The management makes transparent use of the SIM-as-an-Identity service in the background to reference a digital representation of each individual device with a 1NCE SIM. The Device Inspector combines an interface for analytics and monitoring.
 

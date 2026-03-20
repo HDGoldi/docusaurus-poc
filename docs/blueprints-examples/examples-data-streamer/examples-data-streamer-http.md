@@ -43,9 +43,7 @@ After implementing a HTTP Post endpoint on a custom backend, the Data Streamer n
 5. **Basic Auth Header:** Base64 encoded value supplied by each HTTP POST request in the Basic Authentication Header field. The supplied HTTP endpoint needs to support Basic Authentication.
 6. Click **Save** to create the Data Streamer integration.
 
-<Image title="data-streamer-webhook.jpg" alt={1124} width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-http/8a6a25f-data-streamer-webhook.jpg">
-  REST API Data Streamer setup in the Connectivity Management Platform.
-</Image>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-http/8a6a25f-data-streamer-webhook.jpg" alt="data-streamer-webhook.jpg" width="80%" />
 
 ***
 

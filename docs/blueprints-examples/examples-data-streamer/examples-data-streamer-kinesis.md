@@ -18,31 +18,23 @@ To setup the 1NCE Data Streamer integration with AWS Kinesis, it is recommended 
 2. In the popup select AWS Kinesis as **API Type** and select the desired **Stream Type**.
 3. Click on **Create IAM Role** to open the Cloud Formation Template in a separate window.
 
-<Image title="aws_kinesis_cmp.png" alt={1920} width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-kinesis/049665e-aws_kinesis_cmp.png">
-  Pop up in the Portal for creating a new Data Streamer integration.
-</Image>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-kinesis/049665e-aws_kinesis_cmp.png" alt="aws_kinesis_cmp.png" width="80%" />
 
 4. Adapt the CFN Template parameters (Stack Name, KinesisStreamName). Do NOT change AllowedExternalID and DatastreamerRoleARN.
 5. Set the **IAM Creation** checkbox.
 6. Execute the CFN Stack by clicking on **Create Stack**.
 
-<Image title="aws_kinesis_cfn.png" alt={1178} width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-kinesis/5969b1e-aws_kinesis_cfn.png">
-  Cloud Formation Template used to create the AWS IAM permissions and Kinesis Data Stream.
-</Image>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-kinesis/5969b1e-aws_kinesis_cfn.png" alt="aws_kinesis_cfn.png" width="80%" />
 
 7. Please wait until the Cloud Formation Process has ended and all resources have been created. Once the Cloud Formation Stack has successfully finished, please proceed with the following steps.
 
-<Image title="aws_cfn_done.png" alt={1236} width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-kinesis/1d364db-aws_cfn_done.png">
-  Finished Cloud Formation stack execution.
-</Image>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-kinesis/1d364db-aws_cfn_done.png" alt="aws_cfn_done.png" width="80%" />
 
 8. Go to the **Outputs** tab of the created CFN Stack.
 9. Copy the shown parameters to the popup in the 1NCE Portal.
 10. Click on **Save** in the popup. The Data Streamer integration will be setup. Please not that this might take a few minutes.
 
-<Image title="aws_kinesis_cfn_cmp.png" alt={1920} width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-kinesis/19d3af3-aws_kinesis_cfn_cmp.png">
-  Copy the values from the Options tab of the Cloud Formation Template to the Portal pop up.
-</Image>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-kinesis/19d3af3-aws_kinesis_cfn_cmp.png" alt="aws_kinesis_cfn_cmp.png" width="80%" />
 
 ***
 

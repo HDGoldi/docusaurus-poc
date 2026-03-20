@@ -7,17 +7,17 @@ title: AWS Configuration
 
 In your AWS account the Security Token Service (STS) Endpoint should be enabled for eu-central-1 region.
 
-<Image alt="STS enabled for eu-central-1 region" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/6e587165164e7c3323900b5638dfef7ed75ce3d264754f2e1ae6f3e278e7aed9-STS_Endpoint.jpg">
-  STS enabled for eu-central-1 region
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/6e587165164e7c3323900b5638dfef7ed75ce3d264754f2e1ae6f3e278e7aed9-STS_Endpoint.jpg" alt="STS enabled for eu-central-1 region" width="70%" />
+</div>
 
 ## iot:Data-ATS Endpoint
 
 In your AWS account the iot:Data-ATS Endpoint should be enabled for region where you are rolling out AWS Integration.
 
-<Image alt="iot:Data-ATS Endpoint enabled for the customer’s chosen region" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/1dee62128476dc673a4ab3e218636cf41cef9c552551c17338965c76525c184a-IoT_Endpoint.jpg">
-  iot:Data-ATS Endpoint enabled for the customer’s chosen region
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/1dee62128476dc673a4ab3e218636cf41cef9c552551c17338965c76525c184a-IoT_Endpoint.jpg" alt="iot:Data-ATS Endpoint enabled for the customer’s chosen region" width="70%" />
+</div>
 
 ## IAM role permissions
 
@@ -30,28 +30,28 @@ Click 'New Integration' and select AWS integration as integration type.
 
 Use a descriptive name and select the [event types](doc:cloud-integrator-output-format) that you would like to receive.
 
-<Image alt="Configuration of an AWS Integration in the 1NCE portal" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/8a9f1fde8ef85fbba5fb38c3fdb2de52215b5797c4731bedf0c60770fdb93938-integration-aws-creation.png">
-  Configuration of an AWS Integration in the 1NCE portal
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/8a9f1fde8ef85fbba5fb38c3fdb2de52215b5797c4731bedf0c60770fdb93938-integration-aws-creation.png" alt="Configuration of an AWS Integration in the 1NCE portal" width="70%" />
+</div>
 
 Be aware that integration with status ROLLOUT\_STARTED will be created in the Cloud Integrator and you will be taken to AWS to complete the configuration over there.\
 This generates a JWT that is only valid for an hour. Once the JWT becomes invalid the rollout has to be restarted.
 
 After the configuration click proceed and you will be prompted to go to the AWS console. Continue and now AWS should be open on the 'Quick Create Stack' page. Here you will see things such as the name that was previously given, integration token, etc. If this information is correct, acknowledge AWS requirements and press 'create stack'.
 
-<Image alt="Creation of AWS stack" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/1639e0a-create_stack_1nceOS.png">
-  Creation of AWS stack
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/1639e0a-create_stack_1nceOS.png" alt="Creation of AWS stack" width="70%" />
+</div>
 
 It will take some time for the stack to be created. Nested stacks are shown by the filter option 'view nested' on the top. Once it is done, it should look like this in AWS and 1nceOS portal respectively:
 
-<Image alt="AWS stack created" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/ab1e780-stack_created_1nceOS.png">
-  AWS stack created
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/ab1e780-stack_created_1nceOS.png" alt="AWS stack created" width="70%" />
+</div>
 
-<Image alt="Integration rolled out" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/d2bf0e4-rollout_done_1nceOS.png">
-  Integration rolled out
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/d2bf0e4-rollout_done_1nceOS.png" alt="Integration rolled out" width="70%" />
+</div>
 
 ## Validate Integration
 
@@ -59,37 +59,37 @@ It will take some time for the stack to be created. Nested stacks are shown by t
 
 Once your stack has been rolled out, you can test your integration using one of your devices or by using [Test AWS Integration](ref:post_v1-integrate-clouds-aws-integrationid-test) endpoint. In AWS go to the IoT Core service. Navigate to the MQTT test client and subscribe to # as shown below:
 
-<Image alt="MQTT Test Client" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/63a5103-MQTT_test_1nce_OS.png">
-  MQTT Test Client
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/63a5103-MQTT_test_1nce_OS.png" alt="MQTT Test Client" width="70%" />
+</div>
 
 Doing this will subscribe to all topics so if the stack was successfully rolled out, you should see data show up as shown below:
 
-<Image alt="MQTT Test Client result" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/8d01142-MQTT_response_1nceOS.png">
-  MQTT Test Client result
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/8d01142-MQTT_response_1nceOS.png" alt="MQTT Test Client result" width="70%" />
+</div>
 
 If the integration was successfully created, rolled out and actived, *Integration Active* will appear.
 
-<Image alt="Integration Active" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/88d06a18334489f9ca3f90a2eb3af8ee4f449ad4435b2f74d5772c74411d63f0-Screenshot_2025-02-28_103403_integration-active.png">
-  Integration Active
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/88d06a18334489f9ca3f90a2eb3af8ee4f449ad4435b2f74d5772c74411d63f0-Screenshot_2025-02-28_103403_integration-active.png" alt="Integration Active" width="70%" />
+</div>
 
 ## Edit AWS integration
 
 It is possible to edit the 1nceOS integration options through the front-end by clicking the edit-button as shown below:
 
-<Image alt="1nceOS change integration" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/4e74076-change_configuration_integration_1nceOS.png">
-  1nceOS change integration
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/4e74076-change_configuration_integration_1nceOS.png" alt="1nceOS change integration" width="70%" />
+</div>
 
 ## Restart AWS integration
 
 There is a possibility that your integration fails. When this happens, it will be visible in the 1nceOS portal as shown below:
 
-<Image alt="1nceOS restart integration" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/9890430dd449eae6721b2ee3f9e1f9e003172e979c13ae23e3adfa1164fda6f3-Screenshot_2025-02-28_101925_integration-restart-table.png">
-  1nceOS restart integration
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/9890430dd449eae6721b2ee3f9e1f9e003172e979c13ae23e3adfa1164fda6f3-Screenshot_2025-02-28_101925_integration-restart-table.png" alt="1nceOS restart integration" width="70%" />
+</div>
 
 By clicking the restart button, there will be an attempt to verify the integration. During that time an event of type TEST\_MESSAGE will be sent out. For more information refer to [event-type documentation](doc:cloud-integrator-output-format)
 
@@ -101,17 +101,17 @@ There are two ways to delete the integration:
 
 You can delete your AWS Integration in the front-end of 1NCE OS or using API. In this case, you need to delete your AWS stack manually.
 
-<Image alt="1nceOS delete integration" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/1a639ab-delete_integration_frontend_1nceOS.png">
-  1nceOS delete integration
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/1a639ab-delete_integration_frontend_1nceOS.png" alt="1nceOS delete integration" width="70%" />
+</div>
 
 ### AWS
 
 When the deletion is initiated from your AWS stack, there are no further actions needed. The callback function will automatically trigger the deletion of the AWS Integration in 1NCE OS.
 
-<Image alt="AWS delete stack" align="center" width="70%" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/994ba2a-image.png">
-  AWS delete stack
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/994ba2a-image.png" alt="AWS delete stack" width="70%" />
+</div>
 
 # CFN stack description
 
@@ -126,9 +126,9 @@ Stack creates Cross Account IAM role with following permissions for 1NCE OS AWS 
 * 'iot:DescribeEndpoint' - Retrieve the AWS IoT endpoint.
 * 'iot:Publish' - Publish MQTT messages to AWS IoT Core.
 
-<Image alt="AWS Integration stack resources" align="center" width="70%" border={true} src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/23deb3b78f82df8d89d4f0d3deb473423b34348d8210978940cc786db0eff6a4-aws-integration-stack.png">
-  AWS Integration stack resources
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/23deb3b78f82df8d89d4f0d3deb473423b34348d8210978940cc786db0eff6a4-aws-integration-stack.png" alt="AWS Integration stack resources" width="70%" />
+</div>
 
 ## Callback stacks
 
@@ -139,9 +139,9 @@ Two stacks are rolled out for callback operations:
 
 Both the 'create' and 'delete' stacks provision identical resources.
 
-<Image alt="Callback 'delete' stack resources" align="center" width="70%" border={true} src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/26a894ba3b54fe11b43cc71f50819e2aa3a7592776abfe5333f38a94e7210ebe-delete-callback-stack2.png">
-  Callback 'delete' stack resources
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/26a894ba3b54fe11b43cc71f50819e2aa3a7592776abfe5333f38a94e7210ebe-delete-callback-stack2.png" alt="Callback 'delete' stack resources" width="70%" />
+</div>
 
 ### Download code lambda function
 

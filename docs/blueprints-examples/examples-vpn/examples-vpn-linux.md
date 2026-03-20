@@ -79,9 +79,9 @@ sudo apt install openvpn
 
 3. Log into the **1NCE Portal**. Navigate to the **Configuration** tab and open the **OpenVPN Configuration** dropdown. Select **Linux/MacOS** as configuration medium and download the OpenVPN *xx-region-x-client.conf* and *credentials.txt* files.
 
-<Image title="1nce-vpn-linux.png" alt={1011} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-vpn/examples-vpn-linux/d5055b7-1nce-vpn-linux.png">
-  Download the Configuration and Credentials from the 1NCE Portal.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-vpn/examples-vpn-linux/d5055b7-1nce-vpn-linux.png" alt="1nce-vpn-linux.png" width="80%" />
+</div>
 
 4. Place the *xx-region-x-client.conf* and *credentials.txt* in the OpenVPN configuration folder, typically */etc/openvpn/*.
 5. Optionally rename the *xx-region-x-client.conf* and *credentials.txt* files to make their names unique and more transparent.

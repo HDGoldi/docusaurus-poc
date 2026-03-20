@@ -29,43 +29,43 @@ To install Plugin in 1NCE OS you can choose one of the two options described bel
 
 The Plugin can be installed in [1NCE OS](https://portal.1nce.com/portal/customer/1nceos) portal "Plugins" tab by choosing "Memfault."
 
-<Image alt="Memfault Plugin" align="center" width="35% " src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/f355f38ec486dc27479e007254ce26997927ec77d4b85ec2f03bd80addc76e19-memfault_tile.jpg">
-  Memfault Plugin
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/f355f38ec486dc27479e007254ce26997927ec77d4b85ec2f03bd80addc76e19-memfault_tile.jpg" alt="Memfault Plugin" width="35%" />
+</div>
 
 There is no need to provide any extra information, so you can immediatelly proceed with the installation by pressing the "Install" button on the "Plugin Details page."
 
 > :warning: Please note that after pressing install button system automatically creates Memfault account with your 1NCE Organization's email address, which cannot be changed afterwards.
 
-<Image alt="Memfault plugin details" align="center" width="90%" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/b2d56b738d8f84c0dd3fe459a56681e0856a8b250da5fb8636159ec5466e6bb3-plugin-details.jpg">
-  Memfault plugin details
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/b2d56b738d8f84c0dd3fe459a56681e0856a8b250da5fb8636159ec5466e6bb3-plugin-details.jpg" alt="Memfault plugin details" width="90%" />
+</div>
 
 If plugin installation goes well you should see the "Plugin Installed" page.\
 After this, you already can start sending data to the Memfault system.
 
-<Image alt="Memfault plugin installed" align="center" width="90%" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/580b93666e0be7a0bd5b6887038b1f52b71168516e19cb92959df71830baeaf2-plugin_installed.jpg">
-  Memfault plugin installed
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/580b93666e0be7a0bd5b6887038b1f52b71168516e19cb92959df71830baeaf2-plugin_installed.jpg" alt="Memfault plugin installed" width="90%" />
+</div>
 
 In the Plugin installed page, you will see the "Open Memfault Portal" button, which in the new browser tab will open your new Memfault account finalization page. The email field will be already prefilled with your 1NCE Organization's email address.
 
-<Image alt="Finalize Memfault account" align="center" width="40%" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/79b4349ca522433022d52aabdea261ded9a65a5806449e54c823ca86c2e6fcb4-create_memfault_account.jpg">
-  Finalize Memfault account
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/79b4349ca522433022d52aabdea261ded9a65a5806449e54c823ca86c2e6fcb4-create_memfault_account.jpg" alt="Finalize Memfault account" width="40%" />
+</div>
 
 In case you navigate away from the "Plugin Installed" page you can still get the Memfault registration URL by navigating to the Memfault plugin details and clicking on the "Register with Memfault" link.
 
-<Image alt="Memfault plugin details" align="center" width="90%" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/d5df54912814d6dffeb28b12d85a312a8f5cc1e897bc24c41f900758485db290-plugin_details_unfinished.jpg">
-  Memfault plugin details
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/d5df54912814d6dffeb28b12d85a312a8f5cc1e897bc24c41f900758485db290-plugin_details_unfinished.jpg" alt="Memfault plugin details" width="90%" />
+</div>
 
 After registration in the Memfault portal is completed you should see the following plugin details page, where we provide details about the Memfault plugin and the "Memfault portal" link to easily navigate to your Memfault account.\
 If you need to uninstall the Memfault plugin it also can be done from this page. The uninstall button will only remove the plugin from the 1NCE system, in the Memfault portal account will not be deleted. 
 
-<Image alt="Memfault plugin details" align="center" width="90%" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/249442fb02c2ed8a4e4ca79e5decb192e45119bcc1fb7e2eba1dde2fbdae68de-plugin_details_finished.jpg">
-  Memfault plugin details
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/249442fb02c2ed8a4e4ca79e5decb192e45119bcc1fb7e2eba1dde2fbdae68de-plugin_details_finished.jpg" alt="Memfault plugin details" width="90%" />
+</div>
 
 # Memfault plugin installation via API
 
@@ -117,9 +117,9 @@ Additionally, the Memfault plugin also retrieves and stores the Memfault project
 
 After Memfault plugin installation is done you can utilize [Demo script for zephyr](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/plugin_system/nce_debug_memfault_demo) to start sending chunks data to the Memfault system. If chunks are processed successfully, the device will show up in the Memfault portal on the Devices page automatically with the ICCID of the 1NCE sim card used as a device serial number.
 
-<Image alt="Memfault Devices" align="center" width="90%" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/f8ae38b6a168b2e610bf50840e66634d5b9a6b7ac98b6b2ade63aaaa2b07aac5-memfault_device_page.png">
-  Memfault Devices
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/f8ae38b6a168b2e610bf50840e66634d5b9a6b7ac98b6b2ade63aaaa2b07aac5-memfault_device_page.png" alt="Memfault Devices" width="90%" />
+</div>
 
 # Features and Limitations
 
@@ -143,14 +143,14 @@ There are still some individual Features and Limitations applied to the Memfault
 After devices start to send data to the Memfault system, you can start monitoring different aspects of your device fleet.\
 The Connectivity page provides useful insights like device uptime, sent data amount, and more.
 
-<Image alt="Memfault Connectivity" align="center" width="90%" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/3458f21614601bc941dc51aec07d00cd6f15245a73db2e346f60e33f01186dfd-memfault_connectivity_page.png">
-  Memfault Connectivity
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/3458f21614601bc941dc51aec07d00cd6f15245a73db2e346f60e33f01186dfd-memfault_connectivity_page.png" alt="Memfault Connectivity" width="90%" />
+</div>
 
 On the Overview page, you can display many different useful widgets.
 
-<Image alt="Memfault Overview" align="center" width="90%" src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/1863ef96fc2bd8ea61194704948ecafafd1ac21a88ee8239c783af28df8d0fa4-memfault_main_page.png">
-  Memfault Overview
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/1863ef96fc2bd8ea61194704948ecafafd1ac21a88ee8239c783af28df8d0fa4-memfault_main_page.png" alt="Memfault Overview" width="90%" />
+</div>
 
 More information about how to use Memfault features can be found in the [Memfault Documentation](https://docs.memfault.com/docs/platform/introduction).

@@ -20,9 +20,9 @@ For using the 1NCE VPN Service with Mac OS, it is recommended to use the Tunnelb
 2. Install the the OpenVPN client for Mac OS. Follow the default install instructions.
 3. Log into the **1NCE Portal**. Navigate to the **Configuration** tab and open the **OpenVPN Configuration** dropdown. Select **Mac OS** as configuration medium and download the OpenVPN *xx-region-x-client.conf* and *credentials.txt* files.
 
-<Image title="1nce-vpn-linux.png" alt={1011} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-vpn/examples-vpn-macos/35112bd-1nce-vpn-linux.png">
-  Download the Configuration and Credentials from the 1NCE Portal.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-vpn/examples-vpn-macos/35112bd-1nce-vpn-linux.png" alt="1nce-vpn-linux.png" width="80%" />
+</div>
 
 4. Import the *xx-region-x-client.conf* and *credentials.txt* into Tunnelblick application. Refer to <a target="_blank" href="https://tunnelblick.net/czUsing.html">Tunnelblick Install Guide</a> for details about the setup.
 5. Once the configuration is installed. The connection can be established by clicking on *Connect* inside the application.

@@ -718,9 +718,9 @@ You must manually **accept the device** in the [Mender Dashboard](https://hosted
   ### You can view this info under the **Devices** section after the device is authorized.
 </Callout>
 
-<Image alt="Device listed in Mender dashboard after acceptance." align="center" width="90%" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/501c9f2fff0543aa4368fc487586f78edcfbe90794f302c30aa1d93e7b3891f9-image.png">
-  Device listed in Mender dashboard after acceptance.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/501c9f2fff0543aa4368fc487586f78edcfbe90794f302c30aa1d93e7b3891f9-image.png" alt="Device listed in Mender dashboard after acceptance." width="90%" />
+</div>
 
 ### 3️⃣  Bump Version & Rebuild
 
@@ -768,9 +768,9 @@ mender-artifact write module-image \
 
 3. **Upload** the generated `.mender` file to the **Releases** section in the Mender dashboard.
 
-<Image alt="Upload the new artifact to the Releases section." align="center" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/d32e239300d120c8217e3fb36ecb5f3d98e8d0f99d8ccfdf11e1c6463913f301-image.png">
-  Upload the new artifact to the Releases section.
-</Image>
+<div style={{textAlign: 'center'}}>
+![Upload the new artifact to the Releases section.](/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/d32e239300d120c8217e3fb36ecb5f3d98e8d0f99d8ccfdf11e1c6463913f301-image.png)
+</div>
 
 ## 5️⃣ Deployment Creation
 
@@ -781,9 +781,9 @@ Once your artifact is uploaded to the Mender **Releases** section, you're ready 
    * Select the **target device** or **device group**.
    * Choose the **artifact** you previously uploaded.
 
-<Image alt="Create a deployment in the Mender dashboard." align="center" width="90%" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/fe24d9c5ab727993dd50a9f2a72ccf905ad8674e7f340f9d5dee4227501c5017-image.png">
-  Create a deployment in the Mender dashboard.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/fe24d9c5ab727993dd50a9f2a72ccf905ad8674e7f340f9d5dee4227501c5017-image.png" alt="Create a deployment in the Mender dashboard." width="90%" />
+</div>
 
 ***
 
@@ -796,9 +796,9 @@ As your device contacts the Mender server, the status will progress automaticall
 pending → downloading → rebooting → installing → success ✅ / failure ❌
 ```
 
-<Image alt="Deployment status flow in Mender dashboard." align="center" width="90%" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/d18c6b7558331c4e3116d3c41c543e88a80a1a055cb230a20473547cf39673c8-image.png">
-  Deployment status flow in Mender dashboard.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/d18c6b7558331c4e3116d3c41c543e88a80a1a055cb230a20473547cf39673c8-image.png" alt="Deployment status flow in Mender dashboard." width="90%" />
+</div>
 
 ***
 
@@ -908,13 +908,13 @@ To enable metric processing:
 
 📘 [Symbol File Guide](https://docs.memfault.com/docs/mcu/symbol-file-build-ids)
 
-<Image alt="Upload the ELF symbol file to Memfault." align="center" width="90%" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/81f6622dca350284f5af6fb7f4e8b3571f336887884009a12741c0475a49726c-image.png">
-  Upload the ELF symbol file to Memfault.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/81f6622dca350284f5af6fb7f4e8b3571f336887884009a12741c0475a49726c-image.png" alt="Upload the ELF symbol file to Memfault." width="90%" />
+</div>
 
-<Image alt="Memfault symbol file upload confirmation." align="center" width="90%" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/41038e9dee3d836b4d387b0e3d9f3e2633c28dfc21e1f3446f4ae021ce91a307-image.png">
-  Memfault symbol file upload confirmation.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/41038e9dee3d836b4d387b0e3d9f3e2633c28dfc21e1f3446f4ae021ce91a307-image.png" alt="Memfault symbol file upload confirmation." width="90%" />
+</div>
 
 ***
 
@@ -923,9 +923,9 @@ To enable metric processing:
 The device will register itself using the SIM’s **ICCID** as its serial number.\
 You’ll see it appear in the **Devices** view of Memfault.
 
-<Image alt="Device listed in Memfault dashboard." align="center" width="90%" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/2e67755f68f053bc70ee280135d0e4dd3ab774d3d6df18acb63fba7ebb7ebb8e-image.png">
-  Device listed in Memfault dashboard.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/2e67755f68f053bc70ee280135d0e4dd3ab774d3d6df18acb63fba7ebb7ebb8e-image.png" alt="Device listed in Memfault dashboard." width="90%" />
+</div>
 
 ***
 
@@ -948,9 +948,9 @@ nce disconnect      # Simulate disconnection and reconnection
 
 The overview dashboard shows a summary of recent device issues:
 
-<Image alt="Memfault dashboard overview of device issues." align="center" width="90%" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/e4ed2f35b3f1d77a6ad907eceebf6906d8335afc55df7d7103e777a0e6e13326-image.png">
-  Memfault dashboard overview of device issues.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/e4ed2f35b3f1d77a6ad907eceebf6906d8335afc55df7d7103e777a0e6e13326-image.png" alt="Memfault dashboard overview of device issues." width="90%" />
+</div>
 
 ***
 
@@ -994,33 +994,33 @@ CONFIG_NCE_MEMFAULT_DEMO_CONNECTIVITY_METRICS=y
 
 ### Sample Connectivity dashboard configuration:
 
-<Image alt="Sample Connectivity dashboard configuration" align="center" width="90%" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/c5697d3f72aa6ee62fbbb1dc5a82f47da0e8d8b31e628a876f9a77cc4a064925-image.png">
-  Sample Connectivity dashboard configuration
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/c5697d3f72aa6ee62fbbb1dc5a82f47da0e8d8b31e628a876f9a77cc4a064925-image.png" alt="Sample Connectivity dashboard configuration" width="90%" />
+</div>
 
 #### Sync Succes chart configuration:
 
-<Image alt="Sync Success chart configuration" align="center" width="90%" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/20e40244b6384072f88c01471319569f452abc53b64a33a32aceb4f46879fe66-image.png">
-  Sync Success chart configuration
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/20e40244b6384072f88c01471319569f452abc53b64a33a32aceb4f46879fe66-image.png" alt="Sync Success chart configuration" width="90%" />
+</div>
 
 #### To create a new metrics chart:
 
-<Image alt="Create a new metrics chart" align="center" width="90%" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/b7aa40b5bc2624449230752ad9d5cb07b0473d557bb0ffebc186d3ad7566619e-image.png">
-  Create a new metrics chart
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/b7aa40b5bc2624449230752ad9d5cb07b0473d557bb0ffebc186d3ad7566619e-image.png" alt="Create a new metrics chart" width="90%" />
+</div>
 
 #### Signal quality chart configuration:
 
-<Image alt="Signal quality chart configuration" align="center" width="90%" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/dcf3ed5f1393f075b296a1372bb678653afe47971dfd6e8bd7ccbc6d32c694ed-image.png">
-  Signal quality chart configuration
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/dcf3ed5f1393f075b296a1372bb678653afe47971dfd6e8bd7ccbc6d32c694ed-image.png" alt="Signal quality chart configuration" width="90%" />
+</div>
 
 #### Sent KB chart configuration:
 
-<Image alt="Sent KB chart configuration" align="center" width="90%" src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/2f7342db1ee3c9efc9fbdcddec5046201e55e133be5929c2891efa01ab160159-image.png">
-  Sent KB chart configuration
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/2f7342db1ee3c9efc9fbdcddec5046201e55e133be5929c2891efa01ab160159-image.png" alt="Sent KB chart configuration" width="90%" />
+</div>
 
 ***
 

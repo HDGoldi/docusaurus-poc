@@ -2,9 +2,9 @@
 title: 1NCE IoT Network Coverage
 description: Use 1NCE IoT SIMs Network Coverage all over the globe.
 ---
-<Image title="world_coverage_en_03-2022.png" alt={2021} align="center" width="80%" src="/img/connectivity-services/connectivity-services-mobile-network-services/mobile-network-services-coverage/48a9e97-world_coverage_en_03-2022.png">
-  Coverage Map of all Countries and Regions with 1NCE IoT Mobile Network coverage.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/connectivity-services/connectivity-services-mobile-network-services/mobile-network-services-coverage/48a9e97-world_coverage_en_03-2022.png" alt="world_coverage_en_03-2022.png" width="80%" />
+</div>
 
 The country and region coverage of 1NCE is growing steadily and rapidly. 1NCE already offers radio services through roaming partners in over 100 countries and regions in Europe (including UK), Asia, North America, South America, Africa and Oceania. The 1NCE IoT SIM card can be used in these regions without additional costs. 1NCE supports all radio standards such as 2G, 3G, 4G/LTE-M as well as NB-IoT in selected countries and regions. 1NCE strives to continuously enhance the outreach and coverage of the IoT network. If there is a specific need for a radio access technology in a particular area, please check the <a href="https://1nce.com/en-eu/1nce-connect/our-coverage" target="_blank">Coverage Map</a> to see if the actual service is available or reach out to the <a href="https://1nce.com/en-eu/support" target="_blank">1NCE Support</a>. 
 

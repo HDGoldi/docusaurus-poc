@@ -15,17 +15,13 @@ UPP data is sent to the SIM application via SIM APDU commands. The data encoding
 
 To claim the SIM and start working with the SIM Application, simply follow the steps in [Setup](https://github.com/ubirch/ubirch-testkit#set-up-sim-card-and-device) SIM card and device . If you still cannot manage to setup your device, please also check the UBIRCH FAQs and if this does not help, [Contact UBIRCH](https://ubirch.com/contact).
 
-<Image title="ubirch_application.PNG" alt={1173} src="/img/platform-services/platform-services-blockchain/926474a-ubirch_application.PNG">
-  UBIRCH application structure diagram.
-</Image>
+![ubirch_application.PNG](/img/platform-services/platform-services-blockchain/926474a-ubirch_application.PNG)
 
 # UBIRCH TRUST SERVICE
 
 The UBIRCH Trust Service is a fast cloud-based backend responsible for identity management, blockchain anchoring, device and account management. It offers simple to use REST API endpoints to anchor incoming UPPs and to verify received data.
 
-<Image title="ubirch_trust_chain.PNG" alt={1136} src="/img/platform-services/platform-services-blockchain/5d72f62-ubirch_trust_chain.PNG">
-  UBIRCH application structure diagram.
-</Image>
+![ubirch_trust_chain.PNG](/img/platform-services/platform-services-blockchain/5d72f62-ubirch_trust_chain.PNG)
 
 To improve performance, scalability and to keep transaction cost manageable, the UBIRCH Trust Service creates its own merkle-tree structure, aggregating incoming UPPs into larger root-hashes, which get anchored into a blockchain every minute.
 
@@ -45,9 +41,7 @@ In general the process always consists of:
 
 The following simplified sequence diagram uses pseudo code to show the process of sealing and anchoring data. This example shows the usage of an application which is sharing data /measurements, test results) with any kind of data receiver. This is just an example to show the process and not necessarily the exact final architecture to use UBIRCH.
 
-<Image title="ubirch_data_sealing.PNG" alt={1100} src="/img/platform-services/platform-services-blockchain/4bfb4be-ubirch_data_sealing.PNG">
-  UBIRCH application sequence diagram.
-</Image>
+![ubirch_data_sealing.PNG](/img/platform-services/platform-services-blockchain/4bfb4be-ubirch_data_sealing.PNG)
 
 1. The customer device creates data.
 2. The customer device hashes the data, as a unique digital fingerprint.
@@ -63,9 +57,7 @@ The following simplified sequence diagram uses pseudo code to show the process o
 Each received data packet which has been sealed with the UBIRCH CLIENT (has been ubirched) at the place of its 'birth', can easily be verified by the receiver, regarding its authenticity, integrity and chain validity. Since the seal is not directly attached to the data and anchored to the blockchain, the verification can be done by anyone, who has (access to) the data. This process is completely independent from the channel of transmission, which has been used to share the data and is also beyond any system boundaries.\
 The following simplified sequence diagram uses pseudo code to show the process of verifying UBIRCHed data (HASH-method).
 
-<Image title="ubirch_data_verification.PNG" alt={1138} src="/img/platform-services/platform-services-blockchain/5bad503-ubirch_data_verification.PNG">
-  UBIRCH application sequence diagram.
-</Image>
+![ubirch_data_verification.PNG](/img/platform-services/platform-services-blockchain/5bad503-ubirch_data_verification.PNG)
 
 1. The customer application acquires the data to verify.
 2. The customer application recreates the hash of the data, like it was created on the device (before creating the original UPP).

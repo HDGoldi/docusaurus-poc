@@ -28,9 +28,9 @@ To use passive reporting with the 1NCE LwM2M Service, the `LWM2M_PASSIVE_REPORTI
 
 Setting can be enabled in 1NCE portal [Device integrator](doc:1nce-os-device-integrator).
 
-<Image title="IoT Integrator" alt="LwM2M Passive Reporting setting" align="center" width="80%" src="/img/1nce-os/1nce-os-lwm2m/lwm2m-data-handling/1935ef5ef724af18873ce68725dc722e8aba7dde50c41d1695e134c8cd56cc93-lwm2mpr.png">
-  LwM2M Passive Reporting setting
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-lwm2m/lwm2m-data-handling/1935ef5ef724af18873ce68725dc722e8aba7dde50c41d1695e134c8cd56cc93-lwm2mpr.png" alt="LwM2M Passive Reporting setting" width="80%" />
+</div>
 
 The setting can be enabled also with a [management API call](ref:patch_v1-settings-1nceos-name)
 

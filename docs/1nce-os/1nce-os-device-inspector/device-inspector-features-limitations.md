@@ -5,7 +5,9 @@ title: Features & Limitations
 
 The device inspector overview provides a list of all customer devices. The list can be filtered by `ICCID` to search for a specific device. To see more information of a certain device, a single device can be select it in the list.
 
-<Image align="center" alt="Device Inspector overview" border={false} caption="Device Inspector overview" src="/img/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations/e7af3eb-device_inspector_filter.PNG" width="80%" />
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations/e7af3eb-device_inspector_filter.PNG" alt="Device Inspector overview" width="80%" />
+</div>
 
 The details will provide more specific information.
 
@@ -19,7 +21,11 @@ Device state for UDP, CoAP or LwM2M messages.
 
 * <b>LwM2M</b>. Digital representation from the device is stored in state according to OMA specifications.
 
-<Image align="center" alt="Device Inspector Details" border={false} caption="Device State for CoAP" src="/img/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations/6264d0d-device_details.png" width="80%" />
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations/6264d0d-device_details.png" alt="Device Inspector Details" width="80%" />
+</div>
+
+*Device State for CoAP*
 
 ### History
 
@@ -35,7 +41,11 @@ More details in [Historian Web Interface](doc:device-inspector-historian-web-int
 
 If the device is utilizing [Device Locator](doc:1nce-os-device-locator), then a location will be pinpointed on a map.
 
-<Image align="center" alt="Device Inspector Details. Map" border={false} caption="Device location on map" src="/img/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations/db2d3b0-device_inspector_map.png" width="80%" />
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations/db2d3b0-device_inspector_map.png" alt="Device Inspector Details. Map" width="80%" />
+</div>
+
+*Device location on map*
 
 <br />
 
@@ -43,7 +53,9 @@ If the device is utilizing [Device Locator](doc:1nce-os-device-locator), then a 
 
 Cell tower events show the history of cell tower-based location resolutions for selected device when Cell Tower Location is enabled.
 
-<Image align="center" alt="Device Cell Tower Events" border={false} caption="Device Cell Tower Events" src="/img/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations/660adcb3228e060bed14c910392d348ca107a8672d8ce7090acd9ce7816f4cef-device-inspector-cell-tower-events.png" />
+<div style={{textAlign: 'center'}}>
+![Device Cell Tower Events](/img/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations/660adcb3228e060bed14c910392d348ca107a8672d8ce7090acd9ce7816f4cef-device-inspector-cell-tower-events.png)
+</div>
 
 <br />
 

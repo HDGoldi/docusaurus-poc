@@ -4,7 +4,11 @@ description: Management of the 1NCE SIMs
 ---
 The "My SIMs" tab provides an overview of all SIMs currently attached to the specific organization. This page is used as an overview and to configure all SIM functionalities from the 1NCE Portal.
 
-<Image align="center" alt={1354} border={false} caption="Overview of the My SIMs page, showing all SIMs of the organization." title="20220214_SIM List.PNG" src="/img/1nce-portal/portal-sims-sms/73e4c9a-20220214_SIM_List.PNG" />
+<div style={{textAlign: 'center'}}>
+![20220214_SIM List.PNG](/img/1nce-portal/portal-sims-sms/73e4c9a-20220214_SIM_List.PNG)
+</div>
+
+*Overview of the My SIMs page, showing all SIMs of the organization.*
 
 ***
 
@@ -164,7 +168,11 @@ Further, the shown columns can be (de-)activated to select only the ones of inte
 
 The complete and customized SIM Card table can be exported as a CSV-file if needed by using the "Export SIMs" button. As it might take some time to export a larger list of SIMs, the user gets an e-mail notification as soon as the export is completed and can be downloaded from the SIM Export section underneath the SIM card table. This export also includes the PIN and PUK of each SIM which might be needed for certain devices.
 
-<Image align="center" alt={1389} border={false} caption="SIM Export section below the SIM table" title="20220214_Downloads.PNG" src="/img/1nce-portal/portal-sims-sms/4137a69-20220214_Downloads.PNG" />
+<div style={{textAlign: 'center'}}>
+![20220214_Downloads.PNG](/img/1nce-portal/portal-sims-sms/4137a69-20220214_Downloads.PNG)
+</div>
+
+*SIM Export section below the SIM table*
 
 ***
 
@@ -172,7 +180,11 @@ The complete and customized SIM Card table can be exported as a CSV-file if need
 
 Each SIM card in the list view can be selected using the checkbox on the left side of each list entry. By selecting one or several SIMs the user can perform different actions like (de-)activating SIMs, setting the IMEI lock, configuring Auto-Top-Ups or manually recharging the SIM data and SMS volume. These actions can be triggered for the selected SIMs using the buttons in the action bar appearing once SIMs are selected. Additional SIMs can be ordered from here as well with the "Reorder" button on the top right of the table.
 
-<Image align="center" alt={1339} border={false} caption="Selected SIMs with open action bar" title="20220214_Action bar.PNG" src="/img/1nce-portal/portal-sims-sms/cb80c15-20220214_Action_bar.PNG" />
+<div style={{textAlign: 'center'}}>
+![20220214_Action bar.PNG](/img/1nce-portal/portal-sims-sms/cb80c15-20220214_Action_bar.PNG)
+</div>
+
+*Selected SIMs with open action bar*
 
 ## SIM Top-Up
 
@@ -207,7 +219,11 @@ If your SIM cards are close to expiring, you will see an extra column in your SI
 
 After your expiry date has been reached you have 18 months to extend your SIM cards. The SIMs will not be usable in that transition period but you can extend them anytime. After 18 months the SIM cards will be irreversibly deleted.
 
-<Image align="center" alt={826} border={false} caption="SIM Extension" title="220824_SIM List_Extensionpng.png" src="/img/1nce-portal/portal-sims-sms/687f26f-220824_SIM_List_Extensionpng.png" />
+<div style={{textAlign: 'center'}}>
+![220824_SIM List_Extensionpng.png](/img/1nce-portal/portal-sims-sms/687f26f-220824_SIM_List_Extensionpng.png)
+</div>
+
+*SIM Extension*
 
 ***
 
@@ -219,7 +235,11 @@ By clicking on one of the SIMs in the list, a detailed view of the SIM status an
 
 On the SIM detail page, the specific SIM can be (de-)activated, the IMEI lock set, Auto-Top-Up (de-)activated and additionally the SIM connection can be reset.
 
-<Image align="center" alt={826} border={false} caption="Detail page of an example SIM Card." title="1NCE_SIM_Details.PNG" src="/img/1nce-portal/portal-sims-sms/2b5c709fcd688db4f57134d5de1a9cceb4460cfe3cb683cd14ec382b8185cb18-CleanShot_2025-10-08_at_11.28.332x.png" />
+<div style={{textAlign: 'center'}}>
+![1NCE_SIM_Details.PNG](/img/1nce-portal/portal-sims-sms/2b5c709fcd688db4f57134d5de1a9cceb4460cfe3cb683cd14ec382b8185cb18-CleanShot_2025-10-08_at_11.28.332x.png)
+</div>
+
+*Detail page of an example SIM Card.*
 
 ## Reset Connection
 
@@ -238,4 +258,8 @@ The SMS tab of the detailed SIM page can be used to exchange SMS messages with t
 In the table view below the sent SMS form, an overview of the Mobile Originated (MO) and Mobile Terminated (MT) SMS messages of the last seven days can be seen. To properly receive and process MT messages, review the [SMS Forwarder Service](doc:platform-services-sms-forwarder) guide. Besides the messages itself, the current status of the MO-/MT-SMS, the payload and type is listed.  
 The list shows the type of SMS (MT or MO), the current status (Pending, OK, Failed), the timestamp the message was submitted and finally, the source address and the actual payload. Please note that MT-SMS will stay in the Pending state until the device has attached to the network and the message was delivered. For MO-SMS the state will remain in "pending" if no SMS Forwarding Service is setup as only this service will consume the SMS messages and properly acknowledge them. If a SMS message fails this is most likely due to reaching the delivery retry timeout. After a certain time of trying to deliver a message, the service will put the SMS into the failed state.
 
-<Image align="center" alt={1620} border={false} caption="Overview of the SMS Console." title="1NCE_SMS_Console.png" src="/img/1nce-portal/portal-sims-sms/9ff2e66-1NCE_SMS_Console.png" />
+<div style={{textAlign: 'center'}}>
+![1NCE_SMS_Console.png](/img/1nce-portal/portal-sims-sms/9ff2e66-1NCE_SMS_Console.png)
+</div>
+
+*Overview of the SMS Console.*

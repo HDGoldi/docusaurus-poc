@@ -1,7 +1,9 @@
 ---
 title: Device Integrator
 ---
-<Image align="center" alt="Device Integrator as part of the IoT Integrator" border={false} caption="Device Integrator as part of the IoT Integrator" title="IoT Integrator" src="/img/1nce-os/1nce-os-device-integrator/d496e66-IoT_Integrator.png" width="80%" />
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-device-integrator/d496e66-IoT_Integrator.png" alt="Device Integrator as part of the IoT Integrator" width="80%" />
+</div>
 
 The Device Integrator supports connecting devices to 1NCE OS managed services. For that we offer multiple protocols that can be used and tested in the 1NCE OS: UDP, CoAP and LwM2M. The available devices can be found in the [Device Inspector](doc:1nce-os-device-inspector).
 

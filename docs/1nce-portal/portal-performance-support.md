@@ -8,9 +8,9 @@ The performance dashboard provides an insight into the key components and their 
 
 Below the overview, a list of recent incidents in the network with a detailed description is listed.
 
-<Image alt="The 1NCE Performance dashboard, showing the current status of all 1NCE Services." align="center" src="/img/1nce-portal/portal-performance-support/9789412-performance-page.jpg">
-  The 1NCE Performance dashboard, showing the current status of all 1NCE Services.
-</Image>
+<div style={{textAlign: 'center'}}>
+![The 1NCE Performance dashboard, showing the current status of all 1NCE Services.](/img/1nce-portal/portal-performance-support/9789412-performance-page.jpg)
+</div>
 
 ***
 
@@ -18,8 +18,8 @@ Below the overview, a list of recent incidents in the network with a detailed de
 
 Through the "Support" tab, 1NCE customers can quickly access documentation resources as well as technical support and customer service. On the page, links to the 1NCE Developer Hub, API Reference and a search integration for the documentation is given.
 
-<Image title="Support DevHub.PNG" alt={1412} align="center" src="/img/1nce-portal/portal-performance-support/ef6274e-Support_DevHub.PNG">
-  Support page, with references to the Developer Hub, API Reference and Customer Service.
-</Image>
+<div style={{textAlign: 'center'}}>
+![Support DevHub.PNG](/img/1nce-portal/portal-performance-support/ef6274e-Support_DevHub.PNG)
+</div>
 
 Technical support and customer service is provided either directly via phone or by placing a new service request ticket. The access to technical support is only available for existing customers. Customer service is provided either in German or English language. Telephone support is available from Monday to Friday from 9 a.m. to 6 p.m. (CET/CEST) (except for national public holidays). Tickets are mainly processed within the service hours.

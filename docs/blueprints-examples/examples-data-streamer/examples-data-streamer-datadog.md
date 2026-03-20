@@ -23,39 +23,39 @@ For the DataDog Data Streamer configuration, a account with a new API Key needs 
 3. Select **API Keys** from the settings menu.
 4. Click **New Key** in the top right to create a new API Key.
 
-<Image title="DataDog_Configuration_01.png" alt={1255} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/b1e2c9f-DataDog_Configuration_01.png">
-  Go to the Organization Settings, API Keys and add a new API Key.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/b1e2c9f-DataDog_Configuration_01.png" alt="DataDog_Configuration_01.png" width="80%" />
+</div>
 
 5. Provide a **Name** for the API Key.
 6. Click **Generate Key** to issue a new API Key.
 
-<Image title="DataDog_Configuration_02.png" alt={529} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/392dfc2-DataDog_Configuration_02.png">
-  Name the new API Key.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/392dfc2-DataDog_Configuration_02.png" alt="DataDog_Configuration_02.png" width="80%" />
+</div>
 
 7. The next window will show the **Key ID** and the **API Key**.
 8. The Key ID is a unique identifier for the API Key and should not be confused with the actual (API) Key.
 9. Click **Copy Key** to copy the API Key.
 
-<Image title="DataDog_Configuration_03.png" alt={526} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/e5f5329-DataDog_Configuration_03.png">
-  Copy the API Key, the Key ID is used to identify the API Key.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/e5f5329-DataDog_Configuration_03.png" alt="DataDog_Configuration_03.png" width="80%" />
+</div>
 
 10. On the overview page, all API Keys are listed. By clicking on a Key, details of the specific API Key are shown.
 11. From there the API Key can be copied or revoked.
 
-<Image title="DataDog_Configuration_04.png" alt={528} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/1f3d255-DataDog_Configuration_04.png">
-  Details about the created API key.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/1f3d255-DataDog_Configuration_04.png" alt="DataDog_Configuration_04.png" width="80%" />
+</div>
 
 12. Copy & Paste the **API Key** to the configuration in the 1NCE Portal.
 13. Once setup in the 1NCE Portal, the Usage records of all 1NCE SIMs of the used organization will be provided to DataDog.
 14. Go to **Metrics > Summary** of the DataDog project to see the available streams. Please note, SIMs need to generate some recent usage events to make the DataDog integration appear for the first time.
 
-<Image title="DataDog_Configuration_05.png" alt={1458} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/85f1650-DataDog_Configuration_05.png">
-  Metric Summary with Usage Records data.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/85f1650-DataDog_Configuration_05.png" alt="DataDog_Configuration_05.png" width="80%" />
+</div>
 
 ***
 
@@ -70,9 +70,9 @@ For setting up a DataDog Data Streamer integration in the 1NCE Portal, the DataD
 * **Region:** Region of the DataDog Account.
 * Click **Save** to create the Data Streamer integration.
 
-<Image title="datadog_integration_cmp.png" alt={1126} align="center" src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/a6cdbb1-datadog_integration_cmp.png">
-  DataDog Data Streamer setup in the 1NCE Portal.
-</Image>
+<div style={{textAlign: 'center'}}>
+![datadog_integration_cmp.png](/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/a6cdbb1-datadog_integration_cmp.png)
+</div>
 
 ***
 
@@ -93,6 +93,6 @@ For testing a DataDog integration, an IoT or mobile network device (e.g., smartp
 
 The incoming events in DataDog can be viewed in the Metrics Summary. All Usage Records of the 1NCE SIMs in the organization account will be forwarded to DataDog.
 
-<Image title="DataDog_Configuration_05.png" alt={1458} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/4537f00-DataDog_Configuration_05.png">
-  Metrics Summary showing the usage records of a 1NCE SIM.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog/4537f00-DataDog_Configuration_05.png" alt="DataDog_Configuration_05.png" width="80%" />
+</div>

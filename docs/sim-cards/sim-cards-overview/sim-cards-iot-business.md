@@ -5,13 +5,9 @@ description: Basics about the 1NCE IoT SIM Cards Business.
 Although the first, traditional plastic-backed SIM cards were introduced to the mobile network market over 30 years ago, the adapted form factor and technical specifications still apply today as a major key for mobile network communication. As part of the 1NCE connectivity services, the plastic 3in1 IoT SIM Card Business offers the fundamental entrance to the world of mobile IoT communication.  
 This section will cover the basics about the physical IoT SIM Card Business form factor, technical specifications as well as recommendations for IoT hardware application cases.
 
-<Image
-  align="center"
-  alt="Overview of the 1NCE 3in1 IoT SIM Card Business, which includes the 2FF, 3FF and 4FF form factors."
-  caption="Overview of the 1NCE 3in1 IoT SIM Card Business, which includes the 2FF, 3FF and 4FF form factors."
-  src="/img/sim-cards/sim-cards-overview/sim-cards-iot-business/613cd18-cliu9g5y5003i0rqmejpnayyt-sim-card.max.png"
-  sizing="25%"
-/>
+<div style={{textAlign: 'center'}}>
+![Overview of the 1NCE 3in1 IoT SIM Card Business, which includes the 2FF, 3FF and 4FF form factors.](/img/sim-cards/sim-cards-overview/sim-cards-iot-business/613cd18-cliu9g5y5003i0rqmejpnayyt-sim-card.max.png)
+</div>
 
 
 ***
@@ -28,12 +24,11 @@ Over the years, with the hardware miniaturization and especially IoT use cases f
 
 1NCE IoT SIM Card Business are 3in1 plastic-backed SIMs which incorporate the standardized 2FF Mini, 3FF Micro and 4FF Nano form factors. The 1NCE SIMs are shipped in a half-size carrier to make handling and shipping of the breakout SIMs easier. Depending on the customer needs the IoT SIM Card Business can be carefully broken down into the needed form factor and also reassembled back up to 2FF Mini with the supplied adapters.
 
-<Image
-  align="center"
-  alt="1NCE_4FF_SIM_Dimensions.png"
-  caption="1NCE IoT SIM Card Business 4FF reference dimensions and pin assignment as of ETSI TS 102 221."
-  src="/img/sim-cards/sim-cards-overview/sim-cards-iot-business/20aeb83-1NCE_4FF_SIM_Dimensions.png"
-/>
+<div style={{textAlign: 'center'}}>
+![1NCE_4FF_SIM_Dimensions.png](/img/sim-cards/sim-cards-overview/sim-cards-iot-business/20aeb83-1NCE_4FF_SIM_Dimensions.png)
+</div>
+
+*1NCE IoT SIM Card Business 4FF reference dimensions and pin assignment as of ETSI TS 102 221.*
 
 
 As 4FF is the smallest form factor that minimizes the plastic-backed SIM Card to the bare IC, we will use it as reference for the pinout. The pinout is the same for all IoT SIM Card Businesses as the SIM IC is identical. Shown above is the pinout reference and dimensions of the 4FF SIM according to <a href="https://www.etsi.org/deliver/etsi_ts/102200_102299/102221/15.00.00_60/ts_102221v150000p.pdf" target="blank_">ETSI TS 102 221</a>. While the 1NCE IoT SIM Card Business 4FF and IoT SIM Chip Industrial form factor are different, the pinout of the actual ICs are the same. The pinout table references the pinout of the dimensional reference figure for the 4FF SIM Card.
@@ -115,13 +110,11 @@ As 4FF is the smallest form factor that minimizes the plastic-backed SIM Card to
 
 1NCE 3in1 IoT SIM Card Business Cards are packaged in a half-size breakout card to save on plastic wastage. This makes handling and shipping of the different SIM form factors easier. Each of these breakout cards, shown below, contains one 3in1 SIM. For easier identification, a barcode and numerical representation of the EAN code and the ICCID are printed on the back of the cards. When ordering low quantities of IoT SIM Card Business, the cards will be packaged and shipped in small plastic wrapped packages. For larger orders will be fulfilled by shipping boxes of 100 or 500 SIMs respectively. These boxes are packaged in sequence, lowest to highest ICCID with a label sticker indicating the first and last ICCID of the box.
 
-<Image
-  align="center"
-  alt="1NCE_FlexSIM.png"
-  caption="1NCE 3in1 IoT SIM Card Business inside the half-size breakout card used for easier shipping and packaging."
-src="/img/sim-cards/sim-cards-overview/sim-cards-iot-business/a2dce8795d72eda003b894480f74b2ca4184cc2a229c63e32e0fc2a1dbf7baab-SIMCBusiness.png"
-  sizing="50"
-/>
+<div style={{textAlign: 'center'}}>
+![1NCE_FlexSIM.png](/img/sim-cards/sim-cards-overview/sim-cards-iot-business/a2dce8795d72eda003b894480f74b2ca4184cc2a229c63e32e0fc2a1dbf7baab-SIMCBusiness.png)
+</div>
+
+*1NCE 3in1 IoT SIM Card Business inside the half-size breakout card used for easier shipping and packaging.*
 
 
 ***

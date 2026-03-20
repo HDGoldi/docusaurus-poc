@@ -6,9 +6,9 @@ The traditional plastic-backed SIM originated from the user equipment (UE) usage
 
 Especially in custom embedded Machine-to-Machine (M2M) and IoT hardware application cases, the IoT SIM Chip Industrial offers unique advantages compared to the traditional IoT SIM Card Business. In purpose-built IoT devices, there is no need for regular manual SIM Card swaps. Key factors like ruggedness, security and space constraints have high priority. For these special needs, the 1NCE IoT SIMs Chip Industrial provides the ideal solution. This section covers the 1NCE IoT SIM Chip Industrial product with its standardized form factor, technology specifications and outline recommended application cases.
 
-<Image alt="1NCE IoT SIM Chip Industrial MFF2 Integrated Circuit." align="center" width="20% " src="/img/sim-cards/sim-cards-overview/sim-chips-iot-industrial/974e330-chip.png">
-  1NCE IoT SIM Chip Industrial MFF2 Integrated Circuit.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/sim-cards/sim-cards-overview/sim-chips-iot-industrial/974e330-chip.png" alt="1NCE IoT SIM Chip Industrial MFF2 Integrated Circuit." width="20%" />
+</div>
 
 ***
 
@@ -18,9 +18,9 @@ As the IoT SIM Chip Industrial evolved from the traditional IoT SIM Card Busines
 
 The QFN8 IoT SIM Chip Industrial package is not mounted inside a socketed adapter like the IoT SIM Card Business, it is designed to be directly soldered to the Printed Circuit Board (PCB) of a device. QFN8 is an often used footprint in electronic devices. Thus, it can be easily integrated into automated assembly production lines of IoT-enabled devices. The specifications of the form factor are shown in the figure below.
 
-<Image title="1NCE_eSIM_Dimensions.png" alt={1827} align="center" width="80%" src="/img/sim-cards/sim-cards-overview/sim-chips-iot-industrial/8f83e1d-1NCE_eSIM_Dimensions.png">
-  1NCE MFF2 IoT SIM Chip Industrial Form Factor Dimensions
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/sim-cards/sim-cards-overview/sim-chips-iot-industrial/8f83e1d-1NCE_eSIM_Dimensions.png" alt="1NCE_eSIM_Dimensions.png" width="80%" />
+</div>
 
 Embedded-SIMs share the same basic pinout as IoT SIMs Card Business but in a different form factor shown in the figure above. The following table references the pin assignments and lists their respective functional pinout.
 
@@ -167,15 +167,13 @@ When ordering 1NCE IoT SIMs Chip Industrial, the QFN8 ICs are packaged in a stan
 
 **Tape & Reel packing**
 
-<Image align="right" className="border" width="-3px" border={true} src="/img/sim-cards/sim-cards-overview/sim-chips-iot-industrial/9fb616e62a74da6e4531c348a40b45daff2e61201909b0af1c8fc4f0b1db682a-image.png" />
-
-*[https://www.infineon.com/dgdl/Infineon-Integration\_Guide\_SLx16\_SLx17-AdditionalTechnicalInformation-v01\_00-EN.pdf?fileId=5546d46273a5366f0173e8316de94622](https://www.infineon.com/dgdl/Infineon-Integration_Guide_SLx16_SLx17-AdditionalTechnicalInformation-v01_00-EN.pdf?fileId=5546d46273a5366f0173e8316de94622)*
+<img src="/img/sim-cards/sim-cards-overview/sim-chips-iot-industrial/9fb616e62a74da6e4531c348a40b45daff2e61201909b0af1c8fc4f0b1db682a-image.png" alt="*[https://www.infineon.com/dgdl/Infineon-Integration\_Guide\_SLx16\_SLx17-AdditionalTechnicalInformation-v01\_00-EN.pdf?fileId=5546d46273a5366f0173e8316de94622](https://www.infineon.com/dgdl/Infineon-Integration_Guide_SLx16_SLx17-AdditionalTechnicalInformation-v01_00-EN.pdf?fileId=5546d46273a5366f0173e8316de94622)*
 
 Each reel is vacuum packaged separately with a humidity indicator card, desiccant and a barcode label in a reel cardboard box. The barcode label shows the first and last IoT SIM Chip Industrial ICCID of the specific reel. IoT SIMs Chip Industrial are produced in sequence in ascending order where the smallest ICCID is produced first and is at the end of the tape in the middle of the reel. The user direction of unreeling is according to EIA-481 standard.
 
-<Image title="1NCE_eSIM_Reel.png" alt={1879} align="center" width="80%" src="/img/sim-cards/sim-cards-overview/sim-chips-iot-industrial/63be9d7-1NCE_eSIM_Reel.png">
-  1NCE IoT SIM Chip Industrial packaging reel and example barcode showing the first an last ICCID of the reel.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/sim-cards/sim-cards-overview/sim-chips-iot-industrial/63be9d7-1NCE_eSIM_Reel.png" alt="1NCE_eSIM_Reel.png" width="80%" />
+</div>
 
 ***
 

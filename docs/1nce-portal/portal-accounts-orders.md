@@ -20,9 +20,9 @@ The Billing and Shipping Addresses dropdown shows all saved billing and shipping
 
 The Payment Details Auto-Top-Up dropdown allows to save/delete credit card details if the customer wishes to activate Auto-Top-Up for single or all SIMs. The Auto-Top-Up feature can be enabled for particular SIMs in the "My SIMs" tab or for all SIMs in the "Configuration" tab. An API call is also available. 
 
-<Image title="220422_Account_tab.PNG" alt={898} align="center" width="80%" src="/img/1nce-portal/portal-accounts-orders/c341635-220422_Account_tab.PNG">
-  Account page with customer details, shipping and billing addresses.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-portal/portal-accounts-orders/c341635-220422_Account_tab.PNG" alt="220422_Account_tab.PNG" width="80%" />
+</div>
 
 ***
 
@@ -31,6 +31,6 @@ The Payment Details Auto-Top-Up dropdown allows to save/delete credit card detai
 In the "Orders" tab, all orders from the organization's 1NCE account are listed. The table provides an overview of the important order parameters as well as the current status of an order. The status indicator (completed, in preparation or cancelled) can be used to monitor pending orders.\
 On this page, previous invoices of specific orders can be downloaded. Additionally, a CSV list of all SIMs of a particular order can be downloaded using the link in the "Affected SIMs" column. This list for a dedicated order consists of ICCID, label, IMSI and MSISDN of the SIMs. In case there has been any correction to the order, the corrected or updated invoices can be downloaded in the column "Additional Documents".
 
-<Image title="20220218_Orders.PNG" alt={1350} align="center" src="/img/1nce-portal/portal-accounts-orders/9242b3a-20220218_Orders.PNG">
-  Orders tab with past orders and corresponding invoices and SIM files
-</Image>
+<div style={{textAlign: 'center'}}>
+![20220218_Orders.PNG](/img/1nce-portal/portal-accounts-orders/9242b3a-20220218_Orders.PNG)
+</div>

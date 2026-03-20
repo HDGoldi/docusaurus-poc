@@ -12,9 +12,9 @@ This section covers how to use the SMS Console inside the 1NCE Portal to view th
 2. Select the **SIM** for which the MO-SMS should be viewed from the list of all SIM cards.
 3. Navigate to the **SMS Tab** at the bottom of the SIM details page to access the SMS Console.
 
-<Image title="SMS_Console_MO.png" alt={1234} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-sms/examples-mo-sms/a9af544-SMS_Console_MO.png">
-  List view of the SMS Console showing MT- and MO-SMS messages.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-sms/examples-mo-sms/a9af544-SMS_Console_MO.png" alt="SMS_Console_MO.png" width="80%" />
+</div>
 
 4. The list view will show both MT-SMS and MO-SMS messages. For both types, the **Status**, **Submitted**, **Finalized**, **Source Address** and **Payload** are shown.
 5. A MO-SMS will remain in the pending status without being finalized until it was received and acknowledged by an SMS Forwarder Endpoint. As this integration is optional, by default the MO-SMS will stay in the pending state.

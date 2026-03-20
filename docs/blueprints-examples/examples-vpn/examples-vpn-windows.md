@@ -77,9 +77,9 @@ The Windows platform is often used for testing on personal computers or in a Win
 2. Install the the OpenVPN client for Windows. Follow the default install instructions.
 3. Log into the **1NCE Portal**. Navigate to the **Configuration** tab and open the **OpenVPN Configuration** dropdown. Select **Windows** as configuration medium and download the OpenVPN *xx-region-x-client.ovpn* and *credentials.txt* files.
 
-<Image title="VPN_Windows_Configuration_01.png" alt={1078} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-vpn/examples-vpn-windows/d5ac052-VPN_Windows_Configuration_01.png">
-  Download the Configuration and Credentials from the 1NCE Portal.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-vpn/examples-vpn-windows/d5ac052-VPN_Windows_Configuration_01.png" alt="VPN_Windows_Configuration_01.png" width="80%" />
+</div>
 
 4. Place the *xx-region-x-client.ovpn* and *credentials.txt* in the OpenVPN configuration folder, typically *C:\\Program Files\\OpenVPN\\config*.
 5. If required, change the path of the *credentials.txt* file in the *xx-region-x-client.ovpn* on line *auth-user-pass*. This is needed if the credentials file is placed somewhere else besides the default location.
@@ -89,15 +89,15 @@ The Windows platform is often used for testing on personal computers or in a Win
 9. If more than one client is configured, a list of VPN connections is shown.
 10. Select the desired *client*, renamed configuration or if only one client is configured click on **Connect**.
 
-<Image title="VPN_Windows_Configuration_02.png" alt={686} align="center" width="80%" border={true} src="/img/blueprints-examples/examples-vpn/examples-vpn-windows/6b2e31c-VPN_Windows_Configuration_02.png">
-  Connecting to the 1NCE VPN using OpenVPN on Windows. Left, multiple configurations are present. Right, single configuration available.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-vpn/examples-vpn-windows/6b2e31c-VPN_Windows_Configuration_02.png" alt="VPN_Windows_Configuration_02.png" width="80%" />
+</div>
 
 11. A new pop-up will be shown for the client connecting. It shows the logs of the current connection attempt. After a few seconds the client should connect and the pop-up should be closed automatically.
 
-<Image title="VPN_Windows_Configuration_03.png" alt={908} align="center" width="80%" src="/img/blueprints-examples/examples-vpn/examples-vpn-windows/e950072-VPN_Windows_Configuration_03.png">
-  Pop-up window shown during the connection establishment process of the Windows OpenVPN client.
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/blueprints-examples/examples-vpn/examples-vpn-windows/e950072-VPN_Windows_Configuration_03.png" alt="VPN_Windows_Configuration_03.png" width="80%" />
+</div>
 
 The VPN connection can be terminated by clicking **Disconnect** in the OpenVPN task bar menu. If a successful connection is established, the computer should now be ready to ping and establish connection towards active/connected 1NCE SIM with an open PDP data session.
 

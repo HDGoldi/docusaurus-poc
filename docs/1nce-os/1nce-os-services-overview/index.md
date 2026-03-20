@@ -2,7 +2,9 @@
 title: Services Overview
 description: A general overview of the services from 1NCE OS
 ---
-<Image align="center" width="80% " src="/img/1nce-os/1nce-os-services-overview/8620eea-1NCE-OS-Grafiken-202211221024_2.png" />
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-services-overview/8620eea-1NCE-OS-Grafiken-202211221024_2.png" alt="" width="80%" />
+</div>
 
 # 1NCE OS Overview
 

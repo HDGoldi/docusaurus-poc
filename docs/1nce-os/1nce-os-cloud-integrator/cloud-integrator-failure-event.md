@@ -44,7 +44,11 @@ Following `Error` Cloud Integrator event will be generated with the integration 
 
 Also on the 1NCEOS frontend page you will see following Admin Log:
 
-<Image align="center" border={false} caption="Integration Failed Admin Log" src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-failure-event/98039df5e2dab3d5d0f52b2bd73e62797ce2eaa717d588acc37074dd9c6fdce9-175c310b1a02fb6fda273021e02f7d64152d3ab485c04f7f16cd7a1c71b2af14-integration_admin_log.png" />
+<div style={{textAlign: 'center'}}>
+![](/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-failure-event/98039df5e2dab3d5d0f52b2bd73e62797ce2eaa717d588acc37074dd9c6fdce9-175c310b1a02fb6fda273021e02f7d64152d3ab485c04f7f16cd7a1c71b2af14-integration_admin_log.png)
+</div>
+
+*Integration Failed Admin Log*
 
 Following steps should be executed:
 

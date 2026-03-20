@@ -6,6 +6,4 @@ The SMS Forwarder settings can be found in the 1NCE Portal within the Configurat
 
 Once the settings have been saved, the MO-SMS and DLR will be forwarded to the provided server URL. The configured endpoint can be edited at any point. To delete the configuration just leave the URL field empty and save the configuration.
 
-<Image title="1NCE_SMS_Forwarder.PNG" alt={1211} width="80%" border={true} src="/img/blueprints-examples/examples-sms-forwarder/examples-sms-forwarder-portal/a4ae561-1NCE_SMS_Forwarder.PNG">
-  Configuration of the SMS Forwarding Service in the 1NCE Portal. Here the HTTP endpoint URL is specified.
-</Image>
+<img src="/img/blueprints-examples/examples-sms-forwarder/examples-sms-forwarder-portal/a4ae561-1NCE_SMS_Forwarder.PNG" alt="1NCE_SMS_Forwarder.PNG" width="80%" />

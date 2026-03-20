@@ -33,9 +33,7 @@ Measurements:
 | **1500**             | 112      | 113      | 117      | 114.0                     |
 | **2000**             | 121      | 118      | 119      | 119.3                     |
 
-<Image alt="Payload vs. Consumption" width="60% " border={true} src="/img/1nce-os/1nce-os-energy-saver/energy-saver-energy-saved-calculation/d62604d-energy-used-graph.png">
-  Payload vs. Consumption
-</Image>
+<img src="/img/1nce-os/1nce-os-energy-saver/energy-saver-energy-saved-calculation/d62604d-energy-used-graph.png" alt="Payload vs. Consumption" width="60%" />
 
 The energy consumption of the IoT device can be calculated by:
 

@@ -2,7 +2,9 @@
 title: Device Locator
 description: How is the device locator working
 ---
-<Image align="center" width="80% " src="/img/1nce-os/1nce-os-device-locator/c43a6778f88b410a537a526183996d5b0ca249c2d2e0968828b22e1a8137243b-CleanShot_2025-09-12_at_07.53.362x.png" />
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-device-locator/c43a6778f88b410a537a526183996d5b0ca249c2d2e0968828b22e1a8137243b-CleanShot_2025-09-12_at_07.53.362x.png" alt="" width="80%" />
+</div>
 
 # Whereabouts Location service
 
@@ -19,7 +21,9 @@ description: How is the device locator working
 The Device Locator provides an approximate position of IoT devices by analyzing data from network events when creating a new PDP Context/Session used for data transmission.  
 This feature has to be activated in the portal. To view latest particular device cellTower location resolution attempts [Activity endpoint](doc:device-locator-api#get-device-activity) can be used.
 
-<Image align="center" alt="Enabling the Cell Tower location feature" caption="Enabling the Cell Tower location feature" src="/img/1nce-os/1nce-os-device-locator/4a6bdef3eda26571384ca493002ca95034a3540c4b388e35c19e7d9185c12b70-enabling-cell-tower-location.png" width="70%" />
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-device-locator/4a6bdef3eda26571384ca493002ca95034a3540c4b388e35c19e7d9185c12b70-enabling-cell-tower-location.png" alt="Enabling the Cell Tower location feature" width="70%" />
+</div>
 
 ## Basic solver mode
 
@@ -42,9 +46,17 @@ If all credits are depleted or the current date reaches the credit expiry date, 
 You can request access to this feature via the 1NCE OS portal.
 Credits can be purchased via the Orders tab in the 1NCE Portal by choosing the required quantity of “Whereabouts – Device Location” credits.
 
-<Image align="center" alt="Enabled Advanced solver mode with credits available" caption="Enabled Plus solver mode with credits available" src="/img/1nce-os/1nce-os-device-locator/273a6e8e5121adf68a59183266e4ae70fa81bab4bdd3416eb09b406b6a15e2bf-Screenshot_2025-09-12_093126.png" width="70%" />
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-device-locator/273a6e8e5121adf68a59183266e4ae70fa81bab4bdd3416eb09b406b6a15e2bf-Screenshot_2025-09-12_093126.png" alt="Enabled Advanced solver mode with credits available" width="70%" />
+</div>
 
-<Image align="center" alt="Advanced solver mode" caption="Plus solver mode" src="/img/1nce-os/1nce-os-device-locator/9d36b61-image.png" width="70%" />
+*Enabled Plus solver mode with credits available*
+
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-device-locator/9d36b61-image.png" alt="Advanced solver mode" width="70%" />
+</div>
+
+*Plus solver mode*
 
 <br />
 
@@ -58,7 +70,9 @@ The tab displays the following data:
 * Status indicating whether the cell tower event was successfully resolved by the Basic or Plus Resolver
 * Resolver mode indicating how the location was derived
 
-<Image align="center" alt="Cell Tower Events" caption="Cell Tower Events" src="/img/1nce-os/1nce-os-device-locator/d58d19675362bc860ecd1ea5f296e4e4137fdb597156cc4c742a67d6497154e5-cell-tower-events-tab.png" />
+<div style={{textAlign: 'center'}}>
+![Cell Tower Events](/img/1nce-os/1nce-os-device-locator/d58d19675362bc860ecd1ea5f296e4e4137fdb597156cc4c742a67d6497154e5-cell-tower-events-tab.png)
+</div>
 
 ## Disclaimer
 

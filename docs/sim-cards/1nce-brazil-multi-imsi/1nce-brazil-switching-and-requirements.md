@@ -16,9 +16,9 @@ We expect that the applet does the following actions:
 4. Mechanism to perform a country-based IMSI selection considering the following trigger:
    1. MCC equal # 724 IMSI 1 shall be used. Otherwise, IMSI 2 shall be used
 
-<Image alt="Overall Applet Structure – 4 IMSIs – 2 Mechanisms" align="center" border={true} src="/img/sim-cards/1nce-brazil-multi-imsi/1nce-brazil-switching-and-requirements/0c6983721fa7c626c873f33057c1515177771b1a973316b903f39661232026de-Picture1.png">
-  Overall Applet Structure – 4 IMSIs – 2 Mechanisms
-</Image>
+<div style={{textAlign: 'center'}}>
+![Overall Applet Structure – 4 IMSIs – 2 Mechanisms](/img/sim-cards/1nce-brazil-multi-imsi/1nce-brazil-switching-and-requirements/0c6983721fa7c626c873f33057c1515177771b1a973316b903f39661232026de-Picture1.png)
+</div>
 
 The 1NCE Multi-IMSI Applet requires that the modem supports STK (SIM TOOL KIT) features. This is a pre-requisite for the applet to work. In case the applet doesn’t support the STK features, the SIM CARD will access only CLARO network via local Brazilian IMSI.
 
@@ -33,9 +33,9 @@ The STK feature should be enabled in the device’s Modems, in a way that the AP
 
 The below image shows the overall applet functionalities.
 
-<Image alt="Overall applet functionalities" align="center" src="/img/sim-cards/1nce-brazil-multi-imsi/1nce-brazil-switching-and-requirements/a085e4b246a92774d6b6d638e41e0ec18d1379b59f2a4322a5821b8418c32e33-Picture1.png">
-  Overall applet functionalities
-</Image>
+<div style={{textAlign: 'center'}}>
+![Overall applet functionalities](/img/sim-cards/1nce-brazil-multi-imsi/1nce-brazil-switching-and-requirements/a085e4b246a92774d6b6d638e41e0ec18d1379b59f2a4322a5821b8418c32e33-Picture1.png)
+</div>
 
 <br />
 

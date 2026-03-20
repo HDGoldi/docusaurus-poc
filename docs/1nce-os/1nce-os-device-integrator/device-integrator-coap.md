@@ -34,9 +34,9 @@ There are two examples of the retransmission situation in a single exchange life
 
 ## DTLS encryption for CoAP
 
-<Image alt="CoAP DTLS Support" align="center" width="80% " src="/img/1nce-os/1nce-os-device-integrator/device-integrator-coap/a180cb3-image_4.png">
-  CoAP DTLS Support
-</Image>
+<div style={{textAlign: 'center'}}>
+<img src="/img/1nce-os/1nce-os-device-integrator/device-integrator-coap/a180cb3-image_4.png" alt="CoAP DTLS Support" width="80%" />
+</div>
 
 Ensuring, data is securely sent from a device to 1NCE OS, it is an important part of gaining the trust of customers with their data. To be able to provide this secure connection 1NCE OS has implemented a DTLS layer in the CoAP communication from the device to 1NCE OS. This allows the device to securely send its data to 1NCE OS without the possibility of messages being read or modified along the way. The picture above describes this process. First, when the device is ready to onboard itself, it will call the CoAP bootstrapping endpoint. This will retrieve the necessary DTLS info to onboard itself securely and initialize the CoAP connection using a PSK.
 

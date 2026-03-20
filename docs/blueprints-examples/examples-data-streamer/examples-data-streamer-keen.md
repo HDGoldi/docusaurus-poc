@@ -21,18 +21,14 @@ Follow these steps to obtain the needed parameters.
 2. Create a new project within the Keen.io account.
 3. Open the project page and go to the **Access Tab** to obtain the **Project ID** and **Write Key** from the newly created project.
 
-<Image title="keen_access.png" alt={1226} width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-keen/9a5fec6-keen_access.png">
-  Keen.io project access settings showing the Project ID and the Write Key, needed for setting up the 1NCE Data Stream integration.
-</Image>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-keen/9a5fec6-keen_access.png" alt="keen_access.png" width="80%" />
 
 5. Copy & Paste the **Project ID** and **Write Key** to the configuration in the 1NCE Portal.
 6. Once setup in the 1NCE Portal, the Event or Usage records of all 1NCE SIMs of the used organization will be provided as Keen.io Streams.
 7. Go to the **Streams Tab** of the Keen.io project to see the available streams as a list in the Event Streams window. Please note, SIMs need to generate some recent events to make the Keen.io streams appear for the first time. This may take a while.\
    8.Once the stream integrations show up, the advanced features of Keen.io can be used to create custom Dashboards and Monitoring.
 
-<Image title="keen_stream.png" alt={948} width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-keen/8b017aa-keen_stream.png">
-  Detailed stream view of an 1NCE SIM Event Data Stream.
-</Image>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-keen/8b017aa-keen_stream.png" alt="keen_stream.png" width="80%" />
 
 ***
 
@@ -48,9 +44,7 @@ After setting up a Keen.io project for the Data Streamer integration, the relate
 6. **Collection Name:** Name of the collection created in the Kenn.io project.
 7. Click **Save** to create the Data Streamer integration.
 
-<Image title="keen_integration_cmp.png" alt={1124} width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-keen/08497b5-keen_integration_cmp.png">
-  Keen.io Data Streamer setup in the Connectivity Management Platform.
-</Image>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-keen/08497b5-keen_integration_cmp.png" alt="keen_integration_cmp.png" width="80%" />
 
 ***
 
@@ -80,6 +74,4 @@ For testing a Keen.io integration, an IoT or mobile network device (e.g., smartp
 
 The incoming events in Keen.io can be viewed in the Streams Tab. Dependent on the configuration, for each received Data Streamer Event and Usage record the raw JSON data can be viewed.
 
-<Image title="keen_stream.png" alt={948} width="80%" border={true} src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-keen/2553597-keen_stream.png">
-  Detailed stream view of an 1NCE SIM Event Data Stream.
-</Image>
+<img src="/img/blueprints-examples/examples-data-streamer/examples-data-streamer-keen/2553597-keen_stream.png" alt="keen_stream.png" width="80%" />
