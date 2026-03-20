@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans:** 4 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Scaffold Docusaurus, copy/normalize export, convert frontmatter, create shared utilities
+- [x] 01-01-PLAN.md -- Scaffold Docusaurus, copy/normalize export, convert frontmatter, create shared utilities
 - [ ] 01-02-PLAN.md -- Image pipeline: extract base64, download remote images, convert Image JSX to Markdown
 - [ ] 01-03-PLAN.md -- Content conversion: HTMLBlocks, tables, doc links, admonitions
 - [ ] 01-04-PLAN.md -- Pipeline orchestrator, sidebar generation, build validation, human verification
