@@ -63,11 +63,11 @@ Plans:
   2. Direct URL access to any page works (CloudFront SPA routing handles deep links)
   3. Merging to main triggers an automated build, S3 sync, and CloudFront cache invalidation
   4. The GitHub Actions pipeline authenticates to AWS via OIDC (no stored secrets)
-**Plans**: TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md -- CloudFormation template (S3, CloudFront, OAC, ACM, Route 53, IAM OIDC) and CloudFront Function for SPA routing
+- [ ] 03-02-PLAN.md -- GitHub Actions CI/CD pipeline (build, preview deploy, production deploy), Lighthouse CI, smoke test, human review
 
 ## Progress
 
@@ -78,4 +78,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 |-------|----------------|--------|-----------|
 | 1. Content Conversion | 3/4 | Executing | - |
 | 2. Site Assembly | 0/4 | Planning complete | - |
-| 3. Infrastructure and Deployment | 0/2 | Not started | - |
+| 3. Infrastructure and Deployment | 0/2 | Planning complete | - |
