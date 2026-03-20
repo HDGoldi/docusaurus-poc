@@ -46,12 +46,13 @@ Plans:
   3. The site displays 1NCE branding (navy/teal colors, Barlow font, logo) in both light and dark mode
   4. All navigation links across the site resolve without 404s (broken link checker passes)
   5. Analytics scripts (GTM, SimpleAnalytics, PostHog) are present in page source
-**Plans**: TBD
+**Plans:** 4 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
-- [ ] 02-03: TBD
+- [ ] 02-01-PLAN.md -- Content reorganization into per-instance directories, multi-instance docs config, five-tab navbar
+- [ ] 02-02-PLAN.md -- 1NCE brand theme (colors, Barlow font, logo, footer, dark mode) and analytics injection (GTM, SimpleAnalytics, PostHog)
+- [ ] 02-03-PLAN.md -- OpenAPI plugin integration with 6 specs, API Explorer with Try It panels
+- [ ] 02-04-PLAN.md -- Redirect map generation, full build verification, human sign-off
 
 ### Phase 3: Infrastructure and Deployment
 **Goal**: The site is live at help.1nce.com with automated deployments on merge to main
@@ -75,6 +76,6 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Content Conversion | 0/4 | Planning complete | - |
-| 2. Site Assembly | 0/3 | Not started | - |
+| 1. Content Conversion | 3/4 | Executing | - |
+| 2. Site Assembly | 0/4 | Planning complete | - |
 | 3. Infrastructure and Deployment | 0/2 | Not started | - |
