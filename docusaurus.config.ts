@@ -2,6 +2,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const isGitHubPages = process.env.DEPLOY_TARGET === 'gh-pages';
+
 const config: Config = {
   title: '1NCE Developer Hub',
   tagline: 'Documentation for 1NCE IoT connectivity services',
@@ -12,8 +14,9 @@ const config: Config = {
     experimental_faster: true,
   },
 
-  url: 'https://help.1nce.com',
-  baseUrl: '/',
+  url: isGitHubPages ? 'https://hdgoldi.github.io' : 'https://help.1nce.com',
+  baseUrl: isGitHubPages ? '/docusaurus-poc/' : '/',
+  trailingSlash: true,
 
   stylesheets: [
     {
@@ -52,7 +55,7 @@ const config: Config = {
     ],
   ],
 
-  headTags: [
+  headTags: isGitHubPages ? [] : [
     // Google Tag Manager (per D-19)
     {
       tagName: 'script',
@@ -71,7 +74,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },
   ],
 
-  scripts: [
+  scripts: isGitHubPages ? [] : [
     {
       src: 'https://scripts.simpleanalyticscdn.com/latest.js',
       async: true,
@@ -79,7 +82,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },
   ],
 
-  clientModules: ['./src/clientModules/routeTracking.ts'],
+  clientModules: isGitHubPages ? [] : ['./src/clientModules/routeTracking.ts'],
 
   plugins: [
     ['@docusaurus/plugin-content-docs', {
