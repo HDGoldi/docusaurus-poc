@@ -12,7 +12,10 @@ Developers can browse all existing documentation and interactively test API endp
 
 ### Validated
 
-(None yet — ship to validate)
+- [x] AWS deployment: S3 static hosting + CloudFront CDN with OAC — Validated in Phase 3: Infrastructure and Deployment
+- [x] SSL via ACM + Route 53 DNS for help.1nce.com — Validated in Phase 3: Infrastructure and Deployment
+- [x] CloudFront Function for SPA routing (index.html rewrite) — Validated in Phase 3: Infrastructure and Deployment
+- [x] GitHub Actions CI/CD pipeline with OIDC auth for automated deploy on merge to main — Validated in Phase 3: Infrastructure and Deployment
 
 ### Active
 
@@ -24,10 +27,6 @@ Developers can browse all existing documentation and interactively test API endp
 - [ ] Multiple OpenAPI specs integrated and generating endpoint pages with code snippets
 - [ ] 1NCE branding applied (colors, logos, fonts matched from current site)
 - [ ] Dark mode support with brand-consistent theming
-- [ ] AWS deployment: S3 static hosting + CloudFront CDN with OAC
-- [ ] SSL via ACM + Route 53 DNS for help.1nce.com
-- [ ] CloudFront Function for SPA routing (index.html rewrite)
-- [ ] GitHub Actions CI/CD pipeline with OIDC auth for automated deploy on merge to main
 
 ### Out of Scope
 
@@ -81,4 +80,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-20 after initialization*
+*Last updated: 2026-03-21 after Phase 3 completion — infrastructure and CI/CD pipeline defined*
