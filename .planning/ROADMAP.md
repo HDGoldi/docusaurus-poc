@@ -53,7 +53,7 @@ Plans:
 - [x] 02-01-PLAN.md -- Content reorganization into per-instance directories, multi-instance docs config, five-tab navbar
 - [x] 02-02-PLAN.md -- 1NCE brand theme (colors, Barlow font, logo, footer, dark mode) and analytics injection (GTM, SimpleAnalytics, PostHog)
 - [x] 02-03-PLAN.md -- OpenAPI plugin integration with 6 specs, API Explorer with Try It panels
-- [ ] 02-04-PLAN.md -- Redirect map generation, full build verification, human sign-off
+- [x] 02-04-PLAN.md -- Redirect map generation, full build verification, human sign-off
 
 ### Phase 3: Infrastructure and Deployment
 **Goal**: The site is live at help.1nce.com with automated deployments on merge to main
