@@ -13,3 +13,11 @@ build/
 # Environment
 .env
 .env.local
+
+# Readme Export and old stuff
+dev-hub-v2.6-2026-03-20T20-39-14_8a4df1b/
+readme_custom_foot.html
+readme_custom_head.html
+readme_custom.css
+Migration Guide_ ReadMe.com to Docusaurus (help.1nce.com).md
+
