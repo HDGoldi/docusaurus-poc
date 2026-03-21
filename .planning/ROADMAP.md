@@ -37,10 +37,10 @@ See: `.planning/milestones/v1.0-ROADMAP.md` for full details.
   1. Site builds successfully with both GitHub Pages baseUrl (`/docusaurus_poc/`) and production root (`/`) from the same codebase
   2. Pushing to main automatically deploys to GitHub Pages without manual intervention
   3. All documentation pages, navigation tabs, and API Explorer pages render correctly on the GitHub Pages URL
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 04-01: TBD
+- [ ] 04-01-PLAN.md — Environment-aware config and GitHub Pages workflow
 
 ### Phase 5: AI Backend and Content Pipeline
 **Goal**: A working RAG backend exists — Bedrock Knowledge Base ingests clean documentation content via S3 Vectors, and a Lambda endpoint answers questions with citations
