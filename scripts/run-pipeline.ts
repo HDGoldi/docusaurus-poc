@@ -13,6 +13,9 @@ const steps = [
   { script: '07-convert-tables', desc: 'Convert Table JSX' },
   { script: '08-convert-links', desc: 'Convert doc:slug links' },
   { script: '09-convert-admonitions', desc: 'Convert admonitions' },
+  { script: '10-generate-sidebars', desc: 'Generate sidebars from _order.yaml' },
+  { script: '11-fix-mdx-compat', desc: 'Fix MDX compatibility issues' },
+  { script: '12-fix-readme-components', desc: 'Convert Callout and Recipe components' },
 ];
 
 let failed = 0;
