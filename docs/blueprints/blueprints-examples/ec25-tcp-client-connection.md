@@ -1,0 +1,201 @@
+---
+title: EC25 TCP Client Connection
+sidebar_position: 26
+---
+```curl AT Commands
+> AT
+OK
+
+
+> AT+CFUN?
++CFUN: 1
+
+
+> AT+CFUN=1
+OK
+
+
+> AT+CPIN?
++CPIN: READY
+OK
+
+
+> AT+COPS=0,0
+OK
+
+
+> AT+CEREG?
++CREG: 0,2
+OK
+  
+
+> AT+CEREG?
++CREG: 0,5
+OK  
+
+
+> AT+CGREG?
++CREG: 0,5
+OK 
+
+
+> AT+CGREG?
++CREG: 0,5
+OK 
+
+ 
+> AT+COPS?
++COPS: 0,0,"Telekom.de 1nce.net",7
+OK
+  
+
+> AT+CGDCONT=1,"IP","iot.1nce.net"
+OK
+
+
+> AT+CGACT=1,1
+OK
+
+
+> AT+CGPADDR=1
++CGPADDR: 1,"<sim_ipaddress>"
+OK
+
+
+> AT+QIOPEN=1,1,"TCP","<tcp_server_url/ip>",<tcp_port>
+OK
++QIOPEN: 1,0
+
++QIURC: "recv",1
+
+
+> AT+QIRD=1
++QIRD: <length>
+<incomming_data>
+OK
+
+
+> AT+QISEND=1
+> <tcp_data_to_send>
+
+> 1a
+
+
+AT+QICLOSE=1
++QIURC: "closed",1
+OK
+
+
+AT+CGACT=0,1
+OK
+```
+
+# Preperation
+
+
+
+For testing purposes, connect the EC25 (EC25EFAR06A08M4G) to a computer. The commands used in this guide will be issued via the serial interface towards the modem. Please setup the specific hardware device that these AT Commands can be sent to the device serial interface.
+Further ensure that the 1NCE SIM is inserted correctly into the device.
+
+# Check Module Communication
+
+<!-- curl@1-2 -->
+
+Check that the module response to a basic 'AT' command. The device should return 'OK' as answer.
+
+# Check Functionality
+
+<!-- curl@5-6 -->
+
+Use 'AT+CFUN?' to check the functionality setting of the modem. '+CFUN: 1' should be returned, indicating that the modem is in the full operating mode.
+
+# Activate Functionality
+
+<!-- curl@9-10 -->
+
+If the prior command returns '+CFUN: 0', use 'AT+CFUN=1' to activate the full modem functionality.
+
+# Check SIM PIN
+
+<!-- curl@13-15 -->
+
+Use 'AT+CPIN?' to check if the SIM is ready to use. As the 1NCE SIM do not have a PIN set by default the modem should return '+CPIN: READY'.
+
+If an error is returned, please check the SIM is inserted correctly or try the SIM in a smartphone.
+
+# PLMN Selection
+
+<!-- curl@18-19 -->
+
+Use 'AT+COPS=0,0' to set the Public Land Mobile Network selection of the modem to automatic. This will ensure that the modem will pick the best operator based on the currently available selection at the given location.
+
+# Network Registration
+
+<!-- curl@22-39 -->
+
+With 'AT+CEREG?' or 'AT+CGREG?' the network registration status can be queried denpendent on the used RAT (LTE or GSM). '+C(E/G)REG: 0,2' indicates that the device is still searching for a network. Use this command to query the status repeatedly until '+C(E/G)REG: 0,5' indicates that the modem is connected to a network and is roaming. 
+1NCE SIMs are always roaming as they do not have a home country set for the IoT use case. 
+If the modem does not connect within a couple of minutes, please check the response code in the AT Command manual of the EC25 and possibly test the SIM in a smartphone to check the coverage.
+
+# Check Registered Network
+
+<!-- curl@42-44 -->
+
+With 'AT+COPS?' it can be checked to which network the modem is currently attached. In the shown case the modem is attached to the Telekom Germany network.
+
+# Configure APN
+
+<!-- curl@47-48 -->
+
+Next, the APN needs to be set for the Data Session. Using the 'AT+CGDCONT=1,"IP","iot.1nce.net"' command the 1NCE APN needs to be set.
+
+# Start PDP Session
+
+<!-- curl@51-52 -->
+
+With 'AT+CGACT=1,1' the PDP Session is started.
+
+# Get IP Address
+
+<!-- curl@55-57 -->
+
+With 'AT+CGPADDR=1' the obtained local IP of the modem can be queried.
+The response is the IP obtained from the network.
+
+# Start a TCP Connection
+
+<!-- curl@60-62 -->
+
+A TCP connection towards a server with a given TCP port can be started with 'AT+QIOPEN=1,1,"TCP",'. The AT Command needs to list the TCP protocol, the target URL or IP and the used TCP Port. If the connection is successfully opened, '+QIOPEN: 1,0' is returned.
+
+# Receive TCP Data
+
+<!-- curl@64-70 -->
+
+By default, the modem will indicate any incomming TCP data with '+QIURC: "recv",1'. The received data can be read by issuing the 'AT+QIRD=1' command.
+
+# Send TCP Data
+
+<!-- curl@73-76 -->
+
+With 'AT+QISEND=1' the data send mode is activated. Any input send to the modem will be forwarded via the tcp connection. To deactivate the send mode, '1A' encoded as a HEX value needs to be send to the EC25. The modem will acknowledge the sent message.
+
+# Close TCP Connection
+
+<!-- curl@79-81 -->
+
+An active TCP connection can be closed with 'AT+QICLOSE=1'. The modem will close the TCP connection and respond with '+QIURC: "closed",1'.
+
+# Close Data Session
+
+<!-- curl@84-85 -->
+
+To close the entire data session 'AT+CGACT=0,1' needs to be used. Afterwards a new session can be started at any point.
+
+# Wrap Up
+
+
+
+This guide showed the basic setup of a EC25 with a 1NCE SIM to send and receive data using a TCP connection.
+
+For more details and documentation please refer to the AT Command manual of the EC25.

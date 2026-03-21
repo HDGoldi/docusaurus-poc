@@ -23,7 +23,8 @@
     "convert:links": "tsx scripts/08-convert-links.ts",
     "convert:admonitions": "tsx scripts/09-convert-admonitions.ts",
     "convert:sidebars": "tsx scripts/10-generate-sidebars.ts",
-    "convert:pipeline": "tsx scripts/run-pipeline.ts"
+    "convert:pipeline": "tsx scripts/run-pipeline.ts",
+    "convert:reorganize": "tsx scripts/11-reorganize-content.ts"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",

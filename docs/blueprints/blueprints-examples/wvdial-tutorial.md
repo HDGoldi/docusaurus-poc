@@ -1,0 +1,182 @@
+---
+title: WvDial Tutorial
+sidebar_position: 1
+---
+```powershell Installation
+> lsusb
+
+Bus 001 Device 005: ID 12d1:1001 Huawei Technologies Co., Ltd. E161/E169/E620/E800 HSDPA Modem
+Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. SMSC9512/9514 Fast Ethernet Adapter
+Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp. SMC9514 Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+
+> sudo apt install usb-modeswitch
+
+
+> sudo apt install wvdial
+```
+
+```powershell Configuration
+> sudo wvdial
+
+--> WvDial: Internet dialer version 1.61
+--> Initializing modem.
+--> Sending: ATZ
+ATZ
+OK
+--> Sending: ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+OK
+--> Modem initialized.
+--> Configuration does not specify a valid phone number.
+--> Configuration does not specify a valid login name.
+--> Configuration does not specify a valid password.
+
+
+> sudo nano /etc/wvdial.conf
+
+[Dialer 1nce]
+Init1 = ATZ
+Init2 = ATQ0 V1 E1 S0=0 &C1 &D2
+Init3 = AT+CGDCONT=1,"IP","iot.1nce.net"
+Modem Type = Analog Modem
+Baud = 9600
+New PPPD = yes
+Modem = /dev/ttyUSB0
+ISDN = 0
+Phone = *99#
+Password = *
+Username = *
+
+
+```
+
+```powershell Connection
+> sudo wvdial 1nce
+
+
+--> WvDial: Internet dialer version 1.61
+--> Initializing modem.
+--> Sending: ATZ
+ATZ
+OK
+--> Sending: ATQ0 V1 E1 S0=0 &C1 &D2
+ATQ0 V1 E1 S0=0 &C1 &D2
+OK
+--> Sending: AT+CGDCONT=1,"IP","iot.1nce.net"
+AT+CGDCONT=1,"IP","iot.1nce.net"
+OK
+--> Modem initialized.
+--> Sending: ATDT*99#
+--> Waiting for carrier.
+ATDT*99#
+CONNECT
+--> Carrier detected.  Waiting for prompt.
+--> Starting pppd at Mon Jun 21 10:29:44 2021
+--> Pid of pppd: 5027
+--> Using interface ppp0
+--> local  IP address x.x.x.x
+--> remote IP address x.x.x.x
+--> primary   DNS address 8.8.8.8
+--> secondary DNS address 8.8.4.4
+
+
+> Crtl+C
+
+
+Caught signal 2:  Attempting to exit gracefully...
+--> Terminating on signal 15
+--> Connect time 1.5 minutes.
+--> Disconnecting at Mon Jun 21 10:31:16 2021
+
+
+```
+
+```powershell Interface
+> ifconfig
+
+
+ppp0: 	flags=4305<UP,POINTOPOINT,RUNNING,NOARP,MULTICAST>  mtu 1500
+        inet x.x.x.x  netmask 255.255.255.255  destination x.x.x.x
+        ppp  txqueuelen 3  (Punkt-zu-Punkt-Verbindung)
+        RX packets 10  bytes 202 (202.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 11  bytes 241 (241.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+```
+
+# Requirements
+
+<!-- powershell@0 -->
+
+Besides a USB Modem with a 1NCE SIM, a Linux Host Device with Command Line Interface access as well as internet access for installing the software is needed.
+
+Please insert the 1NCE SIM into the USB Modem according to the manufacturer’s instructions and connect the USB Modem to a free USB port of the Linux system.
+
+In this recipe we are using a Raspberry Pi 3 with a Debain-based Linux OS and a Huawei E1550 USB Modem.
+
+# Install USB Modem Drivers
+
+<!-- powershell@1-3 -->
+
+Dependent on the USB modem, additional drivers might be needed. Please check by searching for the model number of the modem and the used operating system.
+
+The connected USB devices can be listed using 'lsusb'. This will show a list, identifying the connected devices. The USB modem needs to be enumerated. In our case, the Huawei modem is correctly listed.
+
+# USB Modeswitch
+
+<!-- powershell@9 -->
+
+This step is not always required!
+
+Some USB modems have multiple operating modes that need to be configured. In this case, installing usb-modeswitch can help to switch the device to the correct mode.
+
+Please check by searching for the model number of the modem and the used operating system.
+
+# Install Wvdial
+
+<!-- powershell@12 -->
+
+Install the wvdial software using the build in package manager of the Linux OS.
+
+# Generate Default Config
+
+<!-- powershell@1-14 -->
+
+While the USB modem is connected, run 'sudo wvdial' to create a default configuration file.
+
+# 1NCE Config
+
+<!-- powershell@17-30 -->
+
+Open the configuration file in a text editor and append the 1NCE wvdial configuration to the file.
+
+Please compare the inserted 1NCE configuration to the default values and adapt any differences to the 1NCE setup.
+
+Note that the 1NCE setup does not need a username or password.
+
+# Initiate Connection
+
+<!-- powershell@1-27 -->
+
+The connection to the mobile network can now be started. Please note that this process will take some time to start and is a blocking command.
+
+# Terminating Connection
+
+<!-- powershell@30-37 -->
+
+The connection can be terminated by using 'ctrl+c'.
+
+# Connection Monitoring
+
+<!-- powershell@1-11 -->
+
+The connection can be monitored using the 'ifconfig' command. The IP and transmitted data of the point-to-point interface will be listed as a response.
+
+# Wrap Up
+
+
+
+This simple demo should get you started using wvdial on a Linux OS. For further integration of wvdial into custom applications and the operating system specific guides of wvdial.
