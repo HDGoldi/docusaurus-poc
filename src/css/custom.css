@@ -75,3 +75,27 @@ h2, h3 {
 .navbar__link--active {
   color: #29abe2;
 }
+
+/* Footer: enforce navy background matching navbar (overrides Docusaurus style="dark" defaults) */
+.footer--dark {
+  --ifm-footer-background-color: #194a7d;
+  background-color: #194a7d;
+  color: #ffffff;
+}
+
+.footer--dark .footer__link-item {
+  color: #ffffff;
+}
+
+.footer--dark .footer__link-item:hover {
+  color: #29abe2;
+}
+
+.footer--dark .footer__copyright {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme='dark'] .footer--dark {
+  --ifm-footer-background-color: #0d2a47;
+  background-color: #0d2a47;
+}
