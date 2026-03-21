@@ -1,8 +1,0 @@
-- get_v1-locate-devices-deviceid-positions
-- get_v1-locate-positions-latest
-- get_v1-locate-devices-deviceid-activity
-- get_v1-locate-geofences
-- post_v1-locate-geofences
-- delete_v1-locate-geofences-geofenceid
-- get_v1-locate-geofences-geofenceid
-- patch_v1-locate-geofences-geofenceid
