@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: "Checkpoint: 03-02 Task 3 human-verify (awaiting infrastructure review)"
-last_updated: "2026-03-21T17:48:46.597Z"
+stopped_at: Completed 03-01-PLAN.md
+last_updated: "2026-03-21T17:48:53.100Z"
 progress:
   total_phases: 3
   completed_phases: 2
@@ -23,8 +23,8 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 
 ## Current Position
 
-Phase: 03 (infrastructure-and-deployment) — EXECUTING
-Plan: 2 of 2
+Phase: 02
+Plan: Not started
 
 ## Performance Metrics
 
@@ -53,6 +53,7 @@ Plan: 2 of 2
 | Phase 02 P01 | 4min | 2 tasks | 199 files |
 | Phase 01 P05 | 2min | 2 tasks | 2 files |
 | Phase 03 P02 | 120s | 2 tasks | 4 files |
+| Phase 03 P01 | 2min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -72,6 +73,7 @@ Recent decisions affecting current work:
 - [Phase 01]: Included script 10 (generate-sidebars) in pipeline for completeness
 - [Phase 03]: Accessibility Lighthouse threshold set to error (blocking) at 0.9; other categories warn-level
 - [Phase 03]: Two-tier cache: hashed assets 1-year immutable, HTML 10-min must-revalidate
+- [Phase 03]: Deploy entire CF stack in us-east-1 for ACM cert compatibility; S3 buckets use OAC not OAI; bucket policies are separate resources
 
 ### Pending Todos
 
@@ -84,6 +86,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-21T17:48:38.887Z
-Stopped at: Checkpoint: 03-02 Task 3 human-verify (awaiting infrastructure review)
+Last session: 2026-03-21T17:48:53.098Z
+Stopped at: Completed 03-01-PLAN.md
 Resume file: None
