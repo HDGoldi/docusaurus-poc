@@ -22,10 +22,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Navigation & Structure
 
-- [ ] **NAV-01**: Five-tab navbar matching current help.1nce.com (Documentation, API Explorer, 1NCE Platform, Blueprints & Examples, Terms & Abbreviations)
-- [ ] **NAV-02**: Deeply nested sidebars auto-generated from `_order.yaml` files for each content area
-- [ ] **NAV-03**: Multiple docs plugin instances configured for separate navbar tabs
-- [ ] **NAV-04**: All internal navigation links resolve correctly (no broken links)
+- [x] **NAV-01**: Five-tab navbar matching current help.1nce.com (Documentation, API Explorer, 1NCE Platform, Blueprints & Examples, Terms & Abbreviations)
+- [x] **NAV-02**: Deeply nested sidebars auto-generated from `_order.yaml` files for each content area
+- [x] **NAV-03**: Multiple docs plugin instances configured for separate navbar tabs
+- [x] **NAV-04**: All internal navigation links resolve correctly (no broken links)
 
 ### API Explorer
 
@@ -102,10 +102,10 @@ Deferred to future release. Tracked but not in current roadmap.
 | CONV-08 | Phase 1 | Complete |
 | CONV-09 | Phase 1 | Complete |
 | CONV-10 | Phase 1 | Complete |
-| NAV-01 | Phase 2 | Pending |
-| NAV-02 | Phase 2 | Pending |
-| NAV-03 | Phase 2 | Pending |
-| NAV-04 | Phase 2 | Pending |
+| NAV-01 | Phase 2 | Complete |
+| NAV-02 | Phase 2 | Complete |
+| NAV-03 | Phase 2 | Complete |
+| NAV-04 | Phase 2 | Complete |
 | API-01 | Phase 2 | Pending |
 | API-02 | Phase 2 | Pending |
 | API-03 | Phase 2 | Pending |
