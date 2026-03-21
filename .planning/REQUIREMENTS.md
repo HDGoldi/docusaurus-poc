@@ -9,9 +9,9 @@ Requirements for AI Assistant + GitHub Pages Preview milestone. Each maps to roa
 
 ### GitHub Pages Deployment
 
-- [ ] **DEPLOY-01**: Site builds with environment-aware config (GitHub Pages baseUrl vs AWS root)
-- [ ] **DEPLOY-02**: GitHub Actions workflow deploys to GitHub Pages on push to main
-- [ ] **DEPLOY-03**: All existing pages and API docs render correctly on GitHub Pages
+- [x] **DEPLOY-01**: Site builds with environment-aware config (GitHub Pages baseUrl vs AWS root)
+- [x] **DEPLOY-02**: GitHub Actions workflow deploys to GitHub Pages on push to main
+- [x] **DEPLOY-03**: All existing pages and API docs render correctly on GitHub Pages
 
 ### Content Pipeline
 
@@ -70,9 +70,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DEPLOY-01 | Phase 4 | Pending |
-| DEPLOY-02 | Phase 4 | Pending |
-| DEPLOY-03 | Phase 4 | Pending |
+| DEPLOY-01 | Phase 4 | Complete |
+| DEPLOY-02 | Phase 4 | Complete |
+| DEPLOY-03 | Phase 4 | Complete |
 | CONTENT-01 | Phase 5 | Pending |
 | CONTENT-02 | Phase 5 | Pending |
 | CONTENT-03 | Phase 5 | Pending |

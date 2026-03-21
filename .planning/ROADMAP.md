@@ -40,7 +40,7 @@ See: `.planning/milestones/v1.0-ROADMAP.md` for full details.
 **Plans**: 1 plan
 
 Plans:
-- [ ] 04-01-PLAN.md — Environment-aware config and GitHub Pages workflow
+- [x] 04-01-PLAN.md — Environment-aware config and GitHub Pages workflow
 
 ### Phase 5: AI Backend and Content Pipeline
 **Goal**: A working RAG backend exists — Bedrock Knowledge Base ingests clean documentation content via S3 Vectors, and a Lambda endpoint answers questions with citations
