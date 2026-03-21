@@ -15,6 +15,13 @@ const config: Config = {
   url: 'https://help.1nce.com',
   baseUrl: '/',
 
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap',
+      type: 'text/css',
+    },
+  ],
+
   onBrokenLinks: 'warn',
 
   markdown: {
@@ -75,7 +82,7 @@ const config: Config = {
       title: '1NCE Developer Hub',
       logo: {
         alt: '1NCE Logo',
-        src: 'img/logo.svg',
+        src: 'img/1nce-logo.svg',
       },
       items: [
         {
@@ -114,8 +121,13 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} 1NCE GmbH. Built with Docusaurus.`,
+      links: [
+        {label: 'FAQ', href: 'https://1nce.com/en-eu/support/faq'},
+        {label: 'Imprint', href: 'https://1nce.com/en-eu/imprint'},
+        {label: 'Terms and Conditions', href: 'https://1nce.com/en-eu/terms-conditions'},
+        {label: 'Privacy Policy', href: 'https://1nce.com/en-eu/privacy-policy'},
+      ],
+      copyright: 'Copyright &copy; 2026 1NCE GmbH',
     },
     prism: {
       theme: prismThemes.github,
