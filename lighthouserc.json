@@ -4,7 +4,7 @@
       "staticDistDir": "./build",
       "url": [
         "http://localhost/",
-        "http://localhost/docs/1nce-os/1nce-os-overview/"
+        "http://localhost/docs/"
       ],
       "numberOfRuns": 1
     },
