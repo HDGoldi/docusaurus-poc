@@ -1,0 +1,71 @@
+---
+id: get-latest-devices-positions
+title: "Get Latest Devices Positions"
+description: "Get latest positions of customer devices (maximum of last 7 days). Only one latest position is possible for a single device independent of source: either Celltower or GPS. This means that `source` query parameter selection can lead to no latest position returned for some devices."
+sidebar_label: "Get Latest Devices Positions"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: api/1nce-os/1-nce-os
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Latest Devices Positions"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/locate/positions/latest"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get latest positions of customer devices (maximum of last 7 days). Only one latest position is possible for a single device independent of source: either Celltower or GPS. This means that `source` query parameter selection can lead to no latest position returned for some devices.
+![Creative Commons License](https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg) [OpenCelliD Project](https://opencellid.org/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-latest-devices-positions.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-latest-devices-positions.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-latest-devices-positions.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

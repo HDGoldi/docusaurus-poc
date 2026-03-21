@@ -1,0 +1,1 @@
+{"parameters":[{"description":"Unique identifier of the plugin installation.","explode":false,"in":"path","name":"pluginId","required":true,"schema":{"example":"mo3--1DzmAgO-X777AY9h","type":"string"},"style":"simple"}]}

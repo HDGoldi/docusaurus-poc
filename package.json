@@ -26,7 +26,8 @@
     "convert:mdx-compat": "tsx scripts/11-fix-mdx-compat.ts",
     "convert:readme-components": "tsx scripts/12-fix-readme-components.ts",
     "convert:pipeline": "tsx scripts/run-pipeline.ts",
-    "convert:reorganize": "tsx scripts/11-reorganize-content.ts"
+    "convert:reorganize": "tsx scripts/11-reorganize-content.ts",
+    "convert:redirects": "tsx scripts/12-generate-redirect-map.ts"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",
@@ -35,9 +36,14 @@
     "@docusaurus/preset-classic": "3.9.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "docusaurus-plugin-openapi-docs": "^4.7.1",
+    "docusaurus-plugin-sass": "^0.2.6",
+    "docusaurus-theme-openapi-docs": "^4.7.1",
+    "path-browserify": "^1.0.1",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sass": "^1.98.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.9.2",

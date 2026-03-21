@@ -13,7 +13,7 @@ This migration moves the 1NCE Developer Hub from ReadMe.com to a self-hosted Doc
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Content Conversion** - Scaffold Docusaurus project and convert all 298 ReadMe pages to valid MDX that builds without errors
-- [ ] **Phase 2: Site Assembly** - Navigation, API Explorer, theming, and analytics -- everything that makes the site complete and branded
+- [x] **Phase 2: Site Assembly** - Navigation, API Explorer, theming, and analytics -- everything that makes the site complete and branded
 - [ ] **Phase 3: Infrastructure and Deployment** - AWS hosting, CI/CD pipeline, SSL, DNS, and production go-live
 
 ## Phase Details
@@ -35,7 +35,7 @@ Plans:
 - [x] 01-02-PLAN.md -- Image pipeline: extract base64, download remote images, convert Image JSX to Markdown
 - [x] 01-03-PLAN.md -- Content conversion: HTMLBlocks, tables, doc links, admonitions
 - [x] 01-04-PLAN.md -- Pipeline orchestrator, sidebar generation, build validation, human verification
-- [ ] 01-05-PLAN.md -- Gap closure: wire scripts 11-12 into pipeline orchestrator, validate full re-runnable build
+- [x] 01-05-PLAN.md -- Gap closure: wire scripts 11-12 into pipeline orchestrator, validate full re-runnable build
 
 ### Phase 2: Site Assembly
 **Goal**: The complete site experience -- navigation, interactive API docs, 1NCE branding, and analytics -- is functional in local dev
@@ -47,13 +47,14 @@ Plans:
   3. The site displays 1NCE branding (navy/teal colors, Barlow font, logo) in both light and dark mode
   4. All navigation links across the site resolve without 404s (broken link checker passes)
   5. Analytics scripts (GTM, SimpleAnalytics, PostHog) are present in page source
-**Plans:** 4 plans
+**Plans:** 5 plans
 
 Plans:
-- [ ] 02-01-PLAN.md -- Content reorganization into per-instance directories, multi-instance docs config, five-tab navbar
-- [ ] 02-02-PLAN.md -- 1NCE brand theme (colors, Barlow font, logo, footer, dark mode) and analytics injection (GTM, SimpleAnalytics, PostHog)
-- [ ] 02-03-PLAN.md -- OpenAPI plugin integration with 6 specs, API Explorer with Try It panels
-- [ ] 02-04-PLAN.md -- Redirect map generation, full build verification, human sign-off
+- [x] 02-01-PLAN.md -- Content reorganization into per-instance directories, multi-instance docs config, five-tab navbar
+- [x] 02-02-PLAN.md -- 1NCE brand theme (colors, Barlow font, logo, footer, dark mode) and analytics injection (GTM, SimpleAnalytics, PostHog)
+- [x] 02-03-PLAN.md -- OpenAPI plugin integration with 6 specs, API Explorer with Try It panels
+- [x] 02-04-PLAN.md -- Redirect map generation, full build verification, human sign-off
+- [x] 02-05-PLAN.md -- Gap closure: fix API Explorer navbar landing page, sidebar ordering, document CORS limitation
 
 ### Phase 3: Infrastructure and Deployment
 **Goal**: The site is live at help.1nce.com with automated deployments on merge to main
@@ -67,8 +68,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md -- CloudFormation template (S3, CloudFront, OAC, ACM, Route 53, IAM OIDC) and CloudFront Function for SPA routing
-- [ ] 03-02-PLAN.md -- GitHub Actions CI/CD pipeline (build, preview deploy, production deploy), Lighthouse CI, smoke test, human review
+- [x] 03-01-PLAN.md -- CloudFormation template (S3, CloudFront, OAC, ACM, Route 53, IAM OIDC) and CloudFront Function for SPA routing
+- [x] 03-02-PLAN.md -- GitHub Actions CI/CD pipeline (build, preview deploy, production deploy), Lighthouse CI, smoke test, human review
 
 ## Progress
 
@@ -77,6 +78,6 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Content Conversion | 4/5 | Gap closure | - |
-| 2. Site Assembly | 0/4 | Planning complete | - |
-| 3. Infrastructure and Deployment | 0/2 | Planning complete | - |
+| 1. Content Conversion | 5/5 | Complete | 2026-03-21 |
+| 2. Site Assembly | 5/5 | Complete | 2026-03-21 |
+| 3. Infrastructure and Deployment | 2/2 | Complete | 2026-03-21 |

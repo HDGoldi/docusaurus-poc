@@ -1,0 +1,69 @@
+---
+id: get-data-quota-for-sim-using-get
+title: "Get SIM Data Quota"
+description: "Get the current data quota of a particular SIM."
+sidebar_label: "Get SIM Data Quota"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV1Fv2zgM/iuCnjbATeys3VIfDrhuXXfBodtuaV9uKApGZmJttuRKdNpc4P9+oGynyZLhirvXFgFqWyL5ifxIkWtJsPAy/Sqnk0tx7WGB8iaSGXrldEXaGpnKD0iCchSqdg4NiQwIxF1tCYSdCxAVONKqLsCJ6eRyICNpK3TA0pNMpnKBdA4Ef7LEhXVTXV57bRYf3l/JSFbgoERCxyjW0kCJMpVaKZ3JSGq2XwHl8kdQVzmKybt3k3PGwOj4AGTFDMVdjU5jxkAc3tXaYSZTcjVG0qscS5DpWtKqYkOenDYL2UQSH6CsCpTp+HQ8Ho3j169fx/1fc8OqfGWNR8/Sozjmf7uQPv0hI6msITTEq1BVhVbBD8NvnrestwFoYmsyuEVGPSA7+4aK2DGOvUi6Nbi0Rc2e2QA3dTlDt+eWL1iC0WYhWoHeOR4LVIRZCJA4xwpNxqG0Jiyzx1ZReOzktBeoKUcXPrbGWNn0ciocQgk6WLHtOiyh0DArsOVGr8OIy7cchY1rj1+dDN6M35yeJE0kyRIUt089GMc7SOybYBSMq0NJufaBDTl4RqaLgMwu0QlNXhR6jqRL3EF2EseBA5V2q9sMCPc5cggR7xT3OZrWap8hbXLc66IQQeWuLTmKR6dHcXIUJ1dxnIbfII7jv5iGFcL3W8qdrRd5VdMWDG0IFz/xjA0vUIhHSfbNTNPQixfWFCsxt24rc/3LHUhJx/NIFuCpC8otZBmnzr+F5qy0NXOpZUdvpovQfa5VLu7BC9YsqtqpHDxmAU8fqgOhCDg8AdX+VuVgFvjUsOgSPUFZ9dwPdlsVXCBavluCH2OSjI+SmGOSJOnJaXp8vIkJ5Q59bovstkKn0BCXyacEphPjUDxKhpO3btl4yVjS865WtLyZcdKabAfkKG6apon2CssvKgfnkX69vro4Gj+Xmecy81xmnsvM/ywzXGiO42S/zbk2UFNunf4bs52Gp5V4tS9xYd1MZxmaA9uP97d/tCQubG0OaB+N9rczMee2KOw9l4rp5NILcNhlRCbAZEKBMZb4sKXN9FxjJpYaxNnnyUB8YtbiA6Hx2ppWtkJXaqK98zXs+8qhAl5L51B4bipR1U7TKjSwbxEcurOacjTUuVqmX2+4hSyRctt1xKH1pVymcrhMhl6XfrgOXW8zDLQZMrslK3fLvjmuXSFTmRNVPh0OodKDxCgcKFsOSzCwwBINHUGlJVvrYU35LmjL+2FwG4axZtk1yfw+C9v3CNdqEbtqxJX9jkbUnHNkxQK0EaAUet9nQ/Lx3fvW5Z8LBI/C4ZzraLv6qUITVDKxWo0vhpaZNiTW/FJwL4+eAq/tjLqrAUQHJ9gfSI6RNnO7ffdxlb7cOGjvPOdW1bzQWu3SuUcbzO0qGHSsABXqZjeyBIEP5ex3Gf0QqD5InGMl6CLk8tz+tvneRJJj3KJZjgZxqNDWUwlmywLPYYyEhynR3+c7R1k/svU/TG0dCwgfaFgVoA3DCEdZd1z9KpcJE0SXXkYy7ae0ux4LU/Ymkrn1xJvX6xl4vHZF0/DncP1zLkRyCS5c5IHWmfb8/JhQPz3Tiy/dPPdSPG3+O3ik7iOYlWQkRc1vMpLfcbUZPZubJpI5QoYuYGzXzpTCirak9ka8nTRvJ1zm8FaSbZKqe2DtBxGt1+2OQOym2QAM6cAAm+YfVs5aPw==
+sidebar_class_name: "get api-method"
+info_path: api/sim-management/sim-management
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get SIM Data Quota"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/sims/{iccid}/quota/data"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get the current data quota of a particular SIM.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-data-quota-for-sim-using-get.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-data-quota-for-sim-using-get.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-data-quota-for-sim-using-get.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

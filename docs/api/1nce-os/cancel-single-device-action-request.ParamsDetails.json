@@ -1,0 +1,1 @@
+{"parameters":[{"description":"ID of device action request","explode":false,"in":"path","name":"requestId","required":true,"schema":{"example":"<request_id>","type":"string"},"style":"simple"}]}

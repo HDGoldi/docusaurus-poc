@@ -1,0 +1,1 @@
+{"responses":{"201":{"description":"Created","content":{}},"400":{"description":"Bad Request","content":{}},"401":{"description":"Unauthorized","content":{}},"403":{"description":"Forbidden","content":{}},"404":{"description":"Not Found","content":{}}}}

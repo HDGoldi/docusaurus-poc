@@ -1,0 +1,1 @@
+{"parameters":[{"name":"order_number","in":"path","description":"Order number identifying one specific order.","required":true,"schema":{"type":"integer"},"example":1234}]}

@@ -1,0 +1,1 @@
+{"parameters":[{"description":"Available protocols: <ul><li>LWM2M</li><li>UDP</li><li>COAP</li></ul>","explode":false,"in":"path","name":"protocol","required":true,"schema":{"example":"COAP","type":"string"},"style":"simple"}]}

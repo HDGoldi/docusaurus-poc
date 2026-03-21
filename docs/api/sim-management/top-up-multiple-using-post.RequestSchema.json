@@ -1,0 +1,1 @@
+{"title":"Body","body":{"description":"A list of ICCIDs of SIMs where a Top Up should be executed.","content":{"application/json":{"schema":{"type":"array","items":{"type":"string","example":"8988280666000000000"}}}},"required":true}}

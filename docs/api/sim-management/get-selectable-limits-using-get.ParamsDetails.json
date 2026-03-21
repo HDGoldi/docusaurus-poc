@@ -1,0 +1,1 @@
+{"parameters":[{"name":"service","in":"path","description":"The service name (data, smsMO, smsMT) for which to list the avaliable limit options.","required":true,"schema":{"type":"string","enum":["data","smsMO","smsMT"],"default":"data"}}]}

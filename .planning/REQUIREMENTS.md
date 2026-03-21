@@ -22,41 +22,41 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Navigation & Structure
 
-- [ ] **NAV-01**: Five-tab navbar matching current help.1nce.com (Documentation, API Explorer, 1NCE Platform, Blueprints & Examples, Terms & Abbreviations)
-- [ ] **NAV-02**: Deeply nested sidebars auto-generated from `_order.yaml` files for each content area
-- [ ] **NAV-03**: Multiple docs plugin instances configured for separate navbar tabs
-- [ ] **NAV-04**: All internal navigation links resolve correctly (no broken links)
+- [x] **NAV-01**: Five-tab navbar matching current help.1nce.com (Documentation, API Explorer, 1NCE Platform, Blueprints & Examples, Terms & Abbreviations)
+- [x] **NAV-02**: Deeply nested sidebars auto-generated from `_order.yaml` files for each content area
+- [x] **NAV-03**: Multiple docs plugin instances configured for separate navbar tabs
+- [x] **NAV-04**: All internal navigation links resolve correctly (no broken links)
 
 ### API Explorer
 
-- [ ] **API-01**: All 6 OpenAPI JSON specs integrated via `docusaurus-openapi-docs` plugin
-- [ ] **API-02**: Interactive "Try It" panel functional for each API endpoint
-- [ ] **API-03**: Auto-generated code snippets in multiple languages for each endpoint
-- [ ] **API-04**: API documentation organized by spec (Authorization, SIM Management, Order Management, Product Information, Support Management, 1NCE OS)
+- [x] **API-01**: All 6 OpenAPI JSON specs integrated via `docusaurus-openapi-docs` plugin
+- [x] **API-02**: Interactive "Try It" panel functional for each API endpoint
+- [x] **API-03**: Auto-generated code snippets in multiple languages for each endpoint
+- [x] **API-04**: API documentation organized by spec (Authorization, SIM Management, Order Management, Product Information, Support Management, 1NCE OS)
 
 ### Theming & Branding
 
-- [ ] **THEME-01**: 1NCE color scheme applied via CSS custom properties (`--1nce-dark-blue: #194a7d`, `--1nce-light-blue: #29abe2`, `--1nce-text-color: #4a4a4a`)
-- [ ] **THEME-02**: Barlow font family loaded (medium for headings, regular for body text)
-- [ ] **THEME-03**: Dark mode support with brand-consistent colors
-- [ ] **THEME-04**: 1NCE logo in header matching current site sizing
-- [ ] **THEME-05**: Custom footer with copyright, FAQ, Imprint, Terms & Conditions, Privacy Policy links
+- [x] **THEME-01**: 1NCE color scheme applied via CSS custom properties (`--1nce-dark-blue: #194a7d`, `--1nce-light-blue: #29abe2`, `--1nce-text-color: #4a4a4a`)
+- [x] **THEME-02**: Barlow font family loaded (medium for headings, regular for body text)
+- [x] **THEME-03**: Dark mode support with brand-consistent colors
+- [x] **THEME-04**: 1NCE logo in header matching current site sizing
+- [x] **THEME-05**: Custom footer with copyright, FAQ, Imprint, Terms & Conditions, Privacy Policy links
 
 ### Analytics
 
-- [ ] **ANLYT-01**: Google Tag Manager integrated (`GTM-NS9K9DT`)
-- [ ] **ANLYT-02**: SimpleAnalytics script included
-- [ ] **ANLYT-03**: PostHog tracking integrated (EU instance, `eu.i.posthog.com`)
+- [x] **ANLYT-01**: Google Tag Manager integrated (`GTM-NS9K9DT`)
+- [x] **ANLYT-02**: SimpleAnalytics script included
+- [x] **ANLYT-03**: PostHog tracking integrated (EU instance, `eu.i.posthog.com`)
 
 ### Infrastructure & Deployment
 
-- [ ] **INFRA-01**: S3 bucket configured for static website hosting
-- [ ] **INFRA-02**: CloudFront distribution with Origin Access Control (OAC)
-- [ ] **INFRA-03**: SSL certificate via ACM in us-east-1 for help.1nce.com
-- [ ] **INFRA-04**: Route 53 DNS alias records pointing to CloudFront
-- [ ] **INFRA-05**: CloudFront Function for SPA routing (index.html rewrite on sub-directory requests)
-- [ ] **INFRA-06**: GitHub Actions CI/CD pipeline with OIDC auth to AWS
-- [ ] **INFRA-07**: Automated build + S3 sync + CloudFront cache invalidation on merge to main
+- [x] **INFRA-01**: S3 bucket configured for static website hosting
+- [x] **INFRA-02**: CloudFront distribution with Origin Access Control (OAC)
+- [x] **INFRA-03**: SSL certificate via ACM in us-east-1 for help.1nce.com
+- [x] **INFRA-04**: Route 53 DNS alias records pointing to CloudFront
+- [x] **INFRA-05**: CloudFront Function for SPA routing (index.html rewrite on sub-directory requests)
+- [x] **INFRA-06**: GitHub Actions CI/CD pipeline with OIDC auth to AWS
+- [x] **INFRA-07**: Automated build + S3 sync + CloudFront cache invalidation on merge to main
 
 ## v2 Requirements
 
@@ -102,29 +102,29 @@ Deferred to future release. Tracked but not in current roadmap.
 | CONV-08 | Phase 1 | Complete |
 | CONV-09 | Phase 1 | Complete |
 | CONV-10 | Phase 1 | Complete |
-| NAV-01 | Phase 2 | Pending |
-| NAV-02 | Phase 2 | Pending |
-| NAV-03 | Phase 2 | Pending |
-| NAV-04 | Phase 2 | Pending |
-| API-01 | Phase 2 | Pending |
-| API-02 | Phase 2 | Pending |
-| API-03 | Phase 2 | Pending |
-| API-04 | Phase 2 | Pending |
-| THEME-01 | Phase 2 | Pending |
-| THEME-02 | Phase 2 | Pending |
-| THEME-03 | Phase 2 | Pending |
-| THEME-04 | Phase 2 | Pending |
-| THEME-05 | Phase 2 | Pending |
-| ANLYT-01 | Phase 2 | Pending |
-| ANLYT-02 | Phase 2 | Pending |
-| ANLYT-03 | Phase 2 | Pending |
-| INFRA-01 | Phase 3 | Pending |
-| INFRA-02 | Phase 3 | Pending |
-| INFRA-03 | Phase 3 | Pending |
-| INFRA-04 | Phase 3 | Pending |
-| INFRA-05 | Phase 3 | Pending |
-| INFRA-06 | Phase 3 | Pending |
-| INFRA-07 | Phase 3 | Pending |
+| NAV-01 | Phase 2 | Complete |
+| NAV-02 | Phase 2 | Complete |
+| NAV-03 | Phase 2 | Complete |
+| NAV-04 | Phase 2 | Complete |
+| API-01 | Phase 2 | Complete |
+| API-02 | Phase 2 | Complete |
+| API-03 | Phase 2 | Complete |
+| API-04 | Phase 2 | Complete |
+| THEME-01 | Phase 2 | Complete |
+| THEME-02 | Phase 2 | Complete |
+| THEME-03 | Phase 2 | Complete |
+| THEME-04 | Phase 2 | Complete |
+| THEME-05 | Phase 2 | Complete |
+| ANLYT-01 | Phase 2 | Complete |
+| ANLYT-02 | Phase 2 | Complete |
+| ANLYT-03 | Phase 2 | Complete |
+| INFRA-01 | Phase 3 | Complete |
+| INFRA-02 | Phase 3 | Complete |
+| INFRA-03 | Phase 3 | Complete |
+| INFRA-04 | Phase 3 | Complete |
+| INFRA-05 | Phase 3 | Complete |
+| INFRA-06 | Phase 3 | Complete |
+| INFRA-07 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 33 total

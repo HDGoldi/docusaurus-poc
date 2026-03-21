@@ -1,0 +1,1 @@
+{"parameters":[{"description":"The unique device ID which identifies each 1NCE SIM. Can be obtained from the Get All Devices API query. For 1NCE SIMS the device ID is equal to its iccid.","explode":false,"in":"path","name":"deviceId","required":true,"schema":{"example":"<device_id>","type":"string"},"style":"simple"}]}

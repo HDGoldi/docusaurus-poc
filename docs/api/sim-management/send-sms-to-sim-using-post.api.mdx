@@ -1,0 +1,69 @@
+---
+id: send-sms-to-sim-using-post
+title: "Create SMS"
+description: "Create and send a MT-SMS towards a device with a 1NCE SIM."
+sidebar_label: "Create SMS"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWN9v2zYQ/lcOfGoBOZacH3O1rljrtIsf3BS1AwwLgoIWzxZbidRIKoln6H8fjpQcO3bWDnsakDw5FHn87u67j0eumeNLy9JrNp1M2U3EBNrMyMpJrVjKRga5Q+BKgEUlgMNk1ptOpuD0HTfCAgeBtzJDuJMuBw7Jx9F7mI4nRyxiukLDydBYsJTR+mlpZ3oqyysr1fLT5XTGIlZxw0t0aAjFmileIkuZzDIpWMQkoai4y9ljaLMcYTwajc9BL8DlSLuC42aJDgUstPGDAS6hMfhnLQ0KljpTY8RslmPJWbpmblXRltYZqZasiRje87IqkKXDV8PhYBifnZ3F3V9zE0yhde+0WNH6fVxtkEq0li8RXM4d2FzXhYA5UiQdON2FKdPKoXJkiVdVITMfs/5XS+bW2zilI1CUKZi0pi/nXzFzLOqc0N3/laHwO4nWG9G1yfALF8KgtftOHwpuWAPtmk2UJ9MjmOXSwi0vaoSMq+CTd4mrFai6nKMBbkE6kBaUdlBbFDBfeQueIgrdnTbfyP9NtFkyOD45Pftp+CqmLFR8VWgufgxsG0SYa7HagtqlYHcfD18SeXemNBGrRf5j++nKScULuLJo4Jw7DhfIBRp4cXV+8RJQZVqggJxbyPG+N/WWumD5aDhNoDPuUFGJbSGxu2jj0ziOj0ej+DhOCKPIthMolcMlmidBakLpAY60IAxT4hPCi/PR9OUOICoZi87RJApfx14f0oU2Jfcpvnj/O7TuaAOKxguY4b2DiRa7gY6b6BHzvgTUW1wOJHvbkmxGn79HZrnNicC2Pfc/1iUamfECpEDl5EKi2YgCLSWS7DOcq0Dw13Xx5nUh3yQnp9CDsXJoFA/BfN0vZPh2lkAPPj4eHsRD6MHbosq5CiDCp35dvNkOTnJyGjFUdcnSa/qdnCXRIB7eNI1XoEqa1RfBHX6fj+/9ZEoydtT3EkOUkgrG08vhWZy0Kdzl1iBOhr34uJeczJKzNInTwas/GAHY3WFbzEJSNhwOE+e4V0xNtCdnP2c5NxbdL1ezD73hs7g9i9uzuD2L2/9S3JrHDaUfsJVWNuRxECf7vWFop8VO00emTg5NvlK8drk28q+DK473V3zQZi6FQHVg+sn+9I/awQddqwPWB4PDje1CF4W+85U2nljgBsFnE4W/I2RckSDOEUotiJYCbiWHt5/GR3CpihXgvUNlpVZhbYWmlG4/Ij5HlcHMRytd8MJSx45ZbaRb+XvCO+QGzdva5VQB4ZBh6fUN9ef3PRKoJape26n3qMx77dXCltbTpEPizX3DFUv/cWHE/JnQGqBtSnS5pqtNpa0vZLqmpKx/m/StLG1/7S8xTT9saNHcdpec2hQsZblzlU37fV7Jo0RleJTpsl9yxZdYonI9Xkm/T+d3EDfPrsPeb2qJLLP2ikP/z/30vdoKVmDXDMz0N1SbElhyqYBnGWmI0w9nnM/ppwK5RTC4QNN9vaxQeZPE3GDxRV8TlfuOLL+ENrZesfTccamIUBxaOH7/0EBQ0/D54bL1vivt/TN/+3jdOl2fOg3bw3D3+GlPn/hJXSdtTk5OH0vYE0JDl9eF3jkPxhOYbPK7l45zndX0IQStFbsu2D5auwa6yyPP/OWxpbdf8Fs5vyAnd3jWcYzYX3JZ+AN2oX/djDcRI4oGNLeDo9CpaOtKrrZ2aB8F6MHgkQvrhyr+b08HLY8d3rt+VXCpfP9C3qzbMrtmt5QxKjQWsbR7L6Bau4lYThWZXrP1es4tXpmiaWj4zxoNyccNFbORfE5puV4zIS39fpCaJ7168blV/Zfwbx8gDvrUDnK12hIYFrV6FLxqbpqI5b4D29KqUcDUa7uKbu3eE8KOUrVvLvP25aLUgtYYfkcPJPwu7B06K68zfmzNCq6WNV/S3GDTd/e12+4nNxrT/iCkB71br8MMX+dNs3HWqwM52zR/A/nGNPo=
+sidebar_class_name: "post api-method"
+info_path: api/sim-management/sim-management
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create SMS"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/sims/{iccid}/sms"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create and send a MT-SMS towards a device with a 1NCE SIM.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./send-sms-to-sim-using-post.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./send-sms-to-sim-using-post.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./send-sms-to-sim-using-post.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

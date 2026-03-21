@@ -1,0 +1,69 @@
+---
+id: get-single-device
+title: "Get Single Device"
+description: "Get detailed metadata from one specific Device."
+sidebar_label: "Get Single Device"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNWG1v2zYQ/ivEYR9aQPVL4xaJMAzLmr4Y60tQp58Cb6Cps8VWIhWScuMZ+u/DkZIt22rqpcG2BEgs63T33HMPjzytIUErjCyc1ApieI2OJei4zDBhOTqecMfZ3OicaYXMFijkXAp2gUspsAcRFNzwHB0aC/H1es/dVYqsVPKmRJb4J9j4gn1NpUiZTFA5OZdoGXKRsuH7Fy/ZZPyux15wxWbI9MxxqTAJ0V2KjMCdZ1kd3LLzyzG7KdGseuyVNhsPE2+8jSctw5uSZ8xpJp1lUgiZEHS8LTKdIMRznlmMQBLkgrsUIlA8R4gheBknEIHBm1IaTCB2psQIrEgx5xCvAW95XmRk/nOw/1Mmv0AEblXQl9YZqRZQRWDdyptZ6e2rKXm1hVYWLTl6OhjQP6GVQ+XoIy+KTApOdPY/W+J03Qp8WDvOrFSLbJN+U8KQbg1zDZ4CiOH07PT06eng+fPng+YHIpAFxHDb879bKprc6JKy8w52E5a5lUOI4WwwHA2eDYPD4SmlXhhdoHEyJBpc7ifwnufI9LxVvh3YBwhyqd6iWrgU4mEH2wRwP8Q4OSZAyKbt/qzLfyDxIAR9fVeUbtIL7hwacvDH9eDJ2XQ9PKt+6hJRTfJB2HeT8fCusPtF6Qr57Bshi454xV3BtuqZa5NzBzHIYjk6dF61F9Z1zamvXZOpDz+NwEnnXU+CwJsm8BFvSrRu61nPPqNwUJHrXcgffqdkRoPhDyyyc+XbDhqjDWsWL5OKCW69eLlib66uLtknxUuXaiP/wqQBubcKreOutFd4S/S07cmMAlBLhXUFEf2ZRvUDL3zPGg2GB8uqfX8fuAf1sQHsbVpgRoPtCpLK4QJNaFhbhJ0OJ96AeYsIUJU5Qd7JZdohqCa7fZ8XzdYT+JUqqEdqRdRJh7l/aK/SmwDcGL7ymmrE0lWFY6Syk4EXzcm/IZpX2sxkkqA6RjEb4+PkcvKgcjl5QLlsE/lPtXJA/jFC2WL3Khk9uEq+pqgYp2tdGoF0mnmvHXulS5XcpY6N0XHqGD2oOkYPqI5tIg+jjvuJo03nd0WxMWYvKTo5fvZDR7vvNxA2QbNEwyYywRD17s3mi9JfVQ2vUyDf0MM99oLdUDXOcPlPKvpWWkephvsMldClcmgwoYkiQyZ4lkm18GeS88vxPbvADr4jaj0mDIpnbOdBsrMoSiPdys9FvyE3aM5Ll9LYE8oO8fWUZgDHF577i3pkUTRmuUBPji7VdNJeoAtHthRi6C+HfRnM+uH4ZfvrZlahCloPJoxkpckghtS5wsb9Pi9kb6gE9oTO+zlXfIE5KveEF9IPJA3qCUkxVL4b+359ghXbNWNX+gsqVlpMaPxacKkYFwKtpUuqlJ/aqFzsMkNSs8E5mubuhwKVd0lbcfD4qK9pb+478vyYmdCr2VybemQkDXBWw/HxSQp+aVEpZ/7GtrREjK8X9YhmjXLhVY45l5nvYnP9a8PadiTy2F/nszcQ7bG8sT3Qy4UWJREekqmP0N7Rh4lf5GE8FmEI9sRRar5Sjbobc5JcffRu5Fvfggio/iHkctg78TOYti7najuA+ZFx5zwNe3BbHese7wZqhh3eun6Rcek3SU/UulbyNSz9CT9o2Uf3aoYI4s3sPY0g1db59rSecYufTFb5PcxP/7SMIlhyI/mMOKC3ENLS52Qz2n8zqUcf6+njMft/v6zo5LLpYmpFBedZSVcQwRdctV9eVNTNU+QJGk9PuH0uBBau9eDBjlS1G9Drl1cQAS29VkPdLKb6A3nvBLVeBwu/Hqtqg9GvYgJYVX8DpQ1ByA==
+sidebar_class_name: "get api-method"
+info_path: api/1nce-os/1-nce-os
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Single Device"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/inspect/devices/{deviceId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get detailed metadata from one specific Device.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-single-device.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-single-device.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-single-device.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

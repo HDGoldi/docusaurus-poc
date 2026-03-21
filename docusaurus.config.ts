@@ -15,6 +15,13 @@ const config: Config = {
   url: 'https://help.1nce.com',
   baseUrl: '/',
 
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap',
+      type: 'text/css',
+    },
+  ],
+
   onBrokenLinks: 'warn',
 
   markdown: {
@@ -45,6 +52,35 @@ const config: Config = {
     ],
   ],
 
+  headTags: [
+    // Google Tag Manager (per D-19)
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NS9K9DT');`,
+    },
+    // PostHog EU instance (per D-21)
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init('phc_M08s2Nrlv1o0bUfZ88Jo81VQqutezzTXDbIXEuavfh0',{api_host:'https://eu.i.posthog.com',person_profiles:'identified_only',});`,
+    },
+  ],
+
+  scripts: [
+    {
+      src: 'https://scripts.simpleanalyticscdn.com/latest.js',
+      async: true,
+      'data-collect-dnt': 'true',
+    },
+  ],
+
+  clientModules: ['./src/clientModules/routeTracking.ts'],
+
   plugins: [
     ['@docusaurus/plugin-content-docs', {
       id: 'platform',
@@ -64,7 +100,67 @@ const config: Config = {
       routeBasePath: '/terms',
       sidebarPath: './sidebars/terms.ts',
     }],
+    ['@docusaurus/plugin-content-docs', {
+      id: 'api',
+      path: 'docs/api',
+      routeBasePath: '/api',
+      sidebarPath: './sidebars/api.ts',
+      docItemComponent: '@theme/ApiItem',
+    }],
+    ['docusaurus-plugin-openapi-docs', {
+      id: 'openapi',
+      docsPluginId: 'api',
+      config: {
+        authorization: {
+          specPath: 'specs/authorization.json',
+          outputDir: 'docs/api/authorization',
+          sidebarOptions: { groupPathsBy: 'tag', categoryLinkSource: 'tag' },
+        },
+        'sim-management': {
+          specPath: 'specs/sim-management.json',
+          outputDir: 'docs/api/sim-management',
+          sidebarOptions: { groupPathsBy: 'tag', categoryLinkSource: 'tag' },
+        },
+        'order-management': {
+          specPath: 'specs/order-management.json',
+          outputDir: 'docs/api/order-management',
+          sidebarOptions: { groupPathsBy: 'tag', categoryLinkSource: 'tag' },
+        },
+        'product-information': {
+          specPath: 'specs/product-information.json',
+          outputDir: 'docs/api/product-information',
+          sidebarOptions: { groupPathsBy: 'tag', categoryLinkSource: 'tag' },
+        },
+        'support-management': {
+          specPath: 'specs/support-management.json',
+          outputDir: 'docs/api/support-management',
+          sidebarOptions: { groupPathsBy: 'tag', categoryLinkSource: 'tag' },
+        },
+        '1nce-os': {
+          specPath: 'specs/1nce-os.json',
+          outputDir: 'docs/api/1nce-os',
+          sidebarOptions: { groupPathsBy: 'tag', categoryLinkSource: 'tag' },
+        },
+      },
+    }],
+    'docusaurus-plugin-sass',
+    function polyfillNodeModules() {
+      return {
+        name: 'polyfill-node-modules',
+        configureWebpack() {
+          return {
+            resolve: {
+              fallback: {
+                path: require.resolve('path-browserify'),
+              },
+            },
+          };
+        },
+      };
+    },
   ],
+
+  themes: ['docusaurus-theme-openapi-docs'],
 
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
@@ -75,7 +171,7 @@ const config: Config = {
       title: '1NCE Developer Hub',
       logo: {
         alt: '1NCE Logo',
-        src: 'img/logo.svg',
+        src: 'img/1nce-logo.svg',
       },
       items: [
         {
@@ -85,9 +181,11 @@ const config: Config = {
           position: 'left',
         },
         {
-          to: '/api',
+          type: 'doc',
+          docId: 'index',
           label: 'API Explorer',
           position: 'left',
+          docsPluginId: 'api',
         },
         {
           type: 'docSidebar',
@@ -114,8 +212,13 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} 1NCE GmbH. Built with Docusaurus.`,
+      links: [
+        {label: 'FAQ', href: 'https://1nce.com/en-eu/support/faq'},
+        {label: 'Imprint', href: 'https://1nce.com/en-eu/imprint'},
+        {label: 'Terms and Conditions', href: 'https://1nce.com/en-eu/terms-conditions'},
+        {label: 'Privacy Policy', href: 'https://1nce.com/en-eu/privacy-policy'},
+      ],
+      copyright: 'Copyright &copy; 2026 1NCE GmbH',
     },
     prism: {
       theme: prismThemes.github,

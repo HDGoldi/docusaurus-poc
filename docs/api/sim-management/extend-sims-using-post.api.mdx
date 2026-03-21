@@ -1,0 +1,69 @@
+---
+id: extend-sims-using-post
+title: "Create SIM Extension"
+description: "Trigger the SIM extension for one or more SIM cards to extend their activation period and renew their quota (data and SMS). An invoice is automatically triggered depending on the chosen payment method."
+sidebar_label: "Create SIM Extension"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV01vGzcQ/SsDnhJgLclpELg61XGS1od8IHZOjlGMyJGWCZfckLOyVWH/ezHc1Xr1kQK9FtVJIofD4Zv3HqmtYlwlNb9TN9fv4e0jk082eHVfKENJR1uz/Jyr22hXK4rAJYGE0i4UliFC8AQhQhViN6sxmgQcujAjq2wE1GzXKAmhpmiDAfQGInl66CN+NIERnhlkzHM372+eT+DSg/XrYDWBTYANhwrZanRuA9zVRQYM1eSN9SsIPpepy5DIQ42bijxDRVwGM1GFCjXFXMa1UXPVlXhjq/QlWb/69PHmVhWqxogVMUUBZ6s8VqTmqs/1Z5dLFcoKNj8aiht1iNjH/AXdQQGQyJHOICyIH4g86EjGsmBWwAL9d47o05JiAVXwXLrNcPwQYREccZjA9TIfcqhToHG0ZKCq5o1E2iTr0NmDtDLRJDKACQwtsXGcm3jc2joGTSlN4DbIilGhUDvCRJBwTbAJTezncufBEKN1sn3XiCZxqChCHSKjg7VF+KpQ69B4/qqkJZF+NDaSUfMlukSFSrqkCtV8q3hTC/SJo/UrVSjyTSWEHR9JFeqpNlWoHrceNlWoDrWO1vnEan6YgB6xqh0dTrTtfVceJX4dzEZKOpBGSbAIZgOpROfAeu0aQ4DgbGIIS0AWsDir5Prq6vpNyuQOPUHcBlCgNo1msJmhOngmz7IX1rWzOtN1+i3JhtsxOJZzyXvqhc9duarYgRcW30jL7zoK+dlSktVWa2vSCGSMEY+ZfDmcpK8+LIUoCR5Kq0tIZWicgQX1aqd8BMtUpZP9G3C++PXi4sXF7NWrV7PdR7VtLlKwEHUOy61nWuU+/UxlA4DwLBHBdH0+7cfS88xvXaJfiT9k3fThpomjIWG7nO5ICllvWV6h4aJndYwia4nbZXuwzgkQWV6y51OCfLL92vs2PQWaXSnOLoltRQPS/QaSpR2rhWNDeSDVwaeuqy9m58ckvYqETGaPW5Lq5Wx2HPwazYhDhwtOZP/iseEyRPvXyS1+OV7xLsSFNYb8ifCXx+EfAsO70PjD7BnTOpLOhxvMg3QTLW+ydb8mjBQvGy7Jc68kNb+7F10/nulgaEX+rFf4mQj5rHf7OEAwtLG7Db7TRs3/cXGh1uiacRLZrr825qoOOW2NXKq5EqomW6XpsI2SM8T17vZpolNzVTLXaT6dYm0n517TRIdqWqHHFcn9coa1zbvsTn8jLtFR4jQGg7gks+o9NxtgDj/SWpcF9tPAbfhOvmM8B1ih9YA6C4lDJvP5h6u3cPnpegKfuksjktxC/ezHmnxOKezpMj6bBqHTlCXzc4gjmYQFo/UiE4S+nLx/Jy/xx89PVv125zRPTnd30nTu9zxn1sq9vgyH/vp+gPoImTdBNzLR1d8byO7cufD9BDuPR509vudbXvB7tfhDFQct37VbqFihddkQl+G3YbwtlLClq2b9YjKTEWFZhX60Q+cCsP/WOzjM9klg/6lXX891pkee1g6tF4gyzNteiHdqfS4ysFUaa17oUYpg53dqu11goi/Rta0Mdy8/kaixCRdu5EE/xfT/d+G/eBeebFpnv0dv8Z3jZhNcY7TSkOz0hSoJDcWReV91/Ti7lQ2e1h69tvZsu/9vsOifgVUw2eHxQV6w+CB7y78L7i6KbTe2VQ79qsGVxHY5xavE4UYWPFhu/0Uq3T3K/GZU4XbbRWTba1u1gyObpWrv27b9G0PK0dg=
+sidebar_class_name: "post api-method"
+info_path: api/sim-management/sim-management
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create SIM Extension"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/sims/extension"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Trigger the SIM extension for one or more SIM cards to extend their activation period and renew their quota (data and SMS). An invoice is automatically triggered depending on the chosen payment method.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./extend-sims-using-post.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./extend-sims-using-post.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./extend-sims-using-post.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

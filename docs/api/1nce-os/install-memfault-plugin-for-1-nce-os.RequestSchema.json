@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"additionalProperties":false,"description":"A request to install the Memfault plugin for 1NCE OS.","properties":{},"title":"Memfault plugin installation","type":"object"}}},"description":"The request body to setup the Memfault plugin.","required":true}}

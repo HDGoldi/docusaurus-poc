@@ -1,0 +1,96 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: build/
+          retention-days: 1
+
+      - uses: treosh/lighthouse-ci-action@v12
+        with:
+          uploadArtifacts: true
+          configPath: ./lighthouserc.json
+
+  deploy-preview:
+    if: github.event_name == 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    environment: preview
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: build/
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Deploy to preview S3
+        run: aws s3 sync build/ s3://1nce-developer-hub-preview/pr-${{ github.event.number }}/ --delete
+
+      - name: Comment preview URL
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `Preview deployed: https://${{ vars.PREVIEW_CF_DISTRIBUTION_DOMAIN }}/pr-${{ github.event.number }}/`
+            })
+
+  deploy-production:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: validate
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: build/
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: Sync hashed assets with long cache
+        run: aws s3 sync build/assets/ s3://1nce-developer-hub-prod/assets/ --cache-control "public, max-age=31536000, immutable"
+
+      - name: Sync remaining files with short cache
+        run: aws s3 sync build/ s3://1nce-developer-hub-prod/ --exclude "assets/*" --cache-control "public, max-age=600, must-revalidate" --delete
+
+      - name: Invalidate CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ vars.CF_DISTRIBUTION_ID }} --paths "/*"
+
+      - name: Run smoke test
+        run: bash scripts/smoke-test.sh https://${{ vars.PROD_CF_DISTRIBUTION_DOMAIN }}

@@ -1,0 +1,69 @@
+---
+id: update-sims-using-post
+title: "Create Multiple SIM Configuration"
+description: "Change a list of SIMS for activate, deactivate, label, IMEI lock, etc. The actual change will be done asynchronously. A positive-response only means that the SIM changes has been successfully placed into the queue."
+sidebar_label: "Create Multiple SIM Configuration"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVltv2zYU/isHfGoB2a7Tosv0tNRJOwNLGyzJMCAwhiPx2GJLkSovTlxD/304lORLHKzv85NM8ty/7yO3IuDKi/xBfCJDDjXczq+9WGRCki+daoKyRuRiVqFZESBo5QPYJR+7haV1gGVQawyUgaT9t8aCdAbz66s5aFt+y4BCOYa7itggooay8/iotIaCQFpDgH5jyspZY6PXmzFcQGO9CmpNI0e+scYTWKM3UBMaD6HCAKEiTqb356FCDwWRAR/LkrxfRq030GgsSYIywSaL75EijUUmbEMOuci5FLmIjcRAt6r2916Z1c2X2zuRCUffI/nwwcqNyLfPOnNx2BJo0GFNgZyHx4ocgbc1Ha76ykYtueIuYclJlNYEMoGdY9NoVaaMJl89R9gKX1ZUI3+FTUMiF+gcbkQmVKDap3UVNG9wCvepBvgLdSQvssHGFl+pDH01ypHkoauyVFJkwgcMMY29cdyRoCj57fb3gX1wyqzEc3TMZ7P5Jbegb61TJLkdXBs9Yd2k5M5/PT8/O3/z/v37N8NPtJlIUPl5jD/42BCD6/QUoNikv2X0wdbkQJn0f/p5dgU31gXUxylc/j2avv1l9GF6xpFVTeofRudB9MJaTWhOwn/UuOoAp4zkAZEH1c1c+QRxktCDq4zOkQkgaa1KSiQ4SmOJ2hMHWGLUof/f7qbw01bcpnMHvWCmJA6gYWSRwUKThFeJj/QarAOpfL+4p6l8fdydq85OHKR2sEYm1oyZ/cpl71Ms2vYEEmZpXZ1wDFjYGAD7FJ2EAj1J4J201rEOGmdLktHRWLQte9wjNbhIaaETgdSjszfTUzbOHHFhR5xiV+9eOnxvMIbKOvXjRYu3pxYfrSuUlGReOP7u9PhnG+CjjeYF72dnp8dZHZdWa/uozCoJMaAjoKeGuwBoJE/Y2MBDrq1US+bZWiFc3MzH8IWVkZ4CGa+s6WwbcrUKpx1J82oclalbAyI9ldGpsBH5w1Z8IHTkLmKoyIRekkT+sGgXmXgalVbSisyo18ZRYeVmZLBOsFW1T8AaUkn+vtFG5P9pmYk1i9bggQPVFCrLytxYz+LVYKhELibr6aSP4smtyXUhotMiF1UIjc8nE2zUeGpKGpe2ntRocEU1mTDCRiXfQ7W3LK8dpl6uecdH9swhkwGLRTp+ws/OCxy7gTv7jQxE3+nECpUBTDfUIBtJtdIkbzShJ3C0JDfsfmnIJJeM187jq4llAE8Ce34NfUPTrWyLgMowjBD6dFJ8plYm+GL5c3+pXQ0K8LBT/BfFeqfVhzp6JKMDjnoh22kFt1uZpX1+V13vpnLSxEtbRt7oSu21bmhRqvHYwXCPYpnu0R6KyeBTXfwusmfoGJDBQK1R8RZn+Ntuvc0EA6vLZn02TpcVw7BGcxChUxy4jjqoRndX08yapVrF7mHxvLLtnoj/32dVT5hAT2HSaFSGm5cGsO05/CDWU+YSs3iRiYr5nT+I7ZYvh3un25aX+THBcrRgbXCK0ZQ0KBMVoSR3oCyzrqujOw69l5KTB9WRrPQvvKJ/2tVWso3DR34o4aPIRXojhk7Ftt3aVmg0q4grPtv5ZFYxFw9fEoM49B+c6fB+M5uDDLfb7kQiaNuKrC8o0Vq0i7Zt/wVQ3PZK
+sidebar_class_name: "post api-method"
+info_path: api/sim-management/sim-management
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Multiple SIM Configuration"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/sims"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Change a list of SIMS for activate, deactivate, label, IMEI lock, etc. The actual change will be done asynchronously. A positive-response only means that the SIM changes has been successfully placed into the queue.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./update-sims-using-post.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./update-sims-using-post.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      
