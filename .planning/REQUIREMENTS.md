@@ -50,11 +50,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Infrastructure & Deployment
 
-- [ ] **INFRA-01**: S3 bucket configured for static website hosting
-- [ ] **INFRA-02**: CloudFront distribution with Origin Access Control (OAC)
-- [ ] **INFRA-03**: SSL certificate via ACM in us-east-1 for help.1nce.com
-- [ ] **INFRA-04**: Route 53 DNS alias records pointing to CloudFront
-- [ ] **INFRA-05**: CloudFront Function for SPA routing (index.html rewrite on sub-directory requests)
+- [x] **INFRA-01**: S3 bucket configured for static website hosting
+- [x] **INFRA-02**: CloudFront distribution with Origin Access Control (OAC)
+- [x] **INFRA-03**: SSL certificate via ACM in us-east-1 for help.1nce.com
+- [x] **INFRA-04**: Route 53 DNS alias records pointing to CloudFront
+- [x] **INFRA-05**: CloudFront Function for SPA routing (index.html rewrite on sub-directory requests)
 - [x] **INFRA-06**: GitHub Actions CI/CD pipeline with OIDC auth to AWS
 - [x] **INFRA-07**: Automated build + S3 sync + CloudFront cache invalidation on merge to main
 
@@ -118,11 +118,11 @@ Deferred to future release. Tracked but not in current roadmap.
 | ANLYT-01 | Phase 2 | Pending |
 | ANLYT-02 | Phase 2 | Pending |
 | ANLYT-03 | Phase 2 | Pending |
-| INFRA-01 | Phase 3 | Pending |
-| INFRA-02 | Phase 3 | Pending |
-| INFRA-03 | Phase 3 | Pending |
-| INFRA-04 | Phase 3 | Pending |
-| INFRA-05 | Phase 3 | Pending |
+| INFRA-01 | Phase 3 | Complete |
+| INFRA-02 | Phase 3 | Complete |
+| INFRA-03 | Phase 3 | Complete |
+| INFRA-04 | Phase 3 | Complete |
+| INFRA-05 | Phase 3 | Complete |
 | INFRA-06 | Phase 3 | Complete |
 | INFRA-07 | Phase 3 | Complete |
 
