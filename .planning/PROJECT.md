@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A migration of the 1NCE Developer Hub (help.1nce.com) from ReadMe.com to a self-hosted Docusaurus site deployed on AWS (S3 + CloudFront). The site contains ~120-150 documentation pages across five navigation tabs and ~40-50 interactive API endpoints spread across multiple OpenAPI specs. The goal is to replicate the existing experience — including the interactive API Explorer — while eliminating SaaS licensing costs.
+A self-hosted Docusaurus documentation site replacing the 1NCE Developer Hub previously hosted on ReadMe.com. The site serves ~298 documentation pages across five navigation tabs, 125 interactive API endpoint pages generated from 6 OpenAPI specs, with 1NCE branding and analytics. Deployed on AWS (S3 + CloudFront) with automated CI/CD via GitHub Actions.
 
 ## Core Value
 
@@ -12,38 +12,41 @@ Developers can browse all existing documentation and interactively test API endp
 
 ### Validated
 
-- [x] AWS deployment: S3 static hosting + CloudFront CDN with OAC — Validated in Phase 3: Infrastructure and Deployment
-- [x] SSL via ACM + Route 53 DNS for help.1nce.com — Validated in Phase 3: Infrastructure and Deployment
-- [x] CloudFront Function for SPA routing (index.html rewrite) — Validated in Phase 3: Infrastructure and Deployment
-- [x] GitHub Actions CI/CD pipeline with OIDC auth for automated deploy on merge to main — Validated in Phase 3: Infrastructure and Deployment
+- ✓ Automated 12-step conversion pipeline for ReadMe.com Markdown to Docusaurus MDX — v1.0
+- ✓ All 298 documentation pages migrated with correct content, images, and formatting — v1.0
+- ✓ Five-tab navbar matching help.1nce.com (Documentation, API Explorer, 1NCE Platform, Blueprints & Examples, Terms & Abbreviations) — v1.0
+- ✓ Deeply nested sidebar navigation auto-generated from _order.yaml/_category_.json — v1.0
+- ✓ Interactive API Explorer with "Try It" panels via docusaurus-openapi-docs plugin — v1.0
+- ✓ 6 OpenAPI specs generating 125 endpoint pages with code snippets — v1.0
+- ✓ 1NCE branding (navy/teal colors, Barlow font, logo, footer, dark mode) — v1.0
+- ✓ GTM, SimpleAnalytics, PostHog analytics with SPA route tracking — v1.0
+- ✓ AWS S3 + CloudFront with OAC, ACM certificate, Route 53 DNS — v1.0
+- ✓ CloudFront Function for SPA routing (index.html rewrite) — v1.0
+- ✓ GitHub Actions CI/CD with OIDC auth, preview deploys, production deploy — v1.0
+- ✓ Lighthouse CI and smoke test script for quality gates — v1.0
 
 ### Active
 
-- [ ] Automated conversion of ReadMe.com Markdown (magic blocks, callouts) to Docusaurus MDX/Admonitions
-- [ ] All ~120-150 documentation pages migrated with correct content and images
-- [ ] Five-tab navbar matching current help.1nce.com structure (Documentation, API Explorer, 1NCE Platform, Blueprints & Examples, Terms & Abbreviations)
-- [ ] Deeply nested sidebar navigation recreated for each tab (multiple sidebars)
-- [ ] Interactive API Explorer with "Try It" functionality via docusaurus-openapi-docs plugin
-- [ ] Multiple OpenAPI specs integrated and generating endpoint pages with code snippets
-- [ ] 1NCE branding applied (colors, logos, fonts matched from current site)
-- [ ] Dark mode support with brand-consistent theming
+(None — next milestone requirements TBD)
 
 ### Out of Scope
 
-- Algolia DocSearch / search integration — deferred, not needed for initial launch
-- AI Assistant (Ask AI replacement) — deferred
-- Doc versioning (V1.0 dropdown) — single version sufficient for now
+- Algolia DocSearch / search integration — deferred, requires approval process
+- AI Assistant (Ask AI replacement) — deferred, not core to migration
+- Doc versioning (version dropdown) — single version sufficient for now
 - Mobile app or native integrations
-- Content rewriting or restructuring — migrate as-is first
+- Content rewriting or restructuring — migrated as-is
+- Offline mode
 
 ## Context
 
-- Content is fully exported from ReadMe.com (Markdown files, multiple OpenAPI specs, images all available)
-- ReadMe.com uses proprietary "magic blocks" (`[block:callout]`, etc.) that need programmatic conversion to Docusaurus admonitions (`:::note`, `:::warning`)
-- The `docusaurus-openapi-docs` plugin (PaloAltoNetworks) handles interactive API rendering
-- Current site has a dark navy/teal color scheme — will be matched by inspecting current site CSS
-- A community tool `holistics/readme-exporter` may have been used for initial export
-- Priority is speed: automate conversion scripts, get functional site first, then polish
+Shipped v1.0 with ~42,864 LOC across MDX, TypeScript, and CSS.
+Tech stack: Docusaurus 3.9.2, React 18, Rspack bundler, docusaurus-openapi-docs v4.7.1.
+Infrastructure: CloudFormation template (13 resources), GitHub Actions CI/CD.
+
+Known limitation: API Explorer "Try It" panels encounter CORS errors when calling 1NCE APIs directly from the browser — this is a server-side CORS configuration issue, not a Docusaurus bug. Documented as accepted deviation.
+
+Human verification pending: deploy CloudFormation stack and confirm site loads at https://help.1nce.com.
 
 ## Constraints
 
@@ -56,11 +59,19 @@ Developers can browse all existing documentation and interactively test API endp
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Skip versioning for v1 | Single version simplifies migration; can add later | — Pending |
-| Skip search for v1 | Reduces scope; Algolia requires approval process anyway | — Pending |
-| Skip AI assistant | Not core to migration; can layer on post-launch | — Pending |
-| AWS S3 + CloudFront | Required infrastructure — cost-effective for static site | — Pending |
-| Automate ReadMe block conversion | ~120-150 pages make manual conversion impractical | — Pending |
+| Docusaurus 3.9.2 with Rspack | Fastest build times for ~400+ pages | ✓ Good — builds in seconds |
+| Skip versioning for v1 | Single version simplifies migration | ✓ Good — no complexity |
+| Skip search for v1 | Reduces scope; Algolia requires approval | ✓ Good — deferred cleanly |
+| Skip AI assistant | Not core to migration | ✓ Good — deferred cleanly |
+| AWS S3 + CloudFront | Required infrastructure, cost-effective | ✓ Good |
+| Automate ReadMe block conversion | 298 pages make manual conversion impractical | ✓ Good — 12-step pipeline |
+| routeBasePath: /docs with root redirect | Clean URL structure, root serves welcome page | ✓ Good |
+| Infima CSS custom properties for branding | Idiomatic Docusaurus theming, no Tailwind conflict | ✓ Good |
+| path-browserify polyfill | Rspack + postman-code-generators compatibility | ✓ Good — unblocked API docs |
+| Two-tier CloudFront cache | Hashed assets 1yr immutable, HTML 10min must-revalidate | ✓ Good |
+| Full CF stack in us-east-1 | ACM cert compatibility with CloudFront | ✓ Good |
+| S3 OAC (not OAI) | Modern AWS best practice, separate bucket policies | ✓ Good |
+| onBrokenLinks: warn | Allows build to complete during development | ⚠️ Revisit — tighten to error for production |
 
 ## Evolution
 
@@ -80,4 +91,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-21 after Phase 3 completion — infrastructure and CI/CD pipeline defined*
+*Last updated: 2026-03-21 after v1.0 milestone completion*
