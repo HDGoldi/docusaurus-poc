@@ -28,13 +28,14 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. All internal cross-reference links resolve (no `(doc:slug)` syntax remaining)
   4. Admonitions, tables, and code blocks render with correct formatting
   5. Conversion is fully automated via script (re-runnable, not manual edits)
-**Plans:** 4 plans
+**Plans:** 5 plans
 
 Plans:
 - [x] 01-01-PLAN.md -- Scaffold Docusaurus, copy/normalize export, convert frontmatter, create shared utilities
 - [x] 01-02-PLAN.md -- Image pipeline: extract base64, download remote images, convert Image JSX to Markdown
 - [x] 01-03-PLAN.md -- Content conversion: HTMLBlocks, tables, doc links, admonitions
 - [x] 01-04-PLAN.md -- Pipeline orchestrator, sidebar generation, build validation, human verification
+- [ ] 01-05-PLAN.md -- Gap closure: wire scripts 11-12 into pipeline orchestrator, validate full re-runnable build
 
 ### Phase 2: Site Assembly
 **Goal**: The complete site experience -- navigation, interactive API docs, 1NCE branding, and analytics -- is functional in local dev
@@ -76,6 +77,6 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Content Conversion | 3/4 | Executing | - |
+| 1. Content Conversion | 4/5 | Gap closure | - |
 | 2. Site Assembly | 0/4 | Planning complete | - |
 | 3. Infrastructure and Deployment | 0/2 | Planning complete | - |
