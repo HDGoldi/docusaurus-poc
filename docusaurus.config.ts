@@ -33,8 +33,9 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
-          routeBasePath: '/',
+          path: 'docs/documentation',
+          sidebarPath: './sidebars/documentation.ts',
+          routeBasePath: '/docs',
         },
         blog: false,
         theme: {
@@ -42,6 +43,27 @@ const config: Config = {
         },
       } satisfies Preset.Options,
     ],
+  ],
+
+  plugins: [
+    ['@docusaurus/plugin-content-docs', {
+      id: 'platform',
+      path: 'docs/platform',
+      routeBasePath: '/platform',
+      sidebarPath: './sidebars/platform.ts',
+    }],
+    ['@docusaurus/plugin-content-docs', {
+      id: 'blueprints',
+      path: 'docs/blueprints',
+      routeBasePath: '/blueprints',
+      sidebarPath: './sidebars/blueprints.ts',
+    }],
+    ['@docusaurus/plugin-content-docs', {
+      id: 'terms',
+      path: 'docs/terms',
+      routeBasePath: '/terms',
+      sidebarPath: './sidebars/terms.ts',
+    }],
   ],
 
   themeConfig: {
@@ -59,8 +81,34 @@ const config: Config = {
         {
           type: 'docSidebar',
           sidebarId: 'docsSidebar',
-          position: 'left',
           label: 'Documentation',
+          position: 'left',
+        },
+        {
+          to: '/api',
+          label: 'API Explorer',
+          position: 'left',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'platformSidebar',
+          label: '1NCE Platform',
+          position: 'left',
+          docsPluginId: 'platform',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'blueprintsSidebar',
+          label: 'Blueprints & Examples',
+          position: 'left',
+          docsPluginId: 'blueprints',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'termsSidebar',
+          label: 'Terms & Abbreviations',
+          position: 'left',
+          docsPluginId: 'terms',
         },
       ],
     },
