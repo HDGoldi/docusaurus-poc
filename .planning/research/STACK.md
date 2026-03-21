@@ -1,79 +1,48 @@
-# Technology Stack
+# Technology Stack: v1.1 AI Assistant + GitHub Pages Preview
 
-**Project:** 1NCE Developer Hub Migration (ReadMe.com to Docusaurus)
-**Researched:** 2026-03-20
-**Overall Confidence:** MEDIUM -- versions verified against training data (May 2025 cutoff); npm verification was unavailable during research. Validate exact latest versions with `npm view <package> version` before scaffolding.
+**Project:** 1NCE Developer Hub -- Milestone v1.1
+**Researched:** 2026-03-21
+**Scope:** NEW capabilities only (AI Assistant + GitHub Pages). Existing stack validated in v1.0.
+**Overall Confidence:** HIGH -- AWS Bedrock docs and Docusaurus deployment docs verified via official sources.
 
 ---
 
-## Recommended Stack
+## New Stack Additions
 
-### Core Framework
+### AI Assistant -- Backend (AWS Bedrock RAG)
 
-| Technology | Version | Purpose | Why | Confidence |
-|------------|---------|---------|-----|------------|
-| Docusaurus | ^3.7 | Static site generator | Industry standard for developer docs. Built-in MDX, multi-sidebar, dark mode, i18n. Actively maintained by Meta. The only serious contender for this use case. | HIGH |
-| React | ^18.x (bundled) | UI framework | Ships with Docusaurus 3.x. No choice needed -- use what Docusaurus bundles. | HIGH |
-| Node.js | >=18.0 | Runtime | Docusaurus 3.x requires Node 18+. Use Node 20 LTS for CI/CD stability. | HIGH |
-| TypeScript | ^5.x | Type safety for config | Docusaurus supports `docusaurus.config.ts` natively. Use it for config and any custom plugins. | HIGH |
+| Technology | Version / ID | Purpose | Why | Confidence |
+|------------|-------------|---------|-----|------------|
+| AWS Bedrock Knowledge Bases | -- | Managed RAG pipeline | Handles document ingestion, chunking, embedding, vector storage, and retrieval in one managed service. Eliminates building a custom RAG pipeline. Already in the AWS ecosystem the project uses. | HIGH |
+| Amazon Titan Text Embeddings V2 | `amazon.titan-embed-text-v2:0` | Embedding model | 8,192 token input, configurable dimensions (1024 default). Native to Bedrock -- no cross-service auth. Cheaper than Cohere alternatives. 1024 dimensions is sufficient for ~298 MDX docs. | HIGH |
+| Anthropic Claude Sonnet 4 | `anthropic.claude-sonnet-4-20250514-v1:0` | Generation model for RAG responses | Best cost/quality ratio for documentation Q&A. Sonnet is the workhorse -- Haiku is too terse for documentation answers, Opus is overkill and expensive. Project requirement specifies Claude on Bedrock. | HIGH |
+| Amazon OpenSearch Serverless | -- | Vector store | Recommended by Bedrock for Knowledge Bases. Managed via Bedrock console (auto-provisioned). No separate cluster to manage. Supports metadata filtering for scoping answers to specific doc sections. | MEDIUM |
+| Amazon S3 (data source bucket) | -- | Document storage for KB ingestion | Upload stripped MDX content to a dedicated S3 bucket. Bedrock Knowledge Bases natively reads from S3. Reuse existing S3 expertise from v1.0 deployment. | HIGH |
+| AWS Lambda | `nodejs22.x` runtime | Serverless backend for chat API | Handles chat requests: receives user query, calls Bedrock `RetrieveAndGenerate`, returns response with citations. Node.js 22 aligns with project's Node 20+ requirement and is the current LTS-adjacent runtime on Lambda. | HIGH |
+| Lambda Function URL | -- | HTTP endpoint (replaces API Gateway) | Dedicated HTTPS endpoint with built-in CORS support. Simpler than API Gateway for a single-endpoint chat API. No API Gateway costs or configuration. Auth type `NONE` is acceptable since the endpoint is read-only against public documentation. | HIGH |
+| @aws-sdk/client-bedrock-agent-runtime | ^3.x (latest) | SDK for RetrieveAndGenerate API | Official AWS SDK v3 client for Bedrock Agent Runtime. Provides `RetrieveAndGenerateCommand` and `RetrieveAndGenerateStreamCommand`. Ships with Lambda `nodejs22.x` runtime (no bundling strictly needed, but pin for reproducibility). | HIGH |
 
-### Interactive API Documentation
-
-| Technology | Version | Purpose | Why | Confidence |
-|------------|---------|---------|-----|------------|
-| docusaurus-plugin-openapi-docs | ^4.x | OpenAPI spec ingestion + MDX page generation | PaloAltoNetworks plugin. The only mature Docusaurus plugin for interactive API docs with "Try It" panels. Reads OpenAPI 3.0/3.1 specs, generates MDX pages with request/response examples and code snippets. Actively maintained. | MEDIUM |
-| docusaurus-theme-openapi-docs | ^4.x | API theme components (Try It panel, schemas) | Companion theme for the plugin above. Renders the interactive "Try It" console, schema viewers, and code samples. Must be same major version as the plugin. | MEDIUM |
-
-**Version note:** The openapi-docs plugin had a major version bump in late 2024 / early 2025 aligning with Docusaurus 3.x. Verify the exact latest with `npm view docusaurus-plugin-openapi-docs version`. The v4.x line targets Docusaurus 3.x.
-
-### Content & Markdown
+### AI Assistant -- Frontend (Chat UI)
 
 | Technology | Version | Purpose | Why | Confidence |
 |------------|---------|---------|-----|------------|
-| MDX | v3 (bundled) | Enhanced Markdown | Ships with Docusaurus 3.x. Supports JSX in Markdown for custom components. | HIGH |
-| @docusaurus/preset-classic | ^3.7 | Docs + blog + pages preset | Standard preset. Includes docs plugin, blog plugin, theme-classic, sitemap. Use this -- no reason to go custom. | HIGH |
-| remark-gfm | (bundled) | GitHub Flavored Markdown | Tables, strikethrough, task lists. Bundled with Docusaurus. | HIGH |
+| Custom React component | -- | Chat widget UI (`<AskAI />`) | No mature Docusaurus AI chat plugin exists. Build a lightweight component: floating button, slide-out panel, message list, input field. Follows Docusaurus swizzle patterns. Uses existing React 18+ from the project. ~200-300 lines of code. | HIGH |
+| @docusaurus/theme-common | ^3.9.2 (already installed) | Theme hooks (useColorMode, etc.) | Access Docusaurus theme context for dark/light mode styling of the chat panel. Already bundled -- no new dependency. | HIGH |
+| Infima CSS custom properties | -- | Chat UI styling | Style the chat widget using existing `--ifm-*` tokens for 1NCE branding consistency. No new CSS library needed. | HIGH |
 
-### Content Migration Tooling (Build-time only)
-
-| Technology | Version | Purpose | Why | Confidence |
-|------------|---------|---------|-----|------------|
-| Node.js script (custom) | -- | ReadMe magic block conversion | No existing tool handles ReadMe's proprietary `[block:callout]`, `[block:code]`, `[block:image]` syntax to Docusaurus admonitions/MDX. Write a custom Node script using regex/AST transforms. | HIGH |
-| gray-matter | ^4.0 | Frontmatter parsing | Parse and transform YAML frontmatter in exported Markdown files. Battle-tested, zero-dependency. | HIGH |
-| glob | ^10.x | File discovery | Find all `.md` files in the export directory for batch processing. | HIGH |
-
-### Build & Development
+### GitHub Pages Deployment
 
 | Technology | Version | Purpose | Why | Confidence |
 |------------|---------|---------|-----|------------|
-| npm | >=9 | Package manager | Ships with Node. Use npm over yarn -- Docusaurus docs default to npm, fewer lockfile issues in CI. | MEDIUM |
-| @docusaurus/faster | ^3.7 | Rspack-based bundler | Drop-in replacement for default Webpack bundler. 2-5x faster builds. Docusaurus officially supports it as of 3.6+. Worth using given ~150 pages + API spec generation. | MEDIUM |
+| GitHub Pages | -- | Test/preview deployment | Free, zero-config hosting for PR previews and internal testing. Complements (not replaces) the production AWS deployment. No new dependencies -- built into GitHub. | HIGH |
+| GitHub Actions workflow | -- | Build + deploy to `gh-pages` branch | New workflow file (e.g., `deploy-gh-pages.yml`) that builds with GitHub Pages-specific config and pushes to `gh-pages` branch. Reuses existing GitHub Actions expertise. | HIGH |
+| `.nojekyll` file in `static/` | -- | Prevent Jekyll processing | GitHub Pages runs Jekyll by default, which strips files starting with `_`. Docusaurus uses `_` prefixed directories. Adding `.nojekyll` prevents this. | HIGH |
 
-### Deployment & Infrastructure
-
-| Technology | Version | Purpose | Why | Confidence |
-|------------|---------|---------|-----|------------|
-| AWS S3 | -- | Static file hosting | Project requirement. Host the `build/` output as a static website. | HIGH |
-| AWS CloudFront | -- | CDN + HTTPS termination | Project requirement. Use Origin Access Control (OAC) to restrict S3 access. | HIGH |
-| AWS Certificate Manager (ACM) | -- | SSL certificate | Free SSL for help.1nce.com. Must be in us-east-1 for CloudFront. | HIGH |
-| AWS Route 53 | -- | DNS management | Point help.1nce.com to CloudFront distribution. | HIGH |
-| CloudFront Function | -- | SPA routing | Rewrite requests to `/index.html` for client-side routing. Cheaper than Lambda@Edge for simple rewrites. | HIGH |
-
-### CI/CD
+### Content Pipeline (Build-time script)
 
 | Technology | Version | Purpose | Why | Confidence |
 |------------|---------|---------|-----|------------|
-| GitHub Actions | -- | CI/CD pipeline | Project requirement (implied by GitHub). Build on push to main, deploy to S3, invalidate CloudFront. | HIGH |
-| aws-actions/configure-aws-credentials | v4 | OIDC auth for AWS | Keyless authentication. No stored AWS secrets -- uses GitHub OIDC provider + IAM role. Industry best practice. | HIGH |
-| aws-actions/amazon-s3-deploy or aws CLI | -- | S3 sync | `aws s3 sync build/ s3://bucket --delete` in the workflow. Simple and reliable. | HIGH |
-
-### Theming & Customization
-
-| Technology | Version | Purpose | Why | Confidence |
-|------------|---------|---------|-----|------------|
-| @docusaurus/theme-classic | ^3.7 (bundled) | Base theme | Included in preset-classic. Swizzle specific components for 1NCE branding. | HIGH |
-| CSS custom properties | -- | Brand theming | Docusaurus uses CSS custom properties (`--ifm-*` tokens) for theming. Override in `custom.css` for 1NCE navy/teal palette. No CSS-in-JS library needed. | HIGH |
-| Infima | (bundled) | CSS framework | Docusaurus's built-in CSS framework. Theme via CSS variables, do not fight it with Tailwind or similar. | HIGH |
+| Custom Node.js script (`scripts/export-for-kb.ts`) | -- | Strip MDX to plain text for KB ingestion | Bedrock Knowledge Bases needs plain text or Markdown, not MDX with JSX components. Write a build script that strips frontmatter metadata, JSX imports, custom components, and outputs clean Markdown for S3 upload. Reuses the project's existing `tsx` + `glob` tooling. | HIGH |
 
 ---
 
@@ -81,131 +50,254 @@
 
 | Category | Recommended | Alternative | Why Not |
 |----------|-------------|-------------|---------|
-| SSG Framework | Docusaurus 3.x | Starlight (Astro) | Starlight is excellent but lacks a mature interactive API docs plugin equivalent to docusaurus-openapi-docs. The "Try It" panel is a hard requirement. |
-| SSG Framework | Docusaurus 3.x | MkDocs (Material) | Python ecosystem. No native interactive API explorer comparable to docusaurus-openapi-docs. |
-| SSG Framework | Docusaurus 3.x | Mintlify | SaaS -- defeats the purpose of migrating off ReadMe.com SaaS. |
-| API Docs Plugin | docusaurus-openapi-docs | Redocly/Redoc | Redoc is read-only (no "Try It" panel in the free tier). Redocly Pro is paid SaaS. |
-| API Docs Plugin | docusaurus-openapi-docs | Swagger UI embed | Clunky iframe-based integration. Poor theming. Not native Docusaurus pages. |
-| API Docs Plugin | docusaurus-openapi-docs | Stoplight Elements | React component but not a Docusaurus plugin. Would require significant custom integration for multi-spec, sidebar generation, MDX pages. |
-| Package Manager | npm | yarn/pnpm | npm is the Docusaurus default. Lower friction for contributors. pnpm is faster but adds complexity for no meaningful gain on a docs site. |
-| CSS Framework | Infima (built-in) | Tailwind CSS | Fighting Infima with Tailwind creates maintenance burden. Docusaurus theming via CSS custom properties is sufficient and idiomatic. |
-| Hosting | S3 + CloudFront | Vercel/Netlify | Project constraint -- must be AWS. |
-| Build Bundler | @docusaurus/faster (Rspack) | Default Webpack | With ~150 pages + generated API pages, build times matter. Rspack is 2-5x faster and officially supported. |
-| Migration Tool | Custom Node script | readme-to-docusaurus | No mature, maintained tool exists for ReadMe magic block conversion. The holistics/readme-exporter handles export but not format conversion. |
+| RAG Pipeline | Bedrock Knowledge Bases (managed) | Custom RAG (LangChain + Pinecone/pgvector) | Over-engineering. Bedrock KB handles chunking, embedding, vector store, and retrieval as a managed service. Custom RAG adds 3-4 more components to maintain for a docs chatbot. |
+| Vector Store | OpenSearch Serverless (auto-provisioned) | Amazon S3 Vectors | S3 Vectors is cheaper for infrequent queries but OpenSearch Serverless gives better retrieval quality and is auto-provisioned by Bedrock console. The query volume for a docs chatbot does not justify optimizing for cost over simplicity. |
+| Vector Store | OpenSearch Serverless | Pinecone / MongoDB Atlas | Third-party services require separate credentials management (Secrets Manager), cross-service networking, and vendor dependency on top of AWS. No benefit for this use case. |
+| Generation Model | Claude Sonnet 4 | Claude Haiku 4.5 | Haiku is cheaper but produces noticeably shorter, less helpful documentation answers. Sonnet's quality justifies the cost for a user-facing feature. Can downgrade to Haiku later if costs are a concern. |
+| Generation Model | Claude Sonnet 4 | Claude Opus 4.x | 10-15x more expensive than Sonnet with minimal quality improvement for documentation Q&A. Opus is for complex reasoning, not "find and summarize from docs." |
+| Embedding Model | Titan Text Embeddings V2 | Cohere Embed Multilingual | 1NCE docs are English-only. Titan V2 is native to Bedrock (simpler), cheaper, and performs well for English text. |
+| Chat API Endpoint | Lambda Function URL | API Gateway HTTP API | API Gateway adds a separate service to configure, monitor, and pay for. Lambda Function URL provides the same HTTPS endpoint with built-in CORS for a single-function API. API Gateway's added value (rate limiting, API keys, custom domains) is unnecessary for a docs chatbot querying public content. |
+| Chat API Endpoint | Lambda Function URL | CloudFront + Lambda@Edge | Lambda@Edge has 5-second timeout (too short for RAG generation which takes 2-5s) and cannot call Bedrock from edge locations. |
+| Chat UI | Custom React component | Third-party chatbot widget (Intercom, Drift) | SaaS dependency -- contradicts the project's goal of moving off SaaS. Cannot integrate with Bedrock KB natively. |
+| Chat UI | Custom React component | Vercel AI SDK chat component | Brings in a Vercel dependency for a single component. The chat UI is simple enough (messages list + input) that a custom component is less code than integrating a third-party library. |
+| GitHub Pages | GitHub Actions deploy | `docusaurus deploy` command | The built-in `docusaurus deploy` command works but requires SSH keys and modifies git history directly. A GitHub Actions workflow with `actions/deploy-pages` is cleaner, more transparent, and follows the project's existing CI/CD patterns. |
+| Preview Hosting | GitHub Pages | Vercel/Netlify preview deployments | Project constraint -- stay within GitHub/AWS ecosystem. GitHub Pages is free and sufficient for preview/testing. |
 
 ---
 
-## What NOT to Use
+## What NOT to Add
 
 | Technology | Why Not |
 |------------|---------|
-| Tailwind CSS | Conflicts with Infima. Docusaurus theming is done via CSS custom properties -- adding Tailwind creates two competing styling systems. |
-| Storybook | Overkill for a docs site. No custom component library that needs isolated development. |
-| Next.js | Not a docs framework. Docusaurus provides docs-specific features (sidebars, versioning, search) out of the box. |
-| Docker | Unnecessary for a static site. S3 + CloudFront is simpler, cheaper, and faster. |
-| Terraform/CDK for v1 | Over-engineering for initial deployment. Use AWS CLI/console for the 5-6 resources needed. Can add IaC later if needed. |
-| Algolia DocSearch | Explicitly out of scope for v1. Requires application approval process. Defer to post-launch. |
-| any CMS (Contentful, Sanity) | Content lives in Git as MDX files. Adding a CMS adds complexity with no benefit for a developer docs site. |
-| Docusaurus v2 | End of life. v3 is the current stable line. |
+| LangChain / LlamaIndex | Over-engineering. Bedrock Knowledge Bases IS the RAG orchestrator. Adding LangChain on top creates two abstraction layers doing the same thing. |
+| Pinecone / Weaviate / pgvector | External vector DB adds operational complexity. OpenSearch Serverless is auto-provisioned by Bedrock and requires zero management. |
+| Vercel AI SDK | Unnecessary dependency. The Lambda function is ~40 lines of code calling `RetrieveAndGenerateCommand`. No framework needed. |
+| Tailwind CSS (for chat UI) | Still conflicts with Infima. Style the chat widget with CSS custom properties like the rest of the site. |
+| WebSocket / Server-Sent Events | `RetrieveAndGenerateStreamCommand` supports streaming, but streaming adds complexity to both Lambda (response streaming config) and the client. Start with synchronous responses. RAG answers are typically 2-4 seconds -- acceptable without streaming for v1.1. Add streaming in a future iteration if needed. |
+| AWS CloudFormation / CDK for KB | Bedrock Knowledge Bases are best configured via console for initial setup (many clickops-friendly settings like chunking strategy, embedding model selection). Export to CloudFormation after it works. Do not over-engineer the IaC upfront. |
+| Algolia DocSearch | Explicitly out of scope per PROJECT.md. AI Assistant is a separate feature from search. |
+| Authentication / API keys for chat endpoint | The endpoint queries public documentation. No user data is involved. Rate limiting via Lambda reserved concurrency is sufficient protection against abuse. Adding auth adds friction for no security benefit. |
+| Terraform / CDK for Lambda + KB | Console setup first, IaC later. The AI backend is 2-3 AWS resources (Lambda, KB, S3 bucket). Manually create and validate before codifying. |
 
 ---
 
-## Installation
+## Architecture Overview (Stack Perspective)
 
-```bash
-# Scaffold Docusaurus project
-npx create-docusaurus@latest dev-hub classic --typescript
+```
+User Browser (Docusaurus site)
+  |
+  |  POST /  (JSON: { query, sessionId? })
+  v
+Lambda Function URL (HTTPS, CORS enabled, auth: NONE)
+  |
+  |  RetrieveAndGenerateCommand
+  v
+AWS Bedrock Knowledge Bases
+  |-- Titan V2 Embeddings (query embedding)
+  |-- OpenSearch Serverless (vector similarity search)
+  |-- Claude Sonnet 4 (response generation with retrieved context)
+  |
+  v
+Response: { answer, citations[], sessionId }
+```
 
-# Core dependencies (installed by scaffold)
-# @docusaurus/core, @docusaurus/preset-classic, react, react-dom
+### Data Ingestion Pipeline (Offline / CI)
 
-# Interactive API docs
-npm install docusaurus-plugin-openapi-docs docusaurus-theme-openapi-docs
-
-# Faster builds (optional but recommended)
-npm install @docusaurus/faster
-
-# Migration tooling (dev dependencies)
-npm install -D gray-matter glob
+```
+MDX docs (298 files in docs/)
+  |
+  |  scripts/export-for-kb.ts -- strip JSX, imports, frontmatter metadata
+  v
+Clean Markdown files (in dist-kb/)
+  |
+  |  aws s3 sync dist-kb/ s3://1nce-kb-data-source/
+  v
+S3 Bucket (KB data source)
+  |
+  |  Bedrock KB sync (manual trigger or GitHub Actions post-deploy)
+  v
+Titan V2 embeddings -> OpenSearch Serverless vector index
 ```
 
 ---
 
-## Key Configuration Decisions
+## GitHub Pages Configuration Details
 
-### Multiple Sidebars
+### Problem
 
-Docusaurus supports multiple sidebars natively. Configure one sidebar per navbar tab to replicate the ReadMe five-tab structure:
+The current `docusaurus.config.ts` hardcodes `url: 'https://help.1nce.com'` and `baseUrl: '/'`. GitHub Pages for `HDGoldi/docusaurus-poc` requires `url: 'https://HDGoldi.github.io'` and `baseUrl: '/docusaurus-poc/'`.
+
+### Solution: Environment-Aware Config
 
 ```typescript
-// sidebars.ts
-export default {
-  documentationSidebar: [/* ... */],
-  platformSidebar: [/* ... */],
-  blueprintsSidebar: [/* ... */],
-  termsSidebar: [/* ... */],
+// docusaurus.config.ts (additions at top)
+const isGitHubPages = process.env.DEPLOY_TARGET === 'github-pages';
+
+const config: Config = {
+  url: isGitHubPages
+    ? 'https://HDGoldi.github.io'
+    : 'https://help.1nce.com',
+  baseUrl: isGitHubPages
+    ? '/docusaurus-poc/'
+    : '/',
+  organizationName: 'HDGoldi',         // GitHub org/user
+  projectName: 'docusaurus-poc',        // repo name
+  trailingSlash: false,                 // Explicit -- GitHub Pages adds trailing slashes by default
+  // ... rest unchanged
 };
 ```
 
-The API Explorer sidebar is auto-generated by docusaurus-plugin-openapi-docs from the OpenAPI specs.
+### Required Static File
 
-### Multiple OpenAPI Specs
+Add `static/.nojekyll` (empty file) to prevent Jekyll processing on GitHub Pages.
 
-The plugin supports multiple specs via the `config` option in `docusaurus.config.ts`:
+### GitHub Actions Workflow Pattern
 
-```typescript
-plugins: [
-  [
-    'docusaurus-plugin-openapi-docs',
+New workflow: `.github/workflows/deploy-gh-pages.yml`
+- Trigger: push to `main` or `workflow_dispatch`
+- Build with `DEPLOY_TARGET=github-pages npm run build`
+- Deploy using `actions/deploy-pages@v4` (official GitHub action)
+- Result: site available at `https://HDGoldi.github.io/docusaurus-poc/`
+
+---
+
+## IAM Permissions Required
+
+### Lambda Execution Role
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
     {
-      id: 'api',
-      docsPluginId: 'classic',
-      config: {
-        authorization: { specPath: 'reference/authorization.json', outputDir: 'docs/api/authorization' },
-        simManagement: { specPath: 'reference/sim-management.json', outputDir: 'docs/api/sim-management' },
-        orderManagement: { specPath: 'reference/order-management.json', outputDir: 'docs/api/order-management' },
-        // ... additional specs
-      },
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:RetrieveAndGenerate",
+        "bedrock:Retrieve"
+      ],
+      "Resource": "arn:aws:bedrock:<region>:<account>:knowledge-base/<kb-id>"
     },
-  ],
-],
+    {
+      "Effect": "Allow",
+      "Action": "bedrock:InvokeModel",
+      "Resource": "arn:aws:bedrock:<region>::foundation-model/anthropic.claude-sonnet-4-*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:<region>:<account>:*"
+    }
+  ]
+}
 ```
 
-### CloudFront Function for SPA Routing
+### Knowledge Base Service Role
 
-```javascript
-function handler(event) {
-  var request = event.request;
-  var uri = request.uri;
-  if (uri.endsWith('/')) {
-    request.uri += 'index.html';
-  } else if (!uri.includes('.')) {
-    request.uri += '/index.html';
-  }
-  return request;
-}
+- `s3:GetObject` on the data source bucket
+- `aoss:APIAccessAll` on the OpenSearch Serverless collection
+- `bedrock:InvokeModel` on `amazon.titan-embed-text-v2:0`
+
+---
+
+## Installation / Setup Summary
+
+### Frontend (zero new npm packages)
+
+The chat UI component uses only React (already installed) and Docusaurus theme hooks (already available). No new `npm install` required for the frontend.
+
+### Backend (Lambda function -- separate directory)
+
+```bash
+# Create Lambda function directory at project root
+mkdir -p lambda/ask-ai
+cd lambda/ask-ai
+npm init -y
+npm install @aws-sdk/client-bedrock-agent-runtime
+```
+
+The Lambda `nodejs22.x` runtime includes AWS SDK v3 globally, but pinning in `package.json` ensures reproducible builds and IDE support during development.
+
+### GitHub Pages (zero new packages)
+
+```bash
+# Add .nojekyll to static directory
+touch static/.nojekyll
+```
+
+### Content Export Script (uses existing dev deps)
+
+```bash
+# No new packages -- uses existing tsx, glob, gray-matter from devDependencies
+# Add npm script to package.json:
+#   "export:kb": "tsx scripts/export-for-kb.ts"
 ```
 
 ---
 
 ## Version Verification Checklist
 
-These versions are based on training data with a May 2025 cutoff. **Before scaffolding, verify:**
+| Component | Expected | Verify With |
+|-----------|----------|-------------|
+| @aws-sdk/client-bedrock-agent-runtime | ^3.x (latest) | `npm view @aws-sdk/client-bedrock-agent-runtime version` |
+| Lambda runtime | nodejs22.x | AWS Console or `aws lambda get-function-configuration` |
+| Titan Embed V2 model ID | `amazon.titan-embed-text-v2:0` | AWS Bedrock console > Model access |
+| Claude Sonnet 4 model ID | `anthropic.claude-sonnet-4-20250514-v1:0` | AWS Bedrock console > Model access |
+| Bedrock model access enabled | Both models | AWS Bedrock console > Model access (must request access) |
+| Docusaurus (unchanged) | 3.9.2 | `npm ls @docusaurus/core` |
+| GitHub repo | HDGoldi/docusaurus-poc | `git remote -v` |
 
-| Package | Expected | Verify With |
-|---------|----------|-------------|
-| @docusaurus/core | ^3.7.x | `npm view @docusaurus/core version` |
-| docusaurus-plugin-openapi-docs | ^4.x | `npm view docusaurus-plugin-openapi-docs version` |
-| docusaurus-theme-openapi-docs | ^4.x | `npm view docusaurus-theme-openapi-docs version` |
-| @docusaurus/faster | ^3.7.x | `npm view @docusaurus/faster version` |
-| Node.js | 20 LTS | `node --version` |
+---
+
+## Cost Estimates (Monthly, Low-Traffic Docs Site)
+
+| Component | Estimated Cost | Notes |
+|-----------|---------------|-------|
+| Lambda Function URL | ~$0 | Free tier covers 1M requests/month |
+| Bedrock KB (OpenSearch Serverless) | ~$25-50/month | Minimum 0.5 OCU for indexing + 0.5 OCU for search. This is the main cost driver. |
+| Titan V2 embeddings (ingestion) | <$1 one-time | ~298 docs x ~2K tokens avg = ~600K tokens |
+| Titan V2 embeddings (queries) | <$5/month | Per-query embedding at ~100 tokens each |
+| Claude Sonnet 4 (generation) | ~$5-20/month | Depends on query volume. ~$3/1M input, ~$15/1M output tokens |
+| S3 (data source bucket) | <$1/month | ~298 text files, negligible storage |
+| GitHub Pages | Free | Included with GitHub |
+| **Total incremental** | **~$35-75/month** | OpenSearch Serverless minimum is the main cost driver |
+
+**Cost optimization note:** If the ~$25-50/month OpenSearch Serverless minimum is too high for a low-traffic chatbot, switch to **Amazon S3 Vectors** as the vector store instead. S3 Vectors charges per-query with no minimum -- better for sporadic usage. Trade-off is slightly lower retrieval quality and no metadata filtering. This is a decision to make during setup, not a blocker.
+
+---
+
+## Bedrock Knowledge Base Configuration Recommendations
+
+### Chunking Strategy
+
+Use **Standard chunking** with default settings (~300 tokens per chunk, sentence boundary awareness). For documentation pages that are well-structured with headers, this produces good retrieval chunks. Semantic chunking costs more (extra model calls) and is not necessary for well-organized docs.
+
+### Supported File Formats for S3 Data Source
+
+Bedrock KB supports: `.txt`, `.md`, `.html`, `.doc`, `.docx`, `.csv`, `.xls`, `.xlsx`, `.pdf`. The export script should output `.md` files -- natively supported without parsing overhead.
+
+### Sync Strategy
+
+Manual sync after each deploy to production. Add to the existing GitHub Actions deploy workflow:
+```bash
+aws bedrock-agent start-ingestion-job --knowledge-base-id <kb-id> --data-source-id <ds-id>
+```
 
 ---
 
 ## Sources
 
-- Docusaurus official documentation (docusaurus.io) -- HIGH confidence
-- PaloAltoNetworks/docusaurus-openapi-docs GitHub repository -- MEDIUM confidence (version numbers may have advanced)
-- AWS documentation for S3, CloudFront, ACM, Route 53 -- HIGH confidence
-- GitHub Actions aws-actions documentation -- HIGH confidence
-- Training data knowledge (May 2025 cutoff) -- used as basis, flagged where verification needed
+- AWS Bedrock model IDs -- docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html (verified 2026-03-21) -- HIGH confidence
+- AWS Bedrock Knowledge Bases overview -- docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html -- HIGH confidence
+- AWS Bedrock RetrieveAndGenerate API -- docs.aws.amazon.com/bedrock/latest/APIReference/ -- HIGH confidence
+- Amazon Titan Embeddings V2 -- docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html -- HIGH confidence
+- Lambda Function URLs -- docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html -- HIGH confidence
+- Lambda Node.js runtimes -- docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html (nodejs22.x and nodejs24.x available) -- HIGH confidence
+- @aws-sdk/client-bedrock-agent-runtime -- docs.aws.amazon.com/AWSJavaScriptSDK/v3/ -- HIGH confidence
+- Docusaurus GitHub Pages deployment -- docusaurus.io/docs/deployment -- HIGH confidence
+- OpenSearch Serverless pricing -- training data estimate -- LOW confidence (verify at aws.amazon.com/opensearch-service/pricing/)
+- Bedrock chunking strategies -- docs.aws.amazon.com/bedrock/latest/userguide/kb-chunking-parsing.html -- HIGH confidence
+- Bedrock vector store options -- docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html -- HIGH confidence

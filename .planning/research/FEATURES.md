@@ -1,156 +1,188 @@
-# Feature Landscape
+# Feature Research
 
-**Domain:** Developer documentation portal (ReadMe.com to Docusaurus migration)
-**Researched:** 2026-03-20
+**Domain:** AI Documentation Assistant + GitHub Pages Preview Deployment (v1.1 milestone)
+**Researched:** 2026-03-21
+**Confidence:** MEDIUM
 
-## Table Stakes
+> This file covers ONLY the v1.1 milestone features. For v1.0 migration features, see git history.
 
-Features users expect. Missing = product feels incomplete or migration is considered failed.
+## Feature Landscape
 
-### Content Parity
+### Table Stakes (Users Expect These)
 
-| Feature | Why Expected | Complexity | Notes |
-|---------|--------------|------------|-------|
-| All ~298 Markdown pages migrated | Users rely on existing docs daily; missing pages = broken bookmarks, lost trust | High | 298 .md files across docs, reference, custom_pages, and recipes directories. Bulk of the work is automated conversion. |
-| Frontmatter conversion | ReadMe frontmatter (excerpt, deprecated, hidden, metadata) must map to Docusaurus equivalents | Med | ~185 frontmatter occurrences. Script needed to transform `hidden`, `excerpt`, `deprecated` fields to Docusaurus `draft`, `description`, `sidebar_label` etc. |
-| Image migration and path rewriting | Broken images = unusable docs | Med | Only ~7 inline markdown images found; most images are embedded via HTML `<img>` tags or hosted externally on ReadMe CDN. Need to download remote images and rewrite paths to `/static/img/`. |
-| HTML content preservation | Many pages use raw HTML tables, styled divs, and inline CSS | High | 132+ HTML block occurrences across 20+ files. Docusaurus MDX is strict about HTML — self-closing tags, className vs class, etc. Each must be validated. |
-| ReadMe `HTMLBlock` conversion | Proprietary ReadMe component used in 37+ files | High | `HTMLBlock` wraps raw HTML/CSS. Must be converted to either MDX components or raw HTML that passes MDX parsing. The welcome page alone has extensive inline CSS grid layouts. |
-| ReadMe `<Recipe>` component conversion | Custom component used in hardware recipe pages | Med | Used in custom_pages/recipes.md and hardware guide pages. Need a custom Docusaurus MDX component or convert to standard links/cards. |
-| Admonition/callout conversion | Callouts are a standard doc pattern; 26 occurrences found in Zephyr SDK and SMS docs | Low | Some already use `:::note` syntax. Others may use ReadMe's `[block:callout]` format (not found in export — may have been pre-converted by exporter). |
-| Code block preservation | Developers copy-paste AT commands and code snippets | Low | ~10 files with fenced code blocks, primarily in recipes. Standard markdown, should transfer cleanly. |
+Features that users of a "chat with docs" assistant assume exist. Missing these and the feature feels broken or unusable.
 
-### Navigation and Information Architecture
+#### AI Assistant — Chat UI
 
 | Feature | Why Expected | Complexity | Notes |
 |---------|--------------|------------|-------|
-| Five-tab navbar | Users navigate by top-level tabs: Documentation, API Explorer, 1NCE Platform, Blueprints & Examples, Terms & Abbreviations | Med | Docusaurus supports multiple docs plugin instances and navbar items. Must map each tab to a separate docs instance or use `docsPluginId`. |
-| Deeply nested sidebar navigation | Current site has 3-4 levels of nesting (e.g., 1NCE OS > Device Controller > Web Interface) | High | 10+ doc categories, each with `_order.yaml` files defining sort order. Must generate `sidebars.js` programmatically from `_order.yaml` files. |
-| Multiple sidebars | Each navbar tab has its own independent sidebar tree | Med | Docusaurus supports this natively via multiple docs plugin instances. Each instance gets its own sidebar config. |
-| Breadcrumb navigation | Standard in documentation portals; helps users orient themselves in deep hierarchies | Low | Built into Docusaurus theme by default. No custom work needed. |
-| Previous/Next page navigation | Readers expect sequential flow through related docs | Low | Built into Docusaurus. Automatic based on sidebar ordering. |
+| Floating chat button / drawer | Every docs AI assistant uses a bottom-right floating icon that opens a chat panel. ReadMe's Owlbot uses this pattern. Users will not find a separate page. | MEDIUM | Custom React component. Swizzle Docusaurus layout to inject a persistent floating button + slide-out drawer. Must work across all pages including API Explorer. |
+| Streaming responses | Users expect text to appear word-by-word, not after a 5-10 second blank wait. ReadMe Owlbot streams. Every modern chat UI streams. Non-streaming feels broken. | MEDIUM | AWS Bedrock supports response streaming via `InvokeModelWithResponseStream`. Frontend needs EventSource or fetch with ReadableStream. |
+| Source citations with links | Users need to verify AI answers. Owlbot returns source titles + URLs. Without citations, the AI is an ungrounded chatbot — a liability for technical docs. | LOW | Bedrock Knowledge Bases return source citations automatically with RetrieveAndGenerate. Frontend renders them as clickable links to doc pages. |
+| Markdown rendering in responses | AI responses contain code snippets, lists, headers. Rendering as plain text makes technical answers unreadable. | LOW | Use a lightweight Markdown renderer (react-markdown) in the chat panel. Already have React in the stack. |
+| Conversation context (multi-turn) | Users ask follow-up questions: "What about for SIM management?" after an initial query. Without context, every question is standalone and feels dumb. | MEDIUM | Bedrock RetrieveAndGenerate supports sessionId for multi-turn conversations. Pass sessionId in subsequent requests. Backend must manage session state (or let Bedrock manage it). |
+| Loading indicator | Users need to know the system is working. No spinner = "is it broken?" | LOW | Standard React state management. Show typing indicator while awaiting stream. |
+| Error handling with retry | API calls fail. Users need a "Something went wrong. Try again." message, not a silent failure or crash. | LOW | Catch errors in the API call, show user-friendly message, offer retry button. |
 
-### API Explorer
-
-| Feature | Why Expected | Complexity | Notes |
-|---------|--------------|------------|-------|
-| Interactive "Try It" API console | Core feature of ReadMe.com that developers actively use; removing it = major regression | High | 6 OpenAPI JSON specs (authorization, sim-management, order-management, product-information, support-management, 1nce-os). `docusaurus-openapi-docs` plugin handles this. |
-| Multi-spec API documentation | APIs are split across 6 separate OpenAPI specs | Med | Plugin supports multiple specs via `config` entries. Each spec generates its own set of endpoint pages. |
-| Auto-generated code snippets | Developers expect curl, Python, Node.js examples for each endpoint | Low | `docusaurus-openapi-docs` generates these automatically from OpenAPI specs. |
-| Bearer token authentication in Try It | API requires OAuth token; must be enterable in the console | Low | Plugin supports authentication schemes defined in OpenAPI specs. Authorization spec already defines the auth flow. |
-| Request/response schema display | Developers need to see expected payloads and responses | Low | Automatic from OpenAPI spec rendering by the plugin. |
-| API endpoint sidebar navigation | Endpoints grouped by tag/category with methods (GET, POST, etc.) labeled | Low | Plugin generates sidebar automatically from OpenAPI spec structure. |
-
-### Branding and Theming
+#### AI Assistant — Backend
 
 | Feature | Why Expected | Complexity | Notes |
 |---------|--------------|------------|-------|
-| 1NCE brand colors (dark navy/teal) | Must look like a 1NCE product, not a generic Docusaurus site | Med | Override Infima CSS variables in `custom.css`. Requires extracting exact hex values from current site. |
-| Dark mode with brand consistency | Current site has dark mode; removing it = regression | Med | Docusaurus supports dark mode natively. Must ensure custom CSS covers both `[data-theme='light']` and `[data-theme='dark']`. |
-| 1NCE logo in navbar and favicon | Brand recognition | Low | Drop-in replacement in `docusaurus.config.js`. |
-| Custom fonts matching current site | Visual consistency with 1NCE brand | Low | Add font imports to `custom.css` or via `headTags` config. |
+| RAG grounding on actual doc content | The entire point. Without retrieval, the model hallucinates about 1NCE APIs. Must index all 298 docs + 125 API pages. | HIGH | AWS Bedrock Knowledge Base with S3 data source. Must prepare docs for ingestion — strip MDX syntax, frontmatter, and React components to get clean text. Raw MDX files will produce noisy embeddings. |
+| Low-latency responses (< 3s to first token) | Users abandon chat if nothing appears in 3+ seconds. ReadMe Owlbot responds within 1-2 seconds. | MEDIUM | Bedrock model inference is typically 1-2s to first token with streaming. The retrieval step adds latency. Use a fast embedding model (Titan Embeddings) and keep the knowledge base indexed. |
+| Rate limiting | Without rate limiting, a single user (or bot) can run up massive Bedrock costs in minutes. | MEDIUM | Implement at the API Gateway level. Token bucket or fixed window. 10-20 requests/minute per IP is reasonable for docs chat. |
 
-### Infrastructure and Deployment
+#### GitHub Pages Deployment
 
 | Feature | Why Expected | Complexity | Notes |
 |---------|--------------|------------|-------|
-| AWS S3 + CloudFront hosting | Required constraint — must be on AWS | Med | Standard static site hosting pattern. S3 bucket + CloudFront distribution + OAC. |
-| SSL certificate for help.1nce.com | HTTPS is non-negotiable for a developer portal | Low | ACM certificate in us-east-1 + Route 53 alias record. |
-| CloudFront SPA routing function | Without this, direct URL access returns 403 errors | Med | CloudFront Function to rewrite `/path` to `/path/index.html`. Critical for Docusaurus client-side routing. |
-| CI/CD automated deploy | Team must be able to merge and deploy without manual steps | Med | GitHub Actions workflow with OIDC auth to AWS. Build, S3 sync, CloudFront invalidation. |
-| URL redirects from old paths | Existing bookmarks and external links must not break | High | ReadMe.com URL structure differs from Docusaurus. Need redirect map (CloudFront Function or `@docusaurus/plugin-client-redirects`). This is often overlooked but critical for SEO and user experience. |
+| Working build on GitHub Pages | The site must actually load and navigate correctly. This means baseUrl must be set correctly for the repo path (e.g., `/docusaurus_poc/`). | MEDIUM | Docusaurus requires `url` and `baseUrl` config changes for GitHub Pages. Since production uses `baseUrl: '/'` on help.1nce.com, GitHub Pages needs a different baseUrl. Use environment variable or build-time override. |
+| Automated deploy via GitHub Actions | Manual deploys defeat the purpose. Push to branch, site updates. | LOW | Docusaurus docs provide a reference workflow using `actions/deploy-pages`. Add a new workflow file alongside the existing `deploy.yml`. |
+| Accessible preview URL | Team members need a clickable URL to view the preview. | LOW | GitHub Pages URL follows pattern: `https://<org>.github.io/<repo>/`. Surface this in the workflow output or repo settings. |
 
-## Differentiators
+### Differentiators (Competitive Advantage)
 
-Features that would make the Docusaurus site better than the ReadMe.com version. Not expected, but high value.
+Features that would make the AI assistant notably better than ReadMe's Owlbot or generic chatbots.
 
 | Feature | Value Proposition | Complexity | Notes |
 |---------|-------------------|------------|-------|
-| Full-text search (Algolia DocSearch) | ReadMe had search; restoring it with Algolia provides better search quality | Med | Deferred per PROJECT.md but should be Phase 2. Algolia DocSearch is free for open-source/developer docs. Alternative: `docusaurus-search-local` for no-dependency search. |
-| Glossary/Terms as structured data | Current terms page is a monolithic HTML table; could become a searchable, filterable glossary component | Med | Custom MDX component or React page. Transform the raw HTML glossary into structured data (JSON) rendered by a React component with filtering. |
-| Hardware recipe cards with filtering | Current recipes are links on a page; could become a card grid with modem/protocol filtering | Med | Custom React component. Group by manufacturer (Quectel, SIMCOM, u-blox). Better discovery than current flat list. |
-| OpenAPI spec version management | As APIs evolve, show which spec version is live | Low | Plugin supports versioned specs. Add when API changes are tracked. |
-| Markdown linting in CI | Catch broken links, invalid MDX, missing images before deploy | Low | Add `docusaurus build` (already catches broken links) + optional `remark-lint` for style consistency. |
-| Edit this page links | Let internal team quickly jump to source for corrections | Low | Built into Docusaurus. Configure `editUrl` pointing to GitHub repo. |
-| Page metadata / SEO tags | Custom meta descriptions, Open Graph tags for shared links | Low | Docusaurus supports this via frontmatter. Many pages already have `metadata.title` and `metadata.description` from ReadMe export. |
-| Announcement bar | Communicate migration, new features, or status updates to users | Low | Built-in Docusaurus feature. Single line of config. |
-| Offline documentation (PWA) | IoT developers often work in connectivity-limited environments | Med | `@docusaurus/plugin-pwa` exists but adds complexity. Consider for post-launch. |
+| Suggested starter questions | Pre-populated questions like "How do I authenticate?", "What SIM management APIs are available?" reduce the blank-input problem. Guides users who do not know what to ask. | LOW | Hardcoded array of 3-5 questions rendered as clickable chips in the empty chat state. No backend work. |
+| API-aware responses | The assistant can reference specific API endpoints with links to the interactive Try It panel. Goes beyond generic doc chat by connecting to the API Explorer. | HIGH | Requires the knowledge base to index API endpoint descriptions with metadata linking to endpoint URLs. Custom prompt engineering to instruct the model to include endpoint references. |
+| Feedback thumbs up/down | Lets the team measure answer quality without complex analytics. ReadMe Owlbot does not expose this in their docs. | LOW | Two buttons per response. Log to CloudWatch or a simple DynamoDB table. No complex infrastructure. |
+| Context-aware suggestions | Show "Ask AI about this page" with the current page title pre-filled as context. Makes the assistant page-aware. | MEDIUM | Pass current page URL/title as metadata in the API request. Include in the retrieval query context. Requires frontend to detect current page. |
+| Dark mode chat panel | Chat UI respects the site's dark/light theme toggle. Looks native, not bolted-on. | LOW | Use Docusaurus CSS custom properties (`--ifm-*`) in the chat component. Inherits theme automatically if done correctly. |
+| GitHub Pages as PR preview alternative | Use GitHub Pages for lightweight previews without the AWS preview infrastructure cost. Could replace or supplement the existing S3 preview deploy. | LOW | Configure the workflow to deploy on PR merges to a preview branch, or use the existing PR workflow. Lower cost than maintaining a separate S3 preview bucket. |
 
-## Anti-Features
+### Anti-Features (Commonly Requested, Often Problematic)
 
-Features to explicitly NOT build. These add complexity without proportional value for this migration.
-
-| Anti-Feature | Why Avoid | What to Do Instead |
-|--------------|-----------|-------------------|
-| Doc versioning (V1.0 dropdown) | Only one version exists. Versioning adds build complexity, doubles content surface, and confuses the sidebar. The current ReadMe "V1.0" label is cosmetic, not functional. | Ship as unversioned. Add versioning only when a V2 API or major restructure actually happens. |
-| AI assistant / "Ask AI" | The ReadMe AI assistant is a ReadMe SaaS feature. Building an equivalent requires RAG infrastructure, embedding pipelines, and ongoing LLM costs. Massive scope for marginal value. | Defer entirely. If needed later, evaluate Inkeep or Mendable as drop-in solutions. |
-| User authentication / gated content | ReadMe supports login-gated docs. 1NCE docs appear fully public. Adding auth adds infrastructure and breaks the static site model. | Keep all docs public. If gating is ever needed, use CloudFront signed URLs or Lambda@Edge — but do not build this speculatively. |
-| Custom analytics dashboard | Tempting to track page views, popular endpoints, etc. But this is infrastructure overhead with no migration value. | Use CloudFront access logs + a lightweight analytics tool (Plausible, Fathom) if needed. Do not build custom dashboards. |
-| Content management UI / CMS | ReadMe provides a web editor. Replicating this in Docusaurus is a massive anti-pattern. | Use GitHub as the CMS. Markdown files in a repo with PR-based review is the Docusaurus way. |
-| Internationalization (i18n) | Current site is English only. i18n adds significant complexity to the build and content pipeline. | Do not configure i18n unless there is an explicit multi-language requirement. |
-| Comment system on docs pages | Some doc platforms allow comments. This requires a backend, moderation, and spam handling. | Use GitHub Issues or a feedback form link if user feedback is needed. |
-| Real-time API status / uptime widget | Nice-to-have but requires integration with monitoring infrastructure. Out of scope for a docs migration. | Link to a separate status page (e.g., status.1nce.com) if one exists. |
+| Feature | Why Requested | Why Problematic | Alternative |
+|---------|---------------|-----------------|-------------|
+| Full conversational agent with tool use | "Let the AI actually call our APIs for the user" | Massive security risk. Exposes API credentials, enables uncontrolled API calls against production systems. Also requires Bedrock Agents (more complex than Knowledge Bases), action group definitions, and IAM roles for each API. 10x the complexity. | Keep the assistant read-only: it answers questions about docs and links to the Try It panel where users authenticate themselves. |
+| Custom fine-tuned model | "Train a model specifically on our docs for better answers" | Fine-tuning is expensive, slow to iterate, and unnecessary when RAG with a strong base model (Claude) handles documentation Q&A well. Fine-tuning is for changing model behavior, not for adding knowledge. | Use RAG with Bedrock Knowledge Bases. Claude with retrieved context will answer 1NCE doc questions accurately without fine-tuning. |
+| Persistent chat history across sessions | "Users should see their previous conversations when they return" | Requires user identity (authentication), a database for chat storage, GDPR compliance for storing user queries. Adds backend complexity for a feature most docs chat users do not need. | Start fresh each page load. Keep conversation state in browser memory (sessionStorage) so it persists during a browsing session but not across sessions. |
+| Voice input / speech-to-text | "Let users ask questions by voice" | Browser speech APIs are inconsistent. Adds accessibility complexity (what about hearing-impaired users who need the inverse?). Tiny user base for a developer docs site. | Text input only. Developers type. |
+| Autonomous doc improvement suggestions | "Have the AI identify gaps in our docs and suggest edits" | Requires a separate pipeline, evaluation criteria, human review workflow. This is a content operations tool, not a user-facing feature. | Log unanswered questions (queries where confidence is low) to identify doc gaps manually. |
+| Embedding the chat in every page as inline widget | "Put the AI answer right in the doc page content" | Breaks the reading flow. Confuses authored content with generated content. Users cannot tell what is official documentation vs. AI interpretation. | Keep chat in a separate floating drawer overlay. Clear visual separation between docs and AI. |
+| Client-side RAG / local embeddings | "Run everything in the browser, no backend needed" | Embedding models are too large for browser. Vector search in the browser is slow and limited. Cannot use Bedrock without a backend proxy (API keys cannot be in frontend code). | Serverless backend (API Gateway + Lambda) is the right architecture. Keeps credentials secure, enables rate limiting, allows model upgrades without frontend changes. |
 
 ## Feature Dependencies
 
 ```
-Content Conversion ──→ Sidebar Generation ──→ Navbar Configuration
-                  │                       │
-                  └──→ Image Migration     │
-                                           │
-OpenAPI Spec Integration ──→ API Explorer Pages ──→ API Sidebar
-                                                │
-Branding / CSS ────────────────────────────────→ Dark Mode
-                                                │
-S3 + CloudFront Setup ──→ SSL / DNS ──→ CloudFront Function (SPA routing)
-                                     │
-GitHub Actions CI/CD ────────────────→ Automated Deploy
-                                     │
-URL Redirect Map ────────────────────→ CloudFront Function (redirects)
-                                     │
-Content Conversion ──→ Frontmatter Mapping ──→ SEO Metadata
-                  │
-HTMLBlock Conversion ──→ MDX Validation ──→ Build succeeds
-                  │
-Recipe Component ──→ Custom MDX Component (or link conversion)
+[Content preparation for KB]
+    |
+    v
+[Bedrock Knowledge Base setup] ---requires---> [S3 bucket with processed docs]
+    |
+    v
+[Serverless API backend] ---requires---> [API Gateway + Lambda + Bedrock permissions]
+    |
+    v
+[Chat UI component] ---requires---> [Serverless API backend]
+    |
+    +---enhances---> [Suggested questions] (no backend dependency)
+    +---enhances---> [Feedback mechanism] (needs DynamoDB or CloudWatch)
+    +---enhances---> [Context-aware suggestions] (frontend-only, page detection)
+
+[GitHub Pages workflow] ---independent of---> [AI Assistant]
+    |
+    v
+[baseUrl configuration] ---requires---> [Environment-aware build config]
 ```
 
-Key dependency chains:
-- **Content must convert before anything else** — sidebar generation, image paths, and MDX validation all depend on clean content.
-- **HTMLBlock and Recipe components are blockers** — the build will fail if any MDX file contains invalid JSX. These proprietary ReadMe components must be handled early.
-- **API Explorer is independent of docs content** — can be developed in parallel since it generates from OpenAPI specs, not from markdown.
-- **Infrastructure can be set up in parallel** — S3/CloudFront/CI setup does not depend on content work.
-- **URL redirects depend on both old and new URL structures being known** — can only be finalized after sidebar/navbar structure is set.
+### Dependency Notes
 
-## MVP Recommendation
+- **Knowledge Base requires processed content:** Raw MDX files with JSX components, frontmatter, and import statements will produce poor embeddings. Need a build-time script to strip MDX to plain text for ingestion.
+- **Chat UI requires backend first:** Cannot develop the frontend meaningfully without a working API to call. Use a mock API for initial UI development, but real integration testing needs the backend.
+- **GitHub Pages is fully independent:** Can be done in parallel with AI work. No shared dependencies.
+- **Suggested questions have zero dependencies:** Can ship with the chat UI immediately — just a hardcoded array.
+- **Feedback mechanism is loosely coupled:** Can be added after initial chat UI ships. Only needs a simple logging endpoint.
 
-**Prioritize (Phase 1 - must ship):**
+## MVP Definition
 
-1. **Automated content conversion script** — Handles frontmatter, HTMLBlock, Recipe components, HTML cleanup for MDX compatibility. This is the highest-risk, highest-effort item. Without it, nothing renders.
-2. **Five-tab navbar + multi-sidebar navigation** — Programmatically generate from `_order.yaml` files. Users navigate by structure; if the IA is wrong, the site is unusable.
-3. **Interactive API Explorer** — 6 OpenAPI specs integrated via `docusaurus-openapi-docs`. This is the #1 feature that makes a developer hub valuable vs. a plain docs site.
-4. **1NCE branding** — Colors, logo, dark mode. Without branding it looks like an abandoned prototype, not a production site.
-5. **AWS deployment with CI/CD** — S3 + CloudFront + GitHub Actions. The site must be reachable at help.1nce.com.
-6. **URL redirect map** — Preserve existing bookmarks and inbound links. SEO and user trust depend on this.
+### Launch With (v1.1)
 
-**Defer (Phase 2 - ship within weeks of launch):**
+- [ ] **Bedrock Knowledge Base** with all doc content indexed — this is the foundation; without it, the AI has nothing to retrieve
+- [ ] **Serverless API** (API Gateway + Lambda) calling Bedrock RetrieveAndGenerate — the backend that connects chat to knowledge
+- [ ] **Floating chat drawer UI** with streaming responses and citations — the user-facing feature
+- [ ] **Multi-turn conversation** via Bedrock sessionId — without this, follow-up questions fail
+- [ ] **Rate limiting** at API Gateway — cost protection is non-negotiable before exposing a pay-per-token API
+- [ ] **GitHub Pages deployment workflow** — separate concern, low effort, high utility for team previews
+- [ ] **Suggested starter questions** — zero-cost UX improvement that ships with the UI
 
-- **Full-text search (Algolia or local)** — Important but not launch-blocking. Users can use browser find initially.
-- **Glossary component refactor** — The raw HTML table will render; it just will not be elegant.
-- **Recipe card grid** — Links work fine; cards are a UX improvement, not a necessity.
-- **Edit this page links** — Nice for the team, not user-facing.
+### Add After Validation (v1.1.x)
 
-**Defer (Phase 3 - if ever):**
+- [ ] **Feedback thumbs up/down** — add once the assistant is live and answer quality can be measured
+- [ ] **Context-aware page suggestions** — add once basic chat is validated; pass current page URL to improve retrieval
+- [ ] **API-aware responses** — requires custom prompt engineering and knowledge base metadata enrichment; validate basic RAG quality first
+- [ ] **Usage analytics dashboard** — track query volume, popular questions, error rates; add after patterns emerge
 
-- **AI assistant** — Only if there is budget and demand.
-- **PWA / offline docs** — Only if IoT developer feedback requests it.
-- **Doc versioning** — Only when V2 actually exists.
+### Future Consideration (v2+)
+
+- [ ] **Semantic search replacing Algolia** — if the RAG infrastructure works well, the same embeddings could power site search
+- [ ] **Multi-language support** — only if i18n is added to the docs site itself
+- [ ] **Custom model routing** — use cheaper models for simple questions, Claude for complex ones; optimize cost at scale
+
+## Feature Prioritization Matrix
+
+| Feature | User Value | Implementation Cost | Priority |
+|---------|------------|---------------------|----------|
+| Floating chat drawer with streaming | HIGH | MEDIUM | P1 |
+| Bedrock Knowledge Base (RAG) | HIGH | HIGH | P1 |
+| Serverless API backend | HIGH | MEDIUM | P1 |
+| Source citations | HIGH | LOW | P1 |
+| Multi-turn conversation | MEDIUM | LOW | P1 |
+| Rate limiting | LOW (user) / HIGH (ops) | MEDIUM | P1 |
+| GitHub Pages workflow | MEDIUM | LOW | P1 |
+| Suggested starter questions | MEDIUM | LOW | P1 |
+| Feedback mechanism | MEDIUM | LOW | P2 |
+| Context-aware page suggestions | MEDIUM | MEDIUM | P2 |
+| Dark mode chat panel | MEDIUM | LOW | P2 |
+| API-aware responses | HIGH | HIGH | P3 |
+| Usage analytics | LOW | MEDIUM | P3 |
+
+**Priority key:**
+- P1: Must have for v1.1 launch
+- P2: Should have, add in v1.1.x iteration
+- P3: Nice to have, future consideration
+
+## Competitor Feature Analysis
+
+| Feature | ReadMe Owlbot | Mintlify AI | GitBook AI | Our Approach |
+|---------|---------------|-------------|------------|--------------|
+| Chat UI | Floating drawer, bottom-right | Inline search + chat hybrid | Floating panel | Floating drawer, bottom-right (matches ReadMe pattern users already know) |
+| Streaming | Yes | Yes | Yes | Yes, via Bedrock response streaming |
+| Citations | Yes (page title + URL) | Yes (inline links) | Yes (page references) | Yes, via Bedrock Knowledge Base citations |
+| Multi-turn | Limited (session-based) | Yes | Yes | Yes, via Bedrock sessionId |
+| Grounding | Own docs only | Own docs only | Own docs only | Own docs only (Bedrock Knowledge Base) |
+| Suggested questions | No (from docs) | Yes | No | Yes, hardcoded starter set |
+| Feedback | Not documented | Yes (thumbs) | Yes (thumbs) | Yes, P2 priority |
+| Cost model | Included in SaaS fee | Included in SaaS fee | Included in SaaS fee | Pay-per-query (Bedrock pricing). Roughly $0.003-0.01 per query depending on model and retrieval. |
+| Self-hosted | No | No | No | Yes — runs on your AWS account, full control |
+
+## Complexity Assessment Summary
+
+| Feature Area | Estimated Effort | Risk Level | Notes |
+|--------------|-----------------|------------|-------|
+| Content preparation for Knowledge Base | 2-3 days | MEDIUM | Must strip MDX to plain text. ~400+ pages. Script development + validation. |
+| Bedrock Knowledge Base setup | 1-2 days | MEDIUM | First-time Bedrock setup, model access approval, IAM roles. Straightforward but unfamiliar territory. |
+| Serverless API (Gateway + Lambda) | 2-3 days | LOW | Well-documented AWS pattern. Node.js Lambda calling Bedrock. |
+| Chat UI component | 3-5 days | MEDIUM | Custom React component integrated into Docusaurus layout. Streaming, markdown rendering, responsive design, dark mode. |
+| GitHub Pages workflow | 0.5-1 day | LOW | Standard Docusaurus deployment pattern. Main complexity is baseUrl handling. |
+| Integration testing | 2-3 days | HIGH | End-to-end flow: user types question -> API Gateway -> Lambda -> Bedrock -> Knowledge Base -> response streamed back. Many failure points. |
+
+**Total estimated effort: 10-17 days** for a single developer, including integration testing and iteration.
 
 ## Sources
 
-- Project export analysis: 298 markdown files, 6 OpenAPI JSON specs, 377 total files in export
-- ReadMe.com export structure: `_order.yaml` for sidebar ordering, frontmatter with `hidden`/`deprecated`/`excerpt` fields
-- Proprietary components found: `HTMLBlock` (37+ files), `<Recipe>` (7 files), inline HTML/CSS (132+ occurrences in 20+ docs)
-- Docusaurus documentation (training data, HIGH confidence for core features)
-- `docusaurus-openapi-docs` plugin capabilities (training data, HIGH confidence)
-- Migration guide prepared by Manus AI (2026-03-18) in project root
+- ReadMe Owlbot documentation (docs.readme.com/main/docs/owlbot-ai) — MEDIUM confidence (legacy API, may have evolved)
+- AWS Bedrock Knowledge Bases documentation (docs.aws.amazon.com) — HIGH confidence for architecture patterns
+- AWS Bedrock Agents documentation (docs.aws.amazon.com) — HIGH confidence
+- AWS Bedrock model access documentation — HIGH confidence for setup process
+- Docusaurus GitHub Pages deployment guide (docusaurus.io/docs/deployment) — HIGH confidence
+- Existing project docusaurus.config.ts and deploy.yml — direct codebase analysis
+- npm ecosystem search for Docusaurus AI plugins — confirmed no mature plugins exist; custom build required
+- Training data knowledge of Mintlify AI, GitBook AI patterns — LOW confidence (may have changed)
+
+---
+*Feature research for: AI Documentation Assistant + GitHub Pages Preview (v1.1)*
+*Researched: 2026-03-21*
