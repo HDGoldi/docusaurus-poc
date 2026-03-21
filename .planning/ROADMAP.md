@@ -67,8 +67,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md -- CloudFormation template (S3, CloudFront, OAC, ACM, Route 53, IAM OIDC) and CloudFront Function for SPA routing
-- [ ] 03-02-PLAN.md -- GitHub Actions CI/CD pipeline (build, preview deploy, production deploy), Lighthouse CI, smoke test, human review
+- [x] 03-01-PLAN.md -- CloudFormation template (S3, CloudFront, OAC, ACM, Route 53, IAM OIDC) and CloudFront Function for SPA routing
+- [x] 03-02-PLAN.md -- GitHub Actions CI/CD pipeline (build, preview deploy, production deploy), Lighthouse CI, smoke test, human review
 
 ## Progress
 

@@ -55,8 +55,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **INFRA-03**: SSL certificate via ACM in us-east-1 for help.1nce.com
 - [ ] **INFRA-04**: Route 53 DNS alias records pointing to CloudFront
 - [ ] **INFRA-05**: CloudFront Function for SPA routing (index.html rewrite on sub-directory requests)
-- [ ] **INFRA-06**: GitHub Actions CI/CD pipeline with OIDC auth to AWS
-- [ ] **INFRA-07**: Automated build + S3 sync + CloudFront cache invalidation on merge to main
+- [x] **INFRA-06**: GitHub Actions CI/CD pipeline with OIDC auth to AWS
+- [x] **INFRA-07**: Automated build + S3 sync + CloudFront cache invalidation on merge to main
 
 ## v2 Requirements
 
@@ -123,8 +123,8 @@ Deferred to future release. Tracked but not in current roadmap.
 | INFRA-03 | Phase 3 | Pending |
 | INFRA-04 | Phase 3 | Pending |
 | INFRA-05 | Phase 3 | Pending |
-| INFRA-06 | Phase 3 | Pending |
-| INFRA-07 | Phase 3 | Pending |
+| INFRA-06 | Phase 3 | Complete |
+| INFRA-07 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 33 total
