@@ -181,8 +181,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           position: 'left',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'apiSidebar',
+          type: 'doc',
+          docId: 'index',
           label: 'API Explorer',
           position: 'left',
           docsPluginId: 'api',

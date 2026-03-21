@@ -12,6 +12,8 @@ To download the latest OpenAPI files for the 1NCE API please visit: [https://hel
 
 :::warning 'Try It' Feature
 Please note that the 'Try It' function can be used only with a valid 1NCE customer account. All queries are made towards the customer account. Be careful with trying out features like orders, top ups, etc. as these API calls will trigger the actual process.
+
+**Known limitation:** The 1NCE API (`api.1nce.com`) does not include CORS headers in its responses, so the interactive Try It panel will return CORS errors when called from the browser. To test API calls, copy the generated curl command or code snippet and execute it locally.
 :::
 
 Welcome to the 1NCE API documentation. This documentation covers the ins and outs of the API for managing, controlling, and monitoring the 1NCE SIM cards and the related services. This guide is divided into chapters, which group individual, logical topics together.
