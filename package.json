@@ -26,7 +26,8 @@
     "convert:mdx-compat": "tsx scripts/11-fix-mdx-compat.ts",
     "convert:readme-components": "tsx scripts/12-fix-readme-components.ts",
     "convert:pipeline": "tsx scripts/run-pipeline.ts",
-    "convert:reorganize": "tsx scripts/11-reorganize-content.ts"
+    "convert:reorganize": "tsx scripts/11-reorganize-content.ts",
+    "convert:redirects": "tsx scripts/12-generate-redirect-map.ts"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",
