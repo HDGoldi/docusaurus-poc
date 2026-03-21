@@ -35,7 +35,7 @@ Plans:
 - [x] 01-02-PLAN.md -- Image pipeline: extract base64, download remote images, convert Image JSX to Markdown
 - [x] 01-03-PLAN.md -- Content conversion: HTMLBlocks, tables, doc links, admonitions
 - [x] 01-04-PLAN.md -- Pipeline orchestrator, sidebar generation, build validation, human verification
-- [ ] 01-05-PLAN.md -- Gap closure: wire scripts 11-12 into pipeline orchestrator, validate full re-runnable build
+- [x] 01-05-PLAN.md -- Gap closure: wire scripts 11-12 into pipeline orchestrator, validate full re-runnable build
 
 ### Phase 2: Site Assembly
 **Goal**: The complete site experience -- navigation, interactive API docs, 1NCE branding, and analytics -- is functional in local dev
