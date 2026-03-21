@@ -36,17 +36,17 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Theming & Branding
 
-- [ ] **THEME-01**: 1NCE color scheme applied via CSS custom properties (`--1nce-dark-blue: #194a7d`, `--1nce-light-blue: #29abe2`, `--1nce-text-color: #4a4a4a`)
-- [ ] **THEME-02**: Barlow font family loaded (medium for headings, regular for body text)
-- [ ] **THEME-03**: Dark mode support with brand-consistent colors
-- [ ] **THEME-04**: 1NCE logo in header matching current site sizing
-- [ ] **THEME-05**: Custom footer with copyright, FAQ, Imprint, Terms & Conditions, Privacy Policy links
+- [x] **THEME-01**: 1NCE color scheme applied via CSS custom properties (`--1nce-dark-blue: #194a7d`, `--1nce-light-blue: #29abe2`, `--1nce-text-color: #4a4a4a`)
+- [x] **THEME-02**: Barlow font family loaded (medium for headings, regular for body text)
+- [x] **THEME-03**: Dark mode support with brand-consistent colors
+- [x] **THEME-04**: 1NCE logo in header matching current site sizing
+- [x] **THEME-05**: Custom footer with copyright, FAQ, Imprint, Terms & Conditions, Privacy Policy links
 
 ### Analytics
 
-- [ ] **ANLYT-01**: Google Tag Manager integrated (`GTM-NS9K9DT`)
-- [ ] **ANLYT-02**: SimpleAnalytics script included
-- [ ] **ANLYT-03**: PostHog tracking integrated (EU instance, `eu.i.posthog.com`)
+- [x] **ANLYT-01**: Google Tag Manager integrated (`GTM-NS9K9DT`)
+- [x] **ANLYT-02**: SimpleAnalytics script included
+- [x] **ANLYT-03**: PostHog tracking integrated (EU instance, `eu.i.posthog.com`)
 
 ### Infrastructure & Deployment
 
@@ -110,14 +110,14 @@ Deferred to future release. Tracked but not in current roadmap.
 | API-02 | Phase 2 | Pending |
 | API-03 | Phase 2 | Pending |
 | API-04 | Phase 2 | Pending |
-| THEME-01 | Phase 2 | Pending |
-| THEME-02 | Phase 2 | Pending |
-| THEME-03 | Phase 2 | Pending |
-| THEME-04 | Phase 2 | Pending |
-| THEME-05 | Phase 2 | Pending |
-| ANLYT-01 | Phase 2 | Pending |
-| ANLYT-02 | Phase 2 | Pending |
-| ANLYT-03 | Phase 2 | Pending |
+| THEME-01 | Phase 2 | Complete |
+| THEME-02 | Phase 2 | Complete |
+| THEME-03 | Phase 2 | Complete |
+| THEME-04 | Phase 2 | Complete |
+| THEME-05 | Phase 2 | Complete |
+| ANLYT-01 | Phase 2 | Complete |
+| ANLYT-02 | Phase 2 | Complete |
+| ANLYT-03 | Phase 2 | Complete |
 | INFRA-01 | Phase 3 | Complete |
 | INFRA-02 | Phase 3 | Complete |
 | INFRA-03 | Phase 3 | Complete |
