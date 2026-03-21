@@ -13,7 +13,7 @@ This migration moves the 1NCE Developer Hub from ReadMe.com to a self-hosted Doc
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Content Conversion** - Scaffold Docusaurus project and convert all 298 ReadMe pages to valid MDX that builds without errors
-- [ ] **Phase 2: Site Assembly** - Navigation, API Explorer, theming, and analytics -- everything that makes the site complete and branded
+- [x] **Phase 2: Site Assembly** - Navigation, API Explorer, theming, and analytics -- everything that makes the site complete and branded
 - [ ] **Phase 3: Infrastructure and Deployment** - AWS hosting, CI/CD pipeline, SSL, DNS, and production go-live
 
 ## Phase Details
@@ -54,7 +54,7 @@ Plans:
 - [x] 02-02-PLAN.md -- 1NCE brand theme (colors, Barlow font, logo, footer, dark mode) and analytics injection (GTM, SimpleAnalytics, PostHog)
 - [x] 02-03-PLAN.md -- OpenAPI plugin integration with 6 specs, API Explorer with Try It panels
 - [x] 02-04-PLAN.md -- Redirect map generation, full build verification, human sign-off
-- [ ] 02-05-PLAN.md -- Gap closure: fix API Explorer navbar landing page, sidebar ordering, document CORS limitation
+- [x] 02-05-PLAN.md -- Gap closure: fix API Explorer navbar landing page, sidebar ordering, document CORS limitation
 
 ### Phase 3: Infrastructure and Deployment
 **Goal**: The site is live at help.1nce.com with automated deployments on merge to main
@@ -79,5 +79,5 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Content Conversion | 5/5 | Complete | 2026-03-21 |
-| 2. Site Assembly | 4/5 | In Progress|  |
+| 2. Site Assembly | 5/5 | Complete | 2026-03-21 |
 | 3. Infrastructure and Deployment | 2/2 | Complete | 2026-03-21 |
