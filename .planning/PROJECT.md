@@ -27,12 +27,23 @@ Developers can browse all existing documentation and interactively test API endp
 
 ### Active
 
-(None — next milestone requirements TBD)
+- [ ] AI Assistant replicating ReadMe.com "Ask AI" — RAG-style chat grounded in documentation content
+- [ ] AWS Bedrock backend (Claude/Anthropic model) for AI chat processing
+- [ ] GitHub Pages deployment for test/preview (alongside existing AWS infra)
+
+## Current Milestone: v1.1 AI Assistant + GitHub Pages Preview
+
+**Goal:** Add an AI-powered documentation assistant using AWS Bedrock (Claude) and enable GitHub Pages as a lightweight test/preview deployment.
+
+**Target features:**
+- AI Assistant chat UI replicating ReadMe.com "Ask AI" experience
+- Serverless backend calling AWS Bedrock with Anthropic Claude model
+- GitHub Pages deployment for easy testing and sharing
 
 ### Out of Scope
 
 - Algolia DocSearch / search integration — deferred, requires approval process
-- AI Assistant (Ask AI replacement) — deferred, not core to migration
+- ~~AI Assistant (Ask AI replacement)~~ — moved to Active for v1.1
 - Doc versioning (version dropdown) — single version sufficient for now
 - Mobile app or native integrations
 - Content rewriting or restructuring — migrated as-is
@@ -91,4 +102,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-21 after v1.0 milestone completion*
+*Last updated: 2026-03-21 after v1.1 milestone start*
