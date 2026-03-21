@@ -1,0 +1,1 @@
+{"parameters":[{"description":"Unique Id of the Optimizer Template for which the update should be applied.","explode":false,"in":"path","name":"templateId","required":true,"schema":{"example":"<template_id>","type":"string"},"style":"simple"}]}

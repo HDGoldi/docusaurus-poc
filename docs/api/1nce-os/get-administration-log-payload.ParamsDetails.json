@@ -1,0 +1,1 @@
+{"parameters":[{"description":"Unique Id of the administration log for which the payload should be queried.","explode":false,"in":"path","name":"adminLogId","required":true,"schema":{"example":"<admin_log_id>","type":"string"},"style":"simple"}]}

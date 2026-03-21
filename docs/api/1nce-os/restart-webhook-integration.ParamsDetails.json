@@ -1,0 +1,1 @@
+{"parameters":[{"description":"unique integration ID","explode":false,"in":"path","name":"integrationId","required":true,"schema":{"type":"string"},"style":"simple"}]}

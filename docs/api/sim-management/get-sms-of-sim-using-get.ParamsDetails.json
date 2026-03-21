@@ -1,0 +1,1 @@
+{"parameters":[{"name":"iccid","in":"path","description":"The ICCID of the SIM to be queried.","required":true,"schema":{"type":"string"},"example":8988280666000000000},{"name":"id","in":"path","description":"The ID of the SMS message to be queried.","required":true,"schema":{"type":"number"},"example":123}]}

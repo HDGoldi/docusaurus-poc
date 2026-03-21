@@ -1,0 +1,1 @@
+{"parameters":[{"name":"iccid","in":"path","description":"The ICCID of the SIM to be changed.","required":true,"schema":{"type":"string"},"example":8988280666000000000}]}

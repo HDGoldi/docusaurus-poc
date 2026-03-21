@@ -1,0 +1,69 @@
+---
+id: reset-connectivity-using-post
+title: "Create Connectivity Reset"
+description: "Trigger a connectivity reset for a given SIM. The actual reset will be done asynchronously. A positive-response only means that the connectivity-reset has been successfully placed into the queue."
+sidebar_label: "Create Connectivity Reset"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVU1v20YQ/SuDOSUALVlqYLg8xVWaVgfHRmyfBB1Gy5G4CDlL7y4VqwT/ezAkpUiVAvRcXUTuzueb94YNRtoETBc4cyJsot3auMNlghkH420VrRNM8dnbzYY9EJgjO/AcOMLa6cXGblngaX4/guecgUysqRgsvtuigBVD5oSBwk5M7p24OhS7EdxB5YKNdstXnkPlJDA4KXZQMkmAmFOEmPNJ5qs+bk4BVswCoTaGQ1jXRbGDqiDDGViJrnN8rbnmESboKvakHc0zTLELcdz2S7CyeXx4esYEK/JUcmSv4DQoVDKmaI2xGSZoFZOKYo5nQOUM89ls/gncukv+NL+H6LT5Lp+W4fm1tp4zTKOvOcFgci4J0wbjrtI0IXorG2wT5Dcqq4Ixvf399nZ6e31zc3O9/7VLDdUDFtR7ej3Rv9OCZp4pshZtnESWiGnTtgl+uGT8IlTH3Hn7z0WP3849Pju/slnGcsH8w7n5Fxfhs6vlQvTp9Nxc0Vy7onDfrWwUygDkGfitUvyAJANDIi4qvqXL7NpyBltLcPc4H8GDsojfIkuwTnrfin1p4zkirU6y8mw6tNI1FUFHw6b2qgglwR9Mnv1dHXOWaA31RS6WOoiSY+6UVZULseNPzDHF8XYyDrYM46ajTjvuSIAa2G/35Kp9gSnmMVYhHY+psqOJGB4ZV45LEtpwyRKvqLKomfYlPSlr+sFfLuxAJ42MA830fdWZn1G3jwKnYeDZfWOBOnCmNN6QFaBOazCoa/Jl9mcP92PBFJTna/b724eKpQuppOojvhs7Zdk4auT3oGrg0G8Rt4pkRWdNMJTT5R+hzsfK2nVt2aiSQJXW/QGgs34+OVPrRZ91kOO+2i7daYDRwAgyyoi95DuHv8rV35j8a1D7IWGCXJLVK63w4+G8TVBn3FeznY6u9UT5UZIcZegVCsebCL4ONDnpqPlJ2P/JQh4IGvktjquCrChCHcrNoKAFbifKXVsGTDDdL+BeRssEc5VbusCmWVHgF1+0rR6/1uxVtMsEt+QtrZQwiwYzG/T5p8B/CfC7r8OWfg//Zadf7GQ4JNmh1lHU+oYJfuPd4WPSLtuj7TF8fVQfRwI+CHZ40E4uxm6a3qITTdseUnVS01Rt+wMNx7ue
+sidebar_class_name: "post api-method"
+info_path: api/sim-management/sim-management
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Connectivity Reset"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/sims/{iccid}/reset"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Trigger a connectivity reset for a given SIM. The actual reset will be done asynchronously. A positive-response only means that the connectivity-reset has been successfully placed into the queue.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./reset-connectivity-using-post.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./reset-connectivity-using-post.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./reset-connectivity-using-post.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

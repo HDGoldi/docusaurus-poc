@@ -1,0 +1,69 @@
+---
+id: get-historian-messages
+title: "Get Historian Messages"
+description: "Get a list of historic messages for devices based on the optional filter parameters."
+sidebar_label: "Get Historian Messages"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: api/1nce-os/1-nce-os
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Historian Messages"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/inspect/devices/history"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a list of historic messages for devices based on the optional filter parameters.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-historian-messages.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-historian-messages.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-historian-messages.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"OK","content":{}},"204":{"description":"No Content","content":{}},"401":{"description":"Unauthorized","content":{}},"403":{"description":"Forbidden","content":{}},"422":{"description":"The following SIMs are expired and cannot be modified via API. Only extensions are permitted","content":{}}}}

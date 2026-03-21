@@ -1,0 +1,1 @@
+{"parameters":[{"description":"Unique Id of the Optimizer Template which should be deleted.","explode":false,"in":"path","name":"templateId","required":true,"schema":{"type":"string"},"style":"simple"}]}

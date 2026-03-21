@@ -1,0 +1,69 @@
+---
+id: cancel-sms-for-sim-using-delete
+title: "Delete SMS"
+description: "Cancel a SMS message that is buffered to be delivered to the device with the SIM card but was not yet delivered."
+sidebar_label: "Delete SMS"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVUtv20gM/isDnlpAtWy3CLI6bddJt0abplgnp8AHakRbg0oz6gzlxCvovy+oh53EWSDby+qiefDxkfzIaYBxGyC5g9XVCtYRZBS0NxUbZyGBBVpNhUK1ulqpkkLALSnOkZUJKq03G/KUKXYqJZVRYXbjnnM52BlN6t5w3u1Xyyul0WcqrVndY1DWsdoTHzUnEIGryKO4X2aQgO4ArMrwyfmVKW+DsduLy6+XN5cQQYUeS2LyEkADFkuCBIzWJoMIjARQIefwPKqbnNRysVheKLc5IOuD+FmTNz0QTz9r4ymDhH1NEQSdU4mQNMD7ShwF9sZuoY2AHrCsCoLk/Lfz8/n59OzsbDp+bXRE9gpYR0yPM/6fsdm6TMk/wTabv2/XohoqZwMFkZ5Pp/J7iuP6C0SgnWWyDEnTthHMpx9O5b45tRiknst/mM5O5W8t1pw7b/6m7AWN96can5xPTZaRPRWfz0/FJYEbVxTu3titFDUo9KTooZJcKbSZ0miFdSmp0mVmYyhTO4Pq4/flRF3bYq/ogckG42yvW5EvDfMJ4FaKV3nSKHfJBosgZSBde8P7jo5/EHryH2vOybLR2IO8W0sRSuLcCb8zKoip4zLnkEC8m8XBlCFuOhq3cejWWQti3e9Grte+gARy5iokcYyVmcyspol2ZVyixS2VZPkdVgbE3YhrJTTpK/8yugN/xDIMvJJ92omfULa3op6aUTfuB1lVh34UbNFYhVpTCONkmH1bXPY5/14QBlKeNuTH2+uKbGdSqNJbfBM74U7MYvmtEvpTYLVxXrmU0VgpOKoBTud/AlIkYzeuC8uw9ABIp18dEnQSz4XTtVz0XodOHNF27p4amAy0QC20GPu8U/izTD9D9KxQY5EgAirRyJUg/P1w3kYgNe7R7OaTqZxULnCJ9pGHi442MiOeh9Acafp/TO+BPkwPHFcFGiv4uxw0A8XvYDcTZpkyQATJOK3DsM3kEcpdYJFsmhQD3fqibeVYBqD01jqCHXqDqZT0roHMBFkf+/BfM/Lmr2FwvlWvewRejGc4RLsHQVLUsoMIftD+8P7I2P91XK97BX4FXAbtun00gA6PqfTXowFwaPhhIXl+0XTT9BJd07XtwVPXquKsbf8BEjDSjw==
+sidebar_class_name: "delete api-method"
+info_path: api/sim-management/sim-management
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete SMS"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/sims/{iccid}/sms/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Cancel a SMS message that is buffered to be delivered to the device with the SIM card but was not yet delivered.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./cancel-sms-for-sim-using-delete.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./cancel-sms-for-sim-using-delete.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./cancel-sms-for-sim-using-delete.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

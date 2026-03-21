@@ -144,6 +144,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       },
     }],
     'docusaurus-plugin-sass',
+    function polyfillNodeModules() {
+      return {
+        name: 'polyfill-node-modules',
+        configureWebpack() {
+          return {
+            resolve: {
+              fallback: {
+                path: require.resolve('path-browserify'),
+              },
+            },
+          };
+        },
+      };
+    },
   ],
 
   themes: ['docusaurus-theme-openapi-docs'],

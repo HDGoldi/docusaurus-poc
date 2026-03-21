@@ -1,0 +1,1 @@
+{"parameters":[{"description":"Key name parameter of the setting to update.","explode":false,"in":"path","name":"name","required":true,"schema":{"example":"LWM2M_PASSIVE_REPORTING","type":"string"},"style":"simple"}]}

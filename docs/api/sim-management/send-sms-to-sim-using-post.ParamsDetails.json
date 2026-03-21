@@ -1,0 +1,1 @@
+{"parameters":[{"name":"iccid","in":"path","description":"The ICCID of the SIM targeted for the MT-SMS.","required":true,"schema":{"type":"string"},"example":8988280666000000000}]}

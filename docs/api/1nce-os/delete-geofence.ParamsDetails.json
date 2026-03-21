@@ -1,0 +1,1 @@
+{"parameters":[{"description":"unique geofence ID","explode":false,"in":"path","name":"geofenceId","required":true,"schema":{"type":"string"},"style":"simple"}]}
