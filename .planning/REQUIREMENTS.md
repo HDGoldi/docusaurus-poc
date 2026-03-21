@@ -29,10 +29,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### API Explorer
 
-- [ ] **API-01**: All 6 OpenAPI JSON specs integrated via `docusaurus-openapi-docs` plugin
-- [ ] **API-02**: Interactive "Try It" panel functional for each API endpoint
-- [ ] **API-03**: Auto-generated code snippets in multiple languages for each endpoint
-- [ ] **API-04**: API documentation organized by spec (Authorization, SIM Management, Order Management, Product Information, Support Management, 1NCE OS)
+- [x] **API-01**: All 6 OpenAPI JSON specs integrated via `docusaurus-openapi-docs` plugin
+- [x] **API-02**: Interactive "Try It" panel functional for each API endpoint
+- [x] **API-03**: Auto-generated code snippets in multiple languages for each endpoint
+- [x] **API-04**: API documentation organized by spec (Authorization, SIM Management, Order Management, Product Information, Support Management, 1NCE OS)
 
 ### Theming & Branding
 
@@ -106,10 +106,10 @@ Deferred to future release. Tracked but not in current roadmap.
 | NAV-02 | Phase 2 | Complete |
 | NAV-03 | Phase 2 | Complete |
 | NAV-04 | Phase 2 | Complete |
-| API-01 | Phase 2 | Pending |
-| API-02 | Phase 2 | Pending |
-| API-03 | Phase 2 | Pending |
-| API-04 | Phase 2 | Pending |
+| API-01 | Phase 2 | Complete |
+| API-02 | Phase 2 | Complete |
+| API-03 | Phase 2 | Complete |
+| API-04 | Phase 2 | Complete |
 | THEME-01 | Phase 2 | Complete |
 | THEME-02 | Phase 2 | Complete |
 | THEME-03 | Phase 2 | Complete |
