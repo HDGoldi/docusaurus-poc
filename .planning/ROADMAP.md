@@ -81,10 +81,10 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. Pushing a documentation change to main triggers content preprocessing, S3 sync, and Bedrock KB re-ingestion automatically
   2. Existing AWS production deploy workflow continues to function without regressions
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 07-01: TBD
+- [ ] 07-01-PLAN.md — RAG sync workflow and CloudFormation resource tagging
 
 ## Progress
 
