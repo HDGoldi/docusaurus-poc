@@ -15,8 +15,8 @@ Requirements for AI Assistant + GitHub Pages Preview milestone. Each maps to roa
 
 ### Content Pipeline
 
-- [ ] **CONTENT-01**: Build-time script strips MDX/JSX from docs to plain Markdown for RAG ingestion
-- [ ] **CONTENT-02**: OpenAPI spec content extracted and prepared for knowledge base indexing
+- [x] **CONTENT-01**: Build-time script strips MDX/JSX from docs to plain Markdown for RAG ingestion
+- [x] **CONTENT-02**: OpenAPI spec content extracted and prepared for knowledge base indexing
 - [ ] **CONTENT-03**: Processed content synced to S3 bucket for Bedrock Knowledge Base
 
 ### Backend Infrastructure
@@ -73,8 +73,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DEPLOY-01 | Phase 4 | Complete |
 | DEPLOY-02 | Phase 4 | Complete |
 | DEPLOY-03 | Phase 4 | Complete |
-| CONTENT-01 | Phase 5 | Pending |
-| CONTENT-02 | Phase 5 | Pending |
+| CONTENT-01 | Phase 5 | Complete |
+| CONTENT-02 | Phase 5 | Complete |
 | CONTENT-03 | Phase 5 | Pending |
 | INFRA-01 | Phase 5 | Pending |
 | INFRA-02 | Phase 5 | Pending |
