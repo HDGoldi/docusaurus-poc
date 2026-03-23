@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: AI Assistant + GitHub Pages Preview
 status: unknown
-stopped_at: Completed 05-01-PLAN.md
-last_updated: "2026-03-23T08:05:40.445Z"
+stopped_at: Completed 05-02-PLAN.md
+last_updated: "2026-03-23T12:08:31.559Z"
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 4
-  completed_plans: 2
+  completed_plans: 3
 ---
 
 # Project State
@@ -24,7 +24,7 @@ See: .planning/PROJECT.md (updated 2026-03-21)
 ## Current Position
 
 Phase: 05 (ai-backend-and-content-pipeline) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 
 ## Performance Metrics
 
@@ -45,6 +45,9 @@ Plan: 2 of 3
 - [Phase 04]: Separate workflow file (gh-pages.yml) keeps GitHub Pages deploy independent of AWS pipeline
 - [Phase 05]: Regex fallback for MDX stripping when remark-mdx parser fails on HTML comments
 - [Phase 05]: Skip docs/api/ directory (126 generated MDX) -- extract API content from specs/*.json directly
+- [Phase 05]: Two-region CloudFormation: eu-central-1 for Bedrock+Lambda, us-east-1 for CloudFront+WAF
+- [Phase 05]: Claude 3 Haiku default model (4.5 not yet available in eu-central-1), configurable via ModelArn parameter
+- [Phase 05]: WAF rate limit: 10 req/60s per IP using EvaluateWindowSec for precise 1-minute windows
 
 ### Pending Todos
 
@@ -57,6 +60,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-23T08:05:40.443Z
-Stopped at: Completed 05-01-PLAN.md
+Last session: 2026-03-23T12:08:25.490Z
+Stopped at: Completed 05-02-PLAN.md
 Resume file: None
