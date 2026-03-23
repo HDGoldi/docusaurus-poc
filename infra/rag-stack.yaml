@@ -56,6 +56,11 @@ Resources:
         RestrictPublicBuckets: true
       VersioningConfiguration:
         Status: Enabled
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
   # ---------------------------------------------------------------------------
   # IAM Role for Bedrock Knowledge Base
@@ -91,6 +96,11 @@ Resources:
                   - bedrock:InvokeModel
                 Resource:
                   - "arn:aws:bedrock:eu-central-1::foundation-model/amazon.titan-embed-text-v2:0"
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
   # ---------------------------------------------------------------------------
   # Bedrock Knowledge Base with S3 Vectors (D-06, D-07)
@@ -110,6 +120,11 @@ Resources:
         Type: S3_VECTORS
         S3VectorsConfiguration:
           BucketArn: !GetAtt RagContentBucket.Arn
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
   # ---------------------------------------------------------------------------
   # Bedrock Data Source — S3 with no re-chunking (D-07)
@@ -168,6 +183,11 @@ Resources:
                   - bedrock:InvokeModel
                 Resource:
                   - !Ref ModelArn
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
   # ---------------------------------------------------------------------------
   # Lambda Function — streaming chat handler
@@ -190,6 +210,11 @@ Resources:
         Variables:
           KB_ID: !GetAtt KnowledgeBase.KnowledgeBaseId
           MODEL_ARN: !Ref ModelArn
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
   # ---------------------------------------------------------------------------
   # Lambda Function URL — RESPONSE_STREAM for SSE (D-08)
@@ -291,6 +316,11 @@ Resources:
             - POST
             - DELETE
         HttpVersion: http2and3
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
   # ---------------------------------------------------------------------------
   # WAF WebACL — rate limiting per D-11, D-12
@@ -322,6 +352,11 @@ Resources:
         SampledRequestsEnabled: true
         CloudWatchMetricsEnabled: true
         MetricName: ChatWafWebAcl
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
 # =============================================================================
 # Outputs

@@ -35,6 +35,11 @@ Resources:
         BlockPublicPolicy: true
         IgnorePublicAcls: true
         RestrictPublicBuckets: true
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
   PreviewBucket:
     Type: AWS::S3::Bucket
@@ -50,6 +55,11 @@ Resources:
           - Id: ExpirePreviewObjects
             Status: Enabled
             ExpirationInDays: 30
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
   # ---------------------------------------------------------------------------
   # CloudFront Origin Access Control
@@ -100,6 +110,11 @@ Resources:
       DomainValidationOptions:
         - DomainName: !Ref DomainName
           HostedZoneId: !Ref HostedZoneId
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
   # ---------------------------------------------------------------------------
   # CloudFront Distributions
@@ -142,6 +157,11 @@ Resources:
             ErrorCachingMinTTL: 300
         HttpVersion: http2and3
         IPV6Enabled: true
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
   PreviewDistribution:
     Type: AWS::CloudFront::Distribution
@@ -173,6 +193,11 @@ Resources:
             ResponsePagePath: /404.html
             ErrorCachingMinTTL: 300
         HttpVersion: http2and3
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
   # ---------------------------------------------------------------------------
   # S3 Bucket Policies (separate resources to avoid circular dependencies)
@@ -248,6 +273,11 @@ Resources:
         - sts.amazonaws.com
       ThumbprintList:
         - 6938fd4d98bab03faadb97b34396831e3780aea1
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
   GitHubActionsRole:
     Type: AWS::IAM::Role
@@ -288,6 +318,11 @@ Resources:
                 Resource:
                   - !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/${ProdDistribution}"
                   - !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/${PreviewDistribution}"
+      Tags:
+        - Key: environment
+          Value: dev
+        - Key: component
+          Value: ai
 
 Outputs:
   ProdDistributionId:
