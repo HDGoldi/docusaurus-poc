@@ -52,12 +52,12 @@ Plans:
   3. Lambda Function URL accepts a question and returns an answer with source citations from the knowledge base
   4. Lambda endpoint responds with correct CORS headers for help.1nce.com, GitHub Pages origin, and localhost
   5. Rate limiting prevents more than N requests per minute from a single source
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 05-01: TBD
-- [ ] 05-02: TBD
-- [ ] 05-03: TBD
+- [ ] 05-01-PLAN.md — Content preprocessing script (MDX stripping + OpenAPI extraction)
+- [ ] 05-02-PLAN.md — AWS infrastructure template and Lambda handler (Bedrock KB, CloudFront, WAF)
+- [ ] 05-03-PLAN.md — Deployment scripts (S3 sync + Lambda deploy)
 
 ### Phase 6: Chat UI
 **Goal**: Developers can ask questions about the documentation from any page and receive AI-generated answers with links to source pages
