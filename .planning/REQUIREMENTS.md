@@ -36,8 +36,8 @@ Requirements for AI Assistant + GitHub Pages Preview milestone. Each maps to roa
 
 ### CI/CD Integration
 
-- [ ] **CICD-01**: Knowledge Base content sync integrated into deploy workflow
-- [ ] **CICD-02**: Existing AWS production deploy workflow unchanged
+- [x] **CICD-01**: Knowledge Base content sync integrated into deploy workflow
+- [x] **CICD-02**: Existing AWS production deploy workflow unchanged
 
 ## v2 Requirements
 
@@ -85,8 +85,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CHAT-03 | Phase 6 | Complete |
 | CHAT-04 | Phase 6 | Complete |
 | CHAT-05 | Phase 6 | Complete |
-| CICD-01 | Phase 7 | Pending |
-| CICD-02 | Phase 7 | Pending |
+| CICD-01 | Phase 7 | Complete |
+| CICD-02 | Phase 7 | Complete |
 
 **Coverage:**
 - v1.1 requirements: 17 total

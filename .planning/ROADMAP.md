@@ -25,7 +25,7 @@ See: `.planning/milestones/v1.0-ROADMAP.md` for full details.
 - [ ] **Phase 4: GitHub Pages Deployment** — Environment-aware builds and automated GitHub Pages deploy
 - [ ] **Phase 5: AI Backend and Content Pipeline** — Bedrock KB with S3 Vectors, content preprocessing, and Lambda proxy
 - [x] **Phase 6: Chat UI** — Floating AI assistant widget with streaming responses and citations (completed 2026-03-23)
-- [ ] **Phase 7: CI/CD Integration** — Automated KB sync wired into deploy workflow
+- [x] **Phase 7: CI/CD Integration** — Automated KB sync wired into deploy workflow (completed 2026-03-23)
 
 ## Phase Details
 
@@ -84,7 +84,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 07-01-PLAN.md — RAG sync workflow and CloudFormation resource tagging
+- [x] 07-01-PLAN.md — RAG sync workflow and CloudFormation resource tagging
 
 ## Progress
 
@@ -98,4 +98,4 @@ Plans:
 | 4. GitHub Pages Deployment | v1.1 | 0/1 | Not started | - |
 | 5. AI Backend and Content Pipeline | v1.1 | 2/3 | In Progress|  |
 | 6. Chat UI | v1.1 | 1/1 | Complete   | 2026-03-23 |
-| 7. CI/CD Integration | v1.1 | 0/1 | Not started | - |
+| 7. CI/CD Integration | v1.1 | 1/1 | Complete   | 2026-03-23 |
