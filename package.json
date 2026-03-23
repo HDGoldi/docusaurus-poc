@@ -51,6 +51,8 @@
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
+    "@aws-sdk/client-bedrock-agent": "^3.1014.0",
+    "@aws-sdk/client-s3": "^3.1014.0",
     "@docusaurus/module-type-aliases": "3.9.2",
     "@docusaurus/tsconfig": "3.9.2",
     "@docusaurus/types": "3.9.2",
