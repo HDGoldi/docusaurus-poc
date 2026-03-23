@@ -5,6 +5,7 @@ status: draft
 shadcn_initialized: false
 preset: none
 created: 2026-03-23
+revised: 2026-03-23
 ---
 
 # Phase 6 — UI Design Contract
@@ -33,10 +34,9 @@ Declared values (multiples of 4, aligned with Infima defaults):
 |-------|-------|-------|
 | xs | 4px | Icon-to-text gap in citation links, superscript marker offset |
 | sm | 8px | Chat bubble internal padding (horizontal), gap between suggestion chips |
-| md | 12px | Chat bubble internal padding (vertical), input field padding |
-| lg | 16px | Gap between consecutive messages, drawer body padding |
-| xl | 24px | Drawer header/footer padding, welcome message spacing |
-| 2xl | 32px | Floating button offset from viewport edge (bottom + right) |
+| md | 16px | Chat bubble internal padding (vertical), input field padding, gap between consecutive messages, drawer body padding |
+| lg | 24px | Drawer header/footer padding, welcome message spacing |
+| xl | 32px | Floating button offset from viewport edge (bottom + right) |
 
 Exceptions:
 - Floating button: 48px diameter (touch target, meets 44px minimum)
@@ -47,12 +47,12 @@ Exceptions:
 
 ## Typography
 
-All typography inherits Barlow from the site. Sizes are specific to the chat widget.
+All typography inherits Barlow from the site. Sizes are specific to the chat widget. Two weights only: 400 (regular) for all body text and labels, 600 (semibold) for the drawer title.
 
 | Role | Size | Weight | Line Height | Usage |
 |------|------|--------|-------------|-------|
 | Body | 15px | 400 (regular) | 1.5 | Chat message text, AI response prose |
-| Label | 13px | 500 (medium) | 1.4 | Timestamp, "Sources" heading, "1NCE Docs Assistant" label, suggestion chip text |
+| Label | 13px | 400 (regular) | 1.4 | Timestamp, "Sources" heading, "1NCE Docs Assistant" label, suggestion chip text |
 | Input | 15px | 400 (regular) | 1.5 | Chat input field text |
 | Drawer Title | 16px | 600 (semibold) | 1.3 | Drawer header: "1NCE Docs Assistant" |
 
@@ -125,7 +125,7 @@ Accent reserved for: user message bubble background, citation superscript link n
 - Background: `var(--ifm-color-primary)` (#29abe2)
 - Text color: `#ffffff`
 - Border-radius: 16px 16px 4px 16px (tail bottom-right)
-- Padding: 12px 16px
+- Padding: 16px 16px
 - Max-width: 85% of message area
 - Margin-bottom: 16px
 - Font: 15px/1.5 regular
@@ -135,7 +135,7 @@ Accent reserved for: user message bubble background, citation superscript link n
 - Background: light `#f5f6f7` / dark `#2a2a2d`
 - Text color: `var(--ifm-font-color-base)`
 - Border-radius: 16px 16px 16px 4px (tail bottom-left)
-- Padding: 12px 16px
+- Padding: 16px 16px
 - Max-width: 85% of message area
 - Margin-bottom: 16px
 - Font: 15px/1.5 regular
@@ -145,7 +145,7 @@ Accent reserved for: user message bubble background, citation superscript link n
 ### CitationList (Sources Section)
 - Position: below AI bubble content, inside the same bubble
 - Separator: `1px solid var(--ifm-toc-border-color)`, 8px margin top/bottom
-- Heading: "Sources" at 13px/500
+- Heading: "Sources" at 13px/400
 - Each source: page title as link, 13px/400
 - Link color: `var(--ifm-color-primary)`
 - Link hover: underline
@@ -156,7 +156,7 @@ Accent reserved for: user message bubble background, citation superscript link n
 - Shown: only when message list is empty (welcome state)
 - Each chip: pill shape, border `1px solid var(--ifm-color-primary)`, border-radius 20px
 - Chip padding: 8px 16px
-- Chip text: 13px/500, color `var(--ifm-color-primary)`
+- Chip text: 13px/400, color `var(--ifm-color-primary)`
 - Chip hover: background `var(--ifm-color-primary)`, text `#ffffff`
 - Transition: `all 150ms ease`
 
@@ -166,10 +166,10 @@ Accent reserved for: user message bubble background, citation superscript link n
 - Border-top: `1px solid var(--ifm-toc-border-color)`
 - Padding: 16px 24px
 - Input field: full width minus button, 15px font, border-radius 24px, border `1px solid var(--ifm-toc-border-color)`
-- Input padding: 12px 48px 12px 16px (right padding for button)
+- Input padding: 16px 48px 16px 16px (right padding for button)
 - Placeholder: "Ask a question..." at `var(--ifm-font-color-secondary, #999)`
 - Submit: Enter key (single line input, no multiline)
-- Send button: icon only (arrow-up), 32px circle, positioned inside input right edge
+- Send button: icon only (arrow-up), 32px circle, positioned inside input right edge, `aria-label="Send message"`
 - Send button enabled: `var(--ifm-color-primary)` background, white icon
 - Send button disabled (empty input): `#ccc` background (light) / `#555` background (dark)
 - During streaming: send button becomes Stop button (square icon), `var(--ifm-color-primary)` background
@@ -206,6 +206,7 @@ Accent reserved for: user message bubble background, citation superscript link n
 | Error: rate limited | Too many requests. Please wait a moment before asking again. |
 | Error: backend unavailable | The assistant is temporarily unavailable. Try again later. |
 | Error: generic | Something went wrong. Please try again. |
+| Send button aria-label | Send message |
 | Stop button aria-label | Stop generating |
 | Close button aria-label | Close chat |
 
@@ -260,7 +261,7 @@ No destructive actions in this phase.
 |---------|---------------|
 | Keyboard navigation | Escape closes drawer; Tab cycles through interactive elements in drawer; focus trapped when drawer open |
 | Focus management | On drawer open: focus moves to input field. On drawer close: focus returns to floating button. |
-| Screen reader | Drawer has `role="dialog"`, `aria-label="Chat with 1NCE Docs Assistant"`. Floating button has `aria-label="Open AI chat assistant"`. |
+| Screen reader | Drawer has `role="dialog"`, `aria-label="Chat with 1NCE Docs Assistant"`. Floating button has `aria-label="Open AI chat assistant"`. Send button has `aria-label="Send message"`. Stop button has `aria-label="Stop generating"`. Close button has `aria-label="Close chat"`. |
 | Live region | AI message area has `aria-live="polite"` for streaming content updates |
 | Reduced motion | `@media (prefers-reduced-motion: reduce)`: disable slide animation (instant show/hide), disable bouncing dots (static dots), disable blinking cursor (static cursor) |
 | Color contrast | User bubble: white on #29abe2 = 3.1:1 (AA Large). AI bubble text: #4a4a4a on #f5f6f7 = 5.4:1 (AA). Error text: #e3342f meets AA on both backgrounds. |
