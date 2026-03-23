@@ -69,10 +69,10 @@ Plans:
   3. Each response includes clickable citation links that navigate to the relevant documentation page
   4. Empty chat state shows suggested starter questions that users can click to ask
   5. Chat widget appearance matches both light and dark mode themes
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 06-01: TBD
+- [ ] 06-01-PLAN.md — Chat widget foundation: types, SSE streaming hook, all components, CSS module, Root.tsx wrapper, visual verification
 
 ### Phase 7: CI/CD Integration
 **Goal**: Documentation updates automatically flow through to the AI knowledge base without manual intervention
