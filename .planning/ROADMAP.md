@@ -57,7 +57,7 @@ Plans:
 Plans:
 - [x] 05-01-PLAN.md — Content preprocessing script (MDX stripping + OpenAPI extraction)
 - [x] 05-02-PLAN.md — AWS infrastructure template and Lambda handler (Bedrock KB, CloudFront, WAF)
-- [ ] 05-03-PLAN.md — Deployment scripts (S3 sync + Lambda deploy)
+- [x] 05-03-PLAN.md — Deployment scripts (S3 sync + Lambda deploy)
 
 ### Phase 6: Chat UI
 **Goal**: Developers can ask questions about the documentation from any page and receive AI-generated answers with links to source pages
