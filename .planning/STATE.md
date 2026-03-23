@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: AI Assistant + GitHub Pages Preview
-status: Milestone complete
+status: "Milestone v1.1 shipped — PR #5"
 stopped_at: Completed 07-01-PLAN.md
-last_updated: "2026-03-23T17:44:55.462Z"
+last_updated: "2026-03-23T17:57:47.082Z"
 progress:
   total_phases: 4
   completed_phases: 4
