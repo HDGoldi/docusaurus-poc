@@ -30,6 +30,8 @@ Developers can browse all existing documentation and interactively test API endp
 - [ ] AI Assistant replicating ReadMe.com "Ask AI" — RAG-style chat grounded in documentation content
 - [ ] AWS Bedrock backend (Claude/Anthropic model) for AI chat processing
 - [ ] GitHub Pages deployment for test/preview (alongside existing AWS infra)
+- ✓ Automated RAG content sync — GitHub Actions workflow triggers KB re-ingestion on doc changes — v1.1 Phase 7
+- ✓ CloudFormation resource tagging (environment:dev, component:ai) across all infra templates — v1.1 Phase 7
 
 ## Current Milestone: v1.1 AI Assistant + GitHub Pages Preview
 
@@ -102,4 +104,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-21 after v1.1 milestone start*
+*Last updated: 2026-03-23 after Phase 7 completion*

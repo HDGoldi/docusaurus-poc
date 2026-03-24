@@ -1,0 +1,331 @@
+/* Floating button */
+.chatButton {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  border: none;
+  cursor: pointer;
+  z-index: calc(var(--ifm-z-index-fixed) - 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 150ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chatButton:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+/* Drawer */
+.drawer {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 400px;
+  z-index: calc(var(--ifm-z-index-overlay) + 1);
+  background: var(--ifm-background-color);
+  border-left: 1px solid var(--ifm-toc-border-color);
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 200ms ease-out;
+}
+.drawerOpen {
+  transform: translateX(0);
+}
+.drawerClosing {
+  transform: translateX(100%);
+  transition-duration: 150ms;
+  transition-timing-function: ease-in;
+}
+
+/* Drawer header */
+.drawerHeader {
+  height: 56px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  flex-shrink: 0;
+}
+.drawerTitle {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ifm-font-color-base);
+  margin: 0;
+}
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--ifm-font-color-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.closeButton:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* Message area */
+.messageArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Message bubbles */
+.message {
+  max-width: 85%;
+  margin-bottom: 16px;
+  padding: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+.userMessage {
+  align-self: flex-end;
+  margin-left: auto;
+  background: var(--ifm-color-primary);
+  color: #ffffff;
+  border-radius: 16px 16px 4px 16px;
+}
+.aiMessage {
+  align-self: flex-start;
+  margin-right: auto;
+  background: var(--ifm-background-surface-color, #f5f6f7);
+  color: var(--ifm-font-color-base);
+  border-radius: 16px 16px 16px 4px;
+}
+[data-theme='dark'] .aiMessage {
+  background: #2a2a2d;
+}
+.errorMessage {
+  align-self: flex-start;
+  margin-right: auto;
+  background: none;
+  padding: 8px 16px;
+  color: #e3342f;
+  font-size: 13px;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Streaming cursor */
+.streamingCursor {
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Loading dots */
+.loadingDots {
+  display: flex;
+  gap: 4px;
+  padding: 16px;
+  align-self: flex-start;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ifm-font-color-secondary, #999);
+  animation: bounce 600ms infinite;
+}
+.dot:nth-child(2) {
+  animation-delay: 150ms;
+}
+.dot:nth-child(3) {
+  animation-delay: 300ms;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Citations */
+.citationSeparator {
+  border-top: 1px solid var(--ifm-toc-border-color);
+  margin: 8px 0;
+}
+.citationHeading {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ifm-font-color-base);
+  margin: 0 0 4px;
+}
+.citationLink {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  display: block;
+}
+.citationLink:hover {
+  text-decoration: underline;
+}
+.superscript {
+  font-size: 11px;
+  color: var(--ifm-color-primary);
+  cursor: pointer;
+  vertical-align: super;
+  text-decoration: none;
+}
+
+/* Suggestion chips */
+.chipsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.chip {
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 20px;
+  padding: 8px 16px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ifm-color-primary);
+  transition: all 150ms ease;
+  font-family: inherit;
+}
+.chip:hover {
+  background: var(--ifm-color-primary);
+  color: #ffffff;
+}
+
+/* Welcome */
+.welcomeMessage {
+  font-size: 13px;
+  color: var(--ifm-font-color-base);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+/* Input area */
+.inputArea {
+  padding: 16px 24px;
+  border-top: 1px solid var(--ifm-toc-border-color);
+  background: var(--ifm-background-surface-color, #f5f6f7);
+  flex-shrink: 0;
+}
+[data-theme='dark'] .inputArea {
+  background: #2a2a2d;
+}
+.inputWrapper {
+  position: relative;
+}
+.input {
+  width: 100%;
+  padding: 16px 48px 16px 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 24px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-family: inherit;
+  outline: none;
+}
+.input::placeholder {
+  color: var(--ifm-font-color-secondary, #999);
+}
+.sendButton {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ifm-color-primary);
+  transition: background-color 150ms ease;
+}
+.sendButtonDisabled {
+  background: #ccc;
+  cursor: default;
+}
+[data-theme='dark'] .sendButtonDisabled {
+  background: #555;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .drawer {
+    width: 100vw;
+    border-left: none;
+    box-shadow: none;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .drawer {
+    transition-duration: 0ms;
+  }
+  .streamingCursor {
+    animation: none;
+  }
+  .dot {
+    animation: none;
+  }
+}
+
+/* Markdown content inside AI messages */
+.aiMessage p {
+  margin: 0 0 8px;
+}
+.aiMessage p:last-child {
+  margin-bottom: 0;
+}
+.aiMessage ul,
+.aiMessage ol {
+  margin: 0 0 8px;
+  padding-left: 20px;
+}
+.aiMessage code {
+  font-size: 13px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.06);
+}
+[data-theme='dark'] .aiMessage code {
+  background: rgba(255, 255, 255, 0.1);
+}
+.aiMessage pre {
+  margin: 0 0 8px;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+}

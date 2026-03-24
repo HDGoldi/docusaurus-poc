@@ -15,29 +15,29 @@ Requirements for AI Assistant + GitHub Pages Preview milestone. Each maps to roa
 
 ### Content Pipeline
 
-- [ ] **CONTENT-01**: Build-time script strips MDX/JSX from docs to plain Markdown for RAG ingestion
-- [ ] **CONTENT-02**: OpenAPI spec content extracted and prepared for knowledge base indexing
+- [x] **CONTENT-01**: Build-time script strips MDX/JSX from docs to plain Markdown for RAG ingestion
+- [x] **CONTENT-02**: OpenAPI spec content extracted and prepared for knowledge base indexing
 - [ ] **CONTENT-03**: Processed content synced to S3 bucket for Bedrock Knowledge Base
 
 ### Backend Infrastructure
 
-- [ ] **INFRA-01**: AWS Bedrock Knowledge Base configured with S3 Vectors as the vector store
-- [ ] **INFRA-02**: Lambda Function URL proxies chat requests to Bedrock RetrieveAndGenerate API
-- [ ] **INFRA-03**: CORS configured for deployed origins (GitHub Pages + help.1nce.com)
-- [ ] **INFRA-04**: Rate limiting prevents abuse of the AI chat endpoint
+- [x] **INFRA-01**: AWS Bedrock Knowledge Base configured with S3 Vectors as the vector store
+- [x] **INFRA-02**: Lambda Function URL proxies chat requests to Bedrock RetrieveAndGenerate API
+- [x] **INFRA-03**: CORS configured for deployed origins (GitHub Pages + help.1nce.com)
+- [x] **INFRA-04**: Rate limiting prevents abuse of the AI chat endpoint
 
 ### Chat UI
 
-- [ ] **CHAT-01**: Floating chat drawer UI accessible from all pages via global widget
-- [ ] **CHAT-02**: Streaming responses render tokens as they arrive
-- [ ] **CHAT-03**: Source citations displayed as clickable links to relevant documentation pages
-- [ ] **CHAT-04**: Suggested questions shown to help users get started
-- [ ] **CHAT-05**: Dark mode support matching existing site theme
+- [x] **CHAT-01**: Floating chat drawer UI accessible from all pages via global widget
+- [x] **CHAT-02**: Streaming responses render tokens as they arrive
+- [x] **CHAT-03**: Source citations displayed as clickable links to relevant documentation pages
+- [x] **CHAT-04**: Suggested questions shown to help users get started
+- [x] **CHAT-05**: Dark mode support matching existing site theme
 
 ### CI/CD Integration
 
-- [ ] **CICD-01**: Knowledge Base content sync integrated into deploy workflow
-- [ ] **CICD-02**: Existing AWS production deploy workflow unchanged
+- [x] **CICD-01**: Knowledge Base content sync integrated into deploy workflow
+- [x] **CICD-02**: Existing AWS production deploy workflow unchanged
 
 ## v2 Requirements
 
@@ -73,20 +73,20 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DEPLOY-01 | Phase 4 | Complete |
 | DEPLOY-02 | Phase 4 | Complete |
 | DEPLOY-03 | Phase 4 | Complete |
-| CONTENT-01 | Phase 5 | Pending |
-| CONTENT-02 | Phase 5 | Pending |
+| CONTENT-01 | Phase 5 | Complete |
+| CONTENT-02 | Phase 5 | Complete |
 | CONTENT-03 | Phase 5 | Pending |
-| INFRA-01 | Phase 5 | Pending |
-| INFRA-02 | Phase 5 | Pending |
-| INFRA-03 | Phase 5 | Pending |
-| INFRA-04 | Phase 5 | Pending |
-| CHAT-01 | Phase 6 | Pending |
-| CHAT-02 | Phase 6 | Pending |
-| CHAT-03 | Phase 6 | Pending |
-| CHAT-04 | Phase 6 | Pending |
-| CHAT-05 | Phase 6 | Pending |
-| CICD-01 | Phase 7 | Pending |
-| CICD-02 | Phase 7 | Pending |
+| INFRA-01 | Phase 5 | Complete |
+| INFRA-02 | Phase 5 | Complete |
+| INFRA-03 | Phase 5 | Complete |
+| INFRA-04 | Phase 5 | Complete |
+| CHAT-01 | Phase 6 | Complete |
+| CHAT-02 | Phase 6 | Complete |
+| CHAT-03 | Phase 6 | Complete |
+| CHAT-04 | Phase 6 | Complete |
+| CHAT-05 | Phase 6 | Complete |
+| CICD-01 | Phase 7 | Complete |
+| CICD-02 | Phase 7 | Complete |
 
 **Coverage:**
 - v1.1 requirements: 17 total
