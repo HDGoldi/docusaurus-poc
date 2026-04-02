@@ -1,0 +1,48 @@
+name: RAG Content Sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'specs/**'
+      - 'scripts/prepare-rag-content/**'
+      - 'scripts/prepare-rag-content.ts'
+      - 'scripts/sync-rag-to-s3.ts'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rag-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Preprocess RAG content
+        run: npx tsx scripts/prepare-rag-content.ts
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Sync to S3 and start ingestion
+        env:
+          RAG_CONTENT_BUCKET: ${{ vars.RAG_CONTENT_BUCKET }}
+          KB_ID: ${{ vars.KB_ID }}
+          DATA_SOURCE_ID: ${{ vars.DATA_SOURCE_ID }}
+        run: npx tsx scripts/sync-rag-to-s3.ts --start-ingestion
