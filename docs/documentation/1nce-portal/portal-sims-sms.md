@@ -93,12 +93,12 @@ Depended on the device logic this blocking might force some devices to get into 
 
 ## IMEI Lock
 
-The IMEI lock will only be set for the selected SIMs. It works by saving the IMEI of the device the SIM is installed in. With the feature enabled, the 1NCE network will only accept the saved device IMEI - SIM card combination to access the network resource. Any other IMEI - SIM combination will be refused. If this feature is activated, the IMEI lock will be set during the next network attach. As a consequence, the SIM card can only be used with the current device. To change the setting for all (future) SIM cards please navigate to the tab [Configuration](https://help.1nce.com/dev-hub/docs/portal-configuration#global-imei-lock).
+The IMEI lock will only be set for the selected SIMs. It works by saving the IMEI of the device the SIM is installed in. With the feature enabled, the 1NCE network will only accept the saved device IMEI - SIM card combination to access the network resource. Any other IMEI - SIM combination will be refused. If this feature is activated, the IMEI lock will be set during the next network attach. As a consequence, the SIM card can only be used with the current device. To change the setting for all (future) SIM cards please navigate to the tab [Configuration](/docs/1nce-portal/portal-configuration#global-imei-lock).
 
 ## Auto-Top-Up
 
 Automatic Top-Ups can be configured for all selected SIMs. The Top-Up will be automatically booked once a SIM card has \<20 % data and/or SMS volume. The check for low volume and potential Top-Up process if the SIM volume is less than 20%, are performed every four hours at 0:00,  4:00,  8:00,  12:00,  16:00, and 20:00 CET. To use this feature the customer has to add their credit card details to the account via the "Account" tab.  
-To activate this for all (future) SIM cards please navigate to the tab [Configuration](https://help.1nce.com/dev-hub/docs/portal-configuration#auto-top-up). By ticking the check-box it is possible to activate the Auto-Top-Up for all future SIM orders by default.
+To activate this for all (future) SIM cards please navigate to the tab [Configuration](/docs/1nce-portal/portal-configuration#auto-top-up). By ticking the check-box it is possible to activate the Auto-Top-Up for all future SIM orders by default.
 
 ## SIM Extension
 
