@@ -1,43 +1,24 @@
-# Requirements: 1NCE Developer Hub v1.1
+# Requirements: 1NCE Developer Hub v1.2
 
-**Defined:** 2026-03-21
+**Defined:** 2026-04-02
 **Core Value:** Developers can browse all existing documentation and interactively test API endpoints exactly as they can on the current ReadMe.com-hosted site.
 
-## v1.1 Requirements
+## v1.2 Requirements
 
-Requirements for AI Assistant + GitHub Pages Preview milestone. Each maps to roadmap phases.
+Requirements for milestone v1.2 — Overall Enhancements & Fixing.
 
-### GitHub Pages Deployment
+### Branding
 
-- [x] **DEPLOY-01**: Site builds with environment-aware config (GitHub Pages baseUrl vs AWS root)
-- [x] **DEPLOY-02**: GitHub Actions workflow deploys to GitHub Pages on push to main
-- [x] **DEPLOY-03**: All existing pages and API docs render correctly on GitHub Pages
+- [ ] **BRAND-01**: Site uses official 1NCE 120x120 PNG favicon
+- [ ] **BRAND-02**: Navbar displays official 1NCE SVG logo from 1nce.com
+- [ ] **BRAND-03**: Dark mode is fully removed — no toggle, light-only, all dark CSS cleaned up
 
-### Content Pipeline
+### Navigation
 
-- [x] **CONTENT-01**: Build-time script strips MDX/JSX from docs to plain Markdown for RAG ingestion
-- [x] **CONTENT-02**: OpenAPI spec content extracted and prepared for knowledge base indexing
-- [ ] **CONTENT-03**: Processed content synced to S3 bucket for Bedrock Knowledge Base
-
-### Backend Infrastructure
-
-- [x] **INFRA-01**: AWS Bedrock Knowledge Base configured with S3 Vectors as the vector store
-- [x] **INFRA-02**: Lambda Function URL proxies chat requests to Bedrock RetrieveAndGenerate API
-- [x] **INFRA-03**: CORS configured for deployed origins (GitHub Pages + help.1nce.com)
-- [x] **INFRA-04**: Rate limiting prevents abuse of the AI chat endpoint
-
-### Chat UI
-
-- [x] **CHAT-01**: Floating chat drawer UI accessible from all pages via global widget
-- [x] **CHAT-02**: Streaming responses render tokens as they arrive
-- [x] **CHAT-03**: Source citations displayed as clickable links to relevant documentation pages
-- [x] **CHAT-04**: Suggested questions shown to help users get started
-- [x] **CHAT-05**: Dark mode support matching existing site theme
-
-### CI/CD Integration
-
-- [x] **CICD-01**: Knowledge Base content sync integrated into deploy workflow
-- [x] **CICD-02**: Existing AWS production deploy workflow unchanged
+- [ ] **NAV-01**: Navbar includes external links for 1NCE Home, 1NCE Shop, 1NCE Portal (matching original hub header)
+- [ ] **NAV-02**: Documentation sidebar contains all sections in original order: Introduction, 1NCE Portal, SIM Cards, MCP Server, Connectivity Services, Platform Services, Network Services, 1NCE OS, Troubleshooting, Blueprints & Examples, Terms & Abbreviations
+- [ ] **NAV-03**: Platform, Blueprints, and Terms plugin instances removed; content merged into main docs instance
+- [ ] **NAV-04**: Old `/platform/*`, `/blueprints/*`, and `/terms/*` URLs redirect to new locations via @docusaurus/plugin-client-redirects
 
 ## v2 Requirements
 
@@ -57,12 +38,11 @@ Deferred to future release. Tracked but not in current roadmap.
 
 | Feature | Reason |
 |---------|--------|
-| OpenSearch Serverless vector store | Too expensive (~$350/mo) for docs assistant use case |
-| Algolia DocSearch | Requires approval process, deferred to v2 |
-| Doc versioning | Single version sufficient |
-| Mobile app | Web-first |
-| Content rewriting | Migrated as-is from ReadMe |
-| API Gateway | Lambda Function URL is simpler and free for single endpoint |
+| Algolia DocSearch / search | Deferred, requires approval process |
+| Doc versioning (V1.0/V2.0 dropdown) | Single version sufficient; original version dropdown rarely used |
+| Content rewriting or restructuring | Migrated as-is from ReadMe.com |
+| Two-tier header layout | Docusaurus single navbar sufficient with external links on right |
+| Mobile app or native integrations | Not applicable |
 
 ## Traceability
 
@@ -70,29 +50,19 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DEPLOY-01 | Phase 4 | Complete |
-| DEPLOY-02 | Phase 4 | Complete |
-| DEPLOY-03 | Phase 4 | Complete |
-| CONTENT-01 | Phase 5 | Complete |
-| CONTENT-02 | Phase 5 | Complete |
-| CONTENT-03 | Phase 5 | Pending |
-| INFRA-01 | Phase 5 | Complete |
-| INFRA-02 | Phase 5 | Complete |
-| INFRA-03 | Phase 5 | Complete |
-| INFRA-04 | Phase 5 | Complete |
-| CHAT-01 | Phase 6 | Complete |
-| CHAT-02 | Phase 6 | Complete |
-| CHAT-03 | Phase 6 | Complete |
-| CHAT-04 | Phase 6 | Complete |
-| CHAT-05 | Phase 6 | Complete |
-| CICD-01 | Phase 7 | Complete |
-| CICD-02 | Phase 7 | Complete |
+| BRAND-01 | TBD | Pending |
+| BRAND-02 | TBD | Pending |
+| BRAND-03 | TBD | Pending |
+| NAV-01 | TBD | Pending |
+| NAV-02 | TBD | Pending |
+| NAV-03 | TBD | Pending |
+| NAV-04 | TBD | Pending |
 
 **Coverage:**
-- v1.1 requirements: 17 total
-- Mapped to phases: 17
-- Unmapped: 0
+- v1.2 requirements: 7 total
+- Mapped to phases: 0
+- Unmapped: 7 (pending roadmap)
 
 ---
-*Requirements defined: 2026-03-21*
-*Last updated: 2026-03-21 after roadmap creation*
+*Requirements defined: 2026-04-02*
+*Last updated: 2026-04-02 after initial definition*
