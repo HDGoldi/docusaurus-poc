@@ -38,9 +38,9 @@
   - Mark task complete when tests are written, run, and passing on unfixed code
   - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8_
 
-- [ ] 3. Fix Bug 1 — Backend Not Connected (Endpoint Injection)
+- [x] 3. Fix Bug 1 — Backend Not Connected (Endpoint Injection)
 
-  - [-] 3.1 Add RAG stack deployment step to `deploy-production` job in `.github/workflows/deploy.yml`
+  - [x] 3.1 Add RAG stack deployment step to `deploy-production` job in `.github/workflows/deploy.yml`
     - Add a step before the site build that deploys `infra/rag-stack.yaml` via `aws cloudformation deploy`
     - Use the existing OIDC credentials from `configure-aws-credentials`
     - Pass required parameters (`LambdaCodeBucketName`, `LambdaCodeKey`) from GitHub environment variables
@@ -49,7 +49,7 @@
     - _Preservation: Existing deploy-production steps (S3 sync, CloudFront invalidation, smoke test) remain unchanged_
     - _Requirements: 2.1_
 
-  - [~] 3.2 Capture CloudFront domain output and inject `CHAT_ENDPOINT` into the build
+  - [x] 3.2 Capture CloudFront domain output and inject `CHAT_ENDPOINT` into the build
     - After RAG stack deployment, retrieve `ChatApiDistributionDomain` output using `aws cloudformation describe-stacks`
     - Set `CHAT_ENDPOINT` as an environment variable when running `npm run build` in the `validate` job
     - Format as `https://<ChatApiDistributionDomain>` so the endpoint is a full HTTPS URL
@@ -58,7 +58,7 @@
     - _Preservation: Build output structure and all other environment variables remain unchanged_
     - _Requirements: 2.1, 2.2_
 
-  - [~] 3.3 Add `customFields` to `docusaurus.config.ts`
+  - [x] 3.3 Add `customFields` to `docusaurus.config.ts`
     - Add `customFields: { chatEndpoint: process.env.CHAT_ENDPOINT || '' }` to the config object
     - This makes the endpoint available at build time for Docusaurus to embed
     - _Bug_Condition: isBugCondition(input) where docusaurus.config.ts has no customFields for chat endpoint_
@@ -66,7 +66,7 @@
     - _Preservation: All existing config (plugins, themes, navbar, footer) remains unchanged_
     - _Requirements: 2.1, 2.2_
 
-  - [~] 3.4 Update `CHAT_ENDPOINT` resolution in `src/components/ChatWidget/types.ts`
+  - [x] 3.4 Update `CHAT_ENDPOINT` resolution in `src/components/ChatWidget/types.ts`
     - Update the fallback chain to also read from `siteConfig.customFields.chatEndpoint` if available
     - Keep existing `window.__CHAT_ENDPOINT__` and `process.env.CHAT_ENDPOINT` fallbacks for local dev
     - _Bug_Condition: isBugCondition(input) where CHAT_ENDPOINT always resolves to '' in production_
@@ -74,9 +74,9 @@
     - _Preservation: Local dev fallback to '' still works, existing window override still works_
     - _Requirements: 2.2, 2.3_
 
-- [ ] 4. Fix Bug 2 — Drawer Doesn't Auto-Hide (Backdrop & Click-Outside)
+- [x] 4. Fix Bug 2 — Drawer Doesn't Auto-Hide (Backdrop & Click-Outside)
 
-  - [~] 4.1 Add backdrop element and click handler to `src/components/ChatWidget/ChatDrawer.tsx`
+  - [x] 4.1 Add backdrop element and click handler to `src/components/ChatWidget/ChatDrawer.tsx`
     - Render a sibling `<div>` with the `.backdrop` class when `isOpen` is true
     - Add `onClick={onClose}` on the backdrop element
     - Ensure backdrop is rendered before the drawer in the DOM so it sits behind it in z-index
@@ -86,7 +86,7 @@
     - _Preservation: Escape key, focus trap, route-change close all continue to work unchanged_
     - _Requirements: 2.4, 2.5_
 
-  - [~] 4.2 Add `.backdrop` CSS class to `src/components/ChatWidget/ChatWidget.module.css`
+  - [x] 4.2 Add `.backdrop` CSS class to `src/components/ChatWidget/ChatWidget.module.css`
     - `position: fixed; inset: 0; background: rgba(0,0,0,0.3)`
     - z-index one level below the drawer (use `var(--ifm-z-index-overlay)`)
     - Add `prefers-reduced-motion` support: disable fade transition if backdrop has one
@@ -95,9 +95,9 @@
     - _Preservation: Mobile full-width drawer, body scroll lock, all existing styles unchanged_
     - _Requirements: 2.5_
 
-- [ ] 5. Fix Bug 3 — Close Button Hard to See (Styling)
+- [x] 5. Fix Bug 3 — Close Button Hard to See (Styling)
 
-  - [~] 5.1 Update `.closeButton` CSS in `src/components/ChatWidget/ChatWidget.module.css`
+  - [x] 5.1 Update `.closeButton` CSS in `src/components/ChatWidget/ChatWidget.module.css`
     - Increase padding to at least 6px (giving 32×32 minimum with the 20×20 SVG)
     - Add `border-radius: 6px`
     - Add subtle background: `rgba(0,0,0,0.06)` for light mode
@@ -108,7 +108,7 @@
     - _Preservation: Close button onClick behavior, aria-label, SVG icon all unchanged_
     - _Requirements: 2.6, 2.7_
 
-  - [~] 5.2 Update `.closeButton:hover` CSS for clear hover feedback
+  - [x] 5.2 Update `.closeButton:hover` CSS for clear hover feedback
     - Add background color change on hover (e.g., `rgba(0,0,0,0.1)` light, `rgba(255,255,255,0.15)` dark)
     - Keep existing `color: var(--ifm-color-primary)` on hover
     - _Bug_Condition: isBugCondition(input) where hover state only changes color with no background change_
@@ -116,9 +116,9 @@
     - _Preservation: Existing hover color behavior preserved_
     - _Requirements: 2.7_
 
-- [ ] 6. Verify fixes
+- [x] 6. Verify fixes
 
-  - [~] 6.1 Verify bug condition exploration tests now pass
+  - [x] 6.1 Verify bug condition exploration tests now pass
     - **Property 1: Expected Behavior** - Chat Widget Triple Bug Fixed
     - **IMPORTANT**: Re-run the SAME tests from task 1 — do NOT write new tests
     - The tests from task 1 encode the expected behavior
@@ -127,14 +127,14 @@
     - **EXPECTED OUTCOME**: Tests PASS (confirms all three bugs are fixed)
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7_
 
-  - [~] 6.2 Verify preservation tests still pass
+  - [x] 6.2 Verify preservation tests still pass
     - **Property 2: Preservation** - Existing Chat Widget Behavior Unchanged
     - **IMPORTANT**: Re-run the SAME tests from task 2 — do NOT write new tests
     - Run preservation property tests from step 2
     - **EXPECTED OUTCOME**: Tests PASS (confirms no regressions)
     - Confirm Escape key, route change, mobile layout, focus trap, streaming, chips, errors, and reduced motion all still work after fixes
 
-- [~] 7. Checkpoint - Ensure all tests pass
+- [x] 7. Checkpoint - Ensure all tests pass
   - Run full test suite to confirm all bug condition and preservation tests pass
   - Verify no regressions in existing functionality
   - Ensure all tests pass, ask the user if questions arise

@@ -64,13 +64,21 @@ export default function ChatDrawer({
     : styles.drawer;
 
   return (
-    <div
-      ref={drawerRef}
-      className={drawerClassName}
-      role="dialog"
-      aria-label={COPY.drawerAriaLabel}
-      onKeyDown={handleKeyDown}
-    >
+    <>
+      {isOpen && (
+        <div
+          className={styles.backdrop}
+          onClick={onClose}
+          aria-hidden="true"
+        />
+      )}
+      <div
+        ref={drawerRef}
+        className={drawerClassName}
+        role="dialog"
+        aria-label={COPY.drawerAriaLabel}
+        onKeyDown={handleKeyDown}
+      >
       <div className={styles.drawerHeader}>
         <h2 className={styles.drawerTitle}>{COPY.drawerTitle}</h2>
         <button
@@ -92,5 +100,6 @@ export default function ChatDrawer({
       </div>
       {children}
     </div>
+    </>
   );
 }

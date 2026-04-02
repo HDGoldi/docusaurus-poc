@@ -7,10 +7,9 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./vitest.setup.ts'],
-    css: {
-      modules: {
-        classNameStrategy: 'non-scoped',
-      },
+    css: true,
+    env: {
+      CHAT_ENDPOINT: 'https://chat-api.example.com',
     },
   },
 });

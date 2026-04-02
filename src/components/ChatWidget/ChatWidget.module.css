@@ -45,6 +45,14 @@
   transition-timing-function: ease-in;
 }
 
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: var(--ifm-z-index-overlay);
+}
+
 /* Drawer header */
 .drawerHeader {
   height: 56px;
@@ -63,17 +71,25 @@
   margin: 0;
 }
 .closeButton {
-  background: none;
+  background: rgba(0, 0, 0, 0.06);
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
+  border-radius: 6px;
   color: var(--ifm-font-color-base);
   display: flex;
   align-items: center;
   justify-content: center;
 }
+[data-theme='dark'] .closeButton {
+  background: rgba(255, 255, 255, 0.1);
+}
 .closeButton:hover {
   color: var(--ifm-color-primary);
+  background: rgba(0, 0, 0, 0.1);
+}
+[data-theme='dark'] .closeButton:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* Message area */
@@ -293,6 +309,9 @@
 @media (prefers-reduced-motion: reduce) {
   .drawer {
     transition-duration: 0ms;
+  }
+  .backdrop {
+    transition: none;
   }
   .streamingCursor {
     animation: none;
