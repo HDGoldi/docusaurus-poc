@@ -203,7 +203,7 @@ Resources:
   ChatFunction:
     Type: AWS::Lambda::Function
     Properties:
-      FunctionName: 1nce-devhub-chat
+      FunctionName: !Sub "${AWS::StackName}-chat"
       Description: RAG chat handler — streams answers from Bedrock KB via SSE
       Runtime: nodejs20.x
       Handler: index.handler
