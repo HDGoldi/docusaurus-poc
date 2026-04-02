@@ -79,6 +79,41 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      # One-time migration: remove the old single-region stack that mixed
+      # eu-central-1 resources (Lambda/Bedrock) with us-east-1 resources
+      # (CloudFront/WAF) in one template.  Retain the S3 bucket so RAG
+      # content is not lost.  This step is idempotent — it silently
+      # succeeds once the old stack no longer exists.
+      - name: Delete legacy RAG stack in us-east-1 (one-time migration)
+        run: |
+          STACK_STATUS=$(aws cloudformation describe-stacks \
+            --stack-name nce-devhub-rag \
+            --region us-east-1 \
+            --query "Stacks[0].StackStatus" \
+            --output text 2>/dev/null || echo "NOT_FOUND")
+
+          if [ "$STACK_STATUS" = "NOT_FOUND" ]; then
+            echo "No legacy stack in us-east-1 — skipping."
+          elif [ "$STACK_STATUS" = "DELETE_IN_PROGRESS" ]; then
+            echo "Legacy stack deletion already in progress — waiting…"
+            aws cloudformation wait stack-delete-complete \
+              --stack-name nce-devhub-rag --region us-east-1
+          else
+            echo "Legacy stack found (status: $STACK_STATUS) — deleting (retaining S3 bucket)…"
+            aws cloudformation delete-stack \
+              --stack-name nce-devhub-rag \
+              --region us-east-1 \
+              --retain-resources RagContentBucket
+            aws cloudformation wait stack-delete-complete \
+              --stack-name nce-devhub-rag --region us-east-1
+            echo "Legacy stack deleted."
+          fi
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           aws-region: eu-central-1
 
       - name: Deploy RAG stack (eu-central-1)

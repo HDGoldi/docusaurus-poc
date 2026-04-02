@@ -6,10 +6,18 @@ Description: >-
   DEPLOY THIS STACK IN eu-central-1
 
 Parameters:
+  RagContentBucketArn:
+    Type: String
+    Default: "arn:aws:s3:::1nce-devhub-rag-content"
+    Description: >-
+      ARN of the pre-existing S3 bucket for RAG content.
+      The bucket must already exist (created outside this stack or retained
+      from the legacy us-east-1 stack).
+
   RagContentBucketName:
     Type: String
     Default: 1nce-devhub-rag-content
-    Description: S3 bucket for pre-chunked RAG content files
+    Description: Name of the pre-existing S3 bucket for RAG content
 
   LambdaCodeBucketName:
     Type: String
@@ -42,26 +50,6 @@ Parameters:
       automatically using the deployment region.
 
 Resources:
-  # ---------------------------------------------------------------------------
-  # S3 Bucket for RAG Content (pre-chunked docs + metadata)
-  # ---------------------------------------------------------------------------
-
-  RagContentBucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName: !Ref RagContentBucketName
-      PublicAccessBlockConfiguration:
-        BlockPublicAcls: true
-        BlockPublicPolicy: true
-        IgnorePublicAcls: true
-        RestrictPublicBuckets: true
-      VersioningConfiguration:
-        Status: Enabled
-      Tags:
-        - Key: environment
-          Value: dev
-        - Key: component
-          Value: ai
 
   # ---------------------------------------------------------------------------
   # IAM Role for Bedrock Knowledge Base
@@ -89,8 +77,8 @@ Resources:
                   - s3:GetObject
                   - s3:ListBucket
                 Resource:
-                  - !GetAtt RagContentBucket.Arn
-                  - !Sub "${RagContentBucket.Arn}/*"
+                  - !Ref RagContentBucketArn
+                  - !Sub "${RagContentBucketArn}/*"
               - Sid: EmbeddingModel
                 Effect: Allow
                 Action:
@@ -151,7 +139,7 @@ Resources:
       DataSourceConfiguration:
         Type: S3
         S3Configuration:
-          BucketArn: !GetAtt RagContentBucket.Arn
+          BucketArn: !Ref RagContentBucketArn
           InclusionPrefixes:
             - "chunks/"
       VectorIngestionConfiguration:
@@ -280,9 +268,9 @@ Outputs:
     Description: Lambda Function URL for direct access (bypasses WAF)
 
   RagContentBucketName:
-    Value: !Ref RagContentBucket
+    Value: !Ref RagContentBucketName
     Description: S3 bucket name for RAG content
 
   RagContentBucketArn:
-    Value: !GetAtt RagContentBucket.Arn
+    Value: !Ref RagContentBucketArn
     Description: S3 bucket ARN for RAG content
