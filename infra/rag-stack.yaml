@@ -21,6 +21,7 @@ Parameters:
 
   LambdaCodeBucketName:
     Type: String
+    Default: 1nce-devhub-lambda-deployments
     Description: S3 bucket holding the Lambda deployment zip (must exist in eu-central-1)
 
   LambdaCodeKey:
@@ -121,10 +122,8 @@ Resources:
         S3VectorsConfiguration:
           BucketArn: !GetAtt RagContentBucket.Arn
       Tags:
-        - Key: environment
-          Value: dev
-        - Key: component
-          Value: ai
+        environment: dev
+        component: ai
 
   # ---------------------------------------------------------------------------
   # Bedrock Data Source — S3 with no re-chunking (D-07)
@@ -230,7 +229,6 @@ Resources:
         AllowOrigins: !Ref AllowedOrigins
         AllowMethods:
           - POST
-          - OPTIONS
         AllowHeaders:
           - Content-Type
         MaxAge: 86400
@@ -330,7 +328,7 @@ Resources:
     Type: AWS::WAFv2::WebACL
     Properties:
       Name: !Sub "${AWS::StackName}-chat-waf"
-      Description: "Rate limiting for RAG chat API — 10 req/min per IP"
+      Description: "Rate limiting for RAG chat API - 10 req/min per IP"
       Scope: CLOUDFRONT
       DefaultAction:
         Allow: {}
@@ -342,7 +340,7 @@ Resources:
           Statement:
             RateBasedStatement:
               Limit: 10
-              EvaluateWindowSec: 60
+              EvaluationWindowSec: 60
               AggregateKeyType: IP
           VisibilityConfig:
             SampledRequestsEnabled: true
