@@ -90,24 +90,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   plugins: [
     ['@docusaurus/plugin-content-docs', {
-      id: 'platform',
-      path: 'docs/platform',
-      routeBasePath: '/platform',
-      sidebarPath: './sidebars/platform.ts',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'blueprints',
-      path: 'docs/blueprints',
-      routeBasePath: '/blueprints',
-      sidebarPath: './sidebars/blueprints.ts',
-    }],
-    ['@docusaurus/plugin-content-docs', {
-      id: 'terms',
-      path: 'docs/terms',
-      routeBasePath: '/terms',
-      sidebarPath: './sidebars/terms.ts',
-    }],
-    ['@docusaurus/plugin-content-docs', {
       id: 'api',
       path: 'docs/api',
       routeBasePath: '/api',
@@ -148,6 +130,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           outputDir: 'docs/api/1nce-os',
           sidebarOptions: { groupPathsBy: 'tag', categoryLinkSource: 'tag' },
         },
+      },
+    }],
+    ['@docusaurus/plugin-client-redirects', {
+      createRedirects(existingPath) {
+        // Platform sections: /platform/{section}/* was moved to /docs/{section}/*
+        if (existingPath.match(/\/docs\/(1nce-os|1nce-portal|platform-services)(\/|$)/)) {
+          return [existingPath.replace('/docs/', '/platform/')];
+        }
+        // Blueprints: /blueprints/blueprints-examples/* was moved to /docs/blueprints-examples/*
+        if (existingPath.includes('/docs/blueprints-examples/')) {
+          const slug = existingPath.split('/docs/blueprints-examples/').pop();
+          const topLevelFiles = ['quectel-bg95-m3', 'quectel-ec25-ec21', 'recipes', 'sara-r410m', 'sim7000g', 'simcom-7020g-simcom800l'];
+          if (topLevelFiles.some(f => slug?.startsWith(f))) {
+            return [
+              existingPath.replace('/docs/blueprints-examples/', '/blueprints/'),
+            ];
+          }
+          return [
+            existingPath.replace('/docs/blueprints-examples/', '/blueprints/blueprints-examples/'),
+          ];
+        }
+        // Terms: /terms/terms-abbreviations was moved to /docs/terms-abbreviations
+        if (existingPath.includes('/docs/terms-abbreviations')) {
+          return ['/terms/terms-abbreviations'];
+        }
+        return undefined;
       },
     }],
     'docusaurus-plugin-sass',
@@ -195,27 +203,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           label: 'API Explorer',
           position: 'left',
           docsPluginId: 'api',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'platformSidebar',
-          label: '1NCE Platform',
-          position: 'left',
-          docsPluginId: 'platform',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'blueprintsSidebar',
-          label: 'Blueprints & Examples',
-          position: 'left',
-          docsPluginId: 'blueprints',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'termsSidebar',
-          label: 'Terms & Abbreviations',
-          position: 'left',
-          docsPluginId: 'terms',
         },
         {
           href: 'https://1nce.com',
