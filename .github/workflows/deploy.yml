@@ -96,20 +96,62 @@ jobs:
 
           if [ "$STACK_STATUS" = "NOT_FOUND" ]; then
             echo "No legacy stack in us-east-1 — skipping."
-          elif [ "$STACK_STATUS" = "DELETE_IN_PROGRESS" ]; then
+            exit 0
+          fi
+
+          if [ "$STACK_STATUS" = "DELETE_IN_PROGRESS" ]; then
             echo "Legacy stack deletion already in progress — waiting…"
             aws cloudformation wait stack-delete-complete \
-              --stack-name nce-devhub-rag --region us-east-1
-          else
-            echo "Legacy stack found (status: $STACK_STATUS) — deleting (retaining S3 bucket)…"
+              --stack-name nce-devhub-rag --region us-east-1 || true
+          fi
+
+          # Re-check status after a possible wait
+          STACK_STATUS=$(aws cloudformation describe-stacks \
+            --stack-name nce-devhub-rag \
+            --region us-east-1 \
+            --query "Stacks[0].StackStatus" \
+            --output text 2>/dev/null || echo "NOT_FOUND")
+
+          if [ "$STACK_STATUS" = "NOT_FOUND" ]; then
+            echo "Stack already gone."
+            exit 0
+          fi
+
+          # If already in DELETE_FAILED, skip straight to retain
+          if [ "$STACK_STATUS" = "DELETE_FAILED" ]; then
+            echo "Stack in DELETE_FAILED — retrying with --retain-resources…"
             aws cloudformation delete-stack \
               --stack-name nce-devhub-rag \
               --region us-east-1 \
               --retain-resources RagContentBucket
             aws cloudformation wait stack-delete-complete \
               --stack-name nce-devhub-rag --region us-east-1
-            echo "Legacy stack deleted."
+            echo "Legacy stack deleted (S3 bucket retained)."
+            exit 0
           fi
+
+          # Normal delete attempt first
+          echo "Legacy stack found (status: $STACK_STATUS) — deleting…"
+          aws cloudformation delete-stack \
+            --stack-name nce-devhub-rag \
+            --region us-east-1
+
+          # Wait — this may fail if the non-empty S3 bucket blocks deletion
+          if aws cloudformation wait stack-delete-complete \
+            --stack-name nce-devhub-rag --region us-east-1 2>/dev/null; then
+            echo "Legacy stack deleted."
+            exit 0
+          fi
+
+          # Delete failed (likely the S3 bucket) — retry with retain
+          echo "Delete failed — retrying with --retain-resources RagContentBucket…"
+          aws cloudformation delete-stack \
+            --stack-name nce-devhub-rag \
+            --region us-east-1 \
+            --retain-resources RagContentBucket
+          aws cloudformation wait stack-delete-complete \
+            --stack-name nce-devhub-rag --region us-east-1
+          echo "Legacy stack deleted (S3 bucket retained)."
 
       - uses: aws-actions/configure-aws-credentials@v6
         with:
