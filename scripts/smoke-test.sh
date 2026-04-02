@@ -9,11 +9,11 @@ BASE_URL="${1:?Usage: smoke-test.sh <base-url>}"
 # Key URLs matching the 5 docs plugin instances + homepage
 URLS=(
   "/"
-  "/docs/1nce-os/1nce-os-overview/"
+  "/docs/"
   "/api/"
-  "/platform/"
-  "/blueprints/"
-  "/terms/"
+  "/platform/1nce-os/1nce-os-admin-logs/"
+  "/blueprints/blueprints-examples/1nce-vpn-linux-client/"
+  "/terms/terms-abbreviations/"
 )
 
 FAILED=0
