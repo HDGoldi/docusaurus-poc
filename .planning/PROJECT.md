@@ -33,14 +33,16 @@ Developers can browse all existing documentation and interactively test API endp
 - ✓ Automated RAG content sync — GitHub Actions workflow triggers KB re-ingestion on doc changes — v1.1 Phase 7
 - ✓ CloudFormation resource tagging (environment:dev, component:ai) across all infra templates — v1.1 Phase 7
 
-## Current Milestone: v1.1 AI Assistant + GitHub Pages Preview
+## Current Milestone: v1.2 Overall Enhancements & Fixing
 
-**Goal:** Add an AI-powered documentation assistant using AWS Bedrock (Claude) and enable GitHub Pages as a lightweight test/preview deployment.
+**Goal:** Align the Docusaurus site's design and navigation with the original 1NCE Developer Hub on ReadMe.com
 
 **Target features:**
-- AI Assistant chat UI replicating ReadMe.com "Ask AI" experience
-- Serverless backend calling AWS Bedrock with Anthropic Claude model
-- GitHub Pages deployment for easy testing and sharing
+- Replace favicon with official 1NCE 120x120 PNG
+- Replace navbar logo with official 1NCE SVG from 1nce.com
+- Remove dark mode (not readable)
+- Add external navbar links matching original header (1NCE Home, Shop, Portal)
+- Fix Documentation sidebar: merge 1NCE Portal, Platform Services, 1NCE OS, and Blueprints & Examples back into main Documentation sidebar to match original hub structure
 
 ### Out of Scope
 
@@ -104,4 +106,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-23 after Phase 7 completion*
+*Last updated: 2026-04-02 after milestone v1.2 started*

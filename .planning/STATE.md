@@ -1,36 +1,38 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.1
-milestone_name: AI Assistant + GitHub Pages Preview
-status: "Milestone v1.1 shipped — PR #5"
-stopped_at: Completed 07-01-PLAN.md
-last_updated: "2026-03-23T17:57:47.082Z"
+milestone: v1.2
+milestone_name: Overall Enhancements & Fixing
+status: "Defining requirements"
+stopped_at: null
+last_updated: "2026-04-02"
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 6
-  completed_plans: 6
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-21)
+See: .planning/PROJECT.md (updated 2026-04-02)
 
 **Core value:** Developers can browse all existing documentation and interactively test API endpoints exactly as they can on the current ReadMe.com-hosted site.
-**Current focus:** Phase 07 — ci-cd-integration
+**Current focus:** Defining requirements for v1.2
 
 ## Current Position
 
-Phase: 07
-Plan: Not started
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-04-02 — Milestone v1.2 started
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 0 (v1.1)
+- Total plans completed: 0 (v1.2)
 - Average duration: —
 - Total execution time: —
 
@@ -59,11 +61,10 @@ None.
 
 ### Blockers/Concerns
 
-- Bedrock model access (Claude Sonnet 4 + Titan Embeddings V2) must be enabled in target region before Phase 5
-- S3 Vectors is newer AWS service — verify API compatibility with Bedrock KB during Phase 5 planning
+None.
 
 ## Session Continuity
 
-Last session: 2026-03-23T17:42:36.528Z
-Stopped at: Completed 07-01-PLAN.md
+Last session: 2026-04-02
+Stopped at: Milestone v1.2 initialization
 Resume file: None
