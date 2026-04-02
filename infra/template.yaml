@@ -344,6 +344,8 @@ Resources:
                 Resource:
                   - "arn:aws:s3:::1nce-devhub-rag-content"
                   - "arn:aws:s3:::1nce-devhub-rag-content/*"
+                  - "arn:aws:s3:::1nce-devhub-lambda-deployments-eu"
+                  - "arn:aws:s3:::1nce-devhub-lambda-deployments-eu/*"
               - Sid: LambdaCodeBucket
                 Effect: Allow
                 Action:
