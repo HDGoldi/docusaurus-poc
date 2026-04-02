@@ -21,6 +21,11 @@ Parameters:
     Type: String
     Description: GitHub repository name for OIDC trust policy
 
+  AlternateDomainName:
+    Type: String
+    Default: help.1nce.com
+    Description: Additional custom domain for the production site
+
 Resources:
   # ---------------------------------------------------------------------------
   # S3 Buckets
@@ -106,6 +111,9 @@ Resources:
     Type: AWS::CertificateManager::Certificate
     Properties:
       DomainName: !Ref DomainName
+      SubjectAlternativeNames:
+        - !Ref DomainName
+        - !Ref AlternateDomainName
       ValidationMethod: DNS
       DomainValidationOptions:
         - DomainName: !Ref DomainName
@@ -127,6 +135,7 @@ Resources:
         Enabled: true
         Aliases:
           - !Ref DomainName
+          - !Ref AlternateDomainName
         Origins:
           - Id: S3Origin
             DomainName: !GetAtt ProdBucket.RegionalDomainName
