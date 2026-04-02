@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import devHubRefRedirects from './scripts/dev-hub-reference-redirects.json';
 
 const isGitHubPages = process.env.DEPLOY_TARGET === 'gh-pages';
 
@@ -151,29 +152,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       },
     }],
     ['@docusaurus/plugin-client-redirects', {
+      redirects: [
+        // Old ReadMe welcome page
+        { from: '/dev-hub/docs/introduction-welcome', to: '/docs/' },
+        // Old ReadMe dev-hub root
+        { from: '/dev-hub', to: '/docs/' },
+        // Old ReadMe static reference pages
+        { from: '/dev-hub/reference/api-welcome', to: '/docs/' },
+        { from: '/dev-hub/reference/api-authorization', to: '/api/authorization/authorization/' },
+        { from: '/dev-hub/reference/api-best-practices', to: '/docs/' },
+        { from: '/dev-hub/reference/api-rate-limits', to: '/docs/' },
+        { from: '/dev-hub/reference/mcp', to: '/docs/' },
+        // Old ReadMe API reference endpoints (/dev-hub/reference/{operationId} -> /api/{spec}/{slug})
+        ...Object.entries(devHubRefRedirects).map(([from, to]) => ({
+          from,
+          to: `${to}/`,
+        })),
+      ],
       createRedirects(existingPath) {
+        const redirects: string[] = [];
+
         // Platform sections: /platform/{section}/* was moved to /docs/{section}/*
         if (existingPath.match(/\/docs\/(1nce-os|1nce-portal|platform-services)(\/|$)/)) {
-          return [existingPath.replace('/docs/', '/platform/')];
+          redirects.push(existingPath.replace('/docs/', '/platform/'));
         }
         // Blueprints: /blueprints/blueprints-examples/* was moved to /docs/blueprints-examples/*
         if (existingPath.includes('/docs/blueprints-examples/')) {
           const slug = existingPath.split('/docs/blueprints-examples/').pop();
           const topLevelFiles = ['quectel-bg95-m3', 'quectel-ec25-ec21', 'recipes', 'sara-r410m', 'sim7000g', 'simcom-7020g-simcom800l'];
           if (topLevelFiles.some(f => slug?.startsWith(f))) {
-            return [
-              existingPath.replace('/docs/blueprints-examples/', '/blueprints/'),
-            ];
+            redirects.push(existingPath.replace('/docs/blueprints-examples/', '/blueprints/'));
+          } else {
+            redirects.push(existingPath.replace('/docs/blueprints-examples/', '/blueprints/blueprints-examples/'));
           }
-          return [
-            existingPath.replace('/docs/blueprints-examples/', '/blueprints/blueprints-examples/'),
-          ];
         }
         // Terms: /terms/terms-abbreviations and /docs/terms-abbreviations redirect to /terms-abbreviations
         if (existingPath.includes('/terms-abbreviations')) {
-          return ['/terms/terms-abbreviations', '/docs/terms-abbreviations'];
+          redirects.push('/terms/terms-abbreviations', '/docs/terms-abbreviations');
         }
-        return undefined;
+
+        // === Old ReadMe /dev-hub/ redirects ===
+        const cleanPath = existingPath.replace(/\/$/, '');
+        const lastSegment = cleanPath.split('/').pop();
+
+        // Docs pages: /dev-hub/docs/{slug} -> current nested path
+        if (existingPath.startsWith('/docs/') && lastSegment && lastSegment !== 'docs') {
+          redirects.push(`/dev-hub/docs/${lastSegment}`);
+        }
+
+        // Old ReadMe "Pages" section: /dev-hub/{slug} (no /docs/ or /reference/ prefix)
+        const devHubTopLevelPages = new Set([
+          'quectel-bg95-m3', 'quectel-ec25-ec21', 'recipes',
+          'sara-r410m', 'sim7000g', 'simcom-7020g-simcom800l',
+        ]);
+        if (lastSegment && devHubTopLevelPages.has(lastSegment)) {
+          redirects.push(`/dev-hub/${lastSegment}`);
+        }
+        if (existingPath.includes('/terms-abbreviations')) {
+          redirects.push('/dev-hub/terms-abbreviations');
+        }
+
+        return redirects.length > 0 ? redirects : undefined;
       },
     }],
     'docusaurus-plugin-sass',

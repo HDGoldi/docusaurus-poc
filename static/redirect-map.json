@@ -1,6 +1,1638 @@
 {
   "redirects": [
     {
+      "old": "/dev-hub",
+      "new": "/docs"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-brazil-feature-description",
+      "new": "/docs/sim-cards/1nce-brazil-multi-imsi/1nce-brazil-feature-description"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-brazil-multi-imsi",
+      "new": "/docs/sim-cards/1nce-brazil-multi-imsi"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-brazil-switching-and-requirements",
+      "new": "/docs/sim-cards/1nce-brazil-multi-imsi/1nce-brazil-switching-and-requirements"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-admin-logs",
+      "new": "/platform/1nce-os/1nce-os-admin-logs"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-cloud-integrator",
+      "new": "/platform/1nce-os/1nce-os-cloud-integrator"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-data-processing-agreement",
+      "new": "/platform/1nce-os/1nce-os-services-overview/1nce-os-data-processing-agreement"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-device-authenticator",
+      "new": "/platform/1nce-os/1nce-os-device-authenticator"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-device-controller",
+      "new": "/platform/1nce-os/1nce-os-device-controller"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-device-inspector",
+      "new": "/platform/1nce-os/1nce-os-device-inspector"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-device-integrator",
+      "new": "/platform/1nce-os/1nce-os-device-integrator"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-device-locator",
+      "new": "/platform/1nce-os/1nce-os-device-locator"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-energy-saver",
+      "new": "/platform/1nce-os/1nce-os-energy-saver"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-lwm2m",
+      "new": "/platform/1nce-os/1nce-os-lwm2m"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-plugins",
+      "new": "/platform/1nce-os/1nce-os-plugins"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-plugins-azure-integration-tartabit",
+      "new": "/platform/1nce-os/1nce-os-plugins/1nce-os-plugins-azure-integration-tartabit"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-plugins-data-visualization-datacake",
+      "new": "/platform/1nce-os/1nce-os-plugins/1nce-os-plugins-data-visualization-datacake"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-plugins-device-observability-memfault",
+      "new": "/platform/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-plugins-features-limitations",
+      "new": "/platform/1nce-os/1nce-os-plugins/1nce-os-plugins-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-plugins-fota-management-mender",
+      "new": "/platform/1nce-os/1nce-os-plugins/1nce-os-plugins-fota-management-mender"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-sdk-blueprints",
+      "new": "/platform/1nce-os/1nce-os-sdk-blueprints"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-services-overview",
+      "new": "/platform/1nce-os/1nce-os-services-overview"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-os-terms-of-use",
+      "new": "/platform/1nce-os/1nce-os-services-overview/1nce-os-terms-of-use"
+    },
+    {
+      "old": "/dev-hub/docs/1nce-vpn-linux-client",
+      "new": "/blueprints/blueprints-examples/1nce-vpn-linux-client"
+    },
+    {
+      "old": "/dev-hub/docs/admin-logs-api",
+      "new": "/platform/1nce-os/1nce-os-admin-logs/admin-logs-api"
+    },
+    {
+      "old": "/dev-hub/docs/admin-logs-features-limitations",
+      "new": "/platform/1nce-os/1nce-os-admin-logs/admin-logs-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/admin-logs-info-category",
+      "new": "/platform/1nce-os/1nce-os-admin-logs/admin-logs-info-category"
+    },
+    {
+      "old": "/dev-hub/docs/admin-logs-web-interface",
+      "new": "/platform/1nce-os/1nce-os-admin-logs/admin-logs-web-interface"
+    },
+    {
+      "old": "/dev-hub/docs/bg95-m3-1nce-os-udp",
+      "new": "/blueprints/blueprints-examples/bg95-m3-1nce-os-udp"
+    },
+    {
+      "old": "/dev-hub/docs/bg95-m3-icmp-ping",
+      "new": "/blueprints/blueprints-examples/bg95-m3-icmp-ping"
+    },
+    {
+      "old": "/dev-hub/docs/bg95-m3-network-registration",
+      "new": "/blueprints/blueprints-examples/bg95-m3-network-registration"
+    },
+    {
+      "old": "/dev-hub/docs/bg95bg77-tcp-client-connection",
+      "new": "/blueprints/blueprints-examples/bg95bg77-tcp-client-connection"
+    },
+    {
+      "old": "/dev-hub/docs/cloud-integrator-aws-configuration",
+      "new": "/platform/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration"
+    },
+    {
+      "old": "/dev-hub/docs/cloud-integrator-failure-event",
+      "new": "/platform/1nce-os/1nce-os-cloud-integrator/cloud-integrator-failure-event"
+    },
+    {
+      "old": "/dev-hub/docs/cloud-integrator-features-limitations",
+      "new": "/platform/1nce-os/1nce-os-cloud-integrator/cloud-integrator-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/cloud-integrator-output-format",
+      "new": "/platform/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format"
+    },
+    {
+      "old": "/dev-hub/docs/cloud-integrator-webhook-configuration",
+      "new": "/platform/1nce-os/1nce-os-cloud-integrator/cloud-integrator-webhook-configuration"
+    },
+    {
+      "old": "/dev-hub/docs/connectivity-services-data-services",
+      "new": "/docs/connectivity-services/connectivity-services-data-services"
+    },
+    {
+      "old": "/dev-hub/docs/connectivity-services-mobile-network-services",
+      "new": "/docs/connectivity-services/connectivity-services-mobile-network-services"
+    },
+    {
+      "old": "/dev-hub/docs/connectivity-services-no-harm-network",
+      "new": "/docs/connectivity-services/connectivity-services-no-harm-network"
+    },
+    {
+      "old": "/dev-hub/docs/connectivity-services-sms-services",
+      "new": "/docs/connectivity-services/connectivity-services-sms-services"
+    },
+    {
+      "old": "/dev-hub/docs/data-services-apn",
+      "new": "/docs/connectivity-services/connectivity-services-data-services/data-services-apn"
+    },
+    {
+      "old": "/dev-hub/docs/data-services-data-monitoring",
+      "new": "/docs/connectivity-services/connectivity-services-data-services/data-services-data-monitoring"
+    },
+    {
+      "old": "/dev-hub/docs/data-services-data-volume",
+      "new": "/docs/connectivity-services/connectivity-services-data-services/data-services-data-volume"
+    },
+    {
+      "old": "/dev-hub/docs/data-services-features-limitations",
+      "new": "/docs/connectivity-services/connectivity-services-data-services/data-services-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/data-streamer-event-records",
+      "new": "/platform/platform-services/platform-services-data-streamer/data-streamer-event-records"
+    },
+    {
+      "old": "/dev-hub/docs/data-streamer-features-limitations",
+      "new": "/platform/platform-services/platform-services-data-streamer/data-streamer-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/data-streamer-setup-guides",
+      "new": "/platform/platform-services/platform-services-data-streamer/data-streamer-setup-guides"
+    },
+    {
+      "old": "/dev-hub/docs/data-streamer-usage-records",
+      "new": "/platform/platform-services/platform-services-data-streamer/data-streamer-usage-records"
+    },
+    {
+      "old": "/dev-hub/docs/device-authenticator-features-limitations",
+      "new": "/platform/1nce-os/1nce-os-device-authenticator/device-authenticator-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/device-controller-api",
+      "new": "/platform/1nce-os/1nce-os-device-controller/device-controller-api"
+    },
+    {
+      "old": "/dev-hub/docs/device-controller-features-limitations",
+      "new": "/platform/1nce-os/1nce-os-device-controller/device-controller-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/device-controller-web-interface",
+      "new": "/platform/1nce-os/1nce-os-device-controller/device-controller-web-interface"
+    },
+    {
+      "old": "/dev-hub/docs/device-inspector-features-limitations",
+      "new": "/platform/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/device-inspector-historian-api",
+      "new": "/platform/1nce-os/1nce-os-device-inspector/device-inspector-historian-api"
+    },
+    {
+      "old": "/dev-hub/docs/device-inspector-historian-web-interface",
+      "new": "/platform/1nce-os/1nce-os-device-inspector/device-inspector-historian-web-interface"
+    },
+    {
+      "old": "/dev-hub/docs/device-integrator-coap",
+      "new": "/platform/1nce-os/1nce-os-device-integrator/device-integrator-coap"
+    },
+    {
+      "old": "/dev-hub/docs/device-integrator-test-endpoints",
+      "new": "/platform/1nce-os/1nce-os-device-integrator/device-integrator-test-endpoints"
+    },
+    {
+      "old": "/dev-hub/docs/device-integrator-udp",
+      "new": "/platform/1nce-os/1nce-os-device-integrator/device-integrator-udp"
+    },
+    {
+      "old": "/dev-hub/docs/device-locator-api",
+      "new": "/platform/1nce-os/1nce-os-device-locator/device-locator-api"
+    },
+    {
+      "old": "/dev-hub/docs/device-locator-features-limitations",
+      "new": "/platform/1nce-os/1nce-os-device-locator/device-locator-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/device-locator-geofencing-guide",
+      "new": "/platform/1nce-os/1nce-os-device-locator/device-locator-geofencing-guide"
+    },
+    {
+      "old": "/dev-hub/docs/ec25-ec21-1nce-os-udp",
+      "new": "/blueprints/blueprints-examples/ec25-ec21-1nce-os-udp"
+    },
+    {
+      "old": "/dev-hub/docs/ec25-icmp-ping",
+      "new": "/blueprints/blueprints-examples/ec25-icmp-ping"
+    },
+    {
+      "old": "/dev-hub/docs/ec25-mo-sms",
+      "new": "/blueprints/blueprints-examples/ec25-mo-sms"
+    },
+    {
+      "old": "/dev-hub/docs/ec25-mt-sms",
+      "new": "/blueprints/blueprints-examples/ec25-mt-sms"
+    },
+    {
+      "old": "/dev-hub/docs/ec25-network-registration",
+      "new": "/blueprints/blueprints-examples/ec25-network-registration"
+    },
+    {
+      "old": "/dev-hub/docs/ec25-rat-configuration",
+      "new": "/blueprints/blueprints-examples/ec25-rat-configuration"
+    },
+    {
+      "old": "/dev-hub/docs/ec25-tcp-client-connection",
+      "new": "/blueprints/blueprints-examples/ec25-tcp-client-connection"
+    },
+    {
+      "old": "/dev-hub/docs/energy-saver-binary-conversion-language",
+      "new": "/platform/1nce-os/1nce-os-energy-saver/energy-saver-binary-conversion-language"
+    },
+    {
+      "old": "/dev-hub/docs/energy-saver-device-locator-integration",
+      "new": "/platform/1nce-os/1nce-os-energy-saver/energy-saver-device-locator-integration"
+    },
+    {
+      "old": "/dev-hub/docs/energy-saver-energy-saved-calculation",
+      "new": "/platform/1nce-os/1nce-os-energy-saver/energy-saver-energy-saved-calculation"
+    },
+    {
+      "old": "/dev-hub/docs/energy-saver-features-limitations",
+      "new": "/platform/1nce-os/1nce-os-energy-saver/energy-saver-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/energy-saver-template-tester",
+      "new": "/platform/1nce-os/1nce-os-energy-saver/energy-saver-template-tester"
+    },
+    {
+      "old": "/dev-hub/docs/examples-data-streamer",
+      "new": "/blueprints/blueprints-examples/examples-data-streamer"
+    },
+    {
+      "old": "/dev-hub/docs/examples-data-streamer-datadog",
+      "new": "/blueprints/blueprints-examples/examples-data-streamer/examples-data-streamer-datadog"
+    },
+    {
+      "old": "/dev-hub/docs/examples-data-streamer-http",
+      "new": "/blueprints/blueprints-examples/examples-data-streamer/examples-data-streamer-http"
+    },
+    {
+      "old": "/dev-hub/docs/examples-data-streamer-keen",
+      "new": "/blueprints/blueprints-examples/examples-data-streamer/examples-data-streamer-keen"
+    },
+    {
+      "old": "/dev-hub/docs/examples-data-streamer-kinesis",
+      "new": "/blueprints/blueprints-examples/examples-data-streamer/examples-data-streamer-kinesis"
+    },
+    {
+      "old": "/dev-hub/docs/examples-data-streamer-s3",
+      "new": "/blueprints/blueprints-examples/examples-data-streamer/examples-data-streamer-s3"
+    },
+    {
+      "old": "/dev-hub/docs/examples-hardware-guides",
+      "new": "/blueprints/blueprints-examples/examples-hardware-guides"
+    },
+    {
+      "old": "/dev-hub/docs/examples-mo-sms",
+      "new": "/blueprints/blueprints-examples/examples-sms/examples-mo-sms"
+    },
+    {
+      "old": "/dev-hub/docs/examples-mt-sms",
+      "new": "/blueprints/blueprints-examples/examples-sms/examples-mt-sms"
+    },
+    {
+      "old": "/dev-hub/docs/examples-overview",
+      "new": "/blueprints/blueprints-examples/examples-overview"
+    },
+    {
+      "old": "/dev-hub/docs/examples-sms",
+      "new": "/blueprints/blueprints-examples/examples-sms"
+    },
+    {
+      "old": "/dev-hub/docs/examples-sms-forwarder",
+      "new": "/blueprints/blueprints-examples/examples-sms-forwarder"
+    },
+    {
+      "old": "/dev-hub/docs/examples-sms-forwarder-portal",
+      "new": "/blueprints/blueprints-examples/examples-sms-forwarder/examples-sms-forwarder-portal"
+    },
+    {
+      "old": "/dev-hub/docs/examples-sms-forwarder-testing",
+      "new": "/blueprints/blueprints-examples/examples-sms-forwarder/examples-sms-forwarder-testing"
+    },
+    {
+      "old": "/dev-hub/docs/examples-vpn",
+      "new": "/blueprints/blueprints-examples/examples-vpn"
+    },
+    {
+      "old": "/dev-hub/docs/examples-vpn-linux",
+      "new": "/blueprints/blueprints-examples/examples-vpn/examples-vpn-linux"
+    },
+    {
+      "old": "/dev-hub/docs/examples-vpn-macos",
+      "new": "/blueprints/blueprints-examples/examples-vpn/examples-vpn-macos"
+    },
+    {
+      "old": "/dev-hub/docs/examples-vpn-windows",
+      "new": "/blueprints/blueprints-examples/examples-vpn/examples-vpn-windows"
+    },
+    {
+      "old": "/dev-hub/docs/index",
+      "new": "/docs/sim-cards/sim-cards-overview"
+    },
+    {
+      "old": "/dev-hub/docs/introduction-welcome",
+      "new": "/docs"
+    },
+    {
+      "old": "/dev-hub/docs/lwm2m-bootstrapping",
+      "new": "/platform/1nce-os/1nce-os-lwm2m/lwm2m-bootstrapping"
+    },
+    {
+      "old": "/dev-hub/docs/lwm2m-client-examples",
+      "new": "/platform/1nce-os/1nce-os-lwm2m/lwm2m-client-examples"
+    },
+    {
+      "old": "/dev-hub/docs/lwm2m-data-handling",
+      "new": "/platform/1nce-os/1nce-os-lwm2m/lwm2m-data-handling"
+    },
+    {
+      "old": "/dev-hub/docs/lwm2m-device-locator-integration",
+      "new": "/platform/1nce-os/1nce-os-lwm2m/lwm2m-device-locator-integration"
+    },
+    {
+      "old": "/dev-hub/docs/lwm2m-features-limitations",
+      "new": "/platform/1nce-os/1nce-os-lwm2m/lwm2m-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/mcp",
+      "new": "/docs/mcp-server/mcp"
+    },
+    {
+      "old": "/dev-hub/docs/mobile-network-services-coverage",
+      "new": "/docs/connectivity-services/connectivity-services-mobile-network-services/mobile-network-services-coverage"
+    },
+    {
+      "old": "/dev-hub/docs/mobile-network-services-discontinuation",
+      "new": "/docs/connectivity-services/connectivity-services-mobile-network-services/mobile-network-services-discontinuation"
+    },
+    {
+      "old": "/dev-hub/docs/network-services-internet-breakout",
+      "new": "/docs/network-services/network-services-internet-breakout"
+    },
+    {
+      "old": "/dev-hub/docs/network-services-vpn-service",
+      "new": "/docs/network-services/network-services-vpn-service"
+    },
+    {
+      "old": "/dev-hub/docs/platform-services-blockchain",
+      "new": "/platform/platform-services/platform-services-blockchain"
+    },
+    {
+      "old": "/dev-hub/docs/platform-services-data-streamer",
+      "new": "/platform/platform-services/platform-services-data-streamer"
+    },
+    {
+      "old": "/dev-hub/docs/platform-services-sms-forwarder",
+      "new": "/platform/platform-services/platform-services-sms-forwarder"
+    },
+    {
+      "old": "/dev-hub/docs/portal-accounts-orders",
+      "new": "/platform/1nce-portal/portal-accounts-orders"
+    },
+    {
+      "old": "/dev-hub/docs/portal-configuration",
+      "new": "/platform/1nce-portal/portal-configuration"
+    },
+    {
+      "old": "/dev-hub/docs/portal-dashboard",
+      "new": "/platform/1nce-portal/portal-dashboard"
+    },
+    {
+      "old": "/dev-hub/docs/portal-performance-support",
+      "new": "/platform/1nce-portal/portal-performance-support"
+    },
+    {
+      "old": "/dev-hub/docs/portal-sims-sms",
+      "new": "/platform/1nce-portal/portal-sims-sms"
+    },
+    {
+      "old": "/dev-hub/docs/portal-users-organisations",
+      "new": "/platform/1nce-portal/portal-users-organisations"
+    },
+    {
+      "old": "/dev-hub/docs/quectel-bg95-m3",
+      "new": "/blueprints/quectel-bg95-m3"
+    },
+    {
+      "old": "/dev-hub/docs/quectel-ec25-ec21",
+      "new": "/blueprints/quectel-ec25-ec21"
+    },
+    {
+      "old": "/dev-hub/docs/recipes",
+      "new": "/blueprints/recipes"
+    },
+    {
+      "old": "/dev-hub/docs/sara-r4-get-http",
+      "new": "/blueprints/blueprints-examples/sara-r4-get-http"
+    },
+    {
+      "old": "/dev-hub/docs/sara-r410m",
+      "new": "/blueprints/sara-r410m"
+    },
+    {
+      "old": "/dev-hub/docs/sara-r410m-1nce-os-udp",
+      "new": "/blueprints/blueprints-examples/sara-r410m-1nce-os-udp"
+    },
+    {
+      "old": "/dev-hub/docs/sara-r410m-network-registration",
+      "new": "/blueprints/blueprints-examples/sara-r410m-network-registration"
+    },
+    {
+      "old": "/dev-hub/docs/sdk-blueprints-arduino",
+      "new": "/platform/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-arduino"
+    },
+    {
+      "old": "/dev-hub/docs/sdk-blueprints-freertos",
+      "new": "/platform/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-freertos"
+    },
+    {
+      "old": "/dev-hub/docs/sdk-blueprints-zephyr",
+      "new": "/platform/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr"
+    },
+    {
+      "old": "/dev-hub/docs/sim-cards-iot-business",
+      "new": "/docs/sim-cards/sim-cards-overview/sim-cards-iot-business"
+    },
+    {
+      "old": "/dev-hub/docs/sim-cards-iot-industrial",
+      "new": "/docs/sim-cards/sim-cards-overview/sim-cards-iot-industrial"
+    },
+    {
+      "old": "/dev-hub/docs/sim-cards-knowledge",
+      "new": "/docs/sim-cards/sim-cards-knowledge"
+    },
+    {
+      "old": "/dev-hub/docs/sim-cards-overview",
+      "new": "/docs/sim-cards/sim-cards-overview"
+    },
+    {
+      "old": "/dev-hub/docs/sim-chips-iot-industrial",
+      "new": "/docs/sim-cards/sim-cards-overview/sim-chips-iot-industrial"
+    },
+    {
+      "old": "/dev-hub/docs/sim-euicc-knowledge",
+      "new": "/docs/sim-cards/sim-euicc-knowledge"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g",
+      "new": "/blueprints/sim7000g"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g-1nce-os-coap",
+      "new": "/blueprints/blueprints-examples/sim7000g-1nce-os-coap"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g-1nce-os-udp",
+      "new": "/blueprints/blueprints-examples/sim7000g-1nce-os-udp"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g-ftp-get",
+      "new": "/blueprints/blueprints-examples/sim7000g-ftp-get"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g-http-get",
+      "new": "/blueprints/blueprints-examples/sim7000g-http-get"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g-http-post",
+      "new": "/blueprints/blueprints-examples/sim7000g-http-post"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g-icmp-ping",
+      "new": "/blueprints/blueprints-examples/sim7000g-icmp-ping"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g-mo-sms",
+      "new": "/blueprints/blueprints-examples/sim7000g-mo-sms"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g-mt-sms",
+      "new": "/blueprints/blueprints-examples/sim7000g-mt-sms"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g-network-registration",
+      "new": "/blueprints/blueprints-examples/sim7000g-network-registration"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g-rat-configuration",
+      "new": "/blueprints/blueprints-examples/sim7000g-rat-configuration"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g-tcp-client-connection",
+      "new": "/blueprints/blueprints-examples/sim7000g-tcp-client-connection"
+    },
+    {
+      "old": "/dev-hub/docs/sim7000g-udp-client-connection",
+      "new": "/blueprints/blueprints-examples/sim7000g-udp-client-connection"
+    },
+    {
+      "old": "/dev-hub/docs/sim7020e-1nce-os-coap",
+      "new": "/blueprints/blueprints-examples/sim7020e-1nce-os-coap"
+    },
+    {
+      "old": "/dev-hub/docs/sim7020e-1nce-os-coap-1",
+      "new": "/blueprints/blueprints-examples/sim7020e-1nce-os-coap-1"
+    },
+    {
+      "old": "/dev-hub/docs/sim800l-http-get",
+      "new": "/blueprints/blueprints-examples/sim800l-http-get"
+    },
+    {
+      "old": "/dev-hub/docs/sim800l-http-post",
+      "new": "/blueprints/blueprints-examples/sim800l-http-post"
+    },
+    {
+      "old": "/dev-hub/docs/sim800l-icmp-ping",
+      "new": "/blueprints/blueprints-examples/sim800l-icmp-ping"
+    },
+    {
+      "old": "/dev-hub/docs/sim800l-mo-sms",
+      "new": "/blueprints/blueprints-examples/sim800l-mo-sms"
+    },
+    {
+      "old": "/dev-hub/docs/sim800l-mt-sms",
+      "new": "/blueprints/blueprints-examples/sim800l-mt-sms"
+    },
+    {
+      "old": "/dev-hub/docs/sim800l-network-registration",
+      "new": "/blueprints/blueprints-examples/sim800l-network-registration"
+    },
+    {
+      "old": "/dev-hub/docs/sim800l-tcp-client-connection",
+      "new": "/blueprints/blueprints-examples/sim800l-tcp-client-connection"
+    },
+    {
+      "old": "/dev-hub/docs/sim800l-udp-client-connection",
+      "new": "/blueprints/blueprints-examples/sim800l-udp-client-connection"
+    },
+    {
+      "old": "/dev-hub/docs/simcom-7020g-simcom800l",
+      "new": "/blueprints/simcom-7020g-simcom800l"
+    },
+    {
+      "old": "/dev-hub/docs/sms-forwarder-error-states",
+      "new": "/platform/platform-services/platform-services-sms-forwarder/sms-forwarder-error-states"
+    },
+    {
+      "old": "/dev-hub/docs/sms-forwarder-events",
+      "new": "/platform/platform-services/platform-services-sms-forwarder/sms-forwarder-events"
+    },
+    {
+      "old": "/dev-hub/docs/sms-forwarder-features-limitations",
+      "new": "/platform/platform-services/platform-services-sms-forwarder/sms-forwarder-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/sms-forwarder-setup-guides",
+      "new": "/platform/platform-services/platform-services-sms-forwarder/sms-forwarder-setup-guides"
+    },
+    {
+      "old": "/dev-hub/docs/sms-services-examples",
+      "new": "/docs/connectivity-services/connectivity-services-sms-services/sms-services-examples"
+    },
+    {
+      "old": "/dev-hub/docs/sms-services-features-limitations",
+      "new": "/docs/connectivity-services/connectivity-services-sms-services/sms-services-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/sms-services-mo-sms",
+      "new": "/docs/connectivity-services/connectivity-services-sms-services/sms-services-mo-sms"
+    },
+    {
+      "old": "/dev-hub/docs/sms-services-mt-sms",
+      "new": "/docs/connectivity-services/connectivity-services-sms-services/sms-services-mt-sms"
+    },
+    {
+      "old": "/dev-hub/docs/sms-services-sms-monitoring",
+      "new": "/docs/connectivity-services/connectivity-services-sms-services/sms-services-sms-monitoring"
+    },
+    {
+      "old": "/dev-hub/docs/sms-services-sms-volume",
+      "new": "/docs/connectivity-services/connectivity-services-sms-services/sms-services-sms-volume"
+    },
+    {
+      "old": "/dev-hub/docs/terms-abbreviations",
+      "new": "/terms/terms-abbreviations"
+    },
+    {
+      "old": "/dev-hub/docs/troubleshooting-technical-support",
+      "new": "/docs/troubleshooting/troubleshooting-technical-support"
+    },
+    {
+      "old": "/dev-hub/docs/vpn-service-features-limitations",
+      "new": "/docs/network-services/network-services-vpn-service/vpn-service-features-limitations"
+    },
+    {
+      "old": "/dev-hub/docs/vpn-service-openvpn-files",
+      "new": "/docs/network-services/network-services-vpn-service/vpn-service-openvpn-files"
+    },
+    {
+      "old": "/dev-hub/docs/vpn-service-setup-guides",
+      "new": "/docs/network-services/network-services-vpn-service/vpn-service-setup-guides"
+    },
+    {
+      "old": "/dev-hub/docs/wvdial-tutorial",
+      "new": "/blueprints/blueprints-examples/wvdial-tutorial"
+    },
+    {
+      "old": "/dev-hub/quectel-bg95-m3",
+      "new": "/docs/blueprints-examples/quectel-bg95-m3"
+    },
+    {
+      "old": "/dev-hub/quectel-ec25-ec21",
+      "new": "/docs/blueprints-examples/quectel-ec25-ec21"
+    },
+    {
+      "old": "/dev-hub/recipes",
+      "new": "/docs/blueprints-examples/recipes"
+    },
+    {
+      "old": "/dev-hub/reference/1-nce-os.info",
+      "new": "/api/1nce-os/1-nce-os.info"
+    },
+    {
+      "old": "/dev-hub/reference/accept-1-nce-os-agreements.api",
+      "new": "/api/1nce-os/accept-1-nce-os-agreements.api"
+    },
+    {
+      "old": "/dev-hub/reference/administration-logs.tag",
+      "new": "/api/1nce-os/administration-logs.tag"
+    },
+    {
+      "old": "/dev-hub/reference/agreements.tag",
+      "new": "/api/1nce-os/agreements.tag"
+    },
+    {
+      "old": "/dev-hub/reference/api-authorization",
+      "new": "/api/authorization/authorization"
+    },
+    {
+      "old": "/dev-hub/reference/api-best-practices",
+      "new": "/docs"
+    },
+    {
+      "old": "/dev-hub/reference/api-rate-limits",
+      "new": "/docs"
+    },
+    {
+      "old": "/dev-hub/reference/api-welcome",
+      "new": "/docs"
+    },
+    {
+      "old": "/dev-hub/reference/authorization.info",
+      "new": "/api/authorization/authorization.info"
+    },
+    {
+      "old": "/dev-hub/reference/auto-topup-using-post.api",
+      "new": "/api/sim-management/auto-topup-using-post.api"
+    },
+    {
+      "old": "/dev-hub/reference/autotopupusingpost",
+      "new": "/api/sim-management/auto-topup-using-post"
+    },
+    {
+      "old": "/dev-hub/reference/bearer-authorization.tag",
+      "new": "/api/authorization/bearer-authorization.tag"
+    },
+    {
+      "old": "/dev-hub/reference/cancel-all-device-action-requests.api",
+      "new": "/api/1nce-os/cancel-all-device-action-requests.api"
+    },
+    {
+      "old": "/dev-hub/reference/cancel-single-device-action-request.api",
+      "new": "/api/1nce-os/cancel-single-device-action-request.api"
+    },
+    {
+      "old": "/dev-hub/reference/cancel-sms-for-sim-using-delete.api",
+      "new": "/api/sim-management/cancel-sms-for-sim-using-delete.api"
+    },
+    {
+      "old": "/dev-hub/reference/cancelsmsforsimusingdelete",
+      "new": "/api/sim-management/cancel-sms-for-sim-using-delete"
+    },
+    {
+      "old": "/dev-hub/reference/connectivity.tag",
+      "new": "/api/sim-management/connectivity.tag"
+    },
+    {
+      "old": "/dev-hub/reference/create-action-request-on-specific-co-ap-device.api",
+      "new": "/api/1nce-os/create-action-request-on-specific-co-ap-device.api"
+    },
+    {
+      "old": "/dev-hub/reference/create-action-request-on-specific-lw-m-2-m-device.api",
+      "new": "/api/1nce-os/create-action-request-on-specific-lw-m-2-m-device.api"
+    },
+    {
+      "old": "/dev-hub/reference/create-action-request-on-specific-udp-device.api",
+      "new": "/api/1nce-os/create-action-request-on-specific-udp-device.api"
+    },
+    {
+      "old": "/dev-hub/reference/create-action-requests-for-co-ap-devices.api",
+      "new": "/api/1nce-os/create-action-requests-for-co-ap-devices.api"
+    },
+    {
+      "old": "/dev-hub/reference/create-action-requests-for-lw-m-2-m-devices.api",
+      "new": "/api/1nce-os/create-action-requests-for-lw-m-2-m-devices.api"
+    },
+    {
+      "old": "/dev-hub/reference/create-action-requests-for-udp-devices.api",
+      "new": "/api/1nce-os/create-action-requests-for-udp-devices.api"
+    },
+    {
+      "old": "/dev-hub/reference/create-aws-integration.api",
+      "new": "/api/1nce-os/create-aws-integration.api"
+    },
+    {
+      "old": "/dev-hub/reference/create-geofence.api",
+      "new": "/api/1nce-os/create-geofence.api"
+    },
+    {
+      "old": "/dev-hub/reference/create-optimizer-template.api",
+      "new": "/api/1nce-os/create-optimizer-template.api"
+    },
+    {
+      "old": "/dev-hub/reference/create-pre-shared-device-key.api",
+      "new": "/api/1nce-os/create-pre-shared-device-key.api"
+    },
+    {
+      "old": "/dev-hub/reference/create-service-request-using-post.api",
+      "new": "/api/support-management/create-service-request-using-post.api"
+    },
+    {
+      "old": "/dev-hub/reference/create-webhook-integration.api",
+      "new": "/api/1nce-os/create-webhook-integration.api"
+    },
+    {
+      "old": "/dev-hub/reference/createservicerequestusingpost",
+      "new": "/api/support-management/create-service-request-using-post"
+    },
+    {
+      "old": "/dev-hub/reference/delete-geofence.api",
+      "new": "/api/1nce-os/delete-geofence.api"
+    },
+    {
+      "old": "/dev-hub/reference/delete-integration.api",
+      "new": "/api/1nce-os/delete-integration.api"
+    },
+    {
+      "old": "/dev-hub/reference/delete-optimizer-template.api",
+      "new": "/api/1nce-os/delete-optimizer-template.api"
+    },
+    {
+      "old": "/dev-hub/reference/delete_v1-integrate-clouds-integrationid",
+      "new": "/api/1nce-os/delete-integration"
+    },
+    {
+      "old": "/dev-hub/reference/delete_v1-integrate-devices-actions-requests-requestid",
+      "new": "/api/1nce-os/cancel-single-device-action-request"
+    },
+    {
+      "old": "/dev-hub/reference/delete_v1-integrate-devices-deviceid-actions-requests",
+      "new": "/api/1nce-os/cancel-all-device-action-requests"
+    },
+    {
+      "old": "/dev-hub/reference/delete_v1-locate-geofences-geofenceid",
+      "new": "/api/1nce-os/delete-geofence"
+    },
+    {
+      "old": "/dev-hub/reference/delete_v1-optimize-templates-templateid",
+      "new": "/api/1nce-os/delete-optimizer-template"
+    },
+    {
+      "old": "/dev-hub/reference/delete_v1-partners-plugins-pluginid",
+      "new": "/api/1nce-os/uninstall-a-specific-plugin-by-id"
+    },
+    {
+      "old": "/dev-hub/reference/device-inspector.tag",
+      "new": "/api/1nce-os/device-inspector.tag"
+    },
+    {
+      "old": "/dev-hub/reference/device-locator.tag",
+      "new": "/api/1nce-os/device-locator.tag"
+    },
+    {
+      "old": "/dev-hub/reference/devices.tag",
+      "new": "/api/1nce-os/devices.tag"
+    },
+    {
+      "old": "/dev-hub/reference/extend-sims-using-post.api",
+      "new": "/api/sim-management/extend-sims-using-post.api"
+    },
+    {
+      "old": "/dev-hub/reference/extendsimsusingpost",
+      "new": "/api/sim-management/extend-sims-using-post"
+    },
+    {
+      "old": "/dev-hub/reference/general-si-ms.tag",
+      "new": "/api/sim-management/general-si-ms.tag"
+    },
+    {
+      "old": "/dev-hub/reference/get-a-geofence.api",
+      "new": "/api/1nce-os/get-a-geofence.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-a-list-of-plugin-installations.api",
+      "new": "/api/1nce-os/get-a-list-of-plugin-installations.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-active-device-action-requests.api",
+      "new": "/api/1nce-os/get-active-device-action-requests.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-administration-log-payload.api",
+      "new": "/api/1nce-os/get-administration-log-payload.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-administration-logs-statistics.api",
+      "new": "/api/1nce-os/get-administration-logs-statistics.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-administration-logs.api",
+      "new": "/api/1nce-os/get-administration-logs.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-all-customer-integrations.api",
+      "new": "/api/1nce-os/get-all-customer-integrations.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-all-devices.api",
+      "new": "/api/1nce-os/get-all-devices.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-all-geofences.api",
+      "new": "/api/1nce-os/get-all-geofences.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-archived-device-action-requests.api",
+      "new": "/api/1nce-os/get-archived-device-action-requests.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-cloud-formation-parameters.api",
+      "new": "/api/1nce-os/get-cloud-formation-parameters.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-connectivity-info-for-sim-using-get.api",
+      "new": "/api/sim-management/get-connectivity-info-for-sim-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-customer-integration.api",
+      "new": "/api/1nce-os/get-customer-integration.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-customer-settings.api",
+      "new": "/api/1nce-os/get-customer-settings.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-data-quota-for-sim-using-get.api",
+      "new": "/api/sim-management/get-data-quota-for-sim-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-details-about-a-specific-plugin-installation.api",
+      "new": "/api/1nce-os/get-details-about-a-specific-plugin-installation.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-device-action-requests.api",
+      "new": "/api/1nce-os/get-device-action-requests.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-device-celltower-location-resolutions.api",
+      "new": "/api/1nce-os/get-device-celltower-location-resolutions.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-device-endpoints.api",
+      "new": "/api/1nce-os/get-device-endpoints.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-device-historian-insights.api",
+      "new": "/api/1nce-os/get-device-historian-insights.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-device-historian-messages.api",
+      "new": "/api/1nce-os/get-device-historian-messages.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-device-positions.api",
+      "new": "/api/1nce-os/get-device-positions.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-device-telemetry.api",
+      "new": "/api/1nce-os/get-device-telemetry.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-devices-statistics.api",
+      "new": "/api/1nce-os/get-devices-statistics.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-events-for-sim-using-get.api",
+      "new": "/api/sim-management/get-events-for-sim-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-historian-insights.api",
+      "new": "/api/1nce-os/get-historian-insights.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-historian-messages.api",
+      "new": "/api/1nce-os/get-historian-messages.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-integration-event-types.api",
+      "new": "/api/1nce-os/get-integration-event-types.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-latest-devices-positions.api",
+      "new": "/api/1nce-os/get-latest-devices-positions.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-limits-using-get.api",
+      "new": "/api/sim-management/get-limits-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-optimizer-templates.api",
+      "new": "/api/1nce-os/get-optimizer-templates.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-order-using-get.api",
+      "new": "/api/order-management/get-order-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-orders-using-get.api",
+      "new": "/api/order-management/get-orders-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-pre-shared-device-key.api",
+      "new": "/api/1nce-os/get-pre-shared-device-key.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-products-using-get.api",
+      "new": "/api/product-information/get-products-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-savings.api",
+      "new": "/api/1nce-os/get-savings.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-selectable-limits-using-get.api",
+      "new": "/api/sim-management/get-selectable-limits-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-service-requests-using-get.api",
+      "new": "/api/support-management/get-service-requests-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-sim-using-get.api",
+      "new": "/api/sim-management/get-sim-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-sims-using-get.api",
+      "new": "/api/sim-management/get-sims-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-single-device-action-request.api",
+      "new": "/api/1nce-os/get-single-device-action-request.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-single-device-endpoint.api",
+      "new": "/api/1nce-os/get-single-device-endpoint.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-single-device.api",
+      "new": "/api/1nce-os/get-single-device.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-sms-for-sim-using-get.api",
+      "new": "/api/sim-management/get-sms-for-sim-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-sms-of-sim-using-get.api",
+      "new": "/api/sim-management/get-sms-of-sim-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-sms-quota-for-sim-using-get.api",
+      "new": "/api/sim-management/get-sms-quota-for-sim-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-status-for-sim-using-get.api",
+      "new": "/api/sim-management/get-status-for-sim-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get-usage-for-sim-using-get.api",
+      "new": "/api/sim-management/get-usage-for-sim-using-get.api"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-administrationlogs",
+      "new": "/api/1nce-os/get-administration-logs"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-administrationlogs-adminlogid-payload",
+      "new": "/api/1nce-os/get-administration-log-payload"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-administrationlogs-stats",
+      "new": "/api/1nce-os/get-administration-logs-statistics"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-devices-stats",
+      "new": "/api/1nce-os/get-devices-statistics"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-inspect-devices",
+      "new": "/api/1nce-os/get-all-devices"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-inspect-devices-deviceid",
+      "new": "/api/1nce-os/get-single-device"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-inspect-devices-deviceid-history",
+      "new": "/api/1nce-os/get-device-historian-messages"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-inspect-devices-deviceid-history-insights",
+      "new": "/api/1nce-os/get-device-historian-insights"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-inspect-devices-deviceid-telemetry",
+      "new": "/api/1nce-os/get-device-telemetry"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-inspect-devices-history",
+      "new": "/api/1nce-os/get-historian-messages"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-inspect-devices-history-insights",
+      "new": "/api/1nce-os/get-historian-insights"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-clouds",
+      "new": "/api/1nce-os/get-all-customer-integrations"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-clouds-aws-parameters",
+      "new": "/api/1nce-os/get-cloud-formation-parameters"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-clouds-eventtypes",
+      "new": "/api/1nce-os/get-integration-event-types"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-clouds-integrationid",
+      "new": "/api/1nce-os/get-customer-integration"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-devices-actions-requests",
+      "new": "/api/1nce-os/get-device-action-requests"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-devices-actions-requests-active",
+      "new": "/api/1nce-os/get-active-device-action-requests"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-devices-actions-requests-archived",
+      "new": "/api/1nce-os/get-archived-device-action-requests"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-devices-actions-requests-requestid",
+      "new": "/api/1nce-os/get-single-device-action-request"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-devices-deviceid-psk-protocol",
+      "new": "/api/1nce-os/get-pre-shared-device-key"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-devices-endpoints",
+      "new": "/api/1nce-os/get-device-endpoints"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-devices-endpoints-protocol",
+      "new": "/api/1nce-os/get-single-device-endpoint"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-devices-presharedkey-jobs",
+      "new": "/api/1nce-os/pre-shared-devices-keys-import-job-status"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-integrate-devices-psk-jobs",
+      "new": "/api/1nce-os/pre-shared-devices-keys-import-job-status"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-locate-devices-deviceid-activity",
+      "new": "/api/1nce-os/get-device-celltower-location-resolutions"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-locate-devices-deviceid-positions",
+      "new": "/api/1nce-os/get-device-positions"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-locate-geofences",
+      "new": "/api/1nce-os/get-all-geofences"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-locate-geofences-geofenceid",
+      "new": "/api/1nce-os/get-a-geofence"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-locate-positions-latest",
+      "new": "/api/1nce-os/get-latest-devices-positions"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-optimize-savings",
+      "new": "/api/1nce-os/get-savings"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-optimize-templates",
+      "new": "/api/1nce-os/get-optimizer-templates"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-partners-plugins",
+      "new": "/api/1nce-os/get-a-list-of-plugin-installations"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-partners-plugins-pluginid",
+      "new": "/api/1nce-os/get-details-about-a-specific-plugin-installation"
+    },
+    {
+      "old": "/dev-hub/reference/get_v1-settings-1nceos",
+      "new": "/api/1nce-os/get-customer-settings"
+    },
+    {
+      "old": "/dev-hub/reference/getconnectivityinfoforsimusingget",
+      "new": "/api/sim-management/get-connectivity-info-for-sim-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getdataquotaforsimusingget",
+      "new": "/api/sim-management/get-data-quota-for-sim-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/geteventsforsimusingget",
+      "new": "/api/sim-management/get-events-for-sim-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getlimitsusingget",
+      "new": "/api/sim-management/get-limits-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getordersusingget",
+      "new": "/api/order-management/get-orders-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getorderusingget",
+      "new": "/api/order-management/get-order-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getproductsusingget",
+      "new": "/api/product-information/get-products-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getselectablelimitsusingget",
+      "new": "/api/sim-management/get-selectable-limits-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getservicerequestsusingget",
+      "new": "/api/support-management/get-service-requests-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getsimsusingget",
+      "new": "/api/sim-management/get-sims-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getsimusingget",
+      "new": "/api/sim-management/get-sim-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getsmsforsimusingget",
+      "new": "/api/sim-management/get-sms-for-sim-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getsmsofsimusingget",
+      "new": "/api/sim-management/get-sms-of-sim-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getsmsquotaforsimusingget",
+      "new": "/api/sim-management/get-sms-quota-for-sim-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getstatusforsimusingget",
+      "new": "/api/sim-management/get-status-for-sim-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/getusageforsimusingget",
+      "new": "/api/sim-management/get-usage-for-sim-using-get"
+    },
+    {
+      "old": "/dev-hub/reference/import-pre-shared-devices-keys.api",
+      "new": "/api/1nce-os/import-pre-shared-devices-keys.api"
+    },
+    {
+      "old": "/dev-hub/reference/install-datacake-plugin-for-1-nce-os.api",
+      "new": "/api/1nce-os/install-datacake-plugin-for-1-nce-os.api"
+    },
+    {
+      "old": "/dev-hub/reference/install-memfault-plugin-for-1-nce-os.api",
+      "new": "/api/1nce-os/install-memfault-plugin-for-1-nce-os.api"
+    },
+    {
+      "old": "/dev-hub/reference/install-mender-plugin-for-1-nce-os.api",
+      "new": "/api/1nce-os/install-mender-plugin-for-1-nce-os.api"
+    },
+    {
+      "old": "/dev-hub/reference/install-tartabit-plugin-for-1-nce-os.api",
+      "new": "/api/1nce-os/install-tartabit-plugin-for-1-nce-os.api"
+    },
+    {
+      "old": "/dev-hub/reference/io-t-integrator.tag",
+      "new": "/api/1nce-os/io-t-integrator.tag"
+    },
+    {
+      "old": "/dev-hub/reference/mcp",
+      "new": "/docs"
+    },
+    {
+      "old": "/dev-hub/reference/optimizer.tag",
+      "new": "/api/1nce-os/optimizer.tag"
+    },
+    {
+      "old": "/dev-hub/reference/order-management.info",
+      "new": "/api/order-management/order-management.info"
+    },
+    {
+      "old": "/dev-hub/reference/orders.tag",
+      "new": "/api/order-management/orders.tag"
+    },
+    {
+      "old": "/dev-hub/reference/patch-a-geofence.api",
+      "new": "/api/1nce-os/patch-a-geofence.api"
+    },
+    {
+      "old": "/dev-hub/reference/patch-customer-integration.api",
+      "new": "/api/1nce-os/patch-customer-integration.api"
+    },
+    {
+      "old": "/dev-hub/reference/patch-customer-webhook-integration.api",
+      "new": "/api/1nce-os/patch-customer-webhook-integration.api"
+    },
+    {
+      "old": "/dev-hub/reference/patch-settings.api",
+      "new": "/api/1nce-os/patch-settings.api"
+    },
+    {
+      "old": "/dev-hub/reference/patch-single-device-endpoint.api",
+      "new": "/api/1nce-os/patch-single-device-endpoint.api"
+    },
+    {
+      "old": "/dev-hub/reference/patch_v1-integrate-clouds-integrationid",
+      "new": "/api/1nce-os/patch-customer-integration"
+    },
+    {
+      "old": "/dev-hub/reference/patch_v1-integrate-clouds-webhooks-integrationid",
+      "new": "/api/1nce-os/patch-customer-webhook-integration"
+    },
+    {
+      "old": "/dev-hub/reference/patch_v1-integrate-devices-endpoints-protocol",
+      "new": "/api/1nce-os/patch-single-device-endpoint"
+    },
+    {
+      "old": "/dev-hub/reference/patch_v1-locate-geofences-geofenceid",
+      "new": "/api/1nce-os/patch-a-geofence"
+    },
+    {
+      "old": "/dev-hub/reference/patch_v1-optimize-templates-templateid",
+      "new": "/api/1nce-os/update-optimizer-template"
+    },
+    {
+      "old": "/dev-hub/reference/patch_v1-settings-1nceos-name",
+      "new": "/api/1nce-os/patch-settings"
+    },
+    {
+      "old": "/dev-hub/reference/plugin-system.tag",
+      "new": "/api/1nce-os/plugin-system.tag"
+    },
+    {
+      "old": "/dev-hub/reference/post-access-token-post.api",
+      "new": "/api/authorization/post-access-token-post.api"
+    },
+    {
+      "old": "/dev-hub/reference/post-order-using-post.api",
+      "new": "/api/order-management/post-order-using-post.api"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-agreements-1nceos",
+      "new": "/api/1nce-os/accept-1-nce-os-agreements"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-devices-deviceid-actions",
+      "new": "/api/1nce-os/create-action-request-on-specific-lw-m-2-m-device"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-clouds-aws",
+      "new": "/api/1nce-os/create-aws-integration"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-clouds-aws-integrationid-restart",
+      "new": "/api/1nce-os/restart-aws-integration"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-clouds-aws-integrationid-test",
+      "new": "/api/1nce-os/test-aws-integration"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-clouds-webhooks",
+      "new": "/api/1nce-os/create-webhook-integration"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-clouds-webhooks-integrationid-restart",
+      "new": "/api/1nce-os/restart-webhook-integration"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-clouds-webhooks-integrationid-test",
+      "new": "/api/1nce-os/test-webhook-integration"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-devices-actions-coap",
+      "new": "/api/1nce-os/create-action-requests-for-co-ap-devices"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-devices-actions-lwm2m",
+      "new": "/api/1nce-os/create-action-requests-for-lw-m-2-m-devices"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-devices-actions-udp",
+      "new": "/api/1nce-os/create-action-requests-for-udp-devices"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-devices-deviceid-actions-coap",
+      "new": "/api/1nce-os/create-action-request-on-specific-co-ap-device"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-devices-deviceid-actions-lwm2m",
+      "new": "/api/1nce-os/create-action-request-on-specific-lw-m-2-m-device"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-devices-deviceid-actions-udp",
+      "new": "/api/1nce-os/create-action-request-on-specific-udp-device"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-devices-deviceid-presharedkey",
+      "new": "/api/1nce-os/create-pre-shared-device-key"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-devices-deviceid-psk",
+      "new": "/api/1nce-os/create-pre-shared-device-key"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-devices-presharedkey-jobs",
+      "new": "/api/1nce-os/import-pre-shared-devices-keys"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-integrate-devices-psk-jobs",
+      "new": "/api/1nce-os/import-pre-shared-devices-keys"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-locate-geofences",
+      "new": "/api/1nce-os/create-geofence"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-optimize-messages-test",
+      "new": "/api/1nce-os/test-template"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-optimize-templates",
+      "new": "/api/1nce-os/create-optimizer-template"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-partners-datacake-plugins",
+      "new": "/api/1nce-os/install-datacake-plugin-for-1-nce-os"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-partners-memfault-plugins",
+      "new": "/api/1nce-os/install-memfault-plugin-for-1-nce-os"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-partners-mender-plugins",
+      "new": "/api/1nce-os/install-mender-plugin-for-1-nce-os"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-partners-plugins-pluginid-restart",
+      "new": "/api/1nce-os/restart-a-failed-plugin-by-installation-id"
+    },
+    {
+      "old": "/dev-hub/reference/post_v1-partners-tartabit-plugins",
+      "new": "/api/1nce-os/install-tartabit-plugin-for-1-nce-os"
+    },
+    {
+      "old": "/dev-hub/reference/postaccesstokenpost",
+      "new": "/api/authorization/post-access-token-post"
+    },
+    {
+      "old": "/dev-hub/reference/postorderusingpost",
+      "new": "/api/order-management/post-order-using-post"
+    },
+    {
+      "old": "/dev-hub/reference/pre-shared-devices-keys-import-job-status.api",
+      "new": "/api/1nce-os/pre-shared-devices-keys-import-job-status.api"
+    },
+    {
+      "old": "/dev-hub/reference/product-information.info",
+      "new": "/api/product-information/product-information.info"
+    },
+    {
+      "old": "/dev-hub/reference/products.tag",
+      "new": "/api/product-information/products.tag"
+    },
+    {
+      "old": "/dev-hub/reference/reset-connectivity-using-post.api",
+      "new": "/api/sim-management/reset-connectivity-using-post.api"
+    },
+    {
+      "old": "/dev-hub/reference/resetconnectivityusingpost",
+      "new": "/api/sim-management/reset-connectivity-using-post"
+    },
+    {
+      "old": "/dev-hub/reference/restart-a-failed-plugin-by-installation-id.api",
+      "new": "/api/1nce-os/restart-a-failed-plugin-by-installation-id.api"
+    },
+    {
+      "old": "/dev-hub/reference/restart-aws-integration.api",
+      "new": "/api/1nce-os/restart-aws-integration.api"
+    },
+    {
+      "old": "/dev-hub/reference/restart-webhook-integration.api",
+      "new": "/api/1nce-os/restart-webhook-integration.api"
+    },
+    {
+      "old": "/dev-hub/reference/send-sms-to-sim-using-post.api",
+      "new": "/api/sim-management/send-sms-to-sim-using-post.api"
+    },
+    {
+      "old": "/dev-hub/reference/sendsmstosimusingpost",
+      "new": "/api/sim-management/send-sms-to-sim-using-post"
+    },
+    {
+      "old": "/dev-hub/reference/service-requests.tag",
+      "new": "/api/support-management/service-requests.tag"
+    },
+    {
+      "old": "/dev-hub/reference/set-limits-using-post.api",
+      "new": "/api/sim-management/set-limits-using-post.api"
+    },
+    {
+      "old": "/dev-hub/reference/setlimitsusingpost",
+      "new": "/api/sim-management/set-limits-using-post"
+    },
+    {
+      "old": "/dev-hub/reference/settings.tag",
+      "new": "/api/1nce-os/settings.tag"
+    },
+    {
+      "old": "/dev-hub/reference/sim-events.tag",
+      "new": "/api/sim-management/sim-events.tag"
+    },
+    {
+      "old": "/dev-hub/reference/sim-extension.tag",
+      "new": "/api/sim-management/sim-extension.tag"
+    },
+    {
+      "old": "/dev-hub/reference/sim-management.info",
+      "new": "/api/sim-management/sim-management.info"
+    },
+    {
+      "old": "/dev-hub/reference/sim-transfer-using-post.api",
+      "new": "/api/sim-management/sim-transfer-using-post.api"
+    },
+    {
+      "old": "/dev-hub/reference/sim-usage.tag",
+      "new": "/api/sim-management/sim-usage.tag"
+    },
+    {
+      "old": "/dev-hub/reference/simtransferusingpost",
+      "new": "/api/sim-management/sim-transfer-using-post"
+    },
+    {
+      "old": "/dev-hub/reference/sms.tag",
+      "new": "/api/sim-management/sms.tag"
+    },
+    {
+      "old": "/dev-hub/reference/support-management.info",
+      "new": "/api/support-management/support-management.info"
+    },
+    {
+      "old": "/dev-hub/reference/test-aws-integration.api",
+      "new": "/api/1nce-os/test-aws-integration.api"
+    },
+    {
+      "old": "/dev-hub/reference/test-template.api",
+      "new": "/api/1nce-os/test-template.api"
+    },
+    {
+      "old": "/dev-hub/reference/test-webhook-integration.api",
+      "new": "/api/1nce-os/test-webhook-integration.api"
+    },
+    {
+      "old": "/dev-hub/reference/top-up-multiple-using-post.api",
+      "new": "/api/sim-management/top-up-multiple-using-post.api"
+    },
+    {
+      "old": "/dev-hub/reference/top-up-using-post.api",
+      "new": "/api/sim-management/top-up-using-post.api"
+    },
+    {
+      "old": "/dev-hub/reference/topupmultipleusingpost",
+      "new": "/api/sim-management/top-up-multiple-using-post"
+    },
+    {
+      "old": "/dev-hub/reference/topupusingpost",
+      "new": "/api/sim-management/top-up-using-post"
+    },
+    {
+      "old": "/dev-hub/reference/uninstall-a-specific-plugin-by-id.api",
+      "new": "/api/1nce-os/uninstall-a-specific-plugin-by-id.api"
+    },
+    {
+      "old": "/dev-hub/reference/update-optimizer-template.api",
+      "new": "/api/1nce-os/update-optimizer-template.api"
+    },
+    {
+      "old": "/dev-hub/reference/update-sim-using-put.api",
+      "new": "/api/sim-management/update-sim-using-put.api"
+    },
+    {
+      "old": "/dev-hub/reference/update-sims-using-post.api",
+      "new": "/api/sim-management/update-sims-using-post.api"
+    },
+    {
+      "old": "/dev-hub/reference/updatesimsusingpost",
+      "new": "/api/sim-management/update-sims-using-post"
+    },
+    {
+      "old": "/dev-hub/reference/updatesimusingput",
+      "new": "/api/sim-management/update-sim-using-put"
+    },
+    {
+      "old": "/dev-hub/reference/volume-limits.tag",
+      "new": "/api/sim-management/volume-limits.tag"
+    },
+    {
+      "old": "/dev-hub/reference/volume-top-up.tag",
+      "new": "/api/sim-management/volume-top-up.tag"
+    },
+    {
+      "old": "/dev-hub/sara-r410m",
+      "new": "/docs/blueprints-examples/sara-r410m"
+    },
+    {
+      "old": "/dev-hub/sim7000g",
+      "new": "/docs/blueprints-examples/sim7000g"
+    },
+    {
+      "old": "/dev-hub/simcom-7020g-simcom800l",
+      "new": "/docs/blueprints-examples/simcom-7020g-simcom800l"
+    },
+    {
+      "old": "/dev-hub/terms-abbreviations",
+      "new": "/terms-abbreviations"
+    },
+    {
       "old": "/docs/1nce-brazil-feature-description",
       "new": "/docs/sim-cards/1nce-brazil-multi-imsi/1nce-brazil-feature-description"
     },
@@ -1169,6 +2801,6 @@
       "new": "/api/sim-management/volume-top-up.tag"
     }
   ],
-  "generated": "2026-03-21",
-  "count": 292
+  "generated": "2026-04-02",
+  "count": 700
 }
