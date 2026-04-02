@@ -18,7 +18,7 @@ Requirements for milestone v1.2 — Overall Enhancements & Fixing.
 - [x] **NAV-01**: Navbar includes external links for 1NCE Home, 1NCE Shop, 1NCE Portal (matching original hub header)
 - [x] **NAV-02**: Documentation sidebar contains all sections in original order: Introduction, 1NCE Portal, SIM Cards, MCP Server, Connectivity Services, Platform Services, Network Services, 1NCE OS, Troubleshooting, Blueprints & Examples, Terms & Abbreviations
 - [x] **NAV-03**: Platform, Blueprints, and Terms plugin instances removed; content merged into main docs instance
-- [ ] **NAV-04**: Old `/platform/*`, `/blueprints/*`, and `/terms/*` URLs redirect to new locations via @docusaurus/plugin-client-redirects
+- [x] **NAV-04**: Old `/platform/*`, `/blueprints/*`, and `/terms/*` URLs redirect to new locations via @docusaurus/plugin-client-redirects
 
 ## v2 Requirements
 
@@ -56,7 +56,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | NAV-01 | Phase 8 | Complete |
 | NAV-02 | Phase 9 | Complete |
 | NAV-03 | Phase 9 | Complete |
-| NAV-04 | Phase 9 | Pending |
+| NAV-04 | Phase 9 | Complete |
 
 **Coverage:**
 - v1.2 requirements: 7 total

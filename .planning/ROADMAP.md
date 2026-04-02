@@ -34,7 +34,7 @@ See: `.planning/milestones/v1.0-ROADMAP.md` for full details.
 **Milestone Goal:** Align the Docusaurus site's branding and navigation with the original 1NCE Developer Hub on ReadMe.com — correct logo, favicon, light-only mode, external header links, and a single consolidated Documentation sidebar matching the original hub structure.
 
 - [ ] **Phase 8: Branding & Visual Alignment** — Favicon, logo, dark mode removal, and external navbar links
-- [ ] **Phase 9: Sidebar Consolidation & Navigation Restructuring** — Merge plugin instances, unify Documentation sidebar, add redirects for old URLs
+- [x] **Phase 9: Sidebar Consolidation & Navigation Restructuring** — Merge plugin instances, unify Documentation sidebar, add redirects for old URLs (completed 2026-04-02)
 
 ## Phase Details
 
@@ -122,7 +122,7 @@ Plans:
 
 Plans:
 - [x] 09-01-PLAN.md — Content moves and sidebar ordering metadata
-- [ ] 09-02-PLAN.md — Plugin cleanup, navbar consolidation, and client-side redirects
+- [x] 09-02-PLAN.md — Plugin cleanup, navbar consolidation, and client-side redirects
 
 ## Progress
 
@@ -138,4 +138,4 @@ Plans:
 | 6. Chat UI | v1.1 | 1/1 | Complete | 2026-03-23 |
 | 7. CI/CD Integration | v1.1 | 1/1 | Complete | 2026-03-23 |
 | 8. Branding & Visual Alignment | v1.2 | 0/? | Not started | - |
-| 9. Sidebar Consolidation | v1.2 | 0/2 | Not started | - |
+| 9. Sidebar Consolidation | v1.2 | 2/2 | Complete   | 2026-04-02 |
