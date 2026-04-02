@@ -44,6 +44,8 @@ Progress: [##########] 100%
 
 ### Decisions
 
+- [Quick 260402-tu1]: No DomainValidationOptions for cross-account domain; manual DNS validation required
+- [Quick 260402-tu1]: AlternateDomainName as CloudFormation parameter for flexibility
 - [Phase 08]: Config-only dark mode disable: defaultMode light, disableSwitch true, respectPrefersColorScheme false
 - [Phase 08]: Updated navbar external link URLs to match original help.1nce.com header
 - [Phase 09]: Moved 6 device docs into blueprints-examples/ for self-contained Blueprints section
@@ -62,5 +64,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-04-02
-Stopped at: Milestone v1.2 archived
+Stopped at: Completed quick/260402-tu1 (template updated, awaiting manual deployment)
 Resume file: None
