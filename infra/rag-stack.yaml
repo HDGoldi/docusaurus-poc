@@ -34,12 +34,20 @@ Parameters:
     Default: "https://help.1nce.com,https://hdgoldi.github.io,http://localhost:3000"
     Description: Origins allowed for CORS on the Lambda Function URL
 
-  ModelArn:
+  VectorBucketArn:
     Type: String
-    Default: "arn:aws:bedrock:eu-central-1::foundation-model/anthropic.claude-3-haiku-20240307-v1:0"
     Description: >-
-      Bedrock model ARN for generation. Default is Claude 3 Haiku (confirmed
-      available in eu-central-1). Update to Claude Haiku 4.5 when available.
+      ARN of the S3 Vector Bucket for storing embeddings. Must be pre-created
+      because CloudFormation does not yet support AWS::S3::VectorBucket.
+      Create it via CLI: aws s3vectors create-vector-bucket --vector-bucket-name 1nce-devhub-vectors
+      Then pass the ARN from the output here.
+
+  ModelId:
+    Type: String
+    Default: "anthropic.claude-3-haiku-20240307-v1:0"
+    Description: >-
+      Bedrock foundation model ID for generation. The full ARN is built
+      automatically using the deployment region.
 
 Resources:
   # ---------------------------------------------------------------------------
@@ -96,7 +104,19 @@ Resources:
                 Action:
                   - bedrock:InvokeModel
                 Resource:
-                  - "arn:aws:bedrock:eu-central-1::foundation-model/amazon.titan-embed-text-v2:0"
+                  - !Sub "arn:aws:bedrock:${AWS::Region}::foundation-model/amazon.titan-embed-text-v2:0"
+              - Sid: S3VectorsAccess
+                Effect: Allow
+                Action:
+                  - s3vectors:CreateIndex
+                  - s3vectors:PutVectors
+                  - s3vectors:GetVectors
+                  - s3vectors:DeleteVectors
+                  - s3vectors:QueryVectors
+                  - s3vectors:ListIndexes
+                Resource:
+                  - !Ref VectorBucketArn
+                  - !Sub "${VectorBucketArn}/*"
       Tags:
         - Key: environment
           Value: dev
@@ -116,11 +136,12 @@ Resources:
       KnowledgeBaseConfiguration:
         Type: VECTOR
         VectorKnowledgeBaseConfiguration:
-          EmbeddingModelArn: "arn:aws:bedrock:eu-central-1::foundation-model/amazon.titan-embed-text-v2:0"
+          EmbeddingModelArn: !Sub "arn:aws:bedrock:${AWS::Region}::foundation-model/amazon.titan-embed-text-v2:0"
       StorageConfiguration:
         Type: S3_VECTORS
         S3VectorsConfiguration:
-          BucketArn: !GetAtt RagContentBucket.Arn
+          VectorBucketArn: !Ref VectorBucketArn
+          IndexName: devhub-docs-vector-index
       Tags:
         environment: dev
         component: ai
@@ -181,7 +202,7 @@ Resources:
                   - bedrock:InvokeModelWithResponseStream
                   - bedrock:InvokeModel
                 Resource:
-                  - !Ref ModelArn
+                  - !Sub "arn:aws:bedrock:${AWS::Region}::foundation-model/${ModelId}"
       Tags:
         - Key: environment
           Value: dev
@@ -208,7 +229,7 @@ Resources:
       Environment:
         Variables:
           KB_ID: !GetAtt KnowledgeBase.KnowledgeBaseId
-          MODEL_ARN: !Ref ModelArn
+          MODEL_ARN: !Sub "arn:aws:bedrock:${AWS::Region}::foundation-model/${ModelId}"
       Tags:
         - Key: environment
           Value: dev
