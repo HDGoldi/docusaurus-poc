@@ -15,16 +15,16 @@ Requirements for AI Assistant + GitHub Pages Preview milestone. Each maps to roa
 
 ### Content Pipeline
 
-- [ ] **CONTENT-01**: Build-time script strips MDX/JSX from docs to plain Markdown for RAG ingestion
-- [ ] **CONTENT-02**: OpenAPI spec content extracted and prepared for knowledge base indexing
+- [x] **CONTENT-01**: Build-time script strips MDX/JSX from docs to plain Markdown for RAG ingestion
+- [x] **CONTENT-02**: OpenAPI spec content extracted and prepared for knowledge base indexing
 - [ ] **CONTENT-03**: Processed content synced to S3 bucket for Bedrock Knowledge Base
 
 ### Backend Infrastructure
 
-- [ ] **INFRA-01**: AWS Bedrock Knowledge Base configured with S3 Vectors as the vector store
-- [ ] **INFRA-02**: Lambda Function URL proxies chat requests to Bedrock RetrieveAndGenerate API
-- [ ] **INFRA-03**: CORS configured for deployed origins (GitHub Pages + help.1nce.com)
-- [ ] **INFRA-04**: Rate limiting prevents abuse of the AI chat endpoint
+- [x] **INFRA-01**: AWS Bedrock Knowledge Base configured with S3 Vectors as the vector store
+- [x] **INFRA-02**: Lambda Function URL proxies chat requests to Bedrock RetrieveAndGenerate API
+- [x] **INFRA-03**: CORS configured for deployed origins (GitHub Pages + help.1nce.com)
+- [x] **INFRA-04**: Rate limiting prevents abuse of the AI chat endpoint
 
 ### Chat UI
 
@@ -76,10 +76,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CONTENT-01 | Phase 5 | Pending |
 | CONTENT-02 | Phase 5 | Pending |
 | CONTENT-03 | Phase 5 | Pending |
-| INFRA-01 | Phase 5 | Pending |
-| INFRA-02 | Phase 5 | Pending |
-| INFRA-03 | Phase 5 | Pending |
-| INFRA-04 | Phase 5 | Pending |
+| INFRA-01 | Phase 5 | Complete |
+| INFRA-02 | Phase 5 | Complete |
+| INFRA-03 | Phase 5 | Complete |
+| INFRA-04 | Phase 5 | Complete |
 | CHAT-01 | Phase 6 | Pending |
 | CHAT-02 | Phase 6 | Pending |
 | CHAT-03 | Phase 6 | Pending |

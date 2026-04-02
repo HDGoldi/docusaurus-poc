@@ -55,9 +55,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — Content preprocessing script (MDX stripping + OpenAPI extraction)
-- [ ] 05-02-PLAN.md — AWS infrastructure template and Lambda handler (Bedrock KB, CloudFront, WAF)
-- [ ] 05-03-PLAN.md — Deployment scripts (S3 sync + Lambda deploy)
+- [x] 05-01-PLAN.md — Content preprocessing script (MDX stripping + OpenAPI extraction)
+- [x] 05-02-PLAN.md — AWS infrastructure template and Lambda handler (Bedrock KB, CloudFront, WAF)
+- [x] 05-03-PLAN.md — Deployment scripts (S3 sync + Lambda deploy)
 
 ### Phase 6: Chat UI
 **Goal**: Developers can ask questions about the documentation from any page and receive AI-generated answers with links to source pages
@@ -69,10 +69,10 @@ Plans:
   3. Each response includes clickable citation links that navigate to the relevant documentation page
   4. Empty chat state shows suggested starter questions that users can click to ask
   5. Chat widget appearance matches both light and dark mode themes
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 06-01: TBD
+- [ ] 06-01-PLAN.md — Chat widget foundation: types, SSE streaming hook, all components, CSS module, Root.tsx wrapper, visual verification
 
 ### Phase 7: CI/CD Integration
 **Goal**: Documentation updates automatically flow through to the AI knowledge base without manual intervention
@@ -96,6 +96,6 @@ Plans:
 | 2. Site Assembly | v1.0 | 5/5 | Complete | 2026-03-21 |
 | 3. Infrastructure and Deployment | v1.0 | 2/2 | Complete | 2026-03-21 |
 | 4. GitHub Pages Deployment | v1.1 | 0/1 | Not started | - |
-| 5. AI Backend and Content Pipeline | v1.1 | 0/3 | Not started | - |
+| 5. AI Backend and Content Pipeline | v1.1 | 2/3 | In Progress|  |
 | 6. Chat UI | v1.1 | 0/1 | Not started | - |
 | 7. CI/CD Integration | v1.1 | 0/1 | Not started | - |
