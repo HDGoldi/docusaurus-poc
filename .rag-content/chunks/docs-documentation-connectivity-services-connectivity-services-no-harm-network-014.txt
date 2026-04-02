@@ -1,0 +1,3 @@
+## Triggering Devices only when Attached
+
+The IoT Service Platform or IoT Service Application **SHALL** be aware of the IoT Device state and only send "wake up" triggers whenever the IoT Device is known to be attached to the mobile network.

@@ -1,0 +1,40 @@
+## 🧩 Integrating 1NCE IoT C SDK
+
+The [1NCE IoT C SDK](https://github.com/1NCE-GmbH/1nce-iot-c-sdk) provides C-based modules to easily use 1NCE OS services.
+
+Follow these steps:
+
+1. **Open`west.yml`:**
+
+   ```bash
+   %HOMEPATH%\ncs\v2.8.0\nrf\west.yml
+   ```
+
+2. **Add the module to`name-allowlist`:**\
+   Ensure `nce-sdk` is listed in alphabetical order.
+
+3. **Activate the SDK via submanifest:**
+
+   Rename and edit the file:
+
+   ```bash
+   %HOMEPATH%\ncs\v2.8.0\zephyr\submanifests\example.yaml
+   ```
+
+   ```yaml
+   manifest:
+     projects:
+       - name: nce-sdk
+         url: https://github.com/1NCE-GmbH/1nce-iot-c-sdk
+         revision: main
+   ```
+
+4. **Run West update:**\
+   Open a terminal (e.g., `cmd.exe` on Windows, Terminal on macOS/Linux) and run:
+
+   ```bash
+   cd %HOMEPATH%\ncs\v2.8.0
+   west update
+   ```
+
+***

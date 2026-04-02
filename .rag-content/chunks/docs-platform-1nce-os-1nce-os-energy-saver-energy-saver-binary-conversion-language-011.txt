@@ -1,0 +1,79 @@
+## Payload selector
+
+A payload selector is a JSON object.
+
+Payload selector MUST have an integer field named `byte` AND/OR an integer field named `endbyte`. The value of `byte` field represents the starting byte from which the chunk is going to be selected (counting from the beginning of the payload). The value of `endbyte` represents a byte counting from the end of the payload and is described as a value that is less or equal to zero. If both `byte` and `endbyte` are present in the payload selector, they are representing a range selector "from `byte` to `endbyte`".
+
+Payload selector MAY have an integer field named `bytelength`, whose value represents the length of the chunk in bytes, starting from and including the byte indexed by `byte` field. It defaults to 1. The field `bytelength` MUST NOT be present if the payload selector contains both `byte` and `endbyte`.
+
+Payload selector MAY have a string field named `byteorder`, whose value represents the byte order of the chunk of bytes. Values for this field can be `big` (Big Endian) or `little` (Little Endian). This value defaults to the `big`.
+
+Payload selector MUST have an integer field named `type`, which defined the data type to which bytes should be converted.
+
+Examples:
+
+Select 16-bit integer with little endian:
+
+```json 16-bit integer select
+{
+  "byte": 1,
+  "bytelength": 2,
+  "type": "int",
+  "byteorder": "little"
+}
+```
+
+Select whole payload as a hex string:
+
+```json whole payload section
+{
+  "byte": 0,
+  "endbyte": 0,
+  "type": "hex"
+}
+```
+
+Select the last 4 bytes of the payload as a 32-bit unsigned integer (Big Endian by default):
+
+```json last 4 bytes as 32-bit uint
+{
+  "endbyte": -4,
+  "bytelength": 4,
+  "type": "uint"
+}
+```
+
+Supported data types
+
+**Numeric**
+
+`bytelength` is required. A fix was provided to use the default value of 1 byte if `bytelength` field is not provided inside selectors.
+
+`int` - signed integer. Can have `bytelength` 1, 2, 4, 8 which are 8-bit to 64-bit integers respectively. Defaults to 1\
+`uint` - unsigned integer. Same constraints as `int`.
+
+```text int and unit value ranges
+int and uint value ranges
+uint8  : 0 to 255 
+uint16 : 0 to 65535 
+uint32 : 0 to 4294967295 
+uint64 : 0 to 18446744073709551615 
+int8   : -128 to 127 
+int16  : -32768 to 32767 
+int32  : -2147483648 to 2147483647 
+int64  : -9223372036854775808 to 9223372036854775807
+```
+
+`float` - floating-point number. Can have `bytelength` 4 and 8 which are 32-bit floating-point number and 64-bit double precision floating-point number.
+
+**Boolean**
+
+`boolean` - boolean. 0x00 will be treated as false.
+
+**String**
+
+`string` - UTF-8 encoded string.
+
+**Hex**
+
+`hex` - output as hex string.

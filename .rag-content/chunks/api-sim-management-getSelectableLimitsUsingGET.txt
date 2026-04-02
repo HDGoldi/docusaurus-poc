@@ -1,0 +1,15 @@
+# GET /v1/sims/{service}/limits
+
+Get SIM Limits
+
+Get a list of slectable limits for a given service.
+
+## Parameters
+- service (path, required): The service name (data, smsMO, smsMT) for which to list the avaliable limit options.
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

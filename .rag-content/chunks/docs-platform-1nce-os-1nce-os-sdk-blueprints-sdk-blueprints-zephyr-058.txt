@@ -1,0 +1,10 @@
+### 🔐 Secure Communication
+
+| Config Option                       | Description                                           | Default                    |
+| ----------------------------------- | ----------------------------------------------------- | -------------------------- |
+| `CONFIG_MENDER_URL`                 | Mender backend URL                                    | `"eu.hosted.mender.io"`    |
+| `CONFIG_NCE_MENDER_COAP_PROXY_HOST` | CoAP proxy hostname provided by 1NCE                  | `"coap.proxy.os.1nce.com"` |
+| `CONFIG_COAP_SERVER_PORT`           | CoAP server port (5684 if DTLS is enabled, else 5683) | `Auto`                     |
+| `CONFIG_NCE_MENDER_COAP_URI_PATH`   | URI path for proxying CoAP requests to Mender         | `"mender"`                 |
+
+***

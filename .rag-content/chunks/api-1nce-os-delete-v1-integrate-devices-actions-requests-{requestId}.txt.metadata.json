@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/1nce-os/api-1nce-os-delete-v1-integrate-devices-actions-requests-{requestId}/",
+    "title": "DELETE /v1/integrate/devices/actions/requests/{requestId}",
+    "breadcrumb": "API Explorer > 1nce Os > Cancel single device action request",
+    "content_type": "api-reference",
+    "category": "1nce-os",
+    "section_heading": "DELETE /v1/integrate/devices/actions/requests/{requestId}"
+  }
+}

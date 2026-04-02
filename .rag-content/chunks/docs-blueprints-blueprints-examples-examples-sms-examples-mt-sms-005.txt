@@ -1,0 +1,9 @@
+## Manage MT-SMS
+
+Through the API, issued MT-SMS that have not been delivered yet can be deleted from the SMS queue. The dropdown below show how to use the SMS API to manage MT-SMS.
+
+***
+
+# SIM Device MT-SMS
+
+MT-SMS messages are issued towards devices which use a 1NCE SIM for connectivity. The SMS service is available without the need to establish a PDP Data Session. Please note that SMS is not possible with NB-IoT.

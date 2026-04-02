@@ -1,0 +1,71 @@
+## Get all Integrations
+
+```curl
+curl --location --request GET 'https://api.1nce.com/management-api/v1/integrate/clouds'
+```
+
+Response Example:
+
+```json
+{
+  "page":1,
+  "pageAmount":1,
+  "items":
+  [
+    {
+      "id":"AP3dIUs3c7_Oo2yJYaXWg",
+      "name":"test_integration",
+      "state":"INTEGRATION_FAILED",
+      "type":"WEBHOOK",
+      "createdTime":"2022-11-22T12:16:30.814Z",
+      "updatedTime":"2022-11-23T08:07:19.354Z",
+      "eventTypes":
+      [
+        {
+          "type":"LIFECYCLE",
+          "version":"1.0.0"
+        },
+        {
+          "type":"TELEMETRY_DATA",
+          "version":"1.0.0"
+        }
+      ]
+    },
+    {
+      "id":"Jv2cS-pPcy0NdtQ64ycZJ",
+      "lastSuccessfulMessageDelivery":"2022-12-07T12:29:51.927Z",
+      "name":"beeceptor-webhook-int",
+      "state":"INTEGRATION_ACTIVE",
+      "type":"WEBHOOK",
+      "createdTime":"2022-09-16T11:01:11.390Z",
+      "updatedTime":"2022-12-09T11:23:48.609Z",
+      "eventTypes":
+      [
+        {
+          "type":"LIFECYCLE",
+          "version":"1.0.0"
+        },
+        {
+          "type":"TELEMETRY_DATA",
+          "version":"1.0.0"
+        }
+      ]
+    },
+    {
+      "id":"MzSca5vvHAfJ4MUUCfCGb",
+      "name":"rollout-started-int",
+      "state":"ROLLOUT_STARTED",
+      "type":"AWS",
+      "createdTime":"2022-10-17T13:30:15.309Z",
+      "updatedTime":"2022-10-17T13:30:15.309Z",
+      "eventTypes":
+      [
+        {
+          "type":"LIFECYCLE",
+          "version":"1.0.0"
+        }
+      ]
+    }
+  ]
+}
+```

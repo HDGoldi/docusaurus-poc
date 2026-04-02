@@ -1,0 +1,15 @@
+# POST /v1/sims
+
+Create Multiple SIM Configuration
+
+Change a list of SIMS for activate, deactivate, label, IMEI lock, etc. The actual change will be done asynchronously. A positive-response only means that the SIM changes has been successfully placed into the queue.
+
+## Parameters
+None
+
+## Responses
+- 201: Created
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

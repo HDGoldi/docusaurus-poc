@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-cancelSmsForSimUsingDELETE/",
+    "title": "DELETE /v1/sims/{iccid}/sms/{id}",
+    "breadcrumb": "API Explorer > Sim Management > Delete SMS",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "DELETE /v1/sims/{iccid}/sms/{id}"
+  }
+}

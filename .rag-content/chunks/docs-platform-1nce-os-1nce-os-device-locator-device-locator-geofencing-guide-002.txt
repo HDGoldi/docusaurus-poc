@@ -1,0 +1,48 @@
+### Getting the coordinates
+
+Proceed to [geojson.io](https://geojson.io), there will be a world map where geofencing boundaries can be drawn and coordinates of points will be provided. Those coordinates can be used in our API explorer to create same geofence in our system.
+
+In this example we have created following polygon geofence:
+
+![](/img/1nce-os/1nce-os-device-locator/device-locator-geofencing-guide/8193513-image.png)
+
+Coordinates of the points are visible in the right window, in our example those are:
+
+```json
+"coordinates": [
+          [
+            [
+              6.957239730898948,
+              50.93892367514573
+            ],
+            [
+              6.958509831039635,
+              50.93836584192053
+            ],
+            [
+              6.959702958010666,
+              50.93945723847878
+            ],
+            [
+              6.9596259993105605,
+              50.934266755623526
+            ],
+            [
+              6.961550428436993,
+              50.93431526288117
+            ],
+            [
+              6.961434941100492,
+              50.94059711468901
+            ],
+            [
+              6.959087148954154,
+              50.94059710732816
+            ],
+            [
+              6.957239730898948,
+              50.93892367514573
+            ]
+          ]
+        ],
+```

@@ -1,0 +1,16 @@
+# POST /v1/integrate/clouds/aws
+
+Create AWS Integration
+
+Creates AWS Integration, which becomes active only after customer Cloudformation stack is rolled out.
+
+## Parameters
+None
+
+## Responses
+- 201: Created AWS Integration Details.
+- 400: 
+- 401: 
+- 403: 
+- 409: 
+- 500: 

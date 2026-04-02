@@ -1,0 +1,3 @@
+## Features
+
+The Device Authenticator solution is part of 1NCE OS and allows customers a seamless and fully automated device onboarding.

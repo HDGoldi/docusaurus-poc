@@ -1,0 +1,28 @@
+### The shown steps are the following (plain connection):
+
+1. The LwM2M client calls the bootstrap server at `lwm2m.os.1nce.com:5683` using plain CoAP.
+
+2. The bootstrap server responds with a data message containing all the necessary information for the client to connect to the actual LwM2M server.
+
+   > LwM2M Server
+
+   | Resource | Description | Type | Value |
+   | --- | --- | --- | --- |
+   | 0/0/0 | LWM2M Server URI | String | Example: `coap://1.2.3.4:5683` |
+   | 0/0/1 | Bootstrap-Server | Boolean | false |
+   | 0/0/2 | Security Mode | Integer | 3 (NoSec) |
+   | 0/0/10 | Server Id | Integer | 1111 |
+   | 1/0/0 | Short Server ID | Integer | 1111 |
+   | 1/0/1 | Lifetime (s) | Integer | 86400 |
+   | 1/0/2 | Default Minimum Period (s) | Integer | 1 |
+
+   > Bootstrap Server
+
+   | Resource | Description | Type | Value |
+   | --- | --- | --- | --- |
+   | 0/1/0 | Bootstrap Server URI | String | Example: `coap://lwm2m.os.1nce.com:5683` |
+   | 0/1/1 | Bootstrap-Server | Boolean | yes |
+   | 0/1/2 | Security Mode | Integer | 3 (NoSec) |
+   | 0/1/10 | Server Id | Integer | 2222 |
+
+3. The LwM2M client device uses this information to trigger the registration on the LwM2M server using CoAP.

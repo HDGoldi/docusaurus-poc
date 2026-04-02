@@ -1,0 +1,77 @@
+### By specific requestId
+
+Getting request with id `trxHeBL0d234fsfds`:
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/integrate/devices/actions/requests/trxHeBL0d234fsfds"
+```
+
+The response could be `200 OK` with body:
+
+```json
+{
+  "id": "trxHeBL0d234fsfds",
+  "status": "SUCCEEDED",
+  "deviceId": "123456789012345678",
+  "ip": "127.0.0.1",
+  "protocol": "LWM2M",
+  "created": "2024-08-22T11:14:28.157Z",
+  "updated": "2024-08-22T11:14:28.157Z",
+  "mode": "SEND_WHEN_ACTIVE",
+  "resultData": {
+    "code": "205",
+    "payload": "Data from the device",
+    "payloadType": "TEXT"
+  },
+  "requestData": {
+    "action": "write",
+    "resourceAddress": "/3311/0/5850",
+    "data": "Data to send to the device",
+    "iccid": "123456789012345678",
+    "imsi1": "456789012345678",
+    "traceId": "1-66c71d94-f8f46a5cb7ae4ac4def607f1",
+    "deviceId": "123456789012345678",
+    "requestId": "trxHeBL0d234fsfds",
+    "customerId": "1234567890",
+    "requestMode": "SEND_WHEN_ACTIVE",
+    "deviceIpAddress": "127.0.0.1"
+  },
+  "sendAttemptsLeft": 0,
+  "sendAttempts": 3
+}
+```
+
+For LwM2M `resultData` could be
+
+```json
+{
+  "resultData": {
+    "code": "205",
+    "payload": "Data from the device"
+  }
+}
+```
+
+For CoAP `resultData` printable text:
+
+```json
+{
+  "resultData": {
+    "code": "205",
+    "payload": "Data from the device",
+    "payloadType": "TEXT"
+  }
+}
+```
+
+For CoAP `resultData` binary text:
+
+```json
+{
+  "resultData": {
+    "code": "205",
+    "payload": "RGF0YSBmcm9tIHRoZSBkZXZpY2U=",
+    "payloadType": "BASE64"
+  }
+}
+```

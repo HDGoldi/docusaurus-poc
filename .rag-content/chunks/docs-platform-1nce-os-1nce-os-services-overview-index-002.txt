@@ -1,0 +1,3 @@
+## IoT Integrator
+
+The IoT Integrator includes the Device Integrator and the Cloud Integrator.

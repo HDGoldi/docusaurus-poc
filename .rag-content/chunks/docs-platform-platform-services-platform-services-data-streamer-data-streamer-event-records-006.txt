@@ -1,0 +1,10 @@
+## SIM Object
+
+Each SIM card has unique properties and parameters. This data is included in the event stream. A list of the available data fields is shown below.
+
+| Property          | Data Type       | Description                                                 |
+| :---------------- | :-------------- | :---------------------------------------------------------- |
+| `id`              | INTEGER         | Unique ID of the SIM.                                       |
+| `iccid`           | STRING          | Integrated Circuit Card Identifier of the SIM.              |
+| `msisdn`          | STRING          | Mobile Subscriber ISDN of the SIM Card.                     |
+| `production_date` | TIMESTAMP (UTC) | Timestamp when the SIM was produced in the ISO 8601 format. |

@@ -1,0 +1,3 @@
+## One MT/MO-SMS
+
+Sending **one** MT-SMS or MO-SMS will charge **one** SMS towards the included volume.

@@ -1,0 +1,13 @@
+## Plugin Installation
+
+The Memfault plugin can be created via the `partners` API by using the "MEMFAULT" partner in the [API Explorer](ref:api-welcome).\
+There is no need to pass any request body during the POST request.
+
+Example:
+
+```curl
+curl --location --request POST 'https://api.1nce.com/management-api/v1/partners/MEMFAULT/plugins' \
+--header 'Authorization: Bearer <TOKEN>' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+```

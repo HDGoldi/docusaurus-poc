@@ -1,0 +1,5 @@
+## Features
+
+The device inspector overview provides a list of all customer devices. The list can be filtered by `ICCID` to search for a specific device. To see more information of a certain device, a single device can be select it in the list.
+
+The details will provide more specific information.

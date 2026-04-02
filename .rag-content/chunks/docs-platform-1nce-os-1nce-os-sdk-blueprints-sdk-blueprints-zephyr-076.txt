@@ -1,0 +1,14 @@
+## 🆘 Need Help?
+
+Open an issue on GitHub for:
+
+* ❗ Bug reports
+* 🚀 Feature requests
+* 📝 Documentation issues
+* ❓ General questions
+
+👉 [Create a new issue](https://github.com/1NCE-GmbH/blueprint-zephyr/issues/new/choose)
+
+***
+
+Made with 💙 by the 1NCE Team.

@@ -1,0 +1,22 @@
+## Integration Edit
+
+To edit your webhook integration via API, you can use following curl request:
+
+```curl
+curl --request PATCH \
+     --url https://api.1nce.com/management-api/v1/integrate/clouds/webhooks/{integrationId} \
+     --header 'accept: application/json' \
+     --header 'authorization: Bearer {token}' \
+     --header 'content-type: application/json' \
+     --data '
+{
+     "eventTypes": [
+          {
+               "type": "LIFECYCLE"
+          }
+     ],
+     "url": "www.example.com",
+     "jsonPayloadEnabled": false
+}
+'
+```

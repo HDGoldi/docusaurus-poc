@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/authorization/api-authorization-postAccessTokenPOST/",
+    "title": "POST /oauth/token",
+    "breadcrumb": "API Explorer > Authorization > Obtain Access Token",
+    "content_type": "api-reference",
+    "category": "authorization",
+    "section_heading": "POST /oauth/token"
+  }
+}

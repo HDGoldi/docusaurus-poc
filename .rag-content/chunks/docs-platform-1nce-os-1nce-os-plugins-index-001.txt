@@ -1,0 +1,8 @@
+Plugins extend the capabilities of the 1NCE platform with services provided by 3rd party vendors. You can enable additional functionality by installing a plugin.
+
+Available plugins:
+
+* **Datacake** - Device and Network data visualization in pre-made or custom dashboards.
+* **Mender** - Firmware Over-the-Air Management.
+* **Tartabit** - IoT Bridge with Azure, AWS, and GCP.
+* **Memfault** - Device Observability with Fault Diagnostics and Log management.

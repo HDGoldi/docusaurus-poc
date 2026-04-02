@@ -1,0 +1,13 @@
+### Troubleshooting
+
+Troubleshooting might be required if testing the endpoint fails (i.e., the message is not received).
+
+#### Breakout Region
+
+1NCE OS is currently only available through the Europe (Frankfurt) and US East (N. Virginia) breakout regions.
+Please validate that the correct region is selected under Configuration. If the wrong breakout region was being used, select the correct region, and the device should create a new PDP context. A simple way to achieve this is by rebooting the device.
+
+#### Energy Saver
+
+If an invalid [Energy Saver Template](/1nce-os/1nce-os-energy-saver/index) is enabled, data will not be processed.\
+Please validate that no errors are found in the [Admin Logs](/1nce-os/1nce-os-admin-logs/index) related to the Energy Saver. If errors from the Energy Saver are found in the Admin Logs, please disable the Energy Saver Template for the protocol and try again.

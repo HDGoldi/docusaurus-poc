@@ -1,0 +1,152 @@
+### How to send CoAP messages
+
+In the following snippet, the script will send a CoAP message.
+
+1. Install node.js dependency
+
+```bash
+  npm install node-coap-client@1.0.9
+```
+
+2. Copy the following script
+
+```javascript
+const coap = require("node-coap-client").CoapClient;
+
+/////// Here you can define if you want to enable or disable DTLS requests ///////
+const dtlsEnabled = true; // (optional) Enable/Disable DTLS
+//////////////////////////////////////////////////////////////////////////////////
+
+async function coapOnboard(url) {
+    await tryToConnectToCoapServer(url);
+    const options = {
+        keepAlive: true, // Whether to keep the socket connection alive. Speeds up subsequent requests
+        confirmable: true, // Whether we expect a confirmation of the request
+        retransmit: false, // Whether this message will be retransmitted on loss
+    };
+    console.log(`Calling CoAP bootstrap endpoint ${url}`);
+    const result = await coap.request(url, "get", options);
+    const payload = result.payload?.toString();
+
+    if(result.code.toString() !== "2.05") {
+        throw new Error(`Error calling CoAP bootstrap endpoint. Result code: ${result.code.toString()}, Payload: ${payload}`);
+    }
+
+    console.log(`Boostrap payload: ${payload}`);
+    const [clientIdentity, preSharedKey, coapsEndpointUrl] = payload.split(",");
+
+    console.log("===================================");
+    console.log("DTLS details:");
+    console.log(`Client Identity: ${clientIdentity}`);
+    console.log(`Pre-shared key: ${preSharedKey}`);
+    console.log(`Coap endpoint: ${coapsEndpointUrl}`);
+    console.log("===================================");
+
+    return {
+        preSharedKey,
+        clientIdentity,
+        coapsEndpointUrl
+    };
+}
+
+function logResponseDetails(res) {
+    console.log("=========================================================");
+    console.log("Server Response");
+    console.log("Status: " + res.code);
+    console.log("Payload: " + res.payload.toString());
+    console.log("=========================================================");
+}
+
+function enableDtls(url, clientIdentity, preSharedKey) {
+    coap.setSecurityParams(url, {
+        psk: {
+            [clientIdentity]: preSharedKey,
+        },
+    });
+}
+
+async function tryToConnectToCoapServer(url) {
+    console.log("Trying to connect to CoAP server");
+    const res = await coap.tryToConnect(url);
+    if (!res) {
+        console.error("Connection failed to CoAP server");
+        throw Error(`Failed to connect to coap server: ${url}`);
+    }
+
+    console.log("Successfully connected to CoAP server");
+}
+
+async function sendCoapMessage(url, message) {
+    const payload = Buffer.from(message);
+    const options = {
+        keepAlive: true, // Whether to keep the socket connection alive. Speeds up subsequent requests
+        confirmable: true, // Whether we expect a confirmation of the request
+        retransmit: false, // Whether this message will be retransmitted on loss
+    };
+
+    console.log(`Sending CoAP message to ${url}`)
+    const result = await coap.request(
+        url, // Server url (string)
+        "post", // Request methos ("get" | "post" | "put" | "delete")
+        payload, // Request payload (buffer)
+        options, // Request options
+    );
+    logResponseDetails(result);
+    const resultPayload = result.payload?.toString();
+
+    if (result.code.toString() !== "2.04") {
+        throw new Error(`Error message received from CoAP server. Result code: ${result.code.toString()}, Payload: ${resultPayload}`);
+    }
+
+    return {
+        code: result.code.toString(),
+        message: resultPayload,
+    };
+}
+
+async function callPost(host, topic, message) {
+    try {
+        const protocol = dtlsEnabled ? "coaps" : "coap";
+        const port = dtlsEnabled ? 5684 : 5683;
+        const url = `${protocol}://${host}:${port}/?t=${topic}`;
+
+        if (dtlsEnabled) {
+            console.log("Enabling DTLS...");
+            const boostrapUrl = `coap://${host}:5683/bootstrap`;
+            const { clientIdentity, preSharedKey } = await coapOnboard(boostrapUrl);
+            enableDtls(url, clientIdentity, preSharedKey);
+            console.log("DTLS enabled");
+        }
+
+        await tryToConnectToCoapServer(url);
+        await sendCoapMessage(url, message);
+        console.log("Coap message sent");
+    } catch (error) {
+        console.error("Coap exception", error);
+        throw error;
+    } finally {
+        coap.reset();
+    }
+}
+
+(async () => {
+    const message = {
+        timestamp: new Date().getTime(),
+        description: "Example message",
+    };
+
+    const host = "coap.os.1nce.com";
+    const topic = "sometesttopic"
+
+    await callPost(host, topic, JSON.stringify(message));
+})();
+```
+
+3. (Optional) Enable or disable the CoAP DTLS connection (4th line). By default, the script is using DTLS.
+
+4. Run the node.js script
+
+# CoAP Endpoint Information
+
+Base URL: `coap.os.1nce.com`\
+Protocol: CoAP(s)

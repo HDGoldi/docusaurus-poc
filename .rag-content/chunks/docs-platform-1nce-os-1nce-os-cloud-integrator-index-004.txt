@@ -1,0 +1,3 @@
+## Geofence Events
+
+Whenever a geofencing event "EXIT" or "ENTER" has been triggered by device location change the message is forwarded to the customer's Cloud Integrations.

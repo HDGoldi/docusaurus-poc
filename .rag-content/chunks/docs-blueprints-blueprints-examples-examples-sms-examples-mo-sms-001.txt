@@ -1,0 +1,14 @@
+## Viewing MO-SMS
+
+1. Login to the  and go the the **My SIMs** tab.
+2. Select the **SIM** for which the MO-SMS should be viewed from the list of all SIM cards.
+3. Navigate to the **SMS Tab** at the bottom of the SIM details page to access the SMS Console.
+
+4) The list view will show both MT-SMS and MO-SMS messages. For both types, the **Status**, **Submitted**, **Finalized**, **Source Address** and **Payload** are shown.
+5) A MO-SMS will remain in the pending status without being finalized until it was received and acknowledged by an SMS Forwarder Endpoint. As this integration is optional, by default the MO-SMS will stay in the pending state.
+
+***
+
+# 1NCE SMS API
+
+The 1NCE API offers another solution to access Mobile Originated SMS messages. For a specific SIM card a list of MT/MO-SMS or single SMS messages based on the SMS ID can be queried. A good starting point is the  to get familiar with the API calls. From the API Explorer, ready to use code snippets and cURL queries can be obtained to integrate into custom applications.

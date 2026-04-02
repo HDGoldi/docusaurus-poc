@@ -1,0 +1,9 @@
+## Volume Object
+
+With each PDP Context, some information about the Data Usage is included in the Volume JSON. The content description of the fields is listed below.
+
+| Property       | Data Type     | Description                     |
+| :------------- | :------------ | :------------------------------ |
+| `volume.rx`    | DECIMAL(14,6) | Downstream Volume in MegaBytes. |
+| `volume.tx`    | DECIMAL(14,6) | Upstream Volume in MegaBytes.   |
+| `volume.total` | DECIMAL(14,6) | Total Volume Usage.             |

@@ -1,0 +1,17 @@
+## Manual Mode
+
+When selecting a specific breakout region using the Manual Mode, **all SIMs** public internet access will be routed through the selected breakout region. All SIMs of the customer (sub) organization are locked to the selected manual breakout region, independent on the actual device location.
+
+> 📘 VPN and 1NCE OS
+>
+> The 1NCE VPN Service is available in the **Manual Mode**. The specific regional adaptions of the [OpenVPN Configuration](https://help.1nce.com/dev-hub/docs/portal-configuration#openvpn-configuration) need to be applied.
+>
+> 1NCE OS is currently only available through the Europe (Frankfurt) and US East (N Virginia) breakout regions.
+
+Currently, five regions are available:
+
+* Europe (Frankfurt)
+* US West (N. California)
+* US East (N. Virginia)
+* Asia-Pacific (Tokyo)
+* South America (São Paulo)

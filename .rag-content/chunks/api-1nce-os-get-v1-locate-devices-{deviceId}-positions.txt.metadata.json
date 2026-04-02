@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/1nce-os/api-1nce-os-get-v1-locate-devices-{deviceId}-positions/",
+    "title": "GET /v1/locate/devices/{deviceId}/positions",
+    "breadcrumb": "API Explorer > 1nce Os > Get Device Positions",
+    "content_type": "api-reference",
+    "category": "1nce-os",
+    "section_heading": "GET /v1/locate/devices/{deviceId}/positions"
+  }
+}

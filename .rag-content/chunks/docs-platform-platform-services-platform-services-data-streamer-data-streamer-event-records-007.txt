@@ -1,0 +1,25 @@
+## Endpoint Object
+
+As a SIM is placed inside a device, some information about this endpoint is transferred via the mobile network. This information is useful to identify the specific device type and certain connection parameters. A list of all Endpoint Objects is listed below.
+
+| Property     | Data Type | Description                                                                  |
+| :----------- | :-------- | :--------------------------------------------------------------------------- |
+| `id`         | INTEGER   | Unique ID of the Endpoint.                                                   |
+| `name`       | STRING    | Name of the Endpoint configuration.                                          |
+| `ip_address` | STRING    | Specific static IP Address of the SIM card/Endpoint.                         |
+| `tags`       | STRING    | Any Tags assigned to the Endpoint.                                           |
+| `imei`       | STRING    | International mobile equipment identity of the Endpoint/Device with the SIM. |
+
+***
+
+# Detail Properties
+
+For certain Event Types, additional information parameters are added in the Detail Properties. A list of the object parameters and fields is listed below.
+
+| Property      | Data Type   | Description                                                                                                    |
+| :------------ | :---------- | :------------------------------------------------------------------------------------------------------------- |
+| `id`          | INTEGER     | Unique ID for the used mobile network operator.                                                                |
+| `name`        | STRING      | Name of the mobile network operator.                                                                           |
+| `country`     | JSON Object | Country of the mobile network operator. See [Country Object](#country-object) for more information.            |
+| `pdp_context` | JSON Object | Object with details about the PDP Context. See [PDP Context Object](#pdp-context-object) for more information. |
+| `volume`      | JSON Object | Object with details about the Volume used. See [Volume Object](#volume-object) for more information.           |

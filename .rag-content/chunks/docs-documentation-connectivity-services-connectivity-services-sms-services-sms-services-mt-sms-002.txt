@@ -1,0 +1,26 @@
+## Concatenated SMS Messages
+
+In the User Data Header (UDH), the format and processing of an SMS message is specified. This header information is useful for sending a concatenated message which is longer than the 160 character limit. To split a message into multiple parts, each part needs to be sent via a separate API call with the correct UDH header. An example is shown below:
+
+| Part Number | User Data Header | Payload         |
+| :---------- | :--------------- | :-------------- |
+| 1 of 3      | 050003CC 03 01   | Message Part 01 |
+| 2 of 3      | 050003CC 03 02   | Message Part 02 |
+| 3 of 3      | 050003CC 03 03   | Message Part 03 |
+
+The UDH needs to be accounted for in the total size of the SMS message. Therefore, only 153 7-bit character parts can be sent in one message when the UDH is used to concatenate messages. The UDH consists of six-byte fields:
+
+* The total length of UDH
+* The Information Element Identifier (IEI)
+* The header length without the first two fields (IEIL)
+* CSMS reference ID
+* Total number of SMS parts
+* Part number
+
+For more information about the UDH and SMS concatenation see  and .
+
+***
+
+# SMS Forwarder Service
+
+While it is not possible to directly send MT-SMS with the SMS Forwarding Service, it is possible to receive Delivery Reports (DLR). These reports are sent via the configured forwarding URL, indicating that the MT-SMS was delivered to the target device with a 1NCE SIM. Further details about this service can be found in the [SMS Forwarder Service](/platform-services/platform-services-sms-forwarder/index) section.

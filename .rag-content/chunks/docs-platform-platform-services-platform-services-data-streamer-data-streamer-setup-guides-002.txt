@@ -1,0 +1,3 @@
+## Warnings & Errors
+
+In the case that there was an error with Data Streamer connection, a warning record with respective error code is shown in the Data Streamer configuration. In this case, please verify that the service is reachable and is set up correctly. The streamer service uses a back off systems design that retries sending data to the desired destination in case of an failure. Please note that after a certain retry count the streamer goes into FAILED state. If the streamer is in the error state, please try to restart or recreate the stream integration in the 1NCE Portal.

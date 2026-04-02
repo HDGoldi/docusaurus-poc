@@ -1,0 +1,16 @@
+## Webhook Creation
+
+* Headers object in the request body should contain authorization and configuration headers that are expected by the customer's endpoint.
+
+Example:
+
+```curl
+curl --location --request POST 'https://api.1nce.com/management-api/v1/integrate/clouds/webhooks' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "webhook-name-1",
+    "url": "https://www.your-endpoint.com/messages1",
+    "headers": {"x-api-key": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"},
+    "eventTypes": [{ "type": "TELEMETRY_DATA" }]
+}'
+```

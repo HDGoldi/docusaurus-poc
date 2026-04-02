@@ -1,0 +1,8 @@
+## Description
+
+Memfault provides observability purpose-built for devices. Compatible with constrained microcontroller-based devices to complex Linux and Android systems, Memfault helps embedded development teams understand exactly how their devices perform in the field, and find and fix faults fast.
+
+**Fault Diagnostics**: Automatically capture diagnostics data every time your devices experience a crash or unexpected error. Diagnose and debug faults happening in the field within hours, not days or weeks.\
+**Log Management**:  Automatic log storage, collection, and analysis designed for devices, not servers and apps. Save hours with every investigation and turn your logs into a tool for fleet-wide insights.\
+**Fleet Health Monitoring**: Monitor the health of your fleet in real-time with built-in tools for comparison between software versions, hardware versions, and more. We handle the data collection and processing, you get the insights.\
+**Product Analytics**: Understand product usage, performance, and reliability using real-world data. Collect product usage data from every device in your fleet even when they aren’t connected so there are no gaps in your data and no more guessing.

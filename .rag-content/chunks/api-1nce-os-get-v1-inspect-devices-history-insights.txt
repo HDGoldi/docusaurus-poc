@@ -1,0 +1,20 @@
+# GET /v1/inspect/devices/history/insights
+
+Get Historian Insights
+
+Get insights for all devices from the Historian based on the optional filters.
+
+## Parameters
+- deviceId (query, optional): The unique device ID which identifies each 1NCE SIM. Can be obtained from the Get All Devices API query. For 1NCE SIMS the device ID is equal to its iccid.
+- iccid (query, optional): ICCID of a SIM device, used to identifiy each 1NCE SIM.
+- startDateTime (query, optional): Timestamp from where onwards the historic data messages should be queried.
+- endDateTime (query, optional): Timestamp until when the historic data messages should be queried.
+- protocol (query, optional): Filter out data for specific protocols: <ul><li>LWM2M</li><li>UDP</li><li>COAP</li></ul>
+- interval (query, optional): The interval for which grouping of statistics should occur.
+
+## Responses
+- 200: OK
+- 400: 
+- 401: 
+- 403: 
+- 500: 

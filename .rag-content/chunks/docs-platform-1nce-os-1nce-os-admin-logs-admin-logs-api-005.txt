@@ -1,0 +1,7 @@
+### Calling endpoint without query parameters
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/administrationLogs"
+```
+
+With this request you get the last ten messages from all devices within the last seven days.

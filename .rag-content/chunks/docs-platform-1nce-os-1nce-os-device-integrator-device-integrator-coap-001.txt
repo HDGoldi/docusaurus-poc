@@ -1,0 +1,7 @@
+## CoAP Overview
+
+The CoAP Endpoint `coap://coap.os.1nce.com:5683` hosts a POST endpoint on the server root path (`/`). The endpoint supports both normal, non-translatable messages and translatable messages by using the energy saver, with a safe payload size of up to 1024 bytes.
+
+The POST endpoint takes an optional query parameter (or Location-Query) `t` to provide the MQTT topic used for forwarding this message to a MQTT broker (e.g., `coap://coap-service:5683/?t=topicName`). The Location-Query is limited to 255 characters by the CoAP protocol, hence the topic name itself can only contain up to 253 characters (`t` and `=` also count as characters). The topic name itself can only contain alphanumeric characters, underscores, and forward slashes (no two slashes in a row). If these constraints are violated, a bad request (4.00) will be returned.
+
+If a targeted device could not be found or is in a non-active status, the CoAP service will return an unauthorized (4.01) and no further processing of the message will take place.

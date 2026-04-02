@@ -1,0 +1,3 @@
+## IoT Service Application
+
+Business application logic of the IoT Service which processes the data collected from assets. The IoT Service Provider hosts their IoT Service Application on a server or Cloud Platform provided by 1NCE GmbH or another third party.

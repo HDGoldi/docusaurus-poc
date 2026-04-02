@@ -1,0 +1,7 @@
+### **Tip:** You can view incoming messages in the [Device Inspector](https://help.1nce.com/dev-hub/docs/1nce-os-device-inspector) in the 1NCE OS portal.
+
+:::
+
+:::tip
+Add the template located in `./nce_udp_demo/template/template.json` to the 1NCE OS portal, and enable it for the **UDP protocol** to ensure correct decoding of the compressed payload.
+:::

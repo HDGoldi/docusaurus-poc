@@ -1,0 +1,15 @@
+# GET /v1/integrate/clouds/{integrationId}
+
+Get Customer Integration
+
+Get Customer Integration details
+
+## Parameters
+- integrationId (path, required): unique integration ID
+
+## Responses
+- 200: Customer Integration Details.
+- 401: 
+- 403: 
+- 404: 
+- 500: 

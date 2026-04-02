@@ -1,0 +1,35 @@
+### 🔐 Authentication & Server Setup
+
+| Config Option                                 | Description                                               | Default |
+| --------------------------------------------- | --------------------------------------------------------- | ------- |
+| `CONFIG_NCE_ICCID`                            | ICCID used as endpoint name and device identity           | `""`    |
+| `CONFIG_NCE_LWM2M_BOOTSTRAP_PSK`              | Pre-shared key in HEX for bootstrap/auth                  | `""`    |
+| `CONFIG_LWM2M_CLIENT_UTILS_SERVER`            | LwM2M server URI (e.g., `coaps://lwm2m.os.1nce.com:5684`) | -       |
+| `CONFIG_LWM2M_CLIENT_UTILS_BOOTSTRAP_TLS_TAG` | Security tag for bootstrap server (credentials storage)   | `1111`  |
+| `CONFIG_LWM2M_CLIENT_UTILS_SERVER_TLS_TAG`    | Security tag for main server (replaced after bootstrap)   | `1112`  |
+| `CONFIG_LWM2M_ENGINE_DEFAULT_LIFETIME`        | Default LwM2M Server lifetime (in seconds)                | `180`   |
+
+📌 The PSK (Pre-Shared Key) must match the credentials registered using the [1NCE PSK API](https://help.1nce.com/dev-hub/reference/post_v1-integrate-devices-deviceid-presharedkey)
+
+> ⚠️ The PSK **must be provided in HEX format**, not plain text.
+
+💡 **Example:**\
+If your desired PSK is the string `KeyPass123`, you must convert it to its hexadecimal representation.
+
+**Conversion:**
+
+* Input string: `KeyPass123`
+* HEX format: `4b657950617373313233`
+
+Use this HEX value (`4b657950617373313233`) when setting `CONFIG_NCE_LWM2M_BOOTSTRAP_PSK`.
+
+✅ Tools for conversion:
+
+* Online: [RapidTables String to Hex](https://www.rapidtables.com/convert/number/ascii-to-hex.html)
+* Terminal (Linux/macOS):
+
+```bash
+echo -n 'KeyPass123' | xxd -p
+```
+
+***

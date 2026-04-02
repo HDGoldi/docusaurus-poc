@@ -1,0 +1,3 @@
+## Delete AWS Integration
+
+There are two ways to delete the integration:

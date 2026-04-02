@@ -1,0 +1,16 @@
+# DELETE /v1/sims/{iccid}/sms/{id}
+
+Delete SMS
+
+Cancel a SMS message that is buffered to be delivered to the device with the SIM card but was not yet delivered.
+
+## Parameters
+- iccid (path, required): The ICCID of the SIM to be queried.
+- id (path, required): The ID of the SMS message to be queried.
+
+## Responses
+- 200: OK
+- 204: No Content
+- 401: Unauthorized
+- 403: Forbidden
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

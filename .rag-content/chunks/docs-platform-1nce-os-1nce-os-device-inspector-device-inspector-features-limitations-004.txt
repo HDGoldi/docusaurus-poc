@@ -1,0 +1,5 @@
+### Map
+
+If the device is utilizing [Device Locator](/1nce-os/1nce-os-device-locator/index), then a location will be pinpointed on a map.
+
+*Device location on map*

@@ -1,0 +1,10 @@
+## MO-SMS with Smartphone
+
+For testing and trying out the SMS Service, 1NCE recommends to use a simple smartphone with a 1NCE SIM to send MO-SMS.
+
+1. Insert the **1NCE SIM** into the smartphone used for testing.
+2. Enable **Roaming**on the device, as the 1NCE SIM appears always as roaming. Ensure that a network connection is available through the network status indicator of the phone.
+3. Open up the **SMS Messaging App** of the used smartphone.
+4. The target **Phone Number** can be set to any arbitrary number as the 1NCE network ignores this parameter and forwards all MO-SMS to the Portal/API/SMS Forwarder. External phone numbers are not reachable.
+5. Prepare a basic **SMS Message** and send the MO-SMS message.
+6. Check in the 1NCE Portal, through the API or if implemented the SMS Forwarder to see the received MO-SMS.

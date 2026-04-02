@@ -1,0 +1,3 @@
+### Secure Communication with DTLS using 1NCE SDK
+
+By default, the demo uses 1NCE SDK to send a CoAP GET request to 1NCE OS Device Authenticator. The response is then processed by the SDK and the credentials are used to connect to 1NCE endpoint via CoAP with DTLS.

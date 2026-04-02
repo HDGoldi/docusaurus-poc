@@ -1,0 +1,3 @@
+## Battery Power Low or Power Failure
+
+The IoT Device Application **SHOULD** send a notification to the IoT Service Platform with relevant information when there is an unexpected power outage or battery problem.

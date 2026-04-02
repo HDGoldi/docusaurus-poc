@@ -1,0 +1,3 @@
+## Maximum Transmission Unit (MTU) Size
+
+The Maximum Transmission Unit (MTU) is the size of the largest IP packet (layer 4) possible which can be transferred in a respective frame on layer 3 without the need for fragmentation in the packed based core network. If a send packet is larger than the specified MTU, the packet needs to be fragmented, thus creating more overhead and delays. Theoretically, a size of 1500 bytes is possible with the 1NCE Data Service. Based on prior experience with IoT devices and mobile networks, it is recommended to keep the **MTU size lower than about 1200 bytes**.

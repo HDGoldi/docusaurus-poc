@@ -1,0 +1,7 @@
+## Plugin Installation
+
+Plugin can be installed in [1NCE OS](https://portal.1nce.com/portal/customer/1nceos) portal "Plugins" tab by choosing "Tartabit".
+
+To install a Tartabit Plugin you should provide both Webhook Secret and the Server Domain from Tartabit.
+
+# Tartabit plugin installation via API

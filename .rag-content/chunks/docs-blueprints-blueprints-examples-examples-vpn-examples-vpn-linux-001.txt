@@ -1,0 +1,22 @@
+## Extended Logging
+
+For extended logging over longer periods of time or with a defined information granularity, the *xx-region-x-client.conf* configuration needs to be adapted. The example below shows possible configuration parameters.\
+The Verbosity *verb\<log\_level>* defines the amount of detail included in the log file. The default value of 3 offers a good mix between detail and abstraction. The settable range is 1 to 4. Please note that setting the log level to 4 will generate larger log files.\
+The path where a log file will be saved is specified by *log\<path\_to\_log\_file>/openvpn.log*. Please adapt the path to a valid place in Linux to store the logs.\
+Log files can be automatically rotated. The example shown below provides a basic starting point for weekly log file rotation. For more information please see .
+
+```text
+verb <log_level>
+
+log <path_to_log_file>/openvpn.log
+
+<path_to_log_file>/openvpn.log {
+    weekly
+    rotate 12
+    copytruncate
+    compress
+    delaycompress
+    missingok
+    notifempty
+}
+```

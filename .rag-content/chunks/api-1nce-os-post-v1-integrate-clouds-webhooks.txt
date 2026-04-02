@@ -1,0 +1,16 @@
+# POST /v1/integrate/clouds/webhooks
+
+Create Webhook Integration
+
+Creates Webhook Integration.
+
+## Parameters
+None
+
+## Responses
+- 201: Created Webhook Integration Details.
+- 400: 
+- 401: 
+- 403: 
+- 409: 
+- 500: 

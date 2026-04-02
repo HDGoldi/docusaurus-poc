@@ -1,0 +1,3 @@
+### User Roles Details
+
+See the following table for an exact overview of the roles and the permissions for each component of the 1NCE Portal.

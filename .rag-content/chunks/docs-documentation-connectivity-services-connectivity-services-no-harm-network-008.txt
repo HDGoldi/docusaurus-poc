@@ -1,0 +1,3 @@
+## Cloud Platform
+
+Infrastructure used by the IoT Service Provider to host IoT Services, manage IoT Devices and exchange data with their IoT Devices over the 1NCE GmbH Connectivity Layer. The Cloud Platform may host the IoT Server Application logic and includes Service Enablement functions. Generally, this is referred to as the "IoT Service Platform" in this document.

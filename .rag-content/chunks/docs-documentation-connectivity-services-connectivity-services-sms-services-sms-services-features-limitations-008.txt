@@ -1,0 +1,3 @@
+## SMS Expiry Date & Retry
+
+For the case the subscriber is not reachable via MT-SMS, an expiry date can be set which is used to retry the delivery of the MT-SMS. The following sections will cover this behavior in detail.

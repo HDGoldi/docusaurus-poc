@@ -1,0 +1,9 @@
+### Delete Geofence
+
+Delete an existing geofence
+
+Delete geofence with id `geofence_id_1`:
+
+```shell
+curl -X DELETE "https://api.1nce.com/management-api/v1/locate/geofences/geofence_id_1"
+```

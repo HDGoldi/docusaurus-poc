@@ -1,0 +1,15 @@
+## 🔐 DTLS Configuration
+
+To enable secure communication:
+
+```conf
+CONFIG_NCE_MEMFAULT_DEMO_ENABLE_DTLS=y
+CONFIG_NCE_SDK_ENABLE_DTLS=y
+CONFIG_NCE_DEVICE_AUTHENTICATOR=y
+CONFIG_NCE_SDK_DTLS_SECURITY_TAG=<your_tag>
+```
+
+* If onboarding is required, set `<your_tag>` to an empty tag and the demo will authenticate via 1NCE automatically.
+* On failure (3x), re-onboarding is triggered automatically.
+
+***

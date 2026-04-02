@@ -1,0 +1,7 @@
+## Release, Deployment creation
+
+To use the 1NCE OS Plugin for Release and deployment management in Mender, please refer to [Demo script for zephyr](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/plugin_system/nce_fota_mender_demo) from 1NCE OS. Examples of Artifact creation, Release, and Deployment management are provided.
+
+# Features and Limitations
+
+General [Plugins features and limitations](/1nce-os/1nce-os-plugins/1nce-os-plugins-features-limitations) applies to Mender. There are still some individual Limitations applied for Mender:

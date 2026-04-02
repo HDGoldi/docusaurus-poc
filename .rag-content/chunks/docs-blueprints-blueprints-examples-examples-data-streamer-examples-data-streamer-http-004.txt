@@ -1,0 +1,9 @@
+## 1NCE SIM Device
+
+For simple testing with a 1NCE SIM, we recommend to use a smartphone or manually controllable IoT device.
+
+1. Place a 1NCE SIM into an IoT device or any other mobile device.
+2. Ensure that the mobile device allows roaming network and data connections and that the 1NCE APN is setup correctly.
+3. After the device has attached to the network, see mobile network status indicator on the smartphone, a couple of first events should show up in the Data Streamer.
+4. To generate Usage Records, create a data session and use some data traffic or Alternatively send some MT/MO-SMS. Note that data session usage is only recorded after a session has been closed. For smartphone testing simply disable data roaming or airplane mode to simulate the closing of the data session.
+5. Check the Usage Record integration. After some time, the used data volume and/or SMS volume record will be provided.

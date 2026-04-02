@@ -1,0 +1,32 @@
+### The shown steps are the following (with DTLS):
+
+1. The LwM2M client calls the bootstrap server at lwm2m.os.1nce.com:5684 using CoAPs.
+
+2. The bootstrap server responds with a data message containing all the necessary information for the client to connect to the actual LwM2M server.
+
+   > LwM2M DTLS Server
+
+   | Resource | Description | Type | Value |
+   | --- | --- | --- | --- |
+   | 0/0/0 | LWM2M Server URI | String | Example: `coaps://1.2.3.4:5684` |
+   | 0/0/1 | Bootstrap-Server | Boolean | false |
+   | 0/0/2 | Security Mode | Integer | 0 (Pre-Shared Key) |
+   | 0/0/3 | Identity | Opaque | *Identity as binary data* |
+   | 0/0/5 | Secret Key | Opaque | *Private key for LwM2M Server as binary data* |
+   | 0/0/10 | Server Id | Integer | 1111 |
+   | 1/0/0 | Short Server ID | Integer | 1111 |
+   | 1/0/1 | Lifetime (s) | Integer | 86400 |
+   | 1/0/2 | Default Minimum Period (s) | Integer | 1 |
+
+   > Bootstrap DTLS Server
+
+   | Resource | Description | Type | Value |
+   | --- | --- | --- | --- |
+   | 0/1/0 | Bootstrap Server URI | String | Example: `coaps://lwm2m.os.1nce.com:5684` |
+   | 0/1/1 | Bootstrap-Server | Boolean | yes |
+   | 0/1/2 | Security Mode | Integer | 0 (Pre-Shared Key) |
+   | 0/1/3 | Identity | Opaque | *Identity as binary data* |
+   | 0/1/5 | Secret Key | Opaque | *Private key for LwM2M Bootstrap Server as binary data* |
+   | 0/1/10 | Server Id | Integer | 2222 |
+
+3. The LwM2M client device uses this information to trigger the registration on the LwM2M server using CoAPs. The DTLS Pre Shared Key (PSK) that is provided by the bootstrap server and used for the registration is regenerated on every bootstrap request.

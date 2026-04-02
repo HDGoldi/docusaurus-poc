@@ -1,0 +1,96 @@
+### Metadata Injection in Webhook Definitions
+
+Webhook definitions support metadata injection in the `url` and `headers` fields using placeholders.\
+These placeholders will be automatically replaced with data from the device that triggered the event, such as telemetry\
+data or location events.
+
+The following placeholders can be used in the `url` and `headers` fields:
+
+| Placeholder | Description              | Default Value (if unavailable) |
+| ----------- | ------------------------ | ------------------------------ |
+| `:iccid:`   | ICCID of the device      | `none`                         |
+| `:imsi:`    | IMSI1 of the device      | `none`                         |
+| `:ip:`      | IP address of the device | `none`                         |
+
+#### Examples
+
+Consider the following webhook configuration:
+
+```json
+{
+    "name": "webhook-name-1",
+    "url": "https://www.your-endpoint.com/events?iccid=:iccid:&ip=:ip:&imsi=:imsi:",
+    "headers": {
+        "x-api-key": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "x-device-imsi": ":imsi:",
+        "x-device-iccid": ":iccid:",
+        "x-device-ip": ":ip:"
+    },
+    "eventTypes": [{ "type": "TELEMETRY_DATA" }]
+}
+```
+
+#### Scenario - Full Device Metadata Injection
+
+For an event coming from a device with the following attributes:
+
+* **ICCID**: `1234567890123456789`
+* **IMSI**: `987654321098765`
+* **IP**: `192.168.1.1`
+
+The webhook request will be transformed as follows:
+
+* **URL:**\
+  `https://www.your-endpoint.com/events?iccid=1234567890123456789&ip=192.168.1.1&imsi=987654321098765`
+* **Headers:**
+  ```json
+  {
+      "x-api-key": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "x-device-imsi": "987654321098765",
+      "x-device-iccid": "1234567890123456789",
+      "x-device-ip": "192.168.1.1"
+  }
+  ```
+
+#### Scenario - Missing Metadata
+
+For an admin log event that is unrelated to a specific device, no metadata can be injected an the placeholders will be\
+replaced with `none`.
+
+The webhook request will be transformed as follows:
+
+* **URL:**\
+  `https://www.your-endpoint.com/events?iccid=none&ip=none&imsi=none`
+* **Headers:**
+  ```json
+  {
+      "x-api-key": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "x-device-imsi": "none",
+      "x-device-iccid": "none",
+      "x-device-ip": "none"
+  }
+  ```
+
+#### Scenario - Unsupported Placeholders
+
+If a webhook definition contains an unsupported placeholder, it will remain unchanged.
+
+```json
+{
+    "name": "webhook-name-2",
+    "url": "https://api.example.com/data?destination=:unknown:",
+    "headers": {
+        "x-tracking": ":tracking_id:"
+    }
+}
+```
+
+Since `:unknown:` and `:tracking_id:` are not supported, the resulting webhook request will be:
+
+* **Final URL:** `https://api.example.com/data?destination=:unknown:`
+* **Headers:**
+  ```json
+  {
+      "x-tracking": ":tracking_id:"
+  }
+  ```

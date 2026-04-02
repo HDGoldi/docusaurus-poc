@@ -1,0 +1,7 @@
+## Description
+
+Continuously roll out new firmware to ensure compliance with security regulations like the EU Cyber Resilience Act while improving your customer experience with stability enhancements and new innovative features. Mender is the market-leading FOTA Management solution, providing secure and robust over-the-air (OTA) software updates for your entire device fleet.
+
+**Security by design**: Ensure communication, data integrity, and authenticity are verified. Trust a battle-tested solution with millions of devices under management.\
+**Robustness**: Minimize the risk of bricking devices, even in cases of losing power or connectivity in the middle of the update process. Devices will always be in a known and operable state\
+**Optimize**: Meet bandwidth and uptime requirements and realize up to a 90% reduction in bandwidth consumption with delta updates. Advanced scheduling and phased rollout to minimize risk of fleet interruption.

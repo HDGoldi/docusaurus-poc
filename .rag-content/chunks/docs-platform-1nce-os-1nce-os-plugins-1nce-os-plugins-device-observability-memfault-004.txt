@@ -1,0 +1,21 @@
+## Plugin Installation
+
+The Plugin can be installed in [1NCE OS](https://portal.1nce.com/portal/customer/1nceos) portal "Plugins" tab by choosing "Memfault."
+
+There is no need to provide any extra information, so you can immediatelly proceed with the installation by pressing the "Install" button on the "Plugin Details page."
+
+:::warning
+Please note that after pressing install button system automatically creates Memfault account with your 1NCE Organization's email address, which cannot be changed afterwards.
+:::
+
+If plugin installation goes well you should see the "Plugin Installed" page.\
+After this, you already can start sending data to the Memfault system.
+
+In the Plugin installed page, you will see the "Open Memfault Portal" button, which in the new browser tab will open your new Memfault account finalization page. The email field will be already prefilled with your 1NCE Organization's email address.
+
+In case you navigate away from the "Plugin Installed" page you can still get the Memfault registration URL by navigating to the Memfault plugin details and clicking on the "Register with Memfault" link.
+
+After registration in the Memfault portal is completed you should see the following plugin details page, where we provide details about the Memfault plugin and the "Memfault portal" link to easily navigate to your Memfault account.\
+If you need to uninstall the Memfault plugin it also can be done from this page. The uninstall button will only remove the plugin from the 1NCE system, in the Memfault portal account will not be deleted.
+
+# Memfault plugin installation via API

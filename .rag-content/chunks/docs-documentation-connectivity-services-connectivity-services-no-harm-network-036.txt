@@ -1,0 +1,4 @@
+## Radio Access Technology Bearers Reselection
+
+If the IoT Device supports more than one family of access technology (for example 3GPPTM, WLAN) the IoT Device Application **SHALL** employ a randomized delay before switching to a different family of access technology.\
+The IoT Device Application **SHALL** implement a protection mechanism to prevent frequent "ping-pong" between these different technologies. This is done by limiting the frequency of reselection actions, with appropriate hysteresis mechanisms.

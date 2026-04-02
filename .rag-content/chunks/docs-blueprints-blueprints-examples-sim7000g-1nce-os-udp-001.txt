@@ -1,0 +1,66 @@
+```powershell PowerShell
+AT+CIPSTART="UDP","udp.os.1nce.com","4445"
+
+OK
+
+CONNECT OK
+AT+CIPSEND
+
+> welcome to 1nce os
+
+SEND OK
+
+This is a UDP response message from my server!
+
+AT+CIPCLOSE
+
+CLOSE OK
+AT+CIPSHUT
+
+SHUT OK
+
+```
+
+# Preparation
+
+
+
+Configure the SIM7000G module with the appropriate network settings, such as the APN and operator ID, and ensure that it is connected to the cellular network.
+
+# Start a UDP Connection
+
+
+
+A UDP connection towards a server with a given UDP port can be started with 'AT+CIPSTART=...'. The AT Command needs to list the UDP protocol, the target URL or IP and the used UDP Port. If the connection is successfully opened, 'CONNECT OK' is returned.
+
+# Send UDP Data
+
+
+
+With 'AT+CIPSEND' the data send mode is activated. Any input send to the modem will be forwarded via the UDP connection. To deactivate the send mode, '1A' encoded as a HEX value needs to be send to the SIM7000G. The modem will acknowledge the sent message with 'SEND OK'.
+
+# Receive UDP Data
+
+
+
+By default, the modem will forward any incomming UDP data while the connection is open to the serial output interface.
+
+# Close UDP Connection
+
+
+
+An active UDP connection can be closed with 'AT+CIPCLOSE'. The modem will close the UDP connection and respond with 'CLOSE OK'.
+
+# Close Data Session
+
+
+
+To close the entire data session that was opened with 'AT+CIICR', 'AT+CIPSHUT' needs to be used. The command will respond with 'SHUT OK'. Afterwards a new session can be started at any point.
+
+# Wrap Up
+
+
+
+This guide showed the basic setup of a SIM7000G with a 1NCE SIM to send and receive data using a UDP connection.
+
+For more details and documentation please refer to the AT Command manual of the SIM7000G.

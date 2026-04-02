@@ -1,0 +1,3 @@
+## Device List
+
+If the configuration is completed devices should be accepted and available on the Mender devices list.

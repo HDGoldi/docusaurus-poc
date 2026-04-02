@@ -1,0 +1,16 @@
+# GET /v1/orders
+
+Get All Orders
+
+Get a complete list of all 1NCE orders for the given account.
+
+## Parameters
+- page (query, optional): Number index of the requested order list page.  Use this parameter to iterate through all orders on the different pages. The total amount of pages is listed in the response header.
+- pageSize (query, optional): Defines the size of a page, the number of individual orders listed on one page. The maximum allowed value is 10.
+- sort (query, optional): Sort the order list by specific keys (order_number, order_status and/or order_date) in a comma seperated list. The default is order_number if no paramter is given.
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found

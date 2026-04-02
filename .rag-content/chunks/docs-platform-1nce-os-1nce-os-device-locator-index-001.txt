@@ -1,0 +1,5 @@
+## Basic solver mode
+
+By default, the basic solver mode is enabled, which delivers device positioning when connected via 2G technology. Resolved position is based on the location of the cell tower device is connected to. Positioning for 3G, 4G, LTE-M, and NB-IoT connections is not guaranteed and may not be resolved.\
+Creative Commons License OpenCelliD Project is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License\
+![](https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg) [OpenCelliD Project](https://opencellid.org/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)

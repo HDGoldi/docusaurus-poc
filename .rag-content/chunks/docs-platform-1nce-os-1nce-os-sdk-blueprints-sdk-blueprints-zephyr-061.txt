@@ -1,0 +1,11 @@
+## Overview
+
+The **1NCE Memfault Demo** enables Zephyr-based devices to send diagnostics and fault data via **CoAP** using the **1NCE CoAP Proxy**. This is useful for tracking faults, crashes, and network issues in IoT devices. Communication can optionally be secured using **DTLS**.
+
+On the `Thingy:91` device, LED indicators show the following statuses:
+
+* 🔵 **BLUE** – Network connected
+* 🟢 **GREEN** – Memfault data sent successfully
+* 🔴 **RED** – Failed to send Memfault data
+
+***

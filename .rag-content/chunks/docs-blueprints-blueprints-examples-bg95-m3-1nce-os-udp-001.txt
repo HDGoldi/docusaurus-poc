@@ -1,0 +1,40 @@
+```powershell PowerShell
+/* connect to UDP server */
+> AT+QIOPEN=1,0,"UDP","udp.os.1nce.com",4445,0,1
+OK
++QIOPEN: 0,0
+
+
+
+> AT+QISEND=0
+> Welcome to 1NCE OS
+SEND OK
+
+> AT+QICLOSE=0
+
+OK
+```
+
+# Preparation
+
+
+
+Configure the BG95 module with the appropriate network settings, such as the APN and operator ID, and ensure that it is connected to the cellular network.
+
+# Open socket
+
+
+
+Use the AT+QIOPEN command to open a UDP socket and establish a connection with the remote server.
+
+# Send the message to 1NCEOS
+
+
+
+for Send After receiving ">", input data (TEST), the maximum length of the data is 1460, the data beyond 1460 will be omitted. Then use `<CTRL+Z>` to send data. When receive SEND OK means the data has been sent
+
+# Close the Socket
+
+
+
+AT+QICLOSE command is used to close a socket connection established with a remote server using a TCP or UDP protocol. The command requires specifying the socket ID that was assigned when the connection was opened.

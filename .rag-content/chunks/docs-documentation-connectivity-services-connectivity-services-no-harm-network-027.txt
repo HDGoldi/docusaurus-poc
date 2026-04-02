@@ -1,0 +1,4 @@
+## Low Power Mode
+
+If the IoT Device Application does not need to exchange any data with the IoT Service Platform for a period greater than 24 hours, and the IoT Service can tolerate some latency, the IoT Device **SHOULD** implement a power-saving mode where the device’s communication module/chipset is effectively powered down between data transmissions. This will reduce the IoT Device’s power consumption and reduce mobile network signaling.\
+IoT Device Applications communicating over 3GPPTM Mobile IoT access bearers, such as NB-IoT and LTE-M, **SHOULD NOT** power down their communication module/chipset. The 3GPPTM power saving features **SHOULD** be used instead, thus avoiding power-draining, system selection scanning procedures.

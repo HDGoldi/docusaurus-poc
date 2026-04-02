@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/1nce-os/api-1nce-os-patch-v1-integrate-clouds-webhooks-{integrationId}/",
+    "title": "PATCH /v1/integrate/clouds/webhooks/{integrationId}",
+    "breadcrumb": "API Explorer > 1nce Os > Patch Customer Webhook Integration",
+    "content_type": "api-reference",
+    "category": "1nce-os",
+    "section_heading": "PATCH /v1/integrate/clouds/webhooks/{integrationId}"
+  }
+}

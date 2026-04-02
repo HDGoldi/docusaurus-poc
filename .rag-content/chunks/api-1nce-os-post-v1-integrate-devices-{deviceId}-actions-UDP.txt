@@ -1,0 +1,17 @@
+# POST /v1/integrate/devices/{deviceId}/actions/UDP
+
+Create Action Request On Specific UDP Device.
+
+Initiate UDP action on specific device.
+
+## Parameters
+- deviceId (path, required): The unique device ID which identifies each 1NCE SIM. Can be obtained from the Get All Devices API query. For 1NCE SIMS the device ID is equal to its iccid.
+
+## Responses
+- 202: Message describing the result of operation
+- 400: 
+- 401: 
+- 403: 
+- 404: 
+- 409: 
+- 500: 

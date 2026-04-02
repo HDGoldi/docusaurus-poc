@@ -1,0 +1,9 @@
+## Security
+
+Security is the highest focus for the Device Authenticator.
+
+Each SIM Card is authenticated by the 1NCE core network using unique identifiers like IMSI, MSISDN and IMEI (if the IMEI Lock is activated by the customer). Additionally, the static, private IP addresses is used in the 1NCE core network to identify and check each data package processed by 1NCE OS to validate the authentication of the device.
+
+To keep the devices functional and authenticated it should remain with the same SIM.
+
+Further security is guaranteed through an encrypted communication between the device and 1NCE OS using DTLS for CoAP or LwM2M.

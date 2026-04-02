@@ -1,0 +1,15 @@
+## 🧭 Overview
+
+The **1NCE Zephyr Blueprint** is a reference application that showcases how to integrate and use various 1NCE OS features with [Zephyr RTOS](https://zephyrproject.org/), including:
+
+* ✅ **Device Authenticator**
+* 📡 **IoT Integrator**
+* 🔋 **Energy Saver**
+* 📥 **Device Controller** for UDP and CoAP-based downlink and real-time remote interaction
+* 🧩 **Plugin Integrations** with partners like [Mender](https://mender.io) for FOTA and [Memfault](https://memfault.com) for device observability
+
+It is based on the **1NCE IoT C SDK** and runs on Nordic Semiconductor boards.
+
+The Zephyr OS is a scalable, secure, real-time operating system designed for resource-constrained embedded devices — from smart sensors to full-featured gateways.
+
+***

@@ -1,0 +1,3 @@
+## Organization Restriction
+
+It is only possible to setup one SMS Forwarder per organization. This forwarder will then receive the MO-SMS and DLR for all SIMs of the particular organization instance. This will not include the SIMs and messages of any sub- or parent-organization SIM devices.

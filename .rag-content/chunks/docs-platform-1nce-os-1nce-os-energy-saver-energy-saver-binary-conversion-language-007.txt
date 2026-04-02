@@ -1,0 +1,13 @@
+## Control statements
+
+Control statements MUST have a JSON object field named `switch` that specifies the payload selector that's going to be evaluated, and its value tested in cases.
+
+Control statements MUST have a JSON array field named `on` that contains a list of cases that switch value will be tested on, optionally including the default case.
+
+Control statements are used for executing control logic that MAY lead to executing more statements. The switch is the only available control statement in this version of BCL.
+
+Control statement MAY have a string field named `comment`, provided for human-readable description of the conversion.
+
+Control statement on list MAY contain zero or more case statements.
+
+The control statement on the list MAY contain a comment statement.

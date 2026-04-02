@@ -1,0 +1,17 @@
+## 📚 Demos in This Blueprint
+
+The blueprint includes the following applications:
+
+| Demo Path                               | Summary                                                                                                       |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `nce_coap_demo`                         | Secure CoAP communication using DTLS from Device Authenticator, with Energy Saver & Device Controller support |
+| `nce_udp_demo`                          | Lightweight UDP communication with compressed payloads and Device Controller                                  |
+| `nce_lwm2m_demo`                        | LwM2M client for LED, buzzer, and sensor control over CoAP/DTLS with support for 1NCE Action API              |
+| `plugin_system/nce_debug_memfault_demo` | Device diagnostics and crash reporting using Memfault over the 1NCE CoAP Proxy                                |
+| `plugin_system/nce_fota_mender_demo`    | Firmware-over-the-air updates via Mender.io using the 1NCE CoAP Proxy and secure onboarding                   |
+
+***
+
+# Sample Demos
+
+# 1NCE Zephyr blueprint - UDP Demo

@@ -1,0 +1,5 @@
+## Selectors
+
+Selectors are JSON values. They are used to “select” data from a given location type or “select” data used in a control statement.
+
+Selectors MAY have a string field named `comment`, provided for human-readable description of the conversion.

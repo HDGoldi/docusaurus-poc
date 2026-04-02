@@ -1,0 +1,15 @@
+## 🧾 Device Identity
+
+Set device manufacturer and type:
+
+```conf
+CONFIG_APP_MANUFACTURER="Nordic Semiconductor ASA"
+CONFIG_APP_DEVICE_TYPE="OMA-LWM2M Client"
+```
+
+💡 **Notes:**
+
+* Those values are stored in the `/3/0/0` and `/3/0/17` resources of the device object.
+* The device object is not included in passive reporting, but it can be retrieved by sending a `Read` request to object `/3` using 1NCE OS device controller.
+
+***

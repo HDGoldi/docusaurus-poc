@@ -1,0 +1,55 @@
+### Calling Historian Insights endpoint without query parameters
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/inspect/devices/history/insights"
+```
+
+We would get a number of messages in the 1-day intervals for specific protocols for the last 7 days.
+
+```json
+{
+    "items": [
+        {
+            "time": "2022-03-23T00:00:00.000",
+            "protocol": "COAP",
+            "amount": 1
+        },
+        {
+            "time": "2022-03-22T00:00:00.000",
+            "protocol": "COAP",
+            "amount": 13
+        },
+        {
+            "time": "2022-03-22T00:00:00.000",
+            "protocol": "LWM2M",
+            "amount": 27
+        },
+        {
+            "time": "2022-03-21T00:00:00.000",
+            "protocol": "LWM2M",
+            "amount": 1
+        },
+        {
+            "time": "2022-03-21T00:00:00.000",
+            "protocol": "UDP",
+            "amount": 1
+        },
+        {
+            "time": "2022-03-18T00:00:00.000",
+            "protocol": "LWM2M",
+            "amount": 62
+        },
+        {
+            "time": "2022-03-18T00:00:00.000",
+            "protocol": "UDP",
+            "amount": 1
+        },
+        {
+            "time": "2022-03-17T00:00:00.000",
+            "protocol": "LWM2M",
+            "amount": 2
+        }
+    ],
+    "interval": "1d"
+}
+```

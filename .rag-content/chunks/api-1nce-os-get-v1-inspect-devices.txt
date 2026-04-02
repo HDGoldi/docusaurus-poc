@@ -1,0 +1,18 @@
+# GET /v1/inspect/devices
+
+Get All Devices
+
+Get a list of all the Customer SIMs/Devices for the current organisation in the 1NCE OS.
+
+## Parameters
+- page (query, optional): Number of the requested devices page. Use this parameter to iterate through all devices on the different pages. The total amount of pages is listed in the response body (pageAmount).
+- pageSize (query, optional): Parameter for specifying the queried items per page.
+- sort (query, optional): Sort values based on keys that are listed as a comma seperated list, prepend "-" for descending order.
+- q (query, optional): Filter parameter in <i>{filter}:{value}</i> format. Comma separated list of filtering criteria out of the following fields: <ul><li>iccid</li></ul><p><b>Example:</b> "iccid:8988280666000000000"</p>
+
+## Responses
+- 200: OK
+- 400: 
+- 401: 
+- 403: 
+- 500: 

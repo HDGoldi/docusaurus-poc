@@ -1,0 +1,22 @@
+## Plugin failure event
+
+There is possibility that data forwarding from the 1NCEOS to the Datacake system can fail due to misconfiguration or temporary downtime.
+In that case you will see following `Error` Admin Log:
+
+You can use similar approach to the [Cloud Integrations failure monitoring](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-failure-event#cloud-integrations-failure-monitoring) , only for Plugins Cloud Integrator `Error` event will be following:
+
+```json
+{
+  "received": "1762419188874",
+  "id": "1-690c61f4-e57d85442c1fee9340783e17",
+  "type": "ERROR",
+  "error": {
+    "payloadExists": false,
+    "description": "One of your plugins has failed. Please check the plugins section of 1NCE OS",
+    "id": "3568Vyh2vh2uCIcFrrMyv6xRoIf",
+    "type": "INTEGRATION",
+    "message": "CloudIntegrator[PluginDisabled]"
+  },
+  "version": "1.0.0"
+}
+```

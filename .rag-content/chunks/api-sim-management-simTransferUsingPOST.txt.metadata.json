@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-simTransferUsingPOST/",
+    "title": "POST /v1/sims/simTransfer",
+    "breadcrumb": "API Explorer > Sim Management > Create SIM Transfer",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "POST /v1/sims/simTransfer"
+  }
+}

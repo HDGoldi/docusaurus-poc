@@ -1,0 +1,15 @@
+# POST /v1/locate/geofences
+
+Create geofence
+
+Create a new geofence.
+
+## Parameters
+None
+
+## Responses
+- 201: Created
+- 400: 
+- 401: 
+- 403: 
+- 500: 

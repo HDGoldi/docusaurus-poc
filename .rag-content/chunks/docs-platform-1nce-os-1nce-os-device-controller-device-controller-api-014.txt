@@ -1,0 +1,16 @@
+### By deviceId
+
+Delete all requests for device with id `123456789012345678`:
+
+```shell
+curl -X DELETE "https://api.1nce.com/management-api/v1/integrate/devices/123456789012345678/actions/requests"
+```
+
+The response could be `200 OK` response code with body:
+
+```json
+[{
+  "id": "trxHeBL0d234fsfds",
+  "status": "CANCELLED"
+}]
+```

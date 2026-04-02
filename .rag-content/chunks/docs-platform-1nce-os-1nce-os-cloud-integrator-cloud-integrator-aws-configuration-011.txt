@@ -1,0 +1,6 @@
+### IAM cross account role
+
+Stack creates Cross Account IAM role with following permissions for 1NCE OS AWS account 672401624271:
+
+* 'iot:DescribeEndpoint' - Retrieve the AWS IoT endpoint.
+* 'iot:Publish' - Publish MQTT messages to AWS IoT Core.

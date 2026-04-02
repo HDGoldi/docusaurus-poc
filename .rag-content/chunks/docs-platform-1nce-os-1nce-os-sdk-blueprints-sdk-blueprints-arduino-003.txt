@@ -1,0 +1,3 @@
+## 1NCE IoT C SDK Integration
+
+[1NCE IoT C SDK](https://github.com/1NCE-GmbH/1nce-iot-c-sdk) is a collection of C source files that can be used to connect and benefit from different services from 1NCE OS. The SDK is integrated with the blueprint through UDP & Log interfaces.

@@ -1,0 +1,9 @@
+## Automatic Mode
+
+When using the Automatic Mode, **each individual SIM** data traffic towards the public internet is routed through the geographically optimized data center based on the SIM location to allow for low latency internet access. The automatic system selected the ideal breakout region for each individual SIM independently. This results in SIMs exiting through different breakouts dependent on their location.
+
+1NCE is using AWS to facilitate dynamic Internet Breakout in the Automatic Mode. The closest breakout region is dynamically chosen based on the device location. Different availability zones inside the breakout region serve as backup to prevent downtime.
+
+> 📘 VPN and 1NCE OS
+>
+> OpenVPN and 1NCE OS Services are currently not available in the **Automatic Mode** due to the automatically changing breakout IPs. While Automatic Mode is active, the OpenVPN Configuration tab is disabled.

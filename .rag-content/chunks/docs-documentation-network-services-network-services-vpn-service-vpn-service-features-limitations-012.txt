@@ -1,0 +1,3 @@
+## Default Traffic Routing
+
+When using the 1NCE VPN Service, only data routed by the single connected device towards the OpenVPN Client IP is actually sent to the customer-side VPN endpoint. All other traffic is transmitted using the default Internet Breakout. For an application case where all traffic (DNS , NTP, etc.) should be accessible through the VPN , the routes on the connected device with the 1NCE SIM needs to be adapted by the customer.

@@ -1,0 +1,15 @@
+# POST /v1/sims/limits
+
+Create Global Limits
+
+Configure self-set monthly limits for all SIMs (Data, MT-SMS, MO-SMS).
+
+## Parameters
+None
+
+## Responses
+- 201: Created
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

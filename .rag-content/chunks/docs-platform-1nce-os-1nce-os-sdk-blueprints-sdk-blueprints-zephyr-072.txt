@@ -1,0 +1,11 @@
+### Sample Connectivity dashboard configuration:
+
+#### Sync Succes chart configuration:
+
+#### To create a new metrics chart:
+
+#### Signal quality chart configuration:
+
+#### Sent KB chart configuration:
+
+***

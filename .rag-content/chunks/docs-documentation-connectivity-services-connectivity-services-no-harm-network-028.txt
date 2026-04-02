@@ -1,0 +1,5 @@
+## IoT Service Platform Temporarily Unreachable or Offline
+
+If the IoT Service Platform is temporarily offline, the IoT Device Application **SHALL** first diagnose if the communication issues to the server are caused by higher layer communications (TCP/IP, UDP, ATM…). Higher layers mechanisms **SHALL** then try to re-establish the connection with the server. This is done by assessing (and if necessary, attempting to re-establish) connectivity in a step-wise approach, top-down. In tiered IoT Devices, the embedded Service Enablement Layer **SHALL** comply to this requirement. The IoT Device Application **SHALL NOT** frequently initiate an application-driven reboot of the communication module/chipset. The IoT Devices **SHALL** retry connection requests to the IoT Service Platform with an increasing back-off period.\
+If the IoT Device detects that the IoT Service Platform is back online, it **SHALL** employ a randomized timer\
+to trigger communication requests to the mobile network.

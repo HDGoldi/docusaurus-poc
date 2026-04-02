@@ -1,0 +1,5 @@
+## Optimized Breakout Countries
+
+Using the automatic breakout mode, the traffic of SIM devices will switch breakout based on the operator to which the device is connected. With the automatic mode, this switching is automatically optimized to deliver the lowest latency possible through an internet breakout.
+
+When using a manual breakout the list of optimized countries should also be considered. Selecting a manual breakout for a non-optimized country or operator could lead to worse latency overall. Therefore it only makes sense to change the manual breakout if the SIM devices are located within the optimized countries.

@@ -1,0 +1,8 @@
+## Limitations
+
+* We only show history of the device from the last 7 days, but device state is stored permanently.
+* History of device is not supporting messages bigger than 2048 bytes. If messages are stored in Base64 [format](/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations#history), then raw binary message size shouldn't exceed 1536 bytes.
+* Maximum state size for each protocol (UDP, CoAP and LwM2M) is 8192 bytes.
+* A summary of the location of the device is shown, containing the first position, the last position and some positions inbetween (more data available via the API).
+* The current digital state representation of a SIM device can be updated **up to 20 times per second**. Therefore, if a given device sends messages at a higher frequency, it would cause a throttling issue resulting in the state not being updated. That is noticeable by the existence of **DeviceShadowUpdatertlingIssue]** log\*\* logs in the 1NCE OS Portal Administrator Logs page.
+* A different issue can happen if a device sends multiple messages in a short interval. That would result in a digital state version conflict and only one of the states will be actually persisted. The existence of **DeviceShadowUpdateronConflict]** rep\*\* represents that situation.

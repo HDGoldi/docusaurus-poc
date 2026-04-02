@@ -1,0 +1,20 @@
+# Features
+
+The Admin Logs provide the possibility to show info messages from lifecycle events and errors from all customer devices. Setting custom filters allows to search for certain messages:
+
+* Specific device context using ICCID.
+* Category: `Info` and `Error`.
+* Period: 1 day and 7 days.
+
+***
+
+# Limitations
+
+Admin Logs limitations:
+
+* Admin Logs older than 7 days are removed automatically.
+* Admin Log payload value is saved in binary format.
+
+Lifecycle event limitation:
+
+* "DEVICE\_FIRST\_TIME\_REGISTERED" event is triggered only once per device, and there are no other configurations available for this.

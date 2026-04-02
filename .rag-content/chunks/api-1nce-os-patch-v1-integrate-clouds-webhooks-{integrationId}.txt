@@ -1,0 +1,17 @@
+# PATCH /v1/integrate/clouds/webhooks/{integrationId}
+
+Patch Customer Webhook Integration
+
+Patch Customer Webhook Integration
+
+## Parameters
+- integrationId (path, required): unique integration ID
+
+## Responses
+- 200: Customer Webhook Integration Details.
+- 400: 
+- 401: 
+- 403: 
+- 404: 
+- 409: 
+- 500: 

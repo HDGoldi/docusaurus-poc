@@ -1,0 +1,15 @@
+## Plugin Installation
+
+The Tartabit plugin can be created via the `partners` API by using "TARTABIT" partner in the [API Explorer](ref:api-welcome). Both the Webhook Secret and the Server Domain from Tartabit should be added to the request body.
+
+Example:
+
+```curl
+curl --location --request POST 'https://api.1nce.com/management-api/v1/partners/TARTABIT/plugins' \
+--header 'Authorization: Bearer <TOKEN>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "serverDomain":   "bridge-us.tartabit.com",
+    "webhookKey":  "secretKey"
+}'
+```

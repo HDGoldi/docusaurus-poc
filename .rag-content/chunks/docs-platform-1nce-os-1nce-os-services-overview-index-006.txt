@@ -1,0 +1,3 @@
+## Device Inspector
+
+The Device Inspector combines an interface for analytic, monitoring and controlling tasks for IoT devices. [Device Inspector](/1nce-os/1nce-os-device-inspector/index)

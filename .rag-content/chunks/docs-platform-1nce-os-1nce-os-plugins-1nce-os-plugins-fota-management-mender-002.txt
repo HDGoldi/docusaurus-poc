@@ -1,0 +1,3 @@
+## Pricing
+
+1NCE Plugins allow you to start at no cost. Firmware Over-The-Air Management plugin by Mender comes with a free trial plan for up to 10 devices for 12 months. You can increase the number of devices and unlock more features and benefits by selecting the right [plan](https://mender.io/product/pricing) for your business. For further inquiries about usage and pricing, please reach out to [contact@mender.io](mailto:contact@mender.io).

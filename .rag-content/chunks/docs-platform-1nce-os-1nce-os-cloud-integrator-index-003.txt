@@ -1,0 +1,3 @@
+## Error Events
+
+This option will forward all the Error category Admin Logs to the customer's Cloud Integrations. It also will include [Cloud Integration failure event](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-failure-event)

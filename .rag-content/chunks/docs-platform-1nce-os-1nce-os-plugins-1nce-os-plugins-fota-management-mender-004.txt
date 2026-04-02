@@ -1,0 +1,7 @@
+## Plugin Installation
+
+Plugin can be installed in [1NCE OS](https://portal.1nce.com/portal/customer/1nceos) portal "Plugins" tab by choosing "Mender".
+
+To install a Mender Plugin you should provide the Organization Token from Mender.
+
+# Mender plugin installation via API

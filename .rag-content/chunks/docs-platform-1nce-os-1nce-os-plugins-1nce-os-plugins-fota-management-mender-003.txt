@@ -1,0 +1,11 @@
+## Start Using
+
+To start using the 1NCE OS Plugin with Mender you first need to create a hosted Mender account and get an Organization token on the Mender side. Starting from the main page of Mender, choose *My organization* under the dropdown on your profile. **Keep the Organization token because it is necessary for creating the plugin in the 1NCE OS system**.
+
+To finish the configuration in 1NCE OS you can choose one of the two options described below. After configuration is done you can use the [Demo script for zephyr](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/plugin_system/nce_fota_mender_demo) from 1NCE OS to showcase Mender Plugin features and understand the capabilities of 1NCE OS SDK & FOTA client.
+
+:::warning
+Please note that by installing this plugin, you are aware that **data is shared with Mender**.
+:::
+
+# Mender  Plugin Installation via Frontend

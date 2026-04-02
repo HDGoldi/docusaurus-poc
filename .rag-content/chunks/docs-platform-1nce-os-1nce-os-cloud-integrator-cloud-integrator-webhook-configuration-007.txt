@@ -1,0 +1,9 @@
+## Integration Restart
+
+After 5 unsuccessful message attempts for a webhook it will be set to state `INTEGRATION_FAILED`.
+
+To restart the webhook:
+
+```curl
+curl --location --request POST 'https://api.1nce.com/management-api/v1/integrate/clouds/webhooks/{integrationId}/restart'
+```

@@ -1,0 +1,3 @@
+## Behavior when SIM Subscription is Permanently Disabled
+
+Before the SIM subscription associated with an IoT Device is to be placed in a permanently terminated state, the IoT Service Provider **SHALL** first ensure that the IoT Device’s communication module/chipset is permanently disabled to restrict it from trying to register to the mobile network once the SIM is disabled. The IoT Service Provider **SHOULD** consider avoiding mechanisms for the permanent termination of IoT Devices that are not easily serviceable, as it may require manual intervention (i.e. a service call) to reenable the IoT Devices.

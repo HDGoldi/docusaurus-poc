@@ -1,0 +1,3 @@
+## Internet Protocol
+
+Some devices support both Internet Protocol versions IPv4 and IPv6. The 1NCE core network currently only supports IPv4 for the time being. Therefore, IPv4 must be used.

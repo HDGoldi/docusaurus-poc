@@ -1,0 +1,5 @@
+## SIM Configuration
+
+On the SIM detail page, the specific SIM can be (de-)activated, the IMEI lock set, Auto-Top-Up (de-)activated and additionally the SIM connection can be reset.
+
+*Detail page of an example SIM Card.*

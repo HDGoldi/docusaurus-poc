@@ -1,0 +1,14 @@
+## Plugin Installation
+
+The Datacake plugin can be created via `partners` API by using "DATACAKE" partner in the [API Explorer](ref:api-welcome). Only workspaceId from Datacake should be added to the request body.
+
+Example:
+
+```curl
+curl --location --request POST 'https://api.1nce.com/management-api/v1/partners/DATACAKE/plugins' \
+--header 'Authorization: Bearer <TOKEN>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "workspaceId":   "00000000-0000-0000-0000-000000000000"
+}'
+```

@@ -1,0 +1,3 @@
+## Multi-Target Streaming
+
+The 1NCE Data Streamer Service allows configuring multiple target applications for the same streamed data. This allows the customer to integrate both the Event and Usage Records into multiple data analytics and monitoring systems at once. Each configured receiver will get the latest updates pushed. The individual streams can be configured in the 1NCE Portal under the Configuration Tab. In the Portal, individual data streams can also be paused/resumed, and deleted.

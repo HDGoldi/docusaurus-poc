@@ -1,0 +1,20 @@
+### CoAP
+
+Creating CoAP action request for a device with deviceId `123456789012345678`:
+
+```shell
+curl -X POST "https://api.1nce.com/management-api/v1/integrate/devices/123456789012345678/actions/COAP"
+```
+
+The request body looks like this:
+
+```json
+{
+  "payload": "Data to send to the device",
+  "payloadType": "STRING",
+  "port": 3000,
+  "path": "/example?param1=query_param_example",
+  "requestType": "POST",
+  "requestMode": "SEND_NOW"
+}
+```

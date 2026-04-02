@@ -1,0 +1,32 @@
+## MO-SMS cURL
+
+1. Customize the cURL request shown below with the **Server Domain**, the specific **Endpoint** and optionally the **Port Number**.
+2. Optionally, customize the JSON Body parameters.
+3. Import the cURL command into Postman or copy the command to a CLI with cURL installed.
+4. Execute the customized request to simulate a MO-SMS being delivered to the specified Endpoint by the 1NCE SMS Forwarding Service.
+
+```curl MO-SMS HTTP Post cURL
+curl --location --request POST 'https://<server-domain>:<port>/<endpoint>/' \
+--header 'Content-Type: application/json' \
+--data-raw ' {
+	"id": 6202,
+	"payload": "message text",
+	"submit_date": "2018-08-17 16:31:51",
+	"dest_address": "12345",
+	"source_address": "1234567890123456",
+	"dcs": 0,
+	"endpoint": {
+		"id": 1234567,
+		"name": "1234567890123456"
+	},
+	"organisation": {
+		"id": 1234
+	},
+	"multi_part_info": {
+		"partno": 1,
+		"total": 1,
+		"identifier": 6202
+	},
+	"pid": 0
+}'
+```

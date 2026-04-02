@@ -1,0 +1,9 @@
+## Overview
+
+1NCE Zephyr CoAP Demo allows customers to establish a secure communication with 1NCE endpoints via CoAPs after receiving DTLS credentials from Device Authenticator using the SDK. It can also send compressed payload using the Energy Saver feature.
+
+On the `Thingy:91` device, LED indicators show the following statuses:
+
+* 🔴 **RED** – Connecting to the network
+* 🔵 **BLUE** – Network connection established
+* 🟢 **GREEN** – Message sent to 1NCE OS

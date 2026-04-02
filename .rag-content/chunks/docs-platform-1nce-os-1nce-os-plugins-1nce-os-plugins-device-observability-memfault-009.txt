@@ -1,0 +1,4 @@
+## Features
+
+* Seamless Memfault plugin creation without the need to prepare or enter any additional information.
+* Automatic Memfault authorization process in the Coap Proxy without the need to store any secrets or extra configuration on the device.

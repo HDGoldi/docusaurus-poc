@@ -1,0 +1,3 @@
+## Supported Boards
+
+The Blueprint is compatible with [Arduino Portenta H7](https://docs.arduino.cc/hardware/portenta-h7) and [Arduino Portenta H7 lite ](https://docs.arduino.cc/hardware/portenta-h7-lite) (running Mbed OS), attached to [Portenta Cat. M1/NB IoT GNSS Shield](https://docs.arduino.cc/hardware/portenta-cat-m1-nb-iot-gnss-shield).

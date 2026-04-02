@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/product-information/api-product-information-getProductsUsingGET/",
+    "title": "GET /v1/products",
+    "breadcrumb": "API Explorer > Product Information > Get All Products",
+    "content_type": "api-reference",
+    "category": "product-information",
+    "section_heading": "GET /v1/products"
+  }
+}

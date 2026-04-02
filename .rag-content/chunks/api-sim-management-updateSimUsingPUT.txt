@@ -1,0 +1,15 @@
+# PUT /v1/sims/{iccid}
+
+Create Single SIM Configuration
+
+Modification of a SIM card to activate, deactivate, change label, change IMEI lock, etc.
+
+## Parameters
+- iccid (path, required): The ICCID of the SIM to be changed.
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted
