@@ -216,6 +216,46 @@ jobs:
           aws s3 cp "s3://$SRC_BUCKET/$CODE_KEY" "/tmp/$CODE_KEY" --region us-east-1
           aws s3 cp "/tmp/$CODE_KEY" "s3://$DST_BUCKET/$CODE_KEY"
 
+      # Clean up any partial/broken eu-central-1 stack from previous attempts.
+      # If the stack exists but is missing expected resources, delete it so
+      # the next deploy creates everything cleanly.
+      - name: Clean up partial RAG stack in eu-central-1
+        run: |
+          STACK_STATUS=$(aws cloudformation describe-stacks \
+            --stack-name nce-devhub-rag \
+            --query "Stacks[0].StackStatus" \
+            --output text 2>/dev/null || echo "NOT_FOUND")
+
+          if [ "$STACK_STATUS" = "NOT_FOUND" ]; then
+            echo "No existing stack — will create fresh."
+            exit 0
+          fi
+
+          # Check if the stack has the ChatFunction resource (fully deployed)
+          HAS_LAMBDA=$(aws cloudformation describe-stack-resource \
+            --stack-name nce-devhub-rag \
+            --logical-resource-id ChatFunction \
+            --query "StackResourceDetail.ResourceStatus" \
+            --output text 2>/dev/null || echo "MISSING")
+
+          if [ "$HAS_LAMBDA" = "MISSING" ] || [ "$HAS_LAMBDA" = "CREATE_FAILED" ]; then
+            echo "Stack is partial (ChatFunction: $HAS_LAMBDA) — deleting for clean deploy…"
+            # Empty the bucket first so CFN can delete it
+            BUCKET=$(aws cloudformation describe-stack-resource \
+              --stack-name nce-devhub-rag \
+              --logical-resource-id RagContentBucket \
+              --query "StackResourceDetail.PhysicalResourceId" \
+              --output text 2>/dev/null || echo "")
+            if [ -n "$BUCKET" ] && [ "$BUCKET" != "None" ]; then
+              aws s3 rm "s3://$BUCKET" --recursive 2>/dev/null || true
+            fi
+            aws cloudformation delete-stack --stack-name nce-devhub-rag
+            aws cloudformation wait stack-delete-complete --stack-name nce-devhub-rag
+            echo "Partial stack deleted."
+          else
+            echo "Stack looks complete (ChatFunction: $HAS_LAMBDA) — will update in place."
+          fi
+
       - name: Deploy RAG stack (eu-central-1)
         run: |
           aws cloudformation deploy \
