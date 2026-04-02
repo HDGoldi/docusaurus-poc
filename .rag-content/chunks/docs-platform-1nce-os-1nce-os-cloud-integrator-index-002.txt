@@ -1,0 +1,3 @@
+## Lifecycle Events
+
+This option will forward all the [Lifecycle](/1nce-os/1nce-os-admin-logs/admin-logs-info-category#lifecycle) events from the Info category Admin Logs to the customer's Cloud Integrations.

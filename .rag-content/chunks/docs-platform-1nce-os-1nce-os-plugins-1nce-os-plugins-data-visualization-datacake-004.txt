@@ -1,0 +1,7 @@
+## Plugin Installation
+
+Plugin can be installed in [1NCE OS](https://portal.1nce.com/portal/customer/1nceos) portal "Plugins" tab by choosing "Datacake".
+
+To install a Datacake Plugin you should provide the Workspace Id from Datacake.
+
+# Datacake plugin installation via API

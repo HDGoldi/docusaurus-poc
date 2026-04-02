@@ -1,0 +1,16 @@
+# POST /v1/partners/plugins/{pluginId}/restart
+
+Restart a failed plugin by installation ID
+
+Attempt to restart a plugin that is in a failed state.
+
+## Parameters
+- pluginId (path, required): Unique identifier of the plugin installation.
+
+## Responses
+- 200: OK
+- 401: 
+- 403: 
+- 404: 
+- 409: 
+- 500: 

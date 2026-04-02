@@ -1,0 +1,16 @@
+### Asia-Pacific Breakout
+
+For the following countries, the Asia-Pacific breakout will be used in automatic mode. When using the manual breakout configuration, switching to Asia-Pacific is beneficial if most SIM devices are located within these regions:
+
+Australia, Cambodia\*, China, Hong Kong, Indonesia, Japan, South Korea, Malaysia\*, Mongolia, New Caledonia, New Zealand, Philippines, Sri Lanka, Taiwan\*, Thailand\*.
+
+\*not for all operators in the country
+
+***
+
+# Internet Breakout IPs
+
+Each available Breakout Region has its unique set of IP Addresses. The specific IP address selected for the Internet Breakout of a SIM card is randomly chosen and can not be managed by the customer. Depending on your configuration, all IPs or Region-specific ones should be used for whitelisting the 1NCE Internet Breakout service. Note that the used IPs are depended on the selected Breakout Mode:
+
+* **Automatic mode**: all IP addresses
+* **Manual Mode**: IPs matching the configured Region

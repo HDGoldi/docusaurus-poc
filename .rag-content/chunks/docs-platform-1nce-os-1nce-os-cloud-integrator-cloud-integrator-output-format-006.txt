@@ -1,0 +1,22 @@
+### GEOFENCE
+
+```json
+{
+  "id": "1-87654321-4fff5fb82c196babcd00007",
+  "type": "GEOFENCE",
+  "received": "1649931594333",
+  "geofence": {
+    "id": "Wg9ys5VqmSNN8M8YN2rv8",
+    "name": "TEST_GEOFENCE_1",
+    "coordinates": ["24.166234790073986","56.977086867785"],
+    "source": "CellTower",
+    "type": "EXIT"
+  },
+  "device": {
+    "ip": "100.91.200.20",
+    "iccid": "1234567890123456789",
+    "imsi": "987654321098765"
+  },
+  "version": "1.0.0"
+}
+```

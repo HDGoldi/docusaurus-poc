@@ -1,0 +1,18 @@
+# GET /v1/sims/{iccid}/events
+
+Get SIM Events
+
+Get diagnostic/event information for a SIM card.
+
+## Parameters
+- iccid (path, required): The ICCID of the SIM to be queried.
+- page (query, optional): Number index of the requested SIM event page. Use this parameter to iterate through all SIMs on the different pages. The total amount of pages is listed in the response header.
+- pageSize (query, optional): The number of events per page, maximum allowed value is 1000.
+- sort (query, optional): Sort values based on keys that are listed as a comma seperated list, prepend "-" for descending order.
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

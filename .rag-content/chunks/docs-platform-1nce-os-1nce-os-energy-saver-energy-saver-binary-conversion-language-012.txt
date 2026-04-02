@@ -1,0 +1,33 @@
+## Nested structure
+
+Dot notation can be used to create JSON with a nested structure.
+
+```json Example - nested
+{
+  "sense": [
+    {
+      "asset": "simple_key",
+      "value": "value1"
+    },
+    {
+      "asset": "level1.level2.level3.level4",
+      "value": "value2"
+    }
+  ]
+}
+```
+
+```json Result - nested
+{
+  "message": {
+    "level1": {
+      "level2": {
+        "level3": {
+          "level4": "value2"
+        }
+      }
+    },
+    "simple_key": "value1"
+  }
+}
+```

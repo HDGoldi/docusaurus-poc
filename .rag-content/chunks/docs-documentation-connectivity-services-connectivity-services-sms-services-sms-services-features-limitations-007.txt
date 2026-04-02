@@ -1,0 +1,3 @@
+## SMS over NB-IoT
+
+1NCE core does not support IP messaging and hence, the devices must receive the message while being connected to the GSM network. Furthermore, while being connected to NB-IoT the dispatch or reception of MT-SMS is not possible.

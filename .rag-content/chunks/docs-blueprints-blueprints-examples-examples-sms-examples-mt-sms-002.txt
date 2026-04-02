@@ -1,0 +1,3 @@
+## API Prerequisites
+
+Before using the SMS API requests, an authentication token needs to be requested using the `/oauth/token` API request. For using the MT-SMS functionality, an ICCID of a 1NCE SIM is needed to send, monitor and manage the SMS messages for this SIM.

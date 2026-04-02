@@ -1,0 +1,9 @@
+### Using 1NCE Energy saver
+
+The demo can send optimized payload using 1NCE Energy saver. This feature is enabled by default with the following definition in `nce_demo_config.h`
+
+```
+#define ENABLE_NCE_ENERGY_SAVER
+```
+
+The energy saver template used in the demo can be found in `extras/template.json`

@@ -1,0 +1,7 @@
+## VPN Client IP Routes
+
+When the OpenVPN client establishes as connection to the VPN server all required network routes will be pushed to the client, ensuring that all SIM cards of an organization can be reached from the client. There will be one network route entry per assigned IP address space. Though the OpenVPN server does not push changes in routes while a VPN connection is established. Consequently, the OpenVPN must be restarted to receive routes for additional IP address spaces. If you have received additional SIM cards you may want to check the 1NCE Portal if any new IP address spaces were added to your organization.
+
+> ❗️ New IP Spaces
+>
+> Please restart your VPN connection if you ordered a large new batch of SIMs which received a different IP Space range.

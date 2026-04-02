@@ -1,0 +1,33 @@
+### Deep JSON
+
+```
+{
+  "sense": [
+    {
+      "asset": "car.running",
+      "value": {
+        "byte": 0,
+        "type": "boolean"
+      }
+    },
+    {
+      "asset": "car.fuel",
+      "value": {
+        "byte": 1,
+        "bytelength": 4,
+        "type": "uint"
+      }
+    },
+    {
+      "asset": "car.driver",
+      "value": {
+        "byte": 5,
+        "bytelength": 4,
+        "type": "string"
+      }
+    }
+  ]
+}
+```
+
+By including dots in the asset name, deep JSON objects can be created.

@@ -1,0 +1,3 @@
+## Test failed
+
+When template is incorrect and template tester can't process the payload, the error message appears under the edit field describing the error:

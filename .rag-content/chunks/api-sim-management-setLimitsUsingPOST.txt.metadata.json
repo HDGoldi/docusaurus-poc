@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-setLimitsUsingPOST/",
+    "title": "POST /v1/sims/limits",
+    "breadcrumb": "API Explorer > Sim Management > Create Global Limits",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "POST /v1/sims/limits"
+  }
+}

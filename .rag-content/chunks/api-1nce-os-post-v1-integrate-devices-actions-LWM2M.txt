@@ -1,0 +1,15 @@
+# POST /v1/integrate/devices/actions/LWM2M
+
+Create Action Requests for LwM2M Devices.
+
+Initiate LwM2M actions like read, write, execute on the specified devices. The devices have to be connected to 1NCE LwM2M endpoint to invoke this event.
+
+## Parameters
+None
+
+## Responses
+- 202: Message describing the result of operation
+- 400: 
+- 401: 
+- 403: 
+- 500: 

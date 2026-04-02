@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/1nce-os/api-1nce-os-post-v1-integrate-clouds-aws-{integrationId}-restart/",
+    "title": "POST /v1/integrate/clouds/aws/{integrationId}/restart",
+    "breadcrumb": "API Explorer > 1nce Os > Restart AWS Integration",
+    "content_type": "api-reference",
+    "category": "1nce-os",
+    "section_heading": "POST /v1/integrate/clouds/aws/{integrationId}/restart"
+  }
+}

@@ -1,0 +1,16 @@
+# POST /v1/integrate/devices/psk/jobs
+
+Import Pre-Shared Devices Keys
+
+Import new Custom Pre-Shared Keys for multiple Devices.
+
+## Parameters
+None
+
+## Responses
+- 202: Accepted
+- 400: 
+- 401: 
+- 403: 
+- 404: 
+- 500: 

@@ -1,0 +1,15 @@
+## Limitations
+
+* During Memfault account creation system will use your 1NCE Organization's email address, so there is no way to provide a custom email before plugin installation.
+* The device serial number in the Memfault system always is the ICCID of the 1NCE sim card.
+* Maximum supported payload size for Coap Proxy requests is 5120 bytes. It is suggested to send payload which is smaller than 1024 bytes in a single request to not trigger block-wise transfer.
+* Currently only supported Memfault proxying mode is uploading a single chunk in one request, other modes like base64-encoded chunks and multiple chunks in one request described in the [Memfault Chunks endpoint](https://api-docs.memfault.com/#a8d3e36f-62f0-4120-9fc6-544ee04f3bb5) are not supported.
+
+# Outcome of successful plugin creation
+
+After devices start to send data to the Memfault system, you can start monitoring different aspects of your device fleet.\
+The Connectivity page provides useful insights like device uptime, sent data amount, and more.
+
+On the Overview page, you can display many different useful widgets.
+
+More information about how to use Memfault features can be found in the [Memfault Documentation](https://docs.memfault.com/docs/platform/introduction).

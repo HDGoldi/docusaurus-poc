@@ -1,0 +1,9 @@
+## TCP/TLS with NB-IoT
+
+NB-IoT is great for getting coverage in hard-to-reach areas like basements or countryside. It comes with the disadvantage of higher transmission latency as the radio device repeats transmissions multiple times to allow the receiving cell tower to capture the data accurately.
+
+In total, it can add up to an expected latency between 1 and 10 seconds. Compared to the latency of normal LTE or CAT-M of 10 to 100 milliseconds, NB-IoT latency is very high. Due to the high latency, it is not advised to use TCP based protocols for data transmission. These protocols expect lower latency. TCP based protocols can work over NB-IoT in ideal conditions but if the latency increases due to environment changes or radio changes, TCP will start sending retransmissions and the connectivity will start to break.
+
+1NCE recommends using only UDP based protocols like CoAP or LwM2M for NB-IoT radio access type. The feature set of these specialized protocols closely match TCP behavior with the added benefit of being more robust in high latency transmissions.
+
+Please avoid using TCP based protocols on NB-IoT radio interfaces.

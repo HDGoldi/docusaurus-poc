@@ -1,0 +1,66 @@
+### Get Geofence
+
+Get details of a geofence.
+
+Get a details of geofence with id `geofence_id_1`:
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/locate/geofences/geofence_id_1"
+```
+
+The response should could be `200 OK` with body:
+
+```json
+{
+	"id": "geofence_id_1",
+	"name": "Once",
+	"eventTypes": [
+		"EXIT",
+		"ENTER"
+	],
+	"coordinates": [
+		[
+			[
+				6.95724,
+				50.938924
+			],
+			[
+				6.95851,
+				50.938366
+			],
+			[
+				6.959703,
+				50.939457
+			],
+			[
+				6.959626,
+				50.934267
+			],
+			[
+				6.96155,
+				50.934315
+			],
+			[
+				6.961435,
+				50.940597
+			],
+			[
+				6.959087,
+				50.940597
+			],
+			[
+				6.95724,
+				50.938924
+			]
+		]
+	],
+	"type": "polygon",
+	"eventSources": [
+		"GPS",
+		"CellTower"
+	],
+	"deviceId": null,
+	"created": "2025-10-02T10:36:11.166Z",
+	"updated": "2025-10-02T10:36:11.166Z"
+}
+```

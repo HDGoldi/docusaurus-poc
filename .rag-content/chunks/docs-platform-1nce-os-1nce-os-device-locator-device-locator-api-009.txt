@@ -1,0 +1,34 @@
+### Get All Geofences
+
+Get a list of all customer geofences.
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/locate/geofences"
+```
+
+The response could be `200 OK` with body:
+
+```json
+{
+	"items": [
+		{
+			"id": "1jU_nQKeiEb_1tPt6EciD",
+			"name": "Once",
+			"created": "2025-09-09T07:00:58.126Z",
+			"updated": "2025-09-09T07:00:58.126Z",
+			"deviceId": "device123",
+			"type": "polygon"
+		},
+		{
+			"id": "76luvK3qpxZKM136xnDNM",
+			"name": "home",
+			"created": "2025-09-10T12:28:20.576Z",
+			"updated": "2025-09-10T12:28:20.576Z",
+			"deviceId": null,
+			"type": "polygon"
+		}
+	],
+	"page": 1,
+	"pageAmount": 1
+}
+```

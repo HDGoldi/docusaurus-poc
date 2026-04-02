@@ -1,0 +1,3 @@
+## Location Events
+
+Whenever a device GPS location update has been sent using Energy Saver template or CellTower location event has been triggered, the location update event is forwarded to the customer's Cloud Integrations.

@@ -1,0 +1,6 @@
+## MO-SMS Event
+
+1. Prepare a Mobile Originated (MO) SMS text message on a device with a 1NCE SIM.
+2. The recipient number can be set to any arbitrary number (e.g., 123456) as it is ignored for routing the SMS.
+3. Send the SMS message from the SIM device.
+4. Once the MO-SMS was delivered, the SMS message content will be shown in the SMS Console in the 1NCE Portal My SIMs detail view and a HTTP Post SMS Event should have been delivered via the SMS Forwarder to the configured server endpoint.

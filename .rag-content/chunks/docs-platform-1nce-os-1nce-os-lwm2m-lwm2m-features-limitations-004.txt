@@ -1,0 +1,32 @@
+## LwM2M Data Reporting
+
+The 1NCE LwM2M Service enables registered devices to report information to the LwM2M server. All messages are forwarded and stored in the [Device Inspector](/1nce-os/1nce-os-device-inspector/index). This service stores the received information and provides data for the visualization via the management user interface and regular event updates via the management API.
+
+***
+
+# Features
+
+* Using 1NCE SIM connectivity, LwM2M is not bound to any specific Radio Network Type (RAT) and will work with any available communication (2G, 3G, 4G, NB-IoT, CAT-M).
+
+* The 1NCE LwM2M Service uses the Device Inspector to store the current and past device states. Further the 1NCE admin logs stores the LwM2M messages received from any registered and connected device. The state and message information can be retrieved using the management user interface or the management API.
+
+* The communication with the 1NCE LwM2M server is secured via DTLS using Pre-Shared Keys (PSK). The PSK is regenerated for each device registration.
+
+* All Open Mobile Alliance (OMA) publicly defined LwM2M objects are supported. To see the full list, please reference the .
+
+* Bootstrapping can be performed either by CoAP or CoAPs (with PSK).
+
+***
+
+# Limitations
+
+* LwM2M Endpoints are required to be [activated](/unresolved/doc:device-integrator-activate-endpoints), otherwise 1NCE LwM2M bootstrap server will not authorize devices.
+
+* LwM2M clients used with the 1NCE Service need to support v1.1 at least partially.
+
+* All LwM2M clients are required to do the bootstrapping process in order to access the 1NCE\
+  LwM2M server. A direct connection to the server is not possible.
+
+* If the LwM2M client device loses the connection to the LwM2M server (e.g., network reregistration, time-outs, device sleep, etc.), it needs to initiate the bootstrapping once process again.
+
+* LwM2M action API is asynchronous. Customers will not receive direct feedback from the device.

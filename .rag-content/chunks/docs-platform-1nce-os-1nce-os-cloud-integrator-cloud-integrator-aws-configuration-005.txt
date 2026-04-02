@@ -1,0 +1,3 @@
+## Edit AWS integration
+
+It is possible to edit the 1nceOS integration options through the front-end by clicking the edit-button as shown below:

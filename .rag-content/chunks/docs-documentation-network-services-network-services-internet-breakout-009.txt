@@ -1,0 +1,49 @@
+## Data Streamer and SMS Forwarder IPs
+
+The public IPs for Europe (Frankfurt) Region are additionally used for the 1NCE Data Streamer and SMS Forwarder Service. Whitelisting the Europe (Frankfurt) IPs is required for using these services as these are operated independently of the configured Breakout Region.
+
+***
+
+# Network Address Translation
+
+By design, the internet access for 1NCE SIMs is implemented with Network Address Translation (NAT). The NAT maps the private SIM-IP to commonly used public 1NCE breakout IP. This network design simplifies IP space management and enhances the access security of connected IoT devices. As a result, devices with a 1NCE SIM cannot be directly accessed from the public internet side, thus improving the resilience against external attacks and threads targeting the IoT devices.
+
+Using the 1NCE Internet Breakout, the **connection establishment** is **unidirectional** (e.g., SIM towards server/service), while **data transfer** over an already **established connection** is **bidirectional** (e.g., SIM towards server/service and server/service towards SIM). The flow of the 1NCE Internet Breakout is shown in the sequence diagram below. Bidirectional connection establishment can only be achieved using the 1NCE VPN Service.
+
+***
+
+# Data Protocols
+
+The concept of the Open Systems Interconnection model applies to the 1NCE Data Service structure. The GPRS Tunneling Protocol (GTP) is used on layer 3 to transfer user application data between the device with a 1NCE SIM and the internet or application server and vice versa. All the data traffic is wrapped in the GTP, on top of this protocol (layer 4+) the customer is free to use any transport protocol (e.g., TCP, UDP, MQTT, CoAP, etc.) and any port assignment.
+
+***
+
+# Domain Name System (DNS)
+
+The Domain Name System (DNS) is used to resolve Uniform Resource Locators (URL) to an addressable IP. When using the 1NCE Internet Breakout, the public IP `8.8.8.8` is served as primary and `8.8.4.4` as secondary default Domain Name Server. A manual configuration of a DNS on the device is typically not needed but can be configured, if desired.
+
+***
+
+# Maximum Transmission Unit (MTU) Size
+
+The Maximum Transmission Unit (MTU) is the size of the largest IP packet (layer 4) possible which can be transferred in a respective frame on layer 3 without the need for fragmentation in the packet based core network. If a send packet is larger than the specified MTU, the packet needs to be fragmented, thus creating more overhead and delays.
+
+Theoretically, a size of 1500 bytes is possible with the 1NCE Data Service. Based on prior experience with IoT devices and mobile networks, it is recommended to keep the **MTU size lower than about 1200 bytes**.
+
+***
+
+# Internet Breakout Timeout
+
+The Internet Breakout does not have a static NAT timeout for pending connections. Please consider that timeouts for inactive TCP and UDP connections. For established TCP connections the timeout is 600 seconds and for UDP the timeout is 120 seconds. After the respective timeout and no further data transmission, the TCP /UDP connections will be closed. New TCP and UDP connections can be opened at any point of time, there is no need to reattach the SIM device with a new PDP.
+
+***
+
+# Breakout IP Blacklisting
+
+The traffic from all 1NCE SIMs towards the public internet is routed through a NAT with a the listed public-facing IP addresses. These public breakout IPs are listed above under Internet Breakout IPs. The specific IP address selected for the Internet Breakout is randomly chosen and can not be managed by the customer.
+
+> ❗️ Whitelist 1NCE Breakout IPs
+>
+> Ensure that the 1NCE Internet Breakout IPs are whitelisted for custom service infrastructure accessed by 1NCE SIMs through the Internet Breakout. Large quantities of SIMs accessing the same service can lead automated firewall and protection mechanisms to block the 1NCE Breakout IPs.
+
+All requests towards public internet services appear to come from these IPs. Most public services and APIs (e.g. time services, open source APIs, etc.) apply a request limit and smart filtering to detect and filter out denial of service (DDoS) and similar attacks. Very frequent queries (e.g., every second) from multiple SIMs towards one endpoint could trigger these filtering mechanisms. This will result in the public service blocking requests from 1NCE SIM devices, rendering the service unusable. Most public services cannot differentiate between individual SIMs due to the 1NCE NAT network structure.  It is strongly recommended to program devices with 1NCE SIMs in a way that they do not aggressively query such shared resources. Using customer-controlled resources (e.g. custom server, AWS or similar cloud service), the protection control mechanisms can be configured to whitelist the traffic originating from the 1NCE NAT Breakout.

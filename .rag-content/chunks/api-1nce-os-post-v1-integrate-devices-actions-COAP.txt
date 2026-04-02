@@ -1,0 +1,15 @@
+# POST /v1/integrate/devices/actions/COAP
+
+Create Action Requests for CoAP Devices.
+
+Initiate CoAP action on the devices.
+
+## Parameters
+None
+
+## Responses
+- 202: Message describing the result of operation
+- 400: 
+- 401: 
+- 403: 
+- 500: 

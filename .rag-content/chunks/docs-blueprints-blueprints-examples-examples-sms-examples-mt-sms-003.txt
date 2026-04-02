@@ -1,0 +1,3 @@
+## Sending MT-SMS
+
+The examples listed below show common use cases for sending MT-SMS with the 1NCE API. Please open the dropdowns to get a full guide on how to send these types of SMS messages.

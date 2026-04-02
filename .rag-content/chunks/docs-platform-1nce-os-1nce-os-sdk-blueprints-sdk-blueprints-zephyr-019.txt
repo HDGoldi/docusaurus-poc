@@ -1,0 +1,11 @@
+## 🔧 Zephyr Device Controller Configuration
+
+To enable and handle downlink messages on your device, use the following configs:
+
+| Config Option                         | Description                              | Default |
+| ------------------------------------- | ---------------------------------------- | ------- |
+| `CONFIG_NCE_ENABLE_DEVICE_CONTROLLER` | Enables the device controller feature    | `y`     |
+| `CONFIG_NCE_RECV_PORT`                | UDP port to listen for incoming messages | `3000`  |
+| `CONFIG_NCE_RECEIVE_BUFFER_SIZE`      | Buffer size for incoming UDP payloads    | `1024`  |
+
+***

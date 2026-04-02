@@ -1,0 +1,4 @@
+## Requirements
+
+* A system with access to a modem that supports AT+CSIM commands.
+* Alternatively a ubirch test kit.

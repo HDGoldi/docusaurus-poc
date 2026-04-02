@@ -1,0 +1,5 @@
+### Postman Mock Server
+
+A good way to start with the 1NCE SMS Forwarder is a [Postman Mock Server](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/setting-up-mock/) A mock server can be setup fast without any need of external infrastructure. Simply create a HTPP Post and Patch endpoint with a given name. The endpoint names for both the Post and Pack need to be identical. Provide the mock server URL and the chosen Endpoint name in the 1NCE Portal SMS Forwarder configuration. Afterwards, the SMS Forwarder events should be sent to the mock server.
+
+The mock server allows to inspect real SMS events triggered by the SIMs and organization of the customer. Further, using Postman, the CURL demo events can be sent either to the mock server or the customer server implementation.

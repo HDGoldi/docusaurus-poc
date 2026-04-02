@@ -1,0 +1,7 @@
+### Unsecure LwM2M Communication
+
+To test unsecure communication, disable the device authenticator by removing the following definition from `nce_demo_config.h`
+
+```
+#define LwM2M_ENABLE_DTLS
+```

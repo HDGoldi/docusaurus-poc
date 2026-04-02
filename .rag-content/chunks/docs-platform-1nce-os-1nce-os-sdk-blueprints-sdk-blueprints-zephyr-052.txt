@@ -1,0 +1,13 @@
+### 3️⃣  Bump Version & Rebuild
+
+To simulate a firmware update:
+
+1. Open your `prj.conf` file
+2. Update the following configuration options to reflect the new version:
+
+```conf
+CONFIG_APPLICATION_VERSION=2
+CONFIG_ARTIFACT_NAME="release-v2"
+```
+
+3. Rebuild the firmware using your preferred method (e.g., west build, VS Code)

@@ -1,0 +1,7 @@
+## IoT Device Application
+
+The application logic running on the IoT Device microcontroller (MCU) and exchanging data with the IoT Service Platform. It sends AT commands to the IoT Device integrated communication module/chipset in order to access the 1NCE GmbH Connectivity Layer.
+
+***
+
+# IoT Service Provider Guidelines

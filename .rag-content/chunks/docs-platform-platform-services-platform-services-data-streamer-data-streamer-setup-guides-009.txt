@@ -1,0 +1,3 @@
+## Kinesis - Integration
+
+With the Kinesis integration, Event and Usage Records from the 1NCE Data Streamer are directed to AWS Kinesis for real-time data analytics.

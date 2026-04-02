@@ -1,0 +1,3 @@
+## LwM2M Server
+
+Once a connected IoT LwM2M device completed the bootstrapping process, a device can connect and register to the 1NCE LwM2M Server. This registration lets the LWM2M server know of the connected IoT device existence and its registered capability.

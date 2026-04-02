@@ -1,0 +1,54 @@
+### Switch statement
+
+```
+{
+  "sense": [
+    {
+      "switch": {
+        "byte": 0,
+        "bytelength": 1,
+        "type": "int"
+      },
+      "on": [
+        {
+          "case": 0,
+          "do": [
+            {
+              "asset": "data_type",
+              "value": "environment"
+            },
+            {
+              "asset": "temperature",
+              "value": {
+                "byte": 1,
+                "bytelength": 4,
+                "type": "float"
+              }
+            }
+          ]
+        },
+        {
+          "case": 1,
+          "do": [
+            {
+              "asset": "data_type",
+              "value": "device"
+            },
+            {
+              "asset": "on",
+              "value": {
+                "byte": 1,
+                "type": "boolean"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+The [statements](/1nce-os/1nce-os-energy-saver/energy-saver-binary-conversion-language#case-statements) inside do will be executed if the value of case (within the same object as do) and the switch match.
+
+# Test results

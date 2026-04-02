@@ -1,0 +1,15 @@
+1NCE offers a range of IoT SIMs to meet different customer needs, shown in the following image.
+
+*IoT SIMs provided by 1NCE*
+
+# IoT SIM Card Business
+
+This is a 3-in-1 plastic SIM card used for our 1NCE IoT Lifetime Flat. This SIM is best suited for off-the-shelve, ready-to-use IoT devices. It easy to install, exchange, swappable between devices and ready for the IoT production environment. These key features makes the 1NCE IoT SIM Card Business ideal for every stage of the IoT device life cycle, from early, flexible prototyping to deploying thousands of devices in the field.  It does not support the Freedom to Switch feature (eUICC).
+
+# IoT SIM Card Industrial
+
+This SIM has all the same capabilities of the IoT SIM Card Business but comes with **Freedom to Switch** (eUICC feature) which enables to change the SIM profile in the future.
+
+# IoT SIM Chip Industrial
+
+The IoT SIM Chip is identical to the IoT SIM Card with the **Freedom to Switch** eUICC feature, but comes in the MFF2 form factor. The IoT SIM Chip Industrial form factor is optimized for typical IoT device environments factors like heavy vibration and higher temperature ranges but also increased security. 1NCE recommends the integration of IoT SIMs Chip Industrial in custom-developed IoT devices and use cases where strong environmental robustness is needed.

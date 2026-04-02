@@ -1,0 +1,3 @@
+## Endpoint URL
+
+The provided endpoint URL in the 1NCE Portal Configuration needs to be valid. URLs with public IP addresses (`https://<server-ip>:<port>/<endpoint>/`) are not supported. Custom ports for the endpoint can be configured via the URL (`https://<server-domain>:<port>/<endpoint>/`).

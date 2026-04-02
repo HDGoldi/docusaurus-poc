@@ -1,0 +1,19 @@
+### Coap to HTTPS Proxy functionality
+
+CoAP to HTTPS proxy's main functionality is to "translate" the CoAP requests to HTTPS requests and HTTPS responses to CoAP responses. Mender Plugin provides additional logic for [Mender auth endpoint](https://docs.mender.io/api/#device-api-device-authentication) and ensures Authorization header injection for other Mender endpoints.
+
+* Whenever [Mender auth endpoint](https://docs.mender.io/api/#device-api-device-authentication) is used for POST requests, 1NCE OS will generate the correct request body required for authentication and store the returned JWT token in the system for future use. **Please note that renewing the JWT token requires calling the endpoint once again**. Post request body example:
+  ```
+  {
+      "id_data": "{\"iccid\":\"1234567890123456789\"}",
+      "pubKey": "-----BEGIN PUBLIC KEY-----\n .. \n-----END PUBLIC KEY-----\n",
+      "tenant_token": "abcdef123456="
+  }
+  ```
+* For any other request where [Mender endpoints](https://docs.mender.io/api/#device-apis) are being used in Proxy-URI options, the JWT token will be added as an additional Authorization header for HTTPS request.
+  ```
+  {
+    "Authorization": "Bearer 'JWT_TOKEN'"
+  }
+  ```
+* If [Mender auth endpoint](https://docs.mender.io/api/#device-api-device-authentication) was never called and JWT token is not present in 1NCE OS, then the request will be proxied without the Authorization header.

@@ -1,0 +1,8 @@
+## Callback stacks
+
+Two stacks are rolled out for callback operations:
+
+* Callback 'create' stack: Provisions resources required to complete the integration with 1NCE OS.
+* Callback 'delete' stack: Provisions resources that notify 1NCE OS when the stack is deleted from the customer's AWS account.
+
+Both the 'create' and 'delete' stacks provision identical resources.

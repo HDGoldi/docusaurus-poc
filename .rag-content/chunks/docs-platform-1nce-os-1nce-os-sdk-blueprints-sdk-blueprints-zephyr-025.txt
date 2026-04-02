@@ -1,0 +1,16 @@
+## ⚡ Using 1NCE Energy saver
+
+The demo can send compressed, optimized payloads using 1NCE Energy Saver. This reduces payload size and improves energy efficiency.\
+Enable in `prj.conf`:
+
+```
+CONFIG_NCE_ENERGY_SAVER=y
+```
+
+When enabled, the device will send compressed messages based on a translation template defined in 1NCE OS portal.
+
+:::tip
+Add the template located in `./nce_coap_demo/template/template.json` to the 1NCE OS portal, and enable it for the **COAP protocol** to ensure correct decoding of the compressed payload.
+:::
+
+:::tip

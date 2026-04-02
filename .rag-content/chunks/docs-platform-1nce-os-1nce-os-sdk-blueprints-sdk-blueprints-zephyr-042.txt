@@ -1,0 +1,18 @@
+### Input Controls
+
+| Module                    | Description                                      | Condition                                                                                           |
+| ------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| `CONFIG_APP_PUSH_BUTTON`  | Enable push button support (Object 3347)         | All boards:• Thingy:91 (1 button)• nRF9160 DK & nRF9151 DK (2 buttons)                      |
+| `CONFIG_APP_ONOFF_SWITCH` | Enable on/off switch input support (Object 3342) | DK boards only:• nRF9160 DK (2 switches)• nRF9151 DK (Buttons 3 and 4 are used as switches) |
+
+#### Main LwM2M Resources for Push Button and On/Off Switch Objects
+
+| Resource ID | Name                     | Type    | Description                                              |
+| ----------- | ------------------------ | ------- | -------------------------------------------------------- |
+| `5500`      | Digital Input State      | Boolean | `true` if pressed/on, `false` if released/off            |
+| `5501`      | Digital Input Counter    | Integer | Number of times the button/switch has toggled            |
+| `5518`      | Timestamp of Last Change | Time    | Time of the last change (press/release or on/off toggle) |
+
+💡 **Note:**
+
+* Resource values can be monitored by sending an  `observe-start` request to the relevant object (e.g., `/3347`) using 1NCE OS device controller.

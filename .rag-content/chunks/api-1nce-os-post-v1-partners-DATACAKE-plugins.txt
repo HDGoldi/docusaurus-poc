@@ -1,0 +1,16 @@
+# POST /v1/partners/DATACAKE/plugins
+
+Install Datacake plugin for 1NCE OS
+
+Allows setting up an integration with Datacake workspace to allow data transfer from 1NCE OS.
+
+## Parameters
+None
+
+## Responses
+- 201: Successful Datacake plugin installation response details.
+- 400: 
+- 401: 
+- 403: 
+- 409: 
+- 500: 

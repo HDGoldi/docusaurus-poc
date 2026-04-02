@@ -1,0 +1,7 @@
+### Additional Metrics
+
+* `ncs_lte_nce_operator`
+* `ncs_lte_nce_bands`
+* `ncs_lte_nce_current_band`
+* `ncs_lte_nce_apn`
+* `ncs_lte_nce_rsrp_dbm`

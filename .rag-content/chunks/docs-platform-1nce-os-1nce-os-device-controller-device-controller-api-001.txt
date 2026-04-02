@@ -1,0 +1,3 @@
+## Create Action Request
+
+An action request can include different fields per protocol. Therefore, an example request body is given for every protocol.

@@ -1,0 +1,14 @@
+# GET /v1/integrate/clouds
+
+Get All Customer Integrations
+
+Get All Customer Integrations details
+
+## Parameters
+None
+
+## Responses
+- 200: All Customer Integration Details.
+- 401: 
+- 403: 
+- 500: 

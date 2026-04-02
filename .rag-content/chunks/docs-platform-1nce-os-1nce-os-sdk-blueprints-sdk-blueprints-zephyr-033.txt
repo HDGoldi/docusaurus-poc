@@ -1,0 +1,9 @@
+## ⚠️ CoAP Limitations
+
+> CoAP messages — including **uplink and downlink** — are subject to strict option length limitations (especially for `URI-QUERY` and extended paths).\
+> Make sure to increase buffer sizes if your topic or query strings exceed the default 12 bytes using:
+>
+> ```conf
+> CONFIG_COAP_EXTENDED_OPTIONS_LEN=y
+> CONFIG_COAP_EXTENDED_OPTIONS_LEN_VALUE=`<length>`
+> ```

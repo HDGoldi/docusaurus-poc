@@ -1,0 +1,10 @@
+### 📩 Request Parameters
+
+| Parameter     | Description                                              | Example           |
+| ------------- | -------------------------------------------------------- | ----------------- |
+| `payload`     | Data to send to the device                               | `"enable_sensor"` |
+| `payloadType` | Type of payload (`STRING`, `HEX`, etc.)                  | `"STRING"`        |
+| `port`        | UDP port to receive the message (`CONFIG_NCE_RECV_PORT`) | `3000`            |
+| `requestMode` | Request mode (`SEND_NOW` or `SEND_WHEN_ACTIVE`)          | `"SEND_NOW"`      |
+
+***

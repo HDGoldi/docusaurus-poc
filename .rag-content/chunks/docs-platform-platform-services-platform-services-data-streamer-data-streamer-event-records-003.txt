@@ -1,0 +1,9 @@
+## Event Source
+
+Based on the Event Type, a different originating Event Source might be responsible for triggering the event. The possible sources consisting of an ID and a Description are listed below.
+
+| ID | Description    |
+| :- | :------------- |
+| 0  | Network        |
+| 1  | Policy Control |
+| 2  | API            |

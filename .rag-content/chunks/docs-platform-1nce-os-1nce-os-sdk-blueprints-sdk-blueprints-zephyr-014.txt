@@ -1,0 +1,14 @@
+## ⚙️ Configuration Options
+
+The available configuration parameters for the UDP demo:
+
+| Config Option                              | Description                                        | Default           |
+| ------------------------------------------ | -------------------------------------------------- | ----------------- |
+| `CONFIG_UDP_SERVER_HOSTNAME`               | UDP server hostname                                | `udp.os.1nce.com` |
+| `CONFIG_UDP_SERVER_PORT`                   | UDP server port number                             | `4445`            |
+| `CONFIG_UDP_DATA_UPLOAD_FREQUENCY_SECONDS` | Interval between UDP transmissions (in seconds)    | `20`              |
+| `CONFIG_UDP_PSM_ENABLE`                    | Enable LTE Power Saving Mode (PSM)                 | `n`               |
+| `CONFIG_UDP_EDRX_ENABLE`                   | Enable LTE enhanced Discontinuous Reception (eDRX) | `n`               |
+| `CONFIG_UDP_RAI_ENABLE`                    | Enable LTE Release Assistance Indication (RAI)     | `n`               |
+
+***

@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-getConnectivityInfoForSimUsingGET/",
+    "title": "GET /v1/sims/{iccid}/connectivity_info",
+    "breadcrumb": "API Explorer > Sim Management > Get SIM Connectivity",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "GET /v1/sims/{iccid}/connectivity_info"
+  }
+}

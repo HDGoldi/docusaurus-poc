@@ -1,0 +1,15 @@
+# POST /v1/sims/{iccid}/reset
+
+Create Connectivity Reset
+
+Trigger a connectivity reset for a given SIM. The actual reset will be done asynchronously. A positive-response only means that the connectivity-reset has been successfully placed into the queue.
+
+## Parameters
+- iccid (path, required): The ICCID of the SIM to be reset.
+
+## Responses
+- 201: Created
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

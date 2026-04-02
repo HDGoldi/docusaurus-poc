@@ -1,0 +1,10 @@
+### Getting the coordinates
+
+Circle Geofence can be created either by providing center point or by passing deviceId for which there are coordinates in the 1NCEOS system. To retrieve center coordinates you again can use [geojson.io](https://geojson.io), where after putting single point on a map you will get similar array consisting of longitude and latitude, which then can apply to the `center` attribute in the creation request:
+
+```json
+"center": [
+		15.31322746,
+		-4.322458751
+],
+```

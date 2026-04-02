@@ -1,0 +1,8 @@
+## Adding devices in Memfault
+
+After Memfault plugin installation is done you can utilize [Demo script for zephyr](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/plugin_system/nce_debug_memfault_demo) to start sending chunks data to the Memfault system. If chunks are processed successfully, the device will show up in the Memfault portal on the Devices page automatically with the ICCID of the 1NCE sim card used as a device serial number.
+
+# Features and Limitations
+
+General [Plugins features and limitations](/1nce-os/1nce-os-plugins/1nce-os-plugins-features-limitations) applies to Memfault.\
+There are still some individual Features and Limitations applied to the Memfault plugin:

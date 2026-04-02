@@ -1,0 +1,17 @@
+# GET /v1/settings/1nceos
+
+Get customer settings
+
+Gets customer settings related to 1NCE OS.
+
+## Parameters
+- pageSize (query, optional): Parameter for specifying the queried items per page.
+- page (query, optional): Number of the requested page. Use this parameter to iterate through all items on the different pages. The total amount of pages is listed in the response body (pageAmount).
+- language (query, optional): Identifies in what language the description should be returned.
+
+## Responses
+- 200: OK
+- 400: 
+- 401: 
+- 403: 
+- 500: 

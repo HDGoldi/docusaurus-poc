@@ -1,0 +1,9 @@
+## 📤 Zephyr Output Example
+
+When the Zephyr application receives a UDP downlink from the 1NCE API:
+
+```
+[00:00:02.996,978] <inf> [downlink_thread] NCE_UDP_DEMO: Downlink thread started...
+[00:00:02.997,802] <inf> [downlink_thread] NCE_UDP_DEMO: Listening on port: 3000
+[00:00:11.325,683] <inf> [downlink_thread] NCE_UDP_DEMO: Received message: enable_sensor
+```

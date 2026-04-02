@@ -1,0 +1,20 @@
+# GET /v1/inspect/devices/{deviceId}/history
+
+Get Device Historian Messages
+
+Get historic message data for a specific SIM device.
+
+## Parameters
+- deviceId (path, required): The unique device ID which identifies each 1NCE SIM. Can be obtained from the Get All Devices API query. For 1NCE SIMS the device ID is equal to its iccid.
+- startDateTime (query, optional): Timestamp from where onwards the historic data messages should be queried.
+- endDateTime (query, optional): Timestamp until when the historic data messages should be queried.
+- pageSize (query, optional): Parameter for specifying the queried items per page.
+- protocol (query, optional): Filter out data for specific protocols: <ul><li>LWM2M</li><li>UDP</li><li>COAP</li></ul>
+- nextToken (query, optional): This API query uses token-based pagination. Each queried page will include a nextToken for accessing the next page for pagination. Please use the returned token in the nextToken query parameters to obtain the next page.
+
+## Responses
+- 200: OK
+- 400: 
+- 401: 
+- 403: 
+- 500: 

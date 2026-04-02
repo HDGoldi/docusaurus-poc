@@ -1,0 +1,9 @@
+## Domain Name System (DNS)
+
+The Domain Name System (DNS) is used to resolve Uniform Resource Locators (URL) to an addressable IP. When using the 1NCE Internet Breakout, the public IP `8.8.8.8` is served as primary and `8.8.4.4` as secondary default Domain Name Server. Some devices have issues with obtaining the DNS served by the network. A manual configuration of a DNS is sometimes advisable.
+
+On some NB-IoT U-Blox devices used in Europe, MNO profile 101 has to be used rather than MNO profile 100 to obtain the DNS served by the network.
+
+***
+
+# Limitations

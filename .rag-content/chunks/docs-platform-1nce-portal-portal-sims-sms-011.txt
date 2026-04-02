@@ -1,0 +1,18 @@
+## Reset Connection
+
+By using "Reset Connection", the SIM is automatically deactivated and afterwards reactivated. This will force the SIM to disconnect from the current network operator and reattach. This feature is useful if the SIM is stuck in an unwanted connection.
+
+In the lower section, detailed logs of events and usage in chronological order are presented. Please note that this data is only retained for seven days due to the 1NCE data retention policy. The data in the Events tab is identical to the data found in the 1NCE Data Streamer. These events are very useful for debugging devices and seeing the current network events of a device.
+
+The Usage tab shows both the SMS and data usage of the last eight weeks, the available quota and the remaining volume for SMS and Data of this particular SIM.
+
+***
+
+# SMS Console
+
+The SMS tab of the detailed SIM page can be used to exchange SMS messages with the device using the particular SIM. With the Source Address and Payload fields, a SMS can be prepared and send to the device. Please note that the device needs to be attached to a network in order to receive the message.
+
+In the table view below the sent SMS form, an overview of the Mobile Originated (MO) and Mobile Terminated (MT) SMS messages of the last seven days can be seen. To properly receive and process MT messages, review the [SMS Forwarder Service](/platform-services/platform-services-sms-forwarder/index) guide. Besides the messages itself, the current status of the MO-/MT-SMS, the payload and type is listed.\
+The list shows the type of SMS (MT or MO), the current status (Pending, OK, Failed), the timestamp the message was submitted and finally, the source address and the actual payload. Please note that MT-SMS will stay in the Pending state until the device has attached to the network and the message was delivered. For MO-SMS the state will remain in "pending" if no SMS Forwarding Service is setup as only this service will consume the SMS messages and properly acknowledge them. If a SMS message fails this is most likely due to reaching the delivery retry timeout. After a certain time of trying to deliver a message, the service will put the SMS into the failed state.
+
+*Overview of the SMS Console.*

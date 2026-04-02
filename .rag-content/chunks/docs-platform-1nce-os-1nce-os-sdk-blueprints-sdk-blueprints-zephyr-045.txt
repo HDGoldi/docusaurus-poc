@@ -1,0 +1,12 @@
+## 🔧 Logging
+
+Configure log levels for the application:
+
+```conf
+CONFIG_APP_LOG_LEVEL_INF=y
+CONFIG_LOG=y
+```
+
+***
+
+# 1NCE Zephyr blueprint - 1NCE FOTA Mender Demo

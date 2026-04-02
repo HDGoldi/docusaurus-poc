@@ -1,0 +1,16 @@
+### By specific requestId
+
+Delete request with id `trxHeBL0d234fsfds`:
+
+```shell
+curl -X DELETE "https://api.1nce.com/management-api/v1/integrate/devices/actions/requests/trxHeBL0d234fsfds"
+```
+
+The response could be `200 OK` response code with body:
+
+```json
+{
+  "id": "trxHeBL0d234fsfds",
+  "status": "CANCELLED"
+}
+```

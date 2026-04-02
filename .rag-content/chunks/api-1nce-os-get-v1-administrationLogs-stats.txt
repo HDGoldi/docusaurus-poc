@@ -1,0 +1,15 @@
+# GET /v1/administrationLogs/stats
+
+Get Administration Logs Statistics
+
+Get the administration logs statistics for the current organization.
+
+## Parameters
+- timezone (query, required): Specify the needed timezone as string parameter (e.g., Europe/Amsterdam) for the resulting query output.
+- category (query, optional): Specify the category as string parameter for the resulting query output.
+
+## Responses
+- 200: OK
+- 401: 
+- 403: 
+- 500: 

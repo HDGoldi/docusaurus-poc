@@ -1,0 +1,12 @@
+## Reaching and Resetting the Limit
+
+If a SIM runs into this limitation, an error message will be issued when submitting a new SMS message through the API **Traffic limit of X SMS per month exceeded** or 1NCE Portal **Set monthly limit of SMS exceeded**. To reenable a SIM, please either wait until the volume is reset at the beginning of the month or manually increate the limit via the 1NCE Portal Configuration tab or 1NCE API. Sending a MO-SMS while the MO-SMS message limit is exceeded, will result in the SMS being rejected to the 1NCE Network. This rejection will result in an error return code from the device modem.
+
+> ❗️ Error Warning Exceeded Limit
+>
+> Using the 1NCE API if the self-set limit is reached **Traffic limit of X SMS per month exceeded** is returned as error. In the 1NCE Portal **Set monthly limit of SMS exceeded** is shown when the SMS limit was reached and a new SMS is issued.\
+> For **MO-SMS** no notification will be shown in the 1NCE Portal or Data Stream. The SMS will be rejected by the network resulting in an error return code from the device modem.
+
+***
+
+# Example SMS Usage Scenarios

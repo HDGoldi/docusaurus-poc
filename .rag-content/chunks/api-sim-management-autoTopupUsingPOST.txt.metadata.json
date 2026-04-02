@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-autoTopupUsingPOST/",
+    "title": "POST /v1/sims/autoTopup",
+    "breadcrumb": "API Explorer > Sim Management > Enable Auto Top Up",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "POST /v1/sims/autoTopup"
+  }
+}

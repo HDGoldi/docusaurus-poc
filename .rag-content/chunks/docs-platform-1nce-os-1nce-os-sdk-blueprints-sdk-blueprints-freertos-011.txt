@@ -1,0 +1,33 @@
+## Fallback
+
+for more information on the troubleshooting
+
+| Parameter | Description |
+| --- | --- |
+| Radio Access Technology | \* GSM \* LTE \* CATM1 \* NBIOT \* Otherwise: NULL |
+| Public Land Mobile Network (PLMN) information | \* Mobile Country Code \* Mobile Network Code |
+| Registered Network (RN) | \* Registered network operator cell Id. \* Registered network operator Location Area Code. \* Registered network operator Routing Area Code. \* Registered network operator Tracking Area Code. |
+| Reject CS ((Circuit Switched) registration status) | \* : Table 2. \* : 0: 3GPP specific Reject Cause. Manufacture specific. : Circuit Switch Reject cause. |
+| Reject PS ((Packet Switched) registration status) | \* : Table 2. \* : 0: 3GPP specific Reject Cause. Manufacture specific. : Circuit Switch Reject cause. |
+| Signal Information | \* Received Signal Strength Indicator (RSSI) in dBm. \* LTE Reference Signal Received Power (RSRP) in dBm \* LTE Reference Signal Received Quality (RSRQ) in dB. \* LTE Signal to Interference-Noise Ratio in dB. \* Bit Error Rate (BER) in 0.01%. \* A number between 0 to 5 (both inclusive) indicating signal strength. |
+
+
+
+| Number | description                                                       |
+| :----: | :---------------------------------------------------------------- |
+|    0   | CELLULAR NETWORK REGISTRATION STATUS NOT REGISTERED NOT SEARCHING |
+|    1   | CELLULAR NETWORK REGISTRATION STATUS REGISTERED HOME              |
+|    2   | CELLULAR NETWORK REGISTRATION STATUS NOT REGISTERED SEARCHING     |
+|    3   | CELLULAR NETWORK REGISTRATION STATUS REGISTRATION DENIED          |
+|    4   | CELLULAR NETWORK REGISTRATION STATUS UNKNOWN                      |
+|    5   | CELLULAR NETWORK REGISTRATION STATUS REGISTERED ROAMING           |
+|    6   | CELLULAR NETWORK REGISTRATION STATUS REGISTERED HOME SMS ONLY     |
+|    7   | CELLULAR NETWORK REGISTRATION STATUS REGISTERED ROAMING SMS ONLY  |
+|    8   | CELLULAR NETWORK REGISTRATION STATUS ATTACHED EMERG SERVICES ONLY |
+|    9   | CELLULAR NETWORK REGISTRATION STATUS MAX                          |
+
+
+
+# Asking for Help
+
+The most effective communication with our team is through GitHub. Simply create a [new issue](https://github.com/1NCE-GmbH/blueprint-freertos/issues/new/choose) and select from a range of templates covering bug reports, feature requests, documentation issue, or Gerneral Question.

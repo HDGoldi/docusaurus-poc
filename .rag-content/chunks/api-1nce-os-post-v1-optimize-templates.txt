@@ -1,0 +1,15 @@
+# POST /v1/optimize/templates
+
+Create Optimizer Template
+
+Create a new Translation Service Template.
+
+## Parameters
+None
+
+## Responses
+- 201: Created
+- 403: 
+- 409: 
+- 422: 
+- 500: 

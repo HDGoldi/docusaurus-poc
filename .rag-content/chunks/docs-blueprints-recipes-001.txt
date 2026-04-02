@@ -1,0 +1,7 @@
+## Quectel
+
+Quectel is a leading provider of cellular and GNSS modules, with a wide range of products available. Here are some resources to help you get started with Quectel modules using our 1NCE services:
+
+[Quectel BG95](https://help.1nce.com/dev-hub/page/quectel-bg95-m3)
+
+[Quectel EC25 & EC21](https://help.1nce.com/dev-hub/page/quectel-ec25-ec21)

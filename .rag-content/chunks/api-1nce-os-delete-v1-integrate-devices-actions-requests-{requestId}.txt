@@ -1,0 +1,14 @@
+# DELETE /v1/integrate/devices/actions/requests/{requestId}
+
+Cancel single device action request
+
+Cancel single device action request.
+
+## Parameters
+- requestId (path, required): ID of device action request
+
+## Responses
+- 200: OK
+- 403: 
+- 404: 
+- 500: 

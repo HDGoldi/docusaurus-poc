@@ -1,0 +1,8 @@
+## Usage Records
+
+1. Place and configure (roaming, APN, data roaming) the 1NCE SIM in a capable mobile device.
+2. For testing the Usage records the following procedures can be executed:
+
+* **Data usage**: Allow data roaming, configure the APN and create a data session. Smartphones will automatically create a data session. Use some data service (e.g., IMCP Ping, TCP/UDP traffic, open a website). Close the data session by deactivating the PDP session or disconnecting the device from the network.
+
+3. Usage records are only written once the data volume has been actively used. For data usage, the current data session needs to be closed to get an immediate usage record in the Data Streamer.

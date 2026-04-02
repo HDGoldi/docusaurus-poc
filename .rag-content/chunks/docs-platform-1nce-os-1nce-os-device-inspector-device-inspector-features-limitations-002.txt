@@ -1,0 +1,11 @@
+### State
+
+Device state for UDP, CoAP or LwM2M messages.
+
+* . Last message received from the device is stored in the state. By default, the portal tries to convert Base64 messages to JSON format. If the received content is not valid JSON, the portal will display the original message as Base64.\
+  If the user has enabled the **energy saver** feature with a valid template for transforming payload into JSON, the portal will display message as a JSON and, if the message is not tranformable with the existing **energy saver** template, there will be an admin log created with the error message.\
+  For CoAP messages, the topic is also stored in the device state.
+
+* . Digital representation from the device is stored in state according to OMA specifications.
+
+*Device State for CoAP*

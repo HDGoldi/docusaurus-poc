@@ -1,0 +1,3 @@
+### MT-SMS
+
+A MT-SMS sent towards a device with a 1NCE SIM, the default expiry time is 24 hours if the message was submitted through the 1NCE Portal. When using the 1NCE API, the expiry time can be changed by customer. If the device with the 1NCE SIM is not reachable at the point of time when the MT-SMS was submitted, the retry mechanism will deliver the message as soon as the SIM attaches to the network the next time and is ready to receive messages, provided the MT-SMS has not expired.

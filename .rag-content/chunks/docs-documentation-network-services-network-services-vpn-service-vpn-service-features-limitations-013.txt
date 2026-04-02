@@ -1,0 +1,3 @@
+## Maximum Transmission Unit Size
+
+Using the 1NCE VPN, some device connections might have issues with the Maximum Transmission Unit (MTU) size. A symptom is often that larger payloads do not get delivered. To avoid this issue, please lower the MTU to 1300 using the `tun-mtu 1300` configuration parameter in the VPN client configuration.

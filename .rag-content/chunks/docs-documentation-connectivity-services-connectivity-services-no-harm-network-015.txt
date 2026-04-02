@@ -1,0 +1,3 @@
+## Behavior when IoT Device does not Respond to SMS Triggers
+
+If the IoT Service Platform or IoT Service Application uses SMS triggers to "wake up" IoT Devices, it **SHALL** avoid sending multiple SMS triggers when no response is received within a certain time period. Communication over a 3GPPTM NB-IoT access bearer **SHALL NOT** use SMS on 1NCE GmbH mobile network.

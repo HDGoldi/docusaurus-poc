@@ -1,0 +1,9 @@
+## Building Sample
+
+Setup your demo want to use by going to config\_files/aws\_demo\_config.h define one of three demos exist (by default `CONFIG_COAP_DEMO_ENABLED`)
+
+```
+CONFIG_COAP_DEMO_ENABLED
+CONFIG_UDP_DEMO_ENABLED
+CONFIG_LwM2M_DEMO_ENABLED
+```

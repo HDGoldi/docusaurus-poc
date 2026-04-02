@@ -1,0 +1,28 @@
+## PDP Context Object
+
+An Event Record for a PDP Context includes a wide range of additional information in the Detail Properties. The individual fields are listed below.
+
+| Property | Data Type | Description |
+| --- | --- | --- |
+| `pdp_context_id` | INTEGER | ID of the PDP Context. |
+| `tunnel_created` | TIMESTAMP (UTC) | Creation time of the PDP Session. |
+| `gtp_version` | STRING | GTP Version 1/2 |
+| `ggsn_control_plane_ip_address ` | STRING | IP Address of GGSN/PGW Control Plane |
+| `ggsn_data_plane_ip_address` | STRING | IP Address of GGSN/PGW Data Plane |
+| `sgsn_control_plane_ip_address` | STRING | IP Address of SGSN/SGW Control Plane |
+| `sgsn_data_plane_ip_address` | STRING | IP Address of SGSN/SGW Data Plane |
+| `region` | STRING | Region of the Data Plane. |
+| `breakout_ip` | STRING | IP Address used for the Internet Breakout. |
+| `apn` | STRING | Access Point Name (APN) |
+| `nsapi` | INTEGER | Network Service Access Point Identifier (NSAPI) |
+| `ue_ip_address ` | STRING | IP address of the device. |
+| `imeisv` | STRING | International Mobile Equipment Identity - Softwareversion |
+| `mcc` | STRING | Mobile Country Code (MCC) |
+| `mnc` | STRING | Mobile Network Code (MNC) |
+| `lac` | INTEGER | Location Area Code (LAC) |
+| `sac` | INTEGER | Service Area code (SAC) |
+| `rac` | INTEGER | Routing Area code (RAC) |
+| `ci` | INTEGER | Cell Identification (CI) |
+| `rat_type` | INTEGER | Radio Access Type (RAT) 1 - 3G 2 - 2G 5 - HSPA+ 6 - LTE\* 8 - NB-IoT 9 - CAT-M\* |
+
+\* Only from some mobile operators *rat\_type* 9 is sent for CAT-M connections (depends on the 3GPP Release in their Core Network). For the majority of the CAT-M connections the rat\_type in the data streamer is 6, since CAT-M is based on the 4G standard.

@@ -1,0 +1,16 @@
+# POST /v1/sims/topup
+
+Create Multiple Top Up
+
+Top up the data/SMS volume of a list of SIM.
+
+## Parameters
+- payment_method (query, optional): Optional payment method selection between creditcard, banktransfer, monthlyinvoice or boleto. If the parameter is left empty or is invalid, banktransfer is used as default for the top up order process.
+
+## Responses
+- 201: Top Up order initiated successfully.
+- 400: Bad Request
+- 401: Unauthorized
+- 403: SIM does not belong to user.
+- 404: SIM not found.
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

@@ -1,0 +1,23 @@
+### TELEMETRY\_DATA
+
+```json
+{
+  "payload": {
+    "type": "JSON",
+    "value": {
+      "latitude": 7.490929188596135e+247,
+      "longitude": 2.586343401687847e+161
+    }
+  },
+  "received": "1670598749915",
+  "id": "1-6393505d-67fa8489fb9c791fcddd43f0",
+  "source": "UDP",
+  "type": "TELEMETRY_DATA",
+  "version": "1.0.0",
+  "device": {
+    "iccid": "8988280666000002864",
+    "ip": "100.91.200.24",
+    "imsi": "901405100002864"
+  }
+}
+```

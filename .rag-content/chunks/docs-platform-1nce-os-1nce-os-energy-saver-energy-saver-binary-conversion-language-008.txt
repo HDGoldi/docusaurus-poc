@@ -1,0 +1,100 @@
+## Case statements
+
+The case statement MAY have a JSON object field named `case`, whose value is a selector whose value is tested with the switch selectors value in the outer switch control statement. If it is equal, `do` statement block is executed. The switch logic supports optional `default` case. If field `case` is not present in the case statement, a field `default` MUST be present with value `true` marking this object a default case of the switch.
+
+Case statement MUST have a JSON list field named `do`, whose value is a statement block that is executed if case and switch match.
+
+If no `case` statements match the payload, and the `default` case is defined, the default case is executed instead. If `default` case is not present and no `case` statements match, nothing is executed.
+
+Example:
+
+In this example, payload first byte is an 8-bit integer that defines message type. Message type 0 is positional data about the vehicle and message type 1 is maintenance data. Message type 0 has the following structure:
+
+```text Message Structure Full Example
++-------------------+------------------+-------------+
+|      4 bytes      |     4 bytes      |   2 bytes   |
++-------------------+------------------+-------------+
+| Longitude (float) | Latitude (float) | Speed (int) |
++-------------------+------------------+-------------+
+```
+
+Let's initialize the switch statement and create the condition for message type `0`
+
+```json Full Example
+{
+  "sense": [
+    {
+      "switch": {
+        "byte": 0,
+        "bytelength": 1,
+        "type": "int"
+      },
+      "on": [
+        {
+          "case": 0,
+          "comment": "Positional data",
+          "do": [
+            {
+              "asset": "gps.lat",
+              "value": {
+                "byte": 1,
+                "bytelength": 4,
+                "byteorder": "big",
+                "type": "float"
+              }
+            },
+            {
+              "asset": "gps.lon",
+              "value": {
+                "byte": 5,
+                "bytelength": 4,
+                "byteorder": "big",
+                "type": "float"
+              }
+            },
+            {
+              "asset": "speed",
+              "value": {
+                "byte": 9,
+                "bytelength": 2,
+                "byteorder": "big",
+                "type": "int"
+              }
+            }
+          ]
+        }, {
+          "default": true,
+          "do": [
+            {
+              "asset": "error",
+              "value": "unknown payload"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+Device sends the following data `00 42 4b bc f9 40 de 98 1c 00 78`
+
+First byte `00` determines that this message contains positional data. The message will result in the following object:
+
+```json Full Example Result
+{
+  "gps": {
+    "lat": 50.934544,
+    "lon": 6.956068
+  },
+  "speed": 120
+}
+```
+
+If device sends the following data `01 ff ff ff`, the first byte `01` does not match the defined case statement, meaning the default statement is executed:
+
+```json Full Example Result
+{
+  "error": "unknown payload"
+}
+```

@@ -1,0 +1,12 @@
+## 🔘 Fault Injection via Buttons
+
+| Button / Switch | Description                 |
+| --------------- | --------------------------- |
+| Button 1        | Stack overflow              |
+| Button 2        | Division by zero            |
+| Switch 1        | Custom metric: toggle count |
+| Switch 2        | Event trace: switch toggled |
+
+💡 On Thingy:91, use `nce` CLI instead (only Button 1 available)
+
+***

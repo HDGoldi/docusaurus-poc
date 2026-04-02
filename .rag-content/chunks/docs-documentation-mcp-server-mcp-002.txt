@@ -1,0 +1,3 @@
+## 1NCE Developer Hub MCP Server Setup
+
+1NCE Developer Hub hosts a remote MCP server at `https://help.1nce.com/mcp`. Configure your AI development tools to connect to this server. If your APIs require authentication, you can pass in headers via query parameters or however headers are configured in your MCP client.

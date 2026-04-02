@@ -1,0 +1,14 @@
+# GET /v1/orders/{order_number}
+
+Get Single Order
+
+Get a single Order, identified by its order_number.
+
+## Parameters
+- order_number (path, required): Order number identifying one specific order.
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found

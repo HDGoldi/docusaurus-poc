@@ -1,0 +1,24 @@
+### Stack execution IAM Role
+
+For each stack execution IAM role with the following permissions is created:
+
+Logs:
+
+* 'logs:CreateLogGroup' - Allows creation of CloudWatch Log Groups.
+* 'logs:CreateLogStream' - Allows creation of log streams within the created log groups.
+* 'logs:PutLogEvents' - Allows publishing log events to the created log streams.
+
+Customers S3 bucket:
+
+* 's3:DeleteObject' - Allows deletion of objects from the specified S3 bucket.
+* 's3:GetObject' - Allows reading objects from the specified S3 bucket.
+* 's3:ListBucket' - Allows listing objects in the specified S3 bucket.
+* 's3:PutObject' - Allows uploading (writing) objects to the specified S3 bucket.
+* 's3:GetBucketPolicy' - Allows retrieval of the bucket policy for the specified S3 bucket.
+* 's3:PutObjectTagging' - Allows adding or updating tags on an S3 object.
+
+1NCE OS S3 bucket:
+
+* 's3:GetObject' - Allows reading objects from 1NCE OS S3 bucket.
+* 's3:GetObjectTagging' - Allows retrieving tags associated with an 1NCE OS S3 object.
+* 's3:ListBucket' - Allows listing objects in the 1NCE OS S3 bucket.

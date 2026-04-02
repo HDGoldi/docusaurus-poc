@@ -1,0 +1,15 @@
+# DELETE /v1/integrate/clouds/{integrationId}
+
+Delete Integration
+
+Delete Integration for a specific customer.
+
+## Parameters
+- integrationId (path, required): unique integration ID
+
+## Responses
+- 204: No Content
+- 401: 
+- 403: 
+- 404: 
+- 500: 

@@ -1,0 +1,3 @@
+## VPN Connection Limit
+
+The 1NCE VPN Service supports one active VPN client connection per (sub-) organization (see Figure below) at a time. If multiple clients try to connect at the same time, inconsistent data connections with random disconnects between the clients will occur. For establishing multiple connections to the 1NCE network, please refer to the IPSec Service or create additional suborganizations. Every (sub-) organization receives its own access data.

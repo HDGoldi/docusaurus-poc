@@ -1,0 +1,54 @@
+### Creating device specific circle a geofence without known center
+
+In case if you want to create device specific Geofence and don't know current coordinates of that device, you can just make creation request without `center` attribute, in this case system will try to retrieve device's latest coordinates and use those as a center:
+
+Create new geofence:
+
+```shell
+curl -X POST "https://api.1nce.com/management-api/v1/locate/geofences"
+```
+
+The request body looks like this:
+
+```json
+{
+	"name": "OnceCircle",
+	"type": "circle",
+  "eventTypes": [
+		"EXIT",
+		"ENTER"
+	],
+  "eventSources": [
+		"CellTower",
+		"GPS"
+	],
+  "deviceId": "1234561758848740979",
+	"radius":  500
+}
+```
+
+Response body:
+
+```json
+{
+	"id": "sd8TGmSzXNaQTDtXOzzxf",
+	"name": "OnceCircle",
+	"eventTypes": [
+		"EXIT",
+		"ENTER"
+	],
+		"center": [
+		-89.178544,
+		42.312127
+	],
+	"radius": 500,
+	"type": "circle",
+	"eventSources": [
+		"CellTower",
+		"GPS"
+	],
+  "deviceId": "1234561758848740979",
+	"created": "2025-10-02T12:05:56.998Z",
+	"updated": "2025-10-02T12:05:56.998Z"
+}
+```

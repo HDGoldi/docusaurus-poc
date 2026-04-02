@@ -1,0 +1,11 @@
+## Network Translation and 1NCE VPN
+
+The infrastructure of the 1NCE Data Service network uses Network Address Translation (NAT) to route traffic from each connected SIM device to the public internet. For providing a private, more secure connectivity, as the devices are not directly exposed to the public internet. This also implies that a connection establishment from an application on the internet towards a 1NCE SIM is not directly possible without using the 1NCE VPN Service. On the other hand, target locations in the public internet space can be reached from any device with a 1NCE SIM. The traffic from each device is routed via the 1NCE Internet Breakout. For more details review the 1NCE Network Services, [Internet Breakout](/network-services/network-services-internet-breakout) and [VPN Service](/network-services/network-services-vpn-service/index).
+
+> 📘 Data Connection Establishment
+>
+> When using the default Internet Breakout, the SIM device has to establish the Data Connection towards the targeted internet service. Due to the NAT Gateway, individual SIMs are not reachable from the open internet.
+
+The sequence diagram below shows the flow of a SIM device using the NAT Internet Breakout to establish a connection to a public internet server/service. The connection establishment always needs to come from the SIM device. After a connection session (e.g., TCP session) was opened by the SIM device, bidirectional communication is possible.
+
+The second sequence diagram below shows the possible data service when using the 1NCE VPN Service. This free to use service allows to directly connect to the 1NCE Network to access/connect SIM devices from the customer server side. Please note that only traffic from the SIM device with the VPN client IP address as destination will be routed towards the connected VPN client. All other traffic from the SIM device will be routed through the Internet Breakout. For more details, please see the VPN Service chapter.

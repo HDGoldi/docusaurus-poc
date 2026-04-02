@@ -1,0 +1,9 @@
+## Warnings & Errors
+
+A warning event record (e.g., HTTP 500) is written in the Data Streamer and 1NCE Portal SIM Event Log if an event delivery to the specified server was unsuccessful. In this case, verify that the endpoint is reachable and returns HTTP 200 to the incoming HTTP Post/HTTP Patch request.
+
+***
+
+# SMS Forwarder Sequence Diagrams
+
+The two sequence diagrams below show the MT-SMS DLR and the MO-SMS delivery using the SMS Forwarding Service. These diagrams provide a basic overview of the working principle of the SMS Forwarding Service.

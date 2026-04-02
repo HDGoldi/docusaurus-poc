@@ -1,0 +1,5 @@
+## Overtake or Bring your own eUICC (BYOeUICC)
+
+If the customer already has an eUICC-capable SIM card from another provider and is using their own RSP platform, it is possible to migrate this eUICC SIM from the customer RSP to 1NCE RSP systems and add the 1NCE profile to the existing eUICC compatible SIM.
+
+1NCE takes over not only the customer connectivity needs but also their eUICC SIMs into the 1NCE RSP platform.

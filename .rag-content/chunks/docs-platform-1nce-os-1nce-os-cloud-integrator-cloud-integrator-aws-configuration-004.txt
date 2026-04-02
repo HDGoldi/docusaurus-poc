@@ -1,0 +1,9 @@
+## Validate Integration
+
+*A device being able to send data is a prerequisite for this step. For more information refer to the cloud integrator[documentation](/1nce-os/1nce-os-cloud-integrator/index).*
+
+Once your stack has been rolled out, you can test your integration using one of your devices or by using [Test AWS Integration](ref:post_v1-integrate-clouds-aws-integrationid-test) endpoint. In AWS go to the IoT Core service. Navigate to the MQTT test client and subscribe to # as shown below:
+
+Doing this will subscribe to all topics so if the stack was successfully rolled out, you should see data show up as shown below:
+
+If the integration was successfully created, rolled out and actived, *Integration Active* will appear.

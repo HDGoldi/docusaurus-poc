@@ -1,0 +1,10 @@
+## DTLS Bootstrapping Information
+
+Information model:
+
+The pre-shared key is valid indefinitely. If the bootstrapping is called 5 or more minutes after the last time bootstrapping was called and the pre-shared key was not set previously by the user, the pre-shared key will be regenerated with a new value.
+
+| Name           | Type   | Description                                                         |
+| :------------- | :----- | :------------------------------------------------------------------ |
+| clientIdentity | string | The iccid of the device sim.                                        |
+| preSharedKey   | string | A pre shared key the device can use to authenticate itself on DTLS. |

@@ -1,0 +1,13 @@
+## User Account Alteration
+
+By clicking on a user shown in the list of current users, the details of this account can be changed or deleted. Changes can be applied by editing the boxes in the form and saving the new data. A user can be deleted by clicking on the "Delete" button in the Edit User popup.
+
+***
+
+# Organization Management
+
+> ❗️ AWS Marketplace Accounts
+>
+> Please note that Organization Management is not available for AWS Marketplace accounts.
+
+In the "Organisation" tab, a list of all sub-organizations of the main 1NCE user account are shown and can be managed. This feature enables a customer to create independent organizations, e.g., for their subsidiary or sub-contractor.

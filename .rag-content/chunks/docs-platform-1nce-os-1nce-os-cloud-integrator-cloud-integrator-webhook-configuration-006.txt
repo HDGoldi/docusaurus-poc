@@ -1,0 +1,7 @@
+## Test Integration
+
+To send test message to your webhook integration via API, you can use following curl request:
+
+```curl
+curl --location --request POST 'https://api.1nce.com/management-api/v1/integrate/clouds/webhooks/{integrationId}/test'
+```

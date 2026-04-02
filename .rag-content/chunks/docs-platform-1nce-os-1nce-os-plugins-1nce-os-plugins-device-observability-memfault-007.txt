@@ -1,0 +1,4 @@
+### Coap to HTTPS Proxy functionality
+
+CoAP to HTTPS proxy's main functionality is to "translate" the CoAP requests to HTTPS requests and HTTPS responses to CoAP responses. As mentioned before 1NCE OS Coap Proxy for Memfault Plugin automatically replaces `:iccid:` part with the actual ICCID value before doing HTTPS request to the Memfault chunks API.\
+Additionally, the Memfault plugin also retrieves and stores the Memfault project key value during plugin installation. This value then is automatically injected as a `Memfault-Project-Key` header into the HTTPS request towards Memfault Chunks API endpoint, so there is no need to manage it from the customer device side.

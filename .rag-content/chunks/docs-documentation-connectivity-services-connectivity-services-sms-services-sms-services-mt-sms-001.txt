@@ -1,0 +1,9 @@
+## Data Coding Scheme
+
+The Data Coding Scheme (DCS) is a value which transports information about how the recipient device shall handle the the transferred data payload. In principle, the DCS specifies the character set of your payload. Based on the chosen DCS the message length varies. The maximum length of a SMS is 160 character using the default GSM character set. You can use another character set and the maximum number of characters which can be used might shrink. In the following table you can see some DCS values and its short descriptions. For a full reference please see .
+
+| DCS Value | Format | Payload for API |
+| --- | --- | --- |
+| 0 | 7-Bit Alphabet Text | Message Payload as String *TestSMS* |
+| 4 | 8-Bit Binary Data | Binary Payload as Hex Encoded String *54657374534d53* |
+| 8 | UCS-2 |  |

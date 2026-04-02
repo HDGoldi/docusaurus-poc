@@ -1,0 +1,4 @@
+## Suggested Maximum of Daily Messages
+
+* 2G/3G/4G: no limitations
+* NB-IoT/LTE-M: 120 application messages / day / device (i.e., on average 5 messages per hour); minimal volume per message.

@@ -1,0 +1,3 @@
+## Monitoring MT-SMS
+
+Besides sending different types MT-SMS, the API can also be used to monitor and obtain a list of issued MT-SMS messages. Expand the dropdowns below to see the possibilities of querying the MT-SMS API.

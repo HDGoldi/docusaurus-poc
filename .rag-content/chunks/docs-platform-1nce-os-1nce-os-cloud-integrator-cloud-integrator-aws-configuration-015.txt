@@ -1,0 +1,3 @@
+### S3 bucket
+
+S3 buckets where the actual code for the 'create' and 'delete' callback Lambda functions are placed.

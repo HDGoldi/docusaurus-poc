@@ -1,0 +1,119 @@
+### Creating a geofence
+
+Create following API request, where you should pass the polygon coordinates received in the previous step:
+
+Create new geofence:
+
+```shell
+curl -X POST "https://api.1nce.com/management-api/v1/locate/geofences"
+```
+
+The request body looks like this:
+
+```json
+{
+	"name": "Once",
+	"eventTypes": [
+		"EXIT",
+		"ENTER"
+	],
+	"type": "polygon",
+	"coordinates": [
+          [
+            [
+              6.957239730898948,
+              50.93892367514573
+            ],
+            [
+              6.958509831039635,
+              50.93836584192053
+            ],
+            [
+              6.959702958010666,
+              50.93945723847878
+            ],
+            [
+              6.9596259993105605,
+              50.934266755623526
+            ],
+            [
+              6.961550428436993,
+              50.93431526288117
+            ],
+            [
+              6.961434941100492,
+              50.94059711468901
+            ],
+            [
+              6.959087148954154,
+              50.94059710732816
+            ],
+            [
+              6.957239730898948,
+              50.93892367514573
+            ]
+          ]
+        ],
+	"eventSources": [
+		"GPS",
+		"CellTower"
+	]
+}
+```
+
+Response body:
+
+```json
+{
+	"id": "CZ41OIxhOGdP4bxuCAsg9",
+	"name": "Once",
+	"eventTypes": [
+		"EXIT",
+		"ENTER"
+	],
+	"coordinates": [
+		[
+			[
+				6.95724,
+				50.938924
+			],
+			[
+				6.95851,
+				50.938366
+			],
+			[
+				6.959703,
+				50.939457
+			],
+			[
+				6.959626,
+				50.934267
+			],
+			[
+				6.96155,
+				50.934315
+			],
+			[
+				6.961435,
+				50.940597
+			],
+			[
+				6.959087,
+				50.940597
+			],
+			[
+				6.95724,
+				50.938924
+			]
+		]
+	],
+	"type": "polygon",
+	"eventSources": [
+		"GPS",
+		"CellTower"
+	],
+	"deviceId": null,
+	"created": "2025-10-02T10:36:11.166Z",
+	"updated": "2025-10-02T10:36:11.166Z"
+}
+```
