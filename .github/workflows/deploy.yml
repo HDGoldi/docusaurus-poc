@@ -195,6 +195,27 @@ jobs:
             sleep 10
           fi
 
+      # Lambda requires the code bucket to be in the same region as the
+      # function.  Copy the deployment zip from us-east-1 to eu-central-1.
+      - name: Ensure Lambda code bucket exists in eu-central-1
+        run: |
+          SRC_BUCKET="1nce-devhub-lambda-deployments"
+          DST_BUCKET="1nce-devhub-lambda-deployments-eu"
+          CODE_KEY="chat-handler.zip"
+
+          # Create the eu-central-1 bucket if it doesn't exist
+          if ! aws s3api head-bucket --bucket "$DST_BUCKET" 2>/dev/null; then
+            echo "Creating $DST_BUCKET in eu-central-1…"
+            aws s3api create-bucket \
+              --bucket "$DST_BUCKET" \
+              --create-bucket-configuration LocationConstraint=eu-central-1
+          fi
+
+          # Copy the zip from the us-east-1 bucket
+          echo "Copying $CODE_KEY from $SRC_BUCKET to $DST_BUCKET…"
+          aws s3 cp "s3://$SRC_BUCKET/$CODE_KEY" "/tmp/$CODE_KEY" --region us-east-1
+          aws s3 cp "/tmp/$CODE_KEY" "s3://$DST_BUCKET/$CODE_KEY"
+
       - name: Deploy RAG stack (eu-central-1)
         run: |
           aws cloudformation deploy \
@@ -202,6 +223,7 @@ jobs:
             --stack-name nce-devhub-rag \
             --parameter-overrides \
               VectorBucketArn=${{ steps.vector-bucket.outputs.vector_bucket_arn }} \
+              LambdaCodeBucketName=1nce-devhub-lambda-deployments-eu \
             --capabilities CAPABILITY_NAMED_IAM \
             --no-fail-on-empty-changeset
 
