@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-04-02)
 Phase: Complete
 Plan: N/A
 Status: v1.2 milestone shipped — ready for next milestone
-Last activity: 2026-04-02
+Last activity: 2026-04-02 - Completed quick task 260402-tu1: Add help.1nce.com as alternate domain on CloudFront
 
 Progress: [##########] 100%
 
@@ -60,6 +60,12 @@ None.
 ### Blockers/Concerns
 
 None.
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260402-tu1 | Add help.1nce.com as alternate domain on CloudFront and configure DNS in separate AWS account | 2026-04-02 | 60ef862 | [260402-tu1-add-help-1nce-com-as-alternate-domain-on](./quick/260402-tu1-add-help-1nce-com-as-alternate-domain-on/) |
 
 ## Session Continuity
 
