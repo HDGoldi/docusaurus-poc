@@ -89,6 +89,7 @@ jobs:
             --parameter-overrides \
               LambdaCodeBucketName=${{ vars.LAMBDA_CODE_BUCKET_NAME }} \
               LambdaCodeKey=${{ vars.LAMBDA_CODE_KEY }} \
+              VectorBucketArn=${{ vars.VECTOR_BUCKET_ARN }} \
             --capabilities CAPABILITY_NAMED_IAM \
             --no-fail-on-empty-changeset
 
