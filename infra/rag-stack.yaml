@@ -6,11 +6,6 @@ Description: >-
   DEPLOY THIS STACK IN eu-central-1
 
 Parameters:
-  RagContentBucketName:
-    Type: String
-    Default: 1nce-devhub-rag-content
-    Description: S3 bucket for pre-chunked RAG content files
-
   LambdaCodeBucketName:
     Type: String
     Default: 1nce-devhub-lambda-deployments
@@ -50,7 +45,6 @@ Resources:
   RagContentBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Ref RagContentBucketName
       PublicAccessBlockConfiguration:
         BlockPublicAcls: true
         BlockPublicPolicy: true
