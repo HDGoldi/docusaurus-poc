@@ -367,7 +367,6 @@ Resources:
                   - iam:AttachRolePolicy
                   - iam:DetachRolePolicy
                 Resource:
-                  - !Sub "arn:aws:iam::${AWS::AccountId}:role/1nce-devhub-rag-*"
                   - !Sub "arn:aws:iam::${AWS::AccountId}:role/nce-devhub-rag-*"
               - Sid: Lambda
                 Effect: Allow
@@ -386,8 +385,8 @@ Resources:
                   - lambda:DeleteFunctionUrlConfig
                   - lambda:GetFunctionUrlConfig
                 Resource:
-                  - !Sub "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:1nce-devhub-chat"
-                  - !Sub "arn:aws:lambda:eu-central-1:${AWS::AccountId}:function:1nce-devhub-chat"
+                  - !Sub "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:nce-devhub-rag-*"
+                  - !Sub "arn:aws:lambda:eu-central-1:${AWS::AccountId}:function:nce-devhub-rag-*"
               - Sid: Bedrock
                 Effect: Allow
                 Action:
@@ -395,10 +394,12 @@ Resources:
                   - bedrock:UpdateKnowledgeBase
                   - bedrock:DeleteKnowledgeBase
                   - bedrock:GetKnowledgeBase
+                  - bedrock:ListKnowledgeBases
                   - bedrock:CreateDataSource
                   - bedrock:UpdateDataSource
                   - bedrock:DeleteDataSource
                   - bedrock:GetDataSource
+                  - bedrock:ListDataSources
                   - bedrock:TagResource
                   - bedrock:UntagResource
                   - bedrock:ListTagsForResource

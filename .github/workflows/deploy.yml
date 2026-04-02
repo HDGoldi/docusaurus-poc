@@ -265,7 +265,25 @@ jobs:
               VectorBucketArn=${{ steps.vector-bucket.outputs.vector_bucket_arn }} \
               LambdaCodeBucketName=1nce-devhub-lambda-deployments-eu \
             --capabilities CAPABILITY_NAMED_IAM \
-            --no-fail-on-empty-changeset
+            --no-fail-on-empty-changeset || {
+              echo "=== Changeset failed — fetching stack events for details ==="
+              aws cloudformation describe-stack-events \
+                --stack-name nce-devhub-rag \
+                --query "StackEvents[?ResourceStatus=='CREATE_FAILED' || contains(StatusReason || '', 'EarlyValidation')].[LogicalResourceId,ResourceType,ResourceStatusReason]" \
+                --output table 2>/dev/null || true
+              # Also try describe-change-set for more detail
+              CHANGESET_ARN=$(aws cloudformation list-change-sets \
+                --stack-name nce-devhub-rag \
+                --query "Summaries[0].ChangeSetId" \
+                --output text 2>/dev/null || echo "")
+              if [ -n "$CHANGESET_ARN" ] && [ "$CHANGESET_ARN" != "None" ]; then
+                aws cloudformation describe-change-set \
+                  --change-set-name "$CHANGESET_ARN" \
+                  --query "{Status:Status,Reason:StatusReason,Changes:Changes[].ResourceChange.{Action:Action,Resource:LogicalResourceId,Type:ResourceType,PhysicalId:PhysicalResourceId}}" \
+                  --output json 2>/dev/null || true
+              fi
+              exit 1
+            }
 
       - name: Get RAG stack outputs
         id: rag-outputs
