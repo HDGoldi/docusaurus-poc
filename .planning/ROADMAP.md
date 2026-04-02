@@ -24,7 +24,7 @@ See: `.planning/milestones/v1.0-ROADMAP.md` for full details.
 
 - [ ] **Phase 4: GitHub Pages Deployment** — Environment-aware builds and automated GitHub Pages deploy
 - [ ] **Phase 5: AI Backend and Content Pipeline** — Bedrock KB with S3 Vectors, content preprocessing, and Lambda proxy
-- [ ] **Phase 6: Chat UI** — Floating AI assistant widget with streaming responses and citations
+- [x] **Phase 6: Chat UI** — Floating AI assistant widget with streaming responses and citations (completed 2026-03-23)
 - [ ] **Phase 7: CI/CD Integration** — Automated KB sync wired into deploy workflow
 
 ## Phase Details
@@ -72,7 +72,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 06-01-PLAN.md — Chat widget foundation: types, SSE streaming hook, all components, CSS module, Root.tsx wrapper, visual verification
+- [x] 06-01-PLAN.md — Chat widget foundation: types, SSE streaming hook, all components, CSS module, Root.tsx wrapper, visual verification
 
 ### Phase 7: CI/CD Integration
 **Goal**: Documentation updates automatically flow through to the AI knowledge base without manual intervention
@@ -81,10 +81,10 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. Pushing a documentation change to main triggers content preprocessing, S3 sync, and Bedrock KB re-ingestion automatically
   2. Existing AWS production deploy workflow continues to function without regressions
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 07-01: TBD
+- [ ] 07-01-PLAN.md — RAG sync workflow and CloudFormation resource tagging
 
 ## Progress
 
@@ -97,5 +97,5 @@ Plans:
 | 3. Infrastructure and Deployment | v1.0 | 2/2 | Complete | 2026-03-21 |
 | 4. GitHub Pages Deployment | v1.1 | 0/1 | Not started | - |
 | 5. AI Backend and Content Pipeline | v1.1 | 2/3 | In Progress|  |
-| 6. Chat UI | v1.1 | 0/1 | Not started | - |
+| 6. Chat UI | v1.1 | 1/1 | Complete   | 2026-03-23 |
 | 7. CI/CD Integration | v1.1 | 0/1 | Not started | - |

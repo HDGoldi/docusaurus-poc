@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: AI Assistant + GitHub Pages Preview
 status: unknown
-stopped_at: Phase 6 context gathered
-last_updated: "2026-03-23T13:35:51.509Z"
+stopped_at: Phase 7 context gathered
+last_updated: "2026-03-23T17:21:27.279Z"
 progress:
   total_phases: 4
-  completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
+  completed_phases: 3
+  total_plans: 5
+  completed_plans: 5
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-21)
 
 **Core value:** Developers can browse all existing documentation and interactively test API endpoints exactly as they can on the current ReadMe.com-hosted site.
-**Current focus:** Phase 05 — ai-backend-and-content-pipeline
+**Current focus:** Phase 06 — chat-ui
 
 ## Current Position
 
-Phase: 6
+Phase: 7
 Plan: Not started
 
 ## Performance Metrics
@@ -48,6 +48,9 @@ Plan: Not started
 - [Phase 05]: Two-region CloudFormation: eu-central-1 for Bedrock+Lambda, us-east-1 for CloudFront+WAF
 - [Phase 05]: Claude 3 Haiku default model (4.5 not yet available in eu-central-1), configurable via ModelArn parameter
 - [Phase 05]: WAF rate limit: 10 req/60s per IP using EvaluateWindowSec for precise 1-minute windows
+- [Phase 06]: Root.tsx swizzle pattern for global chat widget injection
+- [Phase 06]: POST-based SSE with ReadableStream (EventSource only supports GET)
+- [Phase 06]: CSS Modules with Infima variables for dark mode (no styled-components)
 
 ### Pending Todos
 
@@ -60,6 +63,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-23T13:35:51.495Z
-Stopped at: Phase 6 context gathered
-Resume file: .planning/phases/06-chat-ui/06-CONTEXT.md
+Last session: 2026-03-23T17:21:27.269Z
+Stopped at: Phase 7 context gathered
+Resume file: .planning/phases/07-ci-cd-integration/07-CONTEXT.md

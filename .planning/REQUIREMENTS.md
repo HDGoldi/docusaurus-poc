@@ -28,11 +28,11 @@ Requirements for AI Assistant + GitHub Pages Preview milestone. Each maps to roa
 
 ### Chat UI
 
-- [ ] **CHAT-01**: Floating chat drawer UI accessible from all pages via global widget
-- [ ] **CHAT-02**: Streaming responses render tokens as they arrive
-- [ ] **CHAT-03**: Source citations displayed as clickable links to relevant documentation pages
-- [ ] **CHAT-04**: Suggested questions shown to help users get started
-- [ ] **CHAT-05**: Dark mode support matching existing site theme
+- [x] **CHAT-01**: Floating chat drawer UI accessible from all pages via global widget
+- [x] **CHAT-02**: Streaming responses render tokens as they arrive
+- [x] **CHAT-03**: Source citations displayed as clickable links to relevant documentation pages
+- [x] **CHAT-04**: Suggested questions shown to help users get started
+- [x] **CHAT-05**: Dark mode support matching existing site theme
 
 ### CI/CD Integration
 
@@ -80,11 +80,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INFRA-02 | Phase 5 | Complete |
 | INFRA-03 | Phase 5 | Complete |
 | INFRA-04 | Phase 5 | Complete |
-| CHAT-01 | Phase 6 | Pending |
-| CHAT-02 | Phase 6 | Pending |
-| CHAT-03 | Phase 6 | Pending |
-| CHAT-04 | Phase 6 | Pending |
-| CHAT-05 | Phase 6 | Pending |
+| CHAT-01 | Phase 6 | Complete |
+| CHAT-02 | Phase 6 | Complete |
+| CHAT-03 | Phase 6 | Complete |
+| CHAT-04 | Phase 6 | Complete |
+| CHAT-05 | Phase 6 | Complete |
 | CICD-01 | Phase 7 | Pending |
 | CICD-02 | Phase 7 | Pending |
 
