@@ -92,5 +92,9 @@ jobs:
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id ${{ vars.CF_DISTRIBUTION_ID }} --paths "/*"
 
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts
+
       - name: Run smoke test
         run: bash scripts/smoke-test.sh https://${{ vars.PROD_CF_DISTRIBUTION_DOMAIN }}
