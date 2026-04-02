@@ -42,13 +42,52 @@
 - Sessions: ~5 sessions across 2 days
 - Notable: entire migration from zero to production-ready in 2 days
 
+## Milestone: v1.2 — Overall Enhancements & Fixing
+
+**Shipped:** 2026-04-02
+**Phases:** 2 | **Plans:** 3
+
+### What Was Built
+- Official 1NCE favicon (120x120 PNG), light-only mode, branded social card
+- External navbar links matching original ReadMe.com header (1NCE Home, Shop, Portal)
+- Unified 11-section Documentation sidebar matching original hub order
+- Consolidated 3 separate plugin instances into single preset-classic docs instance
+- Clean navbar: 2 doc tabs (Documentation, API Explorer) + 3 external links
+- Client-side redirects for all old /platform/*, /blueprints/*, /terms/* URLs
+
+### What Worked
+- Config-only dark mode removal — no CSS surgery needed, just 3 Docusaurus config flags
+- git mv for content moves preserved full file history through reorganization
+- createRedirects function approach scales better than individual redirect entries
+- Phase 9 built cleanly on Phase 8's branding cleanup
+
+### What Was Inefficient
+- No milestone audit performed — skipped for speed since all requirements were checked off
+- v1.1 milestone (phases 4-7) still not formally closed — creates ambiguity in milestone tracking
+- ROADMAP.md progress table was outdated for phases 4, 5, 8 — tracking drift accumulated
+
+### Patterns Established
+- @docusaurus/plugin-client-redirects with createRedirects for URL migration patterns
+- Single preset-classic docs instance serves all content (no multi-plugin approach needed)
+- Position-ordered _category_.json metadata for sidebar section ordering
+
+### Key Lessons
+- Plugin consolidation (3 instances → 1) is simpler than expected when content is already well-organized
+- Client-side redirects are sufficient for documentation URL migration (no server-side config needed)
+- Dark mode removal in Docusaurus is a pure config change — no need to hunt for CSS
+
+### Cost Observations
+- Model mix: primarily opus
+- Sessions: 1 session, ~1.5 hours
+- Notable: entire milestone (branding + navigation restructuring) completed in a single session
+
 ## Cross-Milestone Trends
 
-| Metric | v1.0 |
-|--------|------|
-| Phases | 3 |
-| Plans | 12 |
-| Commits | 70 |
-| Files | 956 |
-| LOC | ~42,864 |
-| Duration | 2 days |
+| Metric | v1.0 | v1.2 |
+|--------|------|------|
+| Phases | 3 | 2 |
+| Plans | 12 | 3 |
+| Commits | 70 | ~20 |
+| Files changed | 956 | 188 |
+| LOC delta | ~42,864 | +4,282/-208 |
+| Duration | 2 days | 1.5 hours |

@@ -1,5 +1,22 @@
 # Milestones
 
+## v1.2 Overall Enhancements & Fixing (Shipped: 2026-04-02)
+
+**Phases completed:** 2 phases, 3 plans, 5 tasks
+
+**Key accomplishments:**
+
+- 1NCE favicon, light-only mode, branded social card, and corrected external navbar links with target=_blank
+- Unified all 11 sidebar sections under docs/documentation/ with position-ordered _category_.json metadata matching original ReadMe.com hub order
+- Consolidated 3 plugin instances into single preset-classic, reduced navbar from 5 to 2 doc tabs + 3 external links
+- Client-side redirects for all old /platform/*, /blueprints/*, /terms/* URLs via @docusaurus/plugin-client-redirects
+
+### Known Gaps
+
+No milestone audit was performed. All 7/7 requirements checked off; user elected to proceed without formal audit.
+
+---
+
 ## v1.0 1NCE Developer Hub Migration (Shipped: 2026-03-21)
 
 **Phases completed:** 3 phases, 12 plans, 22 tasks
