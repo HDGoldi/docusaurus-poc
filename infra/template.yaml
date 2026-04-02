@@ -428,6 +428,13 @@ Resources:
                   - wafv2:ListTagsForResource
                 Resource:
                   - !Sub "arn:aws:wafv2:${AWS::Region}:${AWS::AccountId}:global/webacl/*"
+              - Sid: S3Vectors
+                Effect: Allow
+                Action:
+                  - s3vectors:CreateVectorBucket
+                  - s3vectors:GetVectorBucket
+                  - s3vectors:ListVectorBuckets
+                Resource: "*"
       Tags:
         - Key: environment
           Value: dev

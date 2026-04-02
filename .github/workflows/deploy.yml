@@ -158,13 +158,30 @@ jobs:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           aws-region: eu-central-1
 
+      # S3 Vector Buckets are regional — ensure one exists in eu-central-1
+      # for the Bedrock Knowledge Base. Idempotent: skips if it already exists.
+      - name: Ensure S3 Vector Bucket exists in eu-central-1
+        id: vector-bucket
+        run: |
+          BUCKET_NAME="1nce-devhub-vectors-eu"
+          if aws s3vectors get-vector-bucket --vector-bucket-name "$BUCKET_NAME" >/dev/null 2>&1; then
+            echo "Vector bucket $BUCKET_NAME already exists."
+          else
+            echo "Creating vector bucket $BUCKET_NAME in eu-central-1…"
+            aws s3vectors create-vector-bucket --vector-bucket-name "$BUCKET_NAME"
+          fi
+          BUCKET_ARN=$(aws s3vectors get-vector-bucket \
+            --vector-bucket-name "$BUCKET_NAME" \
+            --query "vectorBucket.vectorBucketArn" --output text)
+          echo "vector_bucket_arn=$BUCKET_ARN" >> "$GITHUB_OUTPUT"
+
       - name: Deploy RAG stack (eu-central-1)
         run: |
           aws cloudformation deploy \
             --template-file infra/rag-stack.yaml \
             --stack-name nce-devhub-rag \
             --parameter-overrides \
-              VectorBucketArn=${{ vars.VECTOR_BUCKET_ARN }} \
+              VectorBucketArn=${{ steps.vector-bucket.outputs.vector_bucket_arn }} \
             --capabilities CAPABILITY_NAMED_IAM \
             --no-fail-on-empty-changeset
 
