@@ -31,7 +31,7 @@ Parameters:
 
   AllowedOrigins:
     Type: CommaDelimitedList
-    Default: "https://help.1nce.com,https://hdgoldi.github.io,http://localhost:3000"
+    Default: "https://help.1nce.com,https://help.1nce.ai,https://hdgoldi.github.io,http://localhost:3000"
     Description: Origins allowed for CORS on the Lambda Function URL
 
   VectorBucketArn:
@@ -289,6 +289,7 @@ Resources:
           AccessControlAllowOrigins:
             Items:
               - "https://help.1nce.com"
+              - "https://help.1nce.ai"
               - "https://hdgoldi.github.io"
               - "http://localhost:3000"
           AccessControlAllowMethods:
