@@ -107,7 +107,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 08-01-PLAN.md — Favicon, dark mode removal, external navbar links, and social card
+- [x] 08-01-PLAN.md — Favicon, dark mode removal, external navbar links, and social card
 
 ### Phase 9: Sidebar Consolidation & Navigation Restructuring
 **Goal**: The Documentation sidebar and navbar match the original ReadMe.com hub structure — a single Documentation tab with all content sections in the correct order, and old URLs redirect to new locations
