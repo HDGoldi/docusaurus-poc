@@ -73,8 +73,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DEPLOY-01 | Phase 4 | Complete |
 | DEPLOY-02 | Phase 4 | Complete |
 | DEPLOY-03 | Phase 4 | Complete |
-| CONTENT-01 | Phase 5 | Complete |
-| CONTENT-02 | Phase 5 | Complete |
+| CONTENT-01 | Phase 5 | Pending |
+| CONTENT-02 | Phase 5 | Pending |
 | CONTENT-03 | Phase 5 | Pending |
 | INFRA-01 | Phase 5 | Complete |
 | INFRA-02 | Phase 5 | Complete |
