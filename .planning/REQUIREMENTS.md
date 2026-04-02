@@ -50,19 +50,19 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BRAND-01 | TBD | Pending |
-| BRAND-02 | TBD | Pending |
-| BRAND-03 | TBD | Pending |
-| NAV-01 | TBD | Pending |
-| NAV-02 | TBD | Pending |
-| NAV-03 | TBD | Pending |
-| NAV-04 | TBD | Pending |
+| BRAND-01 | Phase 8 | Pending |
+| BRAND-02 | Phase 8 | Pending |
+| BRAND-03 | Phase 8 | Pending |
+| NAV-01 | Phase 8 | Pending |
+| NAV-02 | Phase 9 | Pending |
+| NAV-03 | Phase 9 | Pending |
+| NAV-04 | Phase 9 | Pending |
 
 **Coverage:**
 - v1.2 requirements: 7 total
-- Mapped to phases: 0
-- Unmapped: 7 (pending roadmap)
+- Mapped to phases: 7
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-02*
-*Last updated: 2026-04-02 after initial definition*
+*Last updated: 2026-04-02 after roadmap creation*

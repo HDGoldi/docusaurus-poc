@@ -4,6 +4,7 @@
 
 - ✅ **v1.0 Migration** — Phases 1-3 (shipped 2026-03-21)
 - 🚧 **v1.1 AI Assistant + GitHub Pages Preview** — Phases 4-7 (in progress)
+- 📋 **v1.2 Overall Enhancements & Fixing** — Phases 8-9 (planned)
 
 ## Phases
 
@@ -18,14 +19,22 @@ See: `.planning/milestones/v1.0-ROADMAP.md` for full details.
 
 </details>
 
-### 🚧 v1.1 AI Assistant + GitHub Pages Preview (In Progress)
-
-**Milestone Goal:** Add an AI-powered documentation assistant using AWS Bedrock (Claude) with S3 Vectors, and enable GitHub Pages as a lightweight preview deployment.
+<details>
+<summary>🚧 v1.1 AI Assistant + GitHub Pages Preview (Phases 4-7)</summary>
 
 - [ ] **Phase 4: GitHub Pages Deployment** — Environment-aware builds and automated GitHub Pages deploy
 - [ ] **Phase 5: AI Backend and Content Pipeline** — Bedrock KB with S3 Vectors, content preprocessing, and Lambda proxy
 - [x] **Phase 6: Chat UI** — Floating AI assistant widget with streaming responses and citations (completed 2026-03-23)
 - [x] **Phase 7: CI/CD Integration** — Automated KB sync wired into deploy workflow (completed 2026-03-23)
+
+</details>
+
+### 📋 v1.2 Overall Enhancements & Fixing (Planned)
+
+**Milestone Goal:** Align the Docusaurus site's branding and navigation with the original 1NCE Developer Hub on ReadMe.com — correct logo, favicon, light-only mode, external header links, and a single consolidated Documentation sidebar matching the original hub structure.
+
+- [ ] **Phase 8: Branding & Visual Alignment** — Favicon, logo, dark mode removal, and external navbar links
+- [ ] **Phase 9: Sidebar Consolidation & Navigation Restructuring** — Merge plugin instances, unify Documentation sidebar, add redirects for old URLs
 
 ## Phase Details
 
@@ -86,9 +95,37 @@ Plans:
 Plans:
 - [x] 07-01-PLAN.md — RAG sync workflow and CloudFormation resource tagging
 
+### Phase 8: Branding & Visual Alignment
+**Goal**: The site visually matches the original 1NCE Developer Hub — correct favicon, official logo, light-only mode, and cross-navigation links in the header
+**Depends on**: Phase 3 (existing Docusaurus site with branding infrastructure)
+**Requirements**: BRAND-01, BRAND-02, BRAND-03, NAV-01
+**Success Criteria** (what must be TRUE):
+  1. Browser tab shows the official 1NCE favicon (120x120 PNG), not the Docusaurus default
+  2. Navbar displays the official 1NCE SVG logo from 1nce.com, linking to the site root
+  3. No dark mode toggle is visible anywhere on the site, OS-level dark mode preference is ignored, and all pages render in light mode only with no remnant dark CSS
+  4. Navbar contains external links for 1NCE Home, 1NCE Shop, and 1NCE Portal that open in new tabs, matching the original hub header
+**Plans**: TBD
+
+Plans:
+- [ ] 08-01: TBD
+
+### Phase 9: Sidebar Consolidation & Navigation Restructuring
+**Goal**: The Documentation sidebar and navbar match the original ReadMe.com hub structure — a single Documentation tab with all content sections in the correct order, and old URLs redirect to new locations
+**Depends on**: Phase 8 (branding cleanup complete, dark CSS removed before structural audit)
+**Requirements**: NAV-02, NAV-03, NAV-04
+**Success Criteria** (what must be TRUE):
+  1. The Documentation sidebar displays all 11 sections in the original hub order: Introduction, 1NCE Portal, SIM Cards, MCP Server, Connectivity Services, Platform Services, Network Services, 1NCE OS, Troubleshooting, Blueprints & Examples, Terms & Abbreviations
+  2. The navbar shows exactly 2 doc tabs (Documentation and API Explorer) plus 3 external links — no separate Platform, Blueprints, or Terms tabs
+  3. Visiting any old URL under `/platform/*`, `/blueprints/*`, or `/terms/*` redirects the user to the correct new location under `/docs/*`
+  4. The API Explorer tab and all 125 API endpoint pages continue to function with working "Try It" panels after the plugin consolidation
+**Plans**: TBD
+
+Plans:
+- [ ] 09-01: TBD
+
 ## Progress
 
-**Execution Order:** Phase 4 → 5 → 6 → 7
+**Execution Order:** Phase 8 → 9
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
@@ -96,6 +133,8 @@ Plans:
 | 2. Site Assembly | v1.0 | 5/5 | Complete | 2026-03-21 |
 | 3. Infrastructure and Deployment | v1.0 | 2/2 | Complete | 2026-03-21 |
 | 4. GitHub Pages Deployment | v1.1 | 0/1 | Not started | - |
-| 5. AI Backend and Content Pipeline | v1.1 | 2/3 | In Progress|  |
-| 6. Chat UI | v1.1 | 1/1 | Complete   | 2026-03-23 |
-| 7. CI/CD Integration | v1.1 | 1/1 | Complete   | 2026-03-23 |
+| 5. AI Backend and Content Pipeline | v1.1 | 2/3 | In Progress | |
+| 6. Chat UI | v1.1 | 1/1 | Complete | 2026-03-23 |
+| 7. CI/CD Integration | v1.1 | 1/1 | Complete | 2026-03-23 |
+| 8. Branding & Visual Alignment | v1.2 | 0/? | Not started | - |
+| 9. Sidebar Consolidation | v1.2 | 0/? | Not started | - |
