@@ -13,7 +13,7 @@ Find the most viewed and recommended documentation chapters in the excerpts belo
 
 <NavigationGrid items={[
   { title: "Access Point Name (APN)", description: "Connecting IoT devices using the 1NCE mobile services requires setting the APN. This chapter shows the basics about the Access Point Name used for the 1NCE services.", link: "/data-services-apn" },
-  { title: "API Explorer", description: "Check the API Explorer to get to know the Management API and learn more about the usage and the general capacities.", link: "https://help.1nce.com/dev-hub/reference" },
+  { title: "API Explorer", description: "Check the API Explorer to get to know the Management API and learn more about the usage and the general capacities.", link: "/api/" },
   { title: "1NCE Portal Guide", description: "The 1NCE Portal offers an easy-to-use web interface for managing all 1NCE SIMs and related services. The documentation guides show configuration possibilities and features of the 1NCE Portal.", link: "/portal-dashboard" },
   { title: "Data Services", description: "Data Services are essential for connecting devices to linked up cloud services. These guides provide an introduction into the data connectivity with 1NCE SIMs.", link: "/connectivity-services-data-services" },
   { title: "1NCE OS", description: "Connecting IoT devices with cloud services like AWS can be challenging. Our 1NCE OS offers several features to easily integrate 1NCE connectivity into cloud services.", link: "/1nce-os-services-overview" },
