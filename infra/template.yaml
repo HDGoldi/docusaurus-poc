@@ -332,18 +332,20 @@ Resources:
                 Effect: Allow
                 Action:
                   - s3:CreateBucket
+                  - s3:DeleteBucket
                   - s3:PutBucketVersioning
                   - s3:PutBucketPublicAccessBlock
                   - s3:PutBucketTagging
                   - s3:PutBucketPolicy
                   - s3:GetBucketPolicy
+                  - s3:GetBucketLocation
                   - s3:PutObject
                   - s3:GetObject
                   - s3:ListBucket
                   - s3:DeleteObject
                 Resource:
-                  - "arn:aws:s3:::1nce-devhub-rag-content"
-                  - "arn:aws:s3:::1nce-devhub-rag-content/*"
+                  - "arn:aws:s3:::nce-devhub-rag-*"
+                  - "arn:aws:s3:::nce-devhub-rag-*/*"
                   - "arn:aws:s3:::1nce-devhub-lambda-deployments-eu"
                   - "arn:aws:s3:::1nce-devhub-lambda-deployments-eu/*"
               - Sid: LambdaCodeBucket
