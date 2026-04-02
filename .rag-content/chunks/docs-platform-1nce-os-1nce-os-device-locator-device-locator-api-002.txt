@@ -1,0 +1,48 @@
+### Get Device Positions
+
+Get positions of a specific device for the last 7 days.
+
+Get a list of positions for device with id `1234567890123456789`:
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/locate/devices/1234567890123456789/positions"
+```
+
+The response could be `200 OK` with body:
+
+```json
+{
+  "coordinates": [
+    {
+      "sampleTime": "2024-05-03T11:00:24.985Z",
+      "coordinate": [
+        24.16962242126465,
+        56.97812271118164
+      ],
+      "source": "CellTower",
+      "metadata": {
+        "horizontalAccuracy": 1220,
+        "horizontalConfidenceLevel": 0.68
+      }
+    },
+    {
+      "sampleTime": "2024-05-03T02:10:17.798Z",
+      "coordinate": [
+        24.16717529296875,
+        56.97748947143555
+      ],
+      "source": "CellTower",
+      "metadata": {
+        "verticalAccuracy": 577,
+        "horizontalAccuracy": 300,
+        "verticalConfidenceLevel": 0.68,
+        "horizontalConfidenceLevel": 0.68
+      }
+    }
+  ],
+  "pageAmount": 1,
+  "page": 1
+}
+```
+
+:warning: Note that `metadata` parameter with accuracy data is only available in CellTower locator **"Plus"** mode.

@@ -1,0 +1,7 @@
+### AWS
+
+When the deletion is initiated from your AWS stack, there are no further actions needed. The callback function will automatically trigger the deletion of the AWS Integration in 1NCE OS.
+
+# CFN stack description
+
+The following section describes resources that will be deployed with the stack. Stack contains 3 nested stacks.

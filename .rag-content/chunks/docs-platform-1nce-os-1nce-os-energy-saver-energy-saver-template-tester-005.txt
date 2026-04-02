@@ -1,0 +1,7 @@
+## Test succeeded
+
+Output field below template editor provides the translated template value in readable format.
+
+As an additional template performance metrics the **Reduced Bytes** is provided that represents payload size difference between OUTPUT and INPUT of template as well as **Energy Saved** value that is calculated according to our research described in [Energy Saving Calculation](/1nce-os/1nce-os-energy-saver/energy-saver-energy-saved-calculation) article.
+
+Reduced bytes and Energy saved metrics represents savings on every message that is sent by device

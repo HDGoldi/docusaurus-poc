@@ -1,0 +1,18 @@
+# GET /v1/sims/{iccid}/sms
+
+Get MT/MO-SMS
+
+Get a list of SMS sent and received by a specific SIM card.
+
+## Parameters
+- iccid (path, required): The ICCID of the SIM to be queried.
+- page (query, optional): Number index of the requested SIM SMS page. Use this parameter to iterate through all SIMs on the different pages. The total amount of pages is listed in the response header.
+- pageSize (query, optional): The number of SMS messages per page, maximum allowed value is 100.
+- sort (query, optional): Keys by which the SMS messages should be sorted, listed as comma sperated values.
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

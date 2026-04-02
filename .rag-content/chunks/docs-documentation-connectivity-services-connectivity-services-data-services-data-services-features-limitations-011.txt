@@ -1,0 +1,4 @@
+## Multiple PDP Data Sessions
+
+With the 1NCE SIM connectivity, currently only one PDP data session at a time is supported. If the IoT device allows to establish multiple PDP sessions, only the last opened data session can be used to transfer data. Sessions opened prior will remain open but will be dropped on the Packet Gateway. This results in no data being transferred other the older PDP sessions.\
+For ease of use ensure to use only one PDP data session at a time and to always properly close each session.

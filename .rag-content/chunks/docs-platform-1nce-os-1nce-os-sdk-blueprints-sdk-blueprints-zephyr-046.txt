@@ -1,0 +1,18 @@
+## Overview
+
+The **1NCE FOTA Mender Demo** enables firmware-over-the-air (FOTA) updates through [Mender.io](https://mender.io) using the 1NCE CoAP Proxy for secure and efficient communication. The device securely connects, authenticates, checks for firmware updates, downloads new versions, and updates itself.
+
+On the `Thingy:91`, the LED colors indicate the following statuses:
+
+* ⚪ **Flashing White** – Connecting to the network
+* 🟢 **Solid Green** – Firmware version 1 running
+* 🟡 **Flashing Green / Flashing Blue** – Firmware is being downloaded
+* 🔵 **Solid Blue** – Firmware version 2 running
+
+#### 📟 Development Kits (nRF9160DK / nRF9151DK)
+
+While the firmware is being downloaded, the DKs show a circular LED pattern across the four LEDs:
+
+* 🔄 LEDs 1 → 2 → 3 → 4 blink in sequence, repeating until the download is complete.
+
+***

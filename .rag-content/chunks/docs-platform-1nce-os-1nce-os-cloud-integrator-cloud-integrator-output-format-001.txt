@@ -1,0 +1,14 @@
+## AWS Integration MQTT Topics
+
+For AWS Integrations the messages will be forwarded to a dedicated AWS IoT Core MQTT topic for each event type.
+
+| Event Type | AWS IoT Core MQTT Topic |
+| --- | --- |
+| ERROR | `error` |
+| GEOFENCE | `geofence` |
+| LOCATION | `location` |
+| LIFECYCLE | `lifecycle` |
+| TELEMETRY\_DATA | LWM2M & UDP protocol: `{{iccid}}/messages` CoAP protocol with provided [query parameter *t*](/1nce-os/1nce-os-device-integrator/device-integrator-coap): `{{iccid}}/{\{query\_parameter\_t}}` CoAP protocol without provided [query parameter *t*](/1nce-os/1nce-os-device-integrator/device-integrator-coap): `{{iccid}}` |
+| TEST\_MESSAGE | `integration-status` |
+
+***

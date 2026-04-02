@@ -1,0 +1,6 @@
+## Organisation Creation
+
+Creating a new organization requires the role Owner or Admin to be logged in. To create a new organization, users have to click on the "New Organisation" button in the top right corner of the page. The creation process of a new organization is structured in a few simple steps. All the required data have to be entered in the shown forms.
+
+After validating the content summary and submitting the request, the new owner will be notified and asked to set up their password via e-mail, so that they can access the customer portal. Please note that the process of creating a sub-organization will not be finalized until the new owner has set the password.\
+All existing features are active for the new organization. An order of SIM cards can be placed in the new organization by using the "Reorder" button on the dashboard and go through the regular ordering process. Alternatively, the master organization can order the SIM cards and transfer them to the sub-organization afterwards. The master organization can see the total number of SIMs ordered by each organization, but without having direct access unless a dedicated account has been created by the sub-org entity.

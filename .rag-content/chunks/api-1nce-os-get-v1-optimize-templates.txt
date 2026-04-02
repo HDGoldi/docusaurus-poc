@@ -1,0 +1,13 @@
+# GET /v1/optimize/templates
+
+Get Optimizer Templates
+
+Get all Translation Service Templates for the current organization.
+
+## Parameters
+None
+
+## Responses
+- 200: OK
+- 403: 
+- 500: 

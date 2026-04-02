@@ -1,0 +1,14 @@
+# GET /v1/partners/plugins
+
+Get a list of plugin installations
+
+Retrieve a list of all installed plugins.
+
+## Parameters
+None
+
+## Responses
+- 200: OK
+- 401: 
+- 403: 
+- 500: 

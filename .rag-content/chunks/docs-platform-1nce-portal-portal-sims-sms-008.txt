@@ -1,0 +1,4 @@
+## Auto-Top-Up
+
+Automatic Top-Ups can be configured for all selected SIMs. The Top-Up will be automatically booked once a SIM card has \<20 % data and/or SMS volume. The check for low volume and potential Top-Up process if the SIM volume is less than 20%, are performed every four hours at 0:00,  4:00,  8:00,  12:00,  16:00, and 20:00 CET. To use this feature the customer has to add their credit card details to the account via the "Account" tab.\
+To activate this for all (future) SIM cards please navigate to the tab [Configuration](https://help.1nce.com/dev-hub/docs/portal-configuration#auto-top-up). By ticking the check-box it is possible to activate the Auto-Top-Up for all future SIM orders by default.

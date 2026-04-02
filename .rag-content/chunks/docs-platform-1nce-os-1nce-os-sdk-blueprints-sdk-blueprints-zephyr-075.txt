@@ -1,0 +1,14 @@
+### General Options
+
+| Config Option                                                | Description                                                                 | Default |
+| ------------------------------------------------------------ | --------------------------------------------------------------------------- | ------- |
+| `CONFIG_NCE_MEMFAULT_DEMO_PERIODIC_UPDATE`                   | Enable periodic Memfault updates                                            | `y`     |
+| `CONFIG_NCE_MEMFAULT_DEMO_PERIODIC_UPDATE_FREQUENCY_SECONDS` | Interval between updates (seconds)                                          | `30`    |
+| `MEMFAULT_METRICS_HEARTBEAT_INTERVAL_SECS`                   | Heartbeat interval (in header file)  in `config/memfault_platform_config.h` | `30`    |
+| `CONFIG_NCE_MEMFAULT_DEMO_CONNECTIVITY_METRICS`              | Collect Additional connectivity metrics                                     | `y`     |
+| `CONFIG_NCE_MEMFAULT_DEMO_COAP_SYNC_METRICS`                 | Tracks successful/failed syncs                                              | `y`     |
+| `CONFIG_NCE_MEMFAULT_DEMO_PRINT_HEARTBEAT_METRICS`           | Print heartbeat metrics to serial log                                       | `y`     |
+| `CONFIG_NCE_MEMFAULT_DEMO_DISCONNECT_DURATION_SECONDS`       | Simulated disconnect duration                                               | `20`    |
+| `CONFIG_NCE_MEMFAULT_DEMO_ENABLE_DTLS`                       | Enable secure CoAP over DTLS                                                | `n`     |
+
+***

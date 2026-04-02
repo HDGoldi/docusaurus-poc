@@ -1,0 +1,13 @@
+### Working with Pagination
+
+By default, up to ten messages are returned from the API. The customer is able to specify the page size with the query parameter pageSize. The value of this parameter should be between 1 and 25. Example call to get a message of an example device in the page of three:
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/administrationLogs?iccid=123456789012345678&pageSize=3"
+```
+
+We can also go directly to a certain page by defining the parameter page. We would directly go to page number two with this request:
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/administrationLogs?iccid=123456789012345678&pageSize=3&page=2"
+```

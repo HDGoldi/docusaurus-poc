@@ -1,0 +1,14 @@
+# GET /v1/locate/geofences
+
+Get all geofences
+
+Get an overview of all geofences.
+
+## Parameters
+- pageSize (query, optional): Parameter for specifying the queried items per page.
+- page (query, optional): Number of the requested page. Use this parameter to iterate through all items on the different pages. The total amount of pages is listed in the response body (pageAmount).
+
+## Responses
+- 200: OK
+- 400: 
+- 500: 

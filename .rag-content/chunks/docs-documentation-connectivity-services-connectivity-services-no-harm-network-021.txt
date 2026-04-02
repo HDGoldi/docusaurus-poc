@@ -1,0 +1,3 @@
+## Use of "Always-On" Connectivity
+
+If the monolithic IoT Device Application sends data very frequently (i.e. inactivity periods shorter than two hours), it **SHALL** use a persistent PDP/PDN connection with the mobile network instead of activating and deactivating said connectivity. In tiered IoT Devices, the embedded Service Enablement Layer **SHALL** comply to this requirement.

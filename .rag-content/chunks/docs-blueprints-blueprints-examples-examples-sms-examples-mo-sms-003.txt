@@ -1,0 +1,9 @@
+## Retrieving MO-SMS
+
+With the 1NCE SMS API, the received MO-SMS can be retrieved with some simple HTTP queries. Open the dropdowns below to see example guides for integration.
+
+***
+
+# SIM Device MO-SMS
+
+MO-SMS messages are issued from devices which use a 1NCE SIM for connectivity. The SMS service is available without the need to establish a PDP Data Session. Please note that SMS is not possible with NB-IoT.

@@ -1,0 +1,28 @@
+### 🔋 Payload Configuration
+
+Depending on whether the Energy Saver feature is enabled:
+
+* If `CONFIG_NCE_ENERGY_SAVER` is **disabled**:
+
+| Config Option    | Description                         | Default                                   |
+| ---------------- | ----------------------------------- | ----------------------------------------- |
+| `CONFIG_PAYLOAD` | Message sent to 1NCE IoT Integrator | `{"text": "Hi, this is a test message!"}` |
+
+***
+
+* If `CONFIG_NCE_ENERGY_SAVER` is **enabled**:
+
+| Config Option                  | Description                                     | Default |
+| ------------------------------ | ----------------------------------------------- | ------- |
+| `CONFIG_NCE_PAYLOAD_DATA_SIZE` | Payload data size for the Energy Saver template | `10`    |
+
+***
+
+> ⚠️ **Note:** The default maximum length for `CONFIG_COAP_URI_QUERY` is **12 bytes**.
+>
+> To increase this limit, set:
+>
+> ```conf
+> CONFIG_COAP_EXTENDED_OPTIONS_LEN=y
+> CONFIG_COAP_EXTENDED_OPTIONS_LEN_VALUE=`<your_desired_length>`
+> ```

@@ -1,0 +1,11 @@
+## ⚡ Using 1NCE Energy Saver
+
+The demo can send optimized payload using 1NCE Energy Saver. To enable this feature, add the following flag to `prj.conf`
+
+```
+CONFIG_NCE_ENERGY_SAVER=y
+```
+
+When enabled, the device will send compressed messages based on a translation template defined in 1NCE OS portal.
+
+:::tip

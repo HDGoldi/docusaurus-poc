@@ -1,0 +1,18 @@
+## ⚙️ Configuration options
+
+The following configuration options are available for customizing the CoAP client behavior:
+
+| Config Option                                 | Description                                                                                                                                                 | Default                                                              |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `CONFIG_COAP_SAMPLE_SERVER_HOSTNAME`          | CoAP server hostname                                                                                                                                        | `coap.os.1nce.com`                                                   |
+| `CONFIG_COAP_SAMPLE_SERVER_PORT`              | CoAP server port (5684 if DTLS enabled, otherwise 5683)                                                                                                     | Auto                                                                 |
+| `CONFIG_COAP_URI_QUERY`                       | URI query string used as topic parameter                                                                                                                    | `t=test`                                                             |
+| `CONFIG_COAP_SAMPLE_REQUEST_INTERVAL_SECONDS` | Interval between uplink messages (in seconds)                                                                                                               | `60`                                                                 |
+| `CONFIG_NCE_DEVICE_AUTHENTICATOR`             | Enables device onboarding with 1NCE SDK                                                                                                                     | `y`                                                                  |
+| `CONFIG_NCE_UPLINK_MAX_RETRIES`               | Max retry attempts for uplink CoAP requests                                                                                                                 | `5`                                                                  |
+| `CONFIG_NCE_DTLS_HANDSHAKE_TIMEOUT_SECONDS`   | DTLS handshake timeout                                                                                                                                      | `15`                                                                 |
+| `CONFIG_NCE_MAX_DTLS_CONNECTION_ATTEMPTS`     | Max DTLS failures before retrying onboarding                                                                                                                | `3`                                                                  |
+| `CONFIG_NCE_DTLS_SECURITY_TAG`                | DTLS TAG used to store credentials on the modem                                                                                                             | `1111`                                                               |
+| `CONFIG_NCE_ENABLE_DTLS`                      | Enables DTLS for secure CoAP communication. This is **automatically enabled** when both `ZEPHYR_NCE_SDK_MODULE` and `NCE_DEVICE_AUTHENTICATOR` are enabled. | `y` if `ZEPHYR_NCE_SDK_MODULE && NCE_DEVICE_AUTHENTICATOR`, else `n` |
+
+***

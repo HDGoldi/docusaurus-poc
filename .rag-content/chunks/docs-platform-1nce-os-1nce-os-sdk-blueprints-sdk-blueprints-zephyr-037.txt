@@ -1,0 +1,11 @@
+### ✅ Supported Objects for LwM2M Actions
+
+🔗 LwM2M actions can be tested using the [1NCE Action API](https://help.1nce.com/dev-hub/reference/post_v1-devices-deviceid-actions) or from the device controller tab in 1NCE OS UI.
+
+| Object        | Path(s)                                                              | Description                             | Supported Boards |
+| ------------- | -------------------------------------------------------------------- | --------------------------------------- | ---------------- |
+| Light Control | `/3311/0/5850` (1 Thingy:91 LED)  `/3311/<0–3>/5850` (4 DK LEDS) | Boolean: LED on/off                     | All boards       |
+| Light Color   | `/3311/0/5706`                                                       | RGB LED color in HEX (e.g., `0xFF0000`) | Thingy:91 only   |
+| Buzzer        | `/3338/0/5850`                                                       | Boolean: Audible alert                  | Thingy:91 only   |
+
+***

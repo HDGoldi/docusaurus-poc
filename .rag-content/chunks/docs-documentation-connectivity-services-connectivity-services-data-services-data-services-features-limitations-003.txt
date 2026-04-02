@@ -1,0 +1,15 @@
+## SIM - IP Address
+
+* Each customer gets personal, private Internet Protocol (IP) ranges assigned for their SIM cards.
+* 1NCE uses addresses from the private IP space () which are not allocated in the public internet and thus can be used freely in private networks.
+* All SIM cards assigned will have an IP address of one or more dedicated IP address spaces.
+* Usually, /24 address spaces will be used where in total 254 SIM cards can be fitted into. It is possible that /16 IP spaces with 65.536 individual SIM addresses might be used in newer organizations.
+* Additional IP space(s) will be assigned automatically.
+* SIMs will be assigned randomly to the IP space(s) of the given organization.
+* SIM IP address will be static as long as the SIM is not transferred between (sub-)organizations. A transfer will cause a change in IP address.
+* It is possible that a SIM card can get assigned a x.x.x.0 IP address.
+* The IP address spaces assigned to your account can be verified in the 1NCE Portal.
+
+> 📘 SIM IP Spaces Changes
+>
+> Please note that the pool of general SIM IP Spaces might be altered and new spaces might be added later on to increase overall capacity.

@@ -1,0 +1,3 @@
+## Avoidance of Synchronized Behavior
+
+The monolithic IoT Device Application **SHALL** avoid synchronized behavior with other IoT Devices or events, employing a randomized pattern (e.g. over a time period ranging from a few seconds to several hours, or days) to request a mobile network connection over the Connectivity Layer. The triggering of data transmissions, the rebooting of the IoT Device hardware or subcomponents (such as the communication module/chipset), or execution of device management commands (including, but not limited to (re-) registrations and firmware updates) **SHALL NOT** be synchronized.

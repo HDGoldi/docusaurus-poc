@@ -1,0 +1,13 @@
+## Integration Get or Uninstall endpoints
+
+To get details or uninstall your Mender integration via API, you can use the same endpoints you would use for a generic Plugin described in the [API Explorer](ref:api-welcome).
+
+# Utilizing Mender plugin
+
+The Mender server stores and controls the deployment of software updates over the air to your devices. Mender can be used to manage devices, upload and manage software releases to the server, and create deployments to roll out software to your devices.
+
+1NCE OS mender plugin supports CoAP/CoAPs to HTTPS proxying with seamless support for Authorization. The HTTPs [Mender endpoints](https://docs.mender.io/api/#device-apis) should be added in CoAP Requests Proxy-URI options. To utilize proxy functionality please use one of the following endpoints for CoAP requests:
+
+* `coap://coap.proxy.os.1nce.com:5683/mender`
+* `coaps://coaps.proxy.os.1nce.com:5684/mender`.\
+  *If CoAPs is required to be used please refer to[DTLS encryption for CoAP](/1nce-os/1nce-os-device-integrator/device-integrator-coap#dtls-encryption-for-coap).*

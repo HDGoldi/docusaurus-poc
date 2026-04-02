@@ -1,0 +1,3 @@
+## 4. Suitable Energy-Saving Modes
+
+Depending on the application, energy can be saved in different ways at the network and application level.

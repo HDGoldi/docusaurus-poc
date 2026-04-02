@@ -1,0 +1,8 @@
+## Prerequisites
+
+* B-L475E-IOT01A2 STM32 Discovery kit IoT node connected to BG96 (LTE Cat M1/Cat NB1/EGPRS modem) through X-NUCLEO-STMODA1 expansion board.
+* [1NCE SIM Card.](https://shop.1nce.com/portal/shop/)
+* STM32CubeIDE from [https://www.st.com/content/st\_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-ides/stm32cubeide.html](https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-ides/stm32cubeide.html)
+* STM32 ST-LINK utility from [https://www.st.com/en/development-tools/stsw-link004.html](https://www.st.com/en/development-tools/stsw-link004.html)
+* Upgrade the modem BG96 to the latest firmware. ([https://github.com/1NCE-GmbH/blueprint-freertos/tree/master/Utilities/Modem\_FW](https://github.com/1NCE-GmbH/blueprint-freertos/tree/master/Utilities/Modem_FW))\
+  **Note:** Download the modem FW flasher tool (QFlash) from this url:  [https://github.com/1NCE-GmbH/blueprint-freertos/tree/master/Utilities/Modem\_FW](https://github.com/1NCE-GmbH/blueprint-freertos/tree/master/Utilities/Modem_FW) this tools taked from quectel from the web site listed in the official documentation.

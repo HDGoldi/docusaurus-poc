@@ -1,0 +1,14 @@
+## Seal and Anchor Data
+
+The following simplified sequence diagram uses pseudo code to show the process of sealing and anchoring data. This example shows the usage of an application which is sharing data /measurements, test results) with any kind of data receiver. This is just an example to show the process and not necessarily the exact final architecture to use UBIRCH.
+
+![ubirch\_data\_sealing.PNG](/img/platform-services/platform-services-blockchain/4bfb4be-ubirch_data_sealing.PNG)
+
+1. The customer device creates data.
+2. The customer device hashes the data, as a unique digital fingerprint.
+3. The customer device sends the hash to the UBIRCH NANO client on a SIM, where a signed UPP is created.
+4. The customer device sends the data to the customer application for storage and further processing.
+5. The customer device sends the UPP to the UBIRCH TRUST SERVICE.
+6. The UBIRCH TRUST SERVICE verifies the origin of the UPP by checking the signature.
+7. The UBIRCH TRUST SERVICE aggregates the UPP.
+8. The UBIRCH TRUST SERVICE anchors the UPP in the public blockchain.

@@ -1,0 +1,4 @@
+## Retry Mechanism & Message Consumption
+
+When a configured SMS Forwarding endpoint is not reachable, redelivery for 24 hours in case of no HTTP 200 status response is attempted. Afterwards the messages will be dropped. If events can not be delivered to a configured forwarder, an error will written in the 1NCE Data Streamer and shown in the 1NCE Portal.\
+Messages acknowledged with HTTP 200 are consumed by the customer-side HTTP endpoint and are therefore not redelivered. Still, the event messages will still be visible in the 1NCE Portal and accessible through the 1NCE API for seven days.

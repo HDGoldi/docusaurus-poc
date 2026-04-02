@@ -1,0 +1,3 @@
+## IMEI Lock
+
+The IMEI lock will only be set for the selected SIMs. It works by saving the IMEI of the device the SIM is installed in. With the feature enabled, the 1NCE network will only accept the saved device IMEI - SIM card combination to access the network resource. Any other IMEI - SIM combination will be refused. If this feature is activated, the IMEI lock will be set during the next network attach. As a consequence, the SIM card can only be used with the current device. To change the setting for all (future) SIM cards please navigate to the tab [Configuration](https://help.1nce.com/dev-hub/docs/portal-configuration#global-imei-lock).

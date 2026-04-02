@@ -1,0 +1,35 @@
+### LwM2M Demo
+
+The LWM2M support is provided using Eclipse Wakaama library communicating with a Leshan LWM2M server
+
+* Setup the Demo runner in file (config\_files/aws\_demo\_config.h)
+
+```
+#define CONFIG_LwM2M_DEMO_ENABLED
+```
+
+* The client that has registered on the LwM2M server, can send data by doing the Send operation. More specifically, it is used by the Client to report values for Resources and Resource Instances of known LwM2M Object Instance(s) to the LwM2M Server.\
+  To use this feature in our Blueprint: remove/ comment #define LWM2M\_PASSIVE\_REPORTING and define sending object (e.g. /4/0 here). The LWM2M endpoint and the client name can be configured in config\_files/nce\_demo\_config.h as follows:
+
+```
+#define LWM2M_ENDPOINT    "lwm2m.os.1nce.com"
+#define ENABLE_DTLS
+#define LWM2M_CLIENT_MODE
+#define LWM2M_BOOTSTRAP
+#ifdef ENABLE_DTLS
+char lwm2m_psk[30];
+char lwm2m_psk_id[30];
+#endif
+#define LWM2M_SUPPORT_SENML_JSON
+#define LWM2M_LITTLE_ENDIAN
+#define LWM2M_SUPPORT_TLV
+#define LWM2M_COAP_DEFAULT_BLOCK_SIZE 1024
+#define LWM2M_VERSION_1_1
+#define LWM2M_SINGLE_SERVER_REGISTERATION
+//#define LWM2M_PASSIVE_REPORTING
+#if defined(LWM2M_PASSIVE_REPORTING)
+#define LWM2M_1NCE_LIFETIME   30000
+#else
+  #define LWM2M_OBJECT_SEND "/4/0"
+#endif
+```

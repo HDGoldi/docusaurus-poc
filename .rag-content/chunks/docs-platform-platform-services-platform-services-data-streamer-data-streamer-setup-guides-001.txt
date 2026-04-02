@@ -1,0 +1,3 @@
+## Stream Types
+
+When configuring the 1NCE Data Streamer Service, different Stream Types are selectable. The options can be configured for each Data Streamer setup. It can be selected between either Usage Data or Event Data. A combined stream of Usage and Event Data is not supported and can therefore not be selected in the management portal.

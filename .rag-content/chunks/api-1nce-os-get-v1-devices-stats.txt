@@ -1,0 +1,14 @@
+# GET /v1/devices/stats
+
+Get Devices Statistics
+
+Get general statistics related to customer devices
+
+## Parameters
+None
+
+## Responses
+- 200: OK
+- 401: 
+- 403: 
+- 500: 

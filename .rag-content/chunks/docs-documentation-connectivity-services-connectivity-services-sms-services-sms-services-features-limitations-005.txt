@@ -1,0 +1,3 @@
+## SMS Size Limitations
+
+The typical limitations of the MT-SMS size also apply to 1NCE SMS. A message can be at most 160 characters long. Longer messages must be split into multiple messages. It is possible to send concatenated MT-SMS via API requests.

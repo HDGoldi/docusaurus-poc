@@ -1,0 +1,10 @@
+### Cell-tower **Basic and "Plus"**
+
+* Cell-tower **Basic and "Plus"** location modes use different data sources. Currently, Basic mode resolves approximately **30% of locations**, while Plus mode resolves **around 90%**. However, location data can be inaccurate, especially for 3G, 4G, LTE-M, and NB-IoT devices.
+* If "Plus" resolver mode is enabled, then [Device Location credits](/1nce-os/1nce-os-device-locator/index#device-location-credits) will be consumed.
+* NB-IoT locations are not being resolved with "Plus" resolver.
+* After activating the cell tower location setting it can take a few minutes before the first location will be available.
+* Cell tower location data is resolved no more frequently than once an hour.
+* For customers in Brazil and China, current service limitations may impact our ability to accurately determine device cell-tower location and maintain a complete location history. This may result in less accurate or incomplete location information.
+* To view the location history of specific device on the map you have to switch to the Device Inspector in the 1NCE OS Portal.
+* The Cell tower events tab displays data for a single device selected in the filter.

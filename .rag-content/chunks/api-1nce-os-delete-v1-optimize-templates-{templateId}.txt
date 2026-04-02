@@ -1,0 +1,14 @@
+# DELETE /v1/optimize/templates/{templateId}
+
+Delete Optimizer Template
+
+Delete a specific Optimizer Template.
+
+## Parameters
+- templateId (path, required): Unique Id of the Optimizer Template which should be deleted.
+
+## Responses
+- 204: No Content
+- 403: 
+- 404: 
+- 500: 

@@ -1,0 +1,50 @@
+## Disclaimer
+
+I acknowledge that activating the location feature involves processing nearby Cell Tower data by 1NCE. 1NCE processing of data is done anonymously. I understand that if the use of the service by me makes it linkable to individuals, additional data related responsibilities may apply. As per [1NCE General Terms and Conditions (GTC)](https://1nce.com/wp-content/1NCE-business-terms-EN.pdf), I am solely responsible for complying with Data Protection laws and regulations and obtaining necessary consents.
+
+# Via Energy Saver
+
+If the Energy Saver with `custom_type` in the JSON-Template is used, the location from the device can be obtained over the Energy Saver output. Visit [Energy Saver](/1nce-os/1nce-os-energy-saver/energy-saver-device-locator-integration) for more details.
+
+```json
+{
+  "sense": [
+    {
+      "asset": "longitude",
+      "custom_type": "location_long",
+      "value": {
+        "byte": 0,
+        "bytelength": 8,
+        "type": "float",
+        "byteorder": "little"
+      }
+    },
+    {
+      "asset": "latitude",
+      "custom_type": "location_lat",
+      "value": {
+        "byte": 8,
+        "bytelength": 8,
+        "type": "float",
+        "byteorder": "little"
+      }
+    }
+  ]
+}
+```
+
+# Via LwM2M
+
+If LwM2M is used, the following Resource Addresses can be used to provide the device location: `/6/0/0` (latitude, Float), `/6/0/1` (longitude, Float) and `/6/0/5` (timestamp, Time). Visit our [LwM2M Service Documentation](/1nce-os/1nce-os-lwm2m/lwm2m-device-locator-integration) for more details on integrating LwM2M with the device locator.
+
+# Geofencing
+
+The Geofencing Service allows setting virtual boundaries for devices. If a device is crossing a geofence (entering or exiting, configurable), a [geofence event](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format#geofence) will be generated and sent to the customer's Cloud Integrator Webhook integration or the AWS Integration.
+
+To start using Geofencing you need to purchase "Whereabouts - Geofencing" [credits](/1nce-os/1nce-os-device-locator/index#geofence-credits) first. You can use following [Get customer settings](https://help.1nce.com/dev-hub/reference/get_v1-settings-1nceos) API endpoint to check if credits are already assigned to you.
+Once the credits are available, you can create your first geofence using the [Create Geofence](https://help.1nce.com/dev-hub/reference/post_v1-locate-geofences) API endpoint. For additional info about Geofence creation use following [page](/unresolved/doc:evice-locator-geofencing-guide).
+
+Main use cases for geofencing are:
+
+* Notify user in case if a device or an object this device is attached to exits specific area.
+* Notify user in case if a device or an object this device is attached to enters specific area.

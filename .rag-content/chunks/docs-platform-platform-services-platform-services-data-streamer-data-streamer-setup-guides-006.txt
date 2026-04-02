@@ -1,0 +1,38 @@
+## Endpoint Capacity
+
+Be aware that the REST API integration will deliver the incoming events as a list of JSON objects. Dependent on the amount of SIMs and occurred records this request can be quite large. A maximum limit of 3000 records per request is set. 1NCE customers with a large quantity of SIMs and high number of events as such must be aware that their backend system receiving data from the stream needs to have the capacity to handle large incoming requests.
+
+***
+
+# Keen.io - Integration
+
+The  platform is a managed event streaming platform used for streaming, analyzing, and embedding rich data. The 1NCE Data Streamer Service can easily be integrated with this service. The Keen.io integration supports both Event and Usage Records. The following items are required for the setup process with Keen.io:
+
+* Keen.io Account
+* New Keen.io Project
+* Project ID Key
+* Write Key of the Project
+* Collection Name
+
+In the 1NCE Connectivity Management Platform (CMP), select the desired Stream Type and Keen.io as API Type. Enter the Product ID key and the Write Key of the created Keen.io project. Further the Collection Name is needed to indicate where to stream the data to.\
+After the Data Stream integration was created, the first data will be arriving at Keen.io. The incoming data can be seen on the streams tab.
+
+***
+
+# DataDog - Integration
+
+&#x20;is a cloud monitoring service that can be used to monitor the endpoint volume of the 1NCE SIM cards using custom dashboards and trigger events. Please ensure that the region of the used DataDog account matches with the Data Streamer setup fields. To create a DataDog integration, the following is required:
+
+* DataDog Account
+* API Integration
+* API Key
+* DataDog Account Region
+
+For the configuration of the DataDog Data Streamer integration enter the API Key and the account Region in the Connectivity Management Platform configuration. After the stream was created, data will be transferred to DataDog. In the DataDog explorer, the incoming data can be monitored. The following metrics can be viewed in DataDog: endpoint.volume, endpoint.volume\_tx, endpoint.volume\_rx, and endpoint.cost. When selecting the Stream Type, please note that Event Records are currently not available in DataDog.
+
+***
+
+# AWS - Integrations
+
+The 1NCE Data Streamer Service can be integrated with both AWS S3 and AWS Kinesis. AWS Kinesis is ideal for collecting and processing large streamed data records in real-time. AWS S3 is an object-based storage solution. The Data Streamer can push CSV files into a S3 bucket allowing for easy, largescale data collection and further processing later on by related AWS Services.\
+Both AWS S3 and Kinesis are integrated using AWS IAM Trust Relationships. The setup of the AWS integration can be done through the Connectivity Management Portal (CMP).

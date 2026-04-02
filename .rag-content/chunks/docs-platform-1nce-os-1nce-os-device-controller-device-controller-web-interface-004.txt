@@ -1,0 +1,10 @@
+### Requests history
+
+In the device controller, the tables with active and archived requests history are available. Archived request history is stored for 7 days and active request history is stored for 1 day. It is possible to filter the requests by the following parameters:
+
+* Request Id
+* ICCID (Device Id)
+* Request Status
+  * Active requests table: (`Scheduled`, `In progress`)
+  * Archived requests table: (`Failed`, `Succeeded` or `Canceled`)
+* Protocol (`UDP, CoAP` or `LwM2M`)

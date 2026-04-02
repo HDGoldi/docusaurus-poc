@@ -1,0 +1,46 @@
+SIM7000G AT command interface defaults to the GSM character set.\
+Developers could understand and develop applications quickly and efficiently based on these recipes.
+
+# SIM7000G RAT Configuration
+
+Setup and configure the Quectel EC25 or EC21 for use with 1NCE SIM.
+
+* 📲 [SIM7000G RAT Configuration](/blueprints-examples/sim7000g-rat-configuration)
+
+# Network Registration:
+
+Network registration is the process by which a cellular device connects to a cellular network and obtains the necessary credentials to access the network's services. This process involves several steps, including network selection, authentication, and registration.
+
+* 📲 [SIM7000G Network Registration](/blueprints-examples/sim7000g-network-registration)
+
+# ICMP Ping
+
+Connect with the SIM7000G to a mobile network, start a data session, and issue an ICMP Ping request.
+
+* 📲 [SIM7000G ICMP Ping](/blueprints-examples/sim7000g-icmp-ping)
+
+# MO-SMS
+
+Send an SMS message from a sim7000G to the 1NCE SMS Forwarding Service.
+
+* 📲 [SIM7000G MO-SMS](/blueprints-examples/sim7000g-mo-sms)
+
+# MT-SMS
+
+Receive SMS messages with a Sim7000G
+
+* 📲 [SIM7000G MT-SMS](/blueprints-examples/sim7000g-mt-sms)
+
+# TCP Client
+
+Connect to a TCP Server and send/receive data using a SIM7000g.
+
+* 📲 [SIM7000G TCP Client Connection](/blueprints-examples/sim7000g-tcp-client-connection)
+
+# 1NCE OS UDP Protocol
+
+* 📲 [SIM7000G UDP Client Connection](/blueprints-examples/sim7000g-udp-client-connection)
+
+# 1NCE OS CoAP Protocol
+
+* 🦉 [SIM7020E 1NCE OS CoAP](/blueprints-examples/sim7020e-1nce-os-coap-1)

@@ -1,0 +1,13 @@
+## Mobile Terminated SMS
+
+For sending MT-SMS messages towards an IoT device with a 1NCE SIM, two options are available:
+
+*
+  * Submit MT-SMS messages for a single SIM card.
+  * Testing and debugging purposes.
+  * Short-term data retention policy.
+*
+  * Submit multiple MT-SMS via automation.
+  * Integration into customer applications possible.
+  * Volume management.
+  * Delivery Reports for MT-SMS.

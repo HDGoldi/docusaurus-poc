@@ -1,0 +1,28 @@
+## Plugin Installation
+
+The Mender plugin can be created via the `partners` API by using the "MENDER" partner in the [API Explorer](ref:api-welcome).\
+Only the `Organization token` from the Mender is mandatory to be added to the request body.
+
+Example:
+
+```curl
+curl --location --request POST 'https://api.1nce.com/management-api/v1/partners/MENDER/plugins' \
+--header 'Authorization: Bearer <TOKEN>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "tenantToken":   "abcdef123456"
+}'
+```
+
+If a specific user-generated Private Key and Public Key requires to be added it can be done only via API.
+
+```curl
+curl --location --request POST 'https://api.1nce.com/management-api/v1/partners/MENDER/plugins' \
+--header 'Authorization: Bearer <TOKEN>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "tenantToken":   "abcdef123456",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\n .. \n-----END PUBLIC KEY-----\n",
+    "privateKey": "-----BEGIN PRIVATE KEY-----\n .. \n-----END PRIVATE KEY-----\n"
+}'
+```

@@ -1,0 +1,3 @@
+## Pricing
+
+1NCE OS Plugins allow you to start at no cost. The Device Observability plugin by Memfault has a free trial plan for up to 10 devices. You can increase the number of devices and unlock more features and benefits by selecting the right [plan for your business](https://memfault.com/pricing/).

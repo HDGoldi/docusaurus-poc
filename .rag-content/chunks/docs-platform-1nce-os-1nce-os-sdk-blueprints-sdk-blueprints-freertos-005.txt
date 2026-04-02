@@ -1,0 +1,43 @@
+### COAP Demo without DTLS
+
+1NCE FreeRTOS BluePrint allows customers to communicate with 1NCE endpoints via CoAP and use of all features as part of the 1NCE OS.
+
+COAP POST request:\
+In this Section, the following steps are executed:
+
+* Register to the Network.
+
+* Perform a DNS Resolution.
+
+* Create a socket and connect to Server
+
+* Create Confirmable CoAP POST with Query option
+
+* Create Client Interaction and analyze the response (ACK)
+
+* Validate the response.
+
+* Setup the Demo runner in file (config\_files/aws\_demo\_config.h)
+
+```
+#define CONFIG_COAP_DEMO_ENABLED
+```
+
+* The onboarding script configuration can be found in blueprint-freertos\vendors\st\boards\stm32l475\_discovery\aws\_demos\config\_files\nce\_demo\_config.h in the root folder of the blueprint or /aws\_demos/config\_files/nce\_demo\_config.h in IDE.
+
+```
+#define PUBLISH_PAYLOAD_FORMAT                   "Welcome to 1NCE's Solution"
+#define democonfigCLIENT_ICCID "<ICCID>"
+#define COAP_ENDPOINT           "coap.os.1nce.com"
+#define configCOAP_PORT         5683
+#define democonfigCLIENT_IDENTIFIER    "t=test"
+#if ( configCOAP_PORT == 5684 )
+  #define ENABLE_DTLS
+#endif
+/* Enable send the Information to 1NCE's client support */
+#if  defined( TROUBLESHOOTING ) && ( configCOAP_PORT == 5684 )
+    #ifndef ENABLE_DTLS
+        #define ENABLE_DTLS
+    #endif
+#endif
+```

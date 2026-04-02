@@ -1,0 +1,19 @@
+### LIFECYCLE
+
+```json
+{
+  "lifecycle": {
+    "type": "DEVICE_FIRST_TIME_REGISTERED",
+    "message": "New Device successfully registered for the first time - 8988280666000002864"
+  },
+  "received": "1670830184814",
+  "id": "1-6396d868-d00f68b911b75bc761768e9b",
+  "type": "LIFECYCLE",
+  "version": "1.0.0",
+  "device": {
+    "iccid": "8988280666000002864",
+    "ip": "100.91.200.24",
+    "imsi": "901405100002864"
+  }
+}
+```

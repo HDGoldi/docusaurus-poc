@@ -1,0 +1,11 @@
+### 2️⃣ Upload Symbol File to Memfault
+
+To enable metric processing:
+
+* Go to **Memfault Dashboard > Symbol Files**
+* Upload:\
+  `build/nce_debug_memfault_demo/zephyr/zephyr.elf`
+
+📘 [Symbol File Guide](https://docs.memfault.com/docs/mcu/symbol-file-build-ids)
+
+***

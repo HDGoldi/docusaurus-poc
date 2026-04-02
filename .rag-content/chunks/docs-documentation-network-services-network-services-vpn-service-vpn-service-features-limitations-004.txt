@@ -1,0 +1,3 @@
+## No Additional Cost
+
+The 1NCE VPN Service is included for all 1NCE SIM customers and is not extra charged. The usage of the VPN does not produce more overhead with regards to the data volume usage. Transmitting data via the default Internet Breakout or the 1NCE VPN Service will result in the same usage of data volume for the SIM. All the traffic sent and received by a SIM is accounted as volume usage independent of the VPN usage.

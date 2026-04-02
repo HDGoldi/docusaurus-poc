@@ -1,0 +1,16 @@
+# PATCH /v1/optimize/templates/{templateId}
+
+Update Optimizer Template
+
+Update a specific Optimizer Template.
+
+## Parameters
+- templateId (path, required): Unique Id of the Optimizer Template for which the update should be applied.
+
+## Responses
+- 200: OK
+- 403: 
+- 404: 
+- 409: 
+- 422: 
+- 500: 

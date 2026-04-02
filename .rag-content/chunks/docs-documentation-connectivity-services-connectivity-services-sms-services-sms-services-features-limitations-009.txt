@@ -1,0 +1,3 @@
+### MO-SMS
+
+When sending a MO-SMS towards a customer-server application using the SMS Forwarding Service, the default delivery expiry time is 24 hours. The delivery retry scheme works exponentially, i.e. the period between the different delivery attempts increases with each attempt. If delivery fails in the first attempt, due to the server being down or an incorrect Forwarding Service setup, the MO-SMS is buffered. In that case, for instance the 1st retry is done after 5 minutes, the 2nd after 15 minutes, each retry counting from the submit time. In case the message cannot be delivered with the default time of 24h, the MO-SMS will expire and no more retry takes place.

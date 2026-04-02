@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-updateSimUsingPUT/",
+    "title": "PUT /v1/sims/{iccid}",
+    "breadcrumb": "API Explorer > Sim Management > Create Single SIM Configuration",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "PUT /v1/sims/{iccid}"
+  }
+}

@@ -1,0 +1,3 @@
+## Sensor Alarms / Actuators Triggered
+
+When in-built sensors or actuators are triggered, the monolithic IoT Device Application **SHALL NOT** reboot the communication module/chipset. The IoT Device Application **SHOULD** instead send an alert to the IoT Server Application.

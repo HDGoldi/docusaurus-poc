@@ -1,0 +1,7 @@
+## Security Considerations
+
+The SIM application is protected by a unique PIN. The example test kit code handles retrieving the PIN from the UBIRCH backend. Developers should consider storing this PIN securely on the device, as it is the key to cryptographic functionality provided by the SIM application.
+
+# Support & Contact
+
+Need help with the UBIRCH Blockchain? Feel free to reach out to the [Ubirch Helpdesk](https://ubirch.atlassian.net/servicedesk/customer/portal/1)

@@ -1,0 +1,5 @@
+## Deployment status
+
+In the case of an active deployment, it should be possible to track deployment statuses such as 'downloading,' 'installing,' 'success,' and other relevant [statuses](https://docs.mender.io/api/#management-api-deployments-list-all-devices-in-deployment-responses).
+
+In device deployment history it should be available to see all deployments.

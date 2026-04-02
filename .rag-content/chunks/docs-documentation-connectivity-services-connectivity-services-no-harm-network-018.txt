@@ -1,0 +1,4 @@
+## Frequency and Prioritization of Data Transmissions
+
+Whenever there is a need to transmit data over the mobile network, the IoT Service Platform or IoT Service Application **SHOULD classify** the priority of each communication. The IoT Service Platform or IoT Service Application distinguishes between high-priority data requiring instantaneous transmission, versus delay tolerant or lower-priority data which can be aggregated and sent during non-peak hours.\
+IoT Server Applications communicating with IoT Devices over 3GPPTM Mobile IoT access bearers, such as NB-IoT and LTE-M, SHALL optimize their application reporting period to never exceed 1NCE GmbH affiliate tariff daily maximum number of messages.

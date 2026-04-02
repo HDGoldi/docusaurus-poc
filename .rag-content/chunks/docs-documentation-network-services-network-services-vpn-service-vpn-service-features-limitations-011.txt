@@ -1,0 +1,3 @@
+## VPN Client Password Length
+
+Some OpenVPN client implementations are limited to a password length of smaller than 128 characters. As the credentials provided by the 1NCE VPN Service are longer than this limitation, in rare cases this will cause an AUTH\_FAILED response when connecting to the VPN server. This issue can be mitigated by upgrading to a more recent OpenVPN implementation or changing the password length parameter during compiling. In the case an update is possible, we recommend to implement the VPN Client Service on a different server system. If an update or other deployment is not possible and the issue is consistent, please contact the 1NCE support for further advice.

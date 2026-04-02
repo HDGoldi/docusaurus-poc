@@ -1,0 +1,15 @@
+# POST /v1/sims/{iccid}/sms
+
+Create SMS
+
+Create and send a MT-SMS towards a device with a 1NCE SIM.
+
+## Parameters
+- iccid (path, required): The ICCID of the SIM targeted for the MT-SMS.
+
+## Responses
+- 201: Created
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

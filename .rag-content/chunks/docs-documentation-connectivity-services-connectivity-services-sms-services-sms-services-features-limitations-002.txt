@@ -1,0 +1,11 @@
+## Mobile Originated SMS
+
+Any device with a 1NCE SIM can send MO-SMS messages. The provided destination mobile number is irrelevant for the delivery process. All MO-SMS messages can be received via two options:
+
+*
+  * Low number of messages.
+  * Testing and debugging purposes.
+  * Short-term data retention policy.
+*
+  * High number of messages.
+  * Integration into automated customer applications.

@@ -1,0 +1,9 @@
+## Event Severity
+
+The severity levels of an event indicate what impact the event has on the correct operation of the system. The possible Event Severity values are listed below:
+
+| Severity ID | Description |
+| :---------- | :---------- |
+| 0           | INFO        |
+| 1           | WARNING     |
+| 2           | CRITICAL    |

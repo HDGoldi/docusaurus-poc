@@ -1,0 +1,7 @@
+## Unsecure CoAP Communication
+
+To test unsecure communication (plain CoAP), disable the device authenticator by adding the following flag to `prj.conf`
+
+```
+CONFIG_NCE_DEVICE_AUTHENTICATOR=n
+```

@@ -1,0 +1,5 @@
+## Integration Test
+
+If an IoT device is registered with the 1NCE LwM2M Server, the individual device can be [tested](/1nce-os/1nce-os-device-integrator/device-integrator-test-endpoints#testing-the-endpoint) in the Device Integrator. If the LwM2M Integration is setup, the connection can be tested with any device. Select one of the preferred Blueprints. More information about the Blueprints can be found ind [1NCE SDK & Blueprints](/1nce-os/1nce-os-sdk-blueprints/index). The ICCID of the device used for testing and optional the Pre-shared Key (PSK) is needed for the test setup.
+
+After setting up the testbed, a message has to be sent from the IoT SIM device. Please be aware that it can take up to 30 seconds to be received.

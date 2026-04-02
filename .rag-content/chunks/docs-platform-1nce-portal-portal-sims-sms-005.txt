@@ -1,0 +1,10 @@
+## SIM Top-Up
+
+It is possible to manually book additional data and SMS volume for one or more selected SIM cards. With every Top-Up 500 MB and 250 SMS are added to the remaining volume. Top-Ups for single SIM cards can be booked in the detailed view of a card. More volume can be added by ordering multiple Top-Ups in a row. The booked volume is available as soon as the payment is received:
+
+| Payment method | Duration          |
+| :------------- | :---------------- |
+| Bank transfer  | Two to three days |
+| Credit card    | Immediately       |
+
+For automatically booked volume, please refer to our [Auto-Top-Up-feature](https://help.1nce.com/dev-hub/docs/portal-configuration#auto-top-up).

@@ -1,0 +1,3 @@
+## Freedom To Switch (Insurance)
+
+The insurance model is used when the customer requires a new physical eUICC SIM for their device. The 1NCE IoT SIM has the 1NCE profile stored as default. It works out of the box like the IoT SIM Card Business product, but It is possible to change the SIM profile in the future. These are the eUICC capable SIMs : **IoT SIM Card Industrial** and **IoT SIM Chip Industrial**.

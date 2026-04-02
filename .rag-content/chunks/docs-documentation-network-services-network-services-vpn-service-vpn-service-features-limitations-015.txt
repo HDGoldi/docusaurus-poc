@@ -1,0 +1,5 @@
+## Inactive VPN Connection Deactivation
+
+VPN connections not actively in use should be disconnected by the customer. After three months of VPN inactivity, 1NCE reserves the right to deactivate the VPN connection from the core network side. This measure helps to maintain network efficiency and security.
+
+If a VPN connection has been deactivated due to inactivity, the existing VPN configuration will no longer be operational. To resume VPN service usage, a new credential file must be downloaded from the 1NCE Customer Portal and the connection must be reconfigured.

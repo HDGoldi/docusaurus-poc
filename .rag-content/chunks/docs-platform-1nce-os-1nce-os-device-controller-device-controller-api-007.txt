@@ -1,0 +1,20 @@
+### Request Body Properties
+
+These are the properties of a request body. It specifies when and which message will be sent to the device.
+
+| Property        | Data Type | Description                                                                                  | Available for protocol. \*Optional |
+| :-------------- | :-------- | :------------------------------------------------------------------------------------------- | :--------------------------------- |
+| payload         | STRING    | Data to send to the device.                                                                  | UDP, \*CoAP                        |
+| payloadType     | ENUM      | Type of the payload. Values: `STRING`, `BASE64`.                                             | UDP, \*CoAP                        |
+| port            | INTEGER   | Communication port number of a device.                                                       | UDP, CoAP                          |
+| requestMode     | ENUM      | Values: `SEND_NOW`, `SEND_WHEN_ACTIVE` (when a device sends a message). Default: `SEND_NOW`. | \*UDP, \*CoAP, \*LwM2M             |
+| path            | STRING    | Absolute path to the resource.                                                               | CoAP                               |
+| requestType     | ENUM      | Method used to send message. Values: `GET`, `POST`, `PUT`, `DELETE`, `PATCH`.                | CoAP                               |
+| action          | ENUM      | LwM2M action name. Values: `read`, `write`, `execute`, `observe-start`, `observe-end`.       | LwM2M                              |
+| resourceAddress | STRING    | LwM2M OMA object resource address.                                                           | LwM2M                              |
+| data            | STRING    | Data to send to the device.                                                                  | \*LwM2M                            |
+| sendAttempts    | INTEGER   | The maximum number of attempts to send data to the device. Default: 1                        | \*CoAP, \*LWM2M                    |
+
+***
+
+Note that for LwM2M there's no possibility to provide a data type for the `data` property. For LwM2M we support 8 data types: TIME, STRING, BOOLEAN, INTEGER, FLOAT, UNSIGNED\_INTEGER, OBJLINK and OPAQUE. The data type depends on the addressed resource. Users should provide the data in a stringified format (base64 encoded string for OPAQUE). In case an invalid data type for a resource is used, an Admin Log will be created.

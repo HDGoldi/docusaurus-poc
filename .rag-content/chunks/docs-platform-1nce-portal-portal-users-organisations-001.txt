@@ -1,0 +1,12 @@
+## User Roles
+
+The following roles for additional user accounts are available:
+
+| Role | Description |
+| --- | --- |
+| Owner | Initial user of the organization that cannot be changed. Includes all functionalities and access to the entire organization. New users can have the Owner role assigned as well. The owner also has access to the Management API. Can administer users with Admin, User, API User, Read Only, and 3rd party access role. *To administer Owner, please submit a service request.* |
+| Admin | Includes all functionalities and access to the entire organization. Can administer users with User, API User, Read Only, and 3rd party access role. This user role has no access the Management API. |
+| User | Can manage SIM Cards in the Portal, but has no access to orders and top-ups, and cannot trigger new orders or manage users. This user role has no access to the Mangement API. |
+| API User | User role only for accessing the 1NCE API. Uses client\_secret and client\_id as username and password for the API authentication. Has the account number as prefix in the client\_id. All endpoints are available for this role including new orders. |
+| Read Only | User role designed to allow Read-only access to the Portal. This user role has no access to the Mangement API. |
+| 3rd party access | User role designed for allowing 3rd Party Users limited access to the Portal. This user role has no access to the Mangement API. |

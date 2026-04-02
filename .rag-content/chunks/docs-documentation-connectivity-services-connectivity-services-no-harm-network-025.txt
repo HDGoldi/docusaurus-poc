@@ -1,0 +1,3 @@
+## Localized Communication
+
+The IoT Device Application **SHALL** minimize any geographical network loading problems. There **SHALL** be no coordination of all IoT Devices in a given region of the IoT Service to undergo like-operations producing network loading, e.g. firmware updates.

@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-getLimitsUsingGET/",
+    "title": "GET /v1/sims/limits",
+    "breadcrumb": "API Explorer > Sim Management > Get Global Limits",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "GET /v1/sims/limits"
+  }
+}

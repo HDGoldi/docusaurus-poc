@@ -1,0 +1,19 @@
+# GET /v1/integrate/devices/actions/requests
+
+Get device action requests
+
+Get a list of device action requests in the last 7 days.
+
+## Parameters
+- page (query, optional): Number of the requested page. Use this parameter to iterate through all items on the different pages. The total amount of pages is listed in the response body (pageAmount).
+- pageSize (query, optional): Parameter for specifying the queried items per page.
+- deviceId (query, optional): The unique device ID which identifies each 1NCE SIM. Can be obtained from the Get All Devices API query. For 1NCE SIMS the device ID is equal to its iccid.
+- protocol (query, optional): Filter out data for specific protocols: <ul><li>LWM2M</li><li>UDP</li><li>COAP</li></ul>
+- status (query, optional): 
+- sort (query, optional): 
+
+## Responses
+- 200: OK
+- 400: 
+- 403: 
+- 500: 

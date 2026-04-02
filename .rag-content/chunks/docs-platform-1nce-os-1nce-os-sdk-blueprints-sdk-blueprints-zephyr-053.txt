@@ -1,0 +1,10 @@
+### 4️⃣ Create & Upload Mender Artifact
+
+📦 Firmware updates in Mender are distributed as **artifacts**.
+
+#### 🛠️ Create Artifact with `mender-artifact`
+
+1. **Install** the [Mender Artifact Tool](https://docs.mender.io/downloads#mender-artifact)
+
+2. **Run** the following command to generate a new artifact:
+   :::note

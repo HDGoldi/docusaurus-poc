@@ -1,0 +1,3 @@
+## Simulated Events and Usage Records
+
+To simulate HTTP/Webhook events, simple HTTP Post cURL requests with JSON List Body messages can be posted to the custom endpoints. Below two examples for an Event and Usage Record cURL can be found. Please adapt the endpoint URL to the server URL used for integration. Use Postman or Command Line Interface (CLI) to issue these example requests. The data should be received by the customer-side implemented Data Streamer receiver.

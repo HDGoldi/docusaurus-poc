@@ -1,0 +1,5 @@
+## 🧠 Device Controller
+
+The **Device Controller** allows your device to receive CoAP downlink messages using the 1NCE Management API. It supports sending downlink requests that your device can process in real-time.
+
+📘 More info: [1NCE DevHub – Device Controller](https://help.1nce.com/dev-hub/docs/1nce-os-device-controller)

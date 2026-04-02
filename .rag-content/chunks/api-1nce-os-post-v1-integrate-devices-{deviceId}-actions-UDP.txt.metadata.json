@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/1nce-os/api-1nce-os-post-v1-integrate-devices-{deviceId}-actions-UDP/",
+    "title": "POST /v1/integrate/devices/{deviceId}/actions/UDP",
+    "breadcrumb": "API Explorer > 1nce Os > Create Action Request On Specific UDP Device.",
+    "content_type": "api-reference",
+    "category": "1nce-os",
+    "section_heading": "POST /v1/integrate/devices/{deviceId}/actions/UDP"
+  }
+}

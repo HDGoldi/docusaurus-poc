@@ -1,0 +1,26 @@
+### Request Details
+
+By clicking on a specific request the request details will be displayed. In the request details some fields are mandatory for every request. Depending on protocol and request mode some fields could be optional:
+
+#### Mandatory fields
+
+##### Request:
+
+* Request Id
+* Status of the request
+* Protocol
+* Request Mode
+* Request Creation Time
+* Request Last Update Time
+* Request Data
+
+##### Device:
+
+* Device Id (ICCID)
+* IP Address
+
+#### Optional fields
+
+* Configured send attempts
+* Left send attempts
+* Result Data

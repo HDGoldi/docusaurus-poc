@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-topUpMultipleUsingPOST/",
+    "title": "POST /v1/sims/topup",
+    "breadcrumb": "API Explorer > Sim Management > Create Multiple Top Up",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "POST /v1/sims/topup"
+  }
+}

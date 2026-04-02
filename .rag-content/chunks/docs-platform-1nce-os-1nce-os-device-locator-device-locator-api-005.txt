@@ -1,0 +1,31 @@
+### Get Credit balance
+
+Current credit balance information for **"Plus"** solver mode is available under ADVANCED\_CELL\_TOWER\_LOCATION setting details.
+
+Get a list of customer settings:
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/settings/1nceos"
+```
+
+The response could be `200 OK` with body:
+
+```json
+{
+    "items": [
+				{
+            "state": "ENABLED",
+            "details": {
+                "credits": 100,
+                "expiryDate": "2030-04-23T10:52:18.330Z"
+            },
+            "name": "ADVANCED_CELL_TOWER_LOCATION",
+            "description": "Improves the Cell Tower Location functionality, especially for 3G, 4G and LTE-M."
+        }
+    ],
+    "page": 1,
+    "pageAmount": 1
+}
+```
+
+:warning: Note that `details` object with`credits` and `expiryDate` parameters is only available in CellTower locator **"Plus"** mode.

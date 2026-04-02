@@ -1,0 +1,14 @@
+# GET /v1/integrate/clouds/eventTypes
+
+Get Integration Event Types
+
+Get Available Integration Event Types.
+
+## Parameters
+None
+
+## Responses
+- 200: OK
+- 401: 
+- 403: 
+- 500: 

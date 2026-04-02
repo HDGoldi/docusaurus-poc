@@ -1,0 +1,30 @@
+### Specifying Message Protocol
+
+The API can return messages that were sent by the device using a specific protocol (either UDP, CoAP, or LwM2M). To get only CoAP messages sent by the same device `123456789012345678` (without specific time range):
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/inspect/devices/123456789012345678/history?protocol=CoAP"
+```
+
+We would receive only messages that were sent with CoAP protocol in the last 7 days:
+
+```json
+{
+  "items": [
+    {
+      "time": "2022-02-21T13:00:08.066",
+      "payload": "dGVzdGRhdGE=",
+      "iccid": "123456789012345678",
+      "deviceId": "123456789012345678",
+      "protocol": "COAP"
+    },
+    {
+      "time": "2022-02-21T13:00:08.056",
+      "payload": "dGVzdGRhdGE=",
+      "iccid": "123456789012345678",
+      "deviceId": "123456789012345678",
+      "protocol": "COAP"
+    }
+  ]
+}
+```

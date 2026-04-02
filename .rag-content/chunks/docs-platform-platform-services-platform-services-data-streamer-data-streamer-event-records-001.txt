@@ -1,0 +1,40 @@
+## Event Types
+
+The different types of events are indicated by the Event Type nested object. This object contains an ID and a short description of the event. The following table lists all possible Event Types that can be received via the Data Streamer.
+
+| Event ID | Description                       |
+| :------- | :-------------------------------- |
+| 0        | Generic                           |
+| 1        | Update location                   |
+| 2        | Update GPRS location              |
+| 3        | Create PDP Context                |
+| 4        | Update PDP Context                |
+| 5        | Delete PDP Context                |
+| 6        | User authentication failed        |
+| 7        | Application authentication failed |
+| 8        | SIM activation                    |
+| 9        | SIM suspension                    |
+| 10       | SIM deletion                      |
+| 11       | Endpoint blocked                  |
+| 12       | Organization blocked              |
+| 13       | Support Access                    |
+| 14       | Multi-factor Authentication       |
+| 15       | Purge Location                    |
+| 16       | Purge GPRS location               |
+| 17       | Self-Signup                       |
+| 18       | Data Quota Threshold reached      |
+| 19       | Data Quota used up                |
+| 20       | SMS Quota Threshold reached       |
+| 21       | SMS Quota used up                 |
+| 30       | OpenVPN authentication            |
+| 50       | SIM Released                      |
+| 51       | SIM Assigned                      |
+| 52       | Data Quota Enabled                |
+| 53       | Data Quota Disabled               |
+| 54       | SMS Quota Enabled                 |
+| 55       | SMS Quota Disabled                |
+| 56       | Data Quota Assigned               |
+| 57       | Data Quota Deleted                |
+| 58       | SMS Quota Assigned                |
+| 59       | SMS Quota Deleted                 |
+| 60       | Data Quota expired                |

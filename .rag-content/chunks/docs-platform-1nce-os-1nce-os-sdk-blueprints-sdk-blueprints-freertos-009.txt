@@ -1,0 +1,27 @@
+## Troubleshooting Demo:
+
+> This feature is limited to Users and Accounts who have already accepted our 1NCEOS Addendum to the 1NCE T\&Cs. It is a one-time action per 1NCE Customer Account. Please log into the 1NCE Customer Portal as Owner or Admin, navigate to the 1NCEOS, and accept the Terms. If you don't see anything to accept and get directly to the Dashboard of the 1NCEOS, you are ready to go!
+>
+> N.B: The SMS and Data Consumed for the Troubleshooting are counted against the Customers own Volume of the SIM Card.
+
+This initial version's main target is to allow customers to connect their Things and automate the network debugging faster and more reliably. This will also reduce the workload on our Customer facing support teams and will also allow us to focus on further common issues.
+
+* Go to config\_files/nce\_demo\_config.h --> enable the flag TROUBLESHOOTING (Troubleshooting Example with/without DTLS in primary Flow and SMS as an alternative)
+
+```
+#define COAP_ENDPOINT           "coap.os.1nce.com"
+#define configCOAP_PORT         5684
+#define democonfigCLIENT_IDENTIFIER    "t=test"
+#if ( configCOAP_PORT == 5684 )
+  #define ENABLE_DTLS
+#endif
+/* Enable send the Information to 1NCE's client support */
+#define TROUBLESHOOTING
+#if  defined( TROUBLESHOOTING ) && ( configCOAP_PORT == 5684 )
+    #ifndef ENABLE_DTLS
+        #define ENABLE_DTLS
+    #endif
+#endif
+```
+
+* run the demo : the demo will send the information to the coap endpoint as a first step if No ACK comes then an SMS to 1NCE portal with the required pieces of information.

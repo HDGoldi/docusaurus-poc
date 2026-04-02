@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/support-management/api-support-management-getServiceRequestsUsingGET/",
+    "title": "GET /v1/support",
+    "breadcrumb": "API Explorer > Support Management > Get Service Requests",
+    "content_type": "api-reference",
+    "category": "support-management",
+    "section_heading": "GET /v1/support"
+  }
+}

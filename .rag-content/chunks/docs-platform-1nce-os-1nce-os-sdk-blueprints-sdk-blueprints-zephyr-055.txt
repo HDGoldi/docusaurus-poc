@@ -1,0 +1,21 @@
+## 5️⃣ Deployment Creation
+
+Once your artifact is uploaded to the Mender **Releases** section, you're ready to deploy it to your device(s).
+
+1. Navigate to the **Deployments** tab in the Mender dashboard.
+2. Click **Create Deployment** and follow the wizard:
+   * Select the **target device** or **device group**.
+   * Choose the **artifact** you previously uploaded.
+
+***
+
+#### 🚦 Deployment Status Flow
+
+After creation, the deployment will appear in the list with an initial status of `pending`.\
+As your device contacts the Mender server, the status will progress automatically:
+
+```
+pending → downloading → rebooting → installing → success ✅ / failure ❌
+```
+
+***

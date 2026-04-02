@@ -1,0 +1,3 @@
+## Adding devices in Mender
+
+By proxying the POST request to [Mender auth endpoint](https://docs.mender.io/api/#device-api-device-authentication) device would show up in mender as "Pending". The device needs to be accepted by selecting "Accept device".

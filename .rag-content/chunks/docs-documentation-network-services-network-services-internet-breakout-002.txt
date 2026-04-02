@@ -1,0 +1,5 @@
+### Example Configurations
+
+One customer SIM device is located and connected in Germany. Based on the given location, the automatic Internet Breakout determines that the Europe (Frankfurt) is the ideal location to breakout the public internet traffic. The customer can expect their public internet traffic to exit from one of the breakout IPs from [Europe (Frankfurt)](https://help.1nce.com/dev-hub/docs/network-services-internet-breakout).
+
+A second SIM device is located and connected in New York USA. As the SIM devices is closest to the US East breakout, the automatic system determines that US East (N. Virginia) should be used to exit the public internet traffic of the SIM. The traffic from this specific SIM will exit through the [US East (N. Virginia)](https://help.1nce.com/dev-hub/docs/network-services-internet-breakout) Internet Breakout IPs.

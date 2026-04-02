@@ -1,0 +1,27 @@
+## MT-SMS DLR cURL
+
+1. Customize the cURL request shown below with the **Server Domain**, the specific **Endpoint** and optionally the **Port Number**.
+2. Optionally, customize the JSON Body parameters.
+3. Import the cURL command into Postman or copy the command to a CLI with cURL installed.
+4. Execute the customized HTTP Patch request to simulate a Delivery Report for a MT-SMS being delivered to the specified Endpoint by the 1NCE SMS Forwarding Service.
+
+```curl MT-SMS DLR HTTP Patch cURL
+curl --location --request PATCH 'https://<server-domain>:<port>/<endpoint>/' \
+--header 'Content-Type: application/json' \
+--data-raw ' {
+	"id": 2819195,
+	"final_date": "2020-06-09 15:06:38",
+	"submit_date": "2020-06-09 15:06:34",
+	"organisation": {
+		"id": 1234
+	},
+	"endpoint": {
+		"name": "1234567890123456",
+		"id": 1234567
+	},
+	"status": {
+		"id": 4,
+		"status": "DELIVERED"
+	}
+}'
+```

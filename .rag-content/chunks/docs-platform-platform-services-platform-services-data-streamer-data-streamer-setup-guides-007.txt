@@ -1,0 +1,9 @@
+## S3 - Integration
+
+The S3 integration will provide the Event or Usage Records through an S3 bucket where they are uploaded as CSV files. The CSV filenames for events are `events_YYYYMMDD_HHmmss.csv` and `cdr_YYYYMMDD_HHmmss.csv` for usage records. Each file contains a collection records over a small period. A sample for an event record file type is provided below.
+
+```text cdr_20210512_070123.csv
+"id","event_start_timestamp","event_stop_timestamp","organisation_id","organisation_name","endpoint_id","sim_id","iccid","imsi","operator_id","operator_name","country_id","operator_country_name","traffic_type_id","traffic_type_description","volume","volume_tx","volume_rx","cost","currency_id","currency_code","currency_symbol","ratezone_tariff_id","ratezone_tariff_name","ratezone_id","ratezone_name","endpoint_name","endpoint_ip_address","endpoint_tags","endpoint_imei","msisdn_msisdn","sim_production_date","operator_mncs","country_mcc"
+"4427264xxx","2021-05-11 11:17:25","2021-05-11 11:19:51","19xxx","8100xxxx","9673xxx","1500xxx","89882806660010xxxxx","9014051010xxxxx","4","EPlus","74","Germany","5","Data","0.000741","0.000395","0.000346","0.0007410000","1","EUR","€","442","1NCE Production 01 - 1Mbps","21xx","Rate Zone 1 (DE)","89882806660010xxxxx","x.x.x.x",,"35933907591xxxxx","8822851010xxxxx","2019-01-21 08:45:01","0x","2xx"
+"4427320xxx","2021-05-11 11:17:29","2021-05-11 11:24:56","19xxx","8100xxxx","9673xxx","1500xxx","89882806660010xxxxx","9014051010xxxxx","4","EPlus","74","Germany","5","Data","0.003210","0.001803","0.001407","0.0032100000","1","EUR","€","442","1NCE Production 01 - 1Mbps","21xx","Rate Zone 1 (DE)","89882806660010xxxxx","x.x.x.x",,"35933907591xxxxx","8822851010xxxxx","2019-01-21 08:45:01","0x","2xx"
+```

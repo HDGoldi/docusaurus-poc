@@ -1,0 +1,13 @@
+## 5. Always Diagnose Before Restarting
+
+Always identify errors before restarting devices.
+
+***
+
+This IoT Solution Guideline summarizes the "No Harm to Network" requirements from 1NCE GmbH originating in , use-cases or features not covered yet within GSMA TS.34, as well as lessons learned gained from IoT commercial deployments. The requirements including the words **"SHALL"** or **"SHALL NOT"** in their descriptions are mandatory and all guidelines with **"SHOULD"** or **"SHOULD NOT"** are recommended.
+
+These guidelines are divided into three sections, reflecting how IoT Service Providers are required to implement "No Harm to Network" considerations and best-practice design in the different IoT Solution Layers (refer to Figure 1).
+
+***
+
+# Definitions

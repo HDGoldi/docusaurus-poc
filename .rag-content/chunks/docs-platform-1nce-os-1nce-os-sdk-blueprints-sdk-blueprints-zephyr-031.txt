@@ -1,0 +1,36 @@
+### 🔁 Sending a Request
+
+Use the following `curl` command to send a CoAP request to your device:
+
+```
+curl -X 'POST' 'https://api.1nce.com/management-api/v1/integrate/devices/<ICCID>/actions/COAP' \
+-H 'accept: application/json' \
+-H 'Authorization: Bearer <your Access Token >' \
+-H 'Content-Type: application/json' \
+-d '{
+  "payload": "Data to send to the device",
+  "payloadType": "STRING",
+  "port": <NCE_RECV_PORT>,
+  "path": "/example?param1=query_example1",
+  "requestType": "POST",
+  "requestMode": "SEND_NOW"
+}'
+```
+
+Replace:
+
+* `<ICCID>` with your SIM’s ICCID
+* `<your Access Token>` with your [OAuth token](https://help.1nce.com/dev-hub/reference/postaccesstokenpost)
+
+***
+
+#### 📩 Request Parameters
+
+| Parameter     | Description                                   | Example                   |
+| ------------- | --------------------------------------------- | ------------------------- |
+| `payload`     | Data to send to the device                    | `"enable_sensor"`         |
+| `payloadType` | Type of payload (`STRING`, `HEX`, etc.)       | `"STRING"`                |
+| `port`        | Device port to receive the message            | `3000`                    |
+| `path`        | Request path and optional query               | `"/example?param1=query"` |
+| `requestType` | CoAP method to use (`POST`, `GET`, etc.)      | `"POST"`                  |
+| `requestMode` | Request mode (`SEND_NOW`, `SEND_WHEN_ACTIVE`) | `"SEND_NOW"`              |

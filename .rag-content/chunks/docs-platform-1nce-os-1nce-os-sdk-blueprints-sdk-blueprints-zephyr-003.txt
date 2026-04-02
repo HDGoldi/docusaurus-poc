@@ -1,0 +1,9 @@
+## 🚀 Getting Started
+
+This guide walks you through:
+
+* Setting up the **1NCE IoT C SDK**
+* Getting the source code
+* Building and flashing the blueprint demo
+
+***

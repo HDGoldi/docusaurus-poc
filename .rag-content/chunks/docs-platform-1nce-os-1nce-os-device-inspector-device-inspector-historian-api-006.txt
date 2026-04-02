@@ -1,0 +1,30 @@
+### Specifying Timezone
+
+For ease of dealing with time zones, we can specify them in the query. To query in scope of +2 time zone:
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/inspect/devices/123456789012345678/history?startDateTime=2022-02-21T16:20:00.000+02:00&endDateTime=2022-02-21T16:30:00.000+02:00"
+```
+
+We would get the same time zone in the response as well:
+
+```json
+{
+	"items": [
+		{
+			"time": "2022-02-21T16:25:57.740",
+			"payload": "{\"battery\":98,\"saturation\":0.57,\"temperature\":11.2}",
+			"iccid": "123456789012345678",
+			"deviceId": "123456789012345678",
+			"protocol": "UDP"
+		},
+		{
+			"time": "2022-02-21T16:21:49.651",
+			"payload": "{\"battery\":98,\"saturation\":0.57,\"temperature\":11.0}",
+			"iccid": "123456789012345678",
+			"deviceId": "123456789012345678",
+			"protocol": "UDP"
+		}
+	]
+}
+```

@@ -1,0 +1,4 @@
+### MT-SMS
+
+Using the 1NCE API, if the self-set limit for MT-SMS is reached, **Traffic limit of X SMS per month exceeded** is returned as error.\
+In the 1NCE Portal **Set monthly limit of SMS exceeded** is shown, when the MT-SMS limit was reached and a new SMS is issued.

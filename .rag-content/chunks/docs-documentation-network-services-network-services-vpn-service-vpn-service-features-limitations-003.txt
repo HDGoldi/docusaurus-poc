@@ -1,0 +1,3 @@
+## Enhanced Security
+
+The 1NCE VPN Service offers overall improved connection security. All SIM-related traffic exchanged between the 1NCE Core network and the customer application server can be sent over the VPN connection by using the assigned SIM or IP ranges respectively. This private virtual network offers direct access to the SIM with no other public traffic to worry about and filter. All tunnel traffic is handled over one port and connection, which is easier to integrate and maintain.

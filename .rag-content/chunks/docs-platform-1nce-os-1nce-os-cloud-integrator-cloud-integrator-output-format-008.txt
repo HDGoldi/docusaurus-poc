@@ -1,0 +1,116 @@
+### TEST\_MESSAGE
+
+This event can be triggered by [Test AWS Integration](ref:post_v1-integrate-clouds-aws-integrationid-test) or [Test Webhook Integration](ref:post_v1-integrate-clouds-webhooks-integrationid-test) endpoints. This event will be triggered also if an integration with status `INTEGRATION_FAILED` will be restarted.
+
+```json
+{
+  "id": "1-63d889d3-d987cbb90f8f10c76278d8dd",
+  "type": "TEST_MESSAGE",
+  "received": "1675135445411",
+  "integration": {
+    "id": "X8qB3FhJQyffUH0GqL3gC",
+    "name": "integration-name"
+   },
+  "version": "1.0.0"
+}
+```
+
+***
+
+# Message Properties
+
+These are the properties of a message. It contains parameters that help to identify the message and the device that has sent the message.
+
+| Property    | Data Type   | Description                                                                                          | Present in event types. \*Optional                     |
+| :---------- | :---------- | :--------------------------------------------------------------------------------------------------- | :---------------------------------------------------- |
+| type        | ENUM        | Source event type.  Values: `LIFECYCLE`, `TELEMETRY_DATA`, `ERROR`, `GEOFENCE`, `TEST_MESSAGE` | All                                                   |
+| received    | STRING      | UNIX Timestamp. Received message date and time in milliseconds since midnight, January 1, 1970 UTC.  | All                                                   |
+| source      | ENUM        | Values: `UDP`, `COAP`,  `LWM2M`                                                                      | TELEMETRY\_DATA                                        |
+| version     | STRING      | Version number of our Payload-Format. With new version, format can change.                           | All                                                   |
+| id          | STRING      | Unique ID for each message sent.                                                                     | All                                                   |
+| device      | JSON Object | Object describing device from which the message was received.                                        | TELEMETRY\_DATA, GEOFENCE, LIFECYCLE, \*ERROR, LOCATION |
+| payload     | JSON Object | Object describing message payload.                                                                   | TELEMETRY\_DATA                                        |
+| lifecycle   | JSON Object | Lifecycle object.                                                                                    | LIFECYCLE                                             |
+| error       | JSON Object | Object describing error.                                                                             | ERROR                                                 |
+| geofence    | JSON Object | Object describing geofence event.                                                                    | GEOFENCE                                              |
+| integration | JSON Object | Object describing integration.                                                                       | TEST\_MESSAGE                                          |
+| location    | JSON Object | Object describing location.                                                                          | LOCATION                                              |
+
+***
+
+# Payload Properties
+
+These are the properties of a message payload object. It contains message payload properties.
+
+| Property | Data Type | Description                                                                                                                |
+| :------- | :-------- | :------------------------------------------------------------------------------------------------------------------------- |
+| type     | ENUM      | Values: `JSON`, `STRING`                                                                                                   |
+| encoding | ENUM      | Present only for UDP and COAP raw messages that hasn't been traversed through translation service. Values: `base64`. |
+| value    | see type  | Payload value.                                                                                                             |
+| topic    | STRING    | Present only for COAP messages.                                                                                            |
+
+***
+
+# Device Properties
+
+These are the properties of a message device object. It contains parameters that help to identify the device that has sent the message.
+
+| Property | Data Type | Description                        |
+| :------- | :-------- | :--------------------------------- |
+| iccid    | STRING    | Device iccid.                      |
+| imsi     | STRING    | Device imsi1.                      |
+| ip       | STRING    | Device ip address in 1nce network. |
+
+***
+
+# Lifecycle properties
+
+These are the properties for lifecycle events and it is present only for lifecycle messages.
+
+| Property | Data Type | Description                            |
+| :------- | :-------- | :------------------------------------- |
+| type     | ENUM      | Values: `DEVICE_FIRST_TIME_REGISTERED` |
+| message  | STRING    | Description of lifecycle event         |
+
+# Error properties
+
+These are the properties of a message error object. It is present only for error messages.
+
+| Property      | Data Type | Description                                            |
+| :------------ | :-------- | :----------------------------------------------------- |
+| id            | STRING    | Error id                                               |
+| type          | ENUM      | Values: `DEVICE`, `GENERAL`, `INTEGRATION`, `LOCATION` |
+| message       | STRING    | Short error message                                    |
+| description   | STRING    | Detailed error description                             |
+| payloadExists | BOOLEAN   | Does Error contains payload                            |
+
+# Geofence properties
+
+These are the properties of a message geofence object. It is present only for geofence messages.
+
+| Property    | Data Type    | Description                                                                              |
+| :---------- | :----------- | :--------------------------------------------------------------------------------------- |
+| id          | STRING       | Geofence id                                                                              |
+| type        | ENUM         | Values: `EXIT`, `ENTER`                                                                  |
+| name        | STRING       | Name of geofence                                                                         |
+| coordinates | STRING ARRAY | Coordinate of location which triggered the geofence event  \[ longitude, latitude ] |
+| source      | ENUM         | Values: `GPS`, `CellTower`                                                               |
+
+# Integration properties
+
+These are the properties of a message integration object.
+
+| Property | Data Type | Description         |
+| :------- | :-------- | :------------------ |
+| id       | STRING    | Integration id      |
+| name     | STRING    | Name of integration |
+
+# Location properties
+
+These are the properties of a message location object. It is present only for location messages.
+
+| Property    | Data Type    | Description                                                                              |
+| :---------- | :----------- | :--------------------------------------------------------------------------------------- |
+| source      | ENUM         | Values: `GPS`, `CellTower`                                                               |
+| coordinates | STRING ARRAY | Coordinate of location which triggered the location event  \[ longitude, latitude ] |
+| metadata    | OBJECT       | **Optional** JSON field with position metadata like vertical accuracy, country, etc      |

@@ -1,0 +1,9 @@
+## Data Aggregation, Compression and Transcoding
+
+The IoT Server Application **SHALL** minimize the number of parallel mobile network connections and overall frequency of connections to IoT Devices over the mobile network. Data is aggregated by the IoT Server Application into an application report before being compressed and sent over the mobile network. Data transcoding and compression techniques are used, as per the IoT Service’s intended Quality of Service, to reduce connection attempts and data volumes.\
+IoT Server Application using 3GPPTM Mobile IoT access bearers, such as NB-IoT and LTE-M, SHALL optimize their payload sizes to comply with 1NCE GmbH affiliate monthly volume limits.\
+IoT Service Provers SHALL NOT initialize significant numbers of IoT Devices (e.g. >100 units) communicating over 3GPPTM NB-IoT within one hour at the same location.
+
+***
+
+# IoT Device Guidelines

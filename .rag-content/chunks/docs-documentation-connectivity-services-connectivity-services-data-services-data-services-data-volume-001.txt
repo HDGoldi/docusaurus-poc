@@ -1,0 +1,16 @@
+## Reaching and Resetting the Limit
+
+If a SIM runs into this limitation, an Event Record **PDP Context Request rejected, because endpoint is currently blocked due to exceeded traffic limit.** will be generated when attempting to create a new data session. Further a customer notification will be generated. To reenable a SIM, please either wait until the volume is reset at the beginning of the month or manually increase the limit via the 1NCE Portal or 1NCE API.
+
+> ❗️ Error Warning Exceeded Limit
+>
+> When the limit is reached new PDP data sessions will be rejected:\
+> **PDP Context Request rejected, because endpoint is currently blocked due to exceeded traffic limit.**
+>
+> Please note that some devices might retry indefinitely to reconnect in such a case. 1NCE strongly advices to use a back-off approach in this rejection case to not flood the network with PDP session requests.
+
+***
+
+# Example Scenarios
+
+To provide a better understanding of the estimation of data volume usage, a few examples with commonly used network protocols are listed below.

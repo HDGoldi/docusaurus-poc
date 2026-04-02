@@ -1,0 +1,3 @@
+## Device to Device Communication
+
+The peer to peer communication between two or multiple SIMs is not possible. This rules is the same for SIMs of one customer or between different customers. There is no direct routing of IP traffic between SIMs possible. To exchange specific data packages between SIM devices, an application server is needed. This application server is ideally connected via the 1NCE VPN Service. Thus, it can receive data messages from one SIM device via the VPN client IP and redirect them to another SIM device in the same customer account by its static IP address.

@@ -1,0 +1,22 @@
+### ERROR
+
+```json
+{
+  "id": "1-87654321-4fff5fb82c196babcd00008",
+  "type": "ERROR",
+  "received": "1649931594333",
+  "device": {
+    "iccid": "1234567890123456789",
+    "imsi": "987654321098765",
+    "ip": "127.0.0.1"
+  },
+  "error": {
+    "id": "3dsd627637267sahdgyasd",
+    "type": "DEVICE",
+    "message": "Translator[UserPayloadError]",
+    "description": "Asset path:Temperature, Error: can't extract [200:201] from 2 bytes",
+    "payloadExists": true
+  },
+  "version": "1.0.0"
+}
+```

@@ -1,0 +1,3 @@
+## Limitations
+
+The Device Authenticator works only with enabled Breakout regions, which currently include Europe (Frankfurt) and US East (N. Virginia). For more details, see [Internet Breakout](/network-services/network-services-internet-breakout).
