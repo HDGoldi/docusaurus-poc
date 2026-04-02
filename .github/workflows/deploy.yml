@@ -189,7 +189,8 @@ jobs:
               --vector-bucket-name "$BUCKET_NAME" \
               --index-name "$INDEX_NAME" \
               --dimension 1024 \
-              --distance-metric cosine
+              --distance-metric cosine \
+              --data-type float32
             echo "Waiting for index to become active…"
             sleep 10
           fi
