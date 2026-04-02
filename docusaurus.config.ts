@@ -7,7 +7,7 @@ const isGitHubPages = process.env.DEPLOY_TARGET === 'gh-pages';
 const config: Config = {
   title: '1NCE Developer Hub',
   tagline: 'Documentation for 1NCE IoT connectivity services',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
 
   customFields: {
     chatEndpoint: process.env.CHAT_ENDPOINT || '',
@@ -170,9 +170,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   themes: ['docusaurus-theme-openapi-docs'],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/1nce-social-card.png',
     colorMode: {
-      respectPrefersColorScheme: true,
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: '1NCE Developer Hub',
@@ -219,16 +221,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           href: 'https://1nce.com',
           label: '1NCE Home',
           position: 'right',
+          target: '_blank',
         },
         {
-          href: 'https://shop.1nce.com',
+          href: 'https://portal.1nce.com/portal/shop/cart',
           label: '1NCE Shop',
           position: 'right',
+          target: '_blank',
         },
         {
-          href: 'https://portal.1nce.com',
+          href: 'https://portal.1nce.com/portal/customer/login',
           label: '1NCE Portal',
           position: 'right',
+          target: '_blank',
         },
       ],
     },
