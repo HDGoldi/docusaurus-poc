@@ -118,10 +118,11 @@ Plans:
   2. The navbar shows exactly 2 doc tabs (Documentation and API Explorer) plus 3 external links — no separate Platform, Blueprints, or Terms tabs
   3. Visiting any old URL under `/platform/*`, `/blueprints/*`, or `/terms/*` redirects the user to the correct new location under `/docs/*`
   4. The API Explorer tab and all 125 API endpoint pages continue to function with working "Try It" panels after the plugin consolidation
-**Plans**: 1 plan
+**Plans**: 2 plans
 
 Plans:
-- [ ] 09-01: TBD
+- [ ] 09-01-PLAN.md — Content moves and sidebar ordering metadata
+- [ ] 09-02-PLAN.md — Plugin cleanup, navbar consolidation, and client-side redirects
 
 ## Progress
 
@@ -137,4 +138,4 @@ Plans:
 | 6. Chat UI | v1.1 | 1/1 | Complete | 2026-03-23 |
 | 7. CI/CD Integration | v1.1 | 1/1 | Complete | 2026-03-23 |
 | 8. Branding & Visual Alignment | v1.2 | 0/? | Not started | - |
-| 9. Sidebar Consolidation | v1.2 | 0/? | Not started | - |
+| 9. Sidebar Consolidation | v1.2 | 0/2 | Not started | - |
