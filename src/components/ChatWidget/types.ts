@@ -41,12 +41,31 @@ export const STARTER_QUESTIONS: StarterQuestion[] = [
 
 // Chat endpoint configuration
 // The Lambda Function URL is dynamically assigned by AWS.
-// Use customFields in docusaurus.config.ts or an env var at build time.
-// Fallback for local dev: empty string triggers error state.
-export const CHAT_ENDPOINT =
-  (typeof window !== 'undefined' && (window as any).__CHAT_ENDPOINT__) ||
-  process.env.CHAT_ENDPOINT ||
-  '';
+// Resolution order:
+//   1. window.__CHAT_ENDPOINT__ — manual override for local dev / testing
+//   2. process.env.CHAT_ENDPOINT — build-time env var (webpack DefinePlugin)
+//   3. Docusaurus customFields.chatEndpoint — set in docusaurus.config.ts
+//   4. '' — fallback (triggers error state in the widget)
+function resolveEndpoint(): string {
+  if (typeof window !== 'undefined' && (window as any).__CHAT_ENDPOINT__) {
+    return (window as any).__CHAT_ENDPOINT__ as string;
+  }
+  if (process.env.CHAT_ENDPOINT) {
+    return process.env.CHAT_ENDPOINT;
+  }
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports, global-require
+    const siteConfig = require('@generated/docusaurus.config').default;
+    if (siteConfig?.customFields?.chatEndpoint) {
+      return siteConfig.customFields.chatEndpoint as string;
+    }
+  } catch {
+    // Outside Docusaurus context (e.g. unit tests) — fall through
+  }
+  return '';
+}
+
+export const CHAT_ENDPOINT = resolveEndpoint();
 
 // Copywriting constants (per UI-SPEC copywriting contract)
 export const COPY = {

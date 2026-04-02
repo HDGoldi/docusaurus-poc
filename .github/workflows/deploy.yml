@@ -74,15 +74,45 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: build-output
-          path: build/
+      - uses: actions/checkout@v4
 
       - uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           aws-region: us-east-1
+
+      - name: Deploy RAG stack
+        run: |
+          aws cloudformation deploy \
+            --template-file infra/rag-stack.yaml \
+            --stack-name 1nce-devhub-rag \
+            --parameter-overrides \
+              LambdaCodeBucketName=${{ vars.LAMBDA_CODE_BUCKET_NAME }} \
+              LambdaCodeKey=${{ vars.LAMBDA_CODE_KEY }} \
+            --capabilities CAPABILITY_NAMED_IAM \
+            --no-fail-on-empty-changeset
+
+      - name: Get ChatApiDistributionDomain
+        id: rag-outputs
+        run: |
+          DOMAIN=$(aws cloudformation describe-stacks \
+            --stack-name 1nce-devhub-rag \
+            --query "Stacks[0].Outputs[?OutputKey=='ChatApiDistributionDomain'].OutputValue" \
+            --output text)
+          echo "chat_domain=$DOMAIN" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci --ignore-scripts
+      - run: npm rebuild
+
+      - name: Build with CHAT_ENDPOINT
+        run: npm run build
+        env:
+          CHAT_ENDPOINT: https://${{ steps.rag-outputs.outputs.chat_domain }}
 
       - name: Sync hashed assets with long cache
         run: aws s3 sync build/assets/ s3://1nce-developer-hub-prod/assets/ --cache-control "public, max-age=31536000, immutable"
@@ -92,10 +122,6 @@ jobs:
 
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id ${{ vars.CF_DISTRIBUTION_ID }} --paths "/*"
-
-      - uses: actions/checkout@v4
-        with:
-          sparse-checkout: scripts
 
       - name: Run smoke test
         run: bash scripts/smoke-test.sh https://${{ vars.PROD_CF_DISTRIBUTION_DOMAIN }}
