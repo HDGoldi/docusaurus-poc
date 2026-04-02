@@ -1,4 +1,5 @@
 {
-  "label": "1NCE OS Device Controller",
-  "position": 3
+  "label": "Device Controller",
+  "position": 3,
+  "collapsed": true
 }

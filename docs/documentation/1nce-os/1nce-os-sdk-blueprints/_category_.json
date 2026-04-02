@@ -1,4 +1,5 @@
 {
-  "label": "1NCE OS SDK Blueprints",
-  "position": 12
+  "label": "SDK Blueprints",
+  "position": 12,
+  "collapsed": true
 }

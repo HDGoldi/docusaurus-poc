@@ -376,7 +376,6 @@ const sidebars: SidebarsConfig = {
         'sara-r410m',
         'sim7000g',
         'simcom-7020g-simcom800l',
-        'terms-abbreviations',
       ],
     },
     {

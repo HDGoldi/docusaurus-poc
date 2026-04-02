@@ -151,9 +151,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             existingPath.replace('/docs/blueprints-examples/', '/blueprints/blueprints-examples/'),
           ];
         }
-        // Terms: /terms/terms-abbreviations was moved to /docs/terms-abbreviations
-        if (existingPath.includes('/docs/terms-abbreviations')) {
-          return ['/terms/terms-abbreviations'];
+        // Terms: /terms/terms-abbreviations and /docs/terms-abbreviations redirect to /terms-abbreviations
+        if (existingPath.includes('/terms-abbreviations')) {
+          return ['/terms/terms-abbreviations', '/docs/terms-abbreviations'];
         }
         return undefined;
       },
@@ -179,6 +179,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   themeConfig: {
     image: 'img/1nce-social-card.png',
+    docs: {
+      sidebar: {
+        autoCollapseCategories: true,
+      },
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
@@ -191,19 +196,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         src: 'img/1nce-dev-hub-logo.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'docsSidebar',
-          label: 'Documentation',
-          position: 'left',
-        },
-        {
-          type: 'doc',
-          docId: 'index',
-          label: 'API Explorer',
-          position: 'left',
-          docsPluginId: 'api',
-        },
         {
           href: 'https://1nce.com',
           label: '1NCE Home',

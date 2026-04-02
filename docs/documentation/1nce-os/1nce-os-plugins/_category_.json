@@ -1,4 +1,5 @@
 {
-  "label": "1NCE OS Plugins",
-  "position": 5
+  "label": "Plugins",
+  "position": 5,
+  "collapsed": true
 }

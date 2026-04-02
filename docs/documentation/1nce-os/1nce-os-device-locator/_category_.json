@@ -1,4 +1,5 @@
 {
-  "label": "1NCE OS Device Locator",
-  "position": 9
+  "label": "Device Locator",
+  "position": 9,
+  "collapsed": true
 }

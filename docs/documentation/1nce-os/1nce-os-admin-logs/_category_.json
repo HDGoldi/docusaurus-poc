@@ -1,4 +1,5 @@
 {
-  "label": "1NCE OS Admin Logs",
-  "position": 11
+  "label": "Admin Logs",
+  "position": 11,
+  "collapsed": true
 }

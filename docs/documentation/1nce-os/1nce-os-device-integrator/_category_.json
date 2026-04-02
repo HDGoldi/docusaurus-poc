@@ -1,4 +1,5 @@
 {
-  "label": "1NCE OS Device Integrator",
-  "position": 4
+  "label": "Device Integrator",
+  "position": 4,
+  "collapsed": true
 }

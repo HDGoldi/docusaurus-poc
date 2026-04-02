@@ -1,4 +1,5 @@
 {
   "label": "MCP Server",
-  "position": 4
+  "position": 4,
+  "collapsed": true
 }

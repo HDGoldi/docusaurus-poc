@@ -1,4 +1,5 @@
 {
-  "label": "1NCE OS Energy Saver",
-  "position": 10
+  "label": "Energy Saver",
+  "position": 10,
+  "collapsed": true
 }

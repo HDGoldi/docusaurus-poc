@@ -1,4 +1,5 @@
 {
-  "label": "1NCE OS Cloud Integrator",
-  "position": 7
+  "label": "Cloud Integrator",
+  "position": 7,
+  "collapsed": true
 }

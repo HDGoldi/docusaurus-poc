@@ -1,4 +1,5 @@
 {
   "label": "Connectivity Services SMS Services",
-  "position": 4
+  "position": 4,
+  "collapsed": true
 }
