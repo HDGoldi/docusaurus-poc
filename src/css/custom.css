@@ -66,9 +66,10 @@ h2, h3 {
   color: #29abe2;
 }
 
-/* Navbar title text color */
-.navbar__title {
-  color: #ffffff;
+/* Navbar logo sizing — wide SVG with embedded text */
+.navbar__logo img {
+  height: 36px;
+  width: auto;
 }
 
 /* Navbar active tab styling */

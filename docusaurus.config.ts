@@ -185,10 +185,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: '1NCE Developer Hub',
+      title: '',
       logo: {
-        alt: '1NCE Logo',
-        src: 'img/1nce-logo.svg',
+        alt: '1NCE Developer Hub',
+        src: 'img/1nce-dev-hub-logo.svg',
       },
       items: [
         {
