@@ -50,6 +50,24 @@ const config: Config = {
           path: 'docs/documentation',
           sidebarPath: './sidebars/documentation.ts',
           routeBasePath: '/docs',
+          sidebarItemsGenerator: async ({defaultSidebarItemsGenerator, ...args}) => {
+            const items = await defaultSidebarItemsGenerator(args);
+            return items.map(item => {
+              if (item.type === 'category' && item.label === 'Troubleshooting') {
+                return {
+                  ...item,
+                  items: [
+                    {
+                      type: 'link' as const,
+                      label: '1NCE Technical Support',
+                      href: 'https://www.1nce.com/en-eu/support',
+                    },
+                  ],
+                };
+              }
+              return item;
+            });
+          },
         },
         blog: false,
         theme: {

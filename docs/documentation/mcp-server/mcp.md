@@ -1,6 +1,7 @@
 ---
 title: 1NCE MCP
 sidebar_position: 1
+draft: true
 ---
 
 import Tabs from '@theme/Tabs';

@@ -6,7 +6,7 @@ sidebar_position: 4
 In this chapter, the setup of the 1NCE Data Streamer Service for different cloud integrations will be shown in detail. The 1NCE Data Streamer Service offers the following integrations:
 
 <div style={{textAlign: 'center'}}>
-<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/d47972b-rest_api.svg" alt="" style={{maxWidth: '100%'}} />
+<img src="/img/platform-services/platform-services-data-streamer/data-streamer-setup-guides/d47972b-rest_api.svg" alt="" style={{maxWidth: '500px', width: '100%'}} />
 </div>
 
 Click on one of the icons to get to the setup guide for the selected integration.
