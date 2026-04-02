@@ -235,7 +235,26 @@ jobs:
 
           # Any non-healthy state — delete and start fresh
           if [ "$STACK_STATUS" != "CREATE_COMPLETE" ] && [ "$STACK_STATUS" != "UPDATE_COMPLETE" ]; then
-            echo "Stack in bad state ($STACK_STATUS) — deleting…"
+            echo "Stack in bad state ($STACK_STATUS) — purging versioned bucket before delete…"
+            BUCKET=$(aws cloudformation describe-stack-resource \
+              --stack-name nce-devhub-rag \
+              --logical-resource-id RagContentBucket \
+              --query "StackResourceDetail.PhysicalResourceId" \
+              --output text 2>/dev/null || echo "")
+            if [ -n "$BUCKET" ] && [ "$BUCKET" != "None" ]; then
+              aws s3api list-object-versions --bucket "$BUCKET" --output json \
+                --query '{Objects: Versions[].{Key:Key,VersionId:VersionId}}' \
+              | jq -c 'select(.Objects != null and (.Objects | length) > 0)' \
+              | while read -r batch; do
+                  aws s3api delete-objects --bucket "$BUCKET" --delete "$batch" || true
+                done
+              aws s3api list-object-versions --bucket "$BUCKET" --output json \
+                --query '{Objects: DeleteMarkers[].{Key:Key,VersionId:VersionId}}' \
+              | jq -c 'select(.Objects != null and (.Objects | length) > 0)' \
+              | while read -r batch; do
+                  aws s3api delete-objects --bucket "$BUCKET" --delete "$batch" || true
+                done
+            fi
             aws cloudformation delete-stack --stack-name nce-devhub-rag
             aws cloudformation wait stack-delete-complete --stack-name nce-devhub-rag
             echo "Stack deleted."
@@ -251,14 +270,29 @@ jobs:
 
           if [ "$HAS_LAMBDA" = "MISSING" ] || [ "$HAS_LAMBDA" = "CREATE_FAILED" ]; then
             echo "Stack is partial (ChatFunction: $HAS_LAMBDA) — deleting for clean deploy…"
-            # Empty the bucket first so CFN can delete it
+            # Empty the bucket (including all versions and delete markers) so CFN can delete it
             BUCKET=$(aws cloudformation describe-stack-resource \
               --stack-name nce-devhub-rag \
               --logical-resource-id RagContentBucket \
               --query "StackResourceDetail.PhysicalResourceId" \
               --output text 2>/dev/null || echo "")
             if [ -n "$BUCKET" ] && [ "$BUCKET" != "None" ]; then
-              aws s3 rm "s3://$BUCKET" --recursive 2>/dev/null || true
+              echo "Purging all object versions from s3://$BUCKET …"
+              # Delete all object versions (required for versioned buckets)
+              aws s3api list-object-versions --bucket "$BUCKET" --output json \
+                --query '{Objects: Versions[].{Key:Key,VersionId:VersionId}}' \
+              | jq -c 'select(.Objects != null and (.Objects | length) > 0)' \
+              | while read -r batch; do
+                  aws s3api delete-objects --bucket "$BUCKET" --delete "$batch" || true
+                done
+              # Delete all delete markers
+              aws s3api list-object-versions --bucket "$BUCKET" --output json \
+                --query '{Objects: DeleteMarkers[].{Key:Key,VersionId:VersionId}}' \
+              | jq -c 'select(.Objects != null and (.Objects | length) > 0)' \
+              | while read -r batch; do
+                  aws s3api delete-objects --bucket "$BUCKET" --delete "$batch" || true
+                done
+              echo "Bucket purged."
             fi
             aws cloudformation delete-stack --stack-name nce-devhub-rag
             aws cloudformation wait stack-delete-complete --stack-name nce-devhub-rag
