@@ -5,23 +5,23 @@ title: Recipes
 
 Quectel is a leading provider of cellular and GNSS modules, with a wide range of products available. Here are some resources to help you get started with Quectel modules using our 1NCE services:
 
-[Quectel BG95](https://help.1nce.com/dev-hub/page/quectel-bg95-m3)
+[Quectel BG95](/docs/blueprints-examples/quectel-bg95-m3)
 
-[Quectel EC25 & EC21](https://help.1nce.com/dev-hub/page/quectel-ec25-ec21)
+[Quectel EC25 & EC21](/docs/blueprints-examples/quectel-ec25-ec21)
 
 ## SIMCOM
 
 SIMCOM is a global provider of wireless modules and solutions, offering a range of products for different applications. Here are some resources to help you get started with SIMCOM modules using 1NCE services:
 
-[SIMCOM7020E](https://help.1nce.com/dev-hub/page/simcom-7020g-simcom800l)
+[SIMCOM7020E](/docs/blueprints-examples/simcom-7020g-simcom800l)
 
-[SIM7000G](https://help.1nce.com/dev-hub/page/sim7000g)
+[SIM7000G](/docs/blueprints-examples/sim7000g)
 
 ## UBlox
 
 u-blox is a leading provider of positioning and wireless communication technologies for the automotive, industrial, and consumer markets. Here are some resources to help you get started with u-blox modules using 1NCE services:
 
-[SARA-R410M](https://help.1nce.com/dev-hub/page/sara-r410m)
+[SARA-R410M](/docs/blueprints-examples/sara-r410m)
 
 ## Others
 

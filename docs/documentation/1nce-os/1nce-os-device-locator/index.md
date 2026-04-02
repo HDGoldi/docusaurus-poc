@@ -117,8 +117,8 @@ If LwM2M is used, the following Resource Addresses can be used to provide the de
 
 The Geofencing Service allows setting virtual boundaries for devices. If a device is crossing a geofence (entering or exiting, configurable), a [geofence event](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format#geofence) will be generated and sent to the customer's Cloud Integrator Webhook integration or the AWS Integration.
 
-To start using Geofencing you need to purchase "Whereabouts - Geofencing" [credits](/1nce-os/1nce-os-device-locator/index#geofence-credits) first. You can use following [Get customer settings](https://help.1nce.com/dev-hub/reference/get_v1-settings-1nceos) API endpoint to check if credits are already assigned to you.
-Once the credits are available, you can create your first geofence using the [Create Geofence](https://help.1nce.com/dev-hub/reference/post_v1-locate-geofences) API endpoint. For additional info about Geofence creation use following [page](/unresolved/doc:evice-locator-geofencing-guide).
+To start using Geofencing you need to purchase "Whereabouts - Geofencing" [credits](/1nce-os/1nce-os-device-locator/index#geofence-credits) first. You can use following [Get customer settings](/api/1nce-os/get-customer-settings/) API endpoint to check if credits are already assigned to you.
+Once the credits are available, you can create your first geofence using the [Create Geofence](/api/1nce-os/create-geofence/) API endpoint. For additional info about Geofence creation use following [page](/unresolved/doc:evice-locator-geofencing-guide).
 
 Main use cases for geofencing are:
 

@@ -18,7 +18,7 @@ This section covers the usage of the 1NCE Portal and the SMS Console to send MT-
 </div>
 
 4. Enter a **Source Address**. This address is not needed for routing the SMS, but some devices might require a certain originating address/phone number to validate the sender.
-5. Add a **7-Bit GSM Alphabet Text Payload** which should have a maximum length of **160 Characters**. Using the SMS Console only text messages with Data Coding Scheme (DCS) 0 and no Concatenated SMS are possible. Please refer to the <a href="https://help.1nce.com/dev-hub/docs/examples-mt-sms#sending-mt-sms">1NCE SMS API examples</a> for more advanced features.
+5. Add a **7-Bit GSM Alphabet Text Payload** which should have a maximum length of **160 Characters**. Using the SMS Console only text messages with Data Coding Scheme (DCS) 0 and no Concatenated SMS are possible. Please refer to the <a href="#sending-mt-sms">1NCE SMS API examples</a> for more advanced features.
 6. Click the **Send** button to issue the MT-SMS towards the 1NCE SIM device.
 
 <div style={{textAlign: 'center'}}>
@@ -34,7 +34,7 @@ This section covers the usage of the 1NCE Portal and the SMS Console to send MT-
 
 # 1NCE SMS API
 
-This section covers all topics around sending, monitoring and managing MT-SMS messages with the the 1NCE API. A good starting point is the <a target="_blank" href="https://help.1nce.com/dev-hub/reference/">API Explorer</a> to get familiar with the API calls. From the API Explorer, ready to use code snippets and cURL queries can be obtained to integrate into custom applications.
+This section covers all topics around sending, monitoring and managing MT-SMS messages with the the 1NCE API. A good starting point is the <a href="/api/">API Explorer</a> to get familiar with the API calls. From the API Explorer, ready to use code snippets and cURL queries can be obtained to integrate into custom applications.
 
 ## API Prerequisites
 

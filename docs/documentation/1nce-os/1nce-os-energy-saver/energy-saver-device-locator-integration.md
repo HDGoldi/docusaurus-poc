@@ -46,7 +46,7 @@ GPS data can be:
 Example of generating a GPS payload:
 
 * Sends to the 1NCE OS UDP endpoint as a binary payload.
-* Prints the payload in Base64 format for testing with the Energy Saver template on the 1NCE OS portal or via the [API](https://help.1nce.com/dev-hub/reference/post_v1-optimize-messages-test).
+* Prints the payload in Base64 format for testing with the Energy Saver template on the 1NCE OS portal or via the [API](/api/1nce-os/create-optimizer-template/).
 
 ```javascript
 const dgram = require('dgram');

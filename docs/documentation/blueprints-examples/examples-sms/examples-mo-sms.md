@@ -24,7 +24,7 @@ This section covers how to use the SMS Console inside the 1NCE Portal to view th
 
 # 1NCE SMS API
 
-The 1NCE API offers another solution to access Mobile Originated SMS messages. For a specific SIM card a list of MT/MO-SMS or single SMS messages based on the SMS ID can be queried. A good starting point is the <a target="_blank" href="https://help.1nce.com/dev-hub/reference/">API Explorer</a> to get familiar with the API calls. From the API Explorer, ready to use code snippets and cURL queries can be obtained to integrate into custom applications.
+The 1NCE API offers another solution to access Mobile Originated SMS messages. For a specific SIM card a list of MT/MO-SMS or single SMS messages based on the SMS ID can be queried. A good starting point is the <a href="/api/">API Explorer</a> to get familiar with the API calls. From the API Explorer, ready to use code snippets and cURL queries can be obtained to integrate into custom applications.
 
 ## API Prerequisites
 

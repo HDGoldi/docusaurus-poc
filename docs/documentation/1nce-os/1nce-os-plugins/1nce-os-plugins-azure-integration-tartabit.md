@@ -92,7 +92,7 @@ You can use similar approach to the [Cloud Integrations failure monitoring](/1nc
 }
 ```
 
-In such cases you should investigate if Tartabit system is working fine and if everything is fine trigger plugin Restart using [Restart a failed plugin by installation ID](https://help.1nce.com/dev-hub/reference/post_v1-partners-plugins-pluginid-restart)  API endpoint or in the Frontend Tartabit plugin details page.
+In such cases you should investigate if Tartabit system is working fine and if everything is fine trigger plugin Restart using [Restart a failed plugin by installation ID](/api/1nce-os/restart-a-failed-plugin-by-installation-id/)  API endpoint or in the Frontend Tartabit plugin details page.
 
 ## Integration Restart, Get or Uninstall endpoints
 

@@ -3,7 +3,7 @@ title: SMS Volume
 description: How SMS messages are counted towards the used volume.
 sidebar_position: 5
 ---
-Dependent on the tariff of the 1NCE SIM, a certain volume of SMS message volume is included. The current state of the volume for each of the SIM can be either viewed in the 1NCE Portal or queried through the [1NCE API](https://help.1nce.com/dev-hub/reference). The following sections will explain what is counted towards the SMS volume usage and list a few example showcases.
+Dependent on the tariff of the 1NCE SIM, a certain volume of SMS message volume is included. The current state of the volume for each of the SIM can be either viewed in the 1NCE Portal or queried through the [1NCE API](/api/). The following sections will explain what is counted towards the SMS volume usage and list a few example showcases.
 
 ***
 

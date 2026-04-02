@@ -25,7 +25,7 @@ Further, the shown columns can be (de-)activated to select only the ones of inte
 | :------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Activated`   | Green checkmark, indicating that full SIM functionality is activated and the SIM can connect to the 1NCE services.                                                                                                                                                                                                                                                                  |
 | `Deactivated` | Black cross, indicating that the SIM is deactivated. The SIM cannot connect to the 1NCE network.                                                                                                                                                                                                                                                                                    |
-| `Expired`     | The `Expired` status indicates that the SIM card has reached the end of its lifetime and is no longer active. This means the SIM is fully suspended in the network and cannot connect anymore. Using a <a href="https://help.1nce.com/dev-hub/reference/extendsimsusingpost#/" target="_blank">Lifetime Extension</a> can reactivate the SIM.  |
+| `Expired`     | The `Expired` status indicates that the SIM card has reached the end of its lifetime and is no longer active. This means the SIM is fully suspended in the network and cannot connect anymore. Using a <a href="/api/sim-management/extend-sims-using-post/">Lifetime Extension</a> can reactivate the SIM.  |
 
 ## Session
 
@@ -40,9 +40,9 @@ Further, the shown columns can be (de-)activated to select only the ones of inte
 | Parameter | Description |
 | --- | --- |
 | `ICCID` | Unique serial of the SIM card. |
-| `MSISDN` | Phone number of the SIM card. The SIM can not be used for voice services or to receive/send SMS to external parties. The chapters [SMS Services](https://help.1nce.com/dev-hub/docs/connectivity-services-sms-services) and [SMS Forwarding Service](https://help.1nce.com/dev-hub/docs/platform-services-sms-forwarder) provide more information. |
-| `IMEI(SV)` | Identifier of the device the SIM is inserted into. The IMEI displayed in the 1NCE Portal is retrieved from the network during PDP context activation, the format is as follows: IMEI + SV (software version), based on the standard specification 3GPP TS23.003. See the <a href="/dev-hub/docs/sim-cards-knowledge#international-mobile-equipment-identity-imei">IMEI Reference</a> for more information. |
-| `IMEI Lock` | Status of the IMEI lock for this specific SIM. If enabled the SIM is bound to the current device. See the <a href="/dev-hub/docs/sim-cards-knowledge#imei-lock">IMEI Lock Reference</a> for more information. |
+| `MSISDN` | Phone number of the SIM card. The SIM can not be used for voice services or to receive/send SMS to external parties. The chapters [SMS Services](/docs/connectivity-services/connectivity-services-sms-services) and [SMS Forwarding Service](/docs/platform-services/platform-services-sms-forwarder) provide more information. |
+| `IMEI(SV)` | Identifier of the device the SIM is inserted into. The IMEI displayed in the 1NCE Portal is retrieved from the network during PDP context activation, the format is as follows: IMEI + SV (software version), based on the standard specification 3GPP TS23.003. See the <a href="/docs/sim-cards-knowledge#international-mobile-equipment-identity-imei">IMEI Reference</a> for more information. |
+| `IMEI Lock` | Status of the IMEI lock for this specific SIM. If enabled the SIM is bound to the current device. See the <a href="/docs/sim-cards-knowledge#imei-lock">IMEI Lock Reference</a> for more information. |
 | `IP Address` | Static IP address of the specific SIM. Used for accessing the SIM via 1NCE VPN Services. |
 | `SIM Type` | Specific type of SIM card, FlexSIM or eSIM. |
 | `Tariff` | Details about the tariff of the specific SIM showing the data and SMS volume. |
@@ -82,7 +82,7 @@ It is possible to manually book additional data and SMS volume for one or more s
 | Bank transfer  | Two to three days |
 | Credit card    | Immediately       |
 
-For automatically booked volume, please refer to our [Auto-Top-Up-feature](https://help.1nce.com/dev-hub/docs/portal-configuration#auto-top-up).
+For automatically booked volume, please refer to our [Auto-Top-Up-feature](/docs/1nce-portal/portal-configuration#auto-top-up).
 
 ## SIM Deactivation
 

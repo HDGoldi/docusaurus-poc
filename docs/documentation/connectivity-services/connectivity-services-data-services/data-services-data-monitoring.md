@@ -3,7 +3,7 @@ title: Data Monitoring
 description: Monitoring the 1NCE Data Service.
 sidebar_position: 3
 ---
-When monitoring the data service offered by the 1NCE SIM connectivity, there is more to explore than just tracking the usage volume. Through different means of the 1NCE Portal, [Data Streamer Service](/platform-services/platform-services-data-streamer/index) and [1NCE API](https://help.1nce.com/dev-hub/reference/api-welcome), the usage volume, data session connection state and device connectivity can be monitored. In the following sections, the capabilities and benefits of each available interface is presented.
+When monitoring the data service offered by the 1NCE SIM connectivity, there is more to explore than just tracking the usage volume. Through different means of the 1NCE Portal, [Data Streamer Service](/platform-services/platform-services-data-streamer/index) and [1NCE API](/api/), the usage volume, data session connection state and device connectivity can be monitored. In the following sections, the capabilities and benefits of each available interface is presented.
 
 ***
 
@@ -21,4 +21,4 @@ The [Data Streamer Service](/platform-services/platform-services-data-streamer/i
 
 # 1NCE API
 
-The 1NCE API is a powerful tool for querying certain information parameters on demand. An example for the data service is accumulated volume usage records for each SIM card on different time scales. The data usage limits can be requested and set via the API. Furthermore, the current state of the overall available volume and used quota can be queried, and if needed volume top-ups initiated. Please note that certain data will be retained only a fixed amount of time due to the data retention policy. The 1NCE API is ideal for requesting specific information on demand. It is not recommended to use this interface for large, automated queries regularly, please use the data streaming service for this kind of automation. Details about the API can be found in the [API guide](https://help.1nce.com/dev-hub/reference) section of the documentation.
+The 1NCE API is a powerful tool for querying certain information parameters on demand. An example for the data service is accumulated volume usage records for each SIM card on different time scales. The data usage limits can be requested and set via the API. Furthermore, the current state of the overall available volume and used quota can be queried, and if needed volume top-ups initiated. Please note that certain data will be retained only a fixed amount of time due to the data retention policy. The 1NCE API is ideal for requesting specific information on demand. It is not recommended to use this interface for large, automated queries regularly, please use the data streaming service for this kind of automation. Details about the API can be found in the [API guide](/api/) section of the documentation.

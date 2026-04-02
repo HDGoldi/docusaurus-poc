@@ -11,7 +11,7 @@ The network settings contain the basic information to get the SIM Cards connecte
 | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `1NCE APN`          | Needs to be set in the very first step to set up a connection to the network.                                                                                                                                                                                        |
 | `SMSC Number`       | Is generally needed to aim all Mobile Originated SMS in the network, although this setting is rarely needed for manual configuration.                                                                                                                                |
-| `Internet Breakout` | Shows the IP addresses used for all 1NCE SIMs to access the public internet through a NAT. Get all available [Internet Breakout IPs](https://help.1nce.com/dev-hub/docs/network-services-internet-breakout)                                                          |
+| `Internet Breakout` | Shows the IP addresses used for all 1NCE SIMs to access the public internet through a NAT. Get all available [Internet Breakout IPs](/docs/network-services/network-services-internet-breakout)                                                          |
 | `IP Address Space`  | Shows the IP spaces assigned to SIMs in the given organization. Each SIM has a static IP address which can to be used for direct access via the VPN Service. Additional IP spaces will be assigned for new SIM orders if the remaining IP space is not large enough. |
 | `IP Addresses`      | Shows the availability of the IP address spaces assigned to the organization.                                                                                                                                                                                        |
 
@@ -38,7 +38,7 @@ The Internet Breakout setting in the configuration tab allows you to configure t
 
 The breakout setting allows you to select the nearest local Internet Breakout to minimize latency in data transfer. Your SIM card can either **Automatically **select the geographically nearest breakout, or you can **Manually **set the location of the breakout.
 
-For more information on the 1NCE Internet Breakout Service, please visit the [Internet Breakout](https://help.1nce.com/dev-hub/docs/network-services-internet-breakout) documentation page.
+For more information on the 1NCE Internet Breakout Service, please visit the [Internet Breakout](/docs/network-services/network-services-internet-breakout) documentation page.
 
 > 📘 Default Setting
 > 

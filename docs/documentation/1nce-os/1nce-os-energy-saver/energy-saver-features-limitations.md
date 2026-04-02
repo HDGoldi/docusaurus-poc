@@ -5,7 +5,7 @@ sidebar_position: 1
 ---
 ## Features
 
-The 1NCE Energy Saver offers binary conversion inspired on the AllThings Talk Binary Conversion Language (ABCL) but we don't support all the all features. More details on the general conversion language available at [Binary Conversion Language](https://help.1nce.com/dev-hub/docs/energy-saver-binary-conversion-language) 
+The 1NCE Energy Saver offers binary conversion inspired on the AllThings Talk Binary Conversion Language (ABCL) but we don't support all the all features. More details on the general conversion language available at [Binary Conversion Language](/docs/1nce-os/1nce-os-energy-saver/energy-saver-binary-conversion-language) 
 
 The binary conversion allows customers to simply format binary payloads and build also more complex logic into the conversion templates. Templates are provided via the 1NCE Energy Saver and applied to the desired Devices.\
 Let's take the following example for a simple IoT device with 2 sensors one input. A UDP payload would look like this: **00 1A 00 37 00** 
@@ -58,5 +58,5 @@ Desired template can be edited and tested using [Template Tester](/1nce-os/1nce-
 ## Limitations
 
 * Only values between -9999999999999999 and 9999999999999999 are guaranteed to have the correct precision. Values smaller than -9999999999999999 and larger than 9999999999999999 could be affected by rounding precision.
-* API requests have a maximum request body size limit of 64kb, which includes all the information sent in the request body. This limitation can potentially affect requests to [create](https://help.1nce.com/dev-hub/reference/post_v1-optimize-templates) and [patch](https://help.1nce.com/dev-hub/reference/patch_v1-optimize-templates-templateid) template endpoints, since the size of the template and other information sent in the request body cannot exceed 64kb.
+* API requests have a maximum request body size limit of 64kb, which includes all the information sent in the request body. This limitation can potentially affect requests to [create](/api/1nce-os/create-optimizer-template/) and [patch](/api/1nce-os/update-optimizer-template/) template endpoints, since the size of the template and other information sent in the request body cannot exceed 64kb.
 * Only 1 **Energy Saver** template is allowed per protocol (UDP and CoAP).

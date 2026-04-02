@@ -15,7 +15,7 @@ DTLS is using pre-shared key (PSK) provided by client device and identity of dev
 
 The PSK can be set:
 
-* using 1NCE OS API endpoint described in [API Explorer](https://help.1nce.com/dev-hub/reference/post_v1-integrate-devices-deviceid-psk)
+* using 1NCE OS API endpoint described in [API Explorer](/api/1nce-os/create-pre-shared-device-key/)
 * in 1NCE OS portal Device Integrator when [testing lwm2m endpoint](/1nce-os/1nce-os-device-integrator/device-integrator-test-endpoints#testing-the-endpoint)
 
 Using [leshan client](https://github.com/eclipse/leshan#test-leshan-demos-locally) there is 2 examples to bootstrap:

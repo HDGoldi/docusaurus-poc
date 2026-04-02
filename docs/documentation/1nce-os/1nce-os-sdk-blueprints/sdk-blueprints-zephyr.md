@@ -191,11 +191,11 @@ CONFIG_NCE_ENERGY_SAVER=y
 When enabled, the device will send compressed messages based on a translation template defined in 1NCE OS portal.
 
 :::tip
-### **Learn more:** See the [1NCE Energy Saver documentation](https://help.1nce.com/dev-hub/docs/1nce-os-energy-saver) for details on how this feature works and how to configure templates.
+### **Learn more:** See the [1NCE Energy Saver documentation](/docs/1nce-os/1nce-os-energy-saver) for details on how this feature works and how to configure templates.
 :::
 
 :::info
-### **Tip:** You can view incoming messages in the [Device Inspector](https://help.1nce.com/dev-hub/docs/1nce-os-device-inspector) in the 1NCE OS portal.
+### **Tip:** You can view incoming messages in the [Device Inspector](/docs/1nce-os/1nce-os-device-inspector) in the 1NCE OS portal.
 :::
 
 :::tip
@@ -237,7 +237,7 @@ Depending on whether the Energy Saver feature is enabled:
 
 The **Device Controller** allows your device to receive CoAP downlink messages using the 1NCE Management API. It supports sending downlink requests that your device can process in real-time.
 
-📘 More info: [1NCE DevHub – Device Controller](https://help.1nce.com/dev-hub/docs/1nce-os-device-controller)
+📘 More info: [1NCE DevHub – Device Controller](/docs/1nce-os/1nce-os-device-controller)
 
 ### 🔁 Sending a Request
 
@@ -259,7 +259,7 @@ curl -X 'POST' 'https://api.1nce.com/management-api/v1/integrate/devices/<ICCID>
 Replace:
 
 * `<ICCID>` with your SIM's ICCID
-* `<your Access Token>` with your [OAuth token](https://help.1nce.com/dev-hub/reference/postaccesstokenpost)
+* `<your Access Token>` with your [OAuth token](/api/authorization/post-access-token-post/)
 
 ***
 
@@ -351,11 +351,11 @@ Add the template located in `./nce_coap_demo/template/template.json` to the 1NCE
 :::
 
 :::tip
-### **Learn more:** See the [1NCE Energy Saver documentation](https://help.1nce.com/dev-hub/docs/1nce-os-energy-saver) for details on how this feature works and how to configure templates.
+### **Learn more:** See the [1NCE Energy Saver documentation](/docs/1nce-os/1nce-os-energy-saver) for details on how this feature works and how to configure templates.
 :::
 
 :::info
-### **Tip:** You can view incoming messages in the [Device Inspector](https://help.1nce.com/dev-hub/docs/1nce-os-device-inspector) in the 1NCE OS portal.
+### **Tip:** You can view incoming messages in the [Device Inspector](/docs/1nce-os/1nce-os-device-inspector) in the 1NCE OS portal.
 :::
 
 If disabled, a plain-text message will be sent instead.
@@ -412,7 +412,7 @@ Depending on whether the Energy Saver feature is enabled:
 
 The **Device Controller** allows your device to receive CoAP downlink messages using the 1NCE Management API. It supports sending downlink requests that your device can process in real-time.
 
-📘 More info: [1NCE DevHub – Device Controller](https://help.1nce.com/dev-hub/docs/1nce-os-device-controller)
+📘 More info: [1NCE DevHub – Device Controller](/docs/1nce-os/1nce-os-device-controller)
 
 ### 🔁 Sending a Request
 
@@ -436,7 +436,7 @@ curl -X 'POST' 'https://api.1nce.com/management-api/v1/integrate/devices/<ICCID>
 Replace:
 
 * `<ICCID>` with your SIM’s ICCID  
-* `<your Access Token>` with your [OAuth token](https://help.1nce.com/dev-hub/reference/postaccesstokenpost)
+* `<your Access Token>` with your [OAuth token](/api/authorization/post-access-token-post/)
 
 ***
 
@@ -535,7 +535,7 @@ On the `Thingy:91` device, LED indicators show the following statuses:
 
 ### ✅ Supported Objects for LwM2M Actions
 
-🔗 LwM2M actions can be tested using the [1NCE Action API](https://help.1nce.com/dev-hub/reference/post_v1-devices-deviceid-actions) or from the device controller tab in 1NCE OS UI.
+🔗 LwM2M actions can be tested using the [1NCE Action API](/api/1nce-os/create-action-request-on-specific-co-ap-device/) or from the device controller tab in 1NCE OS UI.
 
 | Object        | Path(s)                                                              | Description                             | Supported Boards |
 | ------------- | -------------------------------------------------------------------- | --------------------------------------- | ---------------- |
@@ -558,7 +558,7 @@ On the `Thingy:91` device, LED indicators show the following statuses:
 | `CONFIG_LWM2M_CLIENT_UTILS_SERVER_TLS_TAG`    | Security tag for main server (replaced after bootstrap)   | `1112`  |
 | `CONFIG_LWM2M_ENGINE_DEFAULT_LIFETIME`        | Default LwM2M Server lifetime (in seconds)                | `180`   |
 
-📌 The PSK (Pre-Shared Key) must match the credentials registered using the [1NCE PSK API](https://help.1nce.com/dev-hub/reference/post_v1-integrate-devices-deviceid-presharedkey)
+📌 The PSK (Pre-Shared Key) must match the credentials registered using the [1NCE PSK API](/api/1nce-os/create-pre-shared-device-key/)
 
 > ⚠️ The PSK **must be provided in HEX format**, not plain text.
 
@@ -674,7 +674,7 @@ While the firmware is being downloaded, the DKs show a circular LED pattern acro
 
 ## Mender Integration
 
-This demo requires the [1NCE Mender Plugin](https://help.1nce.com/dev-hub/docs/1nce-os-plugins-fota-management-mender) to be installed and enabled.
+This demo requires the [1NCE Mender Plugin](/docs/1nce-os/1nce-os-plugins-fota-management-mender) to be installed and enabled.
 
 You can use prebuilt binaries and artifacts for quick testing.
 
@@ -873,7 +873,7 @@ On the `Thingy:91` device, LED indicators show the following statuses:
 
 ## 🔌 Memfault Integration
 
-To use this demo, install and enable the [Memfault Plugin](https://help.1nce.com/dev-hub/docs/1nce-os-plugins-device-observability-memfault) for 1NCE OS.
+To use this demo, install and enable the [Memfault Plugin](/docs/1nce-os/1nce-os-plugins-device-observability-memfault) for 1NCE OS.
 
 📦 SDK Requirement: [nRF Connect SDK v2.8.0](https://docs.nordicsemi.com/bundle/ncs-2.8.0/page/nrf/gsg_guides.html)
 

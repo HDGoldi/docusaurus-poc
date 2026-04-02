@@ -19,7 +19,7 @@ The most basic option to receive and visualize MO-SMS is the 1NCE Portal. In the
 
 # Management API
 
-Besides monitoring SMS relevant parameters via the 1NCE API, it is also possible to query messages for specific SIM from the API. This application is meant for infrequent queries of a small number of messages, e.g. for testing purposes. Although it would be possible to query SMS messages for all SIM regularly, it is not recommended to create unnecessary HTTP Requests and loads on the API. A better solution for receiving large amounts of SMS messages regularly is the [SMS Forwarder Service](/platform-services/platform-services-sms-forwarder/index). The process of querying messages with the API and HTTP Requests is described in the [1NCE API](https://help.1nce.com/dev-hub/reference) documentation. See the [MO-SMS API Examples](/blueprints-examples/examples-sms/examples-mo-sms#1nce-sms-api) for example usage of the 1NCE API for MO-SMS.
+Besides monitoring SMS relevant parameters via the 1NCE API, it is also possible to query messages for specific SIM from the API. This application is meant for infrequent queries of a small number of messages, e.g. for testing purposes. Although it would be possible to query SMS messages for all SIM regularly, it is not recommended to create unnecessary HTTP Requests and loads on the API. A better solution for receiving large amounts of SMS messages regularly is the [SMS Forwarder Service](/platform-services/platform-services-sms-forwarder/index). The process of querying messages with the API and HTTP Requests is described in the [1NCE API](/api/) documentation. See the [MO-SMS API Examples](/blueprints-examples/examples-sms/examples-mo-sms#1nce-sms-api) for example usage of the 1NCE API for MO-SMS.
 
 ***
 

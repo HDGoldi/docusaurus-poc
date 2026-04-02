@@ -15,7 +15,7 @@ For sending MT-SMS messages towards an IoT device with a 1NCE SIM, two options a
   * Submit MT-SMS messages for a single SIM card.
   * Testing and debugging purposes.
   * Short-term data retention policy.
-* <b><a href="https://help.1nce.com/dev-hub/reference" target="_blank">1NCE API</a>:</b>
+* <b><a href="/api/">1NCE API</a>:</b>
   * Submit multiple MT-SMS via automation.
   * Integration into customer applications possible.
   * Volume management.
@@ -45,7 +45,7 @@ The 1NCE SMS Service focuses on optimized IoT communication use cases. As a resu
 
 ## SMS Volume Usage
 
-Dependent on the tariff of the 1NCE SIM, a certain volume of MT-SMS messages is included. Details about the available volume and usage can be inquired in the 1NCE Portal or through the [1NCE API](https://help.1nce.com/dev-hub/reference). Each MT-SMS message sent (MT or MO) counts towards the used volume. Delivery retry attempts are not counted towards the volume. Once the volume is used up, no more messages can be sent until the volume is topped up.
+Dependent on the tariff of the 1NCE SIM, a certain volume of MT-SMS messages is included. Details about the available volume and usage can be inquired in the 1NCE Portal or through the [1NCE API](/api/). Each MT-SMS message sent (MT or MO) counts towards the used volume. Delivery retry attempts are not counted towards the volume. Once the volume is used up, no more messages can be sent until the volume is topped up.
 
 ## SMS Size Limitations
 

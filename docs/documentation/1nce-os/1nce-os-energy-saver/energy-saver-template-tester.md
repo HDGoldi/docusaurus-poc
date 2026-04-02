@@ -8,7 +8,7 @@ sidebar_position: 3
 To help with creating optimized translation templates for your needs to meet best energy and data saving expectation 1NCE OS provides:
 
 * an interface to **Edit and Test** the desired template.
-* [API](https://help.1nce.com/dev-hub/reference/post_v1-optimize-messages-test) endpoint to test the template.
+* [API](/api/1nce-os/create-optimizer-template/) endpoint to test the template.
 
 Template tester is a tool that processes the given **Binary** payload in Base64 string format using the template in template editor and returns the JSON output, translating the Base64 binary payload into readable format. 
 

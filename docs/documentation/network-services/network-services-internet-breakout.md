@@ -38,9 +38,9 @@ When using the Automatic Mode, **each individual SIM** data traffic towards the 
 
 ### Example Configurations
 
-One customer SIM device is located and connected in Germany. Based on the given location, the automatic Internet Breakout determines that the Europe (Frankfurt) is the ideal location to breakout the public internet traffic. The customer can expect their public internet traffic to exit from one of the breakout IPs from [Europe (Frankfurt)](https://help.1nce.com/dev-hub/docs/network-services-internet-breakout).
+One customer SIM device is located and connected in Germany. Based on the given location, the automatic Internet Breakout determines that the Europe (Frankfurt) is the ideal location to breakout the public internet traffic. The customer can expect their public internet traffic to exit from one of the breakout IPs from Europe (Frankfurt).
 
-A second SIM device is located and connected in New York USA. As the SIM devices is closest to the US East breakout, the automatic system determines that US East (N. Virginia) should be used to exit the public internet traffic of the SIM. The traffic from this specific SIM will exit through the [US East (N. Virginia)](https://help.1nce.com/dev-hub/docs/network-services-internet-breakout) Internet Breakout IPs.
+A second SIM device is located and connected in New York USA. As the SIM devices is closest to the US East breakout, the automatic system determines that US East (N. Virginia) should be used to exit the public internet traffic of the SIM. The traffic from this specific SIM will exit through the US East (N. Virginia) Internet Breakout IPs.
 
 ## Manual Mode
 
@@ -48,7 +48,7 @@ When selecting a specific breakout region using the Manual Mode, **all SIMs** pu
 
 > 📘 VPN and 1NCE OS
 >
-> The 1NCE VPN Service is available in the **Manual Mode**. The specific regional adaptions of the [OpenVPN Configuration](https://help.1nce.com/dev-hub/docs/portal-configuration#openvpn-configuration) need to be applied.
+> The 1NCE VPN Service is available in the **Manual Mode**. The specific regional adaptions of the [OpenVPN Configuration](/docs/1nce-portal/portal-configuration#openvpn-configuration) need to be applied.
 >
 > 1NCE OS is currently only available through the Europe (Frankfurt) and US East (N Virginia) breakout regions.
 
@@ -64,9 +64,9 @@ Currently, five regions are available:
 
 The Manual Mode is set to Europe (Frankfurt) for the example organization.
 
-One customer SIM device is located and connected in Germany. Independent of the given location, the manual Internet Breakout Europe (Frankfurt) is used to breakout the public internet traffic. The customer can expect their public internet traffic to exit from one of the breakout IPs from [Europe (Frankfurt)](https://help.1nce.com/dev-hub/docs/network-services-internet-breakout).
+One customer SIM device is located and connected in Germany. Independent of the given location, the manual Internet Breakout Europe (Frankfurt) is used to breakout the public internet traffic. The customer can expect their public internet traffic to exit from one of the breakout IPs from Europe (Frankfurt).
 
-A second SIM device is located and connected in New York USA. The SIM devices is closest to the US East breakout, but due to the Manual Mode, the traffic will be routed through the Europe (Frankfurt) exit to the public internet. The traffic from this specific SIM will exit through the [Europe (Frankfurt)](https://help.1nce.com/dev-hub/docs/network-services-internet-breakout) Internet Breakout IPs.
+A second SIM device is located and connected in New York USA. The SIM devices is closest to the US East breakout, but due to the Manual Mode, the traffic will be routed through the Europe (Frankfurt) exit to the public internet. The traffic from this specific SIM will exit through the Europe (Frankfurt) Internet Breakout IPs.
 
 ## Optimized Breakout Countries
 

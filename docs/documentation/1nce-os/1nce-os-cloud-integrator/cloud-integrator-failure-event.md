@@ -64,5 +64,5 @@ In case if it happens customer have to execute following steps:
 
 * Check Webhook's HTTPS endpoint or AWS IoT Core configuration in your's AWS Account for any possible reasons why those can return errors. 
   * Trigger restart using one of the possible approaches:
-        - Using following [Restart AWS Integration](https://help.1nce.com/dev-hub/reference/post_v1-integrate-clouds-aws-integrationid-restart)  or [Restart Webhook Integration](https://help.1nce.com/dev-hub/reference/post_v1-integrate-clouds-webhooks-integrationid-restart)  API endpoints. 
+        - Using following [Restart AWS Integration](/api/1nce-os/restart-aws-integration/)  or [Restart Webhook Integration](/api/1nce-os/restart-webhook-integration/)  API endpoints. 
         - Restart also can be triggered in the 1NCEOS Cloud Integrator frontend page, see [Restart AWS Integration](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration#restart-aws-integration)
