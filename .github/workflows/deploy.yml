@@ -85,7 +85,7 @@ jobs:
         run: |
           aws cloudformation deploy \
             --template-file infra/rag-stack.yaml \
-            --stack-name 1nce-devhub-rag \
+            --stack-name nce-devhub-rag \
             --parameter-overrides \
               LambdaCodeBucketName=${{ vars.LAMBDA_CODE_BUCKET_NAME }} \
               LambdaCodeKey=${{ vars.LAMBDA_CODE_KEY }} \
@@ -96,7 +96,7 @@ jobs:
         id: rag-outputs
         run: |
           OUTPUTS=$(aws cloudformation describe-stacks \
-            --stack-name 1nce-devhub-rag \
+            --stack-name nce-devhub-rag \
             --query "Stacks[0].Outputs" \
             --output json)
           echo "chat_domain=$(echo $OUTPUTS | jq -r '.[] | select(.OutputKey=="ChatApiDistributionDomain") | .OutputValue')" >> "$GITHUB_OUTPUT"
