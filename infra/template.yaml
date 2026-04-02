@@ -390,6 +390,8 @@ Resources:
                   - bedrock:DeleteDataSource
                   - bedrock:GetDataSource
                   - bedrock:TagResource
+                  - bedrock:UntagResource
+                  - bedrock:ListTagsForResource
                   - bedrock:StartIngestionJob
                 Resource:
                   - !Sub "arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:knowledge-base/*"
@@ -414,6 +416,7 @@ Resources:
                   - wafv2:DeleteWebACL
                   - wafv2:GetWebACL
                   - wafv2:TagResource
+                  - wafv2:ListTagsForResource
                 Resource:
                   - !Sub "arn:aws:wafv2:${AWS::Region}:${AWS::AccountId}:global/webacl/*"
       Tags:
