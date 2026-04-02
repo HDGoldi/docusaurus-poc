@@ -367,6 +367,10 @@ Outputs:
     Value: !GetAtt KnowledgeBase.KnowledgeBaseId
     Description: Bedrock Knowledge Base ID
 
+  DataSourceId:
+    Value: !GetAtt KnowledgeBaseDataSource.DataSourceId
+    Description: Bedrock Data Source ID for ingestion jobs
+
   KnowledgeBaseArn:
     Value: !GetAtt KnowledgeBase.KnowledgeBaseArn
     Description: Bedrock Knowledge Base ARN

@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A self-hosted Docusaurus documentation site replacing the 1NCE Developer Hub previously hosted on ReadMe.com. The site serves ~298 documentation pages across five navigation tabs, 125 interactive API endpoint pages generated from 6 OpenAPI specs, with 1NCE branding and analytics. Deployed on AWS (S3 + CloudFront) with automated CI/CD via GitHub Actions.
+A self-hosted Docusaurus documentation site replacing the 1NCE Developer Hub previously hosted on ReadMe.com. The site serves ~298 documentation pages in a single unified Documentation sidebar with 11 sections matching the original hub order, plus 125 interactive API endpoint pages generated from 6 OpenAPI specs, with 1NCE branding and analytics. Deployed on AWS (S3 + CloudFront) with automated CI/CD via GitHub Actions.
 
 ## Core Value
 
@@ -14,8 +14,8 @@ Developers can browse all existing documentation and interactively test API endp
 
 - ✓ Automated 12-step conversion pipeline for ReadMe.com Markdown to Docusaurus MDX — v1.0
 - ✓ All 298 documentation pages migrated with correct content, images, and formatting — v1.0
-- ✓ Five-tab navbar matching help.1nce.com (Documentation, API Explorer, 1NCE Platform, Blueprints & Examples, Terms & Abbreviations) — v1.0
-- ✓ Deeply nested sidebar navigation auto-generated from _order.yaml/_category_.json — v1.0
+- ✓ ~~Five-tab navbar~~ Two-tab navbar (Documentation, API Explorer) + 3 external links — consolidated in v1.2 Phase 9
+- ✓ Unified 11-section Documentation sidebar matching original ReadMe.com hub order — v1.2 Phase 9
 - ✓ Interactive API Explorer with "Try It" panels via docusaurus-openapi-docs plugin — v1.0
 - ✓ 6 OpenAPI specs generating 125 endpoint pages with code snippets — v1.0
 - ✓ 1NCE branding (navy/teal colors, Barlow font, logo, footer, dark mode) — v1.0
@@ -42,7 +42,7 @@ Developers can browse all existing documentation and interactively test API endp
 - ~~Replace navbar logo with official 1NCE SVG from 1nce.com~~ — Done (Phase 8, already correct)
 - ~~Remove dark mode (not readable)~~ — Done (Phase 8)
 - ~~Add external navbar links matching original header (1NCE Home, Shop, Portal)~~ — Done (Phase 8)
-- Fix Documentation sidebar: merge 1NCE Portal, Platform Services, 1NCE OS, and Blueprints & Examples back into main Documentation sidebar to match original hub structure
+- ~~Fix Documentation sidebar: merge 1NCE Portal, Platform Services, 1NCE OS, and Blueprints & Examples back into main Documentation sidebar to match original hub structure~~ — Done (Phase 9)
 
 ### Out of Scope
 
@@ -87,6 +87,8 @@ Human verification pending: deploy CloudFormation stack and confirm site loads a
 | Full CF stack in us-east-1 | ACM cert compatibility with CloudFront | ✓ Good |
 | S3 OAC (not OAI) | Modern AWS best practice, separate bucket policies | ✓ Good |
 | onBrokenLinks: warn | Allows build to complete during development | ⚠️ Revisit — tighten to error for production |
+| Consolidate 3 plugin instances into preset-classic | Single docs instance simplifies config and sidebar | ✓ Good — unified sidebar with correct ordering |
+| @docusaurus/plugin-client-redirects for old URLs | Preserves external links to /platform/*, /blueprints/*, /terms/* | ✓ Good — meta-refresh redirects in production build |
 
 ## Evolution
 
@@ -106,4 +108,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-02 after Phase 8 (branding & visual alignment) complete*
+*Last updated: 2026-04-02 after Phase 9 (sidebar consolidation & navigation restructuring) complete*

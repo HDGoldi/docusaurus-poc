@@ -92,14 +92,17 @@ jobs:
             --capabilities CAPABILITY_NAMED_IAM \
             --no-fail-on-empty-changeset
 
-      - name: Get ChatApiDistributionDomain
+      - name: Get RAG stack outputs
         id: rag-outputs
         run: |
-          DOMAIN=$(aws cloudformation describe-stacks \
+          OUTPUTS=$(aws cloudformation describe-stacks \
             --stack-name 1nce-devhub-rag \
-            --query "Stacks[0].Outputs[?OutputKey=='ChatApiDistributionDomain'].OutputValue" \
-            --output text)
-          echo "chat_domain=$DOMAIN" >> "$GITHUB_OUTPUT"
+            --query "Stacks[0].Outputs" \
+            --output json)
+          echo "chat_domain=$(echo $OUTPUTS | jq -r '.[] | select(.OutputKey=="ChatApiDistributionDomain") | .OutputValue')" >> "$GITHUB_OUTPUT"
+          echo "rag_bucket=$(echo $OUTPUTS | jq -r '.[] | select(.OutputKey=="RagContentBucketName") | .OutputValue')" >> "$GITHUB_OUTPUT"
+          echo "kb_id=$(echo $OUTPUTS | jq -r '.[] | select(.OutputKey=="KnowledgeBaseId") | .OutputValue')" >> "$GITHUB_OUTPUT"
+          echo "data_source_id=$(echo $OUTPUTS | jq -r '.[] | select(.OutputKey=="DataSourceId") | .OutputValue')" >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-node@v4
         with:
@@ -125,3 +128,13 @@ jobs:
 
       - name: Run smoke test
         run: bash scripts/smoke-test.sh https://${{ vars.PROD_CF_DISTRIBUTION_DOMAIN }}
+
+      - name: Prepare RAG content
+        run: npx tsx scripts/prepare-rag-content.ts
+
+      - name: Sync RAG content to S3 and start ingestion
+        run: npx tsx scripts/sync-rag-to-s3.ts --start-ingestion
+        env:
+          RAG_CONTENT_BUCKET: ${{ steps.rag-outputs.outputs.rag_bucket }}
+          KB_ID: ${{ steps.rag-outputs.outputs.kb_id }}
+          DATA_SOURCE_ID: ${{ steps.rag-outputs.outputs.data_source_id }}
