@@ -175,6 +175,25 @@ jobs:
             --query "vectorBucket.vectorBucketArn" --output text)
           echo "vector_bucket_arn=$BUCKET_ARN" >> "$GITHUB_OUTPUT"
 
+          # Ensure the vector index exists inside the bucket.
+          # Titan Embed Text v2 produces 1024-dim vectors; cosine is the
+          # default distance metric for Bedrock KB.
+          INDEX_NAME="devhub-docs-vector-index"
+          if aws s3vectors get-index \
+            --vector-bucket-name "$BUCKET_NAME" \
+            --index-name "$INDEX_NAME" >/dev/null 2>&1; then
+            echo "Index $INDEX_NAME already exists."
+          else
+            echo "Creating index $INDEX_NAME (1024-dim, cosine)…"
+            aws s3vectors create-index \
+              --vector-bucket-name "$BUCKET_NAME" \
+              --index-name "$INDEX_NAME" \
+              --dimension 1024 \
+              --distance-metric cosine
+            echo "Waiting for index to become active…"
+            sleep 10
+          fi
+
       - name: Deploy RAG stack (eu-central-1)
         run: |
           aws cloudformation deploy \
