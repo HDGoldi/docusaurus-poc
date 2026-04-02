@@ -23,7 +23,7 @@
   /* Typography: Barlow font (per D-15, UI-SPEC Typography) */
   --ifm-font-family-base: 'Barlow', sans-serif;
   --ifm-heading-font-family: 'Barlow', sans-serif;
-  --ifm-heading-font-weight: 500;
+  --ifm-heading-font-weight: 600;
   --ifm-font-weight-normal: 400;
   --ifm-font-size-base: 15px;
 
