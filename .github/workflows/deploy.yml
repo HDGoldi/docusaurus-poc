@@ -216,10 +216,10 @@ jobs:
           aws s3 cp "s3://$SRC_BUCKET/$CODE_KEY" "/tmp/$CODE_KEY" --region us-east-1
           aws s3 cp "/tmp/$CODE_KEY" "s3://$DST_BUCKET/$CODE_KEY"
 
-      # Clean up any partial/broken eu-central-1 stack from previous attempts.
-      # If the stack exists but is missing expected resources, delete it so
-      # the next deploy creates everything cleanly.
-      - name: Clean up partial RAG stack in eu-central-1
+      # Recover from broken RAG stack states. Healthy stacks
+      # (CREATE_COMPLETE / UPDATE_COMPLETE / UPDATE_ROLLBACK_COMPLETE)
+      # are left alone — `cloudformation deploy` will update in place.
+      - name: Recover broken RAG stack in eu-central-1 (if needed)
         run: |
           STACK_STATUS=$(aws cloudformation describe-stacks \
             --stack-name nce-devhub-rag \
@@ -233,72 +233,54 @@ jobs:
 
           echo "Stack exists with status: $STACK_STATUS"
 
-          # Any non-healthy state — delete and start fresh
-          if [ "$STACK_STATUS" != "CREATE_COMPLETE" ] && [ "$STACK_STATUS" != "UPDATE_COMPLETE" ]; then
-            echo "Stack in bad state ($STACK_STATUS) — purging versioned bucket before delete…"
-            BUCKET=$(aws cloudformation describe-stack-resource \
+          # Healthy states — nothing to do, deploy will update in place
+          case "$STACK_STATUS" in
+            CREATE_COMPLETE|UPDATE_COMPLETE|UPDATE_ROLLBACK_COMPLETE)
+              echo "Stack is healthy — will update in place."
+              exit 0
+              ;;
+          esac
+
+          # Everything else (DELETE_FAILED, CREATE_FAILED, ROLLBACK_COMPLETE,
+          # ROLLBACK_FAILED, etc.) — delete the stack so we can recreate.
+          # Use --retain-resources for the versioned S3 bucket to avoid the
+          # "bucket not empty" blocker, then clean up the bucket separately.
+          echo "Stack in bad state ($STACK_STATUS) — deleting with retained bucket…"
+
+          # First attempt: normal delete
+          aws cloudformation delete-stack --stack-name nce-devhub-rag
+          if ! aws cloudformation wait stack-delete-complete \
+            --stack-name nce-devhub-rag 2>/dev/null; then
+            echo "Normal delete failed — retrying with --retain-resources RagContentBucket…"
+            aws cloudformation delete-stack \
               --stack-name nce-devhub-rag \
-              --logical-resource-id RagContentBucket \
-              --query "StackResourceDetail.PhysicalResourceId" \
-              --output text 2>/dev/null || echo "")
-            if [ -n "$BUCKET" ] && [ "$BUCKET" != "None" ]; then
-              aws s3api list-object-versions --bucket "$BUCKET" --output json \
-                --query '{Objects: Versions[].{Key:Key,VersionId:VersionId}}' \
-              | jq -c 'select(.Objects != null and (.Objects | length) > 0)' \
-              | while read -r batch; do
-                  aws s3api delete-objects --bucket "$BUCKET" --delete "$batch" || true
-                done
-              aws s3api list-object-versions --bucket "$BUCKET" --output json \
-                --query '{Objects: DeleteMarkers[].{Key:Key,VersionId:VersionId}}' \
-              | jq -c 'select(.Objects != null and (.Objects | length) > 0)' \
-              | while read -r batch; do
-                  aws s3api delete-objects --bucket "$BUCKET" --delete "$batch" || true
-                done
-            fi
-            aws cloudformation delete-stack --stack-name nce-devhub-rag
+              --retain-resources RagContentBucket
             aws cloudformation wait stack-delete-complete --stack-name nce-devhub-rag
-            echo "Stack deleted."
-            exit 0
           fi
 
-          # Check if the stack has the ChatFunction resource (fully deployed)
-          HAS_LAMBDA=$(aws cloudformation describe-stack-resource \
-            --stack-name nce-devhub-rag \
-            --logical-resource-id ChatFunction \
-            --query "StackResourceDetail.ResourceStatus" \
-            --output text 2>/dev/null || echo "MISSING")
+          echo "Stack deleted."
 
-          if [ "$HAS_LAMBDA" = "MISSING" ] || [ "$HAS_LAMBDA" = "CREATE_FAILED" ]; then
-            echo "Stack is partial (ChatFunction: $HAS_LAMBDA) — deleting for clean deploy…"
-            # Empty the bucket (including all versions and delete markers) so CFN can delete it
-            BUCKET=$(aws cloudformation describe-stack-resource \
-              --stack-name nce-devhub-rag \
-              --logical-resource-id RagContentBucket \
-              --query "StackResourceDetail.PhysicalResourceId" \
-              --output text 2>/dev/null || echo "")
-            if [ -n "$BUCKET" ] && [ "$BUCKET" != "None" ]; then
-              echo "Purging all object versions from s3://$BUCKET …"
-              # Delete all object versions (required for versioned buckets)
-              aws s3api list-object-versions --bucket "$BUCKET" --output json \
-                --query '{Objects: Versions[].{Key:Key,VersionId:VersionId}}' \
-              | jq -c 'select(.Objects != null and (.Objects | length) > 0)' \
-              | while read -r batch; do
-                  aws s3api delete-objects --bucket "$BUCKET" --delete "$batch" || true
-                done
-              # Delete all delete markers
-              aws s3api list-object-versions --bucket "$BUCKET" --output json \
-                --query '{Objects: DeleteMarkers[].{Key:Key,VersionId:VersionId}}' \
-              | jq -c 'select(.Objects != null and (.Objects | length) > 0)' \
-              | while read -r batch; do
-                  aws s3api delete-objects --bucket "$BUCKET" --delete "$batch" || true
-                done
-              echo "Bucket purged."
-            fi
-            aws cloudformation delete-stack --stack-name nce-devhub-rag
-            aws cloudformation wait stack-delete-complete --stack-name nce-devhub-rag
-            echo "Partial stack deleted."
-          else
-            echo "Stack looks complete (ChatFunction: $HAS_LAMBDA) — will update in place."
+          # Clean up the orphaned bucket if it was retained
+          BUCKET=$(aws s3api list-buckets \
+            --query "Buckets[?contains(Name,'nce-devhub-rag-ragcontent')].Name" \
+            --output text 2>/dev/null || echo "")
+          if [ -n "$BUCKET" ] && [ "$BUCKET" != "None" ]; then
+            echo "Cleaning up orphaned bucket: $BUCKET"
+            aws s3 rm "s3://$BUCKET" --recursive || true
+            # Purge all object versions and delete markers
+            aws s3api list-object-versions --bucket "$BUCKET" --output json > /tmp/versions.json
+            jq -c '[.Versions // [] | .[] | {Key, VersionId}] | select(length > 0) | _nwise(1000) | {Objects: ., Quiet: true}' /tmp/versions.json | \
+              while IFS= read -r batch; do
+                echo "$batch" > /tmp/delete-batch.json
+                aws s3api delete-objects --bucket "$BUCKET" --delete "file:///tmp/delete-batch.json" || true
+              done
+            jq -c '[.DeleteMarkers // [] | .[] | {Key, VersionId}] | select(length > 0) | _nwise(1000) | {Objects: ., Quiet: true}' /tmp/versions.json | \
+              while IFS= read -r batch; do
+                echo "$batch" > /tmp/delete-batch.json
+                aws s3api delete-objects --bucket "$BUCKET" --delete "file:///tmp/delete-batch.json" || true
+              done
+            aws s3 rb "s3://$BUCKET" || true
+            echo "Orphaned bucket cleaned up."
           fi
 
       - name: Deploy RAG stack (eu-central-1)
