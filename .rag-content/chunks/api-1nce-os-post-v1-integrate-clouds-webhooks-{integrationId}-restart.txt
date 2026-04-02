@@ -1,0 +1,16 @@
+# POST /v1/integrate/clouds/webhooks/{integrationId}/restart
+
+Restart Webhook Integration
+
+Restart Webhook integration by forwarding test message to the integration.
+
+## Parameters
+- integrationId (path, required): unique integration ID
+
+## Responses
+- 200: OK
+- 401: 
+- 403: 
+- 404: 
+- 409: 
+- 500: 

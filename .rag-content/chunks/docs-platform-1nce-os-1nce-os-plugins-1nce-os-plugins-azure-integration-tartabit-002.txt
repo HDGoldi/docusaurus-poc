@@ -1,0 +1,3 @@
+## Pricing
+
+1NCE Plugins allow you to start at no cost. Azure Integration plugin by Tartabit provides a 1 month free trial plan. To continue with more features and benefits, please visit the Azure Marketplace and select the right [plan](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/tartabitllc1600893492587.tartabit-iot-bridge?tab=PlansAndPrice) for your business.

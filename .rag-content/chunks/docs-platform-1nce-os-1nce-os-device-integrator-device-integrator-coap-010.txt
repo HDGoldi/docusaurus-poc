@@ -1,0 +1,8 @@
+## ServerSideErrorResponse
+
+API response in case of server-side errors:
+
+| Name       | Type        | Description                |
+| :--------- | :---------- | :------------------------- |
+| statusText | string      | Http Status Text           |
+| errors     | \[ object ] | Detailed Error Information |

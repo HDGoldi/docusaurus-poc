@@ -1,0 +1,12 @@
+## MT-SMS DLR
+
+1. Prepare a Mobile Terminated (MT) SMS using the SMS Console in the 1NCE Portal or the 1NCE SMS API.
+2. Send the MT-SMS towards an active, online 1NCE SIM device.
+3. Once the SMS message was received and acknowledged by the SIM device, a Delivery Report (DLR) will be issued.
+4. The DLR Event should be received by the configured SMS Forwarder Endpoint as a HTTP Patch request.
+
+***
+
+# Simulated Post/Patch Requests
+
+To test the HTTP endpoint forwarder integration, the HTTP Post/Patch requests that would originate from the 1NCE SMS Forwarder Service can be simulated. A simulation of SMS Forwarder requests is especially useful for developing and debugging custom integrations. The simulation of the HTTP Post/Patch requests can be executed with tools like Postman or cURL using a Command Line Interface (CLI).

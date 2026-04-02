@@ -1,0 +1,3 @@
+## Energy Saver
+
+1NCE offers the energy saver to translate messages coming from IoT devices. Using this feature, the messages send from the devices can be shortened, which in the end is saving energy. In the frontend, an overview on how much energy is saved is provided. [Energy Saver](/1nce-os/1nce-os-energy-saver/index)

@@ -1,0 +1,15 @@
+# POST /v1/optimize/messages/test
+
+Test template
+
+Test a template with a sample input message.
+
+## Parameters
+None
+
+## Responses
+- 200: OK
+- 400: 
+- 401: 
+- 403: 
+- 500: 

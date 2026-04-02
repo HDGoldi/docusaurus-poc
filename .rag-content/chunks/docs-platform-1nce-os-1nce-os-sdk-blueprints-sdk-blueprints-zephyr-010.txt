@@ -1,0 +1,9 @@
+## Overview
+
+1NCE Zephyr UDP Demo allows customers to communicate with 1NCE endpoints via UDP Protocol, and it can send compressed payload using the Energy Saver feature.
+
+On the `Thingy:91` device, LED indicators show the following statuses:
+
+* 🔴 **RED** – Connecting to the network
+* 🔵 **BLUE** – Network connection established
+* 🟢 **GREEN** – Message sent to 1NCE OS

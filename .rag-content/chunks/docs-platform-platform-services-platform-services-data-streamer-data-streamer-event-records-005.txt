@@ -1,0 +1,9 @@
+## IMSI Object
+
+The International Mobile Subscriber Identity is used to identify each device with a SIM. The following parameters are included in an Event Record.
+
+| Property      | Data Type       | Description                                                     |
+| :------------ | :-------------- | :-------------------------------------------------------------- |
+| `id`          | INTEGER         | Unique ID of the IMSI.                                          |
+| `imsi`        | STRING          | The International Mobile Subscriber Identity as String.         |
+| `import_date` | TIMESTAMP (UTC) | Timestamp when the IMSI was provisioned in the ISO 8601 format. |

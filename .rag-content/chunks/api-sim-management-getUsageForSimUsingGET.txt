@@ -1,0 +1,17 @@
+# GET /v1/sims/{iccid}/usage
+
+Get SIM Usage
+
+Query the SIM data and SMS usage over a given period of time. The output is limited to the last 6 months.
+
+## Parameters
+- iccid (path, required): The ICCID of the SIM to be queried.
+- start_dt (query, optional): Start date used for the query, format: YYYY-MM-DD
+- end_dt (query, optional): End date used for the usage query, format: YYYY-MM-DD
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

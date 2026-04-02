@@ -1,0 +1,3 @@
+## MO-SMS with IoT Devices
+
+Most IoT modem devices allow to send MO-SMS via AT Commands. Please check with the manufacturer documentation how to send MO-SMS or check the .

@@ -1,0 +1,16 @@
+### 1️⃣ Build & Flash
+
+Flash the demo to the board using VS Code or nRF Connect for Desktop:
+
+* For **Thingy:91**, use [nRF Connect Programmer](https://www.nordicsemi.com/Products/Development-tools/nRF-Connect-for-Desktop/Download).
+
+* For **nrf9151DK & nrf9160DK**, the firmware can be flashed directly from **VS Code**.
+
+> ⚠️ **Windows Path Length Warning**
+>
+> On **Windows**, long file paths may cause build errors during the demo compilation.\
+> 👉 To avoid this issue, move the project folder to a shorter path such as:
+>
+> ```bash
+> C:\dev\fota_mender_demo
+> ```

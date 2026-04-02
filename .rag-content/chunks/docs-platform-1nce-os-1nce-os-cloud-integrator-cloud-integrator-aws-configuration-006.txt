@@ -1,0 +1,5 @@
+## Restart AWS integration
+
+There is a possibility that your integration fails. When this happens, it will be visible in the 1nceOS portal as shown below:
+
+By clicking the restart button, there will be an attempt to verify the integration. During that time an event of type TEST\_MESSAGE will be sent out. For more information refer to [event-type documentation](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format)

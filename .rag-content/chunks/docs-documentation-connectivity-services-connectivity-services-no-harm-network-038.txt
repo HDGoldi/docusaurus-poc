@@ -1,0 +1,11 @@
+## Loss of Roaming Service
+
+The IoT Device Application **SHALL** always be prepared to recover lost end-to-end connectivity while camping on a roaming network. This is implemented with a top-down, staged recovery algorithm diagnosing each protocol layer. In case of failing to re-establish one layer, the algorithm initiates the recovery procedure on the following protocol level below. This may be done, for example, as follows:
+
+* Step 1. Re-establishment of higher layer connectivity, e.g. VPN tunnels, SSH sessions, etc.,
+* Step 2. Re-establishment of the PDN connectivity or PDP context,
+* Step 3. Re-attach (data) to the network,
+* Step 4. Re-triggering of a plain network selection,
+* Step 5. Complete reboot of the device.
+
+All recovery procedures **SHALL**, to avoid excessive sending of signals to the network, be properly implemented. This may include usage of randomized triggers and incremental, back-off retry mechanisms. Threshold and timer values may depend on the IoT Service’s requirements.

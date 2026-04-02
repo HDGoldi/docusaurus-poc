@@ -1,0 +1,3 @@
+## DataDog Results
+
+The incoming events in DataDog can be viewed in the Metrics Summary. All Usage Records of the 1NCE SIMs in the organization account will be forwarded to DataDog.

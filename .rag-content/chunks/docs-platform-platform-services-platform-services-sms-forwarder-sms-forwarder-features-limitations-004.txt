@@ -1,0 +1,3 @@
+## MO-SMS and DLR Reception Only
+
+The SMS Forwarding Service is only intended to receive MO-SMS and DLR for MT-SMS. Thus, it is not possible to use this service to push or publish any kind of SMS message towards the SIM devices. It is intended as a publish-subscribe listening service. To issue new MT-SMS towards a SIM device, the 1NCE API or 1NCE Portal SMS Console have to be used instead.

@@ -1,0 +1,17 @@
+## MCC and MNC
+
+The Mobile Country Code (MCC) and Mobile Network Code (MNC) identify a country of domicile and a operator of that network in this country. Both together result in the Public Land Mobile Network (PLMN) code of the mobile subscriber. Since the 1NCE SIM cards are not bound to a real country or network these values are defined as:  MCC-901 and MNC-40.\
+The MCC-901 has a special meaning, i.e. this is a shared Mobile Country Code which is used worldwide instead of identifying a certain country. Hence, 1NCE as IoT-MNO has reserved the PLMN 901-40 for their purposes and uses it for the standard 1NCE product.
+
+***
+
+# Mobile Station International Subscriber Directory Number (MSISDN)
+
+The Mobile Station International Subscriber Directory Number (MSISDN) is used together with the IMSI to uniquely identify a SIM subscription in the global mobile network. A normal non-IoT carrier uses the MSISDN for routing voice calls to a subscribed SIM. While the IMSI for a specific profile on a SIM does not change over time, the MSISDN can change. The MSISDN format is defined in the . In the 1NCE ecosystem, the MSISDN can be found in the detail properties of a SIM using the API or Data Streamer Service. Compared to the ICCID, IMSI or IMEI, the MSISDN plays less of an important role for the 1NCE IoT use cases.
+
+***
+
+# International Mobile Equipment Identity (IMEI)
+
+Certain parameters reported in the 1NCE ecosystem are not sourced from the 1NCE SIM but rather relate to the specific device used in conjunction with the SIM card. Such a parameter is the International Mobile Equipment Identity (IMEI). It is a unique number for the identification of a mobile SIM device modem. Each standardized modem that uses any type of SIM to connect to a mobile network operator has a unique IMEI.\
+The IMEI, 15 digits: 14 + check digit, or IMEISV, 16 digits: 14 + two (software version), consists of information on the origin, model, and serial number of the device. The structure of the IMEI/SV is specified in . In the 1NCE ecosystem, the IMEI/SV is used to identify individual devices and manufacturers. In the 1NCE Data Streamer and API, the IMEI/SV for some roaming operators might have an additional 'f' at the end of the IMEI.

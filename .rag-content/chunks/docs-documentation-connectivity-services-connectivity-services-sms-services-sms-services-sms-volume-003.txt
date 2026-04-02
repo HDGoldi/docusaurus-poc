@@ -1,0 +1,3 @@
+## MT-SMS with MO-SMS Answer
+
+The customer sends one MT-SMS via the 1NCE API towards the device, and the device responds with a MO-SMS back towards the customer. In this case, **one** MT-SMS and **one** MO-SMS are sent, resulting in a volume deduction of **two** SMS messages.

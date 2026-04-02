@@ -1,0 +1,6 @@
+### Callback lambda function
+
+The 'create' callback stack Lambda function notifies the 1NCE OS that the integration rollout has been successfully completed.\
+The 'delete' callback stack Lambda function notifies the 1NCE OS when the CloudFormation stack is deleted from the customer's AWS account.
+
+Notifications are sent via API calls.

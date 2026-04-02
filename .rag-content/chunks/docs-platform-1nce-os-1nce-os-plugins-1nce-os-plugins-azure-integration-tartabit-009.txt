@@ -1,0 +1,3 @@
+## Event viewer
+
+All event details can be found under Triggers/Event Viewer.

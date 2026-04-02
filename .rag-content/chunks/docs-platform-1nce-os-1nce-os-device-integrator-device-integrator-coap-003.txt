@@ -1,0 +1,7 @@
+## DTLS encryption for CoAP
+
+Ensuring, data is securely sent from a device to 1NCE OS, it is an important part of gaining the trust of customers with their data. To be able to provide this secure connection 1NCE OS has implemented a DTLS layer in the CoAP communication from the device to 1NCE OS. This allows the device to securely send its data to 1NCE OS without the possibility of messages being read or modified along the way. The picture above describes this process. First, when the device is ready to onboard itself, it will call the CoAP bootstrapping endpoint. This will retrieve the necessary DTLS info to onboard itself securely and initialize the CoAP connection using a PSK.
+
+# Features & Limitations
+
+DTLS as a security protocol provides secure and fast data streaming. This comes with some advantages but also has some limitations. Below these key points are explored in the context of a CoAP connection.

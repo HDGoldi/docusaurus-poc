@@ -1,0 +1,3 @@
+## Current Session Logs
+
+Right click on the task tray icon and select **View Log**. This will bring up the log of the currently established connection. In the logs, details about the connection setup, reconnect, keep-alive and pushed routes can be found. Please always include these logs in any VPN related Support Ticket.

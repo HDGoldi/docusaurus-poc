@@ -1,0 +1,4 @@
+## Authentication
+
+Some devices might require the authentication method setting, username, and password. This authentication procedure can be requested by each side of the connection as part of the establishment process. The two most common authentication procedures are Password Authentication Protocol (PAP) and Challenge Handshake Authentication Protocol (CHAP). PAP is the older protocol and is based on a simple username and password authentication. CHAP is a more sophisticated and more secure authentication method based on randomly generated challenges.\
+For the 1NCE APN no username or password is needed. These parameters can be left empty in the configuration. The authentication method PAP should be selected as default if the device requires this parameter.

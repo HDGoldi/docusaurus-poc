@@ -1,0 +1,3 @@
+## Device-To-Device SMS (P2P)
+
+With 1NCE connectivity, it is not possible to send Peer-to-Peer (P2P) MT-SMS between devices. Therefore, it is not possible to send a message to a device with a 1NCE SIM using a mobile phone, neither with a third party nor another 1NCE SIM. For instance, it is possible to set the destination number on a mobile phone and send a message to this number but the Short Message Service Centre (SMSC) will not forward this MT-SMS to the destination number. The MT-SMS service is only intended to exchange messages with a server application controlled by the customer, Application-to-Peer (A2P).

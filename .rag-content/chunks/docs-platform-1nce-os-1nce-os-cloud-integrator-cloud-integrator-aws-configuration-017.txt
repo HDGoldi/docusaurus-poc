@@ -1,0 +1,16 @@
+## Lambda runtime versions used in the different 1NCE OS customer stack versions
+
+#### V1.0.0
+
+* Download code lambda function: python3.9
+* Callback lambda function: nodejs14.x
+
+#### V1.1.0
+
+* Download code lambda function: python3.9
+* Callback lambda function: nodejs18.x
+
+#### V1.2.0 (latest)
+
+* Download code lambda function: python3.13
+* Callback lambda function: nodejs22.x

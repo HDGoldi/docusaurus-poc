@@ -1,0 +1,15 @@
+# GET /v1/administrationLogs/{adminLogId}/payload
+
+Get Administration Log Payload
+
+Get a URL pointing to a single administration log payload. The received URL will trigger a download.
+
+## Parameters
+- adminLogId (path, required): Unique Id of the administration log for which the payload should be queried.
+
+## Responses
+- 200: OK
+- 400: 
+- 401: 
+- 403: 
+- 500: 

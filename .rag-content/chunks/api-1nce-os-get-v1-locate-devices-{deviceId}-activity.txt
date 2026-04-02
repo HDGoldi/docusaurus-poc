@@ -1,0 +1,19 @@
+# GET /v1/locate/devices/{deviceId}/activity
+
+Get Device Celltower location resolutions
+
+Get Cell location resolutions for one device (maximum of last 7 days).
+![Creative Commons License](https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg) [OpenCelliD Project](https://opencellid.org/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)
+
+
+## Parameters
+- deviceId (path, required): The unique device ID which identifies each 1NCE SIM. Can be obtained from the Get All Devices API query. For 1NCE SIMS the device ID is equal to its iccid.
+- startDateTime (query, optional): Timestamp from where onwards the historic data should be queried. If not provided while "endDateTime" is provided defaults to 1 day before "endDateTime" timestamp, otherwise defaults to 1 day from now
+- endDateTime (query, optional): Timestamp up to where the historic data should be queried. If not provided while "startDateTime" is provided defaults to 1 day after "startDateTime" timestamp, otherwise defaults to now
+
+## Responses
+- 200: OK
+- 400: 
+- 401: 
+- 403: 
+- 500: 

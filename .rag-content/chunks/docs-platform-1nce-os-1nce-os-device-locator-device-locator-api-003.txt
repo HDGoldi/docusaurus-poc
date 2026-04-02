@@ -1,0 +1,44 @@
+### Get Latest Devices Positions
+
+Get latest positions of customer devices for the last 7 days.
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/locate/positions/latest"
+```
+
+The response could be `200 OK` with body:
+
+```json
+{
+  "coordinates": [
+    {
+      "deviceId": "1234567890123456788",
+      "sampleTime": "2024-05-07T15:40:12.703Z",
+      "coordinate": [
+        24.164257049560547,
+        56.974369049072266
+      ],
+      "source": "GPS"
+    },
+    {
+      "deviceId": "1234567890123456789",
+      "sampleTime": "2024-05-03T11:00:24.985Z",
+      "coordinate": [
+        24.16962242126465,
+        56.97812271118164
+      ],
+      "source": "CellTower",
+      "metadata": {
+        "horizontalAccuracy": 1220,
+        "horizontalConfidenceLevel": 0.68
+      }
+    }
+  ],
+  "pageAmount": 1,
+  "page": 1
+}
+```
+
+:warning: Note that `metadata` parameter with accuracy data is only available in CellTower locator **"Plus"** mode.
+
+:warning: Note that only one latest position is possible for a single device independent of source: either Celltower or GPS. This means that `source` query parameter selection can lead to no latest position returned for some devices.

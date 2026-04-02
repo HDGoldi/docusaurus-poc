@@ -1,0 +1,15 @@
+# POST /v1/integrate/devices/actions/UDP
+
+Create Action Requests for UDP Devices.
+
+Initiate UDP action on devices.
+
+## Parameters
+None
+
+## Responses
+- 202: Message describing the result of operation
+- 400: 
+- 401: 
+- 403: 
+- 500: 

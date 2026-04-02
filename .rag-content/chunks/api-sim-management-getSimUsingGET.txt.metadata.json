@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-getSimUsingGET/",
+    "title": "GET /v1/sims/{iccid}",
+    "breadcrumb": "API Explorer > Sim Management > Get Single SIM",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "GET /v1/sims/{iccid}"
+  }
+}

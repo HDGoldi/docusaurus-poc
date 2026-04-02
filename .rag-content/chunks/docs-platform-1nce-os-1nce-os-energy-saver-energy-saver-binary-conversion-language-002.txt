@@ -1,0 +1,5 @@
+## Top-level fields
+
+A conversion MUST have a list field named `sense`, which contains statements that need to be evaluated during `sensing` - when de-serializing binary payloads into JSON objects.
+
+A conversion MAY have a string field named `comment`, provided for a human-readable description of the conversion.

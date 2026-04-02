@@ -1,0 +1,9 @@
+## IPv4/v6 Dual Stack Support
+
+The IoT Device Application **SHALL** support IPv4/v6 dual stack (PDN Type = IPv4v6) so that it can properly roam onto mobile networks having support for either IPv4 only or IPv6 only or dual stack only.
+
+***
+
+# Suggested Limits
+
+Please note that these numbers are suggestions which should be noted in the design of an IoT device. Please also note that the metrics are depended on the use case and might be much lower for certain application. These are **NOT** hard limits enforced by 1NCE.

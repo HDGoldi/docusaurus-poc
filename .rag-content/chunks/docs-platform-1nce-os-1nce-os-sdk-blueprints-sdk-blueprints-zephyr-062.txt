@@ -1,0 +1,7 @@
+## 🔌 Memfault Integration
+
+To use this demo, install and enable the [Memfault Plugin](https://help.1nce.com/dev-hub/docs/1nce-os-plugins-device-observability-memfault) for 1NCE OS.
+
+📦 SDK Requirement: [nRF Connect SDK v2.8.0](https://docs.nordicsemi.com/bundle/ncs-2.8.0/page/nrf/gsg_guides.html)
+
+***

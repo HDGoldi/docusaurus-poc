@@ -1,0 +1,11 @@
+### 🧩 General Options
+
+| Config Option                                     | Description                                      | Default        |
+| ------------------------------------------------- | ------------------------------------------------ | -------------- |
+| `CONFIG_APPLICATION_VERSION`                      | Application version reported to Mender           | `1`            |
+| `CONFIG_ARTIFACT_NAME`                            | Mender artifact name (used in artifact creation) | `"release-v1"` |
+| `CONFIG_MENDER_DEVICE_TYPE`                       | Device type used for update compatibility        | `"thingy"`     |
+| `CONFIG_MENDER_FW_UPDATE_CHECK_FREQUENCY_SECONDS` | Firmware update check interval (in seconds)      | `30`           |
+| `CONFIG_MENDER_AUTH_CHECK_FREQUENCY_SECONDS`      | Auth check interval (when unauthorized)          | `30`           |
+
+***

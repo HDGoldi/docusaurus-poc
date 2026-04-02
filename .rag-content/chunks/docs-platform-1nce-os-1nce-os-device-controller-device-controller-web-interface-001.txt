@@ -1,0 +1,11 @@
+## Sending Data to device
+
+On device controller page, table with the device list is shown. Filtering by Device ID (ICCID) is available in the table.
+
+By clicking on a specific device in the table a wizard will be opened that allows:
+
+* Sending UDP message to the device
+* Sending `POST`, `PUT`, `DELETE`, `PATCH` or `GET` CoAP request to the device.
+* Triggering `Read`, `Write`, `Execute`, `Observe-start` or `Observe-end` LwM2M action to the device
+
+*Device controller UDP request creation view*

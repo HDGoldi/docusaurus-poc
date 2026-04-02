@@ -1,0 +1,3 @@
+### SMS Validity Time & Data Retention
+
+Due to General Data Protection Regulation (GDPR) and the 1NCE data retention policy, a MT-SMS is stored at most seven days. After this period 1NCE deletes the MT-SMS data from the system and the content is no longer available. Therefore, it is recommended to set up the SMS Forwarding Service and Data Streamer Service for using the 1NCE SMS Service to the full extend.

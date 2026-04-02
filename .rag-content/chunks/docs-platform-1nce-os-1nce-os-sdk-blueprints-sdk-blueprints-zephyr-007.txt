@@ -1,0 +1,15 @@
+## 🧪 Testing Instructions for Thingy:91
+
+To easily test the default setup on the **Thingy:91**, follow these steps using the provided binaries for the specific demo you'd like to run:
+
+1. **Remove the plastic cover** from the Thingy:91.
+2. **Connect the device to your computer** using a micro-USB cable.
+3. **Enter DFU mode**:
+   * Power off the Thingy:91.
+   * Hold down the **black button** while switching the power back to **ON**.
+4. **Open[nRF Connect for Desktop](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop)** and launch the **Programmer** tool.
+5. Click **SELECT DEVICE** and choose **Thingy:91** from the dropdown list.
+6. In the left panel, go to **File > Add file > Browse** and choose the appropriate `.hex` file from the `thingy_binaries` folder of your desired demo.
+7. Scroll down to **Enable MCUboot** and ensure it is checked.
+8. Click **Write** on the left panel, then confirm again in the **MCUboot DFU** pop-up by pressing **Write**.
+9. Wait for the update to finish. A message saying **"Completed successfully"** will confirm a successful flash.

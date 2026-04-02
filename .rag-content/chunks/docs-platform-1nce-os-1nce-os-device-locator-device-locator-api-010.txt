@@ -1,0 +1,27 @@
+### Patch Geofence
+
+Update an existing geofence
+
+You can change `eventTypes`, `eventSources` and `name` of existing geofence with id `geofence_id_1`:
+
+```shell
+curl -X PATCH "https://api.1nce.com/management-api/v1/locate/geofences/geofence_id_1"
+```
+
+The request body looks like this:
+
+```json
+{
+  "eventTypes": [
+    "ENTER",
+    "EXIT"
+  ],
+  "eventSources": [
+    "CellTower",
+    "GPS"
+  ],
+  "name": "Once2"
+}
+```
+
+:warning: Fields like `type`, `coordinates`, `center` or `center` cannot be changed, instead you should delete old Geofence and create new one.

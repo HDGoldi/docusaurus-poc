@@ -1,0 +1,9 @@
+### Cell-tower **Basic and "Plus"**
+
+* The IoT Devices are located by using the cell id of the current tower when creating a new PDP Context or Session used for data transmission. In case the location cannot be determined, the update is skipped and a retry will be done in the next PDP Context/Session.
+
+* Using the API. Device location and cellTower activity can be queried. The `DeviceId` is equal to the `ICCID`.
+  * The resolved locations of a certain IoT device can be queried using `https://api.1nce.com/management-api/v1/locate/devices/{deviceId}/positions`
+  * The cellTower location resolutions history including unresolved location records of a certain IoT device can be queried using `https://api.1nce.com/management-api/v1/locate/devices/{deviceId}/activity`
+
+* Cell tower "Plus" location mode provides a metadata parameter with accuracy data for resolved locations and tower metadata for unresolved [locations](/1nce-os/1nce-os-device-locator/device-locator-api#get-device-activity).

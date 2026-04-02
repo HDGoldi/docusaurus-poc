@@ -1,0 +1,16 @@
+## Usage Records
+
+1. Place and configure (roaming, APN, data roaming) the 1NCE SIM in a capable mobile device.
+2. For testing the two Usage record types, data and SMS, the following procedures can be executed:
+
+* **SMS usage**: Send a MO-SMS from the SIM device or send a MT-SMS using the SMS Console or API to an active 1NCE SIM.
+* **Data usage**: Allow data roaming, configure the APN and create a data session. Smartphones will automatically create a data session. Use some data service (e.g., IMCP Ping, TCP/UDP traffic, open a website). Close the data session by deactivating the PDP session or disconnecting the device from the network.
+
+3. Usage records are only written once the data and SMS volume has been actively used. Ensure that the SMS is finalized and delivered. For data usage, the current data session needs to be closed to get an immediate usage record in the Data Streamer.
+
+***
+
+# AWS Kinesis Results
+
+Dependent on the Data Streamer configuration the AWS Kinesis Stream will contain Event and Usage data. The data is received as JSON Objects.\
+From the AWS Kinesis Stream the received data can be processed using available AWS processing tools.

@@ -1,0 +1,8 @@
+## What is MCP?
+
+Model Context Protocol (MCP) is an open standard that allows AI applications to securely access external data sources and tools. The 1NCE Developer Hub MCP server provides AI agents with:
+
+* **Direct API access** to 1NCE Developer Hub functionality
+* **Documentation search** capabilities
+* **Real-time data** from your 1NCE Developer Hub account
+* **Code generation** assistance for 1NCE Developer Hub integrations

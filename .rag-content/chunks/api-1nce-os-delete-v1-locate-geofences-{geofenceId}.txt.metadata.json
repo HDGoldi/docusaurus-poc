@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/1nce-os/api-1nce-os-delete-v1-locate-geofences-{geofenceId}/",
+    "title": "DELETE /v1/locate/geofences/{geofenceId}",
+    "breadcrumb": "API Explorer > 1nce Os > Delete geofence",
+    "content_type": "api-reference",
+    "category": "1nce-os",
+    "section_heading": "DELETE /v1/locate/geofences/{geofenceId}"
+  }
+}

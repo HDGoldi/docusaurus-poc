@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/blueprints/blueprints-examples/examples-data-streamer/examples-data-streamer-kinesis/",
+    "title": "AWS Kinesis",
+    "breadcrumb": "Blueprints > Blueprints Examples > Examples Data Streamer > AWS Kinesis",
+    "content_type": "guide",
+    "category": "blueprints",
+    "section_heading": "Event Records"
+  }
+}

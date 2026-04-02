@@ -1,0 +1,15 @@
+# GET /v1/sims/{iccid}
+
+Get Single SIM
+
+Get detail information (status, label, MSISDN, IMSI, ICCID, Lifetime, etc.) for a singe SIM based on the ICCID.
+
+## Parameters
+- iccid (path, required): The ICCID of the SIM to be queried.
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

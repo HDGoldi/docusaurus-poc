@@ -1,0 +1,18 @@
+### LwM2M
+
+Creating LwM2M action request for a device with deviceId `123456789012345678`:
+
+```shell
+curl -X POST "https://api.1nce.com/management-api/v1/integrate/devices/123456789012345678/actions/LWM2M"
+```
+
+The request body looks like this:
+
+```json
+{
+  "action": "write",
+  "resourceAddress": "/3311/0/5850",
+  "data": "Data to send to the device",
+  "requestMode": "SEND_WHEN_ACTIVE"
+}
+```

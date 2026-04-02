@@ -1,0 +1,9 @@
+## Testing the endpoint
+
+It is possible to test the integration directly in the 1NCE portal. To do so, data should be sent to the desired endpoint:
+
+1. *Test Integration* should be selected for the desired protocol.
+2. Device ID (ICCID) should be provided, from which the data is expected.
+3. If required for CoAP & LwM2M, DTLS Pre-Shared Key can be configured in HEX or Plain-text format.
+4. After clicking *Test Integration*, portal will wait for data to arrive from the device.
+5. If data was sent successfully, a message will be displayed in JSON form for LwM2M messages, or if [Energy Saver Template](/1nce-os/1nce-os-energy-saver/index) is being used for CoAP, UDP. The message will be displayed in base64 format if Energy saver is not being used.

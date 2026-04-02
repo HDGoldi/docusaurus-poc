@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/1nce-os/api-1nce-os-delete-v1-partners-plugins-{pluginId}/",
+    "title": "DELETE /v1/partners/plugins/{pluginId}",
+    "breadcrumb": "API Explorer > 1nce Os > Uninstall a specific plugin by ID",
+    "content_type": "api-reference",
+    "category": "1nce-os",
+    "section_heading": "DELETE /v1/partners/plugins/{pluginId}"
+  }
+}

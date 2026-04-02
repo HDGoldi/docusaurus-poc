@@ -1,0 +1,50 @@
+### Creating a circle geofence with center
+
+Device specific circle geofence can be created using following API request:
+
+Create new geofence:
+
+```shell
+curl -X POST "https://api.1nce.com/management-api/v1/locate/geofences"
+```
+
+The request body looks like this:
+
+```json
+{
+	"name": "OnceCircle",
+	"type": "circle",
+  "center": [
+		15.31322746,
+		-4.322458751
+  ],
+	"radius":  500
+}
+```
+
+Response body:
+
+```json
+{
+	"id": "sd8TGmSzXNaQTDtXOzzxf",
+	"name": "OnceCircle",
+	"eventTypes": [
+		"EXIT",
+		"ENTER"
+	],
+	"center": [
+		15.31322746,
+		-4.322458751
+	],
+	"radius": 500,
+	"type": "circle",
+	"eventSources": [
+		"CellTower",
+		"GPS"
+	],
+	"created": "2025-10-02T12:05:56.998Z",
+	"updated": "2025-10-02T12:05:56.998Z"
+}
+```
+
+:warning: Note that in this request we didn't pass the `eventTypes` and `eventSources` attributes, so the system set those to the default values.

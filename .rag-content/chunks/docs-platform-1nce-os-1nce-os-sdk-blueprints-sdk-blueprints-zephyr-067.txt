@@ -1,0 +1,20 @@
+### 4️⃣ Generate Events
+
+On boot, two events are sent automatically:
+
+* `heartbeat`: Contains standard metrics
+* `reboot`: Reports cause of last reboot
+
+Use the CLI to trigger more:
+
+```bash
+nce post_chunks     # Push buffered data now
+nce divby0          # Trigger division-by-zero crash
+nce sw1             # Increment switch_1_toggle_count
+nce sw2             # Log switch_2_toggled event
+nce disconnect      # Simulate disconnection and reconnection
+```
+
+The overview dashboard shows a summary of recent device issues:
+
+***

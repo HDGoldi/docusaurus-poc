@@ -1,0 +1,3 @@
+### Device Controller
+
+The Device Controller supports sending messages to the device via the 1NCE OS managed services. For that we offer three protocols in Device Integrator. [Device Controller](/1nce-os/1nce-os-device-controller/index)

@@ -1,0 +1,28 @@
+## ▶️ Running the Demo
+
+1. **Clone the Blueprint Repository:**
+
+   ```bash
+   git clone https://github.com/1NCE-GmbH/blueprint-zephyr.git
+   ```
+
+2. **Open VS Code and Launch nRF Connect Extension**
+
+3. **Add the project:**
+   * Click **Add Existing Application**
+   * Choose the folder where the blueprint was cloned
+
+4. **Create a Build Configuration:**
+   * Select your board target, e.g.:
+     * `nrf9160dk/nrf9160/ns`
+     * `nrf9151dk/nrf9151/ns`
+     * `thingy91/nrf9160/ns`
+
+5. **Flash the board:**
+   * Connect your board via USB
+   * Click **Flash** or **Debug** to deploy the firmware
+
+📖 Need help with board connection?\
+👉 [Nordic Docs: Connect Using Serial Port](https://docs.nordicsemi.com/bundle/nrf-connect-vscode/page/guides/bd_work_with_boards.html#how-to-connect-using-serial-port)
+
+***

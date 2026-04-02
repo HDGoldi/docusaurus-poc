@@ -1,0 +1,7 @@
+## IMEI Lock
+
+Each device in a mobile network has an IMEI number which identifies the hardware uniquely when connecting to a network. 1NCE offers the functionality to lock a given device to the SIM card using the IMEI.
+
+If the IMEI lock is enabled during an active PDP data session, the current session will be dropped and the device forced to reconnect instantly. This ensures that the currently in use device is locked to the SIM and there is no possibility to change the SIM to another device after enabling the IMEI lock feature.
+
+Once the IMEI Lock option is enabled, the network will link the IMEI to the specific SIM card. Subsequent connection attempts with this SIM card using another device with different IMEI are blocked. This feature can be disabled and enabled by the customer for each SIM card individually either via the 1NCE Portal or 1NCE API. For the IMEI Lock functionality the IMEISV is used. The IMEISV is derived by the IMEI and includes the additional software version parameter.

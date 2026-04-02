@@ -1,0 +1,15 @@
+# POST /v1/sims/extension
+
+Create SIM Extension
+
+Trigger the SIM extension for one or more SIM cards to extend their activation period and renew their quota (data and SMS). An invoice is automatically triggered depending on the chosen payment method.
+
+## Parameters
+- payment_method (query, optional): Optional payment method selection between creditcard, banktransfer, monthly invoice or boleto. If the parameter is left empty or is invalid, banktransfer is used as default for the SIM extension process. To use creditcard please save your credit card details in the customer portal via "account".
+
+## Responses
+- 201: Created
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found

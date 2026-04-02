@@ -1,0 +1,11 @@
+### Device Location Credits
+
+Each cell tower resolution consumes 1 credit from the Device Locator credit balance. The credit balance is refreshed periodically throughout the day.
+If all credits are depleted or the current date reaches the credit expiry date, the plus solver mode automatically switches to basic mode.
+
+You can request access to this feature via the 1NCE OS portal.
+Credits can be purchased via the Orders tab in the 1NCE Portal by choosing the required quantity of “Whereabouts – Device Location” credits.
+
+*Enabled Plus solver mode with credits available*
+
+*Plus solver mode*

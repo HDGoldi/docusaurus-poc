@@ -1,0 +1,3 @@
+## Get action request(s)
+
+Get action request(s) endpoints are available to track the status of the request and potentially see the response from a device using CoAP/LwM2M. The `requestData` property return protocol-specific request data provided when the request was created. For LwM2M the `responseData` can contain the following properties if available: `code` (response code), `payload` (data from the device), for Coap there is also additional field - `payloadType` (payload type). The `payloadType` is either `TEXT` when the response content format is printable, or `BASE64` if the content format is not printable or not present at all. In case an error occurs, the field `errorMessage` is present in the `responseData`.

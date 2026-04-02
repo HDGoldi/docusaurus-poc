@@ -1,0 +1,11 @@
+## Country Object
+
+A nested JSON object inside the Detail Properties contains more information about the country where the SIM event took place. The fields of the Country JSON are listed below.
+
+| Property                | Data Type | Description               |
+| :---------------------- | :-------- | :------------------------ |
+| `country.id `           | INTEGER   | Unique ID of a country.   |
+| `country.name `         | STRING    | Name of the country.      |
+| `country.country_code ` | STRING    | Country Code              |
+| `country.mcc`           | STRING    | Mobile Country Code (MCC) |
+| `country.iso_code `     | STRING    | ISO Country Code          |

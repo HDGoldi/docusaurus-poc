@@ -1,0 +1,3 @@
+## Reporting Example
+
+Suppose the used device support LwM2M object IDs 6 (Location) and 7 (Connectivity Statistics). Based on the registration and registration update, the LwM2M server would read all resources from objects 6 and 7 of the given client device.

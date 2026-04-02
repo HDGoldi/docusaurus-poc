@@ -1,0 +1,3 @@
+## Event and Usage Monitoring
+
+With the 1NCE Data Streamer Service, customers can get live-streamed Event and Usage Records for their 1NCE SIM cards. This allows 1NCE customers to monitor the current connectivity status of each SIM individually in near real-time. The Usage Records provide additional insight into the data and SMS volume usage patterns of the connected IoT devices. The data streamer helps 1NCE customers to keep an eye on the IoT connectivity of their devices with a 1NCE SIM card.

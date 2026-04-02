@@ -1,0 +1,6 @@
+## SIM Deactivation
+
+The selected SIM can be deactivated to prevent an attachment to the 1NCE network. This feature is useful for disabling SIMs during shipping of devices or to force a reset of the connection. This function can also be used through the 1NCE API. Active attachments of SIMs will be purged and devices immediately disconnected.
+
+Subsequent attempts of the device to re-register will be refused by the network until the SIM is re-activated.\
+Depended on the device logic this blocking might force some devices to get into an error state and prevent them from reconnecting to any network even if the SIM has been re-activated again. Implementing a soft- or hard-restart with an **exponential back-off** timer as part of the connectivity procedure of the device firmware is advised. This procedure should circumvent the potential delay in attaching after a SIM reactivation where the device was stuck in an error state. Please implement a back-off algorithm with at least 5-20 minutes between reattempts to not overload the network with undesired attach requests during SIM deactivations. After reactivating the SIMs, the network will once again allow the SIM to attach to the 1NCE network and use all services as usual.

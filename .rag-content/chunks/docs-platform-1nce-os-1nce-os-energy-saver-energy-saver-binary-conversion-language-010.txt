@@ -1,0 +1,9 @@
+## Constant selector
+
+The constant selector is a string.
+
+Example:
+
+```text
+"foo"
+```

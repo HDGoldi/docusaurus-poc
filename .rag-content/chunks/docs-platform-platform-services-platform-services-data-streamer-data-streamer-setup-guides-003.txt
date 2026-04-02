@@ -1,0 +1,15 @@
+## Stream Management
+
+With the 1NCE Data Streamer, it is possible to set up multiple streams with different destinations at once. Each new connection can be configured independently of the others in the 1NCE Portal. A connection can be paused/started or deleted independently of the other setups. To change the configuration of a stream, the old stream has to be deleted and a new stream needs to be set up. Please note that the pausing/starting and creation of a stream can take a few seconds to become active.
+
+***
+
+# REST API - Integration
+
+The REST API connection to the Data Streamer is ideal for custom server application integrations. This method offers the most flexible, custom integration of the Data Streamer Service into existing analytics, reporting, and monitoring pipelines. The REST  API supports both Event and Usage Records.\
+The customer server needs to provide an HTTP POST endpoint (see [Endpoint URL](#endpoint-url)). The 1NCE Data Streamer posts a list of events as they occur towards this endpoint.\
+As of Version 2.0 of the Data Streamer, events are always provided in BULK mode. Therefore, a list of  JSON Event or Usage Record is delivered to the given Endpoint. Using Bulk mode, each HTTP POST will include an array of objects. The maximum amount of records per sent request is 3000 JSON objects in a list. The POST requests are sent at intervals. The endpoint consumes the HTTP POST by sending the HTTP 200 Code as a response to the incoming request. The Data Streamer does not respond to HTTP redirect codes (3xx).\
+The HTTP integration uses a retry mechanism with a backoff policy.  After a given time, the Data Streamer will go into FAILED state and stop delivering events. After the potential error in the HTTP endpoint behavior has been resolved by the customer, the Data Streamer needs to be restarted by the customer.
+
+In the Connectivity Management Platform (CMP), a Basic Authentication Header needs to be set when configuring the REST API integration. This header is of the Base64 format consisting of the `username:password`. The server application endpoint can implement the Basic Authentication Method and only accept incoming requests with the correct header. This offers enhanced security and protection against any requests that do not originate from the 1NCE Data Streamer Service.\
+For **testing purposes only**, the Basic Authentication Header value can be set to an arbitrary string and the processing on the server-side can be ignored. We strongly recommend doing this only for **TESTING**. In a production environment, we suggest **ALWAYS** implementing the Basic Authentication Method.

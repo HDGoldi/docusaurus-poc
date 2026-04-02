@@ -1,0 +1,3 @@
+## Suggested Maximum Volume of Data per Single Device
+
+* 2G/3G/4G/NB-IoT/LTE-M: 10 Mbytes / month / device; tariff-specific restrictions may occur (e.g., maximum lifetime volume \< 10 Mbytes, or pooling restrictions may be in place limiting the average monthly data volume to 500KB or 1 MB).

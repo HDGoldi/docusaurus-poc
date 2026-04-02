@@ -1,0 +1,15 @@
+# GET /v1/sims/{iccid}/quota/data
+
+Get SIM Data Quota
+
+Get the current data quota of a particular SIM.
+
+## Parameters
+- iccid (path, required): The ICCID of the SIM to be queried.
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

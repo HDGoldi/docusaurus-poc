@@ -1,0 +1,165 @@
+## Full Example
+
+Let's now fully expand all the pieces that we've talked about in this document.
+
+```json Full Example
+{
+  "sense": [
+    {
+      "asset": "message_code",
+      "value": {
+        "byte": 0,
+        "bytelength": 1,
+        "type": "uint"
+      }
+    },
+    {
+      "switch": {
+        "byte": 0,
+        "bytelength": 1,
+        "type": "int"
+      },
+      "on": [
+        {
+          "case": 0,
+          "comment": "Positional data",
+          "do": [
+            {
+              "asset": "data_type",
+              "value": "Position"
+            },
+            {
+              "asset": "gps.lat",
+              "value": {
+                "byte": 1,
+                "bytelength": 4,
+                "type": "float"
+              }
+            },
+            {
+              "asset": "gps.lon",
+              "value": {
+                "byte": 4,
+                "bytelength": 4,
+                "type": "float"
+              }
+            },
+            {
+              "asset": "speed",
+              "value": {
+                "byte": 8,
+                "bytelength": 2,
+                "type": "int"
+              }
+            }
+          ]
+        },
+        {
+          "case": 1,
+          "comment": "Maintenance data",
+          "do": [
+            {
+              "asset": "data_type",
+              "value": "Maintenance"
+            },
+            {
+              "asset": "on",
+              "value": {
+                "byte": 1,
+                "type": "boolean"
+              }
+            },
+            {
+              "asset": "fuel",
+              "value": {
+                "byte": 2,
+                "bytelength": 4,
+                "type": "uint"
+              }
+            },
+            {
+              "asset": "driver",
+              "value": {
+                "byte": 6,
+                "bytelength": 4,
+                "type": "string"
+              }
+            },
+            {
+              "asset": "driver_hex",
+              "value": {
+                "byte": 6,
+                "bytelength": 4,
+                "type": "hex"
+              }
+            }
+          ]
+        },
+        {
+          "default": true,
+          "do": [
+            {
+              "asset": "data_type",
+              "value": "Unsupported type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset": "full_payload",
+      "value": {
+        "byte": 0,
+        "endbyte": 0,
+        "type": "hex"
+      }
+    }
+  ]
+}
+```
+
+As before, this template parses two types of messages indicated by the first byte. In the beginning, though there is a new mapping statement that adds message type to the resulting JSON. In the switch block, a new statement is added to parse maintenance data.
+
+Data: `01 01 00 00 05 8c 6f 6c 65 67`
+
+The first byte is always mapped to `message_code`.
+
+Field `data_type` is a constant selector that will be evaluated to `Maintenance`.
+
+`0x01` -> 1
+
+The message therefore should be parsed as maintenance data. We have already tried parsing Positional data, the example can be found above.
+
+Let's explore how the `switch` statement will work in this case.
+
+The byte at position 1 is parsed as a boolean and mapped to on, which determines if the vehicle is powered on.
+
+`0x01` -> true
+
+Next, fuel level is parsed from four bytes starting at position 2 and mapped to field `fuel`. Fuel will be parsed as `unit`, which is an unsigned integer because fuel can't drop below 0. Since 4 bytes is selected, the number will be parsed into 32-bit uint.
+
+`0x0000058c` -> 1420
+
+Driver name is then parsed as a string. Name is parsed from 4 bytes starting from position 6.
+
+`0x6f6c6567` -> "oleg"
+
+Driver name is also outputted as hex string and mapped to field `driver_hex`.
+
+`0x6f6c6567` -> `6f6c6567`
+
+We also are adding the whole original payload to the output as hex in the field called `full_payload`. We are selecting the whole payload by defining the start of the selector as `byte: 0` and the end as `endbyte: 0`.
+
+We get the following result for our Translated Binary Payload.
+
+```json Full Example - Result
+{
+    "message_code": 1,
+    "data_type": "Maintenance",
+    "on": true,
+    "fuel": 1420,
+    "driver": "oleg",
+    "driver_hex": "6f6c6567",
+    "full_payload": "01010000058c6f6c6567"
+}
+```

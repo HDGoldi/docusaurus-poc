@@ -1,0 +1,9 @@
+## Sense block
+
+Sense block MAY contain mapping statements and control statements.
+
+Mapping statements in sense block MUST contain a string field `asset`, whose value is a string that uses JSON dot-notation to identify the path to the field in the resulting object.
+
+Mapping statements in sense block MUST contain a field `value`, whose value is a selector that identifies the data that will be stored as the new value of the asset.
+
+Mapping statements in sense block MAY have a string field named `comment`, provided for human-readable description of the given mapping.

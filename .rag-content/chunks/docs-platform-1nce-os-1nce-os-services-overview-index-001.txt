@@ -1,0 +1,3 @@
+## Device Authenticator
+
+Authenticate IoT devices against external cloud systems based on the identity of the used IoT SIM. An IoT SIM in any form factor is placed into the IoT device and acts as authenticating element by relying on the same network authentication mechanisms as 1NCE Connect. It replaces provisioning processes which include secret flashing during manufacturing and creation of secure device twins in external cloud services. [Device Authenticator](/1nce-os/1nce-os-device-authenticator/index)

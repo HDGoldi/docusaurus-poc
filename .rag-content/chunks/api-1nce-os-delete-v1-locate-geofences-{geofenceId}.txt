@@ -1,0 +1,13 @@
+# DELETE /v1/locate/geofences/{geofenceId}
+
+Delete geofence
+
+Delete a geofence.
+
+## Parameters
+- geofenceId (path, required): unique geofence ID
+
+## Responses
+- 204: Deleted
+- 404: 
+- 500: 

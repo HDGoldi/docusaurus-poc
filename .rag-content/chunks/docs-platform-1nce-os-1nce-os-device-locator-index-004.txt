@@ -1,0 +1,9 @@
+## Cell Tower Events
+
+The Cell tower events tab displays the history of cell tower-based location resolution attempts for the selected device. Location data is stored for up to 7 days.
+The tab displays the following data:
+
+* Event creation time
+* Network access type used for each event
+* Status indicating whether the cell tower event was successfully resolved by the Basic or Plus Resolver
+* Resolver mode indicating how the location was derived

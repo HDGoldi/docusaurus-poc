@@ -1,0 +1,5 @@
+## Integration Restart, Get or Uninstall endpoints
+
+To restart, get, or uninstall your Tartabit integration via API, you can use the same endpoints you would use for a generic Plugin described in the [API Explorer](ref:api-welcome).
+
+# Outcome of successful configuration

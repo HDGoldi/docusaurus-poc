@@ -1,0 +1,3 @@
+### Cell Tower Events
+
+Cell tower events show the history of cell tower-based location resolutions for selected device when Cell Tower Location is enabled.

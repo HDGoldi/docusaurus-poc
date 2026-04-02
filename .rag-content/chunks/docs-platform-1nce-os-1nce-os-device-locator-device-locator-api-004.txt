@@ -1,0 +1,74 @@
+### Get Device Activity
+
+Get Cell location resolutions for one device (maximum of last 7 days, defaults to 1 day). Both resolved and unresolved location resolution attempts are returned.
+
+Get a list of location resolutions for device with id `1234567890123456789` ordered by sampleTime DESC:
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/locate/devices/1234567890123456789/activity"
+```
+
+The response could be `200 OK` with body:
+
+```json
+{
+  "items": [
+    {
+      "iccid": "1234567890123456789",
+      "sampleTime": "2024-05-03T11:00:24.985Z",
+      "towerMetadata": {
+        "MCC": "247",
+        "MNC": "1",
+        "LAC": "11",
+        "CellID": "9511"
+      },
+      "towerLocation": {
+        "longitude": 24.16962242126465,
+        "latitude": 56.97812271118164
+      },
+      "resolutionMetadata": {
+        "horizontalAccuracy": 1220,
+        "horizontalConfidenceLevel": 0.68
+      },
+      "radioAccessType": "2G",
+      "resolutionMode": "ADVANCED",
+      "locationResolutionStatus": "SUCCEEDED"
+    },
+    {
+      "iccid": "1234567890123456789",
+      "sampleTime": "2024-05-03T11:00:24.985Z",
+      "towerLocation": {
+        "longitude": 24.16962242126465,
+        "latitude": 56.97812271118164
+      },
+      "radioAccessType": "2G",
+      "resolutionMode": "BASIC",
+      "locationResolutionStatus": "SUCCEEDED"
+    },
+    {
+      "iccid": "1234567890123456789",
+      "sampleTime": "2024-05-03T10:00:24.985Z",
+      "towerMetadata": {
+        "MCC": "247",
+        "MNC": "1",
+        "LAC": "11",
+        "CellID": "9511"
+      },
+      "radioAccessType": "2G",
+      "resolutionMode": "ADVANCED",
+      "locationResolutionStatus": "FAILED"
+    },
+    {
+      "iccid": "1234567890123456789",
+      "sampleTime": "2024-05-03T09:00:24.985Z",
+      "radioAccessType": "2G",
+      "resolutionMode": "BASIC",
+      "locationResolutionStatus": "FAILED"
+    }
+  ]
+}
+```
+
+:warning: Note that `towerMetadata` and `resolutionMetadata` parameters with accuracy data and tower identifier are only available in CellTower locator **"Plus"** mode.
+:warning: Note that, regardless of the different radio access technology types, the `LAC` property in the `towerMetadata` object can represent `TAC`.
+![](https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg) [OpenCelliD Project](https://opencellid.org/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)

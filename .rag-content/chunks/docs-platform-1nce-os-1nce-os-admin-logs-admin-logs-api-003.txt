@@ -1,0 +1,9 @@
+### Messages Time Range
+
+Getting messages in a specified time range for the same device but between `2022-02-21T13:20:00.000` and `2022-02-21T13:22:00.000`:
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/administrationLogs?startDateTime=2022-02-21T13:20:00.000&endDateTime=2022-02-21T13:22:00.000"
+```
+
+Both of the query parameters are optional, but one should be given. If only `startDateTime` is provided, the query will consider the end date-time to be the current time. If only `endDateTime` is provided, the start date-time will be the time seven days ago.

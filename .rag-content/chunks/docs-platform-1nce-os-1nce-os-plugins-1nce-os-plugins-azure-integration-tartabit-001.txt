@@ -1,0 +1,11 @@
+## Description
+
+Tartabit IoT Bridge 1NCE OS Plugin swiftly integrates LPWAN devices provisioned on the 1NCE network and 1NCE OS, with customer applications running on major cloud platforms like Azure, AWS, and GCP. IoT Bridge ensures seamless connectivity via a low/no-code environment, enabling rapid deployment of production-grade IoT solutions. IoT Bridge alleviates the need to host custom servers and self-managed infrastructure.
+
+Service integrations include:\
+**Azure** - IoT Hub, IoT Central, Digital Twin, CosmosDB, Data Explorer, Event Hub, Service Bus, Log Analytics, SQL, Maps\
+**AWS** - IoT Core, Kinesis, Firehose, SQS, DocumentDB, DynamoDB, RDS\
+**GCP** - Pub/Sub, Firebase, Cloud SQL, Maps\
+**Open-source** - Kafka, AMQP, RabbitMQ, MQTT, webhooks
+
+Bottom line, if you are trying to build a world class Internet of Things solution based on LWPAN technologies then IoT Bridge, the industry’s easiest to use, easiest to buy, and easiest to deploy cloud gateway, will accelerate your time to market and reduce your development costs.

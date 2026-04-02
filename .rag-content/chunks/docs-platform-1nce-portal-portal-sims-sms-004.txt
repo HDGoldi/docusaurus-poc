@@ -1,0 +1,13 @@
+## SIM Export
+
+The complete and customized SIM Card table can be exported as a CSV-file if needed by using the "Export SIMs" button. As it might take some time to export a larger list of SIMs, the user gets an e-mail notification as soon as the export is completed and can be downloaded from the SIM Export section underneath the SIM card table. This export also includes the PIN and PUK of each SIM which might be needed for certain devices.
+
+*SIM Export section below the SIM table*
+
+***
+
+# SIM Management
+
+Each SIM card in the list view can be selected using the checkbox on the left side of each list entry. By selecting one or several SIMs the user can perform different actions like (de-)activating SIMs, setting the IMEI lock, configuring Auto-Top-Ups or manually recharging the SIM data and SMS volume. These actions can be triggered for the selected SIMs using the buttons in the action bar appearing once SIMs are selected. Additional SIMs can be ordered from here as well with the "Reorder" button on the top right of the table.
+
+*Selected SIMs with open action bar*

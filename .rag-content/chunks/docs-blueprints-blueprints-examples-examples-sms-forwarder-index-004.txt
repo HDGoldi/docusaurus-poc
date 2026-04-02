@@ -1,0 +1,3 @@
+## MO-SMS Delivery
+
+The figure shows a successful and failed flow of an MO-SMS delivery using the SMS Forwarder. The MO-SMS is always provided via the 1NCE Portal and the 1NCE API. The status of a MO-SMS can be queried in the Portal and the API. The delivery failed error message is delivered via the Data Streamer and also shown in the 1NCE Portal.

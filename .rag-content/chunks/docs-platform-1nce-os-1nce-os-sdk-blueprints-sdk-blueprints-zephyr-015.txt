@@ -1,0 +1,15 @@
+### 🔋 Payload Configuration
+
+Depending on whether the Energy Saver feature is enabled:
+
+* If `CONFIG_NCE_ENERGY_SAVER` is **disabled**:
+
+| Config Option    | Description                         | Default                                   |
+| ---------------- | ----------------------------------- | ----------------------------------------- |
+| `CONFIG_PAYLOAD` | Message sent to 1NCE IoT Integrator | `{"text": "Hi, this is a test message!"}` |
+
+* If `CONFIG_NCE_ENERGY_SAVER` is **enabled**:
+
+| Config Option                  | Description                                     | Default |
+| ------------------------------ | ----------------------------------------------- | ------- |
+| `CONFIG_NCE_PAYLOAD_DATA_SIZE` | Payload data size for the Energy Saver template | `10`    |

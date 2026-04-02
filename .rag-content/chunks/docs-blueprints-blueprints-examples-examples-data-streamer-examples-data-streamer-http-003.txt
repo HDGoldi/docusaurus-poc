@@ -1,0 +1,28 @@
+## Endpoint Capacity
+
+Be aware that the HTTP/Webhook integration will deliver the incoming events as a list of JSON objects. Dependent on the amount of SIMs and occurred records this request can be quite large. A maximum limit of 3.000 records per request is set. 1NCE customers with a large quantity of SIMs and high number of events as such must be aware that their backend system receiving data from the stream needs to have the capacity to handle large incoming requests.
+
+***
+
+# 1NCE Portal Configuration
+
+After implementing a HTTP Post endpoint on a custom backend, the Data Streamer needs to be configured in the 1NCE Portal in the Configuration tab. For a complete Data Stream setup using HTTP/Webhook, two configurations (Events and Usage) need to be created in the 1NCE Portal. Still, the same endpoint could be used as target for both stream setups. After the configuration the SIM Event and Usage Records will be forwarded to the specified customer endpoint.
+
+1. **API Type:** Select RestAPI to customize the settings.
+2. **Stream Type:** Choose between  and  records. If both record types are desired, two separate Data Streams with the same destination endpoint can be setup.
+3. **Name:** Identification name used in the Connectivity Management Platform for labeling the specific integration.
+4. **API Callback:** URL to the customer provided HTTPs endpoint accepting the HTTP POST requests.
+
+* The endpoint URL for the Data Streamer in the needs to be valid.
+* Public IP addresses ([\<\<`https://"server-ip":"port"/"endpoint"/`>>](`````https://"server-ip":"port"/"endpoint"/`````)) are not supported.
+* Custom ports for the endpoint can be configured via the URL ([\<\<`https://"server-domain":"port"/"endpoint"/`>>](`````https://"server-domain":"port"/"endpoint"/`````)).
+* The endpoint server needs to have a valid SSL/TLS certificate. A self-signed certificate will not work in this application case. We recommend using Let's Encrypt certificates.
+
+5. **Basic Auth Header:** Base64 encoded value supplied by each HTTP POST request in the Basic Authentication Header field. The supplied HTTP endpoint needs to support Basic Authentication.
+6. Click **Save** to create the Data Streamer integration.
+
+***
+
+# HTTP/Webhook Integration Testing
+
+Testing a Data Streamer integration can be done in two ways: using a 1NCE SIM in a device or sample HTTP cURL requests. This sections explains the two ways of testing the Data Streamer integration.

@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/order-management/api-order-management-getOrderUsingGET/",
+    "title": "GET /v1/orders/{order_number}",
+    "breadcrumb": "API Explorer > Order Management > Get Single Order",
+    "content_type": "api-reference",
+    "category": "order-management",
+    "section_heading": "GET /v1/orders/{order_number}"
+  }
+}

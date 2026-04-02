@@ -1,0 +1,13 @@
+# GET /v1/integrate/devices/endpoints
+
+Get device endpoints
+
+Get details about the device endpoints.
+
+## Parameters
+None
+
+## Responses
+- 200: OK
+- 403: 
+- 500: 

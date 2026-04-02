@@ -1,0 +1,15 @@
+# DELETE /v1/partners/plugins/{pluginId}
+
+Uninstall a specific plugin by ID
+
+Uninstall a specific plugin by ID to remove the functionality provided by the plugin.
+
+## Parameters
+- pluginId (path, required): Unique identifier of the plugin installation.
+
+## Responses
+- 204: NoContent
+- 401: 
+- 403: 
+- 404: 
+- 500: 

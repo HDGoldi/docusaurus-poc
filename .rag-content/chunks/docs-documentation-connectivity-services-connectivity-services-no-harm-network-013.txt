@@ -1,0 +1,3 @@
+## IoT Service Platform or IoT Service Application Temporarily Offline Recovery
+
+If the IoT Service Platform or IoT Service Application are temporarily offline, they **SHALL NOT** request the IoT Devices to synchronize all at once when coming back online.

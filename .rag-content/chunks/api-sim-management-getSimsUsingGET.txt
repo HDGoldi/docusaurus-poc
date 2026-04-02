@@ -1,0 +1,18 @@
+# GET /v1/sims
+
+Get All SIMs
+
+Get a List of SIMs for the current account.
+
+## Parameters
+- page (query, optional): Number index of the requested SIM list page. Use this parameter to iterate through all SIMs on the different pages. The total amount of pages is listed in the response header.
+- pageSize (query, optional): Defines the size of a page, the number of individual SIMs listed on one page. The maximum allowed value is 100.
+- q (query, optional): Filter parameter in <i>{filter}:{value}</i> format. Expects comma separated list of filtering criteria out of the following fields: <ul><li>imei</li><li>ip_address</li></ul><p><b>Example:</b> "ip_address:127.0.0.1,imei:4711"</p>
+- sort (query, optional): Sort values in a comma seperated list. Prepend "-" for descending sort. Possible values:<ul><li>imei</li><li>ip_address</li></ul><p><b>Example:</b>"ip_address,-imei"</p>
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

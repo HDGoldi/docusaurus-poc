@@ -1,0 +1,9 @@
+## 🧱 Supported Boards
+
+The demo supports the following Nordic boards:
+
+* [nRF9151 Development Kit](https://www.nordicsemi.com/Products/Development-hardware/nrf9151-dk)
+* [nRF9160 Development Kit](https://www.nordicsemi.com/Products/Development-hardware/nrf9160-dk)
+* [Thingy:91](https://www.nordicsemi.com/Products/Development-hardware/Nordic-Thingy-91)
+
+***

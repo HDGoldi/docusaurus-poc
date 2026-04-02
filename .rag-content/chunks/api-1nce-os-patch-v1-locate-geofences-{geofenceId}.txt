@@ -1,0 +1,14 @@
+# PATCH /v1/locate/geofences/{geofenceId}
+
+Patch a geofence
+
+Update an existing geofence
+
+## Parameters
+- geofenceId (path, required): unique geofence ID
+
+## Responses
+- 200: OK
+- 400: 
+- 404: 
+- 500: 

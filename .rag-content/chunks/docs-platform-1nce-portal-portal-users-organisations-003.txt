@@ -1,0 +1,4 @@
+## User Creation
+
+A new user can be created using the "New User" button on the top right. The mandatory details depend on the type of the user that needs to be created. The e-mail address is used for the confirmation of the account as well as the login name for the 1NCE services. Customers have to make sure that the entered e-mail address is valid and can receive messages. After creating a new user an e-mail is sent to the new mail address requesting to set an initial new password for the 1NCE Customer Portal.\
+For the API role, the client\_id represents the username and the client\_secret the password. The client\_id has the account number with an underscore as prefix. The client\_secret needs to be set during the user creation as there is no e-mail address attached to this user role.

@@ -1,0 +1,4 @@
+## Frequency and Prioritization of Data Transmissions
+
+The IoT Device Application **SHOULD** monitor the number of network connections it attempts over a set time period. If the number of connection attempts exceeds a maximum value set by the IoT Service Provider (see ), the IoT Device Application sends a report to the IoT Service Platform and stops requesting mobile network connectivity until the necessary time period has expired. In tiered IoT Devices, the embedded Service Enablement Layer **SHOULD** comply to this requirement.\
+IoT Devices Applications communicating with IoT Server Applications over 3GPPTM Mobile IoT access bearers, such as NB-IoT and LTE-M, **SHALL** optimize their application reporting period to never exceed the IoT Service Provider daily maximum number of messages (see ).

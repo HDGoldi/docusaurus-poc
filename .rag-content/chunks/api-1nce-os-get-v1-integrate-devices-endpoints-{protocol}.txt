@@ -1,0 +1,14 @@
+# GET /v1/integrate/devices/endpoints/{protocol}
+
+Get single device endpoint
+
+Get details about the device endpoint of a specific protocol.
+
+## Parameters
+- protocol (path, required): Available protocols: <ul><li>LWM2M</li><li>UDP</li><li>COAP</li></ul>
+
+## Responses
+- 200: OK
+- 403: 
+- 404: 
+- 500: 

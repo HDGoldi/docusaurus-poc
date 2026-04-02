@@ -1,0 +1,16 @@
+# POST /v1/partners/TARTABIT/plugins
+
+Install Tartabit plugin for 1NCE OS
+
+Allows setting up an integration with Tartabit to integrate with Azure, Oracle Cloud Infrastructure, Google Cloud and other cloud services via 1NCE OS.
+
+## Parameters
+None
+
+## Responses
+- 201: Successful Tartabit plugin installation response details.
+- 400: 
+- 401: 
+- 403: 
+- 409: 
+- 500: 

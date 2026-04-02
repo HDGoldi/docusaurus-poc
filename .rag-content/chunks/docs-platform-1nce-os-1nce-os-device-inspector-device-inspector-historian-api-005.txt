@@ -1,0 +1,63 @@
+### Working with Pagination
+
+By default, up to 10 messages are returned from the API. The user is able to specify page size with a query parameter pageSize. The value of this parameter should be between 1 and 25. Example call to get UDP messages of the example device in the page of 3:
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/inspect/devices/history?iccid=123456789012345678&protocol=UDP&pageSize=3"
+```
+
+The response would be:
+
+```json
+{
+  "items": [
+    {
+      "time": "2022-02-21T13:21:50.268",
+      "payload": "{\"battery\":98,\"saturation\":0.57,\"temperature\":11.1}",
+      "iccid": "123456789012345678",
+      "deviceId": "123456789012345678",
+      "protocol": "UDP"
+    },
+    {
+      "time": "2022-02-21T13:21:45.480",
+      "payload": "{\"battery\":98,\"saturation\":0.57,\"temperature\":11.1}",
+      "iccid": "123456789012345678",
+      "deviceId": "123456789012345678",
+      "protocol": "UDP"
+    },
+    {
+      "time": "2022-02-21T13:21:44.360",
+      "payload": "{\"battery\":98,\"saturation\":0.57,\"temperature\":11.0}",
+      "iccid": "123456789012345678",
+      "deviceId": "123456789012345678",
+      "protocol": "UDP"
+    }
+  ],
+  "nextToken": "AYAFeEdvNYWYGIwsjZX2PFMhRfoAAAA...",
+  "firstToken": "AYAXeFiqDUzhDQ7Tvjydy4JkuuoAAAA..."
+}
+```
+
+We can see that there are two extra fields in the response: nextToken and firstToken. This means that there are more records to see than this. If we would pass nextToken as a query parameter, we would get the next page of data:
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/devices/messages?iccid=123456789012345678&protocol=UDP&pageSize=3&nextToken=AYAFeEdvNYWYGIwsjZX2PFMhRfoAAAA..."
+```
+
+We would get the data:
+
+```json
+{
+	"items": [
+		{
+			"time": "2022-02-21T12:47:21.495",
+			"payload": "{\"battery\":98,\"saturation\":0.57,\"temperature\":11.2}",
+			"iccid": "123456789012345678",
+			"deviceId": "123456789012345678",
+			"protocol": "UDP"
+		}
+	]
+}
+```
+
+In this case, there are no extra fields which means no more records to see. If we would provide `firstToken` as a `nextToken` in the query, we would get the same result as we had when we called it the first time (even if there were new messages by this time).

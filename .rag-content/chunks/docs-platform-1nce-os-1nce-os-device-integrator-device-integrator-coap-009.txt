@@ -1,0 +1,8 @@
+## UnauthorizedResponse
+
+API responses when the Terms of Use and Data Processing Agreement are not accepted for the owner of the device:
+
+| Name       | Type        | Description                |
+| :--------- | :---------- | :------------------------- |
+| statusText | string      | Http Status Text           |
+| errors     | \[ object ] | Detailed Error Information |

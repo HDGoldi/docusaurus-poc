@@ -1,0 +1,5 @@
+## Event Records
+
+1. Place a 1NCE SIM into an IoT device or any other mobile device.
+2. Ensure that the mobile device allows roaming network and data connections and that the 1NCE APN is setup correctly.
+3. The attachment to a mobile network will cause a few Event records to be transmitted over the Data Streamer integration.

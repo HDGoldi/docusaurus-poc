@@ -1,0 +1,3 @@
+## MT-SMS DLR
+
+The figure below shows the flow of a Delivery Report for a MT-SMS. Once a mobile terminated SMS is issued via the API or 1NCE Portal, it will be delivered to the SIM device. Once received by the device, a delivery report (DLR) is issued from the 1NCE network using the SMS Forwarder webhook integration. The DLR indicates that the SMS was delivered to the targeted SIM device. If no webhook / HTTP endpoint is configured, the delivery of the DLR will fail resulting in an event shown in the data streamer and 1NCE Portal.

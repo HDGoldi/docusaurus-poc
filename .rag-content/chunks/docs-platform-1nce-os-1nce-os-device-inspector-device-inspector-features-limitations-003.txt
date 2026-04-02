@@ -1,0 +1,9 @@
+### History
+
+Whenever messages (UDP, CoAP or LwM2M) from a device are sent to the 1NCE OS endpoint(s) those are stored for 7 days.
+
+* . Traversed messages are stored. The message format depends on the energy saver status for the specific protocol. If the [Energy Saver](/1nce-os/1nce-os-energy-saver/index) is not enabled, then message will be converted and stored in Base64 format, but when enabled, then a processed message will be stored in JSON format.
+
+* . Messages are stored in JSON format.
+
+More details in [Historian Web Interface](/1nce-os/1nce-os-device-inspector/device-inspector-historian-web-interface) or [Historian API Examples](/1nce-os/1nce-os-device-inspector/device-inspector-historian-api).

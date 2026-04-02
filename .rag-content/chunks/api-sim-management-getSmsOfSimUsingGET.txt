@@ -1,0 +1,16 @@
+# GET /v1/sims/{iccid}/sms/{id}
+
+Get SMS Details
+
+Query details about an individual SMS from a specifc SIM card.
+
+## Parameters
+- iccid (path, required): The ICCID of the SIM to be queried.
+- id (path, required): The ID of the SMS message to be queried.
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 422: The following SIMs are expired and cannot be modified via API. Only extensions are permitted

@@ -1,0 +1,16 @@
+## DNS Resolution
+
+When using URLs as a reference, these have to be resolved via a DNS request to obtain the target IP address. This resolution process generates additional traffic which is often overlooked in the usage calculation. The table shown an example data usage for one DNS resolution. Dependent on the IoT device software, multiple DNS queries might be executed as part of a normal operation.
+
+> 📘 Avoiding DNS Resolution
+>
+> It is possible to avoid the DNS resolution if the IP address of the destination is known. In this case, the device should be configured to send data to the IP instead of the DNS.
+>
+> However, this comes with a risk. For example, the application may stop working should the IP change. Usually, the DNS stays the same but point to the correct IP, even when a new IP is being used.\
+> As such, there is a risk that at some point of time data is not reaching its intended destination as the IP was reassigned. Therefore, we generally recommend using the address "udp.os.1nce.com" instead of the IP behind the DNS.
+
+| Description | DNS/UDP Packets | IP Packets | Data Volume Sum |
+| --- | --- | --- | --- |
+| **DNS Resolution** | **94 Bytes** | **40 Bytes** | **134 Bytes** |
+| *DNS Query* e.g. [www.google.de](http://www.google.de) | 39 Bytes | 20 Bytes | 59 Bytes |
+| *DNS Response* | 55 Bytes | 20 Bytes | 75 Bytes |

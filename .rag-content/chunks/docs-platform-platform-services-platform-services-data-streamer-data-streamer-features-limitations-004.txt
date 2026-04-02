@@ -1,0 +1,7 @@
+## Custom API Endpoint
+
+In addition to the ready to use 3rd party integrations, 1NCE offers the possibility to integrate an own HTTP Post Endpoint which can be configured to receive the records from the data streamer. Customers can use this integration to include the 1NCE Data Streamer Service into their application or monitoring system of choice.
+
+***
+
+# Limitations

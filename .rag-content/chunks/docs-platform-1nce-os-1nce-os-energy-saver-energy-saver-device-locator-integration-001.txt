@@ -1,0 +1,30 @@
+### Template example
+
+**Energy Saver** template to decode longitude in the first 8 bytes and latitude in the subsequent 8 bytes of the message.
+
+```json
+{
+  "sense": [
+    {
+      "asset": "longitude",
+      "custom_type": "location_long",
+      "value": {
+        "byte": 0,
+        "bytelength": 8,
+        "type": "float",
+        "byteorder": "little"
+      }
+    },
+    {
+      "asset": "latitude",
+      "custom_type": "location_lat",
+      "value": {
+        "byte": 8,
+        "bytelength": 8,
+        "type": "float",
+        "byteorder": "little"
+      }
+    }
+  ]
+}
+```

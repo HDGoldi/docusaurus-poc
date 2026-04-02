@@ -1,0 +1,3 @@
+## Device-Originated SMS are Barred
+
+When the IoT Device Application detects that its subscription for MO-SMS is barred by the mobile network, the IoT Device Application **SHALL** retry connection requests to the mobile network with an increasing back-off period. The IoT Device Application **SHALL NOT** start an application-driven reboot of the communication module/chipset.

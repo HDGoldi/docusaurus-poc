@@ -1,0 +1,7 @@
+### 📦 Prerequisites
+
+* [nRF Connect SDK v2.8.0](https://docs.nordicsemi.com/bundle/ncs-2.8.0/page/nrf/installation/install_ncs.html)
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [West tool](https://docs.zephyrproject.org/3.1.0/develop/west/install.html)
+
+***

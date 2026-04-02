@@ -1,0 +1,3 @@
+## Data Protocols
+
+The concept of the Open Systems Interconnection model applies to the 1NCE Data Service structure. The GPRS Tunneling Protocol (GTP) is used on layer 3 to transfer user application data between the device with a 1NCE SIM and the internet or application server and vice versa. All the data traffic is wrapped in the GTP, on top of this protocol (layer 4+) the customer is free to use any transport protocol (e.g., TCP, UDP, MQTT, CoAP, etc.) and any port assignment.

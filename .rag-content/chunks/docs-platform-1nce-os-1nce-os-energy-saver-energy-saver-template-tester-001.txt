@@ -1,0 +1,30 @@
+### Location template
+
+```
+{
+  "sense": [
+    {
+      "asset": "longitude",
+      "custom_type": "location_long",
+      "value": {
+        "byte": 0,
+        "bytelength": 8,
+        "type": "float",
+        "byteorder": "little"
+      }
+    },
+    {
+      "asset": "latitude",
+      "custom_type": "location_lat",
+      "value": {
+        "byte": 8,
+        "bytelength": 8,
+        "type": "float",
+        "byteorder": "little"
+      }
+    }
+  ]
+}
+```
+
+If custom types location\_long and location\_lat are available the position will be forwarded to the [Location Service](/1nce-os/1nce-os-device-locator/index). Longitude and latitude both have to be float64.
