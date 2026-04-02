@@ -1,0 +1,11 @@
+## Start Using
+
+To install Plugin in 1NCE OS you can choose one of the two options described below. After configuration is done you can use the [Demo script for zephyr](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/plugin_system/nce_debug_memfault_demo) from 1NCE OS to showcase Memfault Plugin features and understand the capabilities of 1NCE OS SDK.
+
+:::warning
+Please note that during Memfault plugin installation your Organization's email address will be used for the new Memfault account. You will need access to this email to receive confirmation email from Memfault after Sign up.
+
+:warning: Please note that by installing this plugin, you are aware that **data is shared with Memfault**.
+:::
+
+# Memfault  Plugin Installation via Frontend

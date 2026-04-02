@@ -1,0 +1,26 @@
+## Plugin Get and Uninstall endpoints
+
+To get details or uninstall your Memfault integration via API, you can use the same endpoints you would use for a generic Plugin described in the [API Explorer](ref:api-welcome).
+
+:::warning
+Memfault portal Url to finalize registration can be retrieved only in the response of the Get Plugin Details endpoint.
+:::
+
+# Utilizing Memfault plugin
+
+The Memfault server receives and stores debug and log data sent by your devices.
+
+1NCE OS Memfault plugin supports CoAP/CoAPs to HTTPS proxying with seamless support for Authorization. All the data sent by the device to the 1NCE OS Coap Proxy server is proxied to the Memfault [Chunks endpoint](https://api-docs.memfault.com/#a8d3e36f-62f0-4120-9fc6-544ee04f3bb5). We automatically pass device ICCID as a device identifier to the Memfault system, so the following URI should be added in CoAP Requests `Proxy-URI`option:
+
+```
+https://chunks.memfault.com/api/v0/chunks/:iccid:
+```
+
+Additionally please remember to set the correct `Content-Format` option, for binary payloads it should be 42.
+
+To utilize proxy functionality please use one of the following endpoints for CoAP requests:
+
+* `coap://coap.proxy.os.1nce.com:5683`
+* `coaps://coaps.proxy.os.1nce.com:5684`.
+
+  *If CoAPs is required to be used please refer to[DTLS encryption for CoAP](/1nce-os/1nce-os-device-integrator/device-integrator-coap#dtls-encryption-for-coap).*

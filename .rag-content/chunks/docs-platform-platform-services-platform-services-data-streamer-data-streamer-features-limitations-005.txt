@@ -1,0 +1,3 @@
+## DataDog Integration
+
+The DataDog integration only provides Data Volume monitoring capabilities. That means only Data Volume in Bytes is reported, and SMS consumption cannot be monitored.

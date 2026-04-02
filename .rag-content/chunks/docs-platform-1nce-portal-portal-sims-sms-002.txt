@@ -1,0 +1,7 @@
+## Session
+
+| Parameter  | Description                                                                                                                                                                                                     |
+| :--------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Online`   | Green Light: The SIM has established a data session. When a SIM device does not properly close the PDP data session, this status will remain until the device is flushed from the network.                      |
+| `Offline`  | Red Light: The SIM device is not connected to the 1NCE network.                                                                                                                                                 |
+| `Attached` | Amber Light: The SIM is attached to a mobile network, but has no active data session. When a SIM is not properly detached from a network, this status will remain until the device is flushed from the network. |

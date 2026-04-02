@@ -1,0 +1,17 @@
+# GET /v1/optimize/savings
+
+Get savings
+
+Get statistics about the savings by using the optimizer.
+
+## Parameters
+- range (query, optional): Specify the range in days to receive data about.
+- protocol (query, optional): Filter out by specific protocols: <ul><li>UDP</li><li>COAP</li></ul>
+- iccid (query, optional): ICCID of a SIM device, used to identifiy each 1NCE SIM.
+
+## Responses
+- 200: OK
+- 400: 
+- 401: 
+- 403: 
+- 500: 

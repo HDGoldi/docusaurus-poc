@@ -1,0 +1,3 @@
+### Data Session
+
+When the limit is reached, new PDP data sessions will be rejected: **PDP Context Request rejected, because endpoint is currently blocked due to exceeded traffic limit.**  However, some devices might retry indefinitely to reconnect in such a case. 1NCE strongly advices to use a back-off approach in this rejection case to not flood the network with PDP session requests.

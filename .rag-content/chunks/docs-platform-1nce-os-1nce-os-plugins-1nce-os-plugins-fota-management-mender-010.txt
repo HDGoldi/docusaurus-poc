@@ -1,0 +1,9 @@
+## Limitations
+
+* Only mender endpoints are allowed to be proxied. The following endpoints in CoAP Request Proxy-URI options are allowed for Mender Plugin:\
+  `hosted.mender.io`\
+  `eu.hosted.mender.io`
+* Public key and Private key can be provided only via API. Keys should be a pair and they should be provided in `PEM` format. The public key max allowed string length is 1000 chars, Private key max allowed string length is 3000 chars.
+* Currently only `RSA PKCS1` and `RSA PKCS8` private and public key types are supported. Other types `ECDSA` and `ED25519` are not supported for now.
+
+# Outcome of successful configuration

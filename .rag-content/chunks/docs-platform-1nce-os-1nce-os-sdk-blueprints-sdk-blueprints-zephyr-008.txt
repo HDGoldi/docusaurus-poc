@@ -1,0 +1,17 @@
+### 📂 Available Firmware for Thingy:91
+
+* [🔐 CoAP Demo Firmware](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/nce_coap_demo/thingy_binaries)
+* [📡 UDP Demo Firmware](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/nce_udp_demo/thingy_binaries)
+* [📥 FOTA with Mender Firmware](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/plugin_system/nce_fota_mender_demo/thingy_binaries)
+* [🛠️ Debug with Memfault Firmware](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/plugin_system/nce_debug_memfault_demo/thingy_binaries)
+
+:::tip
+For Memfault diagnostics and debugging, you should upload [zephyr.elf](https://github.com/1NCE-GmbH/blueprint-zephyr/blob/main/plugin_system/nce_debug_memfault_demo/thingy_binaries/zephyr.elf) file to the Memfault portal.
+
+Refer to the [Memfault documentation](https://docs.memfault.com) for instructions on setting up symbol files and debugging integration.\
+For a faster getting started experience, you can directly use the documentation under [`plugin_system/nce_debug_memfault_demo`](./plugin_system/nce_debug_memfault_demo).
+:::
+
+📘 For more detailed device guidance, check the official [Thingy:91 Getting Started Guide](https://docs.nordicsemi.com/bundle/ncs-2.6.1/page/nrf/device_guides/working_with_nrf/nrf91/thingy91_gsg.html)
+
+***

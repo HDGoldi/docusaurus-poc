@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-updateSimsUsingPOST/",
+    "title": "POST /v1/sims",
+    "breadcrumb": "API Explorer > Sim Management > Create Multiple SIM Configuration",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "POST /v1/sims"
+  }
+}

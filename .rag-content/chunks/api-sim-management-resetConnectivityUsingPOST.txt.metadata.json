@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-resetConnectivityUsingPOST/",
+    "title": "POST /v1/sims/{iccid}/reset",
+    "breadcrumb": "API Explorer > Sim Management > Create Connectivity Reset",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "POST /v1/sims/{iccid}/reset"
+  }
+}

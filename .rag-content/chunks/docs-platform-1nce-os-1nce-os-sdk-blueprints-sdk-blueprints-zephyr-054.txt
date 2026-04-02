@@ -1,0 +1,22 @@
+### Replace the placeholders with your actual values.
+
+:::
+
+```bash
+mender-artifact write module-image \
+  -t thingy \
+  -o release-v2.mender \
+  -T release-v2 \
+  -n release-v2 \
+  -f build/nce_fota_mender_demo/zephyr/zephyr.signed.bin \
+  --compression none
+```
+
+📌 Replace values as needed for your device:
+
+* `-t`: Device type (`CONFIG_MENDER_DEVICE_TYPE`)
+* `-n`: Artifact name (`CONFIG_ARTIFACT_NAME`)
+* `-T`: Payload type (e.g. release-v2)
+* `-f`: Firmware binary file path (usually `build/nce_fota_mender_demo/zephyr/zephyr.signed.bin`)
+
+3. **Upload** the generated `.mender` file to the **Releases** section in the Mender dashboard.

@@ -1,0 +1,5 @@
+## Features
+
+DTLS is able to provide datastreaming functionality to devices with a low delay compared to TLS. It is able to provide this because it preserves the semantics of the underlying transport. DTLS also has advanced security. As a result, communication between client-server applications cannot be eavesdropped on or tampered with. This ensures that the streamed data is the same data as it was received.
+
+DTLS makes use of the UDP protocol for this functionality. The data is sent in a fire and forget style, so no handshakes occur, and the message is sent without any reception or delivery confirmation. UDP also avoids the TCP meltdown problem, where different transport layers compensate for each other, cause delays in the data transfer.

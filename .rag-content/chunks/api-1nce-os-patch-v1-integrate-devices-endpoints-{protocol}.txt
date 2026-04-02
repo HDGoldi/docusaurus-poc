@@ -1,0 +1,14 @@
+# PATCH /v1/integrate/devices/endpoints/{protocol}
+
+Patch single device endpoint
+
+Update endpoint related settings.
+
+## Parameters
+- protocol (path, required): Available protocols: <ul><li>LWM2M</li><li>UDP</li><li>COAP</li></ul>
+
+## Responses
+- 200: OK
+- 403: 
+- 404: 
+- 500: 

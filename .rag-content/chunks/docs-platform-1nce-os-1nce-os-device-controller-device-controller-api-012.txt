@@ -1,0 +1,3 @@
+## Delete action request(s)
+
+The delete endpoint is used the cancel requests. This means `SCHEDULED` requests will be updated to the status `CANCELLED`. The messages will not be sent to the device.

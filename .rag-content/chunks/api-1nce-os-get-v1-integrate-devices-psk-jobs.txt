@@ -1,0 +1,15 @@
+# GET /v1/integrate/devices/psk/jobs
+
+Pre-Shared Devices Keys Import Job Status
+
+Get status of Pre-Shared Keys Import jobs for the last 30 days.
+
+## Parameters
+None
+
+## Responses
+- 200: OK
+- 400: 
+- 401: 
+- 403: 
+- 500: 

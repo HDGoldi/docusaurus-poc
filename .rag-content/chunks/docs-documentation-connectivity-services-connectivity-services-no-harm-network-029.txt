@@ -1,0 +1,3 @@
+## Coverage Lost (GPS, GLONASS, LAN, WAN)
+
+When GPS, GLONASS coverage is lost, the monolithic IoT Device Application **SHALL NOT** reboot the communication module/chipset. The IoT Device Application **SHOULD** perform diagnostics, reboot the affected hardware element and send an alert to the IoT Server Application. When LAN or WAN coverage is lost, the monolithic IoT Device **SHALL NOT** reboot the communication module/chipset. The IoT Device Application **SHALL** retry scanning to acquire mobile network connectivity with an increasing back-off period. In tiered IoT Devices, the embedded Service Enablement Layer **SHALL** comply to this requirement.

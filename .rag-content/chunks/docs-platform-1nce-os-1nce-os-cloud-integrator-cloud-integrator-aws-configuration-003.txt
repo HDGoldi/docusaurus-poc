@@ -1,0 +1,17 @@
+## IAM role permissions
+
+To successfully roll out the CloudFormation (CFN) stack, the customer must ensure that all the permissions listed in [cfn stack description](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration#cfn-stack-description) are granted.
+
+# Configuration via Frontend
+
+For setting up the AWS integration, use the Cloud Integration Wizard in the 1NCE OS portal.\
+Click 'New Integration' and select AWS integration as integration type.
+
+Use a descriptive name and select the [event types](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format) that you would like to receive.
+
+Be aware that integration with status ROLLOUT\_STARTED will be created in the Cloud Integrator and you will be taken to AWS to complete the configuration over there.\
+This generates a JWT that is only valid for an hour. Once the JWT becomes invalid the rollout has to be restarted.
+
+After the configuration click proceed and you will be prompted to go to the AWS console. Continue and now AWS should be open on the 'Quick Create Stack' page. Here you will see things such as the name that was previously given, integration token, etc. If this information is correct, acknowledge AWS requirements and press 'create stack'.
+
+It will take some time for the stack to be created. Nested stacks are shown by the filter option 'view nested' on the top. Once it is done, it should look like this in AWS and 1nceOS portal respectively:

@@ -1,0 +1,13 @@
+## SIM Extension
+
+If your SIM cards are close to expiring, you will see an extra column in your SIM table called "Extendable". Three months before the end of your activation period you will be notified by e-mail and it will be visible in your SIM table which SIM cards can be extended. You can extend a single SIM card or filter for all extendable SIM cards. After selecting all relevant SIM cards, click on "Extend SIMs". You will be able to review your selected SIMs and the tariff details for the extension in the shopping cart. All of remaining data, SMS, and time will be transferred. The new activation period starts on the order day (when bank transfer is used, it starts as soon as the payment is received.
+
+After your expiry date has been reached you have 18 months to extend your SIM cards. The SIMs will not be usable in that transition period but you can extend them anytime. After 18 months the SIM cards will be irreversibly deleted.
+
+*SIM Extension*
+
+***
+
+# SIM Detail Page
+
+By clicking on one of the SIMs in the list, a detailed view of the SIM status and configuration is shown. The top section of this view includes basics stats of the selected SIM. In the first column, the ICCID, IMSI, MSISDN and LABEL is shown. The LABEL field is editable and can help to assort the SIMs. The second column presents all lifetime data like time passed in %, the time left and the end date of the contract. The third column on the right shows all relevant network data, like the static IP-address, the IMEI of the connected device, the session-status, location of the device, the operator and the network bearer the SIM currently is attached to.

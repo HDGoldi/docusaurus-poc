@@ -1,0 +1,7 @@
+### Example Configurations
+
+The Manual Mode is set to Europe (Frankfurt) for the example organization.
+
+One customer SIM device is located and connected in Germany. Independent of the given location, the manual Internet Breakout Europe (Frankfurt) is used to breakout the public internet traffic. The customer can expect their public internet traffic to exit from one of the breakout IPs from [Europe (Frankfurt)](https://help.1nce.com/dev-hub/docs/network-services-internet-breakout).
+
+A second SIM device is located and connected in New York USA. The SIM devices is closest to the US East breakout, but due to the Manual Mode, the traffic will be routed through the Europe (Frankfurt) exit to the public internet. The traffic from this specific SIM will exit through the [Europe (Frankfurt)](https://help.1nce.com/dev-hub/docs/network-services-internet-breakout) Internet Breakout IPs.

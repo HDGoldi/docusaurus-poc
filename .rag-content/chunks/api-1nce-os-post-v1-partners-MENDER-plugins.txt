@@ -1,0 +1,16 @@
+# POST /v1/partners/MENDER/plugins
+
+Install Mender plugin for 1NCE OS
+
+Allows setting up an integration with Mender to allow seamless firmware update management via 1NCE OS CoAP proxy. Public and private keys are optional fields, but if they are used, both must be provided
+
+## Parameters
+None
+
+## Responses
+- 201: Successful Mender plugin installation response details.
+- 400: 
+- 401: 
+- 403: 
+- 409: 
+- 500: 

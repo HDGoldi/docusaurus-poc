@@ -1,0 +1,13 @@
+### 1️⃣ Build & Flash
+
+**Build** the project for either `thingy91/nrf9160/ns` or `nrf9160dk/nrf9160/ns` or `nrf9151dk/nrf9151/ns`.
+
+* Flash using **VS Code** for DKs or **nRF Connect Programmer** for Thingy:91.
+* Firmware path (Thingy:91):\
+  `build/nce_debug_memfault_demo/zephyr/zephyr.signed.hex`
+
+> ⚠️ On Windows, avoid long folder paths to prevent build errors.
+>
+> Use something like `C:\dev\memfault_demo`
+
+***

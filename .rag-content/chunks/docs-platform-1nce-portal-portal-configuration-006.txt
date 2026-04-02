@@ -1,0 +1,5 @@
+## Manual Mode (Europe)
+
+When the Manual Mode is selected the VPN configuration shown is dependent on the selected region. When changing the breakout region, note that the VPN configuration needs to be manually adapted as well. In such a case please download the new, region-specific configuration and setup a new VPN client.
+
+The OpenVPN client needs to be installed on the customer server to which the SIMs should access via the VPN client IP. For the OpenVPN connection to the 1NCE network a configuration file and credentials file is needed. These files can be downloaded in this section of the 1NCE Customer Portal. There are two different versions for Windows and for Linux/MacOS available. For more details about the VPN Service, its setup and operation users can proceed to the [VPN Service](/network-services/network-services-vpn-service/index) section of the Developer Hub.

@@ -1,0 +1,10 @@
+## 🔓 Unsecured LwM2M (Testing Only)
+
+To run without DTLS (e.g., during integration testing):
+
+```conf
+CONFIG_LWM2M_DTLS_SUPPORT=n
+CONFIG_LWM2M_CLIENT_UTILS_SERVER="coap://lwm2m.os.1nce.com:5683"
+```
+
+***

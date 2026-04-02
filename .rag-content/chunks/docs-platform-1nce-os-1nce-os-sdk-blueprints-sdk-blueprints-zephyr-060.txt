@@ -1,0 +1,20 @@
+## 📦 Ready-to-Flash Firmware for Thingy:91
+
+For quick testing, we provide **prebuilt firmware binaries** that can be flashed directly to your Thingy:91 device — no build setup required.
+
+Available prebuilt files:
+
+| Version      | Binary (.bin)    | HEX (.hex)       | Mender Artifact (.mender) |
+| ------------ | ---------------- | ---------------- | ------------------------- |
+| `release-v1` | `release-v1.bin` | `release-v1.hex` | `release-v1.mender`       |
+| `release-v2` | `release-v2.bin` | `release-v2.hex` | `release-v2.mender`       |
+
+👉 **Flash directly using:** [`release-v1.hex`](https://github.com/1NCE-GmbH/blueprint-zephyr/blob/main/plugin_system/nce_fota_mender_demo/thingy_binaries/release-v1.hex) or [`release-v2.hex`](https://github.com/1NCE-GmbH/blueprint-zephyr/blob/main/plugin_system/nce_fota_mender_demo/thingy_binaries/release-v2.hex)
+
+:::warning
+These builds enable all LTE bands, so the initial network registration may take several minutes while scanning.
+:::
+
+***
+
+# 1NCE Zephyr blueprint - 1NCE Memfault Demo

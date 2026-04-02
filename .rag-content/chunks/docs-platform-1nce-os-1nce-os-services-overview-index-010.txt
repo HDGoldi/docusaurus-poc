@@ -1,0 +1,3 @@
+## Admin Logs
+
+The 1NCE Admin Logs provides an intermediate storage of messages from devices. From the Admin Logs, the messages can be viewed via the Web Interface or queried using the Management API for further processing. [Admin Logs](/1nce-os/1nce-os-admin-logs/index)

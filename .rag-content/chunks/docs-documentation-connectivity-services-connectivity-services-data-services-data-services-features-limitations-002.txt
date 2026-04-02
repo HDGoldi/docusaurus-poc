@@ -1,0 +1,3 @@
+## Data Bandwidth Throughput
+
+While most IoT applications might only have low bandwidth and not very strict latency requirements, other use cases might require high bandwidth with low latency. The 1NCE Data Service offers a maximum guaranteed data throughput of one megabit per second (**1 MBit/s**). Please note that the achievable throughput and latency are dependent on the used RAT, device specifications, and environmental factors (e.g., location, signal reception, etc.).

@@ -1,0 +1,3 @@
+## MT-SMS with IoT Devices
+
+Most IoT modem devices can receive and save MT-SMS. The control of the SMS management on the modem side is handled via AT Commands. Please check with the manufacturer documentation how to receive and query MT-SMS or check the .

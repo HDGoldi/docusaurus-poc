@@ -1,0 +1,14 @@
+## 🔧 Zephyr Device Controller Configuration
+
+If `CONFIG_NCE_ENABLE_DEVICE_CONTROLLER` is enabled:
+
+| Config Option                           | Description                                                     | Default |
+| --------------------------------------- | --------------------------------------------------------------- | ------- |
+| `CONFIG_NCE_ENABLE_DEVICE_CONTROLLER`   | Enables the device controller feature                           | `y`     |
+| `CONFIG_NCE_RECV_PORT`                  | UDP port to listen for incoming CoAP messages                   | `3000`  |
+| `CONFIG_NCE_RECEIVE_BUFFER_SIZE`        | Buffer size for CoAP message handling                           | `1024`  |
+| `CONFIG_NCE_DOWNLINK_MAX_RETRIES`       | Max retry attempts for setting up downlink socket               | `5`     |
+| `CONFIG_NCE_COAP_MAX_URI_PATH_SEGMENTS` | Maximum number of URI path segments to support in CoAP requests | `5`     |
+| `CONFIG_NCE_COAP_MAX_URI_QUERY_PARAMS`  | Maximum number of query parameters allowed in CoAP requests     | `5`     |
+
+***

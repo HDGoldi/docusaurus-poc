@@ -1,0 +1,6 @@
+### Standard LTE Metrics
+
+* `ncs_lte_time_to_connect_ms`
+* `ncs_lte_connection_loss_count`
+* `ncs_lte_tx_kilobytes`
+* `ncs_lte_rx_kilobytes`

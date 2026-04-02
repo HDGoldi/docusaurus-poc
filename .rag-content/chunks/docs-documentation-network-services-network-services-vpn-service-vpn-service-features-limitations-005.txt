@@ -1,0 +1,9 @@
+## Globally distributed Servers
+
+The 1NCE VPN Service is available in all three Breakout Regions for selection in the Manual Mode. Each Breakout provides a dedicated OpenVPN Server to provide the flexibility to select the closest location to your application server.
+
+***
+
+# Limitations
+
+Due to technical constraints, certain limitations apply to the 1NCE VPN Service, which needs to be taken into consideration.

@@ -1,0 +1,3 @@
+## IoT Device
+
+Sensors, actuators, or other deployed Machine to Machine (M2M) hardware exchanging data bidirectionally and managed by the IoT Service Provider over the Application, Service Enablement and Connectivity Layers. The communication between IoT Device and IoT Service Provider is referred to as the IoT Service.

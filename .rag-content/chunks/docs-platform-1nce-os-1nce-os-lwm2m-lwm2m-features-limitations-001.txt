@@ -1,0 +1,3 @@
+## Bootstrap Server
+
+The [1NCE Bootstrap Service](/1nce-os/1nce-os-lwm2m/lwm2m-bootstrapping) for LwM2M serves as a fully automated management entity for keys, access control, and configuration required to enroll an IoT device with the 1NCE LwM2M Service. This component is based in the background on the [Device Authenticator](/1nce-os/1nce-os-device-authenticator/index) Service to automate the LwM2M bootstring with a 1NCE SIM card.

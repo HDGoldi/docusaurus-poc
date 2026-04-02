@@ -1,0 +1,12 @@
+## Testing Your MCP Setup
+
+Once configured, you can test your MCP server connection:
+
+1. **Open your AI editor** (Cursor, Windsurf, etc.)
+2. **Start a new chat** with the AI assistant
+3. **Ask about 1NCE Developer Hub** - try questions like:
+   * "How do I \[common use case]?"
+   * "Show me an example of \[API functionality]"
+   * "Create a \[integration type] using 1NCE Developer Hub"
+
+The AI should now have access to your 1NCE Developer Hub account data and documentation through the MCP server.

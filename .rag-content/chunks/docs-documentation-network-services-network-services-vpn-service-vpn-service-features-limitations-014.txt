@@ -1,0 +1,7 @@
+## Internet Breakout Region
+
+VPN is not available if the Automatic Mode for the Internet Breakout is used.
+
+To use the VPN Service, please set a manual Internet Breakout Region. The VPN configuration is specific for each individual Breakout Region. Therefore, after a change in the breakout setting the VPN client needs to be altered with the region-specific configuration.
+
+The VPN client IP will be different for each of the possible Internet Breakout Regions. This needs to be taken into consideration when designing the SIM device firmware.

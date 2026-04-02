@@ -1,0 +1,3 @@
+### Front-end
+
+You can delete your AWS Integration in the front-end of 1NCE OS or using API. In this case, you need to delete your AWS stack manually.

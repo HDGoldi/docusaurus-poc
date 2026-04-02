@@ -1,0 +1,15 @@
+# GET /v1/support
+
+Get Service Requests
+
+Get a list of all customer service requests.
+
+## Parameters
+- page (query, optional): Number index of the requested service request page. Use this parameter to iterate through all service requests on the different pages. The total amount of pages is listed in the response header.
+- pageSize (query, optional): The number of service requests per page, maximum allowed value is 100.
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found

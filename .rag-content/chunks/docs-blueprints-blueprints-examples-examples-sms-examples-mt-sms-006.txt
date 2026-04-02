@@ -1,0 +1,10 @@
+## MT-SMS with Smartphone
+
+For testing and trying out the SMS Service, 1NCE recommends to use a simple smartphone with a 1NCE SIM to receive MT-SMS.
+
+1. Insert the **1NCE SIM** into the smartphone used for testing.
+2. Enable **Roaming** on the device, as the 1NCE SIM appears always as roaming. Ensure that a network connection is available through the network status indicator of the phone.
+3. Open up the **SMS Messaging App** of the used smartphone.
+4. Prepare a **SMS Message** using one of the above mentioned methods (1NCE Portal or 1NCE API) to issue a MT-SMS.
+5. Send the message towards the specific **ICCID SIM** which is inserted in the smartphone.
+6. Check the smartphone for an incoming SMS message.

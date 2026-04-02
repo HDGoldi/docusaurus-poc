@@ -1,0 +1,5 @@
+## Statement blocks
+
+Statement blocks are JSON lists whose elements are statements or statement blocks that need to be performed in order to complete the conversion. A statement block MAY contain no elements. Making a statement block empty is the same as omitting it all together - no statements get executed. This can be useful in code generation.
+
+There are two types of statement blocks: `sense` and `do`. `sense` statement blocks are executed when sensing (receiving data), and they are present in the home alarm example. `do` is used wherever embedding a statement block - usually within control structures - is needed.

@@ -1,0 +1,14 @@
+# GET /v1/products
+
+Get All Products
+
+Get a list of all avaliable products.
+
+## Parameters
+None
+
+## Responses
+- 200: OK
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found

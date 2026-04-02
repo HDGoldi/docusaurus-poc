@@ -1,0 +1,4 @@
+## Suggested Maximum Connection Requests
+
+* 2G/3G/4G: 720 connection requests (Network Attach) / day / device (i.e., on average once every two minutes).
+* NB-IoT/LTE-M: 24 connection requests (Network Attach) / day / device (i.e., on average once per hour).

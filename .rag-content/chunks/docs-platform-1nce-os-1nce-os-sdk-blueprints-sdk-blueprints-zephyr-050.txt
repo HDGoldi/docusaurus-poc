@@ -1,0 +1,13 @@
+### 2️⃣ Accept the Device in Mender
+
+When starting the demo for the first time, the device will attempt to register with the Mender server.
+
+🛡️ **Manual Approval Required:**\
+You must manually **accept the device** in the [Mender Dashboard](https://hosted.mender.io/ui/) before it can receive any updates.
+
+#### 🔁 After acceptance:
+
+* The device will **periodically check** for firmware updates
+* Its **inventory** (such as IMEI, artifact name, and device type) will be updated in the Mender dashboard
+
+:::tip

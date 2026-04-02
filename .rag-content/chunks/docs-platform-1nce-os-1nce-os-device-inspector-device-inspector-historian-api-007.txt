@@ -1,0 +1,86 @@
+### Calling endpoint without query parameters
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/inspect/devices/history"
+```
+
+We would get the last 10 messages from all devices within the last 7 days.
+
+```json
+{
+    "items": [
+        {
+            "time": "2022-02-21T16:25:57.740",
+            "payload": "{\"battery\":98,\"saturation\":0.57,\"temperature\":11.2}",
+            "iccid": "543216789012345678",
+            "deviceId": "543216789012345678",
+            "protocol": "COAP"
+        },
+        {
+            "time": "2022-02-21T17:25:57.740",
+            "payload": "{\"battery\":97,\"saturation\":0.57,\"temperature\":11.2}",
+            "iccid": "543216789012345678",
+            "deviceId": "543216789012345678",
+            "protocol": "COAP"
+        },
+        {
+            "time": "2022-02-21T18:25:57.740",
+            "payload": "{\"battery\":96,\"saturation\":0.57,\"temperature\":11.2}",
+            "iccid": "543216789012345678",
+            "deviceId": "543216789012345678",
+            "protocol": "COAP"
+        },
+        {
+            "time": "2022-02-21T19:25:57.740",
+            "payload": "{\"battery\":94,\"saturation\":0.57,\"temperature\":11.2}",
+            "iccid": "543216789012345678",
+            "deviceId": "543216789012345678",
+            "protocol": "COAP"
+        },
+        {
+            "time": "2022-02-22T16:21:49.651",
+            "payload": "{\"battery\":98,\"saturation\":0.57,\"temperature\":11.0}",
+            "iccid": "123456789012345678",
+            "deviceId": "123456789012345678",
+            "protocol": "UDP"
+        },
+        {
+            "time": "2022-02-22T16:23:49.651",
+            "payload": "{\"battery\":98,\"saturation\":0.58,\"temperature\":11.0}",
+            "iccid": "123456789012345678",
+            "deviceId": "123456789012345678",
+            "protocol": "UDP"
+        },
+        {
+            "time": "2022-02-22T16:25:49.651",
+            "payload": "{\"battery\":98,\"saturation\":0.59,\"temperature\":11.0}",
+            "iccid": "123456789012345678",
+            "deviceId": "123456789012345678",
+            "protocol": "UDP"
+        },
+        {
+            "time": "2022-02-22T16:27:49.651",
+            "payload": "{\"battery\":98,\"saturation\":0.60,\"temperature\":11.0}",
+            "iccid": "123456789012345678",
+            "deviceId": "123456789012345678",
+            "protocol": "UDP"
+        },
+        {
+            "time": "2022-02-22T16:29:49.651",
+            "payload": "{\"battery\":98,\"saturation\":0.61,\"temperature\":11.0}",
+            "iccid": "123456789012345678",
+            "deviceId": "123456789012345678",
+            "protocol": "UDP"
+        },
+        {
+            "time": "2022-02-22T16:31:49.651",
+            "payload": "{\"battery\":98,\"saturation\":0.63,\"temperature\":11.0}",
+            "iccid": "123456789012345678",
+            "deviceId": "123456789012345678",
+            "protocol": "UDP"
+        }
+    ],
+    "nextToken": "AYABeJNbCVkFnuUD8Lwc.....",
+    "firstToken": "AYABeGNSdMbKy3uSXn2Z...."
+}
+```

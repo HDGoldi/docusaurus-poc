@@ -1,0 +1,4 @@
+## 1NCE SDK
+
+The 1NCE SDK is an open-source, MIT-licensed, C SDK which can be integrated into the customer IoT devices firmware. It contains functions to authenticate against the 1NCE OS managed cloud service and to compress data for use with Energy Saver.\
+The 1NCE SDK can be downloaded at: [https://github.com/1NCE-GmbH/1nce-iot-c-sdk](https://github.com/1NCE-GmbH/1nce-iot-c-sdk)

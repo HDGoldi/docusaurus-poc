@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/1nce-os/api-1nce-os-get-v1-integrate-devices-endpoints-{protocol}/",
+    "title": "GET /v1/integrate/devices/endpoints/{protocol}",
+    "breadcrumb": "API Explorer > 1nce Os > Get single device endpoint",
+    "content_type": "api-reference",
+    "category": "1nce-os",
+    "section_heading": "GET /v1/integrate/devices/endpoints/{protocol}"
+  }
+}

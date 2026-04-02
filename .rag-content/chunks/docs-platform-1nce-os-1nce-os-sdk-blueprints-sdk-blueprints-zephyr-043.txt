@@ -1,0 +1,8 @@
+### Output Controls
+
+| Module                     | Description                          | Condition      |
+| -------------------------- | ------------------------------------ | -------------- |
+| `CONFIG_APP_LIGHT_CONTROL` | Enable LED output (Object 3311)      | All boards     |
+| `CONFIG_APP_BUZZER`        | Enable buzzer output   (Object 3338) | Thingy:91 only |
+
+***

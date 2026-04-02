@@ -1,0 +1,11 @@
+## Start Using
+
+To start using the 1NCE OS Plugin with Datacake you first need to Add a Device on the Datacake side. For that, please refer to [1NCE OS in Datacake](https://docs.datacake.de/integrations/1nce-os). Starting from the main page of Datacake, choose *+ Add Device* under *Devices* in the left menu, then *Connect 1NCE Devices*. **Keep the Workspace ID because it is necessary for creating the plugin in 1NCE OS system**.
+
+To finish the configuration in 1NCE OS you can choose one of the two options described below. After configuration is done for 1NCE OS and data flow is enabled devices should be automatically available on datacake to be configured.
+
+:::warning
+Please note that by installing this plugin, you are aware that **Data from any device is shared with Datacake, regardless of whether it is configured on Datacake or not**.
+:::
+
+# Datacake Plugin Installation via Frontend

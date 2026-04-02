@@ -1,0 +1,13 @@
+# GET /v1/integrate/clouds/aws/parameters
+
+Get CloudFormation Parameters
+
+Get the URLs to download/rollout the customer CloudFormation stack templates.
+
+## Parameters
+None
+
+## Responses
+- 200: OK
+- 401: 
+- 500: 

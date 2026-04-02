@@ -1,0 +1,5 @@
+## MO-SMS Reception
+
+With the 1NCE SMS Forwarding Service, Mobile Originated (MO) SMS messages can be forwarded to a customer specified HTTP endpoint. The incoming messages from the SIMs of the organization are delivered as JSON objects with additional SMS parameters. These additional parameters indicate multi-part SMS, the used encoding and references to the originating SIM of the message.
+
+The figure below shows an example sequence (successful and failed) of the MO-SMS delivery using the SMS Forwarding Service.

@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/1nce-os/api-1nce-os-delete-v1-optimize-templates-{templateId}/",
+    "title": "DELETE /v1/optimize/templates/{templateId}",
+    "breadcrumb": "API Explorer > 1nce Os > Delete Optimizer Template",
+    "content_type": "api-reference",
+    "category": "1nce-os",
+    "section_heading": "DELETE /v1/optimize/templates/{templateId}"
+  }
+}

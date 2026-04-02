@@ -1,0 +1,9 @@
+## Internet Breakout
+
+As the 1NCE VPN Service is available in parallel with the normal Internet Breakout connectivity, a device with a 1NCE SIM can still use the normal internet connectivity while the VPN connection is established. This has the benefit that sensitive data can be sent via the VPN endpoint IP address to a server, but general requests (e.g., NTP or public API queries) can be directly done by the device without the need to set up forwarding internet traffic through the VPN connection.
+
+The 1NCE VPN Service is not available if the Automatic Mode for the Internet Breakout is used. For using the 1NCE VPN Service, please set a manual Internet Breakout Region. The VPN configuration is specific for each individual Breakout Region. Please download the matching VPN config from the 1NCE Portal. After a change in the breakout settings, the VPN client needs to be altered with the region-specific configuration.
+
+One VPN client at a time can be used and each VPN client IP will be different per breakout region. The client IP for each region is static with the given credentials but might change e.g. due to a customer requested token update.
+
+1NCE always suggests to use DNS to dynamically resolve the private VPN client IP on the SIM devices. Hardcoding the IP address of any component such as VPN client or SIM device is not recommended.

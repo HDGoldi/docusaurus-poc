@@ -1,0 +1,32 @@
+## Cloud Integrations failure monitoring
+
+To prevent cases when customer Cloud Integration suddenly gets into the `Failed` state and customer does not notices it for some time, there is possibility to subscribe to `Error` type Admin Logs.
+It can be done using separate dedicated Webhook or AWS Cloud Integration, where customer can filter out Error events with the type `CloudIntegrator[IntegrationDisabled]`.
+
+Following `Error` Cloud Integrator event will be generated with the integration id and name in the `description` field:
+
+```json
+{
+  "received": "1762351834991",
+  "id": "1-690b5ada-31707a98fb4bf676304a55e2",
+  "type": "ERROR",
+  "error": {
+    "payloadExists": false,
+    "description": "Integration with ID C-_wsByVWIW8PCq4OI82C and name \"Broken_Webhook\" was disabled due to consecutive failed requests. Please review affected integration details in Cloud Integrator.",
+    "id": "353vzrcOpHi4YYbyl0bVYlwURAU",
+    "type": "INTEGRATION",
+    "message": "CloudIntegrator[IntegrationDisabled]"
+  },
+  "version": "1.0.0"
+}
+```
+
+Also on the 1NCEOS frontend page you will see following Admin Log:
+
+*Integration Failed Admin Log*
+
+Following steps should be executed:
+
+* Create a dedicated HTTPS endpoint or a separate AWS Account (or region) with AWS IoT Core enabled for monitoring.
+  * Create either Webhook or AWS Integration with only `Error` events type selected.
+    * Implement filtering logic by `type` field on that new Cloud Integration to get notifications in case if type is equal to `CloudIntegrator[IntegrationDisabled]`.

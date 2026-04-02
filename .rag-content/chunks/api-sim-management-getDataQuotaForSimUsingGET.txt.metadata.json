@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-getDataQuotaForSimUsingGET/",
+    "title": "GET /v1/sims/{iccid}/quota/data",
+    "breadcrumb": "API Explorer > Sim Management > Get SIM Data Quota",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "GET /v1/sims/{iccid}/quota/data"
+  }
+}

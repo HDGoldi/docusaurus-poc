@@ -1,0 +1,59 @@
+## Mapping statements
+
+Mapping statements are used for de-serializing values and metadata from specific parts of binary payloads, special values, variables, and constants into fields in the resulting JSON.
+
+The statement contains two fields:
+
+`asset` - Path to resulting field using JSON dot notation\
+`value` - Constant or payload selector
+
+Examples:
+
+**Inject a string field using the constant selector.**
+
+```json Example - sense
+{
+  "sense": [
+    {
+      "asset": "sensor",
+      "value": "motion"
+    }
+  ]
+}
+```
+
+Result:
+
+```json Example - sense result
+{
+   "sensor": "motion"
+ }
+```
+
+**Convert 4 bytes into a 32-bit floating-point number using payload selector. Longitude from GPS beacon**
+
+```json sense longitude example
+{
+  "sense": [
+    {
+      "asset": "longitude",
+      "value": {
+        "byte": 0,
+        "bytelength": 4,
+        "byteorder": "big",
+        "type": "float"
+      }
+    }
+  ]
+}
+```
+
+Data: - `42 4b bc f9`
+
+Result:
+
+```json sense longitude example result
+{
+  "longitude": 50.934544
+}
+```

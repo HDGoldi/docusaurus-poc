@@ -1,0 +1,3 @@
+## IoT Service Provider
+
+Companies offering IoT Services to end consumers or enterprises via the 1NCE GmbH Connectivity Layer (3GPPTM mobile networks).

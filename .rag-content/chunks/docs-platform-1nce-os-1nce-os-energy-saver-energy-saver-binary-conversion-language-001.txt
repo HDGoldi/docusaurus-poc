@@ -1,0 +1,29 @@
+## Structure of a conversion
+
+```json Example: Home alarm system
+{
+    "name": "alarm",
+    "comment": "Home alarm system",
+    "version": "1.0.0",
+    "sense": [
+        {
+          "asset": "motion",
+          "value": {
+            "byte": 0,
+            "bytelength": 1,
+            "type": "boolean"
+          }
+        }
+    ]
+}
+```
+
+In this example, we declare a data conversion used with a home alarm system device. When the device senses motion it sends one byte to [UDP endpoint](/unresolved/doc:data-broker-udp). This simple template converts that one byte sent by the device into a JSON object with a boolean field called `motion`.
+
+When the device with enabled binary translation, sends `0x01` the byte gets translated into `true` resulting in the following object:
+
+```json
+{
+    "motion": true
+}
+```

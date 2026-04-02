@@ -1,0 +1,15 @@
+# GET /v1/partners/plugins/{pluginId}
+
+Get details about a specific plugin installation
+
+Retrieve details about a specific 1NCE OS plugin by it's installation ID.
+
+## Parameters
+- pluginId (path, required): Unique identifier of the plugin installation.
+
+## Responses
+- 200: OK
+- 401: 
+- 403: 
+- 404: 
+- 500: 

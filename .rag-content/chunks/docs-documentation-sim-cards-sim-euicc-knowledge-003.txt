@@ -1,0 +1,17 @@
+## Active model
+
+1NCE is looking forward to enabling a RSP ecosystem capable of integrating with other RSP platforms (where SIM profiles are stored). These integrations will allow the customer to actively host and switch between 1NCE and other connectivity profiles using the remote SIM provisioning capabilities. These integrations are standardized by the GSMA specifications.
+
+Once the integrations are in place, customers will be able to download profiles and switch between multiple profiles depending on their use case.
+
+The active model can be used in the followings scenarios:
+
+1. The customer has an eUICC SIM from another provider and wants to use 1NCE profile for their device.
+
+2) The customer has an eUICC SIM from 1NCE and wants to use another profile from another provider for their device.
+
+# Device Requirements for eUICC-capable IoT SIMs
+
+The GSMA standards require that the device supports some features to enable the eUICC functionality. The minimum requirement is a device that fulfills the needs to enable the use of eUICC functions. Please note these features are mandatory for the eUICC to execute RSP operations only, for example, downloading profile, enabling a profile, deleting a profile, etc. In case your device does not support this, it will still work normally, which means fulfilling all your connectivity needs, but no profile swapping can happen.
+
+You may find more information about eUICC compatibility, providers, and modules [here](https://1nce.com/en-eu/euicc-sim-card-for-iot-esim/euicc-compatible-iot-hardware).

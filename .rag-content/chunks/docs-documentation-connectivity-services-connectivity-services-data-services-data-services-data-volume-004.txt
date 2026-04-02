@@ -1,0 +1,10 @@
+## User Datagram Protocol (UDP)
+
+In comparison to the TCP header (20 bytes), the UDP header with only 8 bytes is more lightweight. Furthermore, UDP does not rely on the 3-way handshake and acknowledging individual data packets. This makes it a bit more unreliable but can save a lot of transmitted data in suitable applications. The use case shown in the calculation is the same as for the TCP example. A payload of 100 bytes of data from a device towards a UDP server. Afterward, 50 bytes are returned from the server towards the device.
+
+| Description | UDP Packets | IP Packets | Data Volume Sum |
+| --- | --- | --- | --- |
+| **Payload Exchange** | **166** | **40** | **206** |
+| *Device to Server* *100 Bytes Payload* | 108 | 20 | 128 |
+| *Server to Device* *50 Bytes Payload* | 58 | 20 | 78 |
+| **Total Sum** | **166** | **40** | **206** |

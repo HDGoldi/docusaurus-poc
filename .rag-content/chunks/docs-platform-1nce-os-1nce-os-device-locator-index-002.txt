@@ -1,0 +1,6 @@
+## Plus solver mode
+
+When Plus solver mode is enabled, it improves the Cell Tower Location accuracy and coverage particularly for 3G, 4G and LTE-M. However, NB-IoT resolutions will not be performed in Plus solver mode.
+
+Up to 95% of all cell tower locations are successfully resolved using the Plus solver mode.\
+New metadata field is also added with accuracy data. In the following example, the circle around the point on the map indicates that there is a 68% probability that the device is within a 270-meter radius of the provided location.

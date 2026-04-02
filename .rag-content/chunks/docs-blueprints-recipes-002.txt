@@ -1,0 +1,7 @@
+## SIMCOM
+
+SIMCOM is a global provider of wireless modules and solutions, offering a range of products for different applications. Here are some resources to help you get started with SIMCOM modules using 1NCE services:
+
+[SIMCOM7020E](https://help.1nce.com/dev-hub/page/simcom-7020g-simcom800l)
+
+[SIM7000G](https://help.1nce.com/dev-hub/page/sim7000g)

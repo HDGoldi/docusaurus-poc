@@ -1,0 +1,6 @@
+### 3️⃣ Authorize the Device
+
+The device will register itself using the SIM’s **ICCID** as its serial number.\
+You’ll see it appear in the **Devices** view of Memfault.
+
+***

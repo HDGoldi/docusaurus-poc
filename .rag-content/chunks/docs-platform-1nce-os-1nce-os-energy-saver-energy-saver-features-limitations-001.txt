@@ -1,0 +1,51 @@
+## Features
+
+The 1NCE Energy Saver offers binary conversion inspired on the AllThings Talk Binary Conversion Language (ABCL) but we don't support all the all features. More details on the general conversion language available at [Binary Conversion Language](https://help.1nce.com/dev-hub/docs/energy-saver-binary-conversion-language)
+
+The binary conversion allows customers to simply format binary payloads and build also more complex logic into the conversion templates. Templates are provided via the 1NCE Energy Saver and applied to the desired Devices.\
+Let's take the following example for a simple IoT device with 2 sensors one input. A UDP payload would look like this: **00 1A 00 37 00**
+
+As this is not readable let's apply the following conversion template to the message:
+
+```json
+{
+    "sense": [
+        {
+            "asset": "Temperature",
+            "value": {
+                "byte": 0,
+                "bytelength": 2,
+                "type": "int",
+                "signed": true
+            }
+        },
+        {
+            "asset": "Humidity",
+            "value": {
+                "byte": 2,
+                "bytelength": 2,
+                "type": "int"
+            }
+        },
+        {
+            "asset": "Switch",
+            "value": {
+                "byte": 4,
+                "type": "boolean"
+            }
+        }
+    ]
+}
+```
+
+This will result in a nicely formatted JSON-message that is also human-readable:
+
+```json
+{
+    "Temperature": 26,
+    "Humidity": 55,
+    "Switch": false
+}
+```
+
+Desired template can be edited and tested using [Template Tester](/1nce-os/1nce-os-energy-saver/energy-saver-template-tester)

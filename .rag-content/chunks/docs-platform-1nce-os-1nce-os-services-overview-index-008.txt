@@ -1,0 +1,3 @@
+## Plugin System
+
+Plugins extend the capabilities of the 1NCE platform with services provided by 3rd party vendors. You can enable additional functionality by installing a plugin.

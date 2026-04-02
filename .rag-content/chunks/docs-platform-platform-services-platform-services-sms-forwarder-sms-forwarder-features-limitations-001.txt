@@ -1,0 +1,3 @@
+## SMS Automation
+
+The usage of the SMS Forwarder is optional. By default MT- and MO-SMS messages of the last seven days are shown in the SMS Console in the 1NCE Portal. The Forwarder Services allows for an easy integration into automated processes without the need to constantly query the 1NCE API. The service pushes new incoming SMS messages and delivery reports towards the customer specified endpoint. 1NCE recommends using the Forwarding Service for automation of receiving regular, larger batches of SMS messages in a publish-subscribe manner.

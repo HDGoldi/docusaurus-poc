@@ -1,0 +1,20 @@
+## Verify Data
+
+Each received data packet which has been sealed with the UBIRCH CLIENT (has been ubirched) at the place of its 'birth', can easily be verified by the receiver, regarding its authenticity, integrity and chain validity. Since the seal is not directly attached to the data and anchored to the blockchain, the verification can be done by anyone, who has (access to) the data. This process is completely independent from the channel of transmission, which has been used to share the data and is also beyond any system boundaries.\
+The following simplified sequence diagram uses pseudo code to show the process of verifying UBIRCHed data (HASH-method).
+
+![ubirch\_data\_verification.PNG](/img/platform-services/platform-services-blockchain/5bad503-ubirch_data_verification.PNG)
+
+1. The customer application acquires the data to verify.
+2. The customer application recreates the hash of the data, like it was created on the device (before creating the original UPP).
+3. The customer application sends this hash to the verification endpoint of the UBIRCH TRUST SERVICE.
+4. The UBIRCH TRUST SERVICE looks up the original UPP, based on the incoming hash.
+5. The UBIRCH TRUST SERVICE checks the signature of the found UPP.
+6. The UBIRCH TRUST SERVICE looks up the blockchain transaction, which contained the according UPP.
+7. The UBIRCH TRUST SERVICE returns OK (or NOK) and all the proofs needed to cryptographically reproduce the validation result.
+
+# Libraries & Implementation
+
+The UBIRCH client is provided as a SIM application (SIGNiT) and additional library code that handles the communication between customer code and the SIM card application. The library code is provided as open source. A hardware test kit based on [Pycom](https://pycom.io/) modules is available.\
+Library Source Repository: [https://github.com/ubirch/ubirch-protocol-sim](https://github.com/ubirch/ubirch-protocol-sim)\
+TestKit Source Repository: [https://github.com/ubirch/ubirch-testkit](https://github.com/ubirch/ubirch-testkit)

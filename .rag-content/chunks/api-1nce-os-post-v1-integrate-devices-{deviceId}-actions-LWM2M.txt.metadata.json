@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/1nce-os/api-1nce-os-post-v1-integrate-devices-{deviceId}-actions-LWM2M/",
+    "title": "POST /v1/integrate/devices/{deviceId}/actions/LWM2M",
+    "breadcrumb": "API Explorer > 1nce Os > Create Action Request On Specific LwM2M Device.",
+    "content_type": "api-reference",
+    "category": "1nce-os",
+    "section_heading": "POST /v1/integrate/devices/{deviceId}/actions/LWM2M"
+  }
+}

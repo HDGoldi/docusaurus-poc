@@ -1,0 +1,19 @@
+### Bulk request
+
+Creating LwM2M action request for multiple devices:
+
+```shell
+curl -X POST "https://api.1nce.com/management-api/v1/integrate/devices/actions/LWM2M"
+```
+
+The request body looks like this:
+
+```json
+{
+  "action": "write",
+  "resourceAddress": "/3311/0/5850",
+  "data": "Data to send to the device",
+  "requestMode": "SEND_WHEN_ACTIVE",
+  "deviceIds": ["123456789012345678", "123456789012345679", "123456789012345680"]
+}
+```

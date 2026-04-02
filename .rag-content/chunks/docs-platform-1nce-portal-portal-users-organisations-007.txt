@@ -1,0 +1,3 @@
+## Sub-Organization Deletion
+
+Sub-Organizations can be deleted directly from the portal. To delete an organization customers have to choose the respective sub-organization and click "Delete". A sub-organization can only be deleted after it is fully created and has no SIMs or open workflows running (e.g. open invoices or open SIM actions).

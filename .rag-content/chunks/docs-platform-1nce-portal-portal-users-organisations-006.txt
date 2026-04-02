@@ -1,0 +1,9 @@
+## Organization SIM Transfer
+
+If there are any sub-organizations, the "Organization" tab also offers the possibility to transfer SIMs from the master organization and vice versa. A direct transfer from sub- to sub-organization is not possible. The transfer of SIMs can also be done using the 1NCE API. Customers can transfer just one single SIM, a range of SIMs, or several ranges of SIMs. Here are some helpful tips for transferring several ranges:
+
+* The file with the ranges can either be .CSV or .TXT format
+* Single SIM ICCID, use the ICCID as Start- and End Range like “ICCID1;ICCID1”
+* Ensure no duplicate ICCID in the file as this will lead to errors in processing
+* Do not put a semicolon at the end of each line
+* There is no need to use quotation marks at all (not mandatory)

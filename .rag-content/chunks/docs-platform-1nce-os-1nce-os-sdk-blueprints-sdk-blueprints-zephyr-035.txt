@@ -1,0 +1,14 @@
+## 📦 Ready-to-Flash Firmware for Thingy:91
+
+We provide a **prebuilt HEX file** for Thingy:91 that you can flash directly to your device for quick testing.\
+No build setup is required — just flash and go.
+
+👉 **Download:** [Thingy:91 Prebuilt HEX](https://github.com/1NCE-GmbH/blueprint-zephyr/blob/main/nce_coap_demo/thingy_binaries/zephyr.signed.hex)
+
+:::warning
+The firmware is configured with all LTE bands enabled, which may cause a delay of several minutes during the initial network connection while scanning for available bands. This is normal.
+:::
+
+***
+
+# 1NCE Zephyr blueprint - LwM2M Demo

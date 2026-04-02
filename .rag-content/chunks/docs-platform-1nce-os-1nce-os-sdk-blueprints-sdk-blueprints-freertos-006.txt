@@ -1,0 +1,9 @@
+### CoAPs with DTLS
+
+For the DTLS Support the default Port is 5684 and automatically defines the `ENABLE_DTLS` as an additional define
+
+The CoAP DTLS performs 3 main tasks from the [1NCE IoT C SDK](https://github.com/1NCE-GmbH/1nce-iot-c-sdk) :
+
+* Send the Device Authenticator Request
+* Get the Response
+* Process the Response and give the DTLS identity and PSK to the application code.

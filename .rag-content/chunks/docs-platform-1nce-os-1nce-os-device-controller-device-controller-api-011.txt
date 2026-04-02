@@ -1,0 +1,95 @@
+### By using the optional filter query parameters
+
+There are 2 endpoints available that support query parameters and are meant to query action requests by different statuses:
+
+[Active action requests](ref:get_v1-integrate-devices-actions-requests-active) are those which have statuses `IN_PROGRESS `and `SCHEDULED`
+
+[Archived action requests](ref:get_v1-integrate-devices-actions-requests-archived) are those which have statuses `CANCELLED`,`FAILED` and `SUCCEEDED`
+
+Getting multiple **archived** requests with optional filters (query parameters) specified. For example, to get all LwM2M action requests that succeeded for a device with id 123456789012345678::
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/integrate/devices/actions/requests/archived?protocol=LWM2M&deviceId=123456789012345678&status=SUCCEEDED"
+```
+
+The response could be `200 OK` response code with body:
+
+```json
+{
+  "items": [
+    {
+      "id": "2l0mG3WulN1SUvlIcHjvKXBeZk0",
+      "status": "SUCCEEDED",
+      "deviceId": "123456789012345678",
+      "ip": "127.0.0.1",
+      "protocol": "LWM2M",
+      "created": "2024-08-22T11:14:28.157Z",
+      "updated": "2024-08-22T11:14:28.157Z",
+      "mode": "SEND_WHEN_ACTIVE",
+      "resultData": {
+        "code": "205",
+        "payload": "Data from the device"
+      },
+      "requestData": {
+        "data": "Data to send to the device",
+        "iccid": "123456789012345678",
+        "imsi1": "456789012345678",
+        "action": "write",
+        "traceId": "1-66c71d94-f8f46a5cb7ae4ac4def607f1",
+        "deviceId": "123456789012345678",
+        "requestId": "2l0mG3WulN1SUvlIcHjvKXBeZk0",
+        "customerId": "1234567890",
+        "requestMode": "SEND_WHEN_ACTIVE",
+        "deviceIpAddress": "127.0.0.1",
+        "resourceAddress": "/3311/0/5850"
+      },
+      "sendAttemptsLeft": 0,
+      "sendAttempts": 3
+    }
+  ],
+  "page": 1,
+  "pageAmount": 1
+}
+```
+
+Getting multiple **active** requests with optional filters (query parameters) specified. For example, to get all UDP action requests that are scheduled for a device with id 123456789012345678::
+
+```shell
+curl -X GET "https://api.1nce.com/management-api/v1/integrate/devices/actions/requests/active?protocol=UDP&deviceId=123456789012345678&requestMode=SEND_WHEN_ACTIVE"
+```
+
+The response could be `200 OK` response code with body:
+
+```json
+{
+  "items": [
+    {
+      "id": "2l0kyyq0zGSuc1C78NKe5Pc3Auk",
+      "status": "SCHEDULED",
+      "deviceId": "123456789012345678",
+      "ip": "127.0.0.1",
+      "protocol": "UDP",
+      "created": "2024-08-22T11:03:59.267Z",
+      "updated": "2024-08-22T11:03:59.267Z",
+      "mode": "SEND_WHEN_ACTIVE",
+      "requestData": {
+        "port": 4343,
+        "iccid": "123456789012345678",
+        "imsi1": "456789012345678",
+        "payload": "Hello world",
+        "traceId": "1-66c71b1f-64f6213bb0ea04d2f5784494",
+        "deviceId": "123456789012345678",
+        "requestId": "2l0kyyq0zGSuc1C78NKe5Pc3Auk",
+        "customerId": "1234567890",
+        "payloadType": "STRING",
+        "requestMode": "SEND_WHEN_ACTIVE",
+        "deviceIpAddress": "127.0.0.1"
+      },
+      "sendAttemptsLeft": 1,
+      "sendAttempts": 1
+    }
+  ],
+  "page": 1,
+  "pageAmount": 1
+}
+```

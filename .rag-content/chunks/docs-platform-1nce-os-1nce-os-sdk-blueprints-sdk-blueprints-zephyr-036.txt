@@ -1,0 +1,9 @@
+## Overview
+
+The **1NCE LwM2M Demo** enables devices to communicate with 1NCE endpoints using the **LwM2M protocol** over CoAP, with optional DTLS for secure messaging. It supports control of LEDs, buzzers, sensors, and other objects via LwM2M standard object models.
+
+On the `Thingy:91` device, LED indicators show the following statuses:
+
+* 🔴 **RED** – the device is currently connecting to the network
+* 🔵 **BLUE** – the device is currently bootstrapping
+* 🟢 **GREEN (10 seconds)** – the device is registered with 1NCE LwM2M server

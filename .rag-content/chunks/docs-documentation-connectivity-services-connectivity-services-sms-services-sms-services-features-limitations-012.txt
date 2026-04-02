@@ -1,0 +1,3 @@
+### Originator Address/Number
+
+Some devices and network operators require that an originate address or number is provided, otherwise some devices or MNOs will not accept the SMS messages. This originator address does not need to be configured to a specific SIM parameter in the 1NCE IoT domain. Any random numbering should work in this case as any returned SMS from the device are always send to the 1NCE Portal to SMS Forwarder. Please fill out this data when sending SMS via API or 1NCE Portal.

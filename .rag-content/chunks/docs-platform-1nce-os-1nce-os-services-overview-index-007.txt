@@ -1,0 +1,3 @@
+## Device Locator
+
+With this service, the location tracking of devices and the possibility of defining geofences for devices can be controlled. [Device Locator](/1nce-os/1nce-os-device-locator/index)

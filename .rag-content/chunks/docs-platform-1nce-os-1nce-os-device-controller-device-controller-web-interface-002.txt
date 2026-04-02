@@ -1,0 +1,23 @@
+### Request Mode
+
+#### Send Now
+
+Request mode `SEND_NOW` will send the data to the device immediately. It will be validated if device is currently registered to LwM2M server, if LwM2M protocol will be selected. If device is not registered to LwM2M server an error toaster will be shown.
+
+For CoAP and LwM2M messages wizard will wait for the response and display the response details.
+
+*Device controller waiting for response*
+
+:::warning
+Please note that **Response wizard is not present for UDP messages due to UDP specifics**.
+:::
+
+#### Send when device is active
+
+Request mode `SEND_WHEN_ACTIVE` will schedule the message and send the data to device when it will become active. Scheduled messages will be sent out on `Cross-protocol trigger` or `LwM2M registration and update events` as decribed in the [device controller features](/1nce-os/1nce-os-device-controller/device-controller-features-limitations).
+
+In this request mode it is possible to configure `Send Attempts` for CoAP and LwM2M protocols. For failed messages [retry mechanism](/1nce-os/1nce-os-device-controller/device-controller-api#retry-mechanism) will be applied if required.
+
+:::warning
+Please note that **Send attempts are NOT supported for the UDP protocol**.
+:::

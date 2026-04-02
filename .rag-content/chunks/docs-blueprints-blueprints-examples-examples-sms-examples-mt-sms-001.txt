@@ -1,0 +1,20 @@
+## Alphabet Text SMS Messages
+
+1. Login to the  and go the the **My SIMs** tab.
+2. Select the **SIM** to which the MT-SMS messages should be issued from the list of all SIM cards.
+3. Navigate to the **SMS Tab** at the bottom of the SIM details page to access the SMS Console.
+
+4) Enter a **Source Address**. This address is not needed for routing the SMS, but some devices might require a certain originating address/phone number to validate the sender.
+5) Add a **7-Bit GSM Alphabet Text Payload** which should have a maximum length of **160 Characters**. Using the SMS Console only text messages with Data Coding Scheme (DCS) 0 and no Concatenated SMS are possible. Please refer to the  for more advanced features.
+6) Click the **Send** button to issue the MT-SMS towards the 1NCE SIM device.
+
+7. After sending the MT-SMS, please wait a bit as the message is being processed. The list view of the SMS messages can be manually updated.
+8. While the MT-SMS is in transit and has not been acknowledged by the receiving device, the status is shown as **Pending**.
+9. If the receiving device is attached to the network (not NB-IoT), the MT-SMS will be received, the status changes to **Delivered** and the **Finalized** timestamp will be shown.
+10. If the receiving device is currently not attached, the MT-SMS will stay in the **Pending** state for up to 24 hours. The 1NCE network tries to redeliver this MT-SMS as soon as the devices becomes attached. After 24 hours, the MT-SMS will go the the **Failed** state and the SMS message will not be redelivered.
+
+***
+
+# 1NCE SMS API
+
+This section covers all topics around sending, monitoring and managing MT-SMS messages with the the 1NCE API. A good starting point is the  to get familiar with the API calls. From the API Explorer, ready to use code snippets and cURL queries can be obtained to integrate into custom applications.

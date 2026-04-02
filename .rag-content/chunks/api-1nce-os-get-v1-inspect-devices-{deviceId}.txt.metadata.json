@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/1nce-os/api-1nce-os-get-v1-inspect-devices-{deviceId}/",
+    "title": "GET /v1/inspect/devices/{deviceId}",
+    "breadcrumb": "API Explorer > 1nce Os > Get Single Device",
+    "content_type": "api-reference",
+    "category": "1nce-os",
+    "section_heading": "GET /v1/inspect/devices/{deviceId}"
+  }
+}

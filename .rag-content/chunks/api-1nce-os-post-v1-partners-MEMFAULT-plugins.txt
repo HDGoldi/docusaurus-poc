@@ -1,0 +1,16 @@
+# POST /v1/partners/MEMFAULT/plugins
+
+Install Memfault plugin for 1NCE OS
+
+Allows setting up an integration with Memfault to allow seamless device debugging via 1NCE OS CoAP proxy.
+
+## Parameters
+None
+
+## Responses
+- 201: Successful Memfault plugin installation response details.
+- 400: 
+- 401: 
+- 403: 
+- 409: 
+- 500: 

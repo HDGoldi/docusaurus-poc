@@ -1,0 +1,5 @@
+## Description
+
+Elevate your IoT experience with the Datacake Plugin, a one-click solution that effortlessly connects the Datacake IoT platform with 1NCE OS. This intuitive plugin automatically lists devices operating on 1NCE OS within Datacake, streamlining device management.
+
+Adding a device is as simple as a click, unlocking a suite of features including pre-set dashboards for real-time monitoring and analysis. Designed for efficiency and ease of use, the Datacake Plugin is the ideal tool for enhancing your IoT ecosystem.

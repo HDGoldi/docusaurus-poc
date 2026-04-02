@@ -1,0 +1,5 @@
+### **Learn more:** See the [1NCE Energy Saver documentation](https://help.1nce.com/dev-hub/docs/1nce-os-energy-saver) for details on how this feature works and how to configure templates.
+
+:::
+
+:::info

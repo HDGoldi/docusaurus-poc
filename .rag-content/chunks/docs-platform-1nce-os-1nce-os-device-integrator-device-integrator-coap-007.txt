@@ -1,0 +1,7 @@
+## Responses
+
+| Code | Description | Schema |
+| --- | --- | --- |
+| 200 | 200 Response | Client identity, Pre-sharded key (text/csv),coapsEndpointUrl |
+| 401 | 401 Response | UnauthorizedResponse |
+| 500 | 500 Response | ServerSideErrorResponse |

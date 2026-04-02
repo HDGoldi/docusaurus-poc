@@ -1,0 +1,157 @@
+```curl AT Commands
+> AT
+OK
+
+
+> AT+CFUN?
++CFUN: 1
+
+
+> AT+CFUN=1
++CPIN: READY
+OK
+SMS Ready
+Call Ready
+
+
+> AT+CPIN?
++CPIN: READY
+OK
+
+
+> AT+CNMP=?
++CNMP: ((2-Automatic),(13-GSM Only),(38-LTE Only),(51-GSM And LTE Only))
+OK
+
+> AT+CNMP?
++CNMP: 2
+OK
+
+
+> AT+CMNB=?
++CMNB: ((1-Cat-M),(2-NB-IoT),(3-Cat-M And NB-IoT))
+OK
+
+> AT+CMNB?
++CMNB: 3
+OK
+
+
+> AT+CBANDCFG=?
++CBANDCFG: (CAT-M,NB-IOT),(1,2,3,4,5,8,12,13,17,18,19,20,26,28,39)
+OK
+
+> AT+CBANDCFG?
++CBANDCFG: "CAT-M",20,8
++CBANDCFG: "NB-IOT",20,8
+OK
+
+
+> AT+CNMP=2
+OK
+
+
+> AT+CMNB=3
+OK
+
+
+> AT+CBANDCFG="CAT-M",20,8
+OK
+
+> AT+CBANDCFG="NB-IOT",20,8
+OK
+
+
+> AT+CFUN=0
++CPIN: NOT READY
+OK
+
+> AT+CFUN=1
+OK
++CPIN: READY
+SMS Ready
+```
+
+# Preperation
+
+
+
+For testing purposes, connect the SIM7000G (1529B05SIM7000G) to a computer. The commands used in this guide will be issued via the serial interface towards the modem. Please setup the specific hardware device that these AT Commands can be sent to the device serial interface.
+Further ensure that the 1NCE SIM is inserted correctly into the device.
+
+# Check Module Communication
+
+
+
+Check that the module response to a basic 'AT' command. The device should return 'OK' as answer.
+
+# Check Functionality
+
+
+
+Use 'AT+CFUN?' to check the functionality setting of the modem. '+CFUN: 1' should be returned, indicating that the modem is in the full operating mode.
+
+# Activate Functionality
+
+
+
+If the prior command returns '+CFUN: 0', use 'AT+CFUN=1' to activate the full modem functionality.
+
+# Check SIM PIN
+
+
+
+Use 'AT+CPIN?' to check if the SIM is ready to use. As the 1NCE SIM do not have a PIN set by default the modem should return '+CPIN: READY'.
+
+If an error is returned, please check the SIM is inserted correctly or try the SIM in a smartphone.
+
+# Query Available RAT Configurations
+
+
+
+The SIM7000G can use the Radio Access Technologies (RAT) LTE Cat-M, NB-IoT and 2G. The avaliable RAT selections can be listed with 'AT+CNMP=?'. The currently configured RAT setting can be viewed with 'AT+CNMP?'.
+
+# Query LTE RAT Configurations
+
+
+
+When using NB-IoT and/or LTE Cat-M, the available RAT selections can be listed with 'AT+CMNB=?'.  The currently configured LTE RAT setting can be viewed with 'AT+CMNB?'.
+
+# Query LTE Bands Configurations
+
+
+
+For using LTE, different default bands can be configured for NB-IoT and Cat-M. This will speed up the search and connection process. Use 'AT+CBANDCFG=?' to list all available band configurations. The configured Bands can be viewed with 'AT+CBANDCFG?'.
+
+# Set Default RAT
+
+
+
+For these guides, the '2-Automatic' RAT selection will be configured with 'AT+CNMP=2'.
+
+# Set Preferred LTE RAT
+
+
+
+The preferred LTE RAT will be set to both NB-IoT and Cat-M using 'AT+CMNB=3'.
+
+# Set LTE Bands
+
+
+
+In Germany, the commonly used LTE bands for NB-IoT and Cat-M are 20 and 8. Therefore, these bands are configured to speed up the search and connection process.
+For other countries, the band selection might be different. Please feel free to ask the 1NCE support for the best LTE bands in the desired region.
+
+# Apply Change
+
+
+
+To force the application of a configuration change, a cycling of the modem functionality helps to apply the new configuration.
+
+# Wrap Up
+
+
+
+This guide showed the basic RAT configuration for a SIM7000G with a 1NCE SIM.
+
+For more details and documentation please refer to the AT Command manual of the SIM7000G.

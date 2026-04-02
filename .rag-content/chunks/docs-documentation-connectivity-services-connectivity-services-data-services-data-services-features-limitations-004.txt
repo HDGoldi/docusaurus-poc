@@ -1,0 +1,24 @@
+## SIM - IP Spaces
+
+All 1NCE SIMs are assigned IP Addresses from the following general IP Spaces. The IP Spaces assigned to customers will originate from these larger spaces. It is important to keep track of these spaces especially for VPN, IP Sec and VPN Peering setups.
+
+* 100.64.0.0/10
+* 10.21.0.0/16
+* 10.22.0.0/15
+* 10.24.0.0/14
+* 10.32.0.0/12
+* 10.52.0.0/14
+* 10.56.0.0/14
+* 10.129.0.0/16
+* 10.130.0.0/15
+* 10.132.0.0/14
+* 10.137.0.0/16
+* 10.138.0.0/15
+* 10.140.0.0/14
+* 10.144.0.0/13
+* 10.152.0.0/14
+* 10.156.0.0/15
+* 10.160.0.0/11
+* 10.192.0.0/10
+* 10.240.0.0/13
+* 10.248.0.0/13

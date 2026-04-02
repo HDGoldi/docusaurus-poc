@@ -1,0 +1,11 @@
+## Start Using
+
+To start using the 1NCE OS Plugin with Tartabit IoT Bridge you first need to create the service in Tartabit side. For that, please refer to [HTTP Connector](https://docs.tartabit.com/en/Topics/HTTP-Connector). Starting from the main page of Tartabit IoT Bridge, choose *List* under *Services* in the left menu, then *New Service* and finally complete the form for a **HTTP Connector** Service Model. Only Service name, key and model are required. **Keep the Webhook Secret because it is necessary for creating the plugin in 1NCE OS system**.
+
+To finish the configuration in 1NCE OS you can choose one of the two options described below.
+
+:::warning
+Please note that by installing this plugin, you are aware that **Data from any device is shared with Tartabit, regardless of whether it is configured on Tartabit or not**.
+:::
+
+# Tartabit Plugin Installation via Frontend

@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-topUpUsingPOST/",
+    "title": "POST /v1/sims/{iccid}/topup",
+    "breadcrumb": "API Explorer > Sim Management > Create Single Top Up",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "POST /v1/sims/{iccid}/topup"
+  }
+}

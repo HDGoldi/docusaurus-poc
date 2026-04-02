@@ -1,0 +1,20 @@
+## Event Organization
+
+Each Event Record includes information about the originating organization. This helps to identify the organization in the use case of multiple Data Streamer for sub organizations. The JSON property fields of this object are listed below.
+
+| Property | Data Type | Description                    |
+| :------- | :-------- | :----------------------------- |
+| `id`     | INTEGER   | Unique ID of the organization. |
+| `name`   | STRING    | 1NCE Customer ID.              |
+
+***
+
+# Additional Properties
+
+Event Records that directly relate to SIMs, Endpoints, or Users might include some of the following optional properties.
+
+| Property   | Data Type   | Description                                                                                       |
+| :--------- | :---------- | :------------------------------------------------------------------------------------------------ |
+| `imsi`     | JSON Object | International Mobile Subscriber Identity, see [IMSI Object](#imsi-object) for more information.   |
+| `sim`      | JSON Object | Subscriber Identification Module, see [SIM Object](#sim-object) for more information.             |
+| `endpoint` | JSON Object | Endpoint/Device information object, see [Endpoint Object](#endpoint-object) for more information. |

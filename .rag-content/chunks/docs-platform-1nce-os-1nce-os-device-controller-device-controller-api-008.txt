@@ -1,0 +1,10 @@
+### Response
+
+The API will accept the request with a `202 Accepted` response code and a response body containing two properties: id (string) and message (string). The id can be used to track the status of the request or cancel the request (see examples below). The message property contains a confirmation message about the request created. Example:
+
+```json
+{
+  "id": "trxHeBL0d234fsfds",
+  "message": "Action read for resource /3/45/22 successfuly scheduled for device 123456789012345678."
+}
+```

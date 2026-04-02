@@ -1,0 +1,17 @@
+# GET /v1/administrationLogs
+
+Get Administration Logs
+
+Get a list of the administration logs regarding the organization.
+
+## Parameters
+- page (query, optional): Number of the requested page. Use this parameter to iterate through all items on the different pages. The total amount of pages is listed in the response body (pageAmount).
+- pageSize (query, optional): Parameter for specifying the queried items per page.
+- q (query, optional): Filter parameter in <i>{filter}:{value}</i> format. Expects comma separated list of filtering criteria out of the following fields: <ul><li>geofenceId</li><li>category</li><li>iccid</li><li>type</li><li>startDateTime (UTC)</li><li>endDateTime (UTC)</li></ul><p><b>Example:</b> "type:device,iccid:ICCID,startDateTime:2022-11-14T16:04:38.000Z"</p>
+
+## Responses
+- 200: OK
+- 400: 
+- 401: 
+- 403: 
+- 500: 

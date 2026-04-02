@@ -1,0 +1,10 @@
+{
+  "metadataAttributes": {
+    "url": "/docs/api/sim-management/api-sim-management-getSmsForSimUsingGET/",
+    "title": "GET /v1/sims/{iccid}/sms",
+    "breadcrumb": "API Explorer > Sim Management > Get MT/MO-SMS",
+    "content_type": "api-reference",
+    "category": "sim-management",
+    "section_heading": "GET /v1/sims/{iccid}/sms"
+  }
+}

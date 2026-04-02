@@ -1,0 +1,3 @@
+## 1NCE Access Point Name
+
+This parameter needs to be set in the devices with a 1NCE SIM. Please refer to the device manufacturer for a guide on how to set an APN. In most cases, this can be done by a specific AT Command, sending a SMS to the device or via the device user interface.

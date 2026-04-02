@@ -1,0 +1,13 @@
+# GET /v1/locate/geofences/{geofenceId}
+
+Get a geofence
+
+Get details of a geofence.
+
+## Parameters
+- geofenceId (path, required): unique geofence ID
+
+## Responses
+- 200: OK
+- 404: 
+- 500: 

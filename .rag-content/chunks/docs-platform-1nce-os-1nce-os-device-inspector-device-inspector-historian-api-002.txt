@@ -1,0 +1,39 @@
+### Device messages (7 days)
+
+Getting all messages for a specific device for 7 days for a device with iccid `123456789012345678` would be:
+
+```shell
+curl -X GET https://api.1nce.com/management-api/v1/inspect/devices/history?iccid=123456789012345678
+```
+
+We would receive a response like:
+
+```json
+{
+  "items": [
+    {
+      "time": "2022-02-21T12:47:30.085",
+      "payload": "{\"battery\":98,\"saturation\":0.55,\"temperature\":11.6}",
+      "iccid": "123456789012345678",
+      "deviceId": "123456789012345678",
+      "protocol": "UDP"
+    },
+    {
+      "time": "2022-02-21T12:47:24.278",
+      "payload": "{\"battery\":99,\"saturation\":0.55,\"temperature\":11.5}",
+      "iccid": "123456789012345678",
+      "deviceId": "123456789012345678",
+      "protocol": "UDP"
+    },
+    {
+      "time": "2022-02-21T12:47:21.495",
+      "payload": "dGVzdGRhdGE=",
+      "iccid": "123456789012345678",
+      "deviceId": "123456789012345678",
+      "protocol": "COAP"
+    }
+  ]
+}
+```
+
+In the response, we can see that a device (that has ICCID “123456789012345678“ and if it has a 1NCE sim also deviceId “123456789012345678“), sent 2 UDP and 1 CoAP message. The payload in each UDP message is a JSON string because the Translation service was used. CoAP message has base64 encoded payload. These are the only messages the device was sending in 7 days because we didn’t specify time constraints and the query was using the default value.

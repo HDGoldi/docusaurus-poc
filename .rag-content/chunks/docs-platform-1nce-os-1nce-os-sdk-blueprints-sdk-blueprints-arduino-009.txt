@@ -1,0 +1,3 @@
+### Overview
+
+1NCE Arduino CoAP Demo allows customers to establish a secure communication with 1NCE endpoints via CoAPs after receiving DTLS credentials from Device Authenticator using the SDK. It can also send compressed payload using the Energy Saver feature.

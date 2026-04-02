@@ -1,0 +1,3 @@
+### Cloud Integrator
+
+The Cloud Integrator allows to create, manage and use 1NCE webhooks and direct AWS Integrations. This provides the possibility for a customer to forward data from their devices to customer-defined HTTPS endpoints or an AWS Account with real-time information. [Cloud Integrator](/1nce-os/1nce-os-cloud-integrator/index)

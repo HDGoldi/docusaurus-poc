@@ -1,0 +1,3 @@
+### Canceling a request
+
+It is possible to cancel a request form Request Details. This is possible only for "Scheduled" requests.

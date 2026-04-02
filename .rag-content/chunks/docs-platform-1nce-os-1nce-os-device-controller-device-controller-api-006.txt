@@ -1,0 +1,12 @@
+### Retry Mechanism
+
+When submitting an action request with `SEND_WHEN_ACTIVE` mode, the user can specify the parameter `sendAttempts` in\
+the request body to restrict how many times the device controller can attempt to send the data to the device.\
+If all attempts fail, then the action request will be permanently marked with the status `FAILED`.
+
+The `sendAttempts` parameter is optional and, if unspecified, defaults to 1.\
+The maximum number of allowed retries is 5.
+
+:::warning
+Please note that this functionality is **NOT supported by the UDP protocol**.
+:::

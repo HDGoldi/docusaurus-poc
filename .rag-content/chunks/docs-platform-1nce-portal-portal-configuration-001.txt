@@ -1,0 +1,3 @@
+## Exceeding the Limits
+
+When the self-set limits are exceeded, error or warning messages are triggered based on the type of limit.
