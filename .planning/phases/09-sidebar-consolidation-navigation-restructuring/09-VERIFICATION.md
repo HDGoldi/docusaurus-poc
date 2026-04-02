@@ -1,0 +1,109 @@
+---
+phase: 09-sidebar-consolidation-navigation-restructuring
+verified: 2026-04-02T13:07:20Z
+status: passed
+score: 7/7 must-haves verified
+re_verification: false
+---
+
+# Phase 09: Sidebar Consolidation & Navigation Restructuring — Verification Report
+
+**Phase Goal:** The Documentation sidebar and navbar match the original ReadMe.com hub structure — a single Documentation tab with all content sections in the correct order, and old URLs redirect to new locations
+
+**Verified:** 2026-04-02T13:07:20Z
+**Status:** passed
+**Re-verification:** No — initial verification
+
+---
+
+## Goal Achievement
+
+### Observable Truths (Success Criteria)
+
+| # | Truth | Status | Evidence |
+|---|-------|--------|----------|
+| 1 | Documentation sidebar displays all 11 sections in original hub order | VERIFIED | All 10 `_category_.json` files have positions 1-10 with correct labels; `terms-abbreviations.md` has `sidebar_position: 11` — order is Introduction(1), 1NCE Portal(2), SIM Cards(3), MCP Server(4), Connectivity Services(5), Platform Services(6), Network Services(7), 1NCE OS(8), Troubleshooting(9), Blueprints & Examples(10), Terms & Abbreviations(11) |
+| 2 | Navbar shows exactly 2 doc tabs (Documentation, API Explorer) plus 3 external links — no separate Platform, Blueprints, or Terms tabs | VERIFIED | `docusaurus.config.ts` navbar `items` array has exactly 5 entries: Documentation (docSidebar), API Explorer (doc/api), 1NCE Home, 1NCE Shop, 1NCE Portal. No platform/blueprints/terms navbar entries present. |
+| 3 | Old `/platform/*`, `/blueprints/*`, `/terms/*` URLs redirect to correct new `/docs/*` locations | VERIFIED | `@docusaurus/plugin-client-redirects` installed at `^3.9.2` and `createRedirects` function in `docusaurus.config.ts` (lines 135-160) correctly maps all three URL spaces. User has manually verified redirect behavior. |
+| 4 | API Explorer tab and all 125 API endpoint pages continue to function with working "Try It" panels | VERIFIED | 125 `.mdx` endpoint files exist under `docs/api/`. Sampled endpoint (`get-service-requests-using-get.api.mdx`) imports `MethodEndpoint`, `ParamsDetails`, `RequestSchema`, `StatusCodes`, `OperationTabs` from `@theme/ApiExplorer` — full interactive panel components. API plugin config unchanged. User has manually verified. |
+| 5 | All content unified under `docs/documentation/` — no remnants in `docs/platform/`, `docs/blueprints/`, `docs/terms/` | VERIFIED | `ls docs/` shows only `api/` and `documentation/`. `docs/platform`, `docs/blueprints`, `docs/terms` do not exist. |
+| 6 | Plugin instances for platform, blueprints, terms removed from `docusaurus.config.ts` | VERIFIED | No occurrences of `id: 'platform'`, `id: 'blueprints'`, `id: 'terms'`, `docsPluginId: 'platform'`, `docsPluginId: 'blueprints'`, or `docsPluginId: 'terms'` in config. |
+| 7 | Obsolete sidebar files deleted | VERIFIED | `sidebars/` contains only `api.ts` and `documentation.ts` — `platform.ts`, `blueprints.ts`, `terms.ts` are gone. |
+
+**Score:** 7/7 truths verified
+
+---
+
+### Required Artifacts
+
+| Artifact | Expected | Status | Details |
+|----------|----------|--------|---------|
+| `docs/documentation/introduction/_category_.json` | Position 1 | VERIFIED | `{"label": "Introduction", "position": 1}` |
+| `docs/documentation/1nce-portal/_category_.json` | Position 2 | VERIFIED | `{"label": "1NCE Portal", "position": 2}` |
+| `docs/documentation/sim-cards/_category_.json` | Position 3 | VERIFIED | `{"label": "SIM Cards", "position": 3}` |
+| `docs/documentation/mcp-server/_category_.json` | Position 4 | VERIFIED | `{"label": "MCP Server", "position": 4}` |
+| `docs/documentation/connectivity-services/_category_.json` | Position 5 | VERIFIED | `{"label": "Connectivity Services", "position": 5}` |
+| `docs/documentation/platform-services/_category_.json` | Position 6 | VERIFIED | `{"label": "Platform Services", "position": 6}` |
+| `docs/documentation/network-services/_category_.json` | Position 7 | VERIFIED | `{"label": "Network Services", "position": 7}` |
+| `docs/documentation/1nce-os/_category_.json` | Position 8 | VERIFIED | `{"label": "1NCE OS", "position": 8}` |
+| `docs/documentation/troubleshooting/_category_.json` | Position 9 | VERIFIED | `{"label": "Troubleshooting", "position": 9}` |
+| `docs/documentation/blueprints-examples/_category_.json` | Position 10 with ampersand label | VERIFIED | `{"label": "Blueprints & Examples", "position": 10}` |
+| `docs/documentation/terms-abbreviations.md` | `sidebar_position: 11`, `sidebar_label: "Terms & Abbreviations"` | VERIFIED | Frontmatter contains both fields with correct values |
+| `docusaurus.config.ts` | Contains `plugin-client-redirects` and `createRedirects` | VERIFIED | Lines 135-160: plugin installed and `createRedirects` function covers all three old URL spaces |
+| `package.json` | Contains `plugin-client-redirects` dependency | VERIFIED | `"@docusaurus/plugin-client-redirects": "^3.9.2"` present |
+| `sidebars/documentation.ts` | `docsSidebar` autogenerated from `.` | VERIFIED | `docsSidebar: [{type: 'autogenerated', dirName: '.'}]` |
+| `docs/api/` | 125 `.mdx` API endpoint files | VERIFIED | `find docs/api -name "*.mdx"` returns 125 files |
+
+---
+
+### Key Link Verification
+
+| From | To | Via | Status | Details |
+|------|----|-----|--------|---------|
+| `docusaurus.config.ts` preset-classic docs | `docs/documentation/` | `path: 'docs/documentation'` | WIRED | Line 50: `path: 'docs/documentation'`, `routeBasePath: '/docs'` |
+| `docusaurus.config.ts` plugins array | `plugin-client-redirects` | `createRedirects` function | WIRED | Lines 135-160: function covers `/docs/(1nce-os\|1nce-portal\|platform-services)`, `/docs/blueprints-examples/`, and `/docs/terms-abbreviations` |
+| `docusaurus.config.ts` navbar items | preset-classic docs | `sidebarId: 'docsSidebar'` | WIRED | Navbar item references `sidebarId: 'docsSidebar'`; `sidebars/documentation.ts` exports `docsSidebar` |
+| `docusaurus.config.ts` navbar items | API plugin | `docsPluginId: 'api'` | WIRED | API Explorer navbar item correctly references `docsPluginId: 'api'` which matches API plugin `id: 'api'` |
+
+---
+
+### Requirements Coverage
+
+| Requirement | Source Plan | Description | Status | Evidence |
+|-------------|-------------|-------------|--------|----------|
+| NAV-02 | 09-01-PLAN.md | Documentation sidebar contains all sections in original order | SATISFIED | All 11 sections present with positions 1-11; no gaps or duplicates. Autogenerated sidebar reads `_category_.json` position fields. |
+| NAV-03 | 09-01-PLAN.md, 09-02-PLAN.md | Platform, Blueprints, and Terms plugin instances removed; content merged into main docs instance | SATISFIED | Three plugin instances removed from config. Three sidebar files deleted. All content under `docs/documentation/`. |
+| NAV-04 | 09-02-PLAN.md | Old `/platform/*`, `/blueprints/*`, and `/terms/*` URLs redirect to new locations via `@docusaurus/plugin-client-redirects` | SATISFIED | Plugin installed, `createRedirects` function handles all three old URL prefixes. User verified redirect behavior. |
+
+All 3 phase requirements satisfied. No orphaned requirements found (REQUIREMENTS.md maps only NAV-02, NAV-03, NAV-04 to Phase 9).
+
+---
+
+### Anti-Patterns Found
+
+None detected. No TODO/FIXME/placeholder comments, empty implementations, or stub patterns found in phase-modified files (`docusaurus.config.ts`, `_category_.json` files, `terms-abbreviations.md`, sidebar files).
+
+---
+
+### Human Verification Required
+
+The following items were submitted for human verification and **approved by the user** before this verification was created:
+
+1. **Sidebar order in browser** — User navigated to `http://localhost:3000/docs/` and confirmed 11 sections in exact correct order.
+2. **Navbar layout** — User confirmed exactly 2 doc tabs on the left (Documentation, API Explorer) and 3 external links on the right (1NCE Home, 1NCE Shop, 1NCE Portal).
+3. **Redirect behavior** — User tested old URLs (`/platform/...`, `/blueprints/...`, `/terms/...`) and confirmed redirection to new `/docs/...` locations.
+4. **API Explorer functionality** — User clicked API Explorer tab and confirmed endpoint pages load with working Try It panels.
+5. **Build success** — Site built successfully with `npm run build` (exit code 0).
+
+All human verification items approved. No open items remain.
+
+---
+
+### Gaps Summary
+
+None. All 7 observable truths verified against the codebase. All 3 requirements satisfied. All artifacts exist, are substantive, and are correctly wired. The phase goal is fully achieved.
+
+---
+
+_Verified: 2026-04-02T13:07:20Z_
+_Verifier: Claude (gsd-verifier)_
