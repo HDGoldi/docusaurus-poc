@@ -38,10 +38,10 @@ Developers can browse all existing documentation and interactively test API endp
 **Goal:** Align the Docusaurus site's design and navigation with the original 1NCE Developer Hub on ReadMe.com
 
 **Target features:**
-- Replace favicon with official 1NCE 120x120 PNG
-- Replace navbar logo with official 1NCE SVG from 1nce.com
-- Remove dark mode (not readable)
-- Add external navbar links matching original header (1NCE Home, Shop, Portal)
+- ~~Replace favicon with official 1NCE 120x120 PNG~~ — Done (Phase 8)
+- ~~Replace navbar logo with official 1NCE SVG from 1nce.com~~ — Done (Phase 8, already correct)
+- ~~Remove dark mode (not readable)~~ — Done (Phase 8)
+- ~~Add external navbar links matching original header (1NCE Home, Shop, Portal)~~ — Done (Phase 8)
 - Fix Documentation sidebar: merge 1NCE Portal, Platform Services, 1NCE OS, and Blueprints & Examples back into main Documentation sidebar to match original hub structure
 
 ### Out of Scope
@@ -106,4 +106,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-02 after milestone v1.2 started*
+*Last updated: 2026-04-02 after Phase 8 (branding & visual alignment) complete*
