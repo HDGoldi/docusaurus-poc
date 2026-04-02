@@ -121,7 +121,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 09-01-PLAN.md — Content moves and sidebar ordering metadata
+- [x] 09-01-PLAN.md — Content moves and sidebar ordering metadata
 - [ ] 09-02-PLAN.md — Plugin cleanup, navbar consolidation, and client-side redirects
 
 ## Progress
