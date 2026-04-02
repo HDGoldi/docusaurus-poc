@@ -6,7 +6,7 @@ Description: >-
 Parameters:
   DomainName:
     Type: String
-    Default: help.1nce.com
+    Default: help.1nce.ai
     Description: Custom domain for the production site
 
   HostedZoneId:
@@ -265,20 +265,6 @@ Resources:
   # GitHub Actions OIDC Provider and IAM Role
   # ---------------------------------------------------------------------------
 
-  GitHubOidcProvider:
-    Type: AWS::IAM::OIDCProvider
-    Properties:
-      Url: https://token.actions.githubusercontent.com
-      ClientIdList:
-        - sts.amazonaws.com
-      ThumbprintList:
-        - 6938fd4d98bab03faadb97b34396831e3780aea1
-      Tags:
-        - Key: environment
-          Value: dev
-        - Key: component
-          Value: ai
-
   GitHubActionsRole:
     Type: AWS::IAM::Role
     Properties:
@@ -287,7 +273,7 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
-              Federated: !GetAtt GitHubOidcProvider.Arn
+              Federated: !Sub "arn:aws:iam::${AWS::AccountId}:oidc-provider/token.actions.githubusercontent.com"
             Action: sts:AssumeRoleWithWebIdentity
             Condition:
               StringEquals:
