@@ -9,6 +9,10 @@ const config: Config = {
   tagline: 'Documentation for 1NCE IoT connectivity services',
   favicon: 'img/favicon.ico',
 
+  customFields: {
+    chatEndpoint: process.env.CHAT_ENDPOINT || '',
+  },
+
   future: {
     v4: true,
     experimental_faster: true,
@@ -20,7 +24,7 @@ const config: Config = {
 
   stylesheets: [
     {
-      href: 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap',
+      href: 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap',
       type: 'text/css',
     },
   ],
@@ -210,6 +214,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           label: 'Terms & Abbreviations',
           position: 'left',
           docsPluginId: 'terms',
+        },
+        {
+          href: 'https://1nce.com',
+          label: '1NCE Home',
+          position: 'right',
+        },
+        {
+          href: 'https://shop.1nce.com',
+          label: '1NCE Shop',
+          position: 'right',
+        },
+        {
+          href: 'https://portal.1nce.com',
+          label: '1NCE Portal',
+          position: 'right',
         },
       ],
     },
