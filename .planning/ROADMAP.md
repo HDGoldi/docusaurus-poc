@@ -104,10 +104,10 @@ Plans:
   2. Navbar displays the official 1NCE SVG logo from 1nce.com, linking to the site root
   3. No dark mode toggle is visible anywhere on the site, OS-level dark mode preference is ignored, and all pages render in light mode only with no remnant dark CSS
   4. Navbar contains external links for 1NCE Home, 1NCE Shop, and 1NCE Portal that open in new tabs, matching the original hub header
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 08-01: TBD
+- [ ] 08-01-PLAN.md — Favicon, dark mode removal, external navbar links, and social card
 
 ### Phase 9: Sidebar Consolidation & Navigation Restructuring
 **Goal**: The Documentation sidebar and navbar match the original ReadMe.com hub structure — a single Documentation tab with all content sections in the correct order, and old URLs redirect to new locations
@@ -118,7 +118,7 @@ Plans:
   2. The navbar shows exactly 2 doc tabs (Documentation and API Explorer) plus 3 external links — no separate Platform, Blueprints, or Terms tabs
   3. Visiting any old URL under `/platform/*`, `/blueprints/*`, or `/terms/*` redirects the user to the correct new location under `/docs/*`
   4. The API Explorer tab and all 125 API endpoint pages continue to function with working "Try It" panels after the plugin consolidation
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
 - [ ] 09-01: TBD
