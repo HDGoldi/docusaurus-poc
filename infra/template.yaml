@@ -324,6 +324,8 @@ Resources:
                 Resource:
                   - !Sub "arn:aws:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/1nce-devhub-rag/*"
                   - !Sub "arn:aws:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/nce-devhub-rag/*"
+                  - !Sub "arn:aws:cloudformation:eu-central-1:${AWS::AccountId}:stack/nce-devhub-rag/*"
+                  - !Sub "arn:aws:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/nce-devhub-rag-edge/*"
               - Sid: RagS3Bucket
                 Effect: Allow
                 Action:
@@ -362,6 +364,7 @@ Resources:
                   - iam:DetachRolePolicy
                 Resource:
                   - !Sub "arn:aws:iam::${AWS::AccountId}:role/1nce-devhub-rag-*"
+                  - !Sub "arn:aws:iam::${AWS::AccountId}:role/nce-devhub-rag-*"
               - Sid: Lambda
                 Effect: Allow
                 Action:
@@ -380,6 +383,7 @@ Resources:
                   - lambda:GetFunctionUrlConfig
                 Resource:
                   - !Sub "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:1nce-devhub-chat"
+                  - !Sub "arn:aws:lambda:eu-central-1:${AWS::AccountId}:function:1nce-devhub-chat"
               - Sid: Bedrock
                 Effect: Allow
                 Action:
@@ -397,6 +401,7 @@ Resources:
                   - bedrock:StartIngestionJob
                 Resource:
                   - !Sub "arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:knowledge-base/*"
+                  - !Sub "arn:aws:bedrock:eu-central-1:${AWS::AccountId}:knowledge-base/*"
               - Sid: CloudFrontRag
                 Effect: Allow
                 Action:

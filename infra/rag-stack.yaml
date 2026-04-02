@@ -1,17 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: >-
   RAG chat backend for 1NCE Developer Hub — Bedrock Knowledge Base with S3 Vectors,
-  streaming Lambda Function URL, and CloudFront proxy with WAF rate limiting.
+  streaming Lambda Function URL.
 
-  DEPLOYMENT REGIONS:
-  - Main resources (Bedrock KB, Lambda, Function URL): Deploy in eu-central-1
-  - Edge resources (CloudFront, WAF, CORS headers policy): Deploy in us-east-1
-    These are in a separate section at the bottom, clearly marked.
-    They can be added to infra/template.yaml or deployed as a separate stack.
-
-# =============================================================================
-# DEPLOY THIS STACK IN eu-central-1
-# =============================================================================
+  DEPLOY THIS STACK IN eu-central-1
 
 Parameters:
   RagContentBucketName:
@@ -263,122 +255,6 @@ Resources:
       FunctionUrlAuthType: NONE
 
 # =============================================================================
-# EDGE RESOURCES — DEPLOY IN us-east-1
-# =============================================================================
-# The resources below require us-east-1 deployment because:
-# - WAFv2 WebACL with CLOUDFRONT scope must be in us-east-1
-# - CloudFront distributions are global but managed from us-east-1
-#
-# Option A: Add these to infra/template.yaml (already deployed in us-east-1)
-# Option B: Deploy as a separate stack in us-east-1
-#
-# The ChatFunctionUrl output from the eu-central-1 stack must be passed
-# as a parameter to the us-east-1 stack for the CloudFront origin.
-# =============================================================================
-
-  # ---------------------------------------------------------------------------
-  # CloudFront Response Headers Policy (CORS for chat API)
-  # ---------------------------------------------------------------------------
-
-  ChatApiResponseHeadersPolicy:
-    Type: AWS::CloudFront::ResponseHeadersPolicy
-    Properties:
-      ResponseHeadersPolicyConfig:
-        Name: !Sub "${AWS::StackName}-chat-cors"
-        CorsConfig:
-          AccessControlAllowOrigins:
-            Items:
-              - "https://help.1nce.com"
-              - "https://help.1nce.ai"
-              - "https://hdgoldi.github.io"
-              - "http://localhost:3000"
-          AccessControlAllowMethods:
-            Items:
-              - POST
-              - OPTIONS
-          AccessControlAllowHeaders:
-            Items:
-              - Content-Type
-          AccessControlMaxAgeSec: 86400
-          AccessControlAllowCredentials: false
-          OriginOverride: true
-
-  # ---------------------------------------------------------------------------
-  # CloudFront Distribution (proxy for Lambda Function URL)
-  # ---------------------------------------------------------------------------
-
-  ChatApiDistribution:
-    Type: AWS::CloudFront::Distribution
-    Properties:
-      DistributionConfig:
-        Enabled: true
-        Comment: "RAG chat API proxy with WAF rate limiting"
-        WebACLId: !GetAtt ChatWafWebAcl.Arn
-        Origins:
-          - Id: LambdaOrigin
-            DomainName: !Select [2, !Split ["/", !GetAtt ChatFunctionUrl.FunctionUrl]]
-            CustomOriginConfig:
-              OriginProtocolPolicy: https-only
-              OriginSSLProtocols:
-                - TLSv1.2
-        DefaultCacheBehavior:
-          TargetOriginId: LambdaOrigin
-          ViewerProtocolPolicy: redirect-to-https
-          CachePolicyId: 4135ea2d-6df8-44a3-9df3-4b5a84be39ad
-          OriginRequestPolicyId: b689b0a8-53d0-40ab-baf2-68738e2966ac
-          ResponseHeadersPolicyId: !Ref ChatApiResponseHeadersPolicy
-          AllowedMethods:
-            - GET
-            - HEAD
-            - OPTIONS
-            - PUT
-            - PATCH
-            - POST
-            - DELETE
-        HttpVersion: http2and3
-      Tags:
-        - Key: environment
-          Value: dev
-        - Key: component
-          Value: ai
-
-  # ---------------------------------------------------------------------------
-  # WAF WebACL — rate limiting per D-11, D-12
-  # ---------------------------------------------------------------------------
-
-  ChatWafWebAcl:
-    Type: AWS::WAFv2::WebACL
-    Properties:
-      Name: !Sub "${AWS::StackName}-chat-waf"
-      Description: "Rate limiting for RAG chat API - 10 req/min per IP"
-      Scope: CLOUDFRONT
-      DefaultAction:
-        Allow: {}
-      Rules:
-        - Name: RateLimitPerIP
-          Priority: 1
-          Action:
-            Block: {}
-          Statement:
-            RateBasedStatement:
-              Limit: 10
-              EvaluationWindowSec: 60
-              AggregateKeyType: IP
-          VisibilityConfig:
-            SampledRequestsEnabled: true
-            CloudWatchMetricsEnabled: true
-            MetricName: ChatRateLimit
-      VisibilityConfig:
-        SampledRequestsEnabled: true
-        CloudWatchMetricsEnabled: true
-        MetricName: ChatWafWebAcl
-      Tags:
-        - Key: environment
-          Value: dev
-        - Key: component
-          Value: ai
-
-# =============================================================================
 # Outputs
 # =============================================================================
 
@@ -410,11 +286,3 @@ Outputs:
   RagContentBucketArn:
     Value: !GetAtt RagContentBucket.Arn
     Description: S3 bucket ARN for RAG content
-
-  ChatApiDistributionDomain:
-    Value: !GetAtt ChatApiDistribution.DomainName
-    Description: CloudFront domain for WAF-protected chat API
-
-  ChatApiDistributionId:
-    Value: !Ref ChatApiDistribution
-    Description: CloudFront distribution ID for chat API

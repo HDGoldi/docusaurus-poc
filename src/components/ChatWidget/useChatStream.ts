@@ -76,6 +76,8 @@ export function useChatStream({
         if (!response.ok) {
           if (response.status === 429) {
             onErrorRef.current(COPY.errorRateLimit);
+          } else if (response.status === 403) {
+            onErrorRef.current(COPY.errorRateLimit);
           } else if (response.status === 503) {
             onErrorRef.current(COPY.errorBackend);
           } else {
