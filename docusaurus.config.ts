@@ -222,24 +222,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           position: 'right',
           target: '_blank',
         },
-        {
-          href: 'https://1nce.com',
-          label: '1NCE Home',
-          position: 'right',
-          target: '_blank',
-        },
-        {
-          href: 'https://portal.1nce.com/portal/shop/cart',
-          label: '1NCE Shop',
-          position: 'right',
-          target: '_blank',
-        },
-        {
-          href: 'https://portal.1nce.com/portal/customer/login',
-          label: '1NCE Portal',
-          position: 'right',
-          target: '_blank',
-        },
       ],
     },
     footer: {
