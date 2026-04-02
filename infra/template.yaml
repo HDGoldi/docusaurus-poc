@@ -304,6 +304,118 @@ Resources:
                 Resource:
                   - !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/${ProdDistribution}"
                   - !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/${PreviewDistribution}"
+        - PolicyName: RagStackDeployment
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Sid: CloudFormation
+                Effect: Allow
+                Action:
+                  - cloudformation:CreateStack
+                  - cloudformation:UpdateStack
+                  - cloudformation:DescribeStacks
+                  - cloudformation:DescribeStackEvents
+                  - cloudformation:GetTemplate
+                  - cloudformation:CreateChangeSet
+                  - cloudformation:DescribeChangeSet
+                  - cloudformation:ExecuteChangeSet
+                  - cloudformation:DeleteChangeSet
+                Resource:
+                  - !Sub "arn:aws:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/1nce-devhub-rag/*"
+              - Sid: RagS3Bucket
+                Effect: Allow
+                Action:
+                  - s3:CreateBucket
+                  - s3:PutBucketVersioning
+                  - s3:PutBucketPublicAccessBlock
+                  - s3:PutBucketTagging
+                  - s3:PutBucketPolicy
+                  - s3:GetBucketPolicy
+                  - s3:PutObject
+                  - s3:GetObject
+                  - s3:ListBucket
+                  - s3:DeleteObject
+                Resource:
+                  - "arn:aws:s3:::1nce-devhub-rag-content"
+                  - "arn:aws:s3:::1nce-devhub-rag-content/*"
+              - Sid: LambdaCodeBucket
+                Effect: Allow
+                Action:
+                  - s3:GetObject
+                Resource:
+                  - !Sub "arn:aws:s3:::*/*"
+              - Sid: IAMForRagStack
+                Effect: Allow
+                Action:
+                  - iam:CreateRole
+                  - iam:DeleteRole
+                  - iam:PutRolePolicy
+                  - iam:DeleteRolePolicy
+                  - iam:GetRole
+                  - iam:GetRolePolicy
+                  - iam:PassRole
+                  - iam:TagRole
+                  - iam:UntagRole
+                  - iam:AttachRolePolicy
+                  - iam:DetachRolePolicy
+                Resource:
+                  - !Sub "arn:aws:iam::${AWS::AccountId}:role/1nce-devhub-rag-*"
+              - Sid: Lambda
+                Effect: Allow
+                Action:
+                  - lambda:CreateFunction
+                  - lambda:UpdateFunctionCode
+                  - lambda:UpdateFunctionConfiguration
+                  - lambda:DeleteFunction
+                  - lambda:GetFunction
+                  - lambda:GetFunctionConfiguration
+                  - lambda:AddPermission
+                  - lambda:RemovePermission
+                  - lambda:TagResource
+                  - lambda:CreateFunctionUrlConfig
+                  - lambda:UpdateFunctionUrlConfig
+                  - lambda:DeleteFunctionUrlConfig
+                  - lambda:GetFunctionUrlConfig
+                Resource:
+                  - !Sub "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:1nce-devhub-chat"
+              - Sid: Bedrock
+                Effect: Allow
+                Action:
+                  - bedrock:CreateKnowledgeBase
+                  - bedrock:UpdateKnowledgeBase
+                  - bedrock:DeleteKnowledgeBase
+                  - bedrock:GetKnowledgeBase
+                  - bedrock:CreateDataSource
+                  - bedrock:UpdateDataSource
+                  - bedrock:DeleteDataSource
+                  - bedrock:GetDataSource
+                  - bedrock:TagResource
+                  - bedrock:StartIngestionJob
+                Resource:
+                  - !Sub "arn:aws:bedrock:${AWS::Region}:${AWS::AccountId}:knowledge-base/*"
+              - Sid: CloudFrontRag
+                Effect: Allow
+                Action:
+                  - cloudfront:CreateDistribution
+                  - cloudfront:UpdateDistribution
+                  - cloudfront:DeleteDistribution
+                  - cloudfront:GetDistribution
+                  - cloudfront:TagResource
+                  - cloudfront:CreateResponseHeadersPolicy
+                  - cloudfront:UpdateResponseHeadersPolicy
+                  - cloudfront:DeleteResponseHeadersPolicy
+                  - cloudfront:GetResponseHeadersPolicy
+                Resource: "*"
+              - Sid: WAF
+                Effect: Allow
+                Action:
+                  - wafv2:CreateWebACL
+                  - wafv2:UpdateWebACL
+                  - wafv2:DeleteWebACL
+                  - wafv2:GetWebACL
+                  - wafv2:TagResource
+                Resource:
+                  - !Sub "arn:aws:wafv2:${AWS::Region}:${AWS::AccountId}:global/webacl/*"
       Tags:
         - Key: environment
           Value: dev
