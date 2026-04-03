@@ -36,6 +36,10 @@ Create a production build:
 npm run build
 npm run serve
 ```
+Environment variables (chat widget)
+- `N8N_CHAT_USERNAME`: Basic auth username for the n8n webhook (defaults to `master`).
+- `N8N_CHAT_PASSWORD`: Basic auth password for the n8n webhook.
+
 Key npm scripts
 - `npm start`: Run local development server.
 - `npm run build`: Build static site output.
