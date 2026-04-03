@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import '@n8n/chat/style.css';
 
 export default function Root({ children }: { children: React.ReactNode }) {
+  const { siteConfig } = useDocusaurusContext();
+  const password = (siteConfig.customFields?.n8nChatPassword as string) || '';
+  
   useEffect(() => {
     import('@n8n/chat').then(({ createChat }) => {
       createChat({
@@ -9,7 +12,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
         webhookConfig: {
           method: 'POST',
           headers: {
-            Authorization: 'Basic ' + btoa('master:[PLACEHOLDER_PASSWORD]'),
+            Authorization: 'Basic ' + ('master:' + password),
           },
         },
         mode: 'window',
