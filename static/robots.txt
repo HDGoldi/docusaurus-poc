@@ -1,0 +1,26 @@
+# robots.txt for help.1nce.com
+User-agent: *
+Allow: /
+Disallow: /search
+Disallow: /tags
+
+# AI Crawlers - explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://help.1nce.com/sitemap.xml
