@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import '@n8n/chat/style.css';
 
 export default function Root({ children }: { children: React.ReactNode }) {
