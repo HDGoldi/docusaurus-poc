@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import '@n8n/chat/style.css';
 
 export default function Root({ children }: { children: React.ReactNode }) {
   const { siteConfig } = useDocusaurusContext();
   const password = (siteConfig.customFields?.n8nChatPassword as string) || '';
-  
+
   useEffect(() => {
     import('@n8n/chat').then(({ createChat }) => {
       createChat({
@@ -12,7 +13,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
         webhookConfig: {
           method: 'POST',
           headers: {
-            Authorization: 'Basic ' + ('master:' + password),
+            Authorization: 'Basic ' + btoa('master:' + password),
           },
         },
         mode: 'window',
@@ -26,6 +27,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
             title: '1NCE Dev Hub Assistant',
             subtitle: 'Ask me anything about 1NCE services',
             inputPlaceholder: 'Type your question...',
+            footer: '',
             getStarted: 'New Conversation',
             closeButtonTooltip: 'Close chat',
           },
