@@ -46,7 +46,7 @@ See: `.planning/milestones/v1.2-ROADMAP.md` for full details.
 
 **Milestone Goal:** Make the Developer Hub discoverable and usable by LLMs, AI coding agents, and search engine crawlers as first-class consumers.
 
-- [ ] **Phase 10: Crawler Foundation** - robots.txt, AI crawler directives, and CloudFront Function fix for static file paths
+- [x] **Phase 10: Crawler Foundation** - robots.txt, AI crawler directives, and CloudFront Function fix for static file paths (completed 2026-04-03)
 - [ ] **Phase 11: LLM Discoverability** - llms.txt with product-first organization and build-time link generation
 - [ ] **Phase 12: AI Agent Integration** - skill.md and .well-known discovery for AI coding agents
 
@@ -102,6 +102,6 @@ Phases execute in numeric order: 10 -> 11 -> 12
 | 7. CI/CD Integration | v1.1 | 1/1 | Complete | 2026-03-23 |
 | 8. Branding & Visual Alignment | v1.2 | 1/1 | Complete | 2026-04-02 |
 | 9. Sidebar Consolidation | v1.2 | 2/2 | Complete | 2026-04-02 |
-| 10. Crawler Foundation | v1.3 | 0/1 | In progress | - |
+| 10. Crawler Foundation | v1.3 | 0/1 | Complete    | 2026-04-03 |
 | 11. LLM Discoverability | v1.3 | 0/0 | Not started | - |
 | 12. AI Agent Integration | v1.3 | 0/0 | Not started | - |
