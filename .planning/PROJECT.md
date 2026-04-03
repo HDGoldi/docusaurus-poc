@@ -46,6 +46,15 @@ Developers can browse all existing documentation and interactively test API endp
 - Offline mode
 - Two-tier header layout — Docusaurus single navbar sufficient with external links
 
+## Current Milestone: v1.3 AI & Search Readiness
+
+**Goal:** Make the Developer Hub discoverable and usable by LLMs, AI coding agents, and search engine crawlers as first-class consumers.
+
+**Target features:**
+- llms.txt with product-first organization (1NCE Connect, 1NCE OS) — hand-curated structure with build-time generated link sections
+- skill.md for AI coding agents — auth flows, common patterns, best practices, gotchas; served at /.well-known/skills/ with discovery index.json
+- robots.txt with sitemap.xml reference for search engine crawlers
+
 ## Context
 
 Shipped v1.2 with site branding and navigation fully aligned to original ReadMe.com hub.
