@@ -6,18 +6,37 @@ const DEFAULT_N8N_CHAT_USERNAME = 'master';
 const N8N_CHAT_WEBHOOK_URL =
   'https://n8n.dev.1nce.ai/webhook/cd4f96e9-4577-428e-bc50-27efee023e1f/chat';
 
-const buildBasicAuthHeader = (username: string, password: string) => {
-  if (!username || !password) {
+const sanitizeCredential = (value: string) => value.replace(/[\r\n]/g, '');
+
+const toBase64Utf8 = (value: string) => {
+  if (typeof window === 'undefined' || typeof window.btoa !== 'function') {
     return undefined;
   }
 
-  const credentials = `${username}:${password}`;
+  const utf8Bytes = new TextEncoder().encode(value);
+  let binary = '';
 
-  if (typeof window !== 'undefined' && typeof window.btoa === 'function') {
-    return `Basic ${window.btoa(credentials)}`;
+  utf8Bytes.forEach((byte) => {
+    binary += String.fromCharCode(byte);
+  });
+
+  return window.btoa(binary);
+};
+
+const buildBasicAuthHeader = (username: string, password: string) => {
+  const sanitizedUsername = sanitizeCredential(username);
+  const sanitizedPassword = sanitizeCredential(password);
+
+  if (!sanitizedUsername || !sanitizedPassword) {
+    return undefined;
   }
 
-  return undefined;
+  const encoded = toBase64Utf8(`${sanitizedUsername}:${sanitizedPassword}`);
+  if (!encoded) {
+    return undefined;
+  }
+
+  return `Basic ${encoded}`;
 };
 
 export default function Root({ children }: { children: React.ReactNode }) {
@@ -29,8 +48,8 @@ export default function Root({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const authorization = buildBasicAuthHeader(username, password);
     if (!authorization) {
-      console.warn(
-        'n8n chat Authorization header is not set because username/password is missing.',
+      console.error(
+        'n8n chat Authorization header is not set. Ensure N8N_CHAT_USERNAME and N8N_CHAT_PASSWORD are present at build time.',
       );
     }
 
@@ -68,4 +87,4 @@ export default function Root({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
-export { buildBasicAuthHeader, DEFAULT_N8N_CHAT_USERNAME };
+export { buildBasicAuthHeader, DEFAULT_N8N_CHAT_USERNAME, sanitizeCredential, toBase64Utf8 };

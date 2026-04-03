@@ -56,4 +56,26 @@ describe('Root.tsx createChat() integration', () => {
 
     expect(authHeader).toBe(`Basic ${btoa('master:s3cr3t')}`);
   });
+
+  it('sanitizes credential newlines before encoding auth header', async () => {
+    setMockSiteConfig({
+      n8nChatUsername: 'master\n',
+      n8nChatPassword: 's3cr3t\r\n',
+    });
+
+    render(
+      <Root>
+        <div>test</div>
+      </Root>,
+    );
+
+    await waitFor(() => {
+      expect(mockCreateChat).toHaveBeenCalled();
+    });
+
+    const config = mockCreateChat.mock.calls[0][0];
+    const authHeader = config.webhookConfig?.headers?.Authorization;
+
+    expect(authHeader).toBe(`Basic ${btoa('master:s3cr3t')}`);
+  });
 });
