@@ -1,175 +1,165 @@
-# Stack Research: v1.2 Design Alignment
+# Stack Research: v1.3 AI & Search Readiness
 
-**Domain:** Docusaurus configuration changes for design alignment with ReadMe.com original
-**Researched:** 2026-04-02
-**Confidence:** HIGH
+**Domain:** llms.txt, skill.md, robots.txt for Docusaurus 3.9.2
+**Researched:** 2026-04-03
+**Confidence:** HIGH (robots.txt, static file serving), MEDIUM (llms.txt plugin), LOW (skill.md convention)
+
+---
 
 ## Executive Summary
 
-v1.2 requires zero new packages. All four target features (disable dark mode, external navbar links, sidebar restructuring, favicon/logo replacement) are achievable through configuration changes in `docusaurus.config.ts`, CSS cleanup in `custom.css`, and filesystem reorganization of `docs/` directories. The existing stack (Docusaurus 3.9.2, docusaurus-openapi-docs v4.7.1, Infima CSS) already has everything needed.
+All three features (llms.txt, skill.md, robots.txt) are achievable with one new plugin and static files. robots.txt is trivially a static file. skill.md is a static file served from `static/.well-known/skills/`. llms.txt has two viable approaches: the `@signalwire/docusaurus-plugin-llms-txt` plugin (auto-generates from built HTML) or a custom build script (hand-curated template with injected links). Given the project requirement for a **hybrid hand-curated + generated** approach, the recommended path is the SignalWire plugin with manual section configuration, falling back to a custom script only if the plugin's section customization proves insufficient.
 
 ---
 
-## Configuration Changes Required
+## New Additions for v1.3
 
-### 1. Disable Dark Mode
+### 1. llms.txt Generation
 
-**Current config** (`docusaurus.config.ts` line 170-172):
+#### Recommended: `@signalwire/docusaurus-plugin-llms-txt`
+
+| Property | Value |
+|----------|-------|
+| Package | `@signalwire/docusaurus-plugin-llms-txt` |
+| Version | `1.2.2` (stable) or `2.0.0-alpha.7` (latest pre-release) |
+| Peer dependency | `@docusaurus/core ^3.0.0` -- compatible with 3.9.2 |
+| License | MIT |
+| Published | 2025-07-23 (v1.2.2) |
+
+**Why this plugin:**
+- Processes final rendered HTML, not source MDX -- captures resolved components, frontmatter, and generated API pages
+- Supports **manual section definitions** with custom names and route patterns, plus auto-generated sections from URL depth -- this is the "hybrid" capability the project needs
+- Generates both `llms.txt` (index with links) and optional `llms-full.txt` (all content inlined)
+- Handles the 125 generated API endpoint pages automatically
+- Shares 3 dependencies with the existing project (`unified ^11`, `remark-stringify ^11`, `unist-util-visit ^5`) -- minimal dependency bloat
+
+**How it achieves the hybrid approach:**
+1. Define manual sections for product-first organization (e.g., "1NCE Connect", "1NCE OS") with hand-curated descriptions and explicit route patterns
+2. Let `autoSectionDepth` fill in link lists from matching built pages
+3. Hand-curate the section names, ordering, and descriptions; let the plugin auto-discover the links within each section
+
+**Configuration sketch:**
 ```typescript
-colorMode: {
-  respectPrefersColorScheme: true,
-},
-```
-
-**Required change:**
-```typescript
-colorMode: {
-  defaultMode: 'light',
-  disableSwitch: true,
-  respectPrefersColorScheme: false,
-},
-```
-
-| Property | Value | Why |
-|----------|-------|-----|
-| `defaultMode` | `'light'` | Force light mode as the only mode |
-| `disableSwitch` | `true` | Removes the toggle button from the navbar entirely |
-| `respectPrefersColorScheme` | `false` | Prevents OS dark mode preference from overriding. Currently `true` -- must flip to `false` or users with system dark mode will still see dark theme |
-
-**CSS cleanup required:** The `[data-theme='dark']` blocks in `custom.css` (lines 42-57, 64-67, 98-101) become dead code. Remove them to avoid confusion. They are harmless but add maintenance burden.
-
-**Prism dark theme:** The config at line 229 (`darkTheme: prismThemes.dracula`) can also be removed since there will be no dark mode. Only `theme: prismThemes.github` is needed.
-
-**Confidence:** HIGH -- verified against Docusaurus official docs at `docusaurus.io/docs/api/themes/configuration#color-mode---colormode`.
-
-### 2. Add External Navbar Links
-
-**Current navbar items** (lines 179-214): Five internal doc links using `type: 'docSidebar'` and `type: 'doc'`.
-
-**Required addition** -- external links using `href` (not `to`):
-```typescript
-// Add to navbar.items array, position: 'right'
-{
-  href: 'https://1nce.com',
-  label: '1NCE Home',
-  position: 'right',
-},
-{
-  href: 'https://shop.1nce.com',
-  label: 'Shop',
-  position: 'right',
-},
-{
-  href: 'https://portal.1nce.com',
-  label: 'Portal',
-  position: 'right',
-},
-```
-
-| Property | Purpose | Notes |
-|----------|---------|-------|
-| `href` | Full URL for external navigation | Do NOT use `to` -- that is for internal client-side routing only |
-| `position: 'right'` | Places external links on the right side of navbar | Separates internal doc tabs (left) from external links (right), matching typical documentation site patterns |
-| No `target` needed | Docusaurus automatically adds `target="_blank" rel="noopener noreferrer"` for external `href` values | Verified in official docs |
-
-**Exact URLs to verify:** The `href` values above (1nce.com, shop.1nce.com, portal.1nce.com) should be confirmed against the original ReadMe.com site header before implementation.
-
-**Confidence:** HIGH -- verified against Docusaurus official docs at `docusaurus.io/docs/api/themes/configuration#navbar`.
-
-### 3. Restructure Sidebars (Merge Multi-Instance into Single)
-
-**Current architecture:** Four separate `@docusaurus/plugin-content-docs` instances:
-
-| Instance | Path | Route | Content |
-|----------|------|-------|---------|
-| default (preset) | `docs/documentation` | `/docs` | connectivity-services, intro, mcp-server, network-services, sim-cards, troubleshooting |
-| `platform` | `docs/platform` | `/platform` | 1nce-os, 1nce-portal, platform-services |
-| `blueprints` | `docs/blueprints` | `/blueprints` | blueprints-examples, device-specific guides |
-| `terms` | `docs/terms` | `/terms` | Terms & Abbreviations |
-
-**Target:** Merge `platform` and `blueprints` content into the default docs instance so they appear as categories in a single Documentation sidebar. Keep `terms` and `api` as separate instances.
-
-**Approach -- filesystem move + config change:**
-
-1. **Move content directories:**
-   - `docs/platform/1nce-portal/` -> `docs/documentation/1nce-portal/`
-   - `docs/platform/platform-services/` -> `docs/documentation/platform-services/`
-   - `docs/platform/1nce-os/` -> `docs/documentation/1nce-os/`
-   - `docs/blueprints/*` -> `docs/documentation/blueprints-examples/` (consolidate)
-
-2. **Remove plugin instances** from `docusaurus.config.ts`:
-   - Delete the `platform` plugin entry (lines 88-93)
-   - Delete the `blueprints` plugin entry (lines 94-99)
-
-3. **Remove corresponding navbar tabs:**
-   - Delete `1NCE Platform` navbar item (lines 193-198)
-   - Delete `Blueprints & Examples` navbar item (lines 199-204)
-
-4. **Sidebar auto-generation handles the rest:** Since `documentation.ts` uses `autogenerated` with `dirName: '.'`, the moved directories will automatically appear in the sidebar. Use `_category_.json` files in each moved directory to control label and position.
-
-5. **Delete unused sidebar files:**
-   - `sidebars/platform.ts`
-   - `sidebars/blueprints.ts`
-
-**URL migration concern:** Routes change from `/platform/...` to `/docs/...` and `/blueprints/...` to `/docs/...`. This is a breaking change for bookmarks and external links.
-
-**Mitigation:** Per PROJECT.md, the CloudFormation stack has not been deployed yet ("Human verification pending: deploy CloudFormation stack and confirm site loads at https://help.1nce.com"). If the site is not yet live, no redirects are needed. If it becomes live before v1.2, add `@docusaurus/plugin-client-redirects`.
-
-**Confidence:** HIGH for the approach. Docusaurus autogenerated sidebars from filesystem structure is well-documented and is the existing pattern used by this project.
-
-### 4. Update Favicon and Logo
-
-**Current state:**
-- Favicon: `static/img/favicon.ico` (referenced in config line 10 as `'img/favicon.ico'`)
-- Also exists: `static/img/favicon.png`
-- Logo: `static/img/1nce-logo.svg` (referenced in config line 177)
-
-**Favicon replacement:**
-```typescript
-// docusaurus.config.ts
-favicon: 'img/favicon.png',  // Change from .ico to .png for the 120x120 PNG
-```
-
-Drop the official 1NCE 120x120 PNG into `static/img/favicon.png`, replacing the existing file. PNG is preferred over ICO for modern browsers. The `favicon` config accepts any image URL that works in an HTML `<link>` tag.
-
-**Logo replacement:**
-```typescript
-navbar: {
-  logo: {
-    alt: '1NCE Logo',
-    src: 'img/1nce-logo.svg',  // Replace file in-place, keep same path
-    // No srcDark needed since dark mode is being removed
+['@signalwire/docusaurus-plugin-llms-txt', {
+  llmsTxt: {
+    title: '1NCE Developer Hub',
+    description: 'Documentation for 1NCE IoT connectivity services',
+    sections: [
+      {
+        name: '1NCE Connect',
+        description: 'SIM management, connectivity, and network services',
+        routes: ['/docs/connectivity-services/', '/docs/network-services/', '/docs/sim-cards/'],
+      },
+      {
+        name: '1NCE OS',
+        description: 'IoT operating system, device integration, data broker',
+        routes: ['/docs/1nce-os/'],
+      },
+      {
+        name: '1NCE Portal',
+        description: 'Web portal for SIM management and account administration',
+        routes: ['/docs/1nce-portal/'],
+      },
+      {
+        name: 'API Reference',
+        description: 'REST API endpoints for programmatic access',
+        routes: ['/api/'],
+      },
+    ],
+    autoSectionDepth: 2,
+    generateFullTxt: true,
   },
-},
+  markdown: {
+    contentSelector: 'article',
+  },
+}]
 ```
 
-Replace `static/img/1nce-logo.svg` with the official 1NCE SVG sourced from 1nce.com. Keep the same filename to avoid config changes. The `srcDark` property can be omitted since dark mode is being disabled.
+**Risk:** MEDIUM. The plugin's manual section configuration API is not fully documented in the README. The configuration sketch above is based on the plugin's described capabilities (manual sections with custom names and route patterns) but exact option names may differ. Recommend installing the plugin and inspecting its TypeScript types (`node_modules/@signalwire/docusaurus-plugin-llms-txt/lib/types.d.ts`) during implementation.
 
-**Confidence:** HIGH -- verified against Docusaurus official docs at `docusaurus.io/docs/api/docusaurus-config#favicon`.
+**Fallback:** If the plugin's section customization proves too limited, write a custom Docusaurus plugin (postBuild lifecycle hook) that:
+1. Reads a hand-curated `llms-template.md` from the project root
+2. Uses `glob` (already in devDeps) to discover built `.html` files
+3. Injects link lists into marked sections of the template
+4. Writes `llms.txt` to the `build/` directory
+
+The custom approach uses no new dependencies -- `glob`, `unified`, `remark-stringify`, and `gray-matter` are already in the project.
+
+#### Companion Theme (Optional)
+
+| Property | Value |
+|----------|-------|
+| Package | `@signalwire/docusaurus-theme-llms-txt` |
+| Version | `1.2.2` |
+| Purpose | Adds copy-to-clipboard UI, page-level `.md` download links |
+
+**Recommendation:** Skip for v1.3. The theme adds UI flourishes that are not part of the v1.3 scope. The plugin alone generates the files.
+
+### 2. robots.txt -- Static File
+
+**No plugin needed.** Docusaurus does not generate robots.txt. Place it in `static/robots.txt` and it will be copied to `build/robots.txt`, served at `https://help.1nce.com/robots.txt`.
+
+```
+User-agent: *
+Allow: /
+
+Sitemap: https://help.1nce.com/sitemap.xml
+```
+
+The sitemap.xml is already generated by `@docusaurus/plugin-sitemap` (included in preset-classic). No new packages.
+
+| Item | Status |
+|------|--------|
+| sitemap.xml generation | Already handled by preset-classic |
+| robots.txt | Static file, zero dependencies |
+| CloudFront compatibility | Static files from S3 are served directly, no special config needed |
+
+**Confidence:** HIGH -- verified against Docusaurus official SEO docs.
+
+### 3. skill.md at `/.well-known/skills/`
+
+**Important caveat:** The `/.well-known/skills/` convention with `skill.md` and `index.json` discovery is NOT an established public standard. No RFC, no widely-adopted specification repository, and no GitHub repositories were found documenting this convention. It appears to be a project-defined or emerging convention.
+
+**Confidence:** LOW on the convention itself. HIGH on the serving mechanism.
+
+**Serving mechanism:** Place files in `static/.well-known/skills/`:
+```
+static/
+  .well-known/
+    skills/
+      index.json       # Discovery manifest
+      1nce-api.md      # Skill file for API integration
+```
+
+Docusaurus copies the `static/` directory structure to `build/` preserving hierarchy. Files at `static/.well-known/skills/index.json` will be served at `https://help.1nce.com/.well-known/skills/index.json`.
+
+**CloudFront consideration:** The existing CloudFront Function rewrites paths to `index.html` for SPA routing. It must NOT rewrite requests for `/.well-known/*`, `robots.txt`, `llms.txt`, or `sitemap.xml`. The CloudFront Function likely already handles this correctly (it should only rewrite paths without file extensions), but **verify during implementation**.
+
+**No npm packages needed.** These are hand-authored static files.
 
 ---
 
-## No New Packages Required
+## Summary of New Packages
 
-The existing stack handles everything:
+| Package | Version | Purpose | Required? |
+|---------|---------|---------|-----------|
+| `@signalwire/docusaurus-plugin-llms-txt` | `^1.2.2` | llms.txt + llms-full.txt generation | YES (recommended) |
 
-| Existing Technology | Version | Handles |
-|---------------------|---------|---------|
-| Docusaurus core | 3.9.2 | colorMode config, navbar href items, favicon config |
-| @docusaurus/preset-classic | 3.9.2 | Default docs plugin instance with autogenerated sidebars |
-| Infima CSS | (bundled) | Light-mode-only theming via CSS custom properties |
-| docusaurus-theme-openapi-docs | 4.7.1 | API Explorer remains unchanged |
+That's it. One new package.
 
-## Conditional Package
+### Installation
 
-| Package | Version | Purpose | When Needed |
-|---------|---------|---------|-------------|
-| `@docusaurus/plugin-client-redirects` | `^3.9` | Redirect `/platform/*` and `/blueprints/*` to `/docs/*` | Only if site is already live with indexed URLs |
-
-**Installation (if needed):**
 ```bash
-npm install @docusaurus/plugin-client-redirects@^3.9
+npm install @signalwire/docusaurus-plugin-llms-txt@^1.2.2
 ```
+
+### New Static Files (no packages needed)
+
+| File | Served At | Hand-Authored? |
+|------|-----------|----------------|
+| `static/robots.txt` | `/robots.txt` | Yes |
+| `static/.well-known/skills/index.json` | `/.well-known/skills/index.json` | Yes |
+| `static/.well-known/skills/1nce-api.md` | `/.well-known/skills/1nce-api.md` | Yes |
 
 ---
 
@@ -177,49 +167,83 @@ npm install @docusaurus/plugin-client-redirects@^3.9
 
 | Recommended | Alternative | Why Not |
 |-------------|-------------|---------|
-| Remove `[data-theme='dark']` CSS | Keep dark CSS as dead code | Adds maintenance confusion. Clean it out since dark mode is permanently disabled. |
-| Filesystem move for sidebar merge | Symlinks or custom sidebar config referencing cross-instance docs | Docusaurus does not support cross-instance sidebar references. Filesystem move is the only clean approach. |
-| Filesystem move for sidebar merge | Keep separate instances, just remove navbar tabs | Defeats the purpose -- content would be unreachable from the Documentation sidebar. |
-| PNG favicon | ICO favicon | PNG is universally supported in modern browsers and matches the 120x120 asset provided. ICO is a legacy format. |
-| `@docusaurus/plugin-client-redirects` for URL migration | Server-side redirects in CloudFront Function | CloudFront Functions have a 10KB size limit. With potentially dozens of redirect paths, client-side redirects are simpler. Only relevant if site is already live. |
-
-## What NOT to Change
-
-| Do Not Touch | Why |
-|--------------|-----|
-| `api` plugin instance | API Explorer must remain as a separate docs instance with its own route (`/api`) and sidebar. The `docItemComponent: '@theme/ApiItem'` binding requires it. |
-| `terms` plugin instance | Terms & Abbreviations stays as a separate tab per PROJECT.md scope. |
-| `docusaurus-plugin-openapi-docs` config | No changes needed. API specs and generation are unaffected by sidebar restructuring. |
-| `themes: ['docusaurus-theme-openapi-docs']` | Must remain for API Explorer rendering. |
-| Analytics head tags / scripts | GTM, SimpleAnalytics, PostHog are unaffected by design changes. |
-| `docusaurus-plugin-sass` | Already installed, unrelated to v1.2 changes. |
-| `polyfillNodeModules` plugin | Required for path-browserify compatibility with openapi-docs. |
+| `@signalwire/docusaurus-plugin-llms-txt` for llms.txt | Custom postBuild script | Plugin handles HTML-to-Markdown conversion, page discovery, and section organization. Only fall back to custom if plugin sections are too rigid. |
+| `@signalwire/docusaurus-plugin-llms-txt` v1.2.2 (stable) | v2.0.0-alpha.7 (pre-release) | Alpha releases risk breaking changes. v1.2.2 is stable and sufficient. |
+| Static `robots.txt` in `static/` | `docusaurus-plugin-robots-txt` npm package | Over-engineering. A 3-line static file does not need a plugin. |
+| Static skill.md files in `static/.well-known/` | Docusaurus plugin to generate skill.md | The skill files are entirely hand-authored (auth flows, patterns, gotchas). No generation needed. |
+| Skip `@signalwire/docusaurus-theme-llms-txt` | Install it for UI features | Out of scope for v1.3. The theme adds per-page markdown download buttons -- not a v1.3 requirement. |
 
 ---
 
-## Implementation Order
+## What NOT to Add
 
-The changes have a natural dependency chain:
+| Technology | Why Not |
+|------------|---------|
+| `docusaurus-plugin-robots-txt` | Static file is simpler and more maintainable than a plugin for 3 lines of config |
+| `@signalwire/docusaurus-theme-llms-txt` | UI theme for llms.txt pages -- not needed for v1.3 scope (file generation only) |
+| Any `sitemap.xml` changes | Already generated by preset-classic, already correct. Just reference it from robots.txt. |
+| Custom Docusaurus plugin for robots.txt | Static file. Zero complexity. |
+| `generate-robotstxt` npm package | Designed for webpack/build pipelines. A static file is the Docusaurus-idiomatic approach. |
 
-1. **Favicon + Logo** -- independent file replacement, zero risk, instant visual improvement
-2. **Disable dark mode** -- config change + CSS cleanup, low risk
-3. **External navbar links** -- config addition, low risk, can verify URLs first
-4. **Sidebar restructuring** -- filesystem move + config removal, highest risk (URL changes, potential broken internal links between docs)
+---
 
-This order minimizes risk: do the easy wins first, tackle the structural change last when the rest is stable.
+## Integration with Existing Config
+
+### docusaurus.config.ts Changes
+
+Add the llms.txt plugin to the existing `plugins` array:
+
+```typescript
+plugins: [
+  // ... existing plugins (api docs, openapi, client-redirects, sass, polyfill)
+  ['@signalwire/docusaurus-plugin-llms-txt', {
+    // Section configuration -- exact options TBD after type inspection
+  }],
+],
+```
+
+No other config changes needed. No theme changes. No preset changes.
+
+### CloudFront Function Verification
+
+The existing CloudFront Function at `/scripts/` or in the CloudFormation template must be checked to ensure it does NOT rewrite these paths to `index.html`:
+- `/robots.txt`
+- `/llms.txt`
+- `/llms-full.txt`
+- `/.well-known/*`
+- `/sitemap.xml` (already working, but verify)
+
+Typical CloudFront Functions check for a file extension or known static paths before rewriting. If the function rewrites ALL paths without extensions, `robots.txt` and `llms.txt` (which have extensions) should be fine, but `/.well-known/skills/` (directory path) may need an exception.
+
+### Shared Dependencies (No Conflicts Expected)
+
+The plugin's dependencies overlap with existing project deps:
+
+| Dependency | Plugin Needs | Project Has | Conflict? |
+|------------|-------------|-------------|-----------|
+| `unified` | `^11` | `^11.0.5` | No |
+| `remark-stringify` | `^11` | `^11.0.0` | No |
+| `unist-util-visit` | `^5` | `^5.1.0` | No |
+| `remark-gfm` | `^4` | Bundled with Docusaurus | No |
+| `rehype-parse` | `^9` | Not installed | New transitive dep |
+| `rehype-remark` | `^10` | Not installed | New transitive dep |
+| `fs-extra` | `^11` | Not installed | New transitive dep |
+| `p-map` | `^7` | Not installed | New transitive dep |
+
+No version conflicts expected. The 4 new transitive dependencies are standard ecosystem packages.
 
 ---
 
 ## Sources
 
-- Docusaurus official docs: `docusaurus.io/docs/api/themes/configuration#color-mode---colormode` -- colorMode config (HIGH confidence)
-- Docusaurus official docs: `docusaurus.io/docs/api/themes/configuration#navbar` -- navbar items with href (HIGH confidence)
-- Docusaurus official docs: `docusaurus.io/docs/api/docusaurus-config#favicon` -- favicon config (HIGH confidence)
-- Docusaurus official docs: `docusaurus.io/docs/docs-multi-instance` -- multi-instance plugin behavior (HIGH confidence)
-- Current `docusaurus.config.ts` -- existing configuration baseline (direct inspection)
-- Current `custom.css` -- existing theme overrides (direct inspection)
-- Current `sidebars/*.ts` -- existing sidebar configurations (direct inspection)
+- llms.txt specification: `https://llmstxt.org/` -- format and requirements (HIGH confidence)
+- `@signalwire/docusaurus-plugin-llms-txt` npm: v1.2.2, peer dep `@docusaurus/core ^3.0.0` (HIGH confidence -- verified via npm CLI)
+- SignalWire plugin GitHub: `github.com/signalwire/docusaurus-plugins` -- features and configuration (MEDIUM confidence -- README describes capabilities but exact config option names not fully documented)
+- Docusaurus static assets: `docusaurus.io/docs/static-assets` -- files in `static/` copied to `build/` root (HIGH confidence)
+- Docusaurus SEO docs: `docusaurus.io/docs/seo` -- robots.txt as static asset, sitemap from preset-classic (HIGH confidence)
+- skill.md / `.well-known/skills/` convention: No public specification found (LOW confidence on the convention; HIGH confidence on the serving mechanism via Docusaurus static files)
+- Current project `package.json` and `docusaurus.config.ts` -- direct inspection (HIGH confidence)
 
 ---
-*Stack research for: v1.2 Design Alignment*
-*Researched: 2026-04-02*
+*Stack research for: v1.3 AI & Search Readiness*
+*Researched: 2026-04-03*

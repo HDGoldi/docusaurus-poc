@@ -1,17 +1,17 @@
 # Project Research Summary
 
-**Project:** 1NCE Developer Hub — v1.2 Design Alignment
-**Domain:** Docusaurus static site — navigation restructuring and branding
-**Researched:** 2026-04-02
-**Confidence:** HIGH
+**Project:** 1NCE Developer Hub — v1.3 AI & Search Readiness
+**Domain:** LLM discoverability, AI agent integration, and crawler optimization for Docusaurus 3.9.2 on S3 + CloudFront
+**Researched:** 2026-04-03
+**Confidence:** HIGH (robots.txt, architecture, pitfalls), MEDIUM (llms.txt plugin choice), LOW (skill.md convention)
 
 ## Executive Summary
 
-v1.2 is a design alignment milestone aimed at closing the visual and structural gap between the current Docusaurus site and the original ReadMe.com Developer Hub at help.1nce.com. The work falls into two distinct tiers: four independent low-effort branding changes (favicon, logo, dark mode removal, external navbar links) that can be done in any order with minimal risk, and one high-complexity structural change (sidebar consolidation) that reduces the current 5-plugin, 5-sidebar, 5-navbar-tab architecture down to 2 plugins matching the original hub's single "Documentation" sidebar.
+This release adds three AI discoverability assets to the existing Docusaurus 3.9.2 site: a `robots.txt` that explicitly welcomes AI crawlers, an `llms.txt` + `llms-full.txt` pair generated at build time, and a `skill.md` file teaching AI coding agents how to authenticate and work with the 1NCE APIs. The site currently serves ~298 documentation pages and ~125 generated API endpoint pages. None of these deliverables are present today — the `static/` directory has no `robots.txt`, no `.well-known/` subdirectory, and no LLM-oriented files of any kind. This is a clean-slate addition to a working site.
 
-The recommended approach is to tackle quick wins first, then the structural consolidation. All four branding changes are config edits and file swaps — total effort under half a day. The sidebar consolidation requires moving approximately 90 content files across three source directories into a unified `docs/documentation/` tree, removing three plugin instances from config, rewriting sidebar ordering via `_category_.json` position values, and adding `@docusaurus/plugin-client-redirects` to preserve old URLs. The full consolidation is estimated at 2-4 days of careful execution. No new packages are required for the branding changes; one package (`@docusaurus/plugin-client-redirects`) is needed for the sidebar consolidation.
+The recommended approach is a **hybrid static + build-time generation** strategy. `robots.txt` and the `skill.md` files are hand-authored static files placed in `static/` — they require no build tooling and change infrequently. `llms.txt` uses a curated Markdown template with placeholder markers that a post-build TypeScript script populates with auto-generated link lists derived from the sidebar and source frontmatter. This keeps curated product-first prose (`# 1NCE Connect`, `# 1NCE OS`) stable while ensuring the actual page links stay in sync across the site's ~423 pages. A Docusaurus plugin (`docusaurus-plugin-llms` v0.3.0 or `@signalwire/docusaurus-plugin-llms-txt` v1.2.2) is viable but not recommended: neither supports the interleaved curated prose + auto-generated links pattern this site requires without significant fighting against the plugin's design.
 
-The critical risk is URL breakage: every page currently at `/platform/*` and `/blueprints/*` will move to `/docs/*`. This is fully mitigatable with the redirects plugin, but it must be implemented as part of the same deployment — not as a follow-up. A secondary risk is the ambiguous root `sidebars.ts` (700 lines, currently unused by the build) which can mislead developers into editing the wrong file. Deleting or repurposing it early prevents confusion.
+The primary risks are infrastructure-level, not content-level. The existing CloudFront Function rewrites extensionless paths to `/index.html`, which breaks `/.well-known/skills` (no extension). S3 may serve `.md` files as `application/octet-stream` rather than `text/markdown`. Both issues cause silent failures that are hard to diagnose through CloudFront's custom 404 page. The CloudFront Function also exists in two places (`infra/cf-function.js` and inlined in `infra/template.yaml`) and both must be updated in sync. Addressing infrastructure before content is the correct implementation order.
 
 ---
 
@@ -19,114 +19,139 @@ The critical risk is URL breakage: every page currently at `/platform/*` and `/b
 
 ### Recommended Stack
 
-No new packages are required for the branding half of v1.2. The existing stack (Docusaurus 3.9.2, docusaurus-openapi-docs v4.7.1, Infima CSS) handles all four branding changes through config properties and file replacement. One new package is needed for the structural half.
+One new npm package is all that is required if using a Docusaurus plugin for `llms.txt` generation. The project's existing dependencies (`unified`, `remark-stringify`, `unist-util-visit`, `glob`, `gray-matter`, `tsx`) cover everything needed for a custom build script — making the plugin choice low-risk either way.
 
-**Core technologies relevant to v1.2:**
-- `docusaurus.config.ts` — All branding and navigation changes flow through this single config file: colorMode, navbar items, plugin registration
-- `@docusaurus/plugin-client-redirects` (NEW, conditional) — Client-side redirect generation for `/platform/*` and `/blueprints/*` URL preservation; only needed for the sidebar consolidation phase
-- Infima CSS (`src/css/custom.css`) — Three `[data-theme='dark']` blocks must be removed after disabling dark mode; dead code that creates future maintenance confusion
-- `_category_.json` files — The mechanism for controlling sidebar category ordering in autogenerated sidebars; must be set with explicit `position` values on all 11 top-level categories after the merge
+**Core technologies:**
+- Custom post-build TypeScript script (`scripts/generate-llms-txt.ts`): llms.txt + llms-full.txt generation — no new npm packages; reads sidebar config and MDX frontmatter directly; recommended over any plugin for product-first curated organization
+- Static files in `static/` (`robots.txt`, `.well-known/skills/index.json`, `.well-known/skills/1nce-api.md`): zero new dependencies — Docusaurus copies `static/` verbatim to `build/`
+- `@signalwire/docusaurus-plugin-llms-txt` v1.2.2 (optional fallback): if the custom script proves insufficient, this plugin handles HTML-to-Markdown conversion and page discovery; 1 new package with no version conflicts against existing deps
+
+**What NOT to add:**
+- `docusaurus-plugin-robots-txt`: a 3-line static file needs no plugin
+- `@signalwire/docusaurus-theme-llms-txt`: UI flourishes (per-page markdown download buttons) are out of scope for v1.3
+- Any plugin that generates `skill.md` from OpenAPI specs: operational knowledge (auth flows, multi-step patterns, gotchas) cannot be auto-generated from endpoint descriptions
 
 ### Expected Features
 
-**Must have (table stakes — all P1 for v1.2):**
-- Favicon replacement (1NCE 120x120 PNG) — current site shows Docusaurus default; essential brand signal
-- Navbar logo replacement (official 1NCE SVG from 1nce.com) — ensures current branding matches corporate site
-- Dark mode removal — original hub is light-only; current dark mode is explicitly marked "not readable" in PROJECT.md
-- External navbar links (1NCE Home, Shop, Portal) — original hub header has these cross-navigation links
-- Sidebar consolidation (5 plugins/tabs to 2 plugins/tabs) — the core structural gap with the original hub; a returning ReadMe.com user cannot recognize the current navigation
+**Must have (table stakes):**
+- `robots.txt` with `Allow: /` and explicit AI crawler user-agent directives (GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Google-Extended, Bravebot) — without it, Google Search Console flags the site and LLM crawler behavior is undefined
+- `Sitemap: https://help.1nce.com/sitemap.xml` reference in robots.txt — already generated by `preset-classic`; just needs to be referenced
+- `llms.txt` at site root — the llmstxt.org standard is adopted by Stripe, Supabase, and Vercel AI SDK; developer platforms without it are invisible to LLM-powered queries
+- `llms-full.txt` companion — required by the spec for LLMs that want the full corpus in one request
 
-**Should have (quality improvements, not required for v1.2 completion):**
-- URL redirects for old paths (`/platform/*`, `/blueprints/*` to `/docs/*`) — technically part of sidebar consolidation, not optional; included as a sub-task, not a separate feature
-- Breadcrumb navigation verification — already enabled by default; confirm it works after sidebar depth increases
-- Navbar active state verification after tab reduction — cosmetic confirmation worth including in sign-off checklist
+**Should have (differentiators):**
+- Product-first llms.txt organization (1NCE Connect / 1NCE OS sections, not filesystem paths) — matches how developers think about the platform; Stripe uses this pattern
+- `SKILL.md` for AI coding agent integration — teaches auth flow, common multi-step patterns, error handling, and gotchas; the skills.sh ecosystem has 91K+ skills and is supported by Claude Code, Cursor, and GitHub Copilot
+- Custom `llms-connect.txt` and `llms-os.txt` per-product files — lets agents working on SIM management avoid loading 1NCE OS documentation into their context budget
 
-**Defer to post-v1.2:**
-- Dark mode reimplementation — requires a full theme design pass; do not revisit until all color tokens are audited
-- Algolia search integration — explicitly deferred in PROJECT.md
-- Server-side CloudFront redirects — client-side redirects are sufficient for v1.2; add server-side only if SEO impact is measured
+**Defer (v2+):**
+- Per-page `.md` endpoints (e.g., `help.1nce.com/docs/sim-management.md`) — high complexity, unclear incremental value over `llms-full.txt`; revisit after measuring LLM traffic patterns
+- skills.sh registry listing (`npx skills find 1nce`) — trivial once `SKILL.md` exists; defer until the file is validated with at least one agent
+- `@signalwire/docusaurus-theme-llms-txt` UI features — out of scope for v1.3
+
+**Anti-features (explicitly avoid):**
+- Blocking AI crawlers in robots.txt — the site is public documentation; being indexed by LLMs is the goal
+- Fully automated `llms.txt` with no curation — dumping 423 pages in filesystem order produces noise, not signal
+- `.well-known/skills/` discovery endpoint built to the skills.sh spec — that ecosystem uses GitHub-hosted repos and direct URLs, not `.well-known/`; do not build `index.json` as a skills.sh discovery endpoint
 
 ### Architecture Approach
 
-The target architecture is a straightforward simplification of the current one: remove three `@docusaurus/plugin-content-docs` instances (`platform`, `blueprints`, `terms`) by physically moving their content into the single `docs/documentation/` tree consumed by the default (preset-classic) docs plugin. The `api` plugin and `docusaurus-plugin-openapi-docs` remain completely untouched. The merged Documentation sidebar uses `autogenerated` mode controlled by `_category_.json` position values across 11 top-level categories, in an order matching the original ReadMe.com hub.
+The integration requires no changes to `docusaurus.config.ts`, the CloudFront distribution config, or the S3 bucket policy. Static files go in `static/`, a post-build TypeScript script generates `llms.txt` and `llms-full.txt` into `build/` after `docusaurus build` completes, and the existing CI/CD deploy workflow picks up everything during `aws s3 sync build/`. The only structural changes are: (1) a new `generate:llms` script in `package.json`, (2) one new step in `deploy.yml` running the generator after `npm run build`, (3) an update to `infra/cf-function.js` AND `infra/template.yaml` for `.well-known` path handling, and (4) extended smoke test coverage. This follows the existing `scripts/prepare-rag-content.ts` pattern already established in the project.
 
-**Major components and their changes in v1.2:**
-1. `docusaurus.config.ts` — Remove 3 plugin entries and 3 navbar items; add `@docusaurus/plugin-client-redirects`; add 3 external navbar links; update `colorMode` config
-2. `docs/documentation/` — Absorbs all content from `docs/platform/` and `docs/blueprints/`; receives new `additional-resources/` subdirectory for 6 loose blueprint files
-3. `sidebars/documentation.ts` — Stays as `autogenerated`; ordering delegated to `_category_.json` files
-4. `src/css/custom.css` — Remove 3 `[data-theme='dark']` blocks after disabling dark mode
-5. `static/img/` — Replace `favicon.png` and `1nce-logo.svg` with official 1NCE assets
-6. `@docusaurus/plugin-client-redirects` (new) — Generates redirect HTML for `/platform/*` and `/blueprints/*` using the `createRedirects` pattern function (not individual entries)
+**Major components:**
+1. `static/robots.txt` — hand-authored static file; zero build dependencies; immediate SEO and crawler value; validates the `static/` to S3 serving path
+2. `templates/llms.txt.template` + `scripts/generate-llms-txt.ts` — curated prose template with `<!-- PLACEHOLDER -->` markers; post-build script reads sidebar config and MDX frontmatter, injects generated link lists; outputs `build/llms.txt` and `build/llms-full.txt`
+3. `static/.well-known/skills/1nce-api.md` + `index.json` — hand-authored operational knowledge for AI coding agents; validates the `.well-known/` path serving through S3 + CloudFront
+4. Updated `infra/cf-function.js` + `infra/template.yaml` — `.well-known/*` exception prevents rewrite to `/index.html`; both files must be updated in the same commit
+5. Updated `scripts/smoke-test.sh` — coverage for all 5 new URLs plus content verification (not just HTTP 200)
 
 ### Critical Pitfalls
 
-1. **Broken URLs after plugin merge without redirects** — Install `@docusaurus/plugin-client-redirects` as part of the same PR as the content move; use `createRedirects` function for pattern-based redirect generation; verify with curl after deploy, not just browser navigation
+1. **CloudFront Function rewrites `/.well-known/skills` to `/.well-known/skills/index.html`** — the existing function appends `/index.html` to extensionless paths; `.well-known/skills` triggers this branch and returns 404. Fix: add a `.well-known/` path exception to the function in BOTH `infra/cf-function.js` and `infra/template.yaml` before deploying any skill files. Detection: `curl https://help.1nce.com/.well-known/skills` must return valid JSON, not the custom 404 page.
 
-2. **Dark mode persisting despite hidden toggle** — The current config has `respectPrefersColorScheme: true`; setting only `disableSwitch: true` creates a trap where OS dark mode users are stuck in unreadable dark mode with no escape; must set all three properties explicitly: `defaultMode: 'light'`, `disableSwitch: true`, `respectPrefersColorScheme: false`
+2. **S3 serves `.md` files as `application/octet-stream`** — `aws s3 sync` does not reliably set `text/markdown` for `.md` files. Fix: add explicit `aws s3 cp ... --content-type "text/markdown; charset=utf-8" --metadata-directive REPLACE` after the main sync for all `.md` files in `.well-known/`. Detection: `curl -I https://help.1nce.com/.well-known/skills/1nce-api.md` must show `Content-Type: text/markdown`.
 
-3. **Navbar items referencing deleted plugin IDs crash the build** — Before removing any plugin, search `docusaurus.config.ts` for all references to that plugin's ID; remove the plugin entry and its navbar item in the same commit to avoid broken intermediate states
+3. **Dual CloudFront Function sources diverge** — the function lives in `infra/cf-function.js` (reference only) AND inlined in `infra/template.yaml` lines 94-104 (actually deployed via CloudFormation). Fix the wrong file and the deployed function stays broken. Both must be updated in the same commit with a clear comment marking `template.yaml` as the authoritative deployed version.
 
-4. **Root `sidebars.ts` confusion** — The unused 700-line root `sidebars.ts` is a misleading artifact from early development; delete it at the start of the sidebar consolidation or explicitly repurpose it as the target ordering reference; do not edit it thinking it controls the active sidebar
+4. **llms.txt content staleness** — a purely static `llms.txt` drifts within weeks as pages are added, renamed, or removed. Build-time link generation from sidebar/frontmatter data is not optional — it must be part of the initial implementation. A CI check should diff `llms.txt` URLs against `sitemap.xml` to catch orphaned links early.
 
-5. **API plugin accidentally broken during merge** — The `api` plugin and `docusaurus-plugin-openapi-docs` are tightly coupled and must remain untouched; only remove `platform`, `blueprints`, and `terms` plugin entries; verify `gen-api-docs all` still works after the merge
+5. **Over-blocking AI crawlers in robots.txt** — copying the old ReadMe.com robots.txt or adding `Disallow: /api/` to hide the "Try It" endpoints also silences GPTBot, ClaudeBot, and PerplexityBot. Use `User-agent: * / Allow: /` as the base rule. Recovery from blocking is slow (search engine re-crawl takes days to weeks).
 
 ---
 
 ## Implications for Roadmap
 
-Based on research, the v1.2 milestone naturally splits into two phases with a clear dependency boundary.
+Based on research, the three deliverables have clear infrastructure dependencies. Sequencing: infrastructure changes first, then content generation, then the highest-effort content authoring. Total estimated effort for all three phases: 1-2 developer-days.
 
-### Phase 1: Branding and Visual Alignment
+### Phase 1: Crawler Foundation (robots.txt + infrastructure prep)
 
-**Rationale:** All four changes are independent of each other and of the structural work. Zero dependencies. Lowest risk. Delivers immediate visual improvement and validates the deployment pipeline before the structural change.
+**Rationale:** `robots.txt` has zero risk, zero dependencies, and immediate SEO impact. It validates the static file serving path from `static/` through S3 to CloudFront — confirming the mechanism all other deliverables rely on. CloudFront Function updates should happen in this phase because they are infrastructure gate changes that must land before Phase 2 deploys skill files.
 
-**Delivers:** A site that looks like the original 1NCE Developer Hub from a branding perspective — correct favicon, correct logo, light-only mode, cross-navigation links in the header.
+**Delivers:**
+- `static/robots.txt` with permissive AI crawler policy and sitemap reference
+- Updated CloudFront Function in both `infra/cf-function.js` and `infra/template.yaml` with `.well-known/` path exception
+- CI content verification step (`grep "Sitemap:" build/robots.txt`)
 
-**Addresses:** Favicon replacement, logo replacement, dark mode removal, external navbar links (all FEATURES.md table stakes).
+**Addresses:** Table-stakes features from FEATURES.md (robots.txt, AI crawler directives, sitemap reference)
 
-**Avoids:** Dark mode trap (Pitfall 4 in PITFALLS.md) — requires explicit three-property colorMode config, not just hiding the toggle.
+**Avoids:** P3 (over-blocking crawlers), P6 (dual CF function sources diverge), P7 (silent robots.txt overwrite by future plugin)
 
-**Recommended implementation order within phase:** favicon + logo (file swaps, zero risk) then dark mode removal (config + CSS cleanup) then external navbar links (config addition).
+**Effort:** 1-2 hours. No new packages.
 
-### Phase 2: Sidebar Consolidation and Navigation Restructuring
+### Phase 2: LLM Discoverability (llms.txt + llms-full.txt)
 
-**Rationale:** This is the dominant structural work of v1.2 and has 6 sequential sub-tasks with strict ordering dependencies. Must follow Phase 1 so dark mode CSS is already cleaned up before the file move audit begins. All URL breakage risk lives here.
+**Rationale:** `llms.txt` is the highest-value deliverable for LLM discoverability but requires build pipeline integration. Must come after Phase 1 confirms static file serving works end-to-end. The template + script approach has a non-trivial implementation step (writing and testing the TypeScript generator) that benefits from infrastructure being proven first.
 
-**Delivers:** A navigation structure that matches the original ReadMe.com hub: single "Documentation" sidebar with all content sections, 2 navbar doc tabs (Documentation + API Explorer) plus 3 external links, sidebar ordering matching original hub category order.
+**Delivers:**
+- `templates/llms.txt.template` with product-first H2 sections (Getting Started, SIM Management, Connectivity Services, Network Services, Platform Services, 1NCE Portal, 1NCE OS, API Reference, Blueprints, Optional)
+- `scripts/generate-llms-txt.ts` reading sidebar config + MDX frontmatter, injecting link lists into template placeholders
+- `build/llms.txt` and `build/llms-full.txt` in the deploy output
+- `generate:llms` script in `package.json`
+- New step in `deploy.yml` running the generator after `docusaurus build`
+- CI validation: all `llms.txt` URLs present in `sitemap.xml`
 
-**Uses:** `@docusaurus/plugin-client-redirects` (new install), `_category_.json` position values, `git mv` for history-preserving file moves.
+**Uses:** `glob`, `gray-matter` (existing devDeps), `tsx` (existing); no new npm packages required
 
-**Implements:** The target architecture (2-plugin config) described in ARCHITECTURE.md, with 11 top-level categories ordered by position value.
+**Implements:** Template + Placeholder Injection pattern documented in ARCHITECTURE.md; follows existing `scripts/prepare-rag-content.ts` post-build script convention
 
-**Avoids:**
-- URL breakage (Pitfall 1) — redirects plugin installed in same PR as content move
-- Sidebar ID conflicts (Pitfall 2) — root `sidebars.ts` deleted or repurposed at start of phase
-- Navbar build crash (Pitfall 3) — plugin and navbar item removal in same commit
-- Doc ID breakage (Pitfall 6) — flat directory preservation via `git mv`
-- API plugin disconnection (Pitfall 5) — verified with `gen-api-docs all` after merge
+**Avoids:** P4 (content staleness), P9 (llms.txt format violations)
 
-**Recommended execution order within phase:**
-1. Update `docusaurus.config.ts` (remove 3 plugin entries and navbar items) — build will fail, proceed immediately to step 2
-2. Move content files using `git mv` (preserves git history)
-3. Update `_category_.json` position values on all 11 categories
-4. Install and configure `@docusaurus/plugin-client-redirects`
-5. Clean up empty directories and unused sidebar files
-6. Build with `onBrokenLinks: 'throw'` and verify all pages, redirects, and API Explorer
+**Effort:** 3-5 hours total. Script implementation is ~2-3 hours; template authoring is ~1 hour of content work.
+
+### Phase 3: AI Agent Integration (skill.md + .well-known)
+
+**Rationale:** `skill.md` is the highest-effort, highest-differentiation deliverable. It requires accurate knowledge of 1NCE OAuth flows, multi-step API patterns, error handling, and known gotchas — this is content authoring effort, not engineering effort. Phase 2 should complete first so the full discoverability stack validates before adding a new serving path. The infrastructure change needed (CF Function exception) is already done in Phase 1.
+
+**Delivers:**
+- `static/.well-known/skills/1nce-api.md` with auth flow, common patterns, error handling, gotchas
+- `static/.well-known/skills/index.json` discovery manifest
+- Explicit `.md` content-type override in `deploy.yml` (protects against `application/octet-stream`)
+- Extended smoke test covering all 5 new URLs with content checks
+
+**Uses:** Zero new npm packages. Pure static files + deploy pipeline update.
+
+**Avoids:** P1 (CF function .well-known rewrite — fixed in Phase 1), P2 (content-type on .md), P5 (.well-known excluded from build/upload), P10 (path convention uncertainty), P11 (missing smoke test coverage)
+
+**Effort:** 4-8 hours total. ~50% is content authoring (writing the actual SKILL.md with accurate API knowledge). Engineering work is minimal.
 
 ### Phase Ordering Rationale
 
-- Phase 1 before Phase 2 because the branding changes are independent and low-risk — they build confidence and give the team a clean baseline before tackling the structural change
-- Within Phase 2, config removal before file moves to prevent the build from reading from both old and new paths simultaneously
-- Redirects added in the same PR as content moves — never as a follow-up — because the window between "URLs broken" and "redirects deployed" is unacceptable even for a pre-launch site
+- Infrastructure changes (CF Function, content-type handling) must precede content deployment to avoid silent failures that are hard to diagnose through CloudFront's custom 404 page
+- `robots.txt` validates static file serving with the lowest-risk deliverable before committing to a build script approach
+- `llms.txt` build script must be proven before `skill.md` adds a second new serving path to verify
+- `SKILL.md` is last because it is the largest content-authoring effort and is independent of the `llms.txt` pipeline — no blocking dependency
 
 ### Research Flags
 
-Phases with well-documented patterns (standard implementation, no additional research needed):
-- **Phase 1 (Branding):** All four changes are thoroughly documented in Docusaurus official docs; direct config snippets are verified and available in STACK.md and FEATURES.md
-- **Phase 2 (Sidebar Consolidation):** Architecture is fully mapped in ARCHITECTURE.md with exact file lists, target structure, and implementation steps; execution order is dependency-driven and documented
+Phases needing implementation-time verification:
 
-One area worth validating before starting Phase 2:
-- **Internal cross-references between docs:** The research notes that links between moved docs use relative paths (which survive the move intact) but any absolute internal links (e.g., `/platform/1nce-os/...`) in MDX files will break. Run a grep of all `.md` files for `/platform/` and `/blueprints/` links before starting to reveal whether this is trivial or significant work.
+- **Phase 2 (llms.txt generation script):** Verify `docusaurus build` output structure matches what the script expects against the actual `build/` directory. Specifically: confirm generated API pages from `docusaurus-plugin-openapi-docs` have frontmatter accessible to the script, and verify sidebar config file paths are stable. MEDIUM risk — discoverable by running the script once against a real build.
+
+- **Phase 3 (skill.md convention):** The `/.well-known/skills/` convention has no formal public specification (LOW confidence). Verify the current emerging standard before finalizing the `index.json` discovery format. Also confirm whether SKILL.md should be hosted at `/.well-known/skills/1nce-api.md`, at `/SKILL.md` (site root), or both — the skills.sh ecosystem uses direct URLs and GitHub repos, not `.well-known/`.
+
+Phases with standard patterns (no additional research needed):
+
+- **Phase 1 (robots.txt + CF Function):** robots.txt is a 3-line static file with RFC 9309 spec. CF Function rewrite logic is read directly from the existing codebase. Pattern is established and fully understood.
 
 ---
 
@@ -134,35 +159,44 @@ One area worth validating before starting Phase 2:
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | All technologies are existing dependencies; only one new package (`plugin-client-redirects`) is a standard Docusaurus first-party package with official documentation |
-| Features | HIGH | Directly derived from codebase inspection and comparison with the original hub; no guesswork about what needs to change |
-| Architecture | HIGH | Target structure is fully mapped from direct codebase analysis; all source and destination paths are enumerated; execution order is verified against Docusaurus plugin documentation |
-| Pitfalls | HIGH | Based on direct inspection of `docusaurus.config.ts`, `sidebars.ts`, and `custom.css`; all pitfalls are grounded in actual code state, not hypothetical scenarios |
+| Stack | HIGH | One new package (or zero with custom script). No version conflicts against existing `package.json`. Verified. |
+| Features | HIGH | llmstxt.org spec verified. Stripe/Supabase real-world examples verified. skills.sh ecosystem verified via CLI. Google robots.txt docs verified. |
+| Architecture | HIGH | Integration points grounded in direct codebase inspection (`cf-function.js`, `template.yaml`, `deploy.yml`, `static/` directory listing). No guesswork. |
+| Pitfalls | HIGH | Most pitfalls identified by reading the actual deployed code. CF function logic, S3 sync command, smoke test gaps all confirmed from source files. |
 
-**Overall confidence:** HIGH
+**Overall confidence:** HIGH for engineering work. The only LOW-confidence area is the `skill.md`/`.well-known/skills/` convention — but this only affects the `index.json` discovery format, not the serving mechanism or the SKILL.md content itself.
 
 ### Gaps to Address
 
-- **Exact external URLs for navbar links:** The research documents `href: 'https://1nce.com'`, `href: 'https://shop.1nce.com'`, `href: 'https://portal.1nce.com'` as targets, but notes these should be verified against the original ReadMe.com site header before implementation. A 5-minute check during Phase 1.
+- **skill.md specification format:** No canonical spec exists as of 2026-04-03. `spec.skillmd.org` was unreachable during research. Treat the `index.json` format as best-effort draft and be prepared to update if a spec stabilizes. The file content (auth flows, patterns, gotchas) is not spec-dependent and remains valid regardless.
 
-- **Internal cross-reference audit scope:** The research identifies absolute internal links as a risk but does not quantify how many MDX files are affected. Run `grep -r "/platform/" docs/ src/` and `grep -r "/blueprints/" docs/ src/` before starting Phase 2 to size this work accurately.
+- **`@signalwire/docusaurus-plugin-llms-txt` section configuration options:** If the custom script approach is abandoned in favor of this plugin, inspect `node_modules/@signalwire/docusaurus-plugin-llms-txt/lib/types.d.ts` during implementation — the section configuration API is described but exact option names are not fully documented in the README. This gap is irrelevant if the custom script approach is followed.
 
-- **Root `sidebars.ts` status confirmation:** The research identifies this file as "likely unused" but flags it for confirmation before deletion. Check that no plugin in `docusaurus.config.ts` references `./sidebars.ts` (vs `./sidebars/documentation.ts`). If unused, delete it at the start of Phase 2 to avoid confusion.
-
-- **Terms & Abbreviations scope decision:** FEATURES.md flags an open question about whether Terms should merge into Documentation or remain as a separate tab. ARCHITECTURE.md shows it remaining as a separate plugin. This decision should be explicitly confirmed before Phase 2 begins, as it affects plugin removal count and sidebar structure.
+- **`docusaurus-plugin-openapi-docs` generated page frontmatter:** The `llms.txt` generation script needs to handle the 125 API pages generated by `docusaurus-plugin-openapi-docs`. Verify during Phase 2 implementation that these generated MDX files have accessible frontmatter (`title`, `description`) that the script can read. If they do not, the script needs a fallback to parse the generated file content directly.
 
 ---
 
 ## Sources
 
 ### Primary (HIGH confidence)
-- Docusaurus official docs — colorMode configuration, navbar items, favicon, plugin-client-redirects, autogenerated sidebars (docusaurus.io)
-- Direct codebase inspection — `docusaurus.config.ts`, `sidebars/*.ts`, `sidebars.ts` (root), `src/css/custom.css`, `docs/` directory tree
-- PROJECT.md — milestone scope and constraints
+- Direct codebase inspection: `infra/cf-function.js`, `infra/template.yaml` (lines 94-104, 158-166), `deploy.yml` (lines 371-377), `docusaurus.config.ts` (line 25), `scripts/smoke-test.sh`, `static/` directory listing — grounding for all infrastructure pitfalls
+- llmstxt.org specification — format, required elements, Optional section convention
+- Docusaurus static assets docs (`docusaurus.io/docs/static-assets`) — `static/` to `build/` copy behavior, `.well-known/` directory preservation confirmed
+- Docusaurus SEO docs (`docusaurus.io/docs/seo`) — robots.txt as static asset, `sitemap.xml` auto-generation by `preset-classic`
+- Google robots.txt documentation — official source for Sitemap directive
+- RFC 9309 (robots.txt), RFC 8615 (.well-known URIs)
 
 ### Secondary (MEDIUM confidence)
-- PaloAltoNetworks/docusaurus-openapi-docs — v4.7.1 behavior and `docsPluginId` coupling; version-specific but no breaking changes expected for v1.2 scope
+- `@signalwire/docusaurus-plugin-llms-txt` v1.2.2 npm + GitHub — features and configuration overview; exact option names require type inspection
+- `docusaurus-plugin-llms` v0.3.0 npm README — auto-generation capabilities, `customLLMFiles` and `includeOrder` config
+- Stripe `docs.stripe.com/llms.txt` — product-first H2 section organization pattern (verified real-world example)
+- Supabase `supabase.com/llms.txt` — minimal linking to expanded per-topic files pattern (verified)
+- skills.sh ecosystem — `npx skills init` template structure, supported agents (Claude Code, Cursor, Copilot), 91K+ skill count
+- knownagents.com — AI crawler user-agent strings (may evolve; includes GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Claude-SearchBot, Bravebot)
+
+### Tertiary (LOW confidence)
+- `skill.md`/`.well-known/skills/` convention — no formal public specification found; `spec.skillmd.org` unreachable; treated as emerging convention requiring implementation-time verification
 
 ---
-*Research completed: 2026-04-02*
+*Research completed: 2026-04-03*
 *Ready for roadmap: yes*
