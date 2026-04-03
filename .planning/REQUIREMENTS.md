@@ -52,23 +52,23 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CRAWL-01 | — | Pending |
-| CRAWL-02 | — | Pending |
-| CRAWL-03 | — | Pending |
-| LLM-01 | — | Pending |
-| LLM-02 | — | Pending |
-| LLM-03 | — | Pending |
-| LLM-04 | — | Pending |
-| AGENT-01 | — | Pending |
-| AGENT-02 | — | Pending |
-| AGENT-03 | — | Pending |
-| AGENT-04 | — | Pending |
+| CRAWL-01 | Phase 10 | Pending |
+| CRAWL-02 | Phase 10 | Pending |
+| CRAWL-03 | Phase 10 | Pending |
+| LLM-01 | Phase 11 | Pending |
+| LLM-02 | Phase 11 | Pending |
+| LLM-03 | Phase 11 | Pending |
+| LLM-04 | Phase 11 | Pending |
+| AGENT-01 | Phase 12 | Pending |
+| AGENT-02 | Phase 12 | Pending |
+| AGENT-03 | Phase 12 | Pending |
+| AGENT-04 | Phase 12 | Pending |
 
 **Coverage:**
 - v1.3 requirements: 11 total
-- Mapped to phases: 0
-- Unmapped: 11
+- Mapped to phases: 11
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-03*
-*Last updated: 2026-04-03 after initial definition*
+*Last updated: 2026-04-03 after roadmap creation*

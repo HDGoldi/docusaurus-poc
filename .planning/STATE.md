@@ -7,7 +7,7 @@ stopped_at: null
 last_updated: "2026-04-03T00:00:00.000Z"
 last_activity: 2026-04-03
 progress:
-  total_phases: 0
+  total_phases: 3
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-03)
 
 **Core value:** Developers can browse all existing documentation and interactively test API endpoints exactly as they can on the current ReadMe.com-hosted site.
-**Current focus:** Defining requirements for v1.3 AI & Search Readiness
+**Current focus:** Phase 10 - Crawler Foundation (v1.3 AI & Search Readiness)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-04-03 — Milestone v1.3 started
+Phase: 10 of 12 (Crawler Foundation)
+Plan: — (not yet planned)
+Status: Ready to plan
+Last activity: 2026-04-03 — Roadmap created for v1.3 (Phases 10-12)
 
-Progress: [##########] 100%
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
@@ -45,12 +45,7 @@ Progress: [##########] 100%
 ### Decisions
 
 - [Quick 260402-tu1]: No DomainValidationOptions for cross-account domain; manual DNS validation required
-- [Quick 260402-tu1]: AlternateDomainName as CloudFormation parameter for flexibility
-- [Phase 08]: Config-only dark mode disable: defaultMode light, disableSwitch true, respectPrefersColorScheme false
-- [Phase 08]: Updated navbar external link URLs to match original help.1nce.com header
-- [Phase 09]: Moved 6 device docs into blueprints-examples/ for self-contained Blueprints section
-- [Phase 09]: Used git mv for all content moves to preserve file history
-- [Phase 09]: Used createRedirects function for scalable old URL redirect mapping via @docusaurus/plugin-client-redirects
+- [Phase 09]: Used createRedirects function for scalable old URL redirect mapping
 - [Phase 09]: Reduced navbar from 5 doc tabs to 2 (Documentation + API Explorer) plus 3 external links
 
 ### Pending Todos
@@ -59,16 +54,17 @@ None.
 
 ### Blockers/Concerns
 
-None.
+- CloudFront Function rewrites .well-known paths to index.html — must fix in Phase 10 before Phase 12
+- S3 may serve .md files as application/octet-stream — needs content-type override in deploy pipeline
 
 ### Quick Tasks Completed
 
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
-| 260402-tu1 | Add help.1nce.com as alternate domain on CloudFront and configure DNS in separate AWS account | 2026-04-02 | 60ef862 | [260402-tu1-add-help-1nce-com-as-alternate-domain-on](./quick/260402-tu1-add-help-1nce-com-as-alternate-domain-on/) |
+| 260402-tu1 | Add help.1nce.com as alternate domain on CloudFront | 2026-04-02 | 60ef862 | [260402-tu1](./quick/260402-tu1-add-help-1nce-com-as-alternate-domain-on/) |
 
 ## Session Continuity
 
-Last session: 2026-04-02
-Stopped at: Completed quick/260402-tu1 (template updated, awaiting manual deployment)
+Last session: 2026-04-03
+Stopped at: Roadmap created for v1.3 AI & Search Readiness (3 phases, 11 requirements)
 Resume file: None

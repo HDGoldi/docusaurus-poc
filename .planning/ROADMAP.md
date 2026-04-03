@@ -5,6 +5,7 @@
 - ✅ **v1.0 Migration** — Phases 1-3 (shipped 2026-03-21)
 - 🚧 **v1.1 AI Assistant + GitHub Pages Preview** — Phases 4-7 (in progress)
 - ✅ **v1.2 Overall Enhancements & Fixing** — Phases 8-9 (shipped 2026-04-02)
+- 📋 **v1.3 AI & Search Readiness** — Phases 10-12 (planned)
 
 ## Phases
 
@@ -41,7 +42,52 @@ See: `.planning/milestones/v1.2-ROADMAP.md` for full details.
 
 </details>
 
+### v1.3 AI & Search Readiness
+
+**Milestone Goal:** Make the Developer Hub discoverable and usable by LLMs, AI coding agents, and search engine crawlers as first-class consumers.
+
+- [ ] **Phase 10: Crawler Foundation** - robots.txt, AI crawler directives, and CloudFront Function fix for static file paths
+- [ ] **Phase 11: LLM Discoverability** - llms.txt with product-first organization and build-time link generation
+- [ ] **Phase 12: AI Agent Integration** - skill.md and .well-known discovery for AI coding agents
+
+## Phase Details
+
+### Phase 10: Crawler Foundation
+**Goal**: Search engines and AI crawlers can discover and index all site content through a properly served robots.txt with sitemap reference
+**Depends on**: Phase 9 (existing site infrastructure)
+**Requirements**: CRAWL-01, CRAWL-02, CRAWL-03
+**Success Criteria** (what must be TRUE):
+  1. Visiting help.1nce.com/robots.txt returns a valid robots.txt with Sitemap directive pointing to sitemap.xml
+  2. robots.txt includes explicit Allow directives for AI crawler user agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended)
+  3. Requesting a .txt, .md, or .json file through CloudFront returns the actual file content, not the SPA index.html page
+  4. Requesting /.well-known/skills/ through CloudFront returns the directory content, not a rewritten SPA path
+**Plans**: TBD
+
+### Phase 11: LLM Discoverability
+**Goal**: LLMs consuming help.1nce.com/llms.txt get a curated, product-organized overview of all documentation with working links that stay in sync with the site
+**Depends on**: Phase 10 (static file serving validated)
+**Requirements**: LLM-01, LLM-02, LLM-03, LLM-04
+**Success Criteria** (what must be TRUE):
+  1. Visiting help.1nce.com/llms.txt returns a document following llmstxt.org spec (H1 title, blockquote summary, H2 sections)
+  2. llms.txt organizes content under product-first sections (1NCE Connect, 1NCE OS, API Reference) rather than filesystem paths
+  3. Link sections in llms.txt are regenerated on every build, reflecting current pages and API endpoints without manual link maintenance
+  4. The preamble text and section structure in llms.txt remain stable across builds (only auto-generated link lists change)
+**Plans**: TBD
+
+### Phase 12: AI Agent Integration
+**Goal**: AI coding agents can discover and consume structured guidance for working with 1NCE APIs, including auth flows, common patterns, and gotchas
+**Depends on**: Phase 10 (CloudFront .well-known path fix)
+**Requirements**: AGENT-01, AGENT-02, AGENT-03, AGENT-04
+**Success Criteria** (what must be TRUE):
+  1. Visiting help.1nce.com/.well-known/skills/default/skill.md returns a markdown document describing 1NCE API auth flows, common multi-step patterns, and known gotchas
+  2. Visiting help.1nce.com/.well-known/skills/ returns a JSON index listing available skills
+  3. skill.md covers general platform best practices (not limited to individual API endpoints) including error handling and rate limiting guidance
+**Plans**: TBD
+
 ## Progress
+
+**Execution Order:**
+Phases execute in numeric order: 10 -> 11 -> 12
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
@@ -54,3 +100,6 @@ See: `.planning/milestones/v1.2-ROADMAP.md` for full details.
 | 7. CI/CD Integration | v1.1 | 1/1 | Complete | 2026-03-23 |
 | 8. Branding & Visual Alignment | v1.2 | 1/1 | Complete | 2026-04-02 |
 | 9. Sidebar Consolidation | v1.2 | 2/2 | Complete | 2026-04-02 |
+| 10. Crawler Foundation | v1.3 | 0/0 | Not started | - |
+| 11. LLM Discoverability | v1.3 | 0/0 | Not started | - |
+| 12. AI Agent Integration | v1.3 | 0/0 | Not started | - |
