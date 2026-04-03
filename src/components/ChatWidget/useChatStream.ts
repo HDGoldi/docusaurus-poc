@@ -77,7 +77,13 @@ export function useChatStream({
           if (response.status === 429) {
             onErrorRef.current(COPY.errorRateLimit);
           } else if (response.status === 403) {
-            onErrorRef.current(COPY.errorRateLimit);
+            const errorType = response.headers.get('x-amzn-errortype') || '';
+            const body = await response.text();
+            if (errorType.includes('AccessDeniedException') || body.includes('AccessDeniedException')) {
+              onErrorRef.current(COPY.errorAuth);
+            } else {
+              onErrorRef.current(COPY.errorRateLimit);
+            }
           } else if (response.status === 503) {
             onErrorRef.current(COPY.errorBackend);
           } else {

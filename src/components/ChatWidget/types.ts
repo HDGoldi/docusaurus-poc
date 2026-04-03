@@ -74,6 +74,7 @@ export const COPY = {
   inputPlaceholder: 'Ask a question...',
   sourcesHeading: 'Sources',
   errorNetwork: 'Unable to reach the assistant. Check your connection and try again.',
+  errorAuth: 'Unable to reach the assistant. Please try again later.',
   errorRateLimit: 'Too many requests. Please wait a moment before asking again.',
   errorBackend: 'The assistant is temporarily unavailable. Try again later.',
   errorGeneric: 'Something went wrong. Please try again.',

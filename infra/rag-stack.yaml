@@ -245,6 +245,7 @@ Resources:
 
   ChatFunctionUrlPermission:
     Type: AWS::Lambda::Permission
+    DependsOn: ChatFunctionUrl
     Properties:
       FunctionName: !Ref ChatFunction
       Action: lambda:InvokeFunctionUrl
