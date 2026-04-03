@@ -9,9 +9,9 @@ Requirements for AI & Search Readiness milestone. Each maps to roadmap phases.
 
 ### Crawler Foundation
 
-- [ ] **CRAWL-01**: Site serves robots.txt at root with Sitemap reference to sitemap.xml
-- [ ] **CRAWL-02**: robots.txt explicitly allows AI crawler user agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.)
-- [ ] **CRAWL-03**: CloudFront Function passes through requests for .txt, .md, .json files and .well-known/* paths without SPA rewrite
+- [x] **CRAWL-01**: Site serves robots.txt at root with Sitemap reference to sitemap.xml
+- [x] **CRAWL-02**: robots.txt explicitly allows AI crawler user agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.)
+- [x] **CRAWL-03**: CloudFront Function passes through requests for .txt, .md, .json files and .well-known/* paths without SPA rewrite
 
 ### LLM Discoverability
 
@@ -52,9 +52,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CRAWL-01 | Phase 10 | Pending |
-| CRAWL-02 | Phase 10 | Pending |
-| CRAWL-03 | Phase 10 | Pending |
+| CRAWL-01 | Phase 10 | Complete |
+| CRAWL-02 | Phase 10 | Complete |
+| CRAWL-03 | Phase 10 | Complete |
 | LLM-01 | Phase 11 | Pending |
 | LLM-02 | Phase 11 | Pending |
 | LLM-03 | Phase 11 | Pending |

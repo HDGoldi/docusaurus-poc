@@ -12,6 +12,7 @@ const config: Config = {
 
   customFields: {
     chatEndpoint: process.env.CHAT_ENDPOINT || '',
+    n8nChatPassword: process.env.N8N_CHAT_PASSWORD || '',
   },
 
   future: {

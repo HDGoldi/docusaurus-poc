@@ -113,3 +113,21 @@ h2, h3 {
   display: inline-flex;
   align-items: center;
 }
+
+/* n8n Chat Widget — 1NCE brand overrides */
+:root {
+  --chat--color-primary: #29abe2;
+  --chat--color-primary-shade-50: #1a9ad4;
+  --chat--color-primary-shade-100: #1377a5;
+  --chat--color-secondary: #194a7d;
+  --chat--color-secondary-shade-50: #0d2a47;
+  --chat--window--width: 400px;
+  --chat--window--height: 600px;
+  --chat--header-height: auto;
+  --chat--window--z-index: 10000;
+}
+
+[data-theme='dark'] {
+  --chat--color-secondary: #0d2a47;
+  --chat--color-secondary-shade-50: #091e36;
+}
