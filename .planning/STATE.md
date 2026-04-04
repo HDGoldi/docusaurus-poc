@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-04-04)
 Phase: --
 Plan: --
 Status: Milestone v1.3 completed
-Last activity: 2026-04-04 - Completed quick task 260404-luu: Fix 110 broken internal links
+Last activity: 2026-04-04 - Completed quick task 260404-mdo: Fix 75 remaining broken links
 
 Progress: [██████████] 100%
 
@@ -64,9 +64,10 @@ None — all v1.3 blockers resolved.
 |---|-------------|------|--------|-----------|
 | 260404-lhk | Add redirects for 5 broken help.1nce.com URLs from link check report | 2026-04-04 | 32405f1 | [260404-lhk-add-redirects-for-5-broken-help-1nce-com](./quick/260404-lhk-add-redirects-for-5-broken-help-1nce-com/) |
 | 260404-luu | Fix 110 broken internal links (5 categories: unresolved doc:, missing /docs/ prefix, relative hrefs, malformed URLs, misc) | 2026-04-04 | 7205818 | [260404-luu-fix-110-broken-internal-links-global-red](./quick/260404-luu-fix-110-broken-internal-links-global-red/) |
+| 260404-mdo | Fix 75 remaining broken links: 40 redirect rules for old blueprint/section URLs + 4 markdown source fixes | 2026-04-04 | dc2b4aa | [260404-mdo-fix-75-remaining-broken-links-add-missin](./quick/260404-mdo-fix-75-remaining-broken-links-add-missin/) |
 
 ## Session Continuity
 
 Last session: 2026-04-04
-Stopped at: Completed quick-260404-luu
+Stopped at: Completed quick-260404-mdo
 Resume file: None
