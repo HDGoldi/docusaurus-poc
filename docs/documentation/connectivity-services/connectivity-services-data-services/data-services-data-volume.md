@@ -3,7 +3,7 @@ title: Data Volume
 description: Insight into the Data Volume calculation.
 sidebar_position: 4
 ---
-Based on the specific tariff of the 1NCE SIM, a set amount of data volume is included. The used and available volume for each of the SIM can be viewed in the [My SIMs & SMS Console](/1nce-portal/portal-sims-sms) or queried through [1NCE API](/api/). The following sections will explain what data volume usage is deducted from the volume and how this can be calculated for some protocols.
+Based on the specific tariff of the 1NCE SIM, a set amount of data volume is included. The used and available volume for each of the SIM can be viewed in the [My SIMs & SMS Console](/docs/1nce-portal/portal-sims-sms) or queried through [1NCE API](/api/). The following sections will explain what data volume usage is deducted from the volume and how this can be calculated for some protocols.
 
 ***
 

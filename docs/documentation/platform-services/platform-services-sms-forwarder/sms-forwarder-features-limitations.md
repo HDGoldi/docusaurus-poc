@@ -33,7 +33,7 @@ The figure below shows an example sequence (successful and failed) of a Delivery
 
 With the SMS Forwarding Server, MO-SMS messages and Delivery Reports (DLR) for MT-SMS are forwarded to a customer-specified HTTP REST endpoint as JSON objects.\
 The customer needs to provide a REST Interface, which accepts HTTP Post/Patch requests issued from the 1NCE SMS Forwarding Service. The server needs to have a valid domain with HTTPS capabilities. To an incoming HTTP Post/Patch request, the server should reply with an HTTP 200 status code.\
-For more details about the setup and testing visit the <a href="examples-sms-forwarder">SMS Forwarder Example Guide</a>.
+For more details about the setup and testing visit the <a href="/docs/blueprints-examples/examples-sms-forwarder/">SMS Forwarder Example Guide</a>.
 
 ***
 

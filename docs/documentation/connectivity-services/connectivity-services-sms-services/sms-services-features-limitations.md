@@ -11,7 +11,7 @@ In addition to sending and receiving MT-SMS, the 1NCE Service offers additional 
 
 For sending MT-SMS messages towards an IoT device with a 1NCE SIM, two options are available:
 
-* <b><a href="portal-sims-sms">1NCE Portal</a>:</b>
+* <b><a href="/docs/1nce-portal/portal-sims-sms/">1NCE Portal</a>:</b>
   * Submit MT-SMS messages for a single SIM card.
   * Testing and debugging purposes.
   * Short-term data retention policy.
@@ -25,17 +25,17 @@ For sending MT-SMS messages towards an IoT device with a 1NCE SIM, two options a
 
 Any device with a 1NCE SIM can send MO-SMS messages. The provided destination mobile number is irrelevant for the delivery process. All MO-SMS messages can be received via two options:
 
-* <b><a href="doc:portal-sims-sms">1NCE Portal</a>:</b>
+* <b><a href="/docs/1nce-portal/portal-sims-sms/">1NCE Portal</a>:</b>
   * Low number of messages.
   * Testing and debugging purposes.
   * Short-term data retention policy.
-* <b><a href="doc:platform-services-sms-forwarder">1NCE SMS Forwarder Service</a>:</b>
+* <b><a href="/docs/platform-services/platform-services-sms-forwarder/">1NCE SMS Forwarder Service</a>:</b>
   * High number of messages.
   * Integration into automated customer applications.
 
 ## Monitoring SMS Events
 
-When an MT-SMS is sent an Event Record is generated. These records can be viewed in the 1NCE Portal or processed through the [Data Streamer Service](/platform-services/platform-services-data-streamer/index) interface. Monitoring the Event Records can help to verify correct device behavior and identify possible connectivity issues.
+When an MT-SMS is sent an Event Record is generated. These records can be viewed in the 1NCE Portal or processed through the [Data Streamer Service](/docs/platform-services/platform-services-data-streamer/index) interface. Monitoring the Event Records can help to verify correct device behavior and identify possible connectivity issues.
 
 ***
 

@@ -4,7 +4,7 @@ sidebar_position: 4
 ---
 ## Cloud Integrations failure causes
 
-Cloud Integrator service automatically sets customer's AWS or Webhook integrations into the `Failed` state after 5 failed attempts to forward customer message to the AWS or Webhook integration. If integration is set to `Failed` state - an [Admin Log](/1nce-os/1nce-os-admin-logs/index)  will be generated.
+Cloud Integrator service automatically sets customer's AWS or Webhook integrations into the `Failed` state after 5 failed attempts to forward customer message to the AWS or Webhook integration. If integration is set to `Failed` state - an [Admin Log](/docs/1nce-os/1nce-os-admin-logs/index)  will be generated.
 Here are some possible failure reasons:
 
 * Webhook Integration:
@@ -65,4 +65,4 @@ In case if it happens customer have to execute following steps:
 * Check Webhook's HTTPS endpoint or AWS IoT Core configuration in your's AWS Account for any possible reasons why those can return errors. 
   * Trigger restart using one of the possible approaches:
         - Using following [Restart AWS Integration](/api/1nce-os/restart-aws-integration/)  or [Restart Webhook Integration](/api/1nce-os/restart-webhook-integration/)  API endpoints. 
-        - Restart also can be triggered in the 1NCEOS Cloud Integrator frontend page, see [Restart AWS Integration](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration#restart-aws-integration)
+        - Restart also can be triggered in the 1NCEOS Cloud Integrator frontend page, see [Restart AWS Integration](/docs/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration#restart-aws-integration)

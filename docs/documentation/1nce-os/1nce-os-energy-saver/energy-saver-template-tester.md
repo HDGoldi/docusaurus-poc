@@ -60,7 +60,7 @@ To try example templates just expand the list of example templates, select any d
 }
 ```
 
-If custom types location\_long and location\_lat are available the position will be forwarded to the [Location Service](/1nce-os/1nce-os-device-locator/index). Longitude and latitude both have to be float64.
+If custom types location\_long and location\_lat are available the position will be forwarded to the [Location Service](/docs/1nce-os/1nce-os-device-locator/index). Longitude and latitude both have to be float64.
 
 ### Deep JSON
 
@@ -147,7 +147,7 @@ By including dots in the asset name, deep JSON objects can be created.
 }
 ```
 
-The [statements](/1nce-os/1nce-os-energy-saver/energy-saver-binary-conversion-language#case-statements) inside do will be executed if the value of case (within the same object as do) and the switch match.
+The [statements](/docs/1nce-os/1nce-os-energy-saver/energy-saver-binary-conversion-language#case-statements) inside do will be executed if the value of case (within the same object as do) and the switch match.
 
 # Test results
 
@@ -165,7 +165,7 @@ When template is incorrect and template tester can't process the payload, the er
 
 Output field below template editor provides the translated template value in readable format. 
 
-As an additional template performance metrics the **Reduced Bytes** is provided that represents payload size difference between OUTPUT and INPUT of template as well as **Energy Saved** value that is calculated according to our research described in [Energy Saving Calculation](/1nce-os/1nce-os-energy-saver/energy-saver-energy-saved-calculation) article.
+As an additional template performance metrics the **Reduced Bytes** is provided that represents payload size difference between OUTPUT and INPUT of template as well as **Energy Saved** value that is calculated according to our research described in [Energy Saving Calculation](/docs/1nce-os/1nce-os-energy-saver/energy-saver-energy-saved-calculation) article.
 
 Reduced bytes and Energy saved metrics represents savings on every message that is sent by device
 

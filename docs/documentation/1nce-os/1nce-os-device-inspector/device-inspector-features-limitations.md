@@ -32,15 +32,15 @@ Device state for UDP, CoAP or LwM2M messages.
 
 Whenever messages (UDP, CoAP or LwM2M) from a device are sent to the 1NCE OS endpoint(s) those are stored for 7 days.
 
-* <b>UDP or CoAP </b>. Traversed messages are stored. The message format depends on the energy saver status for the specific protocol. If the [Energy Saver](/1nce-os/1nce-os-energy-saver/index) is not enabled, then message will be converted and stored in Base64 format, but when enabled, then a processed message will be stored in JSON format.
+* <b>UDP or CoAP </b>. Traversed messages are stored. The message format depends on the energy saver status for the specific protocol. If the [Energy Saver](/docs/1nce-os/1nce-os-energy-saver/index) is not enabled, then message will be converted and stored in Base64 format, but when enabled, then a processed message will be stored in JSON format.
 
 * <b>LwM2M</b>. Messages are stored in JSON format.
 
-More details in [Historian Web Interface](/1nce-os/1nce-os-device-inspector/device-inspector-historian-web-interface) or [Historian API Examples](/1nce-os/1nce-os-device-inspector/device-inspector-historian-api).
+More details in [Historian Web Interface](/docs/1nce-os/1nce-os-device-inspector/device-inspector-historian-web-interface) or [Historian API Examples](/docs/1nce-os/1nce-os-device-inspector/device-inspector-historian-api).
 
 ### Map
 
-If the device is utilizing [Device Locator](/1nce-os/1nce-os-device-locator/index), then a location will be pinpointed on a map.
+If the device is utilizing [Device Locator](/docs/1nce-os/1nce-os-device-locator/index), then a location will be pinpointed on a map.
 
 <div style={{textAlign: 'center'}}>
 <img src="/img/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations/db2d3b0-device_inspector_map.png" alt="Device Inspector Details. Map" width="80%" />
@@ -63,7 +63,7 @@ Cell tower events show the history of cell tower-based location resolutions for 
 ## Limitations
 
 * We only show history of the device from the last 7 days, but device state is stored permanently.
-* History of device is not supporting messages bigger than 2048 bytes. If messages are stored in Base64 [format](/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations#history), then raw binary message size shouldn't exceed 1536 bytes.
+* History of device is not supporting messages bigger than 2048 bytes. If messages are stored in Base64 [format](/docs/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations#history), then raw binary message size shouldn't exceed 1536 bytes.
 * Maximum state size for each protocol (UDP, CoAP and LwM2M) is 8192 bytes.
 * A summary of the location of the device is shown, containing the first position, the last position and some positions inbetween (more data available via the API).
 * The current digital state representation of a SIM device can be updated **up to 20 times per second**. Therefore, if a given device sends messages at a higher frequency, it would cause a throttling issue resulting in the state not being updated. That is noticeable by the existence of **DeviceShadowUpdatertlingIssue]** log** logs in the 1NCE OS Portal Administrator Logs page.

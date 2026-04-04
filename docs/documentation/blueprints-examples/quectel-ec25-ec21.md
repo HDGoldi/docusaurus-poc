@@ -12,44 +12,44 @@ the following character sets:
 
 Setup and configure the Quectel EC25 or EC21 for use with 1NCE SIM.
 
-- 📲 [EC25 RAT Configuration](/blueprints-examples/ec25-rat-configuration)
+- 📲 [EC25 RAT Configuration](/docs/blueprints-examples/ec25-rat-configuration)
 
 
 # Network Registration:
 
 Network registration is the process by which a cellular device connects to a cellular network and obtains the necessary credentials to access the network's services. This process involves several steps, including network selection, authentication, and registration.
 
-- 📲 [EC25 Network Registration](/blueprints-examples/ec25-network-registration)
+- 📲 [EC25 Network Registration](/docs/blueprints-examples/ec25-network-registration)
 
 
 # ICMP Ping
 
 Connect with the EC25 or EC21 to a mobile network, start a data session, and issue an ICMP Ping request. 
 
-- 📲 [EC25 ICMP Ping](/blueprints-examples/ec25-icmp-ping)
+- 📲 [EC25 ICMP Ping](/docs/blueprints-examples/ec25-icmp-ping)
 
 
 # MO-SMS
 
 Send an SMS message from an EC25 or EC21 to the 1NCE SMS Forwarding Service.
 
-- 📲 [EC25 MO-SMS](/blueprints-examples/ec25-mo-sms)
+- 📲 [EC25 MO-SMS](/docs/blueprints-examples/ec25-mo-sms)
 
 
 # MT-SMS
 
 Receive SMS messages with a Quectel EC25 or EC21.
 
-- 📲 [EC25 MT-SMS](/blueprints-examples/ec25-mt-sms)
+- 📲 [EC25 MT-SMS](/docs/blueprints-examples/ec25-mt-sms)
 
 
 # TCP Client
 
 Connect to a TCP Server and send/receive data using a Quectel EC25 or EC21.
 
-- 📲 [EC25 TCP Client Connection](/blueprints-examples/ec25-tcp-client-connection)
+- 📲 [EC25 TCP Client Connection](/docs/blueprints-examples/ec25-tcp-client-connection)
 
 
 # 1NCE OS UDP Protocol
 
-- 🦉 [EC25 & EC21 1NCE OS UDP](/blueprints-examples/ec25-ec21-1nce-os-udp)
+- 🦉 [EC25 & EC21 1NCE OS UDP](/docs/blueprints-examples/ec25-ec21-1nce-os-udp)

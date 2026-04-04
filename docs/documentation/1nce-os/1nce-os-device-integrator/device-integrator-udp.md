@@ -21,7 +21,7 @@ All TELEMETRY\_DATA events which are forwarded to the AWS IoT Core are sent to a
 **\{iccid}/messages** 
 
 For CoAP:\
-**\{iccid}/\{coap\_topic}** or **\{iccid}** if no topic provided (see optional query parameter in [CoAP overview](/1nce-os/1nce-os-device-integrator/device-integrator-coap))
+**\{iccid}/\{coap\_topic}** or **\{iccid}** if no topic provided (see optional query parameter in [CoAP overview](/docs/1nce-os/1nce-os-device-integrator/device-integrator-coap))
 
 This will result in a nicely formatted JSON-message that is also human-readable:
 

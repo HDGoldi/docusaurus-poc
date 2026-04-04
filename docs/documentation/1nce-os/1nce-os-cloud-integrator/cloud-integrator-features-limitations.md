@@ -8,10 +8,10 @@ sidebar_position: 1
 * Receiving traversed UDP and CoAP messages to clients endpoint.
 * In total, there will be five attempts to send the message via Webhook or to AWS with an exponential retry policy (150s, 180s, 420s, 1020s).
 * Own headers can be specified for webhooks.
-* Device metadata can be injected in the Webhook's URL and headers. See more details [here](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-webhook-configuration#metadata-injection-in-webhook-definitions).
-* Integrations can be tested by sending TEST_MESSAGE [event type](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format). This can be done by using [Test AWS Integration](ref:post_v1-integrate-clouds-aws-integrationid-test) or [Test Webhook Integration](ref:post_v1-integrate-clouds-webhooks-integrationid-test) endpoints.
+* Device metadata can be injected in the Webhook's URL and headers. See more details [here](/docs/1nce-os/1nce-os-cloud-integrator/cloud-integrator-webhook-configuration#metadata-injection-in-webhook-definitions).
+* Integrations can be tested by sending TEST_MESSAGE [event type](/docs/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format). This can be done by using [Test AWS Integration](ref:post_v1-integrate-clouds-aws-integrationid-test) or [Test Webhook Integration](ref:post_v1-integrate-clouds-webhooks-integrationid-test) endpoints.
 * The "First Successful Message Delivery" timestamp reflects the time of the first successful message sent to the Integration by device after this Integration was created.
-* In case of Cloud Integration Failure, special Error Admin Log entry will be created, which can be used for monitoring [Cloud Integration failure events](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-failure-event).
+* In case of Cloud Integration Failure, special Error Admin Log entry will be created, which can be used for monitoring [Cloud Integration failure events](/docs/1nce-os/1nce-os-cloud-integrator/cloud-integrator-failure-event).
 
 ***
 

@@ -116,7 +116,7 @@ To utilize proxy functionality please use one of the following endpoints for CoA
 * `coap://coap.proxy.os.1nce.com:5683`
 * `coaps://coaps.proxy.os.1nce.com:5684`.
 
-  *If CoAPs is required to be used please refer to[DTLS encryption for CoAP](/1nce-os/1nce-os-device-integrator/device-integrator-coap#dtls-encryption-for-coap).*
+  *If CoAPs is required to be used please refer to[DTLS encryption for CoAP](/docs/1nce-os/1nce-os-device-integrator/device-integrator-coap#dtls-encryption-for-coap).*
 
 ### Coap to HTTPS Proxy functionality
 
@@ -133,7 +133,7 @@ After Memfault plugin installation is done you can utilize [Demo script for zeph
 
 # Features and Limitations
 
-General [Plugins features and limitations](/1nce-os/1nce-os-plugins/1nce-os-plugins-features-limitations) applies to Memfault.\
+General [Plugins features and limitations](/docs/1nce-os/1nce-os-plugins/1nce-os-plugins-features-limitations) applies to Memfault.\
 There are still some individual Features and Limitations applied to the Memfault plugin:
 
 ## Features

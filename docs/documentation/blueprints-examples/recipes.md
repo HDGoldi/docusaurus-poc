@@ -25,9 +25,9 @@ u-blox is a leading provider of positioning and wireless communication technolog
 
 ## Others
 
-- 📶 [WvDial Tutorial](/blueprints-examples/wvdial-tutorial)
+- 📶 [WvDial Tutorial](/docs/blueprints-examples/wvdial-tutorial)
 
 
  **1NCE VPN** establishes a secure and encrypted tunnel between your device and the VPN server. This ensures that your online activities, such as communication, are protected from eavesdropping, hacking, and surveillance.
 
-- 🖥️ [1NCE VPN Linux Client](/blueprints-examples/1nce-vpn-linux-client)
+- 🖥️ [1NCE VPN Linux Client](/docs/blueprints-examples/1nce-vpn-linux-client)

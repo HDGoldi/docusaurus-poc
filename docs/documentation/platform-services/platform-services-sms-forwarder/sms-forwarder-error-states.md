@@ -7,7 +7,7 @@ If the configured HTTP endpoint is wrong or the defined server endpoint does not
 1. A MO-SMS could not be delivered to the configured HTTP Post endpoint. Please check the customer-side server implementation.
 2. A MT-SMS Delivery Report could not be delivered to the configured HTTP Patch endpoint. Verify the customer-side implementation.
 
-Take a look at <a href="examples-sms-forwarder-testing">Testing SMS Forwarder</a> for debugging the custom endpoint. In both cases, the retry mechanism will try to redeliver the forwarded messages for 24 hours. After this timepoint, the messages will be discarded and set to the *Failed* state. If there are any uncertainties or issues during the troubleshooting, feel free to contact the <a href="https://1nce.com/en-eu/support" target="_blank">1NCE Support</a>.
+Take a look at <a href="/docs/blueprints-examples/examples-sms-forwarder/examples-sms-forwarder-testing/">Testing SMS Forwarder</a> for debugging the custom endpoint. In both cases, the retry mechanism will try to redeliver the forwarded messages for 24 hours. After this timepoint, the messages will be discarded and set to the *Failed* state. If there are any uncertainties or issues during the troubleshooting, feel free to contact the <a href="https://1nce.com/en-eu/support" target="_blank">1NCE Support</a>.
 
 <div style={{textAlign: 'center'}}>
 <img src="/img/platform-services/platform-services-sms-forwarder/sms-forwarder-error-states/138194a-SMS_Console_Error.png" alt="SMS_Console_Error.png" width="80%" />

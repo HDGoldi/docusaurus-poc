@@ -16,7 +16,7 @@ The following sections will show examples for:
 * <a href="examples-mo-sms#1nce-sms-api">1NCE API MO-SMS Integration</a>
 * <a href="examples-mo-sms#sim-device-mo-sms">MO-SMS on SIM Devices</a>
 
-Examples for the 1NCE SMS Forwarding Service can be found in the <a href="examples-sms-forwarder">SMS Forwarder</a> section.
+Examples for the 1NCE SMS Forwarding Service can be found in the <a href="/docs/blueprints-examples/examples-sms-forwarder/">SMS Forwarder</a> section.
 
 ***
 

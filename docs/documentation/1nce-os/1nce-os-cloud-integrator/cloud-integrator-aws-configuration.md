@@ -22,14 +22,14 @@ In your AWS account the iot:Data-ATS Endpoint should be enabled for region where
 
 ## IAM role permissions
 
-To successfully roll out the CloudFormation (CFN) stack, the customer must ensure that all the permissions listed in [cfn stack description](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration#cfn-stack-description) are granted.
+To successfully roll out the CloudFormation (CFN) stack, the customer must ensure that all the permissions listed in [cfn stack description](/docs/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration#cfn-stack-description) are granted.
 
 # Configuration via Frontend
 
 For setting up the AWS integration, use the Cloud Integration Wizard in the 1NCE OS portal.\
 Click 'New Integration' and select AWS integration as integration type.
 
-Use a descriptive name and select the [event types](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format) that you would like to receive.
+Use a descriptive name and select the [event types](/docs/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format) that you would like to receive.
 
 <div style={{textAlign: 'center'}}>
 <img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/8a9f1fde8ef85fbba5fb38c3fdb2de52215b5797c4731bedf0c60770fdb93938-integration-aws-creation.png" alt="Configuration of an AWS Integration in the 1NCE portal" width="70%" />
@@ -56,7 +56,7 @@ It will take some time for the stack to be created. Nested stacks are shown by t
 
 ## Validate Integration
 
-*A device being able to send data is a prerequisite for this step. For more information refer to the cloud integrator[documentation](/1nce-os/1nce-os-cloud-integrator/index).*
+*A device being able to send data is a prerequisite for this step. For more information refer to the cloud integrator[documentation](/docs/1nce-os/1nce-os-cloud-integrator/index).*
 
 Once your stack has been rolled out, you can test your integration using one of your devices or by using [Test AWS Integration](ref:post_v1-integrate-clouds-aws-integrationid-test) endpoint. In AWS go to the IoT Core service. Navigate to the MQTT test client and subscribe to # as shown below:
 
@@ -92,7 +92,7 @@ There is a possibility that your integration fails. When this happens, it will b
 <img src="/img/1nce-os/1nce-os-cloud-integrator/cloud-integrator-aws-configuration/9890430dd449eae6721b2ee3f9e1f9e003172e979c13ae23e3adfa1164fda6f3-Screenshot_2025-02-28_101925_integration-restart-table.png" alt="1nceOS restart integration" width="70%" />
 </div>
 
-By clicking the restart button, there will be an attempt to verify the integration. During that time an event of type TEST\_MESSAGE will be sent out. For more information refer to [event-type documentation](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format)
+By clicking the restart button, there will be an attempt to verify the integration. During that time an event of type TEST\_MESSAGE will be sent out. For more information refer to [event-type documentation](/docs/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format)
 
 ## Delete AWS Integration
 

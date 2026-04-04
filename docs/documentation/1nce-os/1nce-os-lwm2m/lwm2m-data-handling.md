@@ -27,7 +27,7 @@ Passive reporting provides a pull-based data collection method, where data is re
 
 To use passive reporting with the 1NCE LwM2M Service, the `LWM2M_PASSIVE_REPORTING` setting needs to be enabled.
 
-Setting can be enabled in 1NCE portal [Device integrator](/1nce-os/1nce-os-device-integrator/index).
+Setting can be enabled in 1NCE portal [Device integrator](/docs/1nce-os/1nce-os-device-integrator/index).
 
 <div style={{textAlign: 'center'}}>
 <img src="/img/1nce-os/1nce-os-lwm2m/lwm2m-data-handling/1935ef5ef724af18873ce68725dc722e8aba7dde50c41d1695e134c8cd56cc93-lwm2mpr.png" alt="LwM2M Passive Reporting setting" width="80%" />
@@ -63,7 +63,7 @@ With the Action API you get the possibility to automate actions in your device. 
 * Execute
 * Observe (Defined as start and end)
 
-The actions are processed by an asynchronous API. To receive the results of your actions (read & observe), you can use the [Device Inspector](/1nce-os/1nce-os-device-inspector/index). If your requests fail, you can see the messages in the [Admin Logs](/1nce-os/1nce-os-admin-logs/index). Messages are forwarded to your cloud integrations as well when they are configured. For more information about the Action API visit the [Device Controller](/1nce-os/1nce-os-device-controller/index).
+The actions are processed by an asynchronous API. To receive the results of your actions (read & observe), you can use the [Device Inspector](/docs/1nce-os/1nce-os-device-inspector/index). If your requests fail, you can see the messages in the [Admin Logs](/docs/1nce-os/1nce-os-admin-logs/index). Messages are forwarded to your cloud integrations as well when they are configured. For more information about the Action API visit the [Device Controller](/docs/1nce-os/1nce-os-device-controller/index).
 
 Example Request (Within this example checking the state of a LED):
 

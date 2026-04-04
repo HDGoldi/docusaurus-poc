@@ -18,7 +18,7 @@ To create a webhook you should at least define an own integration name and an en
 
 Further fields that can be specified are:
 
-* [Event Types](/1nce-os/1nce-os-cloud-integrator/index#event-types) to listen to.
+* [Event Types](/docs/1nce-os/1nce-os-cloud-integrator/index#event-types) to listen to.
 * Custom HTTP headers for webhooks.
 * Whether non-translated messages should be parsed to JSON, if possible.
 

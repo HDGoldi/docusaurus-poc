@@ -15,13 +15,13 @@ Please note that some devices require an originator address/number to be set in 
 
 # 1NCE Portal
 
-An easy-to-use and very intuitive tool for sending MT-SMS to individual devices with 1NCE SIM is the 1NCE Portal. This method is ideal for debugging and testing purposes as it offers an easy-to-use user interface for sending and monitoring SMS messages. Details on using the portal interface for sending SMS to devices can be found in the [My SIMs & SMS Console](/1nce-portal/portal-sims-sms) guide. For sending and receiving larger amounts of SMS and automating this process over longer periods, the 1NCE API is recommended. See also the [MT-SMS Portal Examples](/blueprints-examples/examples-sms/examples-mt-sms#1nce-portal--sms-console) for an example of MT-SMS in the 1NCE Portal.
+An easy-to-use and very intuitive tool for sending MT-SMS to individual devices with 1NCE SIM is the 1NCE Portal. This method is ideal for debugging and testing purposes as it offers an easy-to-use user interface for sending and monitoring SMS messages. Details on using the portal interface for sending SMS to devices can be found in the [My SIMs & SMS Console](/docs/1nce-portal/portal-sims-sms) guide. For sending and receiving larger amounts of SMS and automating this process over longer periods, the 1NCE API is recommended. See also the [MT-SMS Portal Examples](/docs/blueprints-examples/examples-sms/examples-mt-sms#1nce-portal--sms-console) for an example of MT-SMS in the 1NCE Portal.
 
 ***
 
 # 1NCE SMS API
 
-For larger batches or automated messages, the 1NCE API offers a HTTP REST interface for processing requests. Compared to the 1NCE Portal, the API offers more flexibility for automation and optional configuration of advanced SMS parameters (UDH, DCS and Expiry Date). The Data Coding Scheme (DCS) parameter enables GSM 7-bit default alphabet text messages and 8-bit binary data messages. The User Data Header (UDH) is an optional parameter which specifies how a message should be formatted and processed. It is useful for sending concatenated SMS messages consisting of two or more parts. How concatenated messages can be submitted is shown in the [Concatenated SMS Messages](#concatenated-sms-messages) section. See also the [MT-SMS API Examples](/blueprints-examples/examples-sms/examples-mt-sms#1nce-sms-api) for references to sending SMS via API.
+For larger batches or automated messages, the 1NCE API offers a HTTP REST interface for processing requests. Compared to the 1NCE Portal, the API offers more flexibility for automation and optional configuration of advanced SMS parameters (UDH, DCS and Expiry Date). The Data Coding Scheme (DCS) parameter enables GSM 7-bit default alphabet text messages and 8-bit binary data messages. The User Data Header (UDH) is an optional parameter which specifies how a message should be formatted and processed. It is useful for sending concatenated SMS messages consisting of two or more parts. How concatenated messages can be submitted is shown in the [Concatenated SMS Messages](#concatenated-sms-messages) section. See also the [MT-SMS API Examples](/docs/blueprints-examples/examples-sms/examples-mt-sms#1nce-sms-api) for references to sending SMS via API.
 
 ## Data Coding Scheme
 
@@ -58,4 +58,4 @@ For more information about the UDH and SMS concatenation see <a href="https://po
 
 # SMS Forwarder Service
 
-While it is not possible to directly send MT-SMS with the SMS Forwarding Service, it is possible to receive Delivery Reports (DLR). These reports are sent via the configured forwarding URL, indicating that the MT-SMS was delivered to the target device with a 1NCE SIM. Further details about this service can be found in the [SMS Forwarder Service](/platform-services/platform-services-sms-forwarder/index) section.
+While it is not possible to directly send MT-SMS with the SMS Forwarding Service, it is possible to receive Delivery Reports (DLR). These reports are sent via the configured forwarding URL, indicating that the MT-SMS was delivered to the target device with a 1NCE SIM. Further details about this service can be found in the [SMS Forwarder Service](/docs/platform-services/platform-services-sms-forwarder/index) section.

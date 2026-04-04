@@ -89,7 +89,7 @@ The Mender server stores and controls the deployment of software updates over th
 
 * `coap://coap.proxy.os.1nce.com:5683/mender`
 * `coaps://coaps.proxy.os.1nce.com:5684/mender`.\
-  *If CoAPs is required to be used please refer to[DTLS encryption for CoAP](/1nce-os/1nce-os-device-integrator/device-integrator-coap#dtls-encryption-for-coap).*
+  *If CoAPs is required to be used please refer to[DTLS encryption for CoAP](/docs/1nce-os/1nce-os-device-integrator/device-integrator-coap#dtls-encryption-for-coap).*
 
 ### Coap to HTTPS Proxy functionality
 
@@ -129,7 +129,7 @@ To use the 1NCE OS Plugin for Release and deployment management in Mender, pleas
 
 # Features and Limitations
 
-General [Plugins features and limitations](/1nce-os/1nce-os-plugins/1nce-os-plugins-features-limitations) applies to Mender. There are still some individual Limitations applied for Mender:
+General [Plugins features and limitations](/docs/1nce-os/1nce-os-plugins/1nce-os-plugins-features-limitations) applies to Mender. There are still some individual Limitations applied for Mender:
 
 ## Limitations
 

@@ -7,7 +7,7 @@ slug: /
 # Welcome to the 1NCE API
 
 :::info Download YAML Files
-To download the latest OpenAPI files for the 1NCE API please visit: [https://help.1nce.com/dev-hub/openapi](https://help.1nce.com/dev-hub/openapi).
+To download the latest OpenAPI files for the 1NCE API please visit: [/api/](https://help.1nce.com/dev-hub/openapi).
 :::
 
 :::warning 'Try It' Feature

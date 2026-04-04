@@ -159,4 +159,4 @@ For testing and trying out the SMS Service, 1NCE recommends to use a simple smar
 
 ## MO-SMS with IoT Devices
 
-Most IoT modem devices allow to send MO-SMS via AT Commands. Please check with the manufacturer documentation how to send MO-SMS or check the <a target="_blank" href="examples-hardware-guides">1NCE Hardware & Modem Guides</a>.
+Most IoT modem devices allow to send MO-SMS via AT Commands. Please check with the manufacturer documentation how to send MO-SMS or check the <a target="_blank" href="/docs/blueprints-examples/examples-hardware-guides/">1NCE Hardware & Modem Guides</a>.

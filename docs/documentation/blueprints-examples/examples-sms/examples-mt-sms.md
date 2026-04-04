@@ -398,4 +398,4 @@ For testing and trying out the SMS Service, 1NCE recommends to use a simple smar
 
 ## MT-SMS with IoT Devices
 
-Most IoT modem devices can receive and save MT-SMS. The control of the SMS management on the modem side is handled via AT Commands. Please check with the manufacturer documentation how to receive and query MT-SMS or check the <a target="_blank" href="examples-hardware-guides">1NCE Hardware & Modem Guides</a>.
+Most IoT modem devices can receive and save MT-SMS. The control of the SMS management on the modem side is handled via AT Commands. Please check with the manufacturer documentation how to receive and query MT-SMS or check the <a target="_blank" href="/docs/blueprints-examples/examples-hardware-guides/">1NCE Hardware & Modem Guides</a>.

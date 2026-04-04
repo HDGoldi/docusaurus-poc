@@ -11,7 +11,7 @@ At the base for the LwM2M protocol stack lies the client (e.g., IoT device) and 
 
 ## Bootstrap Server
 
-The [1NCE Bootstrap Service](/1nce-os/1nce-os-lwm2m/lwm2m-bootstrapping) for LwM2M serves as a fully automated management entity for keys, access control, and configuration required to enroll an IoT device with the 1NCE LwM2M Service. This component is based in the background on the [Device Authenticator](/1nce-os/1nce-os-device-authenticator/index) Service to automate the LwM2M bootstring with a 1NCE SIM card.
+The [1NCE Bootstrap Service](/docs/1nce-os/1nce-os-lwm2m/lwm2m-bootstrapping) for LwM2M serves as a fully automated management entity for keys, access control, and configuration required to enroll an IoT device with the 1NCE LwM2M Service. This component is based in the background on the [Device Authenticator](/docs/1nce-os/1nce-os-device-authenticator/index) Service to automate the LwM2M bootstring with a 1NCE SIM card.
 
 ## LwM2M Server
 
@@ -19,13 +19,13 @@ Once a connected IoT LwM2M device completed the bootstrapping process, a device 
 
 ## Integration Test
 
-If an IoT device is registered with the 1NCE LwM2M Server, the individual device can be [tested](/1nce-os/1nce-os-device-integrator/device-integrator-test-endpoints#testing-the-endpoint) in the Device Integrator. If the LwM2M Integration is setup, the connection can be tested with any device. Select one of the preferred Blueprints. More information about the Blueprints can be found ind [1NCE SDK & Blueprints](/1nce-os/1nce-os-sdk-blueprints/index). The ICCID of the device used for testing and optional the Pre-shared Key (PSK) is needed for the test setup.
+If an IoT device is registered with the 1NCE LwM2M Server, the individual device can be [tested](/docs/1nce-os/1nce-os-device-integrator/device-integrator-test-endpoints#testing-the-endpoint) in the Device Integrator. If the LwM2M Integration is setup, the connection can be tested with any device. Select one of the preferred Blueprints. More information about the Blueprints can be found ind [1NCE SDK & Blueprints](/docs/1nce-os/1nce-os-sdk-blueprints/index). The ICCID of the device used for testing and optional the Pre-shared Key (PSK) is needed for the test setup.
 
 After setting up the testbed, a message has to be sent from the IoT SIM device. Please be aware that it can take up to 30 seconds to be received.
 
 ## LwM2M Data Reporting
 
-The 1NCE LwM2M Service enables registered devices to report information to the LwM2M server. All messages are forwarded and stored in the [Device Inspector](/1nce-os/1nce-os-device-inspector/index). This service stores the received information and provides data for the visualization via the management user interface and regular event updates via the management API.
+The 1NCE LwM2M Service enables registered devices to report information to the LwM2M server. All messages are forwarded and stored in the [Device Inspector](/docs/1nce-os/1nce-os-device-inspector/index). This service stores the received information and provides data for the visualization via the management user interface and regular event updates via the management API.
 
 ***
 
@@ -45,7 +45,7 @@ The 1NCE LwM2M Service enables registered devices to report information to the L
 
 # Limitations
 
-* LwM2M Endpoints are required to be [activated](/unresolved/doc:device-integrator-activate-endpoints), otherwise 1NCE LwM2M bootstrap server will not authorize devices.
+* LwM2M Endpoints are required to be [activated](/docs/1nce-os/1nce-os-device-integrator/), otherwise 1NCE LwM2M bootstrap server will not authorize devices.
 
 * LwM2M clients used with the 1NCE Service need to support v1.1 at least partially.
 

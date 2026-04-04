@@ -60,7 +60,7 @@ The main limitation of DTLS is the use of the UDP protocol. The major drawbacks 
 To utilize DTLS encryption with 1NCE OS, a pre-shared key (PSK) is essential for securing data. This key encrypts and decrypts transmitted data. Devices can connect securely using CoAP with DTLS by accessing the endpoint `coaps://coap.os.1nce.com:5684`. To retrieve the PSK, send a GET request to `coap://coap.os.1nce.com:5683/bootstrap`. This endpoint will return an existing key, or if none is available, it will generate and provide a new one. Additionally, you can manually set the PSK (in plaintext or HEX format):
 
 * through the 1NCE OS API endpoint described in [API Explorer](/api/1nce-os/create-pre-shared-device-key/).
-* in 1NCE OS portal Device Integrator when [testing CoAP endpoint](/1nce-os/1nce-os-device-integrator/device-integrator-test-endpoints#testing-the-endpoint).
+* in 1NCE OS portal Device Integrator when [testing CoAP endpoint](/docs/1nce-os/1nce-os-device-integrator/device-integrator-test-endpoints#testing-the-endpoint).
 
 ### How to send CoAP messages
 

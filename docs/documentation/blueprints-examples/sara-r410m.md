@@ -6,14 +6,14 @@ Developers could understand and develop applications quickly and efficiently bas
 
 # Network Registration:
 
-- 🦉 [SARA-R410M Network Registration](/blueprints-examples/sara-r410m-network-registration)
+- 🦉 [SARA-R410M Network Registration](/docs/blueprints-examples/sara-r410m-network-registration)
 
 
 # SARA-R410M HTTP GET
 
-- 🦉 [SARA-R4 GET HTTP](/blueprints-examples/sara-r4-get-http)
+- 🦉 [SARA-R4 GET HTTP](/docs/blueprints-examples/sara-r4-get-http)
 
 
 # 1NCE OS UDP
 
-- 🦉 [SARA-R410M 1NCE OS UDP](/blueprints-examples/sara-r410m-1nce-os-udp)
+- 🦉 [SARA-R410M 1NCE OS UDP](/docs/blueprints-examples/sara-r410m-1nce-os-udp)

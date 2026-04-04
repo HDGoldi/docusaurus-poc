@@ -16,15 +16,15 @@ The Cloud Integrator allows to create, manage and use 1NCE webhooks and direct A
 Whenever a message (UDP, CoAP or LwM2M) from a device is sent to the 1NCE OS endpoint(s) the message is forwarded to the customer's Cloud Integrations.
 
 * LwM2M messages are forwarded to customer's Cloud Integrations.
-* Traversed UDP and CoAP messages will be forwarded to customer's Cloud Integrations. The forwarded message content depends on the energy saver status for the specific protocol. If the [Energy Saver](/1nce-os/1nce-os-energy-saver/index) is not enabled, then message will be forwarded directly, but when enabled, then a processed message will be forwarded.
+* Traversed UDP and CoAP messages will be forwarded to customer's Cloud Integrations. The forwarded message content depends on the energy saver status for the specific protocol. If the [Energy Saver](/docs/1nce-os/1nce-os-energy-saver/index) is not enabled, then message will be forwarded directly, but when enabled, then a processed message will be forwarded.
 
 ## Lifecycle Events
 
-This option will forward all the [Lifecycle](/1nce-os/1nce-os-admin-logs/admin-logs-info-category#lifecycle) events from the Info category Admin Logs to the customer's Cloud Integrations.
+This option will forward all the [Lifecycle](/docs/1nce-os/1nce-os-admin-logs/admin-logs-info-category#lifecycle) events from the Info category Admin Logs to the customer's Cloud Integrations.
 
 ## Error Events
 
-This option will forward all the Error category Admin Logs to the customer's Cloud Integrations. It also will include [Cloud Integration failure event](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-failure-event)
+This option will forward all the Error category Admin Logs to the customer's Cloud Integrations. It also will include [Cloud Integration failure event](/docs/1nce-os/1nce-os-cloud-integrator/cloud-integrator-failure-event)
 
 ## Geofence Events
 
@@ -48,7 +48,7 @@ Test Message can be triggered by [Test AWS Integration](ref:post_v1-integrate-cl
       <th>
         A comprehensive set of examples for each event type can be found
 
-        [here](/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format#examples)
+        [here](/docs/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format#examples)
 
         .
       </th>

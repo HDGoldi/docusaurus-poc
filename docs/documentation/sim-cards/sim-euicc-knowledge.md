@@ -29,7 +29,7 @@ For more information about eID, please, refer to the official [GSMA documentatio
 
 1NCE offers three kinds of models, Freedom To Switch, Overtake and Active Model. The differences between these models are explained below.
 
-For any open questions about the eUICC models or more extensive help for the specific application case, feel free to contact us (<a href="<https://www.1nce.com/en-eu/support/contact>" target="_blank">1NCE Contact</a>).
+For any open questions about the eUICC models or more extensive help for the specific application case, feel free to contact us (<a href="https://www.1nce.com/en-eu/support/contact" target="_blank">1NCE Contact</a>).
 
 ## Freedom To Switch (Insurance)
 

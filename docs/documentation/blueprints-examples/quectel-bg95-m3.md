@@ -9,18 +9,18 @@ The BG95-M3 Mini PCIe is a wireless communication module that supports multiple 
 
 Network registration is the process by which a cellular device connects to a cellular network and obtains the necessary credentials to access the network's services. This process involves several steps, including network selection, authentication, and registration.
 
-- 🦉 [BG95-M3 Network Registration](/blueprints-examples/bg95-m3-network-registration)
+- 🦉 [BG95-M3 Network Registration](/docs/blueprints-examples/bg95-m3-network-registration)
 
 # ICMP Ping
 
-- 🦉 [BG95-M3 ICMP Ping](/blueprints-examples/bg95-m3-icmp-ping)
+- 🦉 [BG95-M3 ICMP Ping](/docs/blueprints-examples/bg95-m3-icmp-ping)
 
 
 # TCP Client
 
-- 🦉 [BG95&BG77 TCP Client Connection](/blueprints-examples/bg95bg77-tcp-client-connection)
+- 🦉 [BG95&BG77 TCP Client Connection](/docs/blueprints-examples/bg95bg77-tcp-client-connection)
 
 
 # 1NCE OS UDP Protocol
 
-- 🦉 [BG95-M3 1NCE OS UDP](/blueprints-examples/bg95-m3-1nce-os-udp)
+- 🦉 [BG95-M3 1NCE OS UDP](/docs/blueprints-examples/bg95-m3-1nce-os-udp)

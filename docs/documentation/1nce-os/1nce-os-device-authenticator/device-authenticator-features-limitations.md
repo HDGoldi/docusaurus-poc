@@ -11,7 +11,7 @@ The Device Authenticator solution is part of 1NCE OS and allows customers a seam
 
 ## Limitations
 
-The Device Authenticator works only with enabled Breakout regions, which currently include Europe (Frankfurt) and US East (N. Virginia). For more details, see [Internet Breakout](/network-services/network-services-internet-breakout).
+The Device Authenticator works only with enabled Breakout regions, which currently include Europe (Frankfurt) and US East (N. Virginia). For more details, see [Internet Breakout](/docs/network-services/network-services-internet-breakout).
 
 ## Security
 

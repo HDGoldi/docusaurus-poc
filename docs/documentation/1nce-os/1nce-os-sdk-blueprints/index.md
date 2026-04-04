@@ -16,6 +16,6 @@ The 1NCE SDK can be downloaded at: [https://github.com/1NCE-GmbH/1nce-iot-c-sdk]
 
 Blueprints are open-source, MIT-licensed code repositories for embedded platforms. We offer onboarding scripts like the FreeRTOS onboarding blueprint to guide through all our features that 1NCE OS offers. With examples and code, we hope to make the setup smooth and simple. 
 
-* [FreeRTOS Blueprint](/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-freertos) 
-* [Zephyr Blueprint](/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr)
-* [Arduino Blueprint](/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-arduino)
+* [FreeRTOS Blueprint](/docs/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-freertos) 
+* [Zephyr Blueprint](/docs/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr)
+* [Arduino Blueprint](/docs/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-arduino)
