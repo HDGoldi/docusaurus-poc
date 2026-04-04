@@ -22,7 +22,7 @@ There are few key moments that allow reliable communication:
 
 1. To maximize the chance that the message succeeds even in the lossy network environment, CoAP has a retransmission mechanism. The client would re-send the Confirmable message (`CON`) until the Acknowledgement (`ACK`) is received or the *exchange lifetime* has ended. The total exchange lifetime (`EXCHANGE_LIFETIME`) is the time from starting to send a Confirmable message to the time when an acknowledgment is no longer expected.\
    By default, the `EXCHANGE_LIFETIME` value is `247 seconds`.
-2. CoAP Messages contain *Message ID* (also known as `MID`) to detect duplicates due to retransmissions. The Message ID has to be unique during the `EXCHANGE_LIFETIME`, so the client's endpoint should be able to specify a unique `MID` value if messages are being sent often enough. Most high-level CoAP clients are managing `MID` uniqueness internally, but for low-level clients like modem *Quectel BG95*, it can be specified in the AT command as `msgID`[\[2\]](#2):
+2. CoAP Messages contain *Message ID* (also known as `MID`) to detect duplicates due to retransmissions. The Message ID has to be unique during the `EXCHANGE_LIFETIME`, so the client's endpoint should be able to specify a unique `MID` value if messages are being sent often enough. Most high-level CoAP clients are managing `MID` uniqueness internally, but for low-level clients like modem *Quectel BG95*, it can be specified in the AT command as `msgID`[2]:
 
 ```text
 AT+QCOAPHEADER=<clientID>,<msgID>,<mode>[,<TKL>,<token>]

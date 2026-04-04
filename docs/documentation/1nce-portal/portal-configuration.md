@@ -3,7 +3,7 @@ title: Configuration
 description: 1NCE Services Configuration and Setup
 sidebar_position: 3
 ---
-# Network Settings
+## Network Settings
 
 The network settings contain the basic information to get the SIM Cards connected to the 1NCE network. 
 
@@ -29,7 +29,7 @@ The network settings contain the basic information to get the SIM Cards connecte
 
 ***
 
-# Breakout Settings
+## Breakout Settings
 
 The Internet Breakout setting in the configuration tab allows you to configure the ideal network flow for your SIMs cards for public-facing internet access and private connectivity through VPN. The 1NCE Internet Breakout can be configured in two different variances, which offer different functionality.
 
@@ -60,25 +60,25 @@ For more information on the 1NCE Internet Breakout Service, please visit the [In
 
 ***
 
-# Monthly Limits
+## Monthly Limits
 
 By using "Monthly Limits" a customer can set an individual monthly data and SMS limit. The SMS limit can be configured separately for Mobile Originated (MO) and Mobile Terminated (MT) SMS. These limits will be applied to all of the customer's SIMs. By checking or unchecking the boxes these options can be set or cancelled easily at any time. The limits apply to the period of the calendar month. Putting another limit in the same month will not reset the previously consumed quota.  
 Example: The first limit is 100 MB. After reaching it you put in 200 MB as a new limit. Now only 100 additional MB can be consumed because the previously consumed 100 MB are considered.
 
-## Exceeding the Limits
+### Exceeding the Limits
 
 When the self-set limits are exceeded, error or warning messages are triggered based on the type of limit.
 
-### Data Session
+#### Data Session
 
 When the limit is reached, new PDP data sessions will be rejected: **PDP Context Request rejected, because endpoint is currently blocked due to exceeded traffic limit.**  However, some devices might retry indefinitely to reconnect in such a case. 1NCE strongly advices to use a back-off approach in this rejection case to not flood the network with PDP session requests.
 
-### MT-SMS
+#### MT-SMS
 
 Using the 1NCE API, if the self-set limit for MT-SMS is reached, **Traffic limit of X SMS per month exceeded** is returned as error.  
 In the 1NCE Portal **Set monthly limit of SMS exceeded** is shown, when the MT-SMS limit was reached and a new SMS is issued.
 
-### MO-SMS
+#### MO-SMS
 
 For **MO-SMS** no notification will be shown in the 1NCE Portal or Data Stream. The SMS will be rejected by the network resulting in an error return code from the device modem.
 
@@ -96,7 +96,8 @@ For **MO-SMS** no notification will be shown in the 1NCE Portal or Data Stream. 
 
 ***
 
-# Global IMEI Lock
+
+## Global IMEI Lock
 
 A global IMEI Lock can be set for all SIM Cards of the organization. The IMEI lock works by saving the IMEI of the device the SIM is installed in. With the feature enabled, the 1NCE network will only accept the saved device IMEI - SIM card combination to access the network resource. Any other IMEI - SIM combination will be refused. If this feature is activated, the IMEI lock will be set during the next network attach. Consequently the SIM card can only be used with the current device. For new SIM Card orders a checkbox can be selected to enable the IMEI lock by default. This way newly ordered SIMs will have the IMEI Lock set automatically. A separate IMEI lock for individual cards of the organization can be set either via the 1NCE API or in the "My SIMs" tab.
 
@@ -114,7 +115,8 @@ A global IMEI Lock can be set for all SIM Cards of the organization. The IMEI lo
 
 ***
 
-# Auto Top-Up
+
+## Auto Top-Up
 
 Automatic Top-Ups can be configured globally for all SIMs of an organization. The top-up will be automatically booked once a SIM card has \<20 % data and/or SMS volume. The check for low volume and potential Top-Up process if the SIM volume is less than 20%, are performed every four hours at 0:00,  4:00,  8:00,  12:00,  16:00, and 20:00 CET. To use this feature customers have to add their credit card details in the "Account" tab. By ticking the check-box it is possible to activate the auto-top-up for all future SIM orders by default. This feature can also be individually (de-)activated for a single SIM card via the Management API or the tab "My SIMs" and then the SIM-Detail page.
 
@@ -132,7 +134,7 @@ Automatic Top-Ups can be configured globally for all SIMs of an organization. Th
 
 ***
 
-# Data Streams
+## Data Streams
 
 The 1NCE Data Streaming Service allows customers to subscribe to real-time events and usage data for all SIM Cards by pushing data directly to the customer's server or an already integrated cloud service such as AWS Kinesis, S3, DataDog or Keen.io. 
 
@@ -154,7 +156,7 @@ To create a new data stream integration click on the New Data Stream button. Fur
 
 ***
 
-# SMS Forwarding Configuration
+## SMS Forwarding Configuration
 
 The SMS Forwarding configuration allows for receiving Mobile Originated (MO) SMS with a custom HTTP endpoint integration. For the configuration, the customer needs to insert the URL of the server, which shall receive the SMS. Further necessary details on configuration of SMS forwarding can be found in the [SMS Forwarding Service](/docs/platform-services/platform-services-sms-forwarder/) section of the Developer Hub.
 
@@ -172,13 +174,14 @@ The SMS Forwarding configuration allows for receiving Mobile Originated (MO) SMS
 
 ***
 
-# OpenVPN Configuration
+
+## OpenVPN Configuration
 
 OpenVPN is the recommended application setup by 1NCE to establish a secure, bidirectional data connection between the 1NCE network and the customer server.
 
 Dependent on the selected Internet Breakout option, OpenVPN might not be available (Automatic Mode) or needs a region specific configuration (Manual Mode).
 
-## Automatic Mode
+### Automatic Mode
 
 <div style={{ textAlign: "center" }}>
   <img
@@ -192,7 +195,7 @@ Dependent on the selected Internet Breakout option, OpenVPN might not be availab
 </div>
 
 
-## Manual Mode (Europe)
+### Manual Mode (Europe)
 
 When the Manual Mode is selected the VPN configuration shown is dependent on the selected region. When changing the breakout region, note that the VPN configuration needs to be manually adapted as well. In such a case please download the new, region-specific configuration and setup a new VPN client.
 

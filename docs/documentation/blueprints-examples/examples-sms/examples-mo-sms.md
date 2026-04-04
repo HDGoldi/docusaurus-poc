@@ -3,11 +3,12 @@ title: Mobile Originated SMS
 description: Issuing Mobile Originated SMS.
 sidebar_position: 2
 ---
-# 1NCE Portal / SMS Console
+
+## 1NCE Portal / SMS Console
 
 This section covers how to use the SMS Console inside the 1NCE Portal to view the MO-SMS messages of a specific 1NCE SIM. Please note that the data retention of seven days applies to the SMS Console, SMS older than seven days will no longer be displayed.
 
-## Viewing MO-SMS
+### Viewing MO-SMS
 
 1. Login to the <a target="_blank" href="https://portal.1nce.com/">1NCE Portal</a> and go the the **My SIMs** tab.
 2. Select the **SIM** for which the MO-SMS should be viewed from the list of all SIM cards.
@@ -22,15 +23,16 @@ This section covers how to use the SMS Console inside the 1NCE Portal to view th
 
 ***
 
-# 1NCE SMS API
+
+## 1NCE SMS API
 
 The 1NCE API offers another solution to access Mobile Originated SMS messages. For a specific SIM card a list of MT/MO-SMS or single SMS messages based on the SMS ID can be queried. A good starting point is the <a href="/api/">API Explorer</a> to get familiar with the API calls. From the API Explorer, ready to use code snippets and cURL queries can be obtained to integrate into custom applications.
 
-## API Prerequisites
+### API Prerequisites
 
 Before using the SMS API requests, an authentication token needs to be requested using the `/oauth/token` API request. For using the MT-SMS functionality, an ICCID of a 1NCE SIM is needed to send, monitor and manage the SMS messages for this SIM.
 
-## Retrieving MO-SMS
+### Retrieving MO-SMS
 
 With the 1NCE SMS API, the received MO-SMS can be retrieved with some simple HTTP queries. Open the dropdowns below to see example guides for integration.
 
@@ -142,11 +144,11 @@ Query MO-SMS Response Example
 
 ***
 
-# SIM Device MO-SMS
+## SIM Device MO-SMS
 
 MO-SMS messages are issued from devices which use a 1NCE SIM for connectivity. The SMS service is available without the need to establish a PDP Data Session. Please note that SMS is not possible with NB-IoT. 
 
-## MO-SMS with Smartphone
+### MO-SMS with Smartphone
 
 For testing and trying out the SMS Service, 1NCE recommends to use a simple smartphone with a 1NCE SIM to send MO-SMS.
 
@@ -157,6 +159,6 @@ For testing and trying out the SMS Service, 1NCE recommends to use a simple smar
 5. Prepare a basic **SMS Message** and send the MO-SMS message.
 6. Check in the 1NCE Portal, through the API or if implemented the SMS Forwarder to see the received MO-SMS.
 
-## MO-SMS with IoT Devices
+### MO-SMS with IoT Devices
 
 Most IoT modem devices allow to send MO-SMS via AT Commands. Please check with the manufacturer documentation how to send MO-SMS or check the <a target="_blank" href="/docs/blueprints-examples/examples-hardware-guides/">1NCE Hardware & Modem Guides</a>.

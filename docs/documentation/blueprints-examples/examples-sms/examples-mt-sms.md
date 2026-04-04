@@ -3,11 +3,12 @@ title: Mobile Terminated SMS
 description: Issuing Mobile Terminated SMS Messages.
 sidebar_position: 1
 ---
-# 1NCE Portal / SMS Console
+
+## 1NCE Portal / SMS Console
 
 This section covers the usage of the 1NCE Portal and the SMS Console to send MT-SMS to one individual 1NCE SIMs. The SMS Console only supports 7-Bit GSM Alphabet Text MT-SMS. For using more advanced features, please refer to the 1NCE API examples.
 
-## Alphabet Text SMS Messages
+### Alphabet Text SMS Messages
 
 1. Login to the <a target="_blank" href="https://portal.1nce.com/">1NCE Portal</a> and go the the **My SIMs** tab.
 2. Select the **SIM** to which the MT-SMS messages should be issued from the list of all SIM cards.
@@ -32,15 +33,16 @@ This section covers the usage of the 1NCE Portal and the SMS Console to send MT-
 
 ***
 
-# 1NCE SMS API
+
+## 1NCE SMS API
 
 This section covers all topics around sending, monitoring and managing MT-SMS messages with the the 1NCE API. A good starting point is the <a href="/api/">API Explorer</a> to get familiar with the API calls. From the API Explorer, ready to use code snippets and cURL queries can be obtained to integrate into custom applications.
 
-## API Prerequisites
+### API Prerequisites
 
 Before using the SMS API requests, an authentication token needs to be requested using the `/oauth/token` API request. For using the MT-SMS functionality, an ICCID of a 1NCE SIM is needed to send, monitor and manage the SMS messages for this SIM.
 
-## Sending MT-SMS
+### Sending MT-SMS
 
 The examples listed below show common use cases for sending MT-SMS with the 1NCE API. Please open the dropdowns to get a full guide on how to send these types of SMS messages.
 
@@ -247,7 +249,7 @@ curl --request POST \
 
 </details>
 
-## Monitoring MT-SMS
+### Monitoring MT-SMS
 
 Besides sending different types MT-SMS, the API can also be used to monitor and obtain a list of issued MT-SMS messages. Expand the dropdowns below to see the possibilities of querying the MT-SMS API.
 
@@ -355,7 +357,7 @@ curl --request GET \
 
 </details>
 
-## Manage MT-SMS
+### Manage MT-SMS
 
 Through the API, issued MT-SMS that have not been delivered yet can be deleted from the SMS queue. The dropdown below show how to use the SMS API to manage MT-SMS.
 
@@ -381,11 +383,11 @@ curl --request DELETE \
 
 ***
 
-# SIM Device MT-SMS
+## SIM Device MT-SMS
 
 MT-SMS messages are issued towards devices which use a 1NCE SIM for connectivity. The SMS service is available without the need to establish a PDP Data Session. Please note that SMS is not possible with NB-IoT. 
 
-## MT-SMS with Smartphone
+### MT-SMS with Smartphone
 
 For testing and trying out the SMS Service, 1NCE recommends to use a simple smartphone with a 1NCE SIM to receive MT-SMS.
 
@@ -396,6 +398,6 @@ For testing and trying out the SMS Service, 1NCE recommends to use a simple smar
 5. Send the message towards the specific **ICCID SIM** which is inserted in the smartphone.
 6. Check the smartphone for an incoming SMS message.
 
-## MT-SMS with IoT Devices
+### MT-SMS with IoT Devices
 
 Most IoT modem devices can receive and save MT-SMS. The control of the SMS management on the modem side is handled via AT Commands. Please check with the manufacturer documentation how to receive and query MT-SMS or check the <a target="_blank" href="/docs/blueprints-examples/examples-hardware-guides/">1NCE Hardware & Modem Guides</a>.

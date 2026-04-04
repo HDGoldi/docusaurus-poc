@@ -15,7 +15,7 @@ In the following, the two types of Usage Records and the included data fields wi
 
 ***
 
-# Example Usage Records
+## Example Usage Records
 
 Let us start with a few Example Usage Records in the form of JSON Objects from the Data Streamer. Please note that some fields only include placeholder or example values.
 
@@ -153,7 +153,7 @@ Let us start with a few Example Usage Records in the form of JSON Objects from t
 
 ***
 
-# Usage Data Properties
+## Usage Data Properties
 
 These are the main properties of a Usage Record that help to identify the endpoint and provide an insight into the volume used.
 
@@ -161,7 +161,7 @@ These are the main properties of a Usage Record that help to identify the endpoi
 | :---------------- | :-------------------- | :------------------------------------------------------------------------------------------------------------------------ |
 | `id`              | LONG (64-bit integer) | Unique ID for each Usage Record sent. Duplicate received event IDs indicate possible retransmissions.                     |
 | `cost`            | DECIMAL(14,10)        | Does not reflect the real world cost, 1:1 translation of usage.                                                           |
-| `currency`        | JSON Object           | Currency object with information about the cost currency. See [Currency](#currency-object) for more information.          |
+| `currency`        | JSON Object           | Currency object with information about the cost currency. See [Cost](#cost-object) for more information.          |
 | `start_timestamp` | TIMESTAMP (UTC)       | Timestamp with date and time of the usage start in the ISO 8601 format.                                                   |
 | `end_timestamp`   | TIMESTAMP (UTC)       | Timestamp with date and time of the usage end in the ISO 8601 format.                                                     |
 | `volume`          | JSON Object           | Object with the exact volume used as part of the Usage Record. See [Volume](#volume-object) for more information.         |
@@ -175,7 +175,8 @@ These are the main properties of a Usage Record that help to identify the endpoi
 
 ***
 
-# Cost Object
+
+## Cost Object
 
 The cost object is set as a 1:1 relation to the used volume. It does not reflect the real world cost.
 
@@ -187,7 +188,8 @@ The cost object is set as a 1:1 relation to the used volume. It does not reflect
 
 ***
 
-# Organisation Object
+
+## Organisation Object {#organization-object}
 
 Information about the organization of the SIM that generated the volume usage record.
 
@@ -198,7 +200,8 @@ Information about the organization of the SIM that generated the volume usage re
 
 ***
 
-# SIM Object
+
+## SIM Object
 
 Details about the SIM that is responsible for the volume usage.
 
@@ -211,7 +214,8 @@ Details about the SIM that is responsible for the volume usage.
 
 ***
 
-# Operator Object
+
+## Operator Object
 
 Operator the SIM was attached to when the usage was generated.
 
@@ -224,7 +228,8 @@ Operator the SIM was attached to when the usage was generated.
 
 ***
 
-# Country Object
+
+## Country Object
 
 Country of the device with the 1NCE SIM where the usage was generated.
 
@@ -236,7 +241,8 @@ Country of the device with the 1NCE SIM where the usage was generated.
 
 ***
 
-# Tariff Object 
+
+## Tariff Object
 
 Specific tariff assigned to the 1NCE SIM.
 
@@ -248,7 +254,8 @@ Specific tariff assigned to the 1NCE SIM.
 
 ***
 
-# Ratezone Object
+
+## Ratezone Object
 
 The ratezone in which the SIM generated the indicated usage.
 
@@ -259,7 +266,8 @@ The ratezone in which the SIM generated the indicated usage.
 
 ***
 
-# Traffic Type Object
+
+## Traffic Type Object
 
 Identifies what kind of traffic was used and is shown in the Usage Record. This could either be Data or SMS.
 
@@ -288,7 +296,8 @@ Identifies what kind of traffic was used and is shown in the Usage Record. This 
 
 ***
 
-# Endpoint Object
+
+## Endpoint Object
 
 Details about the endpoint/device with the 1NCE SIM that generated the usage.
 
@@ -303,7 +312,8 @@ Details about the endpoint/device with the 1NCE SIM that generated the usage.
 
 ***
 
-# Volume Object
+
+## Volume Object
 
 Exact volume, either data in MegaBytes or number of SMS used by the SIM.
 

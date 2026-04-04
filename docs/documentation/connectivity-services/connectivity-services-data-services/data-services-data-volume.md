@@ -7,7 +7,7 @@ Based on the specific tariff of the 1NCE SIM, a set amount of data volume is inc
 
 ***
 
-# Data Volume Usage
+## Data Volume Usage
 
 When using the 1NCE data service, both uplink (UL) and downlink (DL) data transmissions are counted towards the used volume. Taking a look at the different layers in the communication in the figure below, only the traffic inside the GTP is considered for billing. The IP overhead, specific network protocol (e.g., TCP, UDP, MQTT, etc.) overhead, and actual payload size account as data usage. For sending large data packets, IP fragmentation generates further overhead data traffic. It does not matter if the 1NCE VPN service or a direct internet breakout is used as this does not constitute a difference in the usage data. 
 
@@ -19,11 +19,11 @@ Important to note is that besides the overhead for sending a payload, additional
 
 ***
 
-# Self-Set Data Volume Limits
+## Self-Set Data Volume Limits
 
 A customer-specified limit for the data volume can be set in the 1NCE Portal Configuration tab or through the 1NCE API. This limit applies to the usage of data volume for all SIM in the organization. These limits can be used to restrict the data volume usage per month for the SIMs from the network side. The limits can be set in predetermined steps and will be reset on the first day of each new month.
 
-## Reaching and Resetting the Limit
+### Reaching and Resetting the Limit
 
 If a SIM runs into this limitation, an Event Record **PDP Context Request rejected, because endpoint is currently blocked due to exceeded traffic limit.** will be generated when attempting to create a new data session. Further a customer notification will be generated. To reenable a SIM, please either wait until the volume is reset at the beginning of the month or manually increase the limit via the 1NCE Portal or 1NCE API.
 
@@ -36,11 +36,12 @@ If a SIM runs into this limitation, an Event Record **PDP Context Request reject
 
 ***
 
-# Example Scenarios
+
+## Example Scenarios
 
 To provide a better understanding of the estimation of data volume usage, a few examples with commonly used network protocols are listed below.
 
-## DNS Resolution
+### DNS Resolution
 
 When using URLs as a reference, these have to be resolved via a DNS request to obtain the target IP address. This resolution process generates additional traffic which is often overlooked in the usage calculation. The table shown an example data usage for one DNS resolution. Dependent on the IoT device software, multiple DNS queries might be executed as part of a normal operation. 
 
@@ -57,7 +58,7 @@ When using URLs as a reference, these have to be resolved via a DNS request to o
 | *DNS Query* e.g. [www.google.de](http://www.google.de) | 39 Bytes | 20 Bytes | 59 Bytes |
 | *DNS Response* | 55 Bytes | 20 Bytes | 75 Bytes |
 
-## Transmission Control Protocol (TCP)
+### Transmission Control Protocol (TCP)
 
 In this use case, the minimal TCP network protocol is used to send a payload of 100 bytes of data from a device towards a server. Afterward, 50 bytes are returned from the server towards the device. The shown calculation is based on the assumption that no retransmissions will be needed. Depending on the application and the used header options for TCP and IP, the size of these packets will be larger.
 
@@ -79,7 +80,7 @@ In this use case, the minimal TCP network protocol is used to send a payload of 
 | *ACK* | 20 Bytes | 20 Bytes | 40 Bytes |
 | **Total Sum** | **374 Bytes** | **220 Byte** | **594 Bytes** |
 
-## User Datagram Protocol (UDP)
+### User Datagram Protocol (UDP)
 
 In comparison to the TCP header (20 bytes), the UDP header with only 8 bytes is more lightweight. Furthermore, UDP does not rely on the 3-way handshake and acknowledging individual data packets. This makes it a bit more unreliable but can save a lot of transmitted data in suitable applications. The use case shown in the calculation is the same as for the TCP example. A payload of 100 bytes of data from a device towards a UDP server. Afterward, 50 bytes are returned from the server towards the device.
 

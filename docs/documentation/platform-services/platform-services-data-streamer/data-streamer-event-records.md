@@ -10,11 +10,11 @@ The following sections will cover the individual parts of the Event Record JSON:
 * [Generic Properties](#generic-properties)
 * [Additional Properties](#additional-properties)
 * [Detail Properties](#detail-properties)
-* [PDP Context Properties](#pdp-context-properties)
+* [PDP Context Object](#pdp-context-object)
 
 ***
 
-# Example Event Records
+## Example Event Records
 
 Let us start with a few Example Event Records in the form of JSON Objects from the Data Streamer. Listed below in the different tabs are some example Event Records for different Event Types. All Examples are in the JSON Format just like it would be delivered by the Data Streamer with the custom HTTP endpoint method. Please note that some fields only include placeholder or example values. Furthermore, some of the fields might be dependent on the used Radio Access Technology and other variables. 
 
@@ -1237,7 +1237,8 @@ Let us start with a few Example Event Records in the form of JSON Objects from t
 
 ***
 
-# Generic Properties
+
+## Generic Properties
 
 Generic Properties are fields that are always included in an Event Record JSON message received via the Data Streamer. The following table will list all these properties, their data type, and a short description.
 
@@ -1252,7 +1253,7 @@ Generic Properties are fields that are always included in an Event Record JSON m
 | `alert`          | BOOLEAN         | Events with a high impact on connectivity operation are flagged as an Alert.                                                                       |
 | `description`    | STRING          | String with a human readable description of the event.                                                                                             |
 
-## Event Types
+### Event Types
 
 The different types of events are indicated by the Event Type nested object. This object contains an ID and a short description of the event. The following table lists all possible Event Types that can be received via the Data Streamer.
 
@@ -1293,7 +1294,7 @@ The different types of events are indicated by the Event Type nested object. Thi
 | 59       | SMS Quota Deleted                 |
 | 60       | Data Quota expired                |
 
-## Event Severity
+### Event Severity
 
 The severity levels of an event indicate what impact the event has on the correct operation of the system. The possible Event Severity values are listed below:
 
@@ -1303,7 +1304,7 @@ The severity levels of an event indicate what impact the event has on the correc
 | 1           | WARNING     |
 | 2           | CRITICAL    |
 
-## Event Source
+### Event Source
 
 Based on the Event Type, a different originating Event Source might be responsible for triggering the event. The possible sources consisting of an ID and a Description are listed below.
 
@@ -1313,7 +1314,7 @@ Based on the Event Type, a different originating Event Source might be responsib
 | 1  | Policy Control |
 | 2  | API            |
 
-## Event Organization
+### Event Organization
 
 Each Event Record includes information about the originating organization. This helps to identify the organization in the use case of multiple Data Streamer for sub organizations. The JSON property fields of this object are listed below.
 
@@ -1324,7 +1325,8 @@ Each Event Record includes information about the originating organization. This 
 
 ***
 
-# Additional Properties
+
+## Additional Properties
 
 Event Records that directly relate to SIMs, Endpoints, or Users might include some of the following optional properties.
 
@@ -1334,7 +1336,7 @@ Event Records that directly relate to SIMs, Endpoints, or Users might include so
 | `sim`      | JSON Object | Subscriber Identification Module, see [SIM Object](#sim-object) for more information.             |
 | `endpoint` | JSON Object | Endpoint/Device information object, see [Endpoint Object](#endpoint-object) for more information. |
 
-## IMSI Object
+### IMSI Object
 
 The International Mobile Subscriber Identity is used to identify each device with a SIM. The following parameters are included in an Event Record.
 
@@ -1344,7 +1346,7 @@ The International Mobile Subscriber Identity is used to identify each device wit
 | `imsi`        | STRING          | The International Mobile Subscriber Identity as String.         |
 | `import_date` | TIMESTAMP (UTC) | Timestamp when the IMSI was provisioned in the ISO 8601 format. |
 
-## SIM Object
+### SIM Object
 
 Each SIM card has unique properties and parameters. This data is included in the event stream. A list of the available data fields is shown below.
 
@@ -1355,7 +1357,7 @@ Each SIM card has unique properties and parameters. This data is included in the
 | `msisdn`          | STRING          | Mobile Subscriber ISDN of the SIM Card.                     |
 | `production_date` | TIMESTAMP (UTC) | Timestamp when the SIM was produced in the ISO 8601 format. |
 
-## Endpoint Object
+### Endpoint Object
 
 As a SIM is placed inside a device, some information about this endpoint is transferred via the mobile network. This information is useful to identify the specific device type and certain connection parameters. A list of all Endpoint Objects is listed below.
 
@@ -1369,7 +1371,8 @@ As a SIM is placed inside a device, some information about this endpoint is tran
 
 ***
 
-# Detail Properties
+
+## Detail Properties
 
 For certain Event Types, additional information parameters are added in the Detail Properties. A list of the object parameters and fields is listed below.
 
@@ -1381,7 +1384,7 @@ For certain Event Types, additional information parameters are added in the Deta
 | `pdp_context` | JSON Object | Object with details about the PDP Context. See [PDP Context Object](#pdp-context-object) for more information. |
 | `volume`      | JSON Object | Object with details about the Volume used. See [Volume Object](#volume-object) for more information.           |
 
-## Country Object
+### Country Object
 
 A nested JSON object inside the Detail Properties contains more information about the country where the SIM event took place. The fields of the Country JSON are listed below.
 
@@ -1393,7 +1396,7 @@ A nested JSON object inside the Detail Properties contains more information abou
 | `country.mcc`           | STRING    | Mobile Country Code (MCC) |
 | `country.iso_code `     | STRING    | ISO Country Code          |
 
-## PDP Context Object
+### PDP Context Object
 
 An Event Record for a PDP Context includes a wide range of additional information in the Detail Properties. The individual fields are listed below.
 
@@ -1422,7 +1425,7 @@ An Event Record for a PDP Context includes a wide range of additional informatio
 
 \* Only from some mobile operators *rat\_type* 9 is sent for CAT-M connections (depends on the 3GPP Release in their Core Network). For the majority of the CAT-M connections the rat\_type in the data streamer is 6, since CAT-M is based on the 4G standard.
 
-## Volume Object
+### Volume Object
 
 With each PDP Context, some information about the Data Usage is included in the Volume JSON. The content description of the fields is listed below.
 
