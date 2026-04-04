@@ -77,6 +77,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
             footer: '',
             inputPlaceholder: 'Type your question...',
             footer: '',
+            inputPlaceholder: 'Type your question...',
             getStarted: 'New Conversation',
             closeButtonTooltip: 'Close chat',
           },

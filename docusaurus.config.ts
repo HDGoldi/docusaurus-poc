@@ -217,6 +217,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       },
     }],
     'docusaurus-plugin-sass',
+    './plugins/llms-txt-plugin.ts',
     function polyfillNodeModules() {
       return {
         name: 'polyfill-node-modules',

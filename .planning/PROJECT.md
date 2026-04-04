@@ -34,7 +34,7 @@ Developers can browse all existing documentation and interactively test API endp
 - [ ] AI Assistant replicating ReadMe.com "Ask AI" — RAG-style chat grounded in documentation content
 - [ ] AWS Bedrock backend (Claude/Anthropic model) for AI chat processing
 - [ ] GitHub Pages deployment for test/preview (alongside existing AWS infra)
-- [ ] llms.txt with product-first organization and build-time link generation
+- ✓ llms.txt with product-first organization and build-time link generation — v1.3 Phase 11
 - [ ] skill.md for AI coding agents at .well-known/skills/ with discovery index.json
 - ✓ robots.txt with AI crawler directives, sitemap reference, and CloudFront .well-known passthrough — v1.3 Phase 10
 - ✓ Automated RAG content sync — GitHub Actions workflow triggers KB re-ingestion on doc changes — v1.1 Phase 7
@@ -115,4 +115,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-03 after Phase 10 completion*
+*Last updated: 2026-04-04 after Phase 11 completion*
