@@ -86,7 +86,9 @@ Plans:
   1. Visiting help.1nce.com/.well-known/skills/default/skill.md returns a markdown document describing 1NCE API auth flows, common multi-step patterns, and known gotchas
   2. Visiting help.1nce.com/.well-known/skills/ returns a JSON index listing available skills
   3. skill.md covers general platform best practices (not limited to individual API endpoints) including error handling and rate limiting guidance
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 12-01-PLAN.md — skill.md + index.json static files and deploy workflow content-type fix
 
 ## Progress
 

@@ -35,7 +35,7 @@ Developers can browse all existing documentation and interactively test API endp
 - [ ] AWS Bedrock backend (Claude/Anthropic model) for AI chat processing
 - [ ] GitHub Pages deployment for test/preview (alongside existing AWS infra)
 - ✓ llms.txt with product-first organization and build-time link generation — v1.3 Phase 11
-- [ ] skill.md for AI coding agents at .well-known/skills/ with discovery index.json
+- ✓ skill.md for AI coding agents at .well-known/skills/ with discovery index.json — v1.3 Phase 12
 - ✓ robots.txt with AI crawler directives, sitemap reference, and CloudFront .well-known passthrough — v1.3 Phase 10
 - ✓ Automated RAG content sync — GitHub Actions workflow triggers KB re-ingestion on doc changes — v1.1 Phase 7
 - ✓ CloudFormation resource tagging (environment:dev, component:ai) across all infra templates — v1.1 Phase 7
@@ -115,4 +115,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-04 after Phase 11 completion*
+*Last updated: 2026-04-04 after Phase 12 completion*
