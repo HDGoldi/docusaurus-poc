@@ -28,17 +28,18 @@ Developers can browse all existing documentation and interactively test API endp
 - ✓ Dark mode fully removed (light-only, no toggle, no remnant CSS) — v1.2
 - ✓ External navbar links for 1NCE Home, Shop, Portal matching original header — v1.2
 - ✓ Client-side redirects preserving old /platform/*, /blueprints/*, /terms/* URLs — v1.2
+- ✓ robots.txt with AI crawler directives, sitemap reference, and CloudFront .well-known passthrough — v1.3
+- ✓ llms.txt with product-first organization and build-time link generation (172 links) — v1.3
+- ✓ skill.md for AI coding agents at .well-known/skills/ with discovery index.json — v1.3
+- ✓ S3 content-type fix for .md files in deploy pipeline — v1.3
+- ✓ Automated RAG content sync — GitHub Actions workflow triggers KB re-ingestion on doc changes — v1.1 Phase 7
+- ✓ CloudFormation resource tagging (environment:dev, component:ai) across all infra templates — v1.1 Phase 7
 
 ### Active
 
 - [ ] AI Assistant replicating ReadMe.com "Ask AI" — RAG-style chat grounded in documentation content
 - [ ] AWS Bedrock backend (Claude/Anthropic model) for AI chat processing
 - [ ] GitHub Pages deployment for test/preview (alongside existing AWS infra)
-- ✓ llms.txt with product-first organization and build-time link generation — v1.3 Phase 11
-- ✓ skill.md for AI coding agents at .well-known/skills/ with discovery index.json — v1.3 Phase 12
-- ✓ robots.txt with AI crawler directives, sitemap reference, and CloudFront .well-known passthrough — v1.3 Phase 10
-- ✓ Automated RAG content sync — GitHub Actions workflow triggers KB re-ingestion on doc changes — v1.1 Phase 7
-- ✓ CloudFormation resource tagging (environment:dev, component:ai) across all infra templates — v1.1 Phase 7
 
 ### Out of Scope
 
@@ -49,21 +50,16 @@ Developers can browse all existing documentation and interactively test API endp
 - Offline mode
 - Two-tier header layout — Docusaurus single navbar sufficient with external links
 
-## Current Milestone: v1.3 AI & Search Readiness
+## Current State
 
-**Goal:** Make the Developer Hub discoverable and usable by LLMs, AI coding agents, and search engine crawlers as first-class consumers.
-
-**Target features:**
-- llms.txt with product-first organization (1NCE Connect, 1NCE OS) — hand-curated structure with build-time generated link sections
-- skill.md for AI coding agents — auth flows, common patterns, best practices, gotchas; served at /.well-known/skills/ with discovery index.json
-- robots.txt with sitemap.xml reference for search engine crawlers
+Shipped v1.3 (AI & Search Readiness). Site is now discoverable by LLMs, AI coding agents, and search engine crawlers.
 
 ## Context
 
-Shipped v1.2 with site branding and navigation fully aligned to original ReadMe.com hub.
 Tech stack: Docusaurus 3.9.2, React 18, Rspack bundler, docusaurus-openapi-docs v4.7.1.
 Infrastructure: CloudFormation template (13 resources), GitHub Actions CI/CD.
 Additional: @docusaurus/plugin-client-redirects for backward-compatible URLs.
+AI discoverability: robots.txt (6 AI crawlers), llms.txt (172 links, postBuild plugin), skill.md (.well-known/skills/).
 
 v1.1 AI phases (4-7) are code-complete but not formally closed — AWS Bedrock deployment needed for end-to-end validation.
 
@@ -115,4 +111,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-04 after Phase 12 completion*
+*Last updated: 2026-04-04 after v1.3 milestone completion*
