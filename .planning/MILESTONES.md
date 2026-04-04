@@ -1,5 +1,18 @@
 # Milestones
 
+## v1.3 AI & Search Readiness (Shipped: 2026-04-04)
+
+**Phases completed:** 3 phases, 3 plans, 4 tasks
+
+**Key accomplishments:**
+
+- robots.txt with 6 AI crawler allow-list, sitemap directive, and CloudFront .well-known/ passthrough
+- Build-time llms.txt generation via postBuild plugin with product-first organization and 172 auto-generated links
+- Agent Skills spec-compliant skill.md with auth walkthrough, 3 multi-step API workflows, and discovery index.json
+- S3 content-type fix for .md files in deploy pipeline
+
+---
+
 ## v1.2 Overall Enhancements & Fixing (Shipped: 2026-04-02)
 
 **Phases completed:** 2 phases, 3 plans, 5 tasks

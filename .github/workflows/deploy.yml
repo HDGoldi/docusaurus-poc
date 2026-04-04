@@ -57,6 +57,16 @@ jobs:
       - name: Deploy to preview S3
         run: aws s3 sync build/ s3://1nce-developer-hub-preview/pr-${{ github.event.number }}/ --delete
 
+      - name: Fix content-type for Markdown files
+        run: |
+          aws s3 cp s3://1nce-developer-hub-preview/pr-${{ github.event.number }}/ s3://1nce-developer-hub-preview/pr-${{ github.event.number }}/ \
+            --recursive \
+            --exclude "*" \
+            --include "*.md" \
+            --content-type "text/markdown; charset=utf-8" \
+            --metadata-directive REPLACE \
+            --cache-control "public, max-age=600, must-revalidate"
+
       - name: Comment preview URL
         uses: actions/github-script@v7
         with:
@@ -372,6 +382,16 @@ jobs:
 
       - name: Sync remaining files with short cache
         run: aws s3 sync build/ s3://1nce-developer-hub-prod/ --exclude "assets/*" --cache-control "public, max-age=600, must-revalidate" --delete
+
+      - name: Fix content-type for Markdown files
+        run: |
+          aws s3 cp s3://1nce-developer-hub-prod/ s3://1nce-developer-hub-prod/ \
+            --recursive \
+            --exclude "*" \
+            --include "*.md" \
+            --content-type "text/markdown; charset=utf-8" \
+            --metadata-directive REPLACE \
+            --cache-control "public, max-age=600, must-revalidate"
 
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id ${{ vars.CF_DISTRIBUTION_ID }} --paths "/*"

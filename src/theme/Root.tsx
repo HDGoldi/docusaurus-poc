@@ -72,8 +72,10 @@ export default function Root({ children }: { children: React.ReactNode }) {
         ],
         i18n: {
           en: {
-            title: '1NCE Dev Hub Assistant',
-            subtitle: 'Ask me anything about 1NCE services',
+            title: 'Ask AI',
+            subtitle: '',
+            footer: '',
+            inputPlaceholder: 'Type your question...',
             footer: '',
             inputPlaceholder: 'Type your question...',
             getStarted: 'New Conversation',

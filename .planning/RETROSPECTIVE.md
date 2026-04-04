@@ -81,13 +81,50 @@
 - Sessions: 1 session, ~1.5 hours
 - Notable: entire milestone (branding + navigation restructuring) completed in a single session
 
+## Milestone: v1.3 — AI & Search Readiness
+
+**Shipped:** 2026-04-04
+**Phases:** 3 | **Plans:** 3
+
+### What Was Built
+- robots.txt with 6 named AI crawler allow-list and CloudFront .well-known/ passthrough
+- llms.txt via custom postBuild plugin — 172 auto-generated links, product-first organization
+- Agent Skills spec-compliant skill.md with auth walkthrough, 3 multi-step API workflows
+- S3 content-type fix for .md files in deploy pipeline
+
+### What Worked
+- Tiny phases (1 plan each) executed in minutes — ideal granularity for infrastructure-only work
+- Phase 10's CloudFront passthrough cleanly unblocked both Phase 11 and Phase 12
+- Template + plugin pattern for llms.txt keeps hand-curated content stable while links auto-generate
+- Agent Skills spec provided clear structure — no design ambiguity
+
+### What Was Inefficient
+- REQUIREMENTS.md LLM-01–04 checkboxes were not updated when Phase 11 completed — bookkeeping drift
+- Phase 11 one-liner wasn't extracted by CLI summary-extract (missing from frontmatter field)
+- v1.1 milestone still not formally closed — third milestone completed without addressing it
+
+### Patterns Established
+- CloudFront Function early-return pattern for path-specific bypass (before SPA rewrite)
+- Static .well-known files in static/ directory for Docusaurus copy-to-build
+- S3 content-type overrides via `aws s3 cp --recursive --metadata-directive REPLACE` after sync
+- HTML comment markers (`<!-- LINKS:section -->`) for template placeholder syntax
+
+### Key Lessons
+- Infrastructure phases (no app code, just config/static files) can be sub-5-minute plans — don't over-plan
+- Build-time generation is the right pattern for discoverable file standards (llms.txt, sitemap.xml)
+- Agent Skills spec is straightforward — the hardest part is choosing which workflows to document, not the format
+
+### Cost Observations
+- Model mix: primarily opus
+- Sessions: 1 session, ~30 minutes total execution
+- Notable: 3 phases completed in under 30 minutes — fastest milestone yet
+
 ## Cross-Milestone Trends
 
-| Metric | v1.0 | v1.2 |
-|--------|------|------|
-| Phases | 3 | 2 |
-| Plans | 12 | 3 |
-| Commits | 70 | ~20 |
-| Files changed | 956 | 188 |
-| LOC delta | ~42,864 | +4,282/-208 |
-| Duration | 2 days | 1.5 hours |
+| Metric | v1.0 | v1.2 | v1.3 |
+|--------|------|------|------|
+| Phases | 3 | 2 | 3 |
+| Plans | 12 | 3 | 3 |
+| Commits | 70 | ~20 | 23 |
+| Files changed | 956 | 188 | ~9 |
+| Duration | 2 days | 1.5 hours | ~30 min |
