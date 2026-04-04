@@ -74,7 +74,9 @@ Plans:
   2. llms.txt organizes content under product-first sections (1NCE Connect, 1NCE OS, API Reference) rather than filesystem paths
   3. Link sections in llms.txt are regenerated on every build, reflecting current pages and API endpoints without manual link maintenance
   4. The preamble text and section structure in llms.txt remain stable across builds (only auto-generated link lists change)
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 11-01-PLAN.md — llms-template.txt, postBuild plugin, and config registration
 
 ### Phase 12: AI Agent Integration
 **Goal**: AI coding agents can discover and consume structured guidance for working with 1NCE APIs, including auth flows, common patterns, and gotchas
@@ -103,5 +105,5 @@ Phases execute in numeric order: 10 -> 11 -> 12
 | 8. Branding & Visual Alignment | v1.2 | 1/1 | Complete | 2026-04-02 |
 | 9. Sidebar Consolidation | v1.2 | 2/2 | Complete | 2026-04-02 |
 | 10. Crawler Foundation | v1.3 | 0/1 | Complete    | 2026-04-03 |
-| 11. LLM Discoverability | v1.3 | 0/0 | Not started | - |
+| 11. LLM Discoverability | v1.3 | 0/1 | Not started | - |
 | 12. AI Agent Integration | v1.3 | 0/0 | Not started | - |
