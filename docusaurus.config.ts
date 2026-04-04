@@ -11,7 +11,7 @@ const config: Config = {
   favicon: 'img/favicon.png',
 
   customFields: {
-    chatEndpoint: process.env.CHAT_ENDPOINT || '',
+    n8nChatUsername: process.env.N8N_CHAT_USERNAME || 'master',
     n8nChatPassword: process.env.N8N_CHAT_PASSWORD || '',
   },
 
@@ -217,6 +217,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       },
     }],
     'docusaurus-plugin-sass',
+    './plugins/llms-txt-plugin.ts',
     function polyfillNodeModules() {
       return {
         name: 'polyfill-node-modules',

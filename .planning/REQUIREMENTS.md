@@ -15,10 +15,10 @@ Requirements for AI & Search Readiness milestone. Each maps to roadmap phases.
 
 ### LLM Discoverability
 
-- [ ] **LLM-01**: Site serves llms.txt at root following llmstxt.org specification (H1, blockquote summary, H2 sections)
-- [ ] **LLM-02**: llms.txt uses product-first organization with sections for 1NCE Connect, 1NCE OS, and API Reference
-- [ ] **LLM-03**: llms.txt link sections are auto-generated at build time from existing docs and OpenAPI specs
-- [ ] **LLM-04**: llms.txt preamble and section structure are hand-curated in a template file
+- [x] **LLM-01**: Site serves llms.txt at root following llmstxt.org specification (H1, blockquote summary, H2 sections)
+- [x] **LLM-02**: llms.txt uses product-first organization with sections for 1NCE Connect, 1NCE OS, and API Reference
+- [x] **LLM-03**: llms.txt link sections are auto-generated at build time from existing docs and OpenAPI specs
+- [x] **LLM-04**: llms.txt preamble and section structure are hand-curated in a template file
 
 ### AI Agent Integration
 
@@ -55,10 +55,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CRAWL-01 | Phase 10 | Complete |
 | CRAWL-02 | Phase 10 | Complete |
 | CRAWL-03 | Phase 10 | Complete |
-| LLM-01 | Phase 11 | Pending |
-| LLM-02 | Phase 11 | Pending |
-| LLM-03 | Phase 11 | Pending |
-| LLM-04 | Phase 11 | Pending |
+| LLM-01 | Phase 11 | Complete |
+| LLM-02 | Phase 11 | Complete |
+| LLM-03 | Phase 11 | Complete |
+| LLM-04 | Phase 11 | Complete |
 | AGENT-01 | Phase 12 | Pending |
 | AGENT-02 | Phase 12 | Pending |
 | AGENT-03 | Phase 12 | Pending |
