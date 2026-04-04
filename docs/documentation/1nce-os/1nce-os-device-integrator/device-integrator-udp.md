@@ -15,7 +15,7 @@ client.send(message, 4445, 'udp.os.1nce.com', (err) => {
 });
 ```
 
-All active SIMs from an organization will be able to successfully publish messages via the UDP Endpoint, if [Terms of Use](https://1nce.com/wp-content/1NCE-OS-terms-of-use-EN.pdf) & [Data Processing Agreement](https://1nce.com/wp-content/1NCE-data-processing-agreement-EN.pdf) are accepted. The incoming messages can be found in [historian web interface](device-inspector-historian-web-interface).
+All active SIMs from an organization will be able to successfully publish messages via the UDP Endpoint, if [Terms of Use](https://1nce.com/wp-content/1NCE-OS-terms-of-use-EN.pdf) & [Data Processing Agreement](https://1nce.com/wp-content/1NCE-data-processing-agreement-EN.pdf) are accepted. The incoming messages can be found in [historian web interface](/docs/1nce-os/1nce-os-device-inspector/device-inspector-historian-web-interface/).
 
 All TELEMETRY\_DATA events which are forwarded to the AWS IoT Core are sent to a device-specific topic with the following format for UDP and LwM2M:\
 **\{iccid}/messages** 

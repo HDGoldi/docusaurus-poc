@@ -7,7 +7,7 @@ sidebar_position: 2
 >
 > Both the configuration and credential file can be downloaded from the configuration page of the <a href="https://portal.1nce.com/portal/customer/configuration\" target="_blank\">1NCE Portal</a>.
 
-This section provides a general description of the tunnel interface of the VPN Service as well as an overview of the configuration and credential files. For setup and testing guides for different operating systems, please refer to the <a href="examples-vpn">VPN Setup Guide</a>.
+This section provides a general description of the tunnel interface of the VPN Service as well as an overview of the configuration and credential files. For setup and testing guides for different operating systems, please refer to the <a href="/docs/blueprints-examples/examples-vpn/">VPN Setup Guide</a>.
 
 ***
 

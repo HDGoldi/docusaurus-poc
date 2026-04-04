@@ -41,8 +41,8 @@ Further, the shown columns can be (de-)activated to select only the ones of inte
 | --- | --- |
 | `ICCID` | Unique serial of the SIM card. |
 | `MSISDN` | Phone number of the SIM card. The SIM can not be used for voice services or to receive/send SMS to external parties. The chapters [SMS Services](/docs/connectivity-services/connectivity-services-sms-services) and [SMS Forwarding Service](/docs/platform-services/platform-services-sms-forwarder) provide more information. |
-| `IMEI(SV)` | Identifier of the device the SIM is inserted into. The IMEI displayed in the 1NCE Portal is retrieved from the network during PDP context activation, the format is as follows: IMEI + SV (software version), based on the standard specification 3GPP TS23.003. See the <a href="/docs/sim-cards-knowledge#international-mobile-equipment-identity-imei">IMEI Reference</a> for more information. |
-| `IMEI Lock` | Status of the IMEI lock for this specific SIM. If enabled the SIM is bound to the current device. See the <a href="/docs/sim-cards-knowledge#imei-lock">IMEI Lock Reference</a> for more information. |
+| `IMEI(SV)` | Identifier of the device the SIM is inserted into. The IMEI displayed in the 1NCE Portal is retrieved from the network during PDP context activation, the format is as follows: IMEI + SV (software version), based on the standard specification 3GPP TS23.003. See the <a href="/docs/sim-cards/sim-cards-knowledge/#international-mobile-equipment-identity-imei">IMEI Reference</a> for more information. |
+| `IMEI Lock` | Status of the IMEI lock for this specific SIM. If enabled the SIM is bound to the current device. See the <a href="/docs/sim-cards/sim-cards-knowledge/#imei-lock">IMEI Lock Reference</a> for more information. |
 | `IP Address` | Static IP address of the specific SIM. Used for accessing the SIM via 1NCE VPN Services. |
 | `SIM Type` | Specific type of SIM card, FlexSIM or eSIM. |
 | `Tariff` | Details about the tariff of the specific SIM showing the data and SMS volume. |
