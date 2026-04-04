@@ -158,6 +158,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         { from: '/dev-hub/docs/introduction-welcome', to: '/docs/' },
         // Old ReadMe dev-hub root
         { from: '/dev-hub', to: '/docs/' },
+        // Old ReadMe dev-hub/docs index (HIGH -- linked from 100+ pages on 1nce.com)
+        { from: '/dev-hub/docs', to: '/docs/' },
+        // Old ReadMe slug renamed pages
+        { from: '/dev-hub/docs/introduction-1nce-sim-card', to: '/docs/sim-cards/sim-cards-knowledge/' },
+        { from: '/dev-hub/docs/modems', to: '/docs/blueprints-examples/examples-hardware-guides/' },
+        // Old starting-guide path prefix
+        { from: '/starting-guide/docs/apn-overview', to: '/docs/connectivity-services/connectivity-services-data-services/data-services-apn/' },
         // Old ReadMe static reference pages
         { from: '/dev-hub/reference/api-welcome', to: '/docs/' },
         { from: '/dev-hub/reference/api-authorization', to: '/api/authorization/authorization/' },
