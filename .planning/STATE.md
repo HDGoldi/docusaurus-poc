@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-04-04)
 Phase: --
 Plan: --
 Status: Milestone v1.3 completed
-Last activity: 2026-04-04
+Last activity: 2026-04-04 - Completed quick task 260404-lhk: Add redirects for 5 broken help.1nce.com URLs
 
 Progress: [██████████] 100%
 
@@ -57,6 +57,12 @@ None.
 ### Blockers/Concerns
 
 None — all v1.3 blockers resolved.
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260404-lhk | Add redirects for 5 broken help.1nce.com URLs from link check report | 2026-04-04 | 32405f1 | [260404-lhk-add-redirects-for-5-broken-help-1nce-com](./quick/260404-lhk-add-redirects-for-5-broken-help-1nce-com/) |
 
 ## Session Continuity
 
