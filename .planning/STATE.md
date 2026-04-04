@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-04-04)
 Phase: --
 Plan: --
 Status: Milestone v1.3 completed
-Last activity: 2026-04-04 - Completed quick task 260404-lhk: Add redirects for 5 broken help.1nce.com URLs
+Last activity: 2026-04-04 - Completed quick task 260404-luu: Fix 110 broken internal links
 
 Progress: [██████████] 100%
 
@@ -63,9 +63,10 @@ None — all v1.3 blockers resolved.
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 260404-lhk | Add redirects for 5 broken help.1nce.com URLs from link check report | 2026-04-04 | 32405f1 | [260404-lhk-add-redirects-for-5-broken-help-1nce-com](./quick/260404-lhk-add-redirects-for-5-broken-help-1nce-com/) |
+| 260404-luu | Fix 110 broken internal links (5 categories: unresolved doc:, missing /docs/ prefix, relative hrefs, malformed URLs, misc) | 2026-04-04 | 7205818 | [260404-luu-fix-110-broken-internal-links-global-red](./quick/260404-luu-fix-110-broken-internal-links-global-red/) |
 
 ## Session Continuity
 
 Last session: 2026-04-04
-Stopped at: Milestone v1.3 completed
+Stopped at: Completed quick-260404-luu
 Resume file: None
