@@ -76,6 +76,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
             subtitle: 'Ask me anything about 1NCE services',
             footer: '',
             inputPlaceholder: 'Type your question...',
+            footer: '',
             getStarted: 'New Conversation',
             closeButtonTooltip: 'Close chat',
           },

@@ -46,7 +46,7 @@ See: `.planning/milestones/v1.2-ROADMAP.md` for full details.
 
 **Milestone Goal:** Make the Developer Hub discoverable and usable by LLMs, AI coding agents, and search engine crawlers as first-class consumers.
 
-- [ ] **Phase 10: Crawler Foundation** - robots.txt, AI crawler directives, and CloudFront Function fix for static file paths
+- [x] **Phase 10: Crawler Foundation** - robots.txt, AI crawler directives, and CloudFront Function fix for static file paths (completed 2026-04-03)
 - [ ] **Phase 11: LLM Discoverability** - llms.txt with product-first organization and build-time link generation
 - [ ] **Phase 12: AI Agent Integration** - skill.md and .well-known discovery for AI coding agents
 
@@ -61,7 +61,9 @@ See: `.planning/milestones/v1.2-ROADMAP.md` for full details.
   2. robots.txt includes explicit Allow directives for AI crawler user agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended)
   3. Requesting a .txt, .md, or .json file through CloudFront returns the actual file content, not the SPA index.html page
   4. Requesting /.well-known/skills/ through CloudFront returns the directory content, not a rewritten SPA path
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 10-01-PLAN.md — robots.txt creation + CloudFront Function .well-known passthrough
 
 ### Phase 11: LLM Discoverability
 **Goal**: LLMs consuming help.1nce.com/llms.txt get a curated, product-organized overview of all documentation with working links that stay in sync with the site
@@ -100,6 +102,6 @@ Phases execute in numeric order: 10 -> 11 -> 12
 | 7. CI/CD Integration | v1.1 | 1/1 | Complete | 2026-03-23 |
 | 8. Branding & Visual Alignment | v1.2 | 1/1 | Complete | 2026-04-02 |
 | 9. Sidebar Consolidation | v1.2 | 2/2 | Complete | 2026-04-02 |
-| 10. Crawler Foundation | v1.3 | 0/0 | Not started | - |
+| 10. Crawler Foundation | v1.3 | 0/1 | Complete    | 2026-04-03 |
 | 11. LLM Discoverability | v1.3 | 0/0 | Not started | - |
 | 12. AI Agent Integration | v1.3 | 0/0 | Not started | - |
