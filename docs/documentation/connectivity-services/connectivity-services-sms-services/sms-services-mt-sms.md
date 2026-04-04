@@ -58,4 +58,4 @@ For more information about the UDH and SMS concatenation see <a href="https://po
 
 # SMS Forwarder Service
 
-While it is not possible to directly send MT-SMS with the SMS Forwarding Service, it is possible to receive Delivery Reports (DLR). These reports are sent via the configured forwarding URL, indicating that the MT-SMS was delivered to the target device with a 1NCE SIM. Further details about this service can be found in the [SMS Forwarder Service](/docs/platform-services/platform-services-sms-forwarder/index) section.
+While it is not possible to directly send MT-SMS with the SMS Forwarding Service, it is possible to receive Delivery Reports (DLR). These reports are sent via the configured forwarding URL, indicating that the MT-SMS was delivered to the target device with a 1NCE SIM. Further details about this service can be found in the [SMS Forwarder Service](/docs/platform-services/platform-services-sms-forwarder/) section.

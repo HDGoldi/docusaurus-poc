@@ -3,7 +3,7 @@ title: Data Monitoring
 description: Monitoring the 1NCE Data Service.
 sidebar_position: 3
 ---
-When monitoring the data service offered by the 1NCE SIM connectivity, there is more to explore than just tracking the usage volume. Through different means of the 1NCE Portal, [Data Streamer Service](/docs/platform-services/platform-services-data-streamer/index) and [1NCE API](/api/), the usage volume, data session connection state and device connectivity can be monitored. In the following sections, the capabilities and benefits of each available interface is presented.
+When monitoring the data service offered by the 1NCE SIM connectivity, there is more to explore than just tracking the usage volume. Through different means of the 1NCE Portal, [Data Streamer Service](/docs/platform-services/platform-services-data-streamer/) and [1NCE API](/api/), the usage volume, data session connection state and device connectivity can be monitored. In the following sections, the capabilities and benefits of each available interface is presented.
 
 ***
 
@@ -15,7 +15,7 @@ The web portal is a ready-to-use interface for monitoring all 1NCE services. The
 
 # Data Streamer
 
-The [Data Streamer Service](/docs/platform-services/platform-services-data-streamer/index) delivers a stream of the event and/or usage records via a wide selection of cloud connectivity applications. The main application case is long-term, automated monitoring of large amount of connected SIM. For the data service, usage volume and event records are part of the stream. Usage records are generated at regular intervals and the end of a data session. The event records show the general connectivity of the device to the mobile network and the creation and deletion of a data session. In the events warnings and errors from the network core are included to ease debugging possibilities. More details are covered in the [Data Streamer Service](/docs/platform-services/platform-services-data-streamer/index) of this guide.
+The [Data Streamer Service](/docs/platform-services/platform-services-data-streamer/) delivers a stream of the event and/or usage records via a wide selection of cloud connectivity applications. The main application case is long-term, automated monitoring of large amount of connected SIM. For the data service, usage volume and event records are part of the stream. Usage records are generated at regular intervals and the end of a data session. The event records show the general connectivity of the device to the mobile network and the creation and deletion of a data session. In the events warnings and errors from the network core are included to ease debugging possibilities. More details are covered in the [Data Streamer Service](/docs/platform-services/platform-services-data-streamer/) of this guide.
 
 ***
 

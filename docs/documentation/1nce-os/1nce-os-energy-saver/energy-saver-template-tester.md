@@ -60,7 +60,7 @@ To try example templates just expand the list of example templates, select any d
 }
 ```
 
-If custom types location\_long and location\_lat are available the position will be forwarded to the [Location Service](/docs/1nce-os/1nce-os-device-locator/index). Longitude and latitude both have to be float64.
+If custom types location\_long and location\_lat are available the position will be forwarded to the [Location Service](/docs/1nce-os/1nce-os-device-locator/). Longitude and latitude both have to be float64.
 
 ### Deep JSON
 

@@ -15,13 +15,13 @@ The 1NCE Portal offers an easy and ready-to-use user interface for monitoring 1N
 
 # Data Streamer
 
-The Data Streamer offers a stream of Event and/or Usage Records via a wide selection of cloud connectivity applications. This service is ideal for long-term, automated monitoring of a large amount of connected SIM. Regarding the SMS services, the message usage volume and event records for the SMS Forwarding Service are included in the Data Streamer. Upon sending or receiving a message a Usage Record entry is sent via the streaming service, showing the used volume for sending a message. The Event Records also log errors from the SMS Forwarding Service. If the provided REST endpoint is not reachable or does not meet the required configuration, a HTTP 500 Error Event will be logged in the Data Streamer. In this case, please verify the configuration and availability of the provided HTTP endpoint. More details are covered in the [Data Streamer Service](/docs/platform-services/platform-services-data-streamer/index) section.
+The Data Streamer offers a stream of Event and/or Usage Records via a wide selection of cloud connectivity applications. This service is ideal for long-term, automated monitoring of a large amount of connected SIM. Regarding the SMS services, the message usage volume and event records for the SMS Forwarding Service are included in the Data Streamer. Upon sending or receiving a message a Usage Record entry is sent via the streaming service, showing the used volume for sending a message. The Event Records also log errors from the SMS Forwarding Service. If the provided REST endpoint is not reachable or does not meet the required configuration, a HTTP 500 Error Event will be logged in the Data Streamer. In this case, please verify the configuration and availability of the provided HTTP endpoint. More details are covered in the [Data Streamer Service](/docs/platform-services/platform-services-data-streamer/) section.
 
 ***
 
 # SMS Forwarder
 
-A further source for monitoring of the SMS Service, including Delivery Reports, MT-SMS, MO-SMS messages and status information is available through the SMS Forwarding Service. Please refer to the [SMS Forwarder Service](/docs/platform-services/platform-services-sms-forwarder/index) section for more details.
+A further source for monitoring of the SMS Service, including Delivery Reports, MT-SMS, MO-SMS messages and status information is available through the SMS Forwarding Service. Please refer to the [SMS Forwarder Service](/docs/platform-services/platform-services-sms-forwarder/) section for more details.
 
 ***
 

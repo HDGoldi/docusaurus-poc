@@ -4,7 +4,7 @@ sidebar_position: 4
 ---
 ## Cloud Integrations failure causes
 
-Cloud Integrator service automatically sets customer's AWS or Webhook integrations into the `Failed` state after 5 failed attempts to forward customer message to the AWS or Webhook integration. If integration is set to `Failed` state - an [Admin Log](/docs/1nce-os/1nce-os-admin-logs/index)  will be generated.
+Cloud Integrator service automatically sets customer's AWS or Webhook integrations into the `Failed` state after 5 failed attempts to forward customer message to the AWS or Webhook integration. If integration is set to `Failed` state - an [Admin Log](/docs/1nce-os/1nce-os-admin-logs/)  will be generated.
 Here are some possible failure reasons:
 
 * Webhook Integration:

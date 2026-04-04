@@ -16,7 +16,7 @@ sidebar_position: 1
 
 ### Geofencing
 
-* Using Geofencing functionality it is possible to set virtual boundaries to detect geofence crossing event and receive a notification about it via the [Cloud integrator](/docs/1nce-os/1nce-os-cloud-integrator/index).
+* Using Geofencing functionality it is possible to set virtual boundaries to detect geofence crossing event and receive a notification about it via the [Cloud integrator](/docs/1nce-os/1nce-os-cloud-integrator/).
 * Users can create up to 10 global geofences across all devices as well as 1 device-specific geofence per-device.
 * Geofences supports two area types: polygon and circle.
 * It is possible to define Geofence event types, which control if geofence events will be triggered on device entering or exiting specified area or on both, if not specified then default is to use both.
@@ -28,7 +28,7 @@ sidebar_position: 1
 ### Cell-tower **Basic and "Plus"**
 
 * Cell-tower **Basic and "Plus"** location modes use different data sources. Currently, Basic mode resolves approximately **30% of locations**, while Plus mode resolves **around 90%**. However, location data can be inaccurate, especially for 3G, 4G, LTE-M, and NB-IoT devices.
-* If "Plus" resolver mode is enabled, then [Device Location credits](/docs/1nce-os/1nce-os-device-locator/index#device-location-credits) will be consumed.
+* If "Plus" resolver mode is enabled, then [Device Location credits](/docs/1nce-os/1nce-os-device-locator/#device-location-credits) will be consumed.
 * NB-IoT locations are not being resolved with "Plus" resolver.
 * After activating the cell tower location setting it can take a few minutes before the first location will be available.
 * Cell tower location data is resolved no more frequently than once an hour.
@@ -40,4 +40,4 @@ sidebar_position: 1
 
 * Interactive drawing and visualization of geofencing is not available in our portal, <a href="https://geojson.io/" target="_blank">Geojson</a> can be used to visualize geofences. Here is the [guide](/docs/1nce-os/1nce-os-device-locator/device-locator-geofencing-guide) .
 * User can update only Geofence name, event types and event sources, coordinates and Geofence type cannot be changed to prevent possible confusion with the previous exit or enter events.
-* Geofence creation and enter/exit events require active [Geofence credits](/docs/1nce-os/1nce-os-device-locator/index#geofence-credits).
+* Geofence creation and enter/exit events require active [Geofence credits](/docs/1nce-os/1nce-os-device-locator/#geofence-credits).

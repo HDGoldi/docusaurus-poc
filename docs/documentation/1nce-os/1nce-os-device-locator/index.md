@@ -117,7 +117,7 @@ If LwM2M is used, the following Resource Addresses can be used to provide the de
 
 The Geofencing Service allows setting virtual boundaries for devices. If a device is crossing a geofence (entering or exiting, configurable), a [geofence event](/docs/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format#geofence) will be generated and sent to the customer's Cloud Integrator Webhook integration or the AWS Integration.
 
-To start using Geofencing you need to purchase "Whereabouts - Geofencing" [credits](/docs/1nce-os/1nce-os-device-locator/index#geofence-credits) first. You can use following [Get customer settings](/api/1nce-os/get-customer-settings/) API endpoint to check if credits are already assigned to you.
+To start using Geofencing you need to purchase "Whereabouts - Geofencing" [credits](/docs/1nce-os/1nce-os-device-locator/#geofence-credits) first. You can use following [Get customer settings](/api/1nce-os/get-customer-settings/) API endpoint to check if credits are already assigned to you.
 Once the credits are available, you can create your first geofence using the [Create Geofence](/api/1nce-os/create-geofence/) API endpoint. For additional info about Geofence creation use following [page](/docs/1nce-os/1nce-os-device-locator/device-locator-geofencing-guide/).
 
 Main use cases for geofencing are:
@@ -135,6 +135,6 @@ Additional credits can be purchased via the Orders tab in the 1NCE Portal by sel
 
 If all credits are depleted or expired then the Geofencing feature is automatically turned off, which means the following:
 
-* you will no longer receive exit or enter [geofence events](/docs/1nce-os/1nce-os-cloud-integrator/index#geofence-events) via your Cloud Integration if the device breaches any existing geofence.
+* you will no longer receive exit or enter [geofence events](/docs/1nce-os/1nce-os-cloud-integrator/#geofence-events) via your Cloud Integration if the device breaches any existing geofence.
 * you will not be able to create any new Geofences, only update or delete existing ones.
 * existing Geofences and associated latest device enter or exit events will continue to exist in passive mode until extra credits are purchased.

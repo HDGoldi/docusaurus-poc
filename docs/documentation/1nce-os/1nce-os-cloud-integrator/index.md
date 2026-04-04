@@ -16,7 +16,7 @@ The Cloud Integrator allows to create, manage and use 1NCE webhooks and direct A
 Whenever a message (UDP, CoAP or LwM2M) from a device is sent to the 1NCE OS endpoint(s) the message is forwarded to the customer's Cloud Integrations.
 
 * LwM2M messages are forwarded to customer's Cloud Integrations.
-* Traversed UDP and CoAP messages will be forwarded to customer's Cloud Integrations. The forwarded message content depends on the energy saver status for the specific protocol. If the [Energy Saver](/docs/1nce-os/1nce-os-energy-saver/index) is not enabled, then message will be forwarded directly, but when enabled, then a processed message will be forwarded.
+* Traversed UDP and CoAP messages will be forwarded to customer's Cloud Integrations. The forwarded message content depends on the energy saver status for the specific protocol. If the [Energy Saver](/docs/1nce-os/1nce-os-energy-saver/) is not enabled, then message will be forwarded directly, but when enabled, then a processed message will be forwarded.
 
 ## Lifecycle Events
 

@@ -145,7 +145,7 @@ To easily test the default setup on the **Thingy:91**, follow these steps using 
 For Memfault diagnostics and debugging, you should upload [zephyr.elf](https://github.com/1NCE-GmbH/blueprint-zephyr/blob/main/plugin_system/nce_debug_memfault_demo/thingy_binaries/zephyr.elf) file to the Memfault portal.
 
   Refer to the [Memfault documentation](https://docs.memfault.com) for instructions on setting up symbol files and debugging integration.\
-  For a faster getting started experience, you can directly use the documentation under [`plugin_system/nce_debug_memfault_demo`](./plugin_system/nce_debug_memfault_demo).
+  For a faster getting started experience, you can directly use the documentation under [`plugin_system/nce_debug_memfault_demo`](https://github.com/1NCE-GmbH/blueprint-zephyr/tree/main/plugin_system/nce_debug_memfault_demo).
 :::
 
 📘 For more detailed device guidance, check the official [Thingy:91 Getting Started Guide](https://docs.nordicsemi.com/bundle/ncs-2.6.1/page/nrf/device_guides/working_with_nrf/nrf91/thingy91_gsg.html)
@@ -674,7 +674,7 @@ While the firmware is being downloaded, the DKs show a circular LED pattern acro
 
 ## Mender Integration
 
-This demo requires the [1NCE Mender Plugin](/docs/1nce-os/1nce-os-plugins-fota-management-mender) to be installed and enabled.
+This demo requires the [1NCE Mender Plugin](/docs/1nce-os/1nce-os-plugins/1nce-os-plugins-fota-management-mender/) to be installed and enabled.
 
 You can use prebuilt binaries and artifacts for quick testing.
 
@@ -873,7 +873,7 @@ On the `Thingy:91` device, LED indicators show the following statuses:
 
 ## 🔌 Memfault Integration
 
-To use this demo, install and enable the [Memfault Plugin](/docs/1nce-os/1nce-os-plugins-device-observability-memfault) for 1NCE OS.
+To use this demo, install and enable the [Memfault Plugin](/docs/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/) for 1NCE OS.
 
 📦 SDK Requirement: [nRF Connect SDK v2.8.0](https://docs.nordicsemi.com/bundle/ncs-2.8.0/page/nrf/gsg_guides.html)
 

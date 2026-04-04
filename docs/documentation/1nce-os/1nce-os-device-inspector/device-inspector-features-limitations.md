@@ -32,7 +32,7 @@ Device state for UDP, CoAP or LwM2M messages.
 
 Whenever messages (UDP, CoAP or LwM2M) from a device are sent to the 1NCE OS endpoint(s) those are stored for 7 days.
 
-* <b>UDP or CoAP </b>. Traversed messages are stored. The message format depends on the energy saver status for the specific protocol. If the [Energy Saver](/docs/1nce-os/1nce-os-energy-saver/index) is not enabled, then message will be converted and stored in Base64 format, but when enabled, then a processed message will be stored in JSON format.
+* <b>UDP or CoAP </b>. Traversed messages are stored. The message format depends on the energy saver status for the specific protocol. If the [Energy Saver](/docs/1nce-os/1nce-os-energy-saver/) is not enabled, then message will be converted and stored in Base64 format, but when enabled, then a processed message will be stored in JSON format.
 
 * <b>LwM2M</b>. Messages are stored in JSON format.
 
@@ -40,7 +40,7 @@ More details in [Historian Web Interface](/docs/1nce-os/1nce-os-device-inspector
 
 ### Map
 
-If the device is utilizing [Device Locator](/docs/1nce-os/1nce-os-device-locator/index), then a location will be pinpointed on a map.
+If the device is utilizing [Device Locator](/docs/1nce-os/1nce-os-device-locator/), then a location will be pinpointed on a map.
 
 <div style={{textAlign: 'center'}}>
 <img src="/img/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations/db2d3b0-device_inspector_map.png" alt="Device Inspector Details. Map" width="80%" />

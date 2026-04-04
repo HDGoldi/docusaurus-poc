@@ -56,7 +56,7 @@ It will take some time for the stack to be created. Nested stacks are shown by t
 
 ## Validate Integration
 
-*A device being able to send data is a prerequisite for this step. For more information refer to the cloud integrator[documentation](/docs/1nce-os/1nce-os-cloud-integrator/index).*
+*A device being able to send data is a prerequisite for this step. For more information refer to the cloud integrator[documentation](/docs/1nce-os/1nce-os-cloud-integrator/).*
 
 Once your stack has been rolled out, you can test your integration using one of your devices or by using [Test AWS Integration](ref:post_v1-integrate-clouds-aws-integrationid-test) endpoint. In AWS go to the IoT Core service. Navigate to the MQTT test client and subscribe to # as shown below:
 

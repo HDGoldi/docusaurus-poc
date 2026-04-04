@@ -294,6 +294,6 @@ Response body:
 
 ## Retrieving Geofence events
 
-After geofence is created, [Cloud integrator](/docs/1nce-os/1nce-os-cloud-integrator/index) will create **ENTER** and **EXIT** events on every geofence border crossing by device, depending on the configuration of geofence `eventTypes`, `eventSources` and also device location update frequency.
+After geofence is created, [Cloud integrator](/docs/1nce-os/1nce-os-cloud-integrator/) will create **ENTER** and **EXIT** events on every geofence border crossing by device, depending on the configuration of geofence `eventTypes`, `eventSources` and also device location update frequency.
 
 Please see [Cloud integrator output format](/docs/1nce-os/1nce-os-cloud-integrator/cloud-integrator-output-format) for details of geofence events.

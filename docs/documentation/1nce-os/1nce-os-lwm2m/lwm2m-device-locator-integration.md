@@ -5,7 +5,7 @@ sidebar_position: 4
 ---
 # LwM2M Integration with Location Service
 
-LwM2M Server will automaticaly forward GPS data to [Device locator](/docs/1nce-os/1nce-os-device-locator/index), if GPS data will be provided in following [OMA](https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod/6.xml) resource addresses:
+LwM2M Server will automaticaly forward GPS data to [Device locator](/docs/1nce-os/1nce-os-device-locator/), if GPS data will be provided in following [OMA](https://raw.githubusercontent.com/OpenMobileAlliance/lwm2m-registry/prod/6.xml) resource addresses:
 
 * `/6/0/0` (latitude, Float)
 * `/6/0/1` (longitude, Float)
@@ -13,8 +13,8 @@ LwM2M Server will automaticaly forward GPS data to [Device locator](/docs/1nce-o
 
 GPS data can be:
 
-* Visualized in the 1NCE OS portal [Device inspector](/docs/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations) & [Device locator](/docs/1nce-os/1nce-os-device-locator/index) tabs.
-* Forwarded to [Cloud integrator](/docs/1nce-os/1nce-os-cloud-integrator/index).
+* Visualized in the 1NCE OS portal [Device inspector](/docs/1nce-os/1nce-os-device-inspector/device-inspector-features-limitations) & [Device locator](/docs/1nce-os/1nce-os-device-locator/) tabs.
+* Forwarded to [Cloud integrator](/docs/1nce-os/1nce-os-cloud-integrator/).
 * Used via [API](/docs/1nce-os/1nce-os-device-locator/device-locator-api).
 
 <div style={{textAlign: 'center'}}>
