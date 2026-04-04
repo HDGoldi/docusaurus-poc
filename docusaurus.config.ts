@@ -178,6 +178,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         })),
         // Old ReadMe OpenAPI page
         { from: '/dev-hub/openapi', to: '/api/' },
+        // Old /blueprints-examples/ leaf pages -> parent module pages
+        { from: '/blueprints-examples/bg95-m3-1nce-os-udp', to: '/docs/blueprints-examples/quectel-bg95-m3/' },
+        { from: '/blueprints-examples/bg95-m3-icmp-ping', to: '/docs/blueprints-examples/quectel-bg95-m3/' },
+        { from: '/blueprints-examples/bg95-m3-network-registration', to: '/docs/blueprints-examples/quectel-bg95-m3/' },
+        { from: '/blueprints-examples/bg95bg77-tcp-client-connection', to: '/docs/blueprints-examples/quectel-bg95-m3/' },
+        { from: '/blueprints-examples/ec25-ec21-1nce-os-udp', to: '/docs/blueprints-examples/quectel-ec25-ec21/' },
+        { from: '/blueprints-examples/ec25-icmp-ping', to: '/docs/blueprints-examples/quectel-ec25-ec21/' },
+        { from: '/blueprints-examples/ec25-mo-sms', to: '/docs/blueprints-examples/quectel-ec25-ec21/' },
+        { from: '/blueprints-examples/ec25-mt-sms', to: '/docs/blueprints-examples/quectel-ec25-ec21/' },
+        { from: '/blueprints-examples/ec25-network-registration', to: '/docs/blueprints-examples/quectel-ec25-ec21/' },
+        { from: '/blueprints-examples/ec25-rat-configuration', to: '/docs/blueprints-examples/quectel-ec25-ec21/' },
+        { from: '/blueprints-examples/ec25-tcp-client-connection', to: '/docs/blueprints-examples/quectel-ec25-ec21/' },
+        { from: '/blueprints-examples/sara-r4-get-http', to: '/docs/blueprints-examples/sara-r410m/' },
+        { from: '/blueprints-examples/sara-r410m-1nce-os-udp', to: '/docs/blueprints-examples/sara-r410m/' },
+        { from: '/blueprints-examples/sara-r410m-network-registration', to: '/docs/blueprints-examples/sara-r410m/' },
+        { from: '/blueprints-examples/sim7000g-1nce-os-coap', to: '/docs/blueprints-examples/simcom-7020g-simcom800l/' },
+        { from: '/blueprints-examples/sim7000g-icmp-ping', to: '/docs/blueprints-examples/sim7000g/' },
+        { from: '/blueprints-examples/sim7000g-mo-sms', to: '/docs/blueprints-examples/sim7000g/' },
+        { from: '/blueprints-examples/sim7000g-mt-sms', to: '/docs/blueprints-examples/sim7000g/' },
+        { from: '/blueprints-examples/sim7000g-network-registration', to: '/docs/blueprints-examples/sim7000g/' },
+        { from: '/blueprints-examples/sim7000g-rat-configuration', to: '/docs/blueprints-examples/sim7000g/' },
+        { from: '/blueprints-examples/sim7000g-tcp-client-connection', to: '/docs/blueprints-examples/sim7000g/' },
+        { from: '/blueprints-examples/sim7000g-udp-client-connection', to: '/docs/blueprints-examples/sim7000g/' },
+        { from: '/blueprints-examples/sim7020e-1nce-os-coap-1', to: '/docs/blueprints-examples/sim7000g/' },
+        { from: '/blueprints-examples/sim800l-http-get', to: '/docs/blueprints-examples/simcom-7020g-simcom800l/' },
+        { from: '/blueprints-examples/sim800l-http-post', to: '/docs/blueprints-examples/simcom-7020g-simcom800l/' },
+        { from: '/blueprints-examples/sim800l-icmp-ping', to: '/docs/blueprints-examples/simcom-7020g-simcom800l/' },
+        { from: '/blueprints-examples/sim800l-mo-sms', to: '/docs/blueprints-examples/simcom-7020g-simcom800l/' },
+        { from: '/blueprints-examples/sim800l-mt-sms', to: '/docs/blueprints-examples/simcom-7020g-simcom800l/' },
+        { from: '/blueprints-examples/sim800l-network-registration', to: '/docs/blueprints-examples/simcom-7020g-simcom800l/' },
+        { from: '/blueprints-examples/sim800l-tcp-client-connection', to: '/docs/blueprints-examples/simcom-7020g-simcom800l/' },
+        { from: '/blueprints-examples/sim800l-udp-client-connection', to: '/docs/blueprints-examples/simcom-7020g-simcom800l/' },
+        { from: '/blueprints-examples/1nce-vpn-linux-client', to: '/docs/blueprints-examples/recipes/' },
+        { from: '/blueprints-examples/wvdial-tutorial', to: '/docs/blueprints-examples/recipes/' },
+        // Wrong /docs/1nce-os/ plugin paths (missing /1nce-os-plugins/ segment)
+        { from: '/docs/1nce-os/1nce-os-plugins-device-observability-memfault', to: '/docs/1nce-os/1nce-os-plugins/1nce-os-plugins-device-observability-memfault/' },
+        { from: '/docs/1nce-os/1nce-os-plugins-fota-management-mender', to: '/docs/1nce-os/1nce-os-plugins/1nce-os-plugins-fota-management-mender/' },
+        // Deep SDK blueprints path
+        { from: '/docs/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/plugin_system/nce_debug_memfault_demo', to: '/docs/1nce-os/1nce-os-sdk-blueprints/sdk-blueprints-zephyr/' },
+        // Old /blueprints-examples/examples-sms/ sub-paths
+        { from: '/blueprints-examples/examples-sms/examples-mo-sms', to: '/docs/blueprints-examples/examples-sms/examples-mo-sms/' },
+        { from: '/blueprints-examples/examples-sms/examples-mt-sms', to: '/docs/blueprints-examples/examples-sms/examples-mt-sms/' },
+        // Root shortcut paths
+        { from: '/examples-data-streamer', to: '/docs/blueprints-examples/examples-data-streamer/' },
+        { from: '/examples-sms', to: '/docs/blueprints-examples/examples-sms/' },
+        { from: '/examples-sms-forwarder', to: '/docs/blueprints-examples/examples-sms-forwarder/' },
+        { from: '/examples-vpn', to: '/docs/blueprints-examples/examples-vpn/' },
+        { from: '/recipes', to: '/docs/blueprints-examples/recipes/' },
       ],
       createRedirects(existingPath) {
         const redirects: string[] = [];
@@ -229,6 +277,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
         if (existingPath.includes('/terms-abbreviations')) {
           redirects.push('/dev-hub/terms-abbreviations');
+        }
+
+        // Old ReadMe /index/ suffix: /{section}/.../index/ -> /docs/{section}/.../
+        const indexSections = ['1nce-os', 'network-services', 'platform-services', 'blueprints-examples'];
+        for (const section of indexSections) {
+          if (existingPath.startsWith(`/docs/${section}/`)) {
+            const withoutDocs = existingPath.replace('/docs/', '/');
+            const withoutTrailing = withoutDocs.replace(/\/$/, '');
+            redirects.push(`${withoutTrailing}/index`);
+          }
         }
 
         return redirects.length > 0 ? redirects : undefined;
