@@ -176,9 +176,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           from,
           to: `${to}/`,
         })),
+        // Old ReadMe OpenAPI page
+        { from: '/dev-hub/openapi', to: '/api/' },
       ],
       createRedirects(existingPath) {
         const redirects: string[] = [];
+
+        // Safety net: /{section}/... -> /docs/{section}/... for any doc page
+        // Catches external links/bookmarks using old paths without /docs/ prefix
+        const docSections = ['1nce-os', 'network-services', 'platform-services', '1nce-portal', 'connectivity-services', 'sim-cards'];
+        for (const section of docSections) {
+          if (existingPath.startsWith(`/docs/${section}/`) || existingPath === `/docs/${section}`) {
+            redirects.push(existingPath.replace('/docs/', '/'));
+          }
+        }
 
         // Platform sections: /platform/{section}/* was moved to /docs/{section}/*
         if (existingPath.match(/\/docs\/(1nce-os|1nce-portal|platform-services)(\/|$)/)) {
