@@ -54,7 +54,7 @@ See: `.planning/milestones/v1.3-ROADMAP.md` for full details.
 
 </details>
 
-### 🚧 v1.4 Client-Side Search (In Progress)
+### v1.4 Client-Side Search (In Progress)
 
 **Milestone Goal:** Developers can instantly find any documentation page, API endpoint page, or in-page content via a zero-cost client-side search bar.
 
@@ -74,10 +74,11 @@ See: `.planning/milestones/v1.3-ROADMAP.md` for full details.
   3. User can search for in-page content (headings, paragraphs, code blocks) and find matches
   4. User can click a search result and navigate directly to the correct page (both /docs/ and /api/ paths)
   5. User can open search with Cmd/K (macOS) or Ctrl/K (Windows/Linux)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 13-01: TBD
+- [ ] 13-01-PLAN.md — Install search plugin, configure dual-instance indexing, validate Rspack compatibility
+- [ ] 13-02-PLAN.md — Exclude redirect stubs from index, measure index size, human UAT verification
 
 ### Phase 14: Search UI Branding & Polish
 **Goal**: Search overlay matches 1NCE branding and provides a polished user experience with highlighted matches
@@ -124,6 +125,6 @@ Phases execute in numeric order: 13 → 14 → 15
 | 10. Crawler Foundation | v1.3 | 1/1 | Complete | 2026-04-03 |
 | 11. LLM Discoverability | v1.3 | 1/1 | Complete | 2026-04-04 |
 | 12. AI Agent Integration | v1.3 | 1/1 | Complete | 2026-04-04 |
-| 13. Search Plugin & Core Indexing | v1.4 | 0/0 | Not started | - |
+| 13. Search Plugin & Core Indexing | v1.4 | 0/2 | Planning | - |
 | 14. Search UI Branding & Polish | v1.4 | 0/0 | Not started | - |
 | 15. Deployment & Verification | v1.4 | 0/0 | Not started | - |
