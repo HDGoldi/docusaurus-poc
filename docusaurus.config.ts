@@ -310,7 +310,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },
   ],
 
-  themes: ['docusaurus-theme-openapi-docs'],
+  themes: [
+    'docusaurus-theme-openapi-docs',
+    ['@easyops-cn/docusaurus-search-local', {
+      // Core indexing
+      indexDocs: true,
+      indexBlog: false,
+      indexPages: false,
+
+      // Multi-instance: CRITICAL — both docs plugin instances
+      docsRouteBasePath: ['/docs', '/api'],
+      docsDir: ['docs/documentation', 'docs/api'],
+
+      // Language
+      language: ['en'],
+
+      // Caching — content-hashed filenames for CloudFront
+      hashed: 'filename',
+
+      // UI behavior — plugin defaults per D-10
+      searchBarShortcutHint: true,
+      searchBarPosition: 'right',
+      searchResultLimits: 8,
+      explicitSearchResultPath: true,
+    }],
+  ],
 
   themeConfig: {
     image: 'img/1nce-social-card.png',

@@ -37,6 +37,7 @@
     "@docusaurus/preset-classic": "3.9.2",
     "@docusaurus/theme-classic": "^3.9.2",
     "@docusaurus/theme-common": "^3.9.2",
+    "@easyops-cn/docusaurus-search-local": "^0.55.1",
     "@mdx-js/react": "^3.0.0",
     "@n8n/chat": "^1.14.0",
     "clsx": "^2.0.0",
