@@ -37,10 +37,16 @@ Developers can browse all existing documentation and interactively test API endp
 
 ### Active
 
-- [ ] Client-side full-text search bar in main navbar (right side, next to Terms and Abbreviations)
-- [ ] Search index covering all doc pages + API endpoint pages + in-page content
-- [ ] Overlay results panel with darkened background and type-ahead suggestions
-- [ ] Click-to-navigate from search results to target page
+- [ ] Search UI branding, theming, and result quality polish (Phase 14)
+- [ ] Search context tab filtering (Documentation vs API) (Phase 14)
+
+### Validated in Phase 13: Search Plugin Core Indexing
+
+- ✓ Client-side full-text search bar in main navbar (right side) — v1.1 Phase 13
+- ✓ Search index covering all 298 doc pages + 125 API endpoint pages + in-page content — v1.1 Phase 13
+- ✓ Cmd/K keyboard shortcut opens search modal with type-ahead results — v1.1 Phase 13
+- ✓ Click-to-navigate from search results to target page (both /docs/ and /api/) — v1.1 Phase 13
+- ✓ 690 redirect stub pages excluded from search index via ignoreFiles patterns — v1.1 Phase 13
 
 ### Out of Scope
 
