@@ -143,6 +143,17 @@ h2, h3 {
   --chat--color-secondary-shade-50: #091e36;
 }
 
+/* Glossary letter map — spacing for letter links */
+.glossary-letter-map a {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* Glossary intro paragraph — constrain height for tighter layout */
+article:has(#custom-page) > p {
+  height: 40px;
+}
+
 /* n8n chat toggle button — use primary brand color */
 .chat-window-toggle {
   background-color: var(--ifm-color-primary) !important;
