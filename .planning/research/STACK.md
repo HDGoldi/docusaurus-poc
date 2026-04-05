@@ -1,249 +1,147 @@
-# Stack Research: v1.3 AI & Search Readiness
+# Stack Research: v1.4 Client-Side Search
 
-**Domain:** llms.txt, skill.md, robots.txt for Docusaurus 3.9.2
-**Researched:** 2026-04-03
-**Confidence:** HIGH (robots.txt, static file serving), MEDIUM (llms.txt plugin), LOW (skill.md convention)
+**Domain:** Client-side full-text search for Docusaurus 3.9.2
+**Researched:** 2026-04-05
+**Confidence:** HIGH (plugin selection), MEDIUM (multi-instance indexing), HIGH (integration approach)
 
----
+## Recommendation
 
-## Executive Summary
+Use **@easyops-cn/docusaurus-search-local v0.55.1** because it is the most actively maintained, most downloaded (195K weekly), supports Docusaurus 3.x natively, uses lunr.js for proven full-text search, and its config accepts arrays for `docsRouteBasePath` and `docsDir` -- directly supporting the multi-instance docs setup this project uses.
 
-All three features (llms.txt, skill.md, robots.txt) are achievable with one new plugin and static files. robots.txt is trivially a static file. skill.md is a static file served from `static/.well-known/skills/`. llms.txt has two viable approaches: the `@signalwire/docusaurus-plugin-llms-txt` plugin (auto-generates from built HTML) or a custom build script (hand-curated template with injected links). Given the project requirement for a **hybrid hand-curated + generated** approach, the recommended path is the SignalWire plugin with manual section configuration, falling back to a custom script only if the plugin's section customization proves insufficient.
+## Recommended Stack
 
----
+### Search Plugin
 
-## New Additions for v1.3
+| Technology | Version | Purpose | Why | Confidence |
+|------------|---------|---------|-----|------------|
+| @easyops-cn/docusaurus-search-local | ^0.55.1 | Client-side full-text search | 195K weekly downloads. Last published 2026-02-28. Supports Docusaurus 3.x (`@docusaurus/theme-common ^2 || ^3`). Lunr.js-based. Build-time index generation. Accepts `docsRouteBasePath` and `docsDir` as arrays, which is required for the dual docs-instance setup (preset-classic at `/docs` + standalone `@docusaurus/plugin-content-docs` at `/api`). Keyboard shortcut (Cmd+K), highlight on target page, fuzzy matching, search context by paths -- all included. | HIGH |
 
-### 1. llms.txt Generation
+No additional dependencies required -- the plugin bundles lunr.js, mark.js, cheerio, and its own autocomplete UI.
 
-#### Recommended: `@signalwire/docusaurus-plugin-llms-txt`
+### Configuration Required
 
-| Property | Value |
-|----------|-------|
-| Package | `@signalwire/docusaurus-plugin-llms-txt` |
-| Version | `1.2.2` (stable) or `2.0.0-alpha.7` (latest pre-release) |
-| Peer dependency | `@docusaurus/core ^3.0.0` -- compatible with 3.9.2 |
-| License | MIT |
-| Published | 2025-07-23 (v1.2.2) |
-
-**Why this plugin:**
-- Processes final rendered HTML, not source MDX -- captures resolved components, frontmatter, and generated API pages
-- Supports **manual section definitions** with custom names and route patterns, plus auto-generated sections from URL depth -- this is the "hybrid" capability the project needs
-- Generates both `llms.txt` (index with links) and optional `llms-full.txt` (all content inlined)
-- Handles the 125 generated API endpoint pages automatically
-- Shares 3 dependencies with the existing project (`unified ^11`, `remark-stringify ^11`, `unist-util-visit ^5`) -- minimal dependency bloat
-
-**How it achieves the hybrid approach:**
-1. Define manual sections for product-first organization (e.g., "1NCE Connect", "1NCE OS") with hand-curated descriptions and explicit route patterns
-2. Let `autoSectionDepth` fill in link lists from matching built pages
-3. Hand-curate the section names, ordering, and descriptions; let the plugin auto-discover the links within each section
-
-**Configuration sketch:**
-```typescript
-['@signalwire/docusaurus-plugin-llms-txt', {
-  llmsTxt: {
-    title: '1NCE Developer Hub',
-    description: 'Documentation for 1NCE IoT connectivity services',
-    sections: [
-      {
-        name: '1NCE Connect',
-        description: 'SIM management, connectivity, and network services',
-        routes: ['/docs/connectivity-services/', '/docs/network-services/', '/docs/sim-cards/'],
-      },
-      {
-        name: '1NCE OS',
-        description: 'IoT operating system, device integration, data broker',
-        routes: ['/docs/1nce-os/'],
-      },
-      {
-        name: '1NCE Portal',
-        description: 'Web portal for SIM management and account administration',
-        routes: ['/docs/1nce-portal/'],
-      },
-      {
-        name: 'API Reference',
-        description: 'REST API endpoints for programmatic access',
-        routes: ['/api/'],
-      },
-    ],
-    autoSectionDepth: 2,
-    generateFullTxt: true,
-  },
-  markdown: {
-    contentSelector: 'article',
-  },
-}]
-```
-
-**Risk:** MEDIUM. The plugin's manual section configuration API is not fully documented in the README. The configuration sketch above is based on the plugin's described capabilities (manual sections with custom names and route patterns) but exact option names may differ. Recommend installing the plugin and inspecting its TypeScript types (`node_modules/@signalwire/docusaurus-plugin-llms-txt/lib/types.d.ts`) during implementation.
-
-**Fallback:** If the plugin's section customization proves too limited, write a custom Docusaurus plugin (postBuild lifecycle hook) that:
-1. Reads a hand-curated `llms-template.md` from the project root
-2. Uses `glob` (already in devDeps) to discover built `.html` files
-3. Injects link lists into marked sections of the template
-4. Writes `llms.txt` to the `build/` directory
-
-The custom approach uses no new dependencies -- `glob`, `unified`, `remark-stringify`, and `gray-matter` are already in the project.
-
-#### Companion Theme (Optional)
-
-| Property | Value |
-|----------|-------|
-| Package | `@signalwire/docusaurus-theme-llms-txt` |
-| Version | `1.2.2` |
-| Purpose | Adds copy-to-clipboard UI, page-level `.md` download links |
-
-**Recommendation:** Skip for v1.3. The theme adds UI flourishes that are not part of the v1.3 scope. The plugin alone generates the files.
-
-### 2. robots.txt -- Static File
-
-**No plugin needed.** Docusaurus does not generate robots.txt. Place it in `static/robots.txt` and it will be copied to `build/robots.txt`, served at `https://help.1nce.com/robots.txt`.
-
-```
-User-agent: *
-Allow: /
-
-Sitemap: https://help.1nce.com/sitemap.xml
-```
-
-The sitemap.xml is already generated by `@docusaurus/plugin-sitemap` (included in preset-classic). No new packages.
-
-| Item | Status |
-|------|--------|
-| sitemap.xml generation | Already handled by preset-classic |
-| robots.txt | Static file, zero dependencies |
-| CloudFront compatibility | Static files from S3 are served directly, no special config needed |
-
-**Confidence:** HIGH -- verified against Docusaurus official SEO docs.
-
-### 3. skill.md at `/.well-known/skills/`
-
-**Important caveat:** The `/.well-known/skills/` convention with `skill.md` and `index.json` discovery is NOT an established public standard. No RFC, no widely-adopted specification repository, and no GitHub repositories were found documenting this convention. It appears to be a project-defined or emerging convention.
-
-**Confidence:** LOW on the convention itself. HIGH on the serving mechanism.
-
-**Serving mechanism:** Place files in `static/.well-known/skills/`:
-```
-static/
-  .well-known/
-    skills/
-      index.json       # Discovery manifest
-      1nce-api.md      # Skill file for API integration
-```
-
-Docusaurus copies the `static/` directory structure to `build/` preserving hierarchy. Files at `static/.well-known/skills/index.json` will be served at `https://help.1nce.com/.well-known/skills/index.json`.
-
-**CloudFront consideration:** The existing CloudFront Function rewrites paths to `index.html` for SPA routing. It must NOT rewrite requests for `/.well-known/*`, `robots.txt`, `llms.txt`, or `sitemap.xml`. The CloudFront Function likely already handles this correctly (it should only rewrite paths without file extensions), but **verify during implementation**.
-
-**No npm packages needed.** These are hand-authored static files.
-
----
-
-## Summary of New Packages
-
-| Package | Version | Purpose | Required? |
-|---------|---------|---------|-----------|
-| `@signalwire/docusaurus-plugin-llms-txt` | `^1.2.2` | llms.txt + llms-full.txt generation | YES (recommended) |
-
-That's it. One new package.
-
-### Installation
-
-```bash
-npm install @signalwire/docusaurus-plugin-llms-txt@^1.2.2
-```
-
-### New Static Files (no packages needed)
-
-| File | Served At | Hand-Authored? |
-|------|-----------|----------------|
-| `static/robots.txt` | `/robots.txt` | Yes |
-| `static/.well-known/skills/index.json` | `/.well-known/skills/index.json` | Yes |
-| `static/.well-known/skills/1nce-api.md` | `/.well-known/skills/1nce-api.md` | Yes |
-
----
+| Setting | Value | Rationale |
+|---------|-------|-----------|
+| `docsRouteBasePath` | `["/docs", "/api"]` | Index both the documentation (298 pages at `/docs`) and API Explorer (125 pages at `/api`) |
+| `docsDir` | `["docs/documentation", "docs/api"]` | Source directories corresponding to each docs plugin instance |
+| `indexDocs` | `true` | Index all documentation content |
+| `indexBlog` | `false` | No blog in this project |
+| `indexPages` | `false` | No standalone pages need indexing |
+| `hashed` | `true` | Cache-bust search index on content changes -- important for CloudFront CDN caching |
+| `language` | `["en"]` | English only |
+| `searchResultLimits` | `8` | Default is fine for overlay panel |
+| `highlightSearchTermsOnTargetPage` | `true` | Matches the "click-to-navigate" requirement -- users see what matched |
+| `searchBarShortcutKeymap` | `"mod+k"` | Standard keyboard shortcut (Cmd+K on Mac, Ctrl+K on Windows) |
+| `searchBarPosition` | `"right"` | Matches requirement: "right side, next to Terms and Abbreviations" |
+| `explicitSearchResultPath` | `true` | Show breadcrumb paths in results so users distinguish docs vs API results |
+| `fuzzyMatchingDistance` | `1` | Allow single-character typo tolerance |
 
 ## Alternatives Considered
 
-| Recommended | Alternative | Why Not |
-|-------------|-------------|---------|
-| `@signalwire/docusaurus-plugin-llms-txt` for llms.txt | Custom postBuild script | Plugin handles HTML-to-Markdown conversion, page discovery, and section organization. Only fall back to custom if plugin sections are too rigid. |
-| `@signalwire/docusaurus-plugin-llms-txt` v1.2.2 (stable) | v2.0.0-alpha.7 (pre-release) | Alpha releases risk breaking changes. v1.2.2 is stable and sufficient. |
-| Static `robots.txt` in `static/` | `docusaurus-plugin-robots-txt` npm package | Over-engineering. A 3-line static file does not need a plugin. |
-| Static skill.md files in `static/.well-known/` | Docusaurus plugin to generate skill.md | The skill files are entirely hand-authored (auth flows, patterns, gotchas). No generation needed. |
-| Skip `@signalwire/docusaurus-theme-llms-txt` | Install it for UI features | Out of scope for v1.3. The theme adds per-page markdown download buttons -- not a v1.3 requirement. |
+| Plugin | Version | Weekly Downloads | Last Published | Why Not |
+|--------|---------|-----------------|----------------|---------|
+| @easyops-cn/docusaurus-search-local | 0.55.1 | **195K** | 2026-02-28 | **SELECTED** |
+| docusaurus-lunr-search | 3.6.0 | 97K | 2025-01-10 | Stale -- not updated in 15 months. Older autocomplete.js dependency. No explicit multi-docsDir array support. Indexes built HTML via rehype-parse rather than source markdown, which may work but is less well-documented for multi-instance setups. |
+| @cmfcmf/docusaurus-search-local | 2.0.1 | 29K | 2025-10-25 | Lower adoption (29K vs 195K). Pulls in Algolia autocomplete UI dependencies (`@algolia/autocomplete-js`, `@algolia/client-search`, `algoliasearch`) even though it does NOT use Algolia servers -- unnecessary bundle bloat. No evidence of multi-docs-instance support in docs or issues. |
+| Custom lunr.js / FlexSearch | N/A | N/A | N/A | Significant custom work: need to write build-time indexer, search UI component, result highlighting, keyboard shortcuts. The @easyops-cn plugin already does all of this. No benefit to rolling your own for a docs site. |
+| Algolia DocSearch | N/A | N/A | N/A | **Explicitly out of scope** per PROJECT.md. Requires application approval process. External service dependency. Not zero-cost at scale. |
 
----
+### Detailed Comparison: @easyops-cn vs @cmfcmf vs docusaurus-lunr-search
+
+| Criterion | @easyops-cn | @cmfcmf | docusaurus-lunr-search |
+|-----------|-------------|---------|----------------------|
+| Docusaurus 3.x support | Yes (peer dep) | Yes (v2.0+) | Yes (peer dep) |
+| Search engine | lunr.js | lunr.js | lunr.js |
+| Multi-instance docs | Array config for `docsRouteBasePath`/`docsDir` | Not documented | Not documented |
+| Weekly downloads | 195K | 29K | 97K |
+| Last publish | Feb 2026 | Oct 2025 | Jan 2025 |
+| Keyboard shortcut | Cmd+K built-in | Cmd+K built-in | None built-in |
+| Highlight on target | Yes | Yes | Yes |
+| Fuzzy matching | Yes (configurable distance) | No | No |
+| Extra dependencies | None (self-contained) | Algolia autocomplete UI libs (unused but bundled) | autocomplete.js (older) |
+| Search context by paths | Yes | No | No |
+| Works in dev mode | No (build only) | No (build only) | No (build only) |
+| i18n / CJK support | lunr-languages + jieba | lunr-languages | lunr-languages |
 
 ## What NOT to Add
 
 | Technology | Why Not |
 |------------|---------|
-| `docusaurus-plugin-robots-txt` | Static file is simpler and more maintainable than a plugin for 3 lines of config |
-| `@signalwire/docusaurus-theme-llms-txt` | UI theme for llms.txt pages -- not needed for v1.3 scope (file generation only) |
-| Any `sitemap.xml` changes | Already generated by preset-classic, already correct. Just reference it from robots.txt. |
-| Custom Docusaurus plugin for robots.txt | Static file. Zero complexity. |
-| `generate-robotstxt` npm package | Designed for webpack/build pipelines. A static file is the Docusaurus-idiomatic approach. |
+| Algolia DocSearch | Explicitly out of scope. Requires approval process. External dependency. |
+| @cmfcmf/docusaurus-search-local | Bundles unused Algolia client libraries. Lower community adoption. |
+| docusaurus-lunr-search | Stale maintenance. 15 months since last release. |
+| FlexSearch | Would require custom integration. No Docusaurus plugin exists. Not worth the effort. |
+| Typesense / Meilisearch | Server-side search engines. Require hosting infrastructure. Overkill for a static docs site with ~420 pages. |
+| Custom search UI | The @easyops-cn plugin provides a complete search UI with overlay, keyboard shortcuts, and result highlighting. No reason to rebuild. |
 
----
+## Installation
 
-## Integration with Existing Config
+```bash
+npm install @easyops-cn/docusaurus-search-local
+```
 
-### docusaurus.config.ts Changes
+No dev dependencies needed. No additional tooling required.
 
-Add the llms.txt plugin to the existing `plugins` array:
+## Integration Point: docusaurus.config.ts
+
+The plugin is added as a **theme** (not a plugin), in the `themes` array of `docusaurus.config.ts`:
 
 ```typescript
-plugins: [
-  // ... existing plugins (api docs, openapi, client-redirects, sass, polyfill)
-  ['@signalwire/docusaurus-plugin-llms-txt', {
-    // Section configuration -- exact options TBD after type inspection
+themes: [
+  ['@easyops-cn/docusaurus-search-local', {
+    docsRouteBasePath: ['/docs', '/api'],
+    docsDir: ['docs/documentation', 'docs/api'],
+    indexDocs: true,
+    indexBlog: false,
+    indexPages: false,
+    hashed: true,
+    language: ['en'],
+    highlightSearchTermsOnTargetPage: true,
+    searchBarShortcutKeymap: 'mod+k',
+    searchBarPosition: 'right',
+    explicitSearchResultPath: true,
+    fuzzyMatchingDistance: 1,
+    searchResultLimits: 8,
   }],
 ],
 ```
 
-No other config changes needed. No theme changes. No preset changes.
+### Critical: Multi-Instance Awareness
 
-### CloudFront Function Verification
+The project uses two `@docusaurus/plugin-content-docs` instances:
+1. **preset-classic** docs instance: `path: 'docs/documentation'`, `routeBasePath: '/docs'`
+2. **standalone** docs instance: `id: 'api'`, `path: 'docs/api'`, `routeBasePath: '/api'`
 
-The existing CloudFront Function at `/scripts/` or in the CloudFormation template must be checked to ensure it does NOT rewrite these paths to `index.html`:
-- `/robots.txt`
-- `/llms.txt`
-- `/llms-full.txt`
-- `/.well-known/*`
-- `/sitemap.xml` (already working, but verify)
+The `docsRouteBasePath` and `docsDir` arrays MUST match these in the same order. The @easyops-cn plugin uses these arrays to correlate source directories with route prefixes for index building.
 
-Typical CloudFront Functions check for a file extension or known static paths before rewriting. If the function rewrites ALL paths without extensions, `robots.txt` and `llms.txt` (which have extensions) should be fine, but `/.well-known/skills/` (directory path) may need an exception.
+### API-Generated MDX Pages
 
-### Shared Dependencies (No Conflicts Expected)
+The openapi-docs plugin generates `.mdx` files into `docs/api/` at `docusaurus gen-api-docs` time (pre-build). These files exist on disk before the search plugin's build-time indexer runs, so they WILL be indexed. No special configuration is needed beyond including `docs/api` in the `docsDir` array.
 
-The plugin's dependencies overlap with existing project deps:
+## Known Limitations
 
-| Dependency | Plugin Needs | Project Has | Conflict? |
-|------------|-------------|-------------|-----------|
-| `unified` | `^11` | `^11.0.5` | No |
-| `remark-stringify` | `^11` | `^11.0.0` | No |
-| `unist-util-visit` | `^5` | `^5.1.0` | No |
-| `remark-gfm` | `^4` | Bundled with Docusaurus | No |
-| `rehype-parse` | `^9` | Not installed | New transitive dep |
-| `rehype-remark` | `^10` | Not installed | New transitive dep |
-| `fs-extra` | `^11` | Not installed | New transitive dep |
-| `p-map` | `^7` | Not installed | New transitive dep |
+| Limitation | Impact | Mitigation |
+|------------|--------|------------|
+| No dev mode search | Cannot test search during `npm start` | Use `npm run build && npm run serve` to test search. Add to QA checklist. |
+| Index size grows with content | ~420 pages will produce a non-trivial JSON index | `hashed: true` enables CDN caching. Lunr indices are typically 10-30% of source text size. For ~420 pages, expect 1-5 MB index. Gzip compression reduces this to ~200KB-1MB. |
+| Multi-instance versioning bug (issue #544) | Open issue with search in versioned multi-instance setups | NOT APPLICABLE -- this project does not use doc versioning. Single version only. |
+| No server-side search | All indexing/searching is client-side | Acceptable for ~420 pages. Server-side search (Algolia/Typesense) only needed at 1000+ pages. |
 
-No version conflicts expected. The 4 new transitive dependencies are standard ecosystem packages.
+## Build Impact
 
----
+The search plugin runs a build-time indexer that parses all source markdown/MDX files and generates a JSON search index. Expected impact:
+
+- **Build time increase:** Moderate (5-15 seconds added to build, depending on content volume)
+- **Output size increase:** 1-5 MB uncompressed index JSON (gzips to ~200KB-1MB)
+- **Rspack compatibility:** The plugin is a theme (not a bundler plugin). It generates static assets consumed by the build. Should work with `@docusaurus/faster` (Rspack) without issues -- the search index is a JSON file loaded at runtime, not a webpack-specific artifact.
 
 ## Sources
 
-- llms.txt specification: `https://llmstxt.org/` -- format and requirements (HIGH confidence)
-- `@signalwire/docusaurus-plugin-llms-txt` npm: v1.2.2, peer dep `@docusaurus/core ^3.0.0` (HIGH confidence -- verified via npm CLI)
-- SignalWire plugin GitHub: `github.com/signalwire/docusaurus-plugins` -- features and configuration (MEDIUM confidence -- README describes capabilities but exact config option names not fully documented)
-- Docusaurus static assets: `docusaurus.io/docs/static-assets` -- files in `static/` copied to `build/` root (HIGH confidence)
-- Docusaurus SEO docs: `docusaurus.io/docs/seo` -- robots.txt as static asset, sitemap from preset-classic (HIGH confidence)
-- skill.md / `.well-known/skills/` convention: No public specification found (LOW confidence on the convention; HIGH confidence on the serving mechanism via Docusaurus static files)
-- Current project `package.json` and `docusaurus.config.ts` -- direct inspection (HIGH confidence)
-
----
-*Stack research for: v1.3 AI & Search Readiness*
-*Researched: 2026-04-03*
+- npm registry: `npm view @easyops-cn/docusaurus-search-local` -- HIGH confidence (version, peer deps, dependencies, publish date verified directly)
+- npm registry: `npm view @cmfcmf/docusaurus-search-local` -- HIGH confidence
+- npm registry: `npm view docusaurus-lunr-search` -- HIGH confidence
+- npm downloads API: weekly download counts -- HIGH confidence (queried 2026-04-05)
+- GitHub easyops-cn/docusaurus-search-local README -- MEDIUM confidence (configuration options, feature list)
+- GitHub issue #550 (openapi-docs compatibility) -- MEDIUM confidence (resolved by upgrading openapi-docs, confirms compatibility works)
+- GitHub issue #544 (multi-instance versioning) -- MEDIUM confidence (open issue but not applicable to this project's non-versioned setup)
+- Project docusaurus.config.ts -- HIGH confidence (verified multi-instance setup, route paths, source directories)

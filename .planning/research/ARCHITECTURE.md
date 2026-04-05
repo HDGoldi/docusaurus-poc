@@ -1,327 +1,391 @@
-# Architecture: AI & Search Readiness Integration
+# Architecture Research
 
-**Domain:** llms.txt, skill.md, robots.txt integration with Docusaurus 3.9.2
-**Researched:** 2026-04-03
-**Overall confidence:** HIGH (standards are well-documented; integration with existing architecture is straightforward)
+**Domain:** Client-side full-text search for Docusaurus 3.9.2 documentation site
+**Researched:** 2026-04-05
+**Confidence:** HIGH
 
-## Executive Summary
-
-This document covers how three new file types -- `llms.txt`, `skill.md` (at `/.well-known/skills/`), and `robots.txt` -- integrate with the existing Docusaurus 3.9.2 site deployed on S3 + CloudFront. The recommended approach is a **hybrid strategy**: static files for hand-curated content (`robots.txt`, `skill.md` templates) combined with a build-time generation script for `llms.txt` that assembles curated prose with dynamically generated link inventories. No Docusaurus plugin is needed for `robots.txt` or `skill.md`; the `docusaurus-plugin-llms` package (v0.3.0) exists but is not recommended because the project requires product-first curated organization, not auto-generated page dumps.
-
-## Integration Strategy Overview
-
-| File | Approach | Location in Repo | Served At | Why |
-|------|----------|-------------------|-----------|-----|
-| `robots.txt` | Pure static file | `static/robots.txt` | `/robots.txt` | Simple, no dynamic content. Docusaurus copies `static/` contents to `build/` root. |
-| `llms.txt` | Build-time script (hybrid) | Template in `templates/llms.txt.template` + script in `scripts/generate-llms-txt.ts` + output to `build/llms.txt` | `/llms.txt` | Curated product-first structure with dynamically generated link sections from sidebar data. |
-| `llms-full.txt` | Build-time script | Same script generates both | `/llms-full.txt` | Full concatenated content for LLMs that want everything in one request. |
-| `skill.md` | Pure static file | `static/.well-known/skills/1nce-api.md` | `/.well-known/skills/1nce-api.md` | Hand-curated auth flows, patterns, gotchas. No dynamic content needed. |
-| `skills/index.json` | Pure static file | `static/.well-known/skills/index.json` | `/.well-known/skills/index.json` | Discovery file listing available skills. Static because skill inventory changes rarely. |
-
-## Component Architecture
-
-### New Components
+## System Overview
 
 ```
-Project Root
-+-- static/
-|   +-- robots.txt                          # NEW: static file
-|   +-- .well-known/
-|       +-- skills/
-|           +-- index.json                  # NEW: skill discovery index
-|           +-- 1nce-api.md                 # NEW: curated API skill doc
-+-- templates/
-|   +-- llms.txt.template                   # NEW: curated Markdown template with placeholders
-+-- scripts/
-|   +-- generate-llms-txt.ts                # NEW: build-time script
+BUILD TIME                                    RUNTIME (Browser)
+==========                                    =================
+
+┌──────────────────────────────┐
+│  Docusaurus Build Pipeline   │
+│                              │
+│  preset-classic (docs)       │              ┌─────────────────────────┐
+│    /docs/ -- 166 MDX files   │──build───>   │  Static HTML pages      │
+│                              │              │  /docs/**/*.html        │
+│  plugin-content-docs (api)   │──build───>   │  /api/**/*.html         │
+│    /api/ -- 126 MDX files    │              └──────────┬──────────────┘
+│                              │                         │
+│  Search Theme (postBuild)    │                         │
+│    ├─ Scans all HTML output  │              ┌──────────▼──────────────┐
+│    ├─ Extracts text + titles │              │  search-index.json      │
+│    ├─ Builds lunr.js index   │──writes──>   │  (chunked by route)     │
+│    └─ Hashes for caching     │              └──────────┬──────────────┘
+│                              │                         │
+└──────────────────────────────┘                         │
+                                                         │ fetch on search
+                                              ┌──────────▼──────────────┐
+                                              │  SearchBar Component    │
+                                              │  (in Navbar)            │
+                                              │                         │
+                                              │  ┌───────────────────┐  │
+                                              │  │  Web Worker        │  │
+                                              │  │  (lunr.js query)   │  │
+                                              │  └───────┬───────────┘  │
+                                              │          │              │
+                                              │  ┌───────▼───────────┐  │
+                                              │  │  Results Dropdown  │  │
+                                              │  │  (overlay + nav)   │  │
+                                              │  └───────────────────┘  │
+                                              └─────────────────────────┘
 ```
+
+### How It Works End-to-End
+
+1. **Build time:** Docusaurus builds all pages (docs + API) into static HTML in `build/`.
+2. **Post-build hook:** The search theme's `postBuild` lifecycle hook scans all generated HTML files, extracts text content (title, headings, paragraphs), and builds a lunr.js inverted index.
+3. **Index output:** The index is written as one or more JSON files into `build/` (e.g., `search-index-{hash}.json`), chunked by route prefix for lazy loading.
+4. **Runtime:** When a user focuses the search bar or types, the browser fetches the relevant index chunk(s) and loads them into a Web Worker.
+5. **Query:** The Web Worker runs lunr.js queries against the in-memory index, returning ranked results with title, URL, and context snippets.
+6. **Navigation:** Clicking a result navigates to the target page via Docusaurus's client-side router.
+
+### Component Responsibilities
+
+| Component | Responsibility | Implementation |
+|-----------|----------------|----------------|
+| Search Theme (`@easyops-cn/docusaurus-search-local`) | Provides SearchBar component + postBuild index generator | Registered as a Docusaurus "theme" in `themes` array |
+| SearchBar (React) | Renders input field in navbar, handles keyboard shortcuts (Cmd+K), shows dropdown results | Auto-injected into Docusaurus navbar's search slot |
+| Web Worker | Runs lunr.js queries off the main thread to avoid UI jank | Bundled with the theme, loaded on first search interaction |
+| postBuild index generator | Scans `build/` HTML, extracts text, creates lunr.js index | Runs after `docusaurus build`, uses `postBuild` lifecycle |
+| lunr.js | Full-text search engine (inverted index, stemming, TF-IDF ranking) | Dependency of the search theme, runs both at build time (indexing) and runtime (querying) |
+
+## Integration with Existing Architecture
+
+### What Changes in `docusaurus.config.ts`
+
+The search theme is added to the `themes` array (NOT plugins). It sits alongside the existing `docusaurus-theme-openapi-docs`:
+
+```typescript
+// docusaurus.config.ts -- CHANGES ONLY
+
+themes: [
+  'docusaurus-theme-openapi-docs',
+  // ADD: search theme
+  ['@easyops-cn/docusaurus-search-local', {
+    indexDocs: true,
+    indexBlog: false,
+    indexPages: false,
+    docsRouteBasePath: ['/docs', '/api'],  // CRITICAL: both doc instances
+    language: ['en'],
+    hashed: 'filename',                     // Cache-friendly hashed filenames
+    searchBarShortcutHint: true,            // Show Cmd+K hint
+    searchBarPosition: 'right',             // Right side of navbar
+    searchResultLimits: 12,                 // More results for ~400 pages
+    searchResultContextMaxLength: 80,       // Longer context snippets
+    highlightSearchTermsOnTargetPage: true, // Highlight matches on navigation
+    searchBarShortcutKeymap: { focusSearchInput: ['mod+k'] },
+  }],
+],
+```
+
+**Critical detail:** `docsRouteBasePath` must be an array `['/docs', '/api']` to cover BOTH the preset-classic docs instance (`/docs/`) AND the separate docs plugin instance (`/api/`). Without this, API pages will not be indexed.
+
+### Where the Search Bar Renders
+
+Docusaurus has a built-in "search bar slot" in the navbar. When no search theme is installed, the slot is empty. When a theme provides a `SearchBar` component (via `src/theme/SearchBar/index.jsx`), Docusaurus automatically renders it in the navbar.
+
+**Current navbar layout:**
+```
+[Logo] [1NCE Home] [1NCE Shop] [1NCE Portal]
+       ──────── SecondaryNavbar ────────
+[Documentation] [API Explorer] [Terms & Abbreviations]
+```
+
+**After search integration:**
+```
+[Logo] [SearchBar ______ Cmd+K] [1NCE Home] [1NCE Shop] [1NCE Portal]
+       ──────── SecondaryNavbar ────────
+[Documentation] [API Explorer] [Terms & Abbreviations]
+```
+
+The SearchBar component renders in the primary navbar (the `<nav>` element), NOT in the SecondaryNavbar. This is automatic -- no swizzling or manual placement needed. The `searchBarPosition: 'right'` config places it to the right of the logo but before the navbar items (standard Docusaurus behavior).
+
+### How OpenAPI-Generated Pages Get Indexed
+
+The search indexing happens at the **HTML level**, not the MDX level. This is critical:
+
+1. `docusaurus-plugin-openapi-docs` generates `.api.mdx` files in `docs/api/` at prebuild time.
+2. Docusaurus compiles these MDX files into React components, which render into static HTML during `docusaurus build`.
+3. The search theme's `postBuild` hook scans the resulting HTML in `build/api/**/*.html`.
+4. It extracts: page title (from `<h1>` or `<title>`), heading hierarchy (`<h2>`, `<h3>`), and body text (paragraphs, list items).
+5. The API endpoint descriptions (e.g., "Obtain a token for accessing other 1NCE API resources...") are present in the rendered HTML and WILL be indexed.
+6. The interactive "Try It" panel components (request/response schemas, code tabs) render as HTML text that gets indexed too -- endpoint paths, parameter names, and response field names become searchable.
+
+**What will NOT be indexed from API pages:** The base64-encoded `api` frontmatter blob (it is not rendered as visible text). JSON schema files loaded via `require()` render as interactive components, but the rendered parameter names and descriptions DO get indexed from the HTML output.
+
+### Multi-Instance Docs: The Key Integration Point
+
+The project has two docs plugin instances:
+
+| Instance | Plugin | Route | Source |
+|----------|--------|-------|--------|
+| `default` (preset-classic) | `@docusaurus/plugin-content-docs` | `/docs/` | `docs/documentation/` |
+| `api` | `@docusaurus/plugin-content-docs` | `/api/` | `docs/api/` |
+
+The search theme must know about BOTH. The `docsRouteBasePath` array config handles this. Under the hood, the theme's `postBuild` hook scans ALL HTML in `build/` regardless, but the route base paths determine how results are categorized and how URLs are constructed for navigation.
+
+**Past issue (resolved):** Multi-instance setups previously caused duplicated paths in search result URLs (issue #442, fixed in v0.41.1). Current version 0.55.1 handles this correctly.
+
+## Recommended Project Structure Changes
+
+```
+docusaurus_poc/
+├── docusaurus.config.ts       # MODIFY: add search theme to themes array
+├── src/
+│   ├── css/
+│   │   └── custom.css         # MODIFY: add search overlay/result styling overrides
+│   └── theme/
+│       └── SearchBar/         # NEW (optional): only if default UI needs customization
+│           └── index.tsx      # Wrap or override default SearchBar
+├── build/                     # BUILD OUTPUT (not committed)
+│   ├── search-index-*.json    # GENERATED: lunr.js search index chunks
+│   └── ...                    # Existing HTML pages
+└── package.json               # MODIFY: add @easyops-cn/docusaurus-search-local
+```
+
+### Structure Rationale
+
+- **No new source directories needed.** The search theme is entirely configuration-driven. It provides its own SearchBar component and generates its own index files.
+- **`src/css/custom.css` modifications** are likely needed for the search overlay to match 1NCE branding (navy/teal palette, Barlow font). The default search UI uses its own CSS module, but the overlay backdrop and result highlight colors should be themed.
+- **`src/theme/SearchBar/`** is only needed if the default search bar UI is insufficient. Creating this directory "swizzles" the search bar component, giving full control. For v1.4, start WITHOUT swizzling -- customize via CSS first.
+
+## Architectural Patterns
+
+### Pattern 1: Theme-Based Search Integration
+
+**What:** Docusaurus search plugins register as "themes" rather than "plugins" because they provide UI components (SearchBar). A theme can provide React components that fill Docusaurus's built-in component slots.
+
+**When to use:** Always -- this is how Docusaurus search works. The `themes` array is the correct place.
+
+**Trade-offs:**
+- Pro: Zero-config UI integration; SearchBar appears automatically in the navbar
+- Pro: No swizzling needed for basic functionality
+- Con: Only one search theme can be active at a time (cannot combine two search providers)
+- Con: Theme order matters if multiple themes provide the same component
+
+**Example:**
+```typescript
+// docusaurus.config.ts
+export default {
+  themes: [
+    'docusaurus-theme-openapi-docs',  // provides ApiItem, ApiExplorer, etc.
+    ['@easyops-cn/docusaurus-search-local', { /* options */ }],  // provides SearchBar
+  ],
+};
+// No conflicts: openapi-docs and search-local provide DIFFERENT theme components
+```
+
+### Pattern 2: PostBuild Index Generation
+
+**What:** The search index is built AFTER the full Docusaurus build completes, by scanning the static HTML output. This is fundamentally different from build-time MDX processing.
+
+**When to use:** This is how all local search plugins work. The postBuild approach means:
+- API pages generated by openapi-docs are already compiled to HTML when indexing runs
+- All content transformations (MDX -> React -> HTML) are complete
+- The indexed text matches what users see in the browser
+
+**Trade-offs:**
+- Pro: Indexes the RENDERED content, including dynamically generated API docs
+- Pro: No coupling between the search plugin and content plugins
+- Con: Adds ~5-15 seconds to build time (scanning ~400 HTML files)
+- Con: Search is NOT available in `docusaurus start` (dev mode) -- must use `docusaurus build && docusaurus serve` to test
+
+### Pattern 3: Lazy-Loaded Chunked Index
+
+**What:** The search index is split into chunks by route prefix and loaded on demand. The browser does not download the entire index upfront.
+
+**When to use:** For sites with more than ~100 pages. With ~292 pages (166 docs + 126 API), chunking prevents a large initial download.
+
+**Trade-offs:**
+- Pro: First search interaction is fast (only loads the relevant chunk)
+- Pro: Hashed filenames enable aggressive caching (S3/CloudFront)
+- Con: First search on a different route prefix has a brief loading delay
+- Con: Cross-section search (docs + API simultaneously) loads multiple chunks
+
+## Data Flow
+
+### Build-Time Index Generation Flow
+
+```
+docusaurus build
+    |
+    ├── [1] preset-classic: compiles docs/documentation/*.mdx -> build/docs/**/*.html
+    ├── [2] plugin-content-docs(api): compiles docs/api/*.mdx -> build/api/**/*.html
+    ├── [3] plugin-openapi-docs: generates MDX from OpenAPI specs (runs BEFORE step 2)
+    ├── [4] Other plugins (redirects, llms-txt, etc.)
+    |
+    └── [5] postBuild hooks fire
+            |
+            └── search-local postBuild:
+                ├── Glob build/**/*.html
+                ├── For each HTML file:
+                │   ├── Parse DOM (cheerio/jsdom)
+                │   ├── Extract title from <h1> or <title>
+                │   ├── Extract sections by <h2>/<h3> headings
+                │   ├── Extract body text (strip HTML tags)
+                │   └── Store as { title, url, sections[], content }
+                ├── Build lunr.js inverted index from all documents
+                ├── Split index into chunks by route prefix
+                ├── Hash each chunk filename for cache busting
+                └── Write search-index-*.json files to build/
+```
+
+### Runtime Search Query Flow
+
+```
+User types in SearchBar
+    |
+    ├── Debounce input (150-300ms)
+    |
+    ├── Load index chunk(s) if not cached
+    |   └── fetch('/search-index-{hash}.json')
+    |       └── CloudFront serves from S3 (cached at edge)
+    |
+    ├── Post query to Web Worker
+    |   └── Worker: lunr.search(query)
+    |       ├── Tokenize query
+    |       ├── Apply stemming
+    |       ├── Look up inverted index
+    |       └── Rank by TF-IDF score
+    |
+    ├── Worker returns ranked results
+    |
+    ├── SearchBar renders results dropdown
+    |   ├── Each result: title + context snippet + URL
+    |   └── Overlay with darkened backdrop
+    |
+    └── User clicks result
+        └── Docusaurus router.push(resultUrl)
+            └── Client-side navigation (no full page reload)
+```
+
+### Key Data Flows
+
+1. **Index generation (build-time):** HTML files -> DOM parsing -> text extraction -> lunr.js indexing -> JSON chunks on disk. This is a ONE-WAY flow that runs once per build.
+2. **Search query (runtime):** User input -> debounce -> Web Worker query -> ranked results -> dropdown render -> client-side navigation. This is a REQUEST-RESPONSE flow per keystroke (after debounce).
+3. **Index delivery (CDN):** S3 bucket stores index JSON files -> CloudFront caches them at edge (hashed filenames = immutable caching) -> browser fetches on first search. The existing CloudFront 2-tier cache policy (hashed assets = 1yr immutable) will automatically cover search index files if `hashed: 'filename'` is set (the hash is part of the filename).
+
+## Integration Points
+
+### New Components (to be installed)
+
+| Component | Type | Source |
+|-----------|------|--------|
+| `@easyops-cn/docusaurus-search-local` | npm package (theme) | Added to `package.json` |
+| SearchBar | React component | Auto-provided by theme, renders in navbar search slot |
+| Web Worker | JS worker | Bundled with theme, loaded on demand |
+| search-index-*.json | Build artifact | Generated by postBuild hook into `build/` |
 
 ### Modified Components
 
-| Component | Modification | Reason |
-|-----------|-------------|--------|
-| `package.json` | Add `generate:llms` script | Run llms.txt generation as part of build pipeline |
-| `scripts/smoke-test.sh` | Add URL checks for new files | Verify files are served correctly after deploy |
-| `infra/cf-function.js` | No change needed | Files have extensions (`.txt`, `.md`, `.json`) so the existing function already passes them through correctly |
+| Component | What Changes | Why |
+|-----------|-------------|-----|
+| `docusaurus.config.ts` | Add theme to `themes` array with config options | Core integration point |
+| `src/css/custom.css` | Add CSS overrides for search overlay, backdrop, result styling | Match 1NCE navy/teal branding |
+| GitHub Actions workflow | No changes needed -- `npm run build` already runs postBuild hooks | Index generation is automatic |
+| CloudFront Function | No changes needed -- search-index JSON files are static assets served normally | No SPA routing involved for JSON files |
 
-### Unchanged Components
+### Components That Do NOT Change
 
 | Component | Why Unchanged |
-|-----------|---------------|
-| `docusaurus.config.ts` | No plugin additions needed. Static files handled by Docusaurus natively. |
-| `infra/template.yaml` | CloudFront config already serves all S3 objects. No new behaviors/origins needed. |
-| `.github/workflows/deploy.yml` | Build step already runs `npm run build` which produces `build/` directory. Post-build llms.txt generation needs one new step but no structural changes. |
-| `sidebars/` | Read-only input for the llms.txt generator. Not modified. |
+|-----------|--------------|
+| `src/theme/Navbar/Layout/index.tsx` | SearchBar renders in the primary `<nav>` via Docusaurus's component slot system, not in the custom NavbarLayout |
+| `src/components/SecondaryNavbar/` | Search bar goes in the primary navbar, not the secondary tab bar |
+| `sidebars/documentation.ts` | Search indexes HTML output, not sidebar config |
+| `sidebars/api.ts` | Same -- sidebar config is irrelevant to search indexing |
+| `plugins/llms-txt-plugin.ts` | Independent postBuild hook; no interaction with search |
+| OpenAPI specs (`specs/*.json`) | Already processed by openapi-docs plugin; search indexes the resulting HTML |
 
-## Detailed Design
+### Internal Boundaries
 
-### 1. robots.txt -- Pure Static File
+| Boundary | Communication | Notes |
+|----------|---------------|-------|
+| Search theme <-> Docusaurus core | Lifecycle hooks (`postBuild`), theme component slots (`SearchBar`) | Standard Docusaurus theme API, no custom wiring |
+| Search theme <-> openapi-docs theme | None (independent) | Both are themes but provide different components. No conflicts -- openapi-docs provides ApiItem/ApiExplorer, search provides SearchBar |
+| SearchBar <-> Web Worker | `postMessage` / `onmessage` | Standard browser Worker API. Query sent to worker, results returned |
+| Search index <-> CloudFront | Static file serving | Index JSON files are served like any other static asset. Hashed filenames work with existing cache policy |
 
-**Approach:** Place `static/robots.txt` in the repo. Docusaurus copies it verbatim to `build/robots.txt`.
+## Scaling Considerations
 
-**Content structure:**
-```
-User-agent: *
-Allow: /
+| Scale | Architecture Adjustments |
+|-------|--------------------------|
+| ~400 pages (current) | Client-side lunr.js is ideal. Index size ~500KB-2MB compressed. Fast on all devices. |
+| ~1,000 pages | Still fine with chunked index. May want to increase chunking granularity. Monitor index download size. |
+| ~5,000+ pages | Consider switching to Algolia DocSearch or Typesense. Client-side index becomes too large (>10MB). |
 
-Sitemap: https://help.1nce.com/sitemap.xml
-```
+### Scaling Priorities
 
-**Why static:** robots.txt for this site has no dynamic content. The sitemap URL is fixed. There is no reason to generate it at build time.
+1. **First concern: Index size.** At ~400 pages the compressed index will be ~500KB-2MB. Perfectly acceptable. The hashed-filename caching means repeat visitors pay zero cost after first load.
+2. **Second concern: Build time.** PostBuild HTML scanning adds ~5-15 seconds. Negligible compared to the OpenAPI spec generation step. Not a concern until page count triples.
 
-**Integration points:** None. Docusaurus's static file handling does this automatically.
+## Anti-Patterns
 
-### 2. llms.txt -- Hybrid Build-Time Generation
+### Anti-Pattern 1: Adding Search as a Plugin Instead of a Theme
 
-This is the most architecturally interesting piece. The project requires **product-first curated organization** (1NCE Connect, 1NCE OS sections) but also needs the actual page links to stay in sync with the ~298 doc pages and ~125 API pages.
+**What people do:** Put the search package in the `plugins` array instead of `themes`.
+**Why it's wrong:** The package provides a React component (SearchBar) that fills a Docusaurus theme slot. Plugins cannot provide theme components. The search bar will not appear.
+**Do this instead:** Always add to `themes` array: `themes: [['@easyops-cn/docusaurus-search-local', { ... }]]`
 
-**Approach: Template + Build Script**
+### Anti-Pattern 2: Forgetting to Include `/api` in `docsRouteBasePath`
 
-The template (`templates/llms.txt.template`) contains:
-- H1 heading and blockquote (curated)
-- Product-first narrative sections (curated)
-- Placeholder markers like `<!-- DOCS_LINKS:section-name -->` and `<!-- API_LINKS -->` where the script injects generated link lists
+**What people do:** Leave `docsRouteBasePath` at its default `'/docs'` or forget to include the second docs instance route.
+**Why it's wrong:** API Explorer pages under `/api/` will not appear in search results. Users searching for "Obtain Access Token" or "SIM management" will get zero API results.
+**Do this instead:** Set `docsRouteBasePath: ['/docs', '/api']` to cover both docs plugin instances.
 
-The build script (`scripts/generate-llms-txt.ts`) runs **after `docusaurus build`** and:
-1. Reads the curated template
-2. Scans `docs/documentation/` and `docs/api/` directories, reading frontmatter for titles
-3. Uses sidebar structure to determine section grouping and ordering
-4. Generates Markdown link lists organized by the curated section structure
-5. Replaces placeholders in the template with generated link lists
-6. Writes `build/llms.txt`
-7. Generates `build/llms-full.txt` by concatenating curated intro + all page content (stripped of JSX/imports)
+### Anti-Pattern 3: Testing Search in Dev Mode
 
-**Data flow:**
+**What people do:** Run `npm start` and wonder why the search bar shows "no results" or is missing.
+**Why it's wrong:** Local search plugins generate their index during `docusaurus build`. The dev server does not run the build pipeline, so no index exists.
+**Do this instead:** Test search with `npm run build && npm run serve`. Document this for anyone working on the project.
 
-```
-templates/llms.txt.template (curated prose + placeholders)
-        |
-        v
-scripts/generate-llms-txt.ts
-        |
-        +-- reads: docs/documentation/**/*.mdx (frontmatter for titles)
-        +-- reads: docs/api/**/*.mdx (frontmatter for titles)
-        +-- reads: sidebars/documentation.ts (section ordering)
-        |
-        v
-build/llms.txt (final output: curated prose + generated links)
-build/llms-full.txt (curated intro + all page content concatenated)
-```
+### Anti-Pattern 4: Swizzling SearchBar Prematurely
 
-**Why not `docusaurus-plugin-llms`?**
+**What people do:** Immediately swizzle the SearchBar component to customize it before trying CSS-only customization.
+**Why it's wrong:** Swizzling creates a maintenance burden -- the swizzled component will not receive upstream bug fixes or features. The default SearchBar is highly customizable via CSS.
+**Do this instead:** First customize via `src/css/custom.css` targeting the search bar's CSS classes. Only swizzle if CSS customization is genuinely insufficient (e.g., you need to change the results layout or add custom result types).
 
-The `docusaurus-plugin-llms` package (v0.3.0, published 2026-02-08) auto-generates `llms.txt` and `llms-full.txt` from all docs pages. It supports `customLLMFiles`, `includeOrder`, and `rootContent` options. However:
+### Anti-Pattern 5: Using `@cmfcmf/docusaurus-search-local` for This Project
 
-1. **Product-first organization requires curated prose between sections.** The plugin generates link lists organized by file path. The project needs sections like "1NCE Connect Suite" and "1NCE OS" that group pages by product concept, not directory structure. The `rootContent` option only adds prose at the top, not between sections.
-2. **The plugin operates as a Docusaurus lifecycle plugin.** It hooks into `postBuild`. A standalone script gives more control and is easier to debug and test independently.
-3. **The plugin is at v0.3.0.** Young package, 9 versions in a month. API surface may change. A standalone script has zero external dependencies.
+**What people do:** Pick the other popular local search plugin without checking multi-instance support.
+**Why it's wrong:** `@cmfcmf/docusaurus-search-local` has no documented support for multiple docs plugin instances. Its docs do not address `docsRouteBasePath` as an array. It also does not work in dev mode (same as easyops) but has fewer configuration options for tuning result quality.
+**Do this instead:** Use `@easyops-cn/docusaurus-search-local` which explicitly supports multi-instance docs via `docsRouteBasePath` array and has resolved past multi-instance URL issues.
 
-A standalone build-time script is more maintainable for this use case.
+## Build Order for Implementation
 
-**Why not pure static?**
+Given the dependency chain, the recommended build order is:
 
-With ~423 pages (298 docs + 125 API), manually maintaining link URLs in `llms.txt` is error-prone. When pages are added, renamed, or removed, the links go stale. Build-time generation from source content ensures links stay in sync.
+1. **Install package** -- `npm install @easyops-cn/docusaurus-search-local`
+2. **Configure theme** -- Add to `themes` array in `docusaurus.config.ts` with multi-instance config
+3. **Build and verify** -- `npm run build && npm run serve`, confirm search bar appears and indexes both `/docs/` and `/api/` pages
+4. **Style the search UI** -- Add CSS overrides in `custom.css` for 1NCE branding (overlay backdrop color, result highlight, font family)
+5. **Test edge cases** -- Verify API endpoint pages appear in results, verify result URLs navigate correctly, verify keyboard shortcut (Cmd+K)
+6. **Optimize** -- Tune `searchResultLimits`, `searchResultContextMaxLength`, and `highlightSearchTermsOnTargetPage` based on UX testing
 
-**Build order dependency:** Must run **after** `docusaurus build` (so the build output exists to verify against) but **before** `aws s3 sync` (so the generated file gets deployed).
-
-### 3. skill.md -- Pure Static File at /.well-known/skills/
-
-**Background on skill.md:** This is an emerging convention for providing AI coding agents with structured instructions about how to interact with an API. Unlike `llms.txt` (which is about documentation discovery), `skill.md` is about **operational knowledge**: authentication flows, common request patterns, error handling, rate limit behavior, and gotchas.
-
-**Approach:** Pure static files in `static/.well-known/skills/`.
-
-```
-static/.well-known/skills/
-+-- index.json          # Discovery: lists available skill files
-+-- 1nce-api.md         # Skill doc: auth, patterns, gotchas
-```
-
-**Docusaurus handles `static/.well-known/` correctly.** The `static/` directory contents are copied verbatim to `build/`, preserving directory structure including dotfile-prefixed directories. The `.well-known` directory is not filtered out. Docusaurus docs state: "Every file you put into that directory will be copied into the root of the generated build folder with the directory hierarchy preserved."
-
-**LOW confidence note on skill.md standard:** The `skill.md` standard does not yet have a formal public specification. spec.skillmd.org was unreachable; no RFC or W3C draft exists as of this research date. The convention appears to be emerging from the AI agent ecosystem but lacks a canonical format definition. The project should treat the format as a curated best-effort Markdown file following the structure described in PROJECT.md, and be prepared to adapt if a spec stabilizes.
-
-**index.json format (proposed):**
-```json
-{
-  "skills": [
-    {
-      "id": "1nce-api",
-      "name": "1NCE IoT Platform API",
-      "description": "Authentication, SIM management, connectivity services, and 1NCE OS integration patterns",
-      "path": "/.well-known/skills/1nce-api.md",
-      "version": "1.0"
-    }
-  ]
-}
-```
-
-**1nce-api.md content structure (proposed):**
-```markdown
-# 1NCE IoT Platform API
-
-## Authentication
-- OAuth2 client credentials flow against management API
-- Bearer token in Authorization header
-- Token refresh patterns
-
-## Common Patterns
-- SIM lifecycle management (activate, suspend, resume)
-- Data usage queries
-- 1NCE OS device integration
-
-## Rate Limits & Quotas
-[Documented limits from existing content]
-
-## Gotchas
-- CORS restrictions on browser-based API calls
-- Region-specific API endpoints
-- Pagination patterns
-```
-
-**Why static, not generated?** Skill files are curated operational knowledge, not page inventories. They change when the API behavior changes, not when doc pages are added. There is no sidebar data to derive them from. Hand-curation is the correct approach.
-
-### 4. CloudFront Considerations
-
-**The existing CloudFront setup requires no changes for these files.**
-
-**CloudFront Function (SPA routing):**
-The existing `infra/cf-function.js` rewrites URIs that end with `/` (appends `index.html`) or have no file extension (appends `/index.html`). Files with extensions pass through untouched:
-- `/robots.txt` -- has `.txt` extension, passes through, S3 serves `robots.txt`
-- `/llms.txt` -- has `.txt` extension, passes through
-- `/llms-full.txt` -- has `.txt` extension, passes through
-- `/.well-known/skills/index.json` -- has `.json` extension, passes through
-- `/.well-known/skills/1nce-api.md` -- has `.md` extension, passes through
-
-**Cache behavior:**
-The deploy pipeline uses two-tier caching:
-- `build/assets/*` synced with `max-age=31536000, immutable` (hashed filenames)
-- Everything else synced with `max-age=600, must-revalidate`
-
-The new files fall into the "everything else" category and get 10-minute must-revalidate cache. This is appropriate -- these files change infrequently, and 10 minutes is fine for propagation after a deploy (CloudFront invalidation runs after sync anyway).
-
-**Content-Type headers:**
-S3 auto-detects MIME types on upload via `aws s3 sync`:
-- `.txt` files --> `text/plain` (correct for robots.txt, llms.txt, llms-full.txt)
-- `.json` files --> `application/json` (correct for index.json)
-- `.md` files --> may default to `application/octet-stream` depending on S3 MIME detection
-
-**Potential issue with .md MIME type:** S3 may not serve `.md` files with `text/markdown` or `text/plain` content type. This is unlikely to matter for AI agent consumption (agents parse content, not MIME types), but if needed, the `aws s3 sync` command can be extended with a separate sync for `.md` files specifying `--content-type text/markdown`. Monitor after first deploy and fix only if agents report issues.
-
-**No new CloudFront behaviors, origins, or function changes are needed.**
-
-### 5. CI/CD Pipeline Integration
-
-**The deploy workflow needs one new step:**
-
-```yaml
-# In deploy-production job, after "Build with CHAT_ENDPOINT":
-- name: Generate llms.txt
-  run: npx tsx scripts/generate-llms-txt.ts
-
-# Existing S3 sync steps pick up all files in build/ -- no change needed
-```
-
-Static files (`robots.txt`, `.well-known/skills/*`) are automatically handled by `docusaurus build` copying `static/` to `build/`. No extra step needed for those.
-
-**Smoke test additions:**
-```bash
-URLS=(
-  # ... existing URLs ...
-  "/robots.txt"
-  "/llms.txt"
-  "/.well-known/skills/index.json"
-)
-```
-
-## Build Order and Dependencies
-
-```
-Phase 1: Static files (no dependencies, can be done in parallel)
-  +-- robots.txt                    # Independent, no build-time deps
-  +-- .well-known/skills/index.json # Independent
-  +-- .well-known/skills/1nce-api.md# Independent (needs API knowledge to write well)
-
-Phase 2: llms.txt generation (depends on content structure being understood)
-  +-- templates/llms.txt.template   # Depends on: knowing the product sections
-  +-- scripts/generate-llms-txt.ts  # Depends on: template + sidebar structure + docs content
-
-Phase 3: CI/CD integration (depends on Phase 1 + 2)
-  +-- deploy.yml update             # Depends on: generate script existing
-  +-- smoke-test.sh update          # Depends on: knowing all new URLs
-```
-
-**Recommended implementation order:**
-1. `robots.txt` first -- zero risk, immediate SEO value, validates static file serving path
-2. `skill.md` + `index.json` second -- validates `.well-known/` path serving through S3 + CloudFront
-3. `llms.txt` template + generation script third -- most complex, benefits from phases 1-2 validating the serving infrastructure
-4. Smoke test and CI/CD updates last -- wraps everything with quality gates
-
-## Patterns to Follow
-
-### Pattern: Post-Build Generation
-**What:** Run a script after `docusaurus build` that reads source files and produces additional output in `build/`.
-**When:** Content needs to be derived from source data but does not need Docusaurus's rendering pipeline.
-**Why:** Decoupled from Docusaurus's plugin system. Easier to test, debug, and maintain. Already established in this project (`scripts/prepare-rag-content.ts` follows this exact pattern).
-
-### Pattern: Template + Placeholder Injection
-**What:** A curated Markdown template with `<!-- PLACEHOLDER -->` markers that a script replaces with generated content.
-**When:** Output needs both curated prose and dynamic data.
-**Why:** Curators edit the template without touching the script. The script generates link lists without touching the prose. Clean separation of concerns.
-
-### Pattern: Static .well-known via static/
-**What:** Place `.well-known/` contents in Docusaurus's `static/` directory.
-**When:** Serving standardized discovery files that do not need build-time processing.
-**Why:** Docusaurus preserves directory structure including dot-prefixed directories. No plugin needed.
-
-## Anti-Patterns to Avoid
-
-### Anti-Pattern: Using docusaurus-plugin-llms for curated content
-**What:** Installing `docusaurus-plugin-llms` and trying to force product-first organization through its configuration.
-**Why bad:** The plugin auto-generates from file paths. Forcing product-first structure through `includeOrder` and `customLLMFiles` creates a brittle configuration that fights the plugin's design. When the curated structure diverges from the file structure (which it will -- "1NCE Connect" spans multiple directories), the configuration becomes unmaintainable.
-**Instead:** Use a standalone build script with a template.
-
-### Anti-Pattern: Generating skill.md from OpenAPI specs
-**What:** Auto-generating skill files from the 6 OpenAPI spec JSON files.
-**Why bad:** OpenAPI specs describe endpoints, not operational knowledge. A skill file needs to explain "how to authenticate, what order to call things in, what to watch out for" -- none of which is in the spec. Auto-generation produces a worse-than-useless file that looks complete but misses the hard-won operational knowledge.
-**Instead:** Hand-curate skill files. They are small (one file, ~200-400 lines) and change rarely.
-
-### Anti-Pattern: Putting generated files in static/
-**What:** Running the llms.txt generator and writing output to `static/llms.txt` so Docusaurus copies it to `build/`.
-**Why bad:** Generated files in `static/` get committed to git, creating merge conflicts and stale content. The `static/` directory should contain only truly static, hand-maintained assets.
-**Instead:** Generate directly into `build/` as a post-build step.
-
-## File Format Reference
-
-### llms.txt Format (per llmstxt.org)
-
-Required structure per the specification:
-1. **H1 heading** (required) -- site/project name
-2. **Blockquote** (optional) -- brief summary with key information
-3. **Markdown prose** (optional) -- additional context paragraphs
-4. **H2-delimited sections** -- each containing link lists as `- [Title](URL): Description`
-5. **"Optional" section** (special designation) -- links that can be skipped for shorter context
-
-### robots.txt Format (RFC 9309)
-
-Standard robots exclusion protocol. Note: Docusaurus with `@docusaurus/preset-classic` auto-generates `sitemap.xml` in the build output. The robots.txt references this sitemap. No additional sitemap generation needed.
-
-## Scalability Considerations
-
-| Concern | Current (~423 pages) | At 1000 pages | Mitigation |
-|---------|---------------------|---------------|------------|
-| llms.txt generation time | <1 second (frontmatter scanning) | <2 seconds | Script reads frontmatter only, not full page content |
-| llms-full.txt file size | ~2-3 MB estimated | ~5-8 MB | LLMs handle large context; llms.txt (links only) serves as lightweight alternative |
-| Template maintenance | One curated template | Same template, more links auto-generated | Template sections stable; link lists grow automatically |
-| skill.md maintenance | 1 file, ~300 lines | Same | Skills scale with API surface, not page count |
+Steps 1-3 are the critical path with zero ambiguity. Steps 4-6 are polish that can be iterated.
 
 ## Sources
 
-- llmstxt.org specification -- HIGH confidence (fetched and verified directly)
-- Docusaurus static assets documentation (docusaurus.io/docs/static-assets) -- HIGH confidence (fetched and verified)
-- `docusaurus-plugin-llms` v0.3.0 npm package README -- MEDIUM confidence (evaluated via npm view, decided against)
-- `@signalwire/docusaurus-plugin-llms-txt` v1.2.2 -- MEDIUM confidence (noted as alternative, not evaluated in depth)
-- RFC 8615 (.well-known URIs) -- HIGH confidence (established IETF standard)
-- RFC 9309 (robots.txt) -- HIGH confidence (established IETF standard)
-- Existing project codebase (`docusaurus.config.ts`, `infra/cf-function.js`, `deploy.yml`, `package.json`) -- HIGH confidence (direct inspection)
-- skill.md convention -- LOW confidence (no formal spec found as of 2026-04-03; treat as emerging convention)
-- Stripe llms.txt as real-world reference -- MEDIUM confidence (demonstrates product-first organization pattern)
+- `@easyops-cn/docusaurus-search-local` GitHub repository (github.com/easyops-cn/docusaurus-search-local) -- MEDIUM confidence (issue tracker verified multi-instance support, configuration options verified via npm metadata and README)
+- `@cmfcmf/docusaurus-search-local` GitHub repository -- MEDIUM confidence (evaluated and rejected for this use case due to no documented multi-instance support)
+- Docusaurus official search documentation (docusaurus.io/docs/search) -- HIGH confidence (theme slot mechanism, swizzle pattern)
+- npm registry metadata for all three search plugins -- HIGH confidence (version numbers, peer dependencies verified via `npm view`)
+- Existing `docusaurus.config.ts` direct inspection -- HIGH confidence
+- Issue #442 resolution (multi-instance URL fix in v0.41.1) -- HIGH confidence (confirmed closed and resolved)
+- npm package contents inspection (`npm pack --dry-run`) -- HIGH confidence (confirmed SearchBar component, Web Worker, postBuild architecture)
+
+---
+*Architecture research for: Client-side search integration in Docusaurus 3.9.2*
+*Researched: 2026-04-05*
