@@ -82,6 +82,8 @@ h2, h3 {
   --ifm-footer-background-color: #194a7d;
   background-color: #194a7d;
   color: #ffffff;
+  height: 80px;
+  padding: 5px 10px;
 }
 
 .footer--dark .footer__link-item {
@@ -90,6 +92,10 @@ h2, h3 {
 
 .footer--dark .footer__link-item:hover {
   color: #29abe2;
+}
+
+.footer--dark .footer__links {
+  height: 20px;
 }
 
 .footer--dark .footer__copyright {
@@ -106,6 +112,7 @@ h2, h3 {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 }
 
 .footer__link-item {
@@ -134,4 +141,9 @@ h2, h3 {
 [data-theme='dark'] {
   --chat--color-secondary: #0d2a47;
   --chat--color-secondary-shade-50: #091e36;
+}
+
+/* n8n chat toggle button — use primary brand color */
+.chat-window-toggle {
+  background-color: var(--ifm-color-primary) !important;
 }
