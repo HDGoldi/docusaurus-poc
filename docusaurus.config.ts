@@ -333,6 +333,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       searchBarPosition: 'right',
       searchResultLimits: 8,
       explicitSearchResultPath: true,
+
+      // Exclude redirect stub pages from search index (D-07)
+      // plugin-client-redirects generates meta-refresh HTML stubs at these paths.
+      // The search plugin indexes from MDX source (not built HTML), so these are
+      // defensive — they prevent indexing if the plugin behavior ever changes.
+      ignoreFiles: [
+        // Old ReadMe /dev-hub/ paths (281 stubs)
+        /\/dev-hub\//,
+        // Old /starting-guide/ path
+        /\/starting-guide\//,
+        // Old /platform/ prefix (not /docs/platform-services/)
+        /^\/platform\//,
+        // Old /blueprints/ and /blueprints-examples/ top-level
+        /^\/blueprints\//,
+        /^\/blueprints-examples\//,
+        // Old /terms/ prefix
+        /^\/terms\//,
+        // Root shortcut redirects (/examples-*, /recipes)
+        /^\/examples-/,
+        /^\/recipes$/,
+        // Section-level redirects without /docs/ prefix
+        /^\/1nce-os\//,
+        /^\/network-services\//,
+        /^\/platform-services\//,
+        /^\/1nce-portal\//,
+        /^\/connectivity-services\//,
+        /^\/sim-cards\//,
+      ],
     }],
   ],
 
