@@ -88,11 +88,12 @@ Plans:
   1. Search overlay has a darkened background behind it, consistent with modal patterns
   2. Search overlay uses 1NCE navy/teal colors, Barlow font, and light-only mode (no dark mode bleed even with OS dark mode enabled)
   3. Matching search terms are highlighted in the results list so users can scan relevance
-**Plans**: TBD
+**Plans**: 2 plans
 **UI hint**: yes
 
 Plans:
-- [ ] 14-01: TBD
+- [ ] 14-01-PLAN.md — Add search plugin config (highlighting, context paths) and 1NCE branded CSS overrides
+- [ ] 14-02-PLAN.md — Build verification, DOM selector inspection, and human visual UAT
 
 ### Phase 15: Deployment & Verification
 **Goal**: Search index deploys reliably through the existing S3/CloudFront pipeline with cache-busting and automated verification
@@ -126,5 +127,5 @@ Phases execute in numeric order: 13 → 14 → 15
 | 11. LLM Discoverability | v1.3 | 1/1 | Complete | 2026-04-04 |
 | 12. AI Agent Integration | v1.3 | 1/1 | Complete | 2026-04-04 |
 | 13. Search Plugin & Core Indexing | v1.4 | 2/2 | Complete    | 2026-04-05 |
-| 14. Search UI Branding & Polish | v1.4 | 0/0 | Not started | - |
+| 14. Search UI Branding & Polish | v1.4 | 0/2 | Not started | - |
 | 15. Deployment & Verification | v1.4 | 0/0 | Not started | - |
