@@ -52,25 +52,25 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SRCH-01 | — | Pending |
-| SRCH-02 | — | Pending |
-| SRCH-03 | — | Pending |
-| SRCH-04 | — | Pending |
-| UI-01 | — | Pending |
-| UI-02 | — | Pending |
-| UI-03 | — | Pending |
-| UI-04 | — | Pending |
-| UI-05 | — | Pending |
-| UI-06 | — | Pending |
-| UI-07 | — | Pending |
-| DEPL-01 | — | Pending |
-| DEPL-02 | — | Pending |
+| SRCH-01 | Phase 13 | Pending |
+| SRCH-02 | Phase 13 | Pending |
+| SRCH-03 | Phase 13 | Pending |
+| SRCH-04 | Phase 13 | Pending |
+| UI-01 | Phase 13 | Pending |
+| UI-02 | Phase 14 | Pending |
+| UI-03 | Phase 13 | Pending |
+| UI-04 | Phase 13 | Pending |
+| UI-05 | Phase 14 | Pending |
+| UI-06 | Phase 13 | Pending |
+| UI-07 | Phase 14 | Pending |
+| DEPL-01 | Phase 15 | Pending |
+| DEPL-02 | Phase 15 | Pending |
 
 **Coverage:**
 - v1.4 requirements: 13 total
-- Mapped to phases: 0
-- Unmapped: 13 ⚠️
+- Mapped to phases: 13
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-05*
-*Last updated: 2026-04-05 after initial definition*
+*Last updated: 2026-04-05 after roadmap creation*

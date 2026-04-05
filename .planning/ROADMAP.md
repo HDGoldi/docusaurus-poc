@@ -6,6 +6,7 @@
 - 🚧 **v1.1 AI Assistant + GitHub Pages Preview** — Phases 4-7 (in progress)
 - ✅ **v1.2 Overall Enhancements & Fixing** — Phases 8-9 (shipped 2026-04-02)
 - ✅ **v1.3 AI & Search Readiness** — Phases 10-12 (shipped 2026-04-04)
+- 🚧 **v1.4 Client-Side Search** — Phases 13-15 (in progress)
 
 ## Phases
 
@@ -53,7 +54,61 @@ See: `.planning/milestones/v1.3-ROADMAP.md` for full details.
 
 </details>
 
+### 🚧 v1.4 Client-Side Search (In Progress)
+
+**Milestone Goal:** Developers can instantly find any documentation page, API endpoint page, or in-page content via a zero-cost client-side search bar.
+
+- [ ] **Phase 13: Search Plugin & Core Indexing** - Install search plugin, validate Rspack compatibility, index all 423 pages across both docs instances
+- [ ] **Phase 14: Search UI Branding & Polish** - Style search overlay to 1NCE branding, add result highlighting, optimize index size
+- [ ] **Phase 15: Deployment & Verification** - Cache-busted index filenames, smoke test for search index, deploy pipeline validation
+
+## Phase Details
+
+### Phase 13: Search Plugin & Core Indexing
+**Goal**: Users can search across all documentation and API pages from the navbar and navigate to results
+**Depends on**: Phase 12
+**Requirements**: SRCH-01, SRCH-02, SRCH-03, SRCH-04, UI-01, UI-03, UI-04, UI-06
+**Success Criteria** (what must be TRUE):
+  1. User sees a search bar in the main navbar (right side, next to Terms and Abbreviations)
+  2. User can type a query and see matching results from both documentation pages and API endpoint pages
+  3. User can search for in-page content (headings, paragraphs, code blocks) and find matches
+  4. User can click a search result and navigate directly to the correct page (both /docs/ and /api/ paths)
+  5. User can open search with Cmd/K (macOS) or Ctrl/K (Windows/Linux)
+**Plans**: TBD
+
+Plans:
+- [ ] 13-01: TBD
+
+### Phase 14: Search UI Branding & Polish
+**Goal**: Search overlay matches 1NCE branding and provides a polished user experience with highlighted matches
+**Depends on**: Phase 13
+**Requirements**: UI-02, UI-05, UI-07
+**Success Criteria** (what must be TRUE):
+  1. Search overlay has a darkened background behind it, consistent with modal patterns
+  2. Search overlay uses 1NCE navy/teal colors, Barlow font, and light-only mode (no dark mode bleed even with OS dark mode enabled)
+  3. Matching search terms are highlighted in the results list so users can scan relevance
+**Plans**: TBD
+**UI hint**: yes
+
+Plans:
+- [ ] 14-01: TBD
+
+### Phase 15: Deployment & Verification
+**Goal**: Search index deploys reliably through the existing S3/CloudFront pipeline with cache-busting and automated verification
+**Depends on**: Phase 14
+**Requirements**: DEPL-01, DEPL-02
+**Success Criteria** (what must be TRUE):
+  1. Search index files use hashed filenames so CloudFront serves fresh indexes after every deploy
+  2. Smoke test script verifies the search index URL returns HTTP 200 after deploy to staging
+**Plans**: TBD
+
+Plans:
+- [ ] 15-01: TBD
+
 ## Progress
+
+**Execution Order:**
+Phases execute in numeric order: 13 → 14 → 15
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
@@ -69,3 +124,6 @@ See: `.planning/milestones/v1.3-ROADMAP.md` for full details.
 | 10. Crawler Foundation | v1.3 | 1/1 | Complete | 2026-04-03 |
 | 11. LLM Discoverability | v1.3 | 1/1 | Complete | 2026-04-04 |
 | 12. AI Agent Integration | v1.3 | 1/1 | Complete | 2026-04-04 |
+| 13. Search Plugin & Core Indexing | v1.4 | 0/0 | Not started | - |
+| 14. Search UI Branding & Polish | v1.4 | 0/0 | Not started | - |
+| 15. Deployment & Verification | v1.4 | 0/0 | Not started | - |

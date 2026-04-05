@@ -3,11 +3,11 @@ gsd_state_version: 1.0
 milestone: v1.4
 milestone_name: Client-Side Search
 status: active
-stopped_at: Defining requirements
+stopped_at: Roadmap created, ready to plan Phase 13
 last_updated: "2026-04-05"
 last_activity: 2026-04-05
 progress:
-  total_phases: 0
+  total_phases: 3
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-05)
 
 **Core value:** Developers can browse all existing documentation and interactively test API endpoints exactly as they can on the current ReadMe.com-hosted site.
-**Current focus:** Milestone v1.4 — Client-Side Search
+**Current focus:** Phase 13 — Search Plugin & Core Indexing
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-04-05 — Milestone v1.4 started
+Phase: 13 of 15 (Search Plugin & Core Indexing) — first of 3 phases in v1.4
+Plan: 0 of 0 in current phase (plans TBD)
+Status: Ready to plan
+Last activity: 2026-04-05 — Roadmap created for v1.4 Client-Side Search
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -47,6 +47,9 @@ Progress: [░░░░░░░░░░] 0%
 - [Phase 11]: HTML comment markers for template placeholder syntax
 - [Phase 11]: API spec links hardcoded to 6 landing page routes
 - [Phase 12]: Agent Skills spec-compliant skill.md with name: default, 3 API workflows, S3 content-type fix
+- [v1.4 research]: Selected @easyops-cn/docusaurus-search-local v0.55.1 — only mature plugin with multi-docs-instance support
+- [v1.4 research]: Rspack compatibility unknown — go/no-go gate in Phase 13
+- [v1.4 research]: Dual instance config requires docsRouteBasePath: ['/docs', '/api'] array
 
 ### Pending Todos
 
@@ -54,7 +57,8 @@ None.
 
 ### Blockers/Concerns
 
-None.
+- Rspack (`experimental_faster: true`) has zero community precedent with search plugin — Phase 13 must validate; fallback is disabling Rspack
+- Index size for 423 pages unknown until first build — measure in Phase 13, optimize in Phase 14
 
 ### Quick Tasks Completed
 
@@ -68,5 +72,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-04-05
-Stopped at: Milestone v1.4 started — defining requirements
+Stopped at: Roadmap created for v1.4. Ready to plan Phase 13.
 Resume file: None
