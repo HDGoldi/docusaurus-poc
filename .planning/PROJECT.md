@@ -37,9 +37,10 @@ Developers can browse all existing documentation and interactively test API endp
 
 ### Active
 
-- [ ] AI Assistant replicating ReadMe.com "Ask AI" — RAG-style chat grounded in documentation content
-- [ ] AWS Bedrock backend (Claude/Anthropic model) for AI chat processing
-- [ ] GitHub Pages deployment for test/preview (alongside existing AWS infra)
+- [ ] Client-side full-text search bar in main navbar (right side, next to Terms and Abbreviations)
+- [ ] Search index covering all doc pages + API endpoint pages + in-page content
+- [ ] Overlay results panel with darkened background and type-ahead suggestions
+- [ ] Click-to-navigate from search results to target page
 
 ### Out of Scope
 
@@ -49,6 +50,18 @@ Developers can browse all existing documentation and interactively test API endp
 - Content rewriting or restructuring — migrated as-is
 - Offline mode
 - Two-tier header layout — Docusaurus single navbar sufficient with external links
+
+## Current Milestone: v1.4 Client-Side Search
+
+**Goal:** Add a zero-cost, client-side full-text search so developers can instantly find any documentation page, API endpoint page, or in-page content.
+
+**Target features:**
+- Search bar in the main navbar (right side, next to Terms and Abbreviations)
+- Client-side full-text search index covering all doc + API endpoint pages
+- In-page content search (headings, paragraphs)
+- Overlay results panel with darkened background
+- Type-ahead suggestions as the user types
+- Click-to-navigate from search results to target page
 
 ## Current State
 
@@ -111,4 +124,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-04 after v1.3 milestone completion*
+*Last updated: 2026-04-05 after v1.4 milestone start*
