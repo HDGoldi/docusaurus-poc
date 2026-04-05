@@ -58,7 +58,7 @@ See: `.planning/milestones/v1.3-ROADMAP.md` for full details.
 
 **Milestone Goal:** Developers can instantly find any documentation page, API endpoint page, or in-page content via a zero-cost client-side search bar.
 
-- [x] **Phase 13: Search Plugin & Core Indexing** - Install search plugin, validate Rspack compatibility, index all 423 pages across both docs instances (completed 2026-04-05)
+- [ ] **Phase 13: Search Plugin & Core Indexing** - Install search plugin, validate Rspack compatibility, index all 423 pages across both docs instances
 - [ ] **Phase 14: Search UI Branding & Polish** - Style search overlay to 1NCE branding, add result highlighting, optimize index size
 - [ ] **Phase 15: Deployment & Verification** - Cache-busted index filenames, smoke test for search index, deploy pipeline validation
 
@@ -77,8 +77,8 @@ See: `.planning/milestones/v1.3-ROADMAP.md` for full details.
 **Plans**: 2 plans
 
 Plans:
-- [x] 13-01-PLAN.md — Install search plugin, configure dual-instance indexing, validate Rspack compatibility
-- [x] 13-02-PLAN.md — Exclude redirect stubs from index, measure index size, human UAT verification
+- [ ] 13-01-PLAN.md — Install search plugin, configure dual-instance indexing, validate Rspack compatibility
+- [ ] 13-02-PLAN.md — Exclude redirect stubs from index, measure index size, human UAT verification
 
 ### Phase 14: Search UI Branding & Polish
 **Goal**: Search overlay matches 1NCE branding and provides a polished user experience with highlighted matches
@@ -88,12 +88,11 @@ Plans:
   1. Search overlay has a darkened background behind it, consistent with modal patterns
   2. Search overlay uses 1NCE navy/teal colors, Barlow font, and light-only mode (no dark mode bleed even with OS dark mode enabled)
   3. Matching search terms are highlighted in the results list so users can scan relevance
-**Plans**: 2 plans
+**Plans**: TBD
 **UI hint**: yes
 
 Plans:
-- [ ] 14-01-PLAN.md — Add search plugin config (highlighting, context paths) and 1NCE branded CSS overrides
-- [ ] 14-02-PLAN.md — Build verification, DOM selector inspection, and human visual UAT
+- [ ] 14-01: TBD
 
 ### Phase 15: Deployment & Verification
 **Goal**: Search index deploys reliably through the existing S3/CloudFront pipeline with cache-busting and automated verification
@@ -126,6 +125,6 @@ Phases execute in numeric order: 13 → 14 → 15
 | 10. Crawler Foundation | v1.3 | 1/1 | Complete | 2026-04-03 |
 | 11. LLM Discoverability | v1.3 | 1/1 | Complete | 2026-04-04 |
 | 12. AI Agent Integration | v1.3 | 1/1 | Complete | 2026-04-04 |
-| 13. Search Plugin & Core Indexing | v1.4 | 2/2 | Complete    | 2026-04-05 |
-| 14. Search UI Branding & Polish | v1.4 | 0/2 | Not started | - |
+| 13. Search Plugin & Core Indexing | v1.4 | 0/2 | Planning | - |
+| 14. Search UI Branding & Polish | v1.4 | 0/0 | Not started | - |
 | 15. Deployment & Verification | v1.4 | 0/0 | Not started | - |

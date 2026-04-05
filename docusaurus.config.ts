@@ -334,6 +334,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       searchResultLimits: 8,
       explicitSearchResultPath: true,
 
+      // Target page highlighting: mark.js highlights matched terms after navigation (D-05)
+      highlightSearchTermsOnTargetPage: true,
+      // Path-based search context: auto-detects docs vs API from URL (D-06 revised)
+      // On /docs/* pages: only docs results. On /api/* pages: only API results.
+      // On other pages (homepage): all results shown.
+      searchContextByPaths: [
+        { label: 'Docs', path: '/docs' },
+        { label: 'API', path: '/api' },
+      ],
+      useAllContextsWithNoSearchContext: true,
+
       // Exclude redirect stub pages from search index (D-07)
       // plugin-client-redirects generates meta-refresh HTML stubs at these paths.
       // The search plugin indexes from MDX source (not built HTML), so these are
